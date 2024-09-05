@@ -1,0 +1,132 @@
+{
+  "flow_type": "template",
+  "flow_name": "relax_activities",
+  "status": "released",
+  "rows": [
+    {
+      "type": "display_group",
+      "name": "heading",
+      "rows": [
+        {
+          "type": "title",
+          "name": "title",
+          "value": "@data.library.relax_activities.title",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "style": "tiny"
+          },
+          "_nested_name": "heading.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@data.library.relax_activities.title",
+                "matchedExpression": "@data.library.relax_activities.title",
+                "type": "data",
+                "fieldName": "library"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@data.library.relax_activities.title": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "heading"
+    },
+    {
+      "type": "items",
+      "value": "@data.relax",
+      "rows": [
+        {
+          "type": "template",
+          "name": "card_@item.id",
+          "value": "relax_card",
+          "rows": [
+            {
+              "name": "id",
+              "value": "@item.id",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "items_4.card_@item.id.id",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "_nested_name": [
+                  {
+                    "fullExpression": "items_4.card_@item.id.id",
+                    "matchedExpression": "@item.id.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.id": [
+                  "value"
+                ],
+                "@item.id.id": [
+                  "_nested_name"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "items_4.card_@item.id",
+          "_dynamicFields": {
+            "name": [
+              {
+                "fullExpression": "card_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "items_4.card_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "name",
+              "_nested_name"
+            ]
+          }
+        }
+      ],
+      "name": "items_4",
+      "_nested_name": "items_4",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.relax",
+            "matchedExpression": "@data.relax",
+            "type": "data",
+            "fieldName": "relax"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.relax": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/library/relax_activities.xlsx"
+}

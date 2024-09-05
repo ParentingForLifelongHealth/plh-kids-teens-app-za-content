@@ -1,0 +1,307 @@
+{
+  "flow_type": "template",
+  "flow_subtype": "legal_terms",
+  "flow_name": "accept_terms",
+  "status": "released",
+  "rows": [
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "By providing your consent below you acknowledge reading and accepting the @global.terms_and_conditions and @global.privacy_policy. The most important commitments are:\n1. This is, and will always be, a fully free app.\n2. Your data will never be sold. We are not for profit.\n3. By using the app you are helping to make the app better for you and others.\n4. Your anonymised data may be used for research purposes by our @global.app_name team.",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "text_1",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "By providing your consent below you acknowledge reading and accepting the @global.terms_and_conditions and @global.privacy_policy. The most important commitments are:\n1. This is, and will always be, a fully free app.\n2. Your data will never be sold. We are not for profit.\n3. By using the app you are helping to make the app better for you and others.\n4. Your anonymised data may be used for research purposes by our @global.app_name team.",
+            "matchedExpression": "@global.terms_and_conditions",
+            "type": "global",
+            "fieldName": "terms_and_conditions"
+          },
+          {
+            "fullExpression": "By providing your consent below you acknowledge reading and accepting the @global.terms_and_conditions and @global.privacy_policy. The most important commitments are:\n1. This is, and will always be, a fully free app.\n2. Your data will never be sold. We are not for profit.\n3. By using the app you are helping to make the app better for you and others.\n4. Your anonymised data may be used for research purposes by our @global.app_name team.",
+            "matchedExpression": "@global.privacy_policy",
+            "type": "global",
+            "fieldName": "privacy_policy"
+          },
+          {
+            "fullExpression": "By providing your consent below you acknowledge reading and accepting the @global.terms_and_conditions and @global.privacy_policy. The most important commitments are:\n1. This is, and will always be, a fully free app.\n2. Your data will never be sold. We are not for profit.\n3. By using the app you are helping to make the app better for you and others.\n4. Your anonymised data may be used for research purposes by our @global.app_name team.",
+            "matchedExpression": "@global.app_name",
+            "type": "global",
+            "fieldName": "app_name"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.terms_and_conditions": [
+          "value"
+        ],
+        "@global.privacy_policy": [
+          "value"
+        ],
+        "@global.app_name": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button_1",
+      "value": "@global.terms_and_conditions",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "app_menu_terms"
+          ],
+          "_raw": "click | pop_up: app_menu_terms",
+          "_cleaned": "click | pop_up: app_menu_terms"
+        }
+      ],
+      "_nested_name": "button_1",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.terms_and_conditions",
+            "matchedExpression": "@global.terms_and_conditions",
+            "type": "global",
+            "fieldName": "terms_and_conditions"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.terms_and_conditions": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button_2",
+      "value": "@global.privacy_policy",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "app_menu_privacy_policy"
+          ],
+          "_raw": "click | pop_up: app_menu_privacy_policy",
+          "_cleaned": "click | pop_up: app_menu_privacy_policy"
+        }
+      ],
+      "_nested_name": "button_2",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.privacy_policy",
+            "matchedExpression": "@global.privacy_policy",
+            "type": "global",
+            "fieldName": "privacy_policy"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.privacy_policy": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "These policies are still under construction. We value advice and input to improve them.",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "text_2"
+    },
+    {
+      "type": "display_group",
+      "name": "dg_checkbox",
+      "rows": [
+        {
+          "type": "simple_checkbox",
+          "name": "checkbox",
+          "parameter_list": {
+            "align": "left"
+          },
+          "_nested_name": "dg_checkbox.checkbox"
+        },
+        {
+          "type": "text",
+          "name": "text",
+          "value": "I consent to the commitments stated above.",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "style": "emphasised"
+          },
+          "style_list": [
+            "flex:1"
+          ],
+          "_nested_name": "dg_checkbox.text"
+        }
+      ],
+      "_nested_name": "dg_checkbox"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "Continue",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "accept_terms_warning"
+          ],
+          "_raw": "click | pop_up: accept_terms_warning",
+          "_cleaned": "click | pop_up: accept_terms_warning"
+        }
+      ],
+      "parameter_list": {
+        "style": "navigation"
+      },
+      "condition": "!@local.checkbox",
+      "_nested_name": "button_completed",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!@local.checkbox",
+            "matchedExpression": "!@local.checkbox",
+            "type": "local",
+            "fieldName": "checkbox"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.checkbox": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "Continue",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "click | emit: completed",
+          "_cleaned": "click | emit: completed"
+        },
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "@global.deployment_terms_field",
+            true
+          ],
+          "_raw": "click | set_field: @global.deployment_terms_field: true",
+          "_cleaned": "click | set_field: @global.deployment_terms_field: true"
+        }
+      ],
+      "parameter_list": {
+        "style": "navigation"
+      },
+      "condition": "@local.checkbox",
+      "_nested_name": "button_completed",
+      "_dynamicFields": {
+        "action_list": {
+          "1": {
+            "args": {
+              "0": [
+                {
+                  "fullExpression": "@global.deployment_terms_field",
+                  "matchedExpression": "@global.deployment_terms_field",
+                  "type": "global",
+                  "fieldName": "deployment_terms_field"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: @global.deployment_terms_field: true",
+                "matchedExpression": "@global.deployment_terms_field",
+                "type": "global",
+                "fieldName": "deployment_terms_field"
+              }
+            ],
+            "_cleaned": [
+              {
+                "fullExpression": "click | set_field: @global.deployment_terms_field: true",
+                "matchedExpression": "@global.deployment_terms_field",
+                "type": "global",
+                "fieldName": "deployment_terms_field"
+              }
+            ]
+          }
+        },
+        "condition": [
+          {
+            "fullExpression": "@local.checkbox",
+            "matchedExpression": "@local.checkbox",
+            "type": "local",
+            "fieldName": "checkbox"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.deployment_terms_field": [
+          "action_list.1.args.0",
+          "action_list.1._raw",
+          "action_list.1._cleaned"
+        ],
+        "@local.checkbox": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "spacer",
+      "value": "Last updated: @global.deployment_terms_text",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "spacer",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Last updated: @global.deployment_terms_text",
+            "matchedExpression": "@global.deployment_terms_text",
+            "type": "global",
+            "fieldName": "deployment_terms_text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.deployment_terms_text": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/app_legal_terms.xlsx"
+}

@@ -1,0 +1,51 @@
+{
+  "flow_name": "prep_problemsolving_articles",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"relax_3\""
+      ],
+      "input_source": "relax"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: relax"
+      ],
+      "output_target": "problemsolving_relax | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"check_in_9\""
+      ],
+      "input_source": "check_in"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: check_in"
+      ],
+      "output_target": "problemsolving_check_in | local_only;"
+    },
+    {
+      "operation": "concat",
+      "args_list": [
+        "problemsolving_relax",
+        "problemsolving_check_in",
+        "problemsolving_articles"
+      ],
+      "input_source": false
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "completed: FALSE"
+      ],
+      "output_target": "problemsolving_article_tasks"
+    }
+  ]
+}

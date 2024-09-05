@@ -1,0 +1,23 @@
+{
+  "flow_type": "generator",
+  "flow_name": "gen_prep_categories",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "prep_{@gen.id}_categories",
+    "output_flow_type": "data_pipe",
+    "output_flow_subtype": "generated"
+  },
+  "rows": [
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "completed: FALSE",
+        "task_child: {@gen.id}_{@row.id}_article_tasks"
+      ],
+      "input_source": "common_categories",
+      "output_target": "{@gen.id}_category_tasks"
+    }
+  ],
+  "_xlsxPath": "KW modules_data_pipes.xlsx"
+}

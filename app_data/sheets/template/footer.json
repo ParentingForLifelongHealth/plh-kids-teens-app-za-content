@@ -1,0 +1,52 @@
+{
+  "flow_type": "template",
+  "flow_name": "footer",
+  "status": "released",
+  "rows": [
+    {
+      "name": "button_list",
+      "value": [
+        {
+          "image": "images/logos/plh_white.png",
+          "target_template": "home_screen"
+        },
+        {
+          "image": "images/icons/book_outline_white.svg",
+          "target_template": "picture_books"
+        },
+        {
+          "image": "images/icons/star_outline_white.svg",
+          "target_template": "relax_activities"
+        }
+      ],
+      "type": "set_variable",
+      "_nested_name": "button_list"
+    },
+    {
+      "type": "navigation_bar",
+      "parameter_list": {
+        "button_list": "@local.button_list"
+      },
+      "name": "navigation_bar_3",
+      "_nested_name": "navigation_bar_3",
+      "_dynamicFields": {
+        "parameter_list": {
+          "button_list": [
+            {
+              "fullExpression": "@local.button_list",
+              "matchedExpression": "@local.button_list",
+              "type": "local",
+              "fieldName": "button_list"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.button_list": [
+          "parameter_list.button_list"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/app_navigation.xlsx"
+}

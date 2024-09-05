@@ -1,0 +1,53 @@
+{
+  "flow_type": "generator",
+  "flow_name": "instructions_category_gen",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "instructions_articles",
+    "output_flow_name": "category_instructions_@gen.id",
+    "output_flow_type": "template",
+    "output_flow_subtype": "generated"
+  },
+  "module_id": "instructions",
+  "__EMPTY": "input_data_list: _categories;\noutput_flow_name: category__@gen.id;\noutput_flow_type: template;",
+  "rows": [
+    {
+      "type": "template",
+      "name": "category",
+      "value": "category",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "category_id",
+          "value": "@gen.id",
+          "exclude_from_translation": true
+        },
+        {
+          "name": "module_id",
+          "value": "instructions",
+          "exclude_from_translation": true
+        }
+      ]
+    }
+  ],
+  "_xlsxPath": "KW categories.xlsx"
+}

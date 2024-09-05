@@ -1,0 +1,51 @@
+{
+  "flow_type": "generator",
+  "flow_name": "consequences_article_gen",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "consequences_articles",
+    "output_flow_name": "article_consequences_@gen.id",
+    "output_flow_type": "template",
+    "output_flow_subtype": "generated"
+  },
+  "module_id": "consequences",
+  "rows": [
+    {
+      "type": "template",
+      "name": "article",
+      "value": "article",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "article_id",
+          "value": "@gen.id"
+        },
+        {
+          "name": "module_id",
+          "value": "consequences",
+          "exclude_from_translation": true
+        }
+      ]
+    }
+  ],
+  "_xlsxPath": "KW article_generators.xlsx"
+}

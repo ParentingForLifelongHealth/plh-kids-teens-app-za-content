@@ -1,0 +1,33 @@
+{
+  "flow_type": "template",
+  "flow_name": "pop_up_text",
+  "status": "released",
+  "rows": [
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@fields.pop_up_text",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.pop_up_text",
+            "matchedExpression": "@fields.pop_up_text",
+            "type": "fields",
+            "fieldName": "pop_up_text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.pop_up_text": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/modules/articles.xlsx"
+}

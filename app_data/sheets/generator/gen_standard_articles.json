@@ -1,0 +1,30 @@
+{
+  "flow_type": "generator",
+  "flow_name": "gen_standard_articles",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "prep_split_{@gen.id}_articles",
+    "output_flow_type": "data_pipe",
+    "output_flow_subtype": "generated"
+  },
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"@gen.relax_id\""
+      ],
+      "input_source": "relax",
+      "output_target": "{@gen.id}_relax_article_tasks"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"@gen.check_in_id\""
+      ],
+      "input_source": "check_in",
+      "output_target": "{@gen.id}_check_in_article_tasks"
+    }
+  ],
+  "_xlsxPath": "KW modules_data_pipes.xlsx"
+}

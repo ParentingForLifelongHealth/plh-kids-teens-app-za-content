@@ -1,0 +1,12 @@
+##################################################################################
+#         Calls workflow from code repo
+##################################################################################
+name: Android - Release to Google Play
+
+on:
+  workflow_dispatch:
+
+jobs:
+  android_release:
+    uses: IDEMSInternational/parenting-app-ui/.github/workflows/reusable-android-release.yml@master
+    secrets: inherit

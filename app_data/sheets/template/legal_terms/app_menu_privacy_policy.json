@@ -1,0 +1,167 @@
+{
+  "flow_type": "template",
+  "flow_subtype": "legal_terms",
+  "flow_name": "app_menu_privacy_policy",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.privacy_policy",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.privacy_policy",
+            "matchedExpression": "@global.privacy_policy",
+            "type": "global",
+            "fieldName": "privacy_policy"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.privacy_policy": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "items",
+      "name": "items",
+      "value": "@data.privacy_policy",
+      "rows": [
+        {
+          "type": "text",
+          "name": "title_@item.id",
+          "value": "@item.title",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "@item.title",
+          "parameter_list": {
+            "style": "emphasised"
+          },
+          "_nested_name": "items.title_@item.id",
+          "_dynamicFields": {
+            "name": [
+              {
+                "fullExpression": "title_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "value": [
+              {
+                "fullExpression": "@item.title",
+                "matchedExpression": "@item.title",
+                "type": "item",
+                "fieldName": "title"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@item.title",
+                "matchedExpression": "@item.title",
+                "type": "item",
+                "fieldName": "title"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "items.title_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "name",
+              "_nested_name"
+            ],
+            "@item.title": [
+              "value",
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "name": "text_@item.id",
+          "value": "@item.text",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "@item.text",
+          "_nested_name": "items.text_@item.id",
+          "_dynamicFields": {
+            "name": [
+              {
+                "fullExpression": "text_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "value": [
+              {
+                "fullExpression": "@item.text",
+                "matchedExpression": "@item.text",
+                "type": "item",
+                "fieldName": "text"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@item.text",
+                "matchedExpression": "@item.text",
+                "type": "item",
+                "fieldName": "text"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "items.text_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "name",
+              "_nested_name"
+            ],
+            "@item.text": [
+              "value",
+              "condition"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "items",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.privacy_policy",
+            "matchedExpression": "@data.privacy_policy",
+            "type": "data",
+            "fieldName": "privacy_policy"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.privacy_policy": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/app_legal_terms.xlsx"
+}

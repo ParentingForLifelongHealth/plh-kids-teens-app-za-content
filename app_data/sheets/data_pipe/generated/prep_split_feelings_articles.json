@@ -1,0 +1,23 @@
+{
+  "flow_name": "prep_split_feelings_articles",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"relax_2\""
+      ],
+      "input_source": "relax",
+      "output_target": "feelings_relax_article_tasks"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"check_in_5\""
+      ],
+      "input_source": "check_in",
+      "output_target": "feelings_check_in_article_tasks"
+    }
+  ]
+}

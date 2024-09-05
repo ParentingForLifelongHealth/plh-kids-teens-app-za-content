@@ -1,0 +1,74 @@
+{
+  "flow_type": "generator",
+  "flow_name": "check_in_article_generator",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "check_in",
+    "output_flow_name": "article_@gen.id",
+    "output_flow_type": "template",
+    "output_flow_subtype": "generated"
+  },
+  "rows": [
+    {
+      "type": "template",
+      "name": "article",
+      "value": "article",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "data",
+          "value": "check_in",
+          "exclude_from_translation": true
+        },
+        {
+          "name": "article_id",
+          "value": "@gen.id"
+        },
+        {
+          "type": "nested_properties",
+          "name": "header",
+          "rows": [
+            {
+              "name": "title",
+              "value": "Check-in"
+            },
+            {
+              "name": "icon_asset",
+              "value": "images/icons/smile_eyes_up.svg"
+            }
+          ]
+        },
+        {
+          "type": "nested_properties",
+          "name": "question_1",
+          "rows": [
+            {
+              "name": "radio_button_grid_width",
+              "value": "100%"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_xlsxPath": "templates/modules/check_in article_generator.xlsx"
+}

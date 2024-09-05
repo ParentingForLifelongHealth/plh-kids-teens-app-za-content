@@ -1,0 +1,16 @@
+{
+  "flow_name": "prep_childdevelopment_categories",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "completed: FALSE",
+        "task_child: childdevelopment_{@row.id}_article_tasks"
+      ],
+      "input_source": "common_categories",
+      "output_target": "childdevelopment_category_tasks"
+    }
+  ]
+}

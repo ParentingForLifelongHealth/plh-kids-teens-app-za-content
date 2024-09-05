@@ -1,0 +1,137 @@
+{
+  "flow_type": "template",
+  "flow_name": "relax_text",
+  "status": "released",
+  "rows": [
+    {
+      "name": "data_list_name",
+      "value": "relax",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "data_list_name"
+    },
+    {
+      "name": "id",
+      "value": "relax_1",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "id"
+    },
+    {
+      "name": "data_list_name_id",
+      "value": "@local.data_list_name.@local.id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "data_list_name_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.data_list_name.@local.id",
+            "matchedExpression": "@local.data_list_name",
+            "type": "local",
+            "fieldName": "data_list_name"
+          },
+          {
+            "fullExpression": "@local.data_list_name.@local.id",
+            "matchedExpression": "@local.id",
+            "type": "local",
+            "fieldName": "id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.data_list_name": [
+          "value"
+        ],
+        "@local.id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_name_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "row_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.data_list_name_id",
+            "matchedExpression": "@local.data_list_name_id",
+            "type": "local",
+            "fieldName": "data_list_name_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.data_list_name_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "transcript",
+      "value": "@local.row_data.transcript",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "transcript",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.row_data.transcript",
+            "matchedExpression": "@local.row_data.transcript",
+            "type": "local",
+            "fieldName": "row_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.row_data.transcript": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@local.transcript",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.transcript",
+            "matchedExpression": "@local.transcript",
+            "type": "local",
+            "fieldName": "transcript"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.transcript": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/library/relax_activities.xlsx"
+}

@@ -1,0 +1,166 @@
+{
+  "flow_type": "template",
+  "flow_name": "media_transcript",
+  "status": "released",
+  "rows": [
+    {
+      "name": "article_id",
+      "value": "intro_connect",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "article_id"
+    },
+    {
+      "name": "module_id",
+      "value": "connect",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "module_id"
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "articles"
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.module_id",
+            "type": "local",
+            "fieldName": "module_id"
+          },
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.articles",
+            "type": "local",
+            "fieldName": "articles"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.module_id": [
+          "value"
+        ],
+        "@local.articles": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "concat_article_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.data.@local.article_id",
+            "matchedExpression": "@local.data",
+            "type": "local",
+            "fieldName": "data"
+          },
+          {
+            "fullExpression": "@local.data.@local.article_id",
+            "matchedExpression": "@local.article_id",
+            "type": "local",
+            "fieldName": "article_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.data": [
+          "value"
+        ],
+        "@local.article_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "article_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.concat_article_id",
+            "matchedExpression": "@local.concat_article_id",
+            "type": "local",
+            "fieldName": "concat_article_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.concat_article_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "join"
+    },
+    {
+      "type": "text",
+      "name": "media_transcript",
+      "value": "@local.article_data.media_transcript",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "media_transcript",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.article_data.media_transcript",
+            "matchedExpression": "@local.article_data.media_transcript",
+            "type": "local",
+            "fieldName": "article_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.article_data.media_transcript": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/modules/articles.xlsx"
+}

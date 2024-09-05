@@ -1,0 +1,31 @@
+{
+  "flow_type": "template",
+  "flow_name": "header",
+  "status": "released",
+  "rows": [
+    {
+      "type": "display_group",
+      "name": "dg_header",
+      "style_list": [
+        "align-items: center"
+      ],
+      "rows": [
+        {
+          "type": "image",
+          "name": "icon_asset",
+          "style_list": [
+            "width: 46px"
+          ],
+          "_nested_name": "dg_header.icon_asset"
+        },
+        {
+          "type": "title",
+          "name": "title",
+          "_nested_name": "dg_header.title"
+        }
+      ],
+      "_nested_name": "dg_header"
+    }
+  ],
+  "_xlsxPath": "templates/app_navigation.xlsx"
+}

@@ -1,0 +1,23 @@
+{
+  "flow_name": "prep_split_instructions_articles",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"relax_3\""
+      ],
+      "input_source": "relax",
+      "output_target": "instructions_relax_article_tasks"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"check_in_6\""
+      ],
+      "input_source": "check_in",
+      "output_target": "instructions_check_in_article_tasks"
+    }
+  ]
+}

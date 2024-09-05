@@ -1,0 +1,88 @@
+{
+  "flow_name": "prep_split_home_activity_articles",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"home_activity\""
+      ],
+      "input_source": "selfcare_articles",
+      "output_target": "selfcare_home_activity_article_tasks",
+      "module_id": "selfcare"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"home_activity\""
+      ],
+      "input_source": "childdevelopment_articles",
+      "output_target": "childdevelopment_home_activity_article_tasks",
+      "module_id": "childdevelopment"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"home_activity\""
+      ],
+      "input_source": "oneononetime_articles",
+      "output_target": "oneononetime_home_activity_article_tasks",
+      "module_id": "oneononetime"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"home_activity\""
+      ],
+      "input_source": "praise_articles",
+      "output_target": "praise_home_activity_article_tasks",
+      "module_id": "praise"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"home_activity\""
+      ],
+      "input_source": "feelings_articles",
+      "output_target": "feelings_home_activity_article_tasks",
+      "module_id": "feelings"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"home_activity\""
+      ],
+      "input_source": "instructions_articles",
+      "output_target": "instructions_home_activity_article_tasks",
+      "module_id": "instructions"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"home_activity\""
+      ],
+      "input_source": "rulesroutines_articles",
+      "output_target": "rulesroutines_home_activity_article_tasks",
+      "module_id": "rulesroutines"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"home_activity\""
+      ],
+      "input_source": "consequences_articles",
+      "output_target": "consequences_home_activity_article_tasks",
+      "module_id": "consequences"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"home_activity\""
+      ],
+      "input_source": "problemsolving_articles",
+      "output_target": "problemsolving_home_activity_article_tasks",
+      "module_id": "problemsolving"
+    }
+  ]
+}

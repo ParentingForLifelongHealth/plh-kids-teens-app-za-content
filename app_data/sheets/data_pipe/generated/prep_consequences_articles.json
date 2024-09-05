@@ -1,0 +1,51 @@
+{
+  "flow_name": "prep_consequences_articles",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"relax_2\""
+      ],
+      "input_source": "relax"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: relax"
+      ],
+      "output_target": "consequences_relax | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"check_in_8\""
+      ],
+      "input_source": "check_in"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: check_in"
+      ],
+      "output_target": "consequences_check_in | local_only;"
+    },
+    {
+      "operation": "concat",
+      "args_list": [
+        "consequences_relax",
+        "consequences_check_in",
+        "consequences_articles"
+      ],
+      "input_source": false
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "completed: FALSE"
+      ],
+      "output_target": "consequences_article_tasks"
+    }
+  ]
+}

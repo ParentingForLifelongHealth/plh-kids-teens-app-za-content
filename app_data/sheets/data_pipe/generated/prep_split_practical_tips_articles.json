@@ -1,0 +1,88 @@
+{
+  "flow_name": "prep_split_practical_tips_articles",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"practical_tips\""
+      ],
+      "input_source": "selfcare_articles",
+      "output_target": "selfcare_practical_tips_article_tasks",
+      "module_id": "selfcare"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"practical_tips\""
+      ],
+      "input_source": "childdevelopment_articles",
+      "output_target": "childdevelopment_practical_tips_article_tasks",
+      "module_id": "childdevelopment"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"practical_tips\""
+      ],
+      "input_source": "oneononetime_articles",
+      "output_target": "oneononetime_practical_tips_article_tasks",
+      "module_id": "oneononetime"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"practical_tips\""
+      ],
+      "input_source": "praise_articles",
+      "output_target": "praise_practical_tips_article_tasks",
+      "module_id": "praise"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"practical_tips\""
+      ],
+      "input_source": "feelings_articles",
+      "output_target": "feelings_practical_tips_article_tasks",
+      "module_id": "feelings"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"practical_tips\""
+      ],
+      "input_source": "instructions_articles",
+      "output_target": "instructions_practical_tips_article_tasks",
+      "module_id": "instructions"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"practical_tips\""
+      ],
+      "input_source": "rulesroutines_articles",
+      "output_target": "rulesroutines_practical_tips_article_tasks",
+      "module_id": "rulesroutines"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"practical_tips\""
+      ],
+      "input_source": "consequences_articles",
+      "output_target": "consequences_practical_tips_article_tasks",
+      "module_id": "consequences"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "category_id == \"practical_tips\""
+      ],
+      "input_source": "problemsolving_articles",
+      "output_target": "problemsolving_practical_tips_article_tasks",
+      "module_id": "problemsolving"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "flow_type": "data_list",
+  "flow_subtype": "lifecycle_actions",
+  "flow_name": "launch_actions",
+  "status": "released",
+  "rows": [
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_update_complete",
+      "priority": 1,
+      "condition_list": [
+        "@fields._app_update_downloaded"
+      ],
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "app_update",
+          "args": [
+            "complete"
+          ],
+          "_raw": "app_update: complete",
+          "_cleaned": "click | app_update: complete"
+        }
+      ]
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_language_select",
+      "priority": 2,
+      "condition_list": [
+        "!@fields.language_selected && @global.has_multiple_languages && @fields.user_mode"
+      ],
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "language_select"
+          ],
+          "_raw": "pop_up: language_select | fullscreen: true, showCloseButton: false",
+          "_cleaned": "click | pop_up: language_select | fullscreen: true, showCloseButton: false",
+          "params": {
+            "fullscreen": true,
+            "showCloseButton": false
+          }
+        }
+      ]
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_accept_terms",
+      "priority": 3,
+      "condition_list": [
+        "!@fields.@global.deployment_terms_field && @fields.user_mode"
+      ],
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "accept_terms"
+          ],
+          "_raw": "pop_up: accept_terms | fullscreen: true, showCloseButton: false",
+          "_cleaned": "click | pop_up: accept_terms | fullscreen: true, showCloseButton: false",
+          "params": {
+            "fullscreen": true,
+            "showCloseButton": false
+          }
+        }
+      ]
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_update_prompt",
+      "priority": 4,
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "app_update",
+          "args": [
+            "prompt"
+          ],
+          "_raw": "app_update: prompt",
+          "_cleaned": "click | app_update: prompt"
+        }
+      ]
+    }
+  ],
+  "_xlsxPath": "templates/app_launch.xlsx"
+}
