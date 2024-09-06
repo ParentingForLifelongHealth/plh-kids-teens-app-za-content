@@ -15,5 +15,5 @@ jobs:
     uses: IDEMSInternational/open-app-builder/.github/workflows/reusable-deploy-web-preview.yml@master
     with: 
       firebase-host: ${{vars.FIREBASE_HOSTING_TARGET_RELEASE}} 
-      firebase-service-account: ${{secrets.FIREBASE_SERVICE_ACCOUNT}} 
+      firebase-service-account: ${{env.FIREBASE_SERVICE_ACCOUNT}} 
     secrets: inherit
