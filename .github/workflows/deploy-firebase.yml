@@ -3,6 +3,12 @@
 ##################################################################################
 name: Deploy - Firebase
 
+env:
+  FIREBASE_PROJECT_ID: ${{vars.FIREBASE_PROJECT_ID}} # | ID of firebase project used (in case of multiple deployment targets just specify default)
+  FIREBASE_HOSTING_CHANNEL: ${{vars.FIREBASE_HOSTING_CHANNEL}} # | Name of channel to deploy to (default 'live' is main site, any other word, e.g. 'pr' will create random temp preview site)
+  FIREBASE_HOSTING_TARGET: ${{vars.FIREBASE_HOSTING_TARGET}}  # | Optional override if using multiple hosting target sites (default target project ID)
+  FIREBASE_SERVICE_ACCOUNT: ${{secrets.FIREBASE_SERVICE_ACCOUNT}} # | JSON export of firebase service account (from console)
+
 on:
   push:
     branches:
