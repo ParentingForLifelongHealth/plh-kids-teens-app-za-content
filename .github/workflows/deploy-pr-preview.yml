@@ -10,4 +10,5 @@ on:
 jobs:
   pr_preview:
     uses: IDEMSInternational/open-app-builder/.github/workflows/reusable-deploy-pr-preview.yml@master
-    secrets: inherit
+    secrets:
+      FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
