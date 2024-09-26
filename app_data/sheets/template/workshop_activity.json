@@ -67,15 +67,8 @@
       "_nested_name": "activity_title"
     },
     {
-      "name": "hide_intro",
-      "value": false,
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "hide_intro"
-    },
-    {
       "name": "hide_content",
-      "value": true,
+      "value": false,
       "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "hide_content"
@@ -165,166 +158,6 @@
       "name": "pages_activity",
       "condition": "!@local.use_scroll",
       "rows": [
-        {
-          "type": "animated_section",
-          "name": "intro",
-          "hidden": "@local.hide_intro",
-          "exclude_from_translation": true,
-          "rows": [
-            {
-              "type": "display_group",
-              "parameter_list": {
-                "style": "banner_welcome"
-              },
-              "rows": [
-                {
-                  "type": "image",
-                  "name": "intro_image_src",
-                  "value": "@local.activity_image",
-                  "_translations": {
-                    "value": {}
-                  },
-                  "parameter_list": {
-                    "background_box": "true"
-                  },
-                  "_nested_name": "pages_activity.intro.display_group_1.intro_image_src",
-                  "_dynamicFields": {
-                    "value": [
-                      {
-                        "fullExpression": "@local.activity_image",
-                        "matchedExpression": "@local.activity_image",
-                        "type": "local",
-                        "fieldName": "activity_image"
-                      }
-                    ]
-                  },
-                  "_dynamicDependencies": {
-                    "@local.activity_image": [
-                      "value"
-                    ]
-                  }
-                }
-              ],
-              "name": "display_group_1",
-              "_nested_name": "pages_activity.intro.display_group_1"
-            },
-            {
-              "type": "title",
-              "name": "intro_title",
-              "value": "@local.activity_title",
-              "_translations": {
-                "value": {}
-              },
-              "_nested_name": "pages_activity.intro.intro_title",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.activity_title",
-                    "matchedExpression": "@local.activity_title",
-                    "type": "local",
-                    "fieldName": "activity_title"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.activity_title": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "type": "text",
-              "name": "intro_text",
-              "_nested_name": "pages_activity.intro.intro_text"
-            },
-            {
-              "type": "template",
-              "name": "intro_nav_buttons",
-              "value": "nav_buttons",
-              "action_list": [
-                {
-                  "trigger": "completed",
-                  "action_id": "set_local",
-                  "args": [
-                    "hide_content",
-                    false
-                  ],
-                  "_raw": "completed | set_local:hide_content:false",
-                  "_cleaned": "completed | set_local:hide_content:false"
-                },
-                {
-                  "trigger": "completed",
-                  "action_id": "set_local",
-                  "args": [
-                    "hide_intro",
-                    true
-                  ],
-                  "_raw": "completed | set_local:hide_intro:true",
-                  "_cleaned": "completed | set_local:hide_intro:true"
-                },
-                {
-                  "trigger": "uncompleted",
-                  "action_id": "emit",
-                  "args": [
-                    "uncompleted"
-                  ],
-                  "_raw": "uncompleted | emit:uncompleted",
-                  "_cleaned": "uncompleted | emit:uncompleted"
-                }
-              ],
-              "rows": [
-                {
-                  "name": "use_uncompleted_chevron",
-                  "value": false,
-                  "exclude_from_translation": true,
-                  "type": "set_variable",
-                  "_nested_name": "pages_activity.intro.intro_nav_buttons.use_uncompleted_chevron"
-                },
-                {
-                  "name": "button_completed",
-                  "value": "@global.lets_go_button",
-                  "_translations": {
-                    "value": {}
-                  },
-                  "type": "set_variable",
-                  "_nested_name": "pages_activity.intro.intro_nav_buttons.button_completed",
-                  "_dynamicFields": {
-                    "value": [
-                      {
-                        "fullExpression": "@global.lets_go_button",
-                        "matchedExpression": "@global.lets_go_button",
-                        "type": "global",
-                        "fieldName": "lets_go_button"
-                      }
-                    ]
-                  },
-                  "_dynamicDependencies": {
-                    "@global.lets_go_button": [
-                      "value"
-                    ]
-                  }
-                }
-              ],
-              "_nested_name": "pages_activity.intro.intro_nav_buttons"
-            }
-          ],
-          "_nested_name": "pages_activity.intro",
-          "_dynamicFields": {
-            "hidden": [
-              {
-                "fullExpression": "@local.hide_intro",
-                "matchedExpression": "@local.hide_intro",
-                "type": "local",
-                "fieldName": "hide_intro"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.hide_intro": [
-              "hidden"
-            ]
-          }
-        },
         {
           "type": "animated_section",
           "name": "content",
@@ -421,23 +254,12 @@
                 },
                 {
                   "trigger": "uncompleted",
-                  "action_id": "set_local",
+                  "action_id": "emit",
                   "args": [
-                    "hide_intro",
-                    false
+                    "uncompleted"
                   ],
-                  "_raw": "uncompleted | set_local:hide_intro:false",
-                  "_cleaned": "uncompleted | set_local:hide_intro:false"
-                },
-                {
-                  "trigger": "uncompleted",
-                  "action_id": "set_local",
-                  "args": [
-                    "hide_content",
-                    true
-                  ],
-                  "_raw": "uncompleted | set_local:hide_content:true",
-                  "_cleaned": "uncompleted | set_local:hide_content:true"
+                  "_raw": "uncompleted | emit: uncompleted",
+                  "_cleaned": "uncompleted | emit: uncompleted"
                 }
               ],
               "condition": "@local.include_outro",
@@ -474,23 +296,12 @@
                 },
                 {
                   "trigger": "uncompleted",
-                  "action_id": "set_local",
+                  "action_id": "emit",
                   "args": [
-                    "hide_intro",
-                    false
+                    "uncompleted"
                   ],
-                  "_raw": "uncompleted | set_local:hide_intro:false",
-                  "_cleaned": "uncompleted | set_local:hide_intro:false"
-                },
-                {
-                  "trigger": "uncompleted",
-                  "action_id": "set_local",
-                  "args": [
-                    "hide_content",
-                    true
-                  ],
-                  "_raw": "uncompleted | set_local:hide_content:true",
-                  "_cleaned": "uncompleted | set_local:hide_content:true"
+                  "_raw": "uncompleted | emit: uncompleted",
+                  "_cleaned": "uncompleted | emit: uncompleted"
                 }
               ],
               "condition": "!@local.include_outro",
