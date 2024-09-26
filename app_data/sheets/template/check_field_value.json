@@ -1,0 +1,178 @@
+{
+  "flow_type": "template",
+  "flow_name": "check_field_value",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Check the value of a field",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "title"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "Field name",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "text"
+    },
+    {
+      "type": "text_box",
+      "name": "field_name",
+      "exclude_from_translation": true,
+      "_nested_name": "field_name"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "Value of the field @local.field_name: @fields.@local.field_name",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Value of the field @local.field_name: @fields.@local.field_name",
+            "matchedExpression": "@local.field_name",
+            "type": "local",
+            "fieldName": "field_name"
+          },
+          {
+            "fullExpression": "Value of the field @local.field_name: @fields.@local.field_name",
+            "matchedExpression": "@local.field_name",
+            "type": "local",
+            "fieldName": "field_name"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.field_name": [
+          "value",
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Change the value of a field",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "title"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "New field value",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "text"
+    },
+    {
+      "type": "text_box",
+      "name": "field_value",
+      "exclude_from_translation": true,
+      "_nested_name": "field_value"
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Update",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "@local.field_name",
+            "@local.field_value"
+          ],
+          "_raw": "click | set_field: @local.field_name: @local.field_value",
+          "_cleaned": "click | set_field: @local.field_name: @local.field_value"
+        }
+      ],
+      "exclude_from_translation": true,
+      "_nested_name": "button",
+      "_dynamicFields": {
+        "action_list": {
+          "0": {
+            "args": {
+              "0": [
+                {
+                  "fullExpression": "@local.field_name",
+                  "matchedExpression": "@local.field_name",
+                  "type": "local",
+                  "fieldName": "field_name"
+                }
+              ],
+              "1": [
+                {
+                  "fullExpression": "@local.field_value",
+                  "matchedExpression": "@local.field_value",
+                  "type": "local",
+                  "fieldName": "field_value"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: @local.field_name: @local.field_value",
+                "matchedExpression": "@local.field_name",
+                "type": "local",
+                "fieldName": "field_name"
+              },
+              {
+                "fullExpression": "click | set_field: @local.field_name: @local.field_value",
+                "matchedExpression": "@local.field_value",
+                "type": "local",
+                "fieldName": "field_value"
+              }
+            ],
+            "_cleaned": [
+              {
+                "fullExpression": "click | set_field: @local.field_name: @local.field_value",
+                "matchedExpression": "@local.field_name",
+                "type": "local",
+                "fieldName": "field_name"
+              },
+              {
+                "fullExpression": "click | set_field: @local.field_name: @local.field_value",
+                "matchedExpression": "@local.field_value",
+                "type": "local",
+                "fieldName": "field_value"
+              }
+            ]
+          }
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.field_name": [
+          "action_list.0.args.0",
+          "action_list.0._raw",
+          "action_list.0._cleaned"
+        ],
+        "@local.field_value": [
+          "action_list.0.args.1",
+          "action_list.0._raw",
+          "action_list.0._cleaned"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "library_field_values.xlsx"
+}

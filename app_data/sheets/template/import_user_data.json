@@ -1,0 +1,124 @@
+{
+  "flow_type": "template",
+  "flow_name": "import_user_data",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Import user",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "title"
+    },
+    {
+      "name": "user_id_name",
+      "value": "User ID",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "user_id_name"
+    },
+    {
+      "type": "text",
+      "name": "text_instruction",
+      "value": "Paste the @local.user_id_name to import their account data.",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "text_instruction",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Paste the @local.user_id_name to import their account data.",
+            "matchedExpression": "@local.user_id_name",
+            "type": "local",
+            "fieldName": "user_id_name"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.user_id_name": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text_box",
+      "name": "user_id_input",
+      "_nested_name": "user_id_input"
+    },
+    {
+      "type": "button",
+      "name": "button_import",
+      "value": "Import data",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "user",
+          "args": [
+            "import",
+            "@local.user_id_input"
+          ],
+          "_raw": "click | user: import: @local.user_id_input",
+          "_cleaned": "click | user: import: @local.user_id_input"
+        },
+        {
+          "trigger": "click",
+          "action_id": "emit",
+          "args": [
+            "force_reprocess"
+          ],
+          "_raw": "click | emit: force_reprocess",
+          "_cleaned": "click | emit: force_reprocess"
+        }
+      ],
+      "_nested_name": "button_import",
+      "_dynamicFields": {
+        "action_list": {
+          "0": {
+            "args": {
+              "1": [
+                {
+                  "fullExpression": "@local.user_id_input",
+                  "matchedExpression": "@local.user_id_input",
+                  "type": "local",
+                  "fieldName": "user_id_input"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | user: import: @local.user_id_input",
+                "matchedExpression": "@local.user_id_input",
+                "type": "local",
+                "fieldName": "user_id_input"
+              }
+            ],
+            "_cleaned": [
+              {
+                "fullExpression": "click | user: import: @local.user_id_input",
+                "matchedExpression": "@local.user_id_input",
+                "type": "local",
+                "fieldName": "user_id_input"
+              }
+            ]
+          }
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.user_id_input": [
+          "action_list.0.args.1",
+          "action_list.0._raw",
+          "action_list.0._cleaned"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "app_menu.xlsx"
+}
