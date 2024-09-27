@@ -4,9 +4,9 @@
   "status": "released",
   "rows": [
     {
-      "name": "workshop",
+      "name": "row_id",
       "type": "set_variable",
-      "_nested_name": "workshop"
+      "_nested_name": "row_id"
     },
     {
       "name": "hp_challenge",
@@ -30,7 +30,7 @@
     },
     {
       "name": "text_box_tracker",
-      "value": "@local.workshop@local.hp_challenge@local.other",
+      "value": "@local.row_id@local.hp_challenge@local.other",
       "_translations": {
         "value": {}
       },
@@ -39,19 +39,19 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@local.workshop@local.hp_challenge@local.other",
-            "matchedExpression": "@local.workshop",
+            "fullExpression": "@local.row_id@local.hp_challenge@local.other",
+            "matchedExpression": "@local.row_id",
             "type": "local",
-            "fieldName": "workshop"
+            "fieldName": "row_id"
           },
           {
-            "fullExpression": "@local.workshop@local.hp_challenge@local.other",
+            "fullExpression": "@local.row_id@local.hp_challenge@local.other",
             "matchedExpression": "@local.hp_challenge",
             "type": "local",
             "fieldName": "hp_challenge"
           },
           {
-            "fullExpression": "@local.workshop@local.hp_challenge@local.other",
+            "fullExpression": "@local.row_id@local.hp_challenge@local.other",
             "matchedExpression": "@local.other",
             "type": "local",
             "fieldName": "other"
@@ -59,7 +59,7 @@
         ]
       },
       "_dynamicDependencies": {
-        "@local.workshop": [
+        "@local.row_id": [
           "value"
         ],
         "@local.hp_challenge": [
@@ -107,7 +107,7 @@
         }
       ],
       "parameter_list": {
-        "placeholder": "@global.tap_and_type"
+        "placeholder": "@local.placeholder"
       },
       "_nested_name": "text_box",
       "_dynamicFields": {
@@ -156,10 +156,10 @@
         "parameter_list": {
           "placeholder": [
             {
-              "fullExpression": "@global.tap_and_type",
-              "matchedExpression": "@global.tap_and_type",
-              "type": "global",
-              "fieldName": "tap_and_type"
+              "fullExpression": "@local.placeholder",
+              "matchedExpression": "@local.placeholder",
+              "type": "local",
+              "fieldName": "placeholder"
             }
           ]
         }
@@ -174,10 +174,19 @@
           "action_list.0._raw",
           "action_list.0._cleaned"
         ],
-        "@global.tap_and_type": [
+        "@local.placeholder": [
           "parameter_list.placeholder"
         ]
       }
+    },
+    {
+      "name": "placeholder",
+      "value": "Tap and type",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "placeholder"
     },
     {
       "type": "text",

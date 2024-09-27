@@ -1,12 +1,12 @@
 {
-  "flow_name": "instructions_hp_review_challenges",
+  "flow_name": "instruct_hp_review",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
     {
       "type": "template",
-      "name": "hp_review_challenges",
-      "value": "hp_review_challenges",
+      "name": "hp_review",
+      "value": "hp_review",
       "action_list": [
         {
           "trigger": "completed",
@@ -29,17 +29,17 @@
       ],
       "rows": [
         {
-          "name": "workshop",
-          "value": "instructions",
+          "name": "row_id",
+          "value": "instruct",
           "_translations": {
             "value": {}
           },
           "exclude_from_translation": true,
           "type": "set_variable",
-          "_nested_name": "hp_review_challenges.workshop"
+          "_nested_name": "hp_review.row_id"
         }
       ],
-      "_nested_name": "hp_review_challenges"
+      "_nested_name": "hp_review"
     }
   ]
 }

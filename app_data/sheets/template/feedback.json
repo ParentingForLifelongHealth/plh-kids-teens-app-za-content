@@ -252,17 +252,41 @@
       }
     },
     {
+      "name": "speaker_image_asset",
+      "value": "@global.facilitator_face_asset",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "speaker_image_asset",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.facilitator_face_asset",
+            "matchedExpression": "@global.facilitator_face_asset",
+            "type": "global",
+            "fieldName": "facilitator_face_asset"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.facilitator_face_asset": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "text_bubble",
+      "name": "text_bubble",
       "value": "@local.@local.concat_feedback",
       "_translations": {
         "value": {}
       },
       "parameter_list": {
-        "speaker_image_asset": "images/kw_facilitator_rd.png"
+        "speaker_image_asset": "@local.speaker_image_asset"
       },
       "exclude_from_translation": true,
-      "name": "text_bubble_14",
-      "_nested_name": "text_bubble_14",
+      "_nested_name": "text_bubble",
       "_dynamicFields": {
         "value": [
           {
@@ -271,11 +295,24 @@
             "type": "local",
             "fieldName": "concat_feedback"
           }
-        ]
+        ],
+        "parameter_list": {
+          "speaker_image_asset": [
+            {
+              "fullExpression": "@local.speaker_image_asset",
+              "matchedExpression": "@local.speaker_image_asset",
+              "type": "local",
+              "fieldName": "speaker_image_asset"
+            }
+          ]
+        }
       },
       "_dynamicDependencies": {
         "@local.concat_feedback": [
           "value"
+        ],
+        "@local.speaker_image_asset": [
+          "parameter_list.speaker_image_asset"
         ]
       }
     }

@@ -4,18 +4,18 @@
   "status": "released",
   "rows": [
     {
-      "name": "workshop",
+      "name": "row_id",
       "value": "w_rules",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
       "type": "set_variable",
-      "_nested_name": "workshop"
+      "_nested_name": "row_id"
     },
     {
       "name": "data_list_row",
-      "value": "hp_check_in.@local.workshop",
+      "value": "hp_check_in.@local.row_id",
       "_translations": {
         "value": {}
       },
@@ -25,15 +25,15 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "hp_check_in.@local.workshop",
-            "matchedExpression": "@local.workshop",
+            "fullExpression": "hp_check_in.@local.row_id",
+            "matchedExpression": "@local.row_id",
             "type": "local",
-            "fieldName": "workshop"
+            "fieldName": "row_id"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@local.workshop": [
+        "@local.row_id": [
           "value"
         ]
       }
@@ -59,81 +59,6 @@
       },
       "_dynamicDependencies": {
         "@local.data_list_row": [
-          "value"
-        ]
-      }
-    },
-    {
-      "name": "habit_id",
-      "value": "@local.row_data.habit_id",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "habit_id",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@local.row_data.habit_id",
-            "matchedExpression": "@local.row_data.habit_id",
-            "type": "local",
-            "fieldName": "row_data"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.row_data.habit_id": [
-          "value"
-        ]
-      }
-    },
-    {
-      "name": "habit_data_list_row",
-      "value": "habit.@local.habit_id",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "habit_data_list_row",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "habit.@local.habit_id",
-            "matchedExpression": "@local.habit_id",
-            "type": "local",
-            "fieldName": "habit_id"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.habit_id": [
-          "value"
-        ]
-      }
-    },
-    {
-      "name": "habit_row_data",
-      "value": "@data.@local.habit_data_list_row",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "habit_row_data",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@data.@local.habit_data_list_row",
-            "matchedExpression": "@local.habit_data_list_row",
-            "type": "local",
-            "fieldName": "habit_data_list_row"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.habit_data_list_row": [
           "value"
         ]
       }
@@ -199,24 +124,24 @@
       "_nested_name": "hp_review_started"
     },
     {
-      "name": "workshop_hp_review_started",
-      "value": "@local.workshop@local.hp_review_started",
+      "name": "row_id_hp_review_started",
+      "value": "@local.row_id@local.hp_review_started",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
       "type": "set_variable",
-      "_nested_name": "workshop_hp_review_started",
+      "_nested_name": "row_id_hp_review_started",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@local.workshop@local.hp_review_started",
-            "matchedExpression": "@local.workshop",
+            "fullExpression": "@local.row_id@local.hp_review_started",
+            "matchedExpression": "@local.row_id",
             "type": "local",
-            "fieldName": "workshop"
+            "fieldName": "row_id"
           },
           {
-            "fullExpression": "@local.workshop@local.hp_review_started",
+            "fullExpression": "@local.row_id@local.hp_review_started",
             "matchedExpression": "@local.hp_review_started",
             "type": "local",
             "fieldName": "hp_review_started"
@@ -224,7 +149,7 @@
         ]
       },
       "_dynamicDependencies": {
-        "@local.workshop": [
+        "@local.row_id": [
           "value"
         ],
         "@local.hp_review_started": [
@@ -243,24 +168,24 @@
       "_nested_name": "hp_review_completed"
     },
     {
-      "name": "workshop_hp_review_completed",
-      "value": "@local.workshop@local.hp_review_completed",
+      "name": "row_id_hp_review_completed",
+      "value": "@local.row_id@local.hp_review_completed",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
       "type": "set_variable",
-      "_nested_name": "workshop_hp_review_completed",
+      "_nested_name": "row_id_hp_review_completed",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@local.workshop@local.hp_review_completed",
-            "matchedExpression": "@local.workshop",
+            "fullExpression": "@local.row_id@local.hp_review_completed",
+            "matchedExpression": "@local.row_id",
             "type": "local",
-            "fieldName": "workshop"
+            "fieldName": "row_id"
           },
           {
-            "fullExpression": "@local.workshop@local.hp_review_completed",
+            "fullExpression": "@local.row_id@local.hp_review_completed",
             "matchedExpression": "@local.hp_review_completed",
             "type": "local",
             "fieldName": "hp_review_completed"
@@ -268,7 +193,7 @@
         ]
       },
       "_dynamicDependencies": {
-        "@local.workshop": [
+        "@local.row_id": [
           "value"
         ],
         "@local.hp_review_completed": [
@@ -279,7 +204,7 @@
     {
       "type": "display_group",
       "name": "first_access",
-      "condition": "!@fields.@local.workshop_hp_review_started",
+      "condition": "!@fields.@local.row_id_hp_review_started",
       "exclude_from_translation": true,
       "rows": [
         {
@@ -294,30 +219,30 @@
         },
         {
           "type": "set_field",
-          "name": "@local.workshop_hp_review_started",
+          "name": "@local.row_id_hp_review_started",
           "value": true,
           "exclude_from_translation": true,
-          "_nested_name": "first_access.@local.workshop_hp_review_started",
+          "_nested_name": "first_access.@local.row_id_hp_review_started",
           "_dynamicFields": {
             "name": [
               {
-                "fullExpression": "@local.workshop_hp_review_started",
-                "matchedExpression": "@local.workshop_hp_review_started",
+                "fullExpression": "@local.row_id_hp_review_started",
+                "matchedExpression": "@local.row_id_hp_review_started",
                 "type": "local",
-                "fieldName": "workshop_hp_review_started"
+                "fieldName": "row_id_hp_review_started"
               }
             ],
             "_nested_name": [
               {
-                "fullExpression": "first_access.@local.workshop_hp_review_started",
-                "matchedExpression": "@local.workshop_hp_review_started",
+                "fullExpression": "first_access.@local.row_id_hp_review_started",
+                "matchedExpression": "@local.row_id_hp_review_started",
                 "type": "local",
-                "fieldName": "workshop_hp_review_started"
+                "fieldName": "row_id_hp_review_started"
               }
             ]
           },
           "_dynamicDependencies": {
-            "@local.workshop_hp_review_started": [
+            "@local.row_id_hp_review_started": [
               "name",
               "_nested_name"
             ]
@@ -350,23 +275,23 @@
         },
         {
           "type": "set_field",
-          "name": "@local.workshop_hp_review_started@local.timestamp",
+          "name": "@local.row_id_hp_review_started@local.timestamp",
           "value": "@local.now",
           "_translations": {
             "value": {}
           },
           "exclude_from_translation": true,
-          "_nested_name": "first_access.@local.workshop_hp_review_started@local.timestamp",
+          "_nested_name": "first_access.@local.row_id_hp_review_started@local.timestamp",
           "_dynamicFields": {
             "name": [
               {
-                "fullExpression": "@local.workshop_hp_review_started@local.timestamp",
-                "matchedExpression": "@local.workshop_hp_review_started",
+                "fullExpression": "@local.row_id_hp_review_started@local.timestamp",
+                "matchedExpression": "@local.row_id_hp_review_started",
                 "type": "local",
-                "fieldName": "workshop_hp_review_started"
+                "fieldName": "row_id_hp_review_started"
               },
               {
-                "fullExpression": "@local.workshop_hp_review_started@local.timestamp",
+                "fullExpression": "@local.row_id_hp_review_started@local.timestamp",
                 "matchedExpression": "@local.timestamp",
                 "type": "local",
                 "fieldName": "timestamp"
@@ -382,13 +307,13 @@
             ],
             "_nested_name": [
               {
-                "fullExpression": "first_access.@local.workshop_hp_review_started@local.timestamp",
-                "matchedExpression": "@local.workshop_hp_review_started",
+                "fullExpression": "first_access.@local.row_id_hp_review_started@local.timestamp",
+                "matchedExpression": "@local.row_id_hp_review_started",
                 "type": "local",
-                "fieldName": "workshop_hp_review_started"
+                "fieldName": "row_id_hp_review_started"
               },
               {
-                "fullExpression": "first_access.@local.workshop_hp_review_started@local.timestamp",
+                "fullExpression": "first_access.@local.row_id_hp_review_started@local.timestamp",
                 "matchedExpression": "@local.timestamp",
                 "type": "local",
                 "fieldName": "timestamp"
@@ -396,7 +321,7 @@
             ]
           },
           "_dynamicDependencies": {
-            "@local.workshop_hp_review_started": [
+            "@local.row_id_hp_review_started": [
               "name",
               "_nested_name"
             ],
@@ -414,15 +339,15 @@
       "_dynamicFields": {
         "condition": [
           {
-            "fullExpression": "!@fields.@local.workshop_hp_review_started",
-            "matchedExpression": "@local.workshop_hp_review_started",
+            "fullExpression": "!@fields.@local.row_id_hp_review_started",
+            "matchedExpression": "@local.row_id_hp_review_started",
             "type": "local",
-            "fieldName": "workshop_hp_review_started"
+            "fieldName": "row_id_hp_review_started"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@local.workshop_hp_review_started": [
+        "@local.row_id_hp_review_started": [
           "condition"
         ]
       }
@@ -454,11 +379,11 @@
           "trigger": "completed",
           "action_id": "set_field",
           "args": [
-            "@local.workshop_hp_review_completed",
+            "@local.row_id_hp_review_completed",
             true
           ],
-          "_raw": "completed | set_field: @local.workshop_hp_review_completed: true",
-          "_cleaned": "completed | set_field: @local.workshop_hp_review_completed: true"
+          "_raw": "completed | set_field: @local.row_id_hp_review_completed: true",
+          "_cleaned": "completed | set_field: @local.row_id_hp_review_completed: true"
         }
       ],
       "exclude_from_translation": true,
@@ -506,7 +431,7 @@
           "_translations": {
             "value": {}
           },
-          "condition": "!@fields.do_this_workshop_together",
+          "condition": "row_id_hp_review_started",
           "exclude_from_translation": true,
           "type": "set_variable",
           "_nested_name": "workshop_activity.activity_image",
@@ -518,22 +443,11 @@
                 "type": "local",
                 "fieldName": "row_data"
               }
-            ],
-            "condition": [
-              {
-                "fullExpression": "!@fields.do_this_workshop_together",
-                "matchedExpression": "!@fields.do_this_workshop_together",
-                "type": "fields",
-                "fieldName": "do_this_workshop_together"
-              }
             ]
           },
           "_dynamicDependencies": {
             "@local.row_data.activity_image_ind": [
               "value"
-            ],
-            "!@fields.do_this_workshop_together": [
-              "condition"
             ]
           }
         },
@@ -615,7 +529,7 @@
               "rows": [
                 {
                   "name": "radio_group_done_tracker",
-                  "value": "@local.workshop@local.hp_done",
+                  "value": "@local.row_id@local.hp_done",
                   "_translations": {
                     "value": {}
                   },
@@ -625,13 +539,13 @@
                   "_dynamicFields": {
                     "value": [
                       {
-                        "fullExpression": "@local.workshop@local.hp_done",
-                        "matchedExpression": "@local.workshop",
+                        "fullExpression": "@local.row_id@local.hp_done",
+                        "matchedExpression": "@local.row_id",
                         "type": "local",
-                        "fieldName": "workshop"
+                        "fieldName": "row_id"
                       },
                       {
-                        "fullExpression": "@local.workshop@local.hp_done",
+                        "fullExpression": "@local.row_id@local.hp_done",
                         "matchedExpression": "@local.hp_done",
                         "type": "local",
                         "fieldName": "hp_done"
@@ -639,7 +553,7 @@
                     ]
                   },
                   "_dynamicDependencies": {
-                    "@local.workshop": [
+                    "@local.row_id": [
                       "value"
                     ],
                     "@local.hp_done": [
@@ -649,7 +563,7 @@
                 },
                 {
                   "name": "radio_group_mood_tracker",
-                  "value": "@local.workshop@local.hp_mood",
+                  "value": "@local.row_id@local.hp_mood",
                   "_translations": {
                     "value": {}
                   },
@@ -659,13 +573,13 @@
                   "_dynamicFields": {
                     "value": [
                       {
-                        "fullExpression": "@local.workshop@local.hp_mood",
-                        "matchedExpression": "@local.workshop",
+                        "fullExpression": "@local.row_id@local.hp_mood",
+                        "matchedExpression": "@local.row_id",
                         "type": "local",
-                        "fieldName": "workshop"
+                        "fieldName": "row_id"
                       },
                       {
-                        "fullExpression": "@local.workshop@local.hp_mood",
+                        "fullExpression": "@local.row_id@local.hp_mood",
                         "matchedExpression": "@local.hp_mood",
                         "type": "local",
                         "fieldName": "hp_mood"
@@ -673,7 +587,7 @@
                     ]
                   },
                   "_dynamicDependencies": {
-                    "@local.workshop": [
+                    "@local.row_id": [
                       "value"
                     ],
                     "@local.hp_mood": [
@@ -752,56 +666,6 @@
                   },
                   "_dynamicDependencies": {
                     "@local.row_data.reply_no": [
-                      "value"
-                    ]
-                  }
-                },
-                {
-                  "name": "button_no_text",
-                  "value": "@local.row_data.button_no_text",
-                  "_translations": {
-                    "value": {}
-                  },
-                  "exclude_from_translation": true,
-                  "type": "set_variable",
-                  "_nested_name": "workshop_activity.content_box.box_1.button_no_text",
-                  "_dynamicFields": {
-                    "value": [
-                      {
-                        "fullExpression": "@local.row_data.button_no_text",
-                        "matchedExpression": "@local.row_data.button_no_text",
-                        "type": "local",
-                        "fieldName": "row_data"
-                      }
-                    ]
-                  },
-                  "_dynamicDependencies": {
-                    "@local.row_data.button_no_text": [
-                      "value"
-                    ]
-                  }
-                },
-                {
-                  "name": "button_no_go_to_template",
-                  "value": "@local.row_data.button_no_go_to_template",
-                  "_translations": {
-                    "value": {}
-                  },
-                  "exclude_from_translation": true,
-                  "type": "set_variable",
-                  "_nested_name": "workshop_activity.content_box.box_1.button_no_go_to_template",
-                  "_dynamicFields": {
-                    "value": [
-                      {
-                        "fullExpression": "@local.row_data.button_no_go_to_template",
-                        "matchedExpression": "@local.row_data.button_no_go_to_template",
-                        "type": "local",
-                        "fieldName": "row_data"
-                      }
-                    ]
-                  },
-                  "_dynamicDependencies": {
-                    "@local.row_data.button_no_go_to_template": [
                       "value"
                     ]
                   }
@@ -912,20 +776,20 @@
             {
               "type": "nested_properties",
               "name": "box_2",
-              "value": "@local.workshop@local.hp_challenges",
+              "value": "@local.row_id@local.hp_challenges",
               "exclude_from_translation": true,
               "rows": [],
               "_nested_name": "workshop_activity.content_box.box_2",
               "_dynamicFields": {
                 "value": [
                   {
-                    "fullExpression": "@local.workshop@local.hp_challenges",
-                    "matchedExpression": "@local.workshop",
+                    "fullExpression": "@local.row_id@local.hp_challenges",
+                    "matchedExpression": "@local.row_id",
                     "type": "local",
-                    "fieldName": "workshop"
+                    "fieldName": "row_id"
                   },
                   {
-                    "fullExpression": "@local.workshop@local.hp_challenges",
+                    "fullExpression": "@local.row_id@local.hp_challenges",
                     "matchedExpression": "@local.hp_challenges",
                     "type": "local",
                     "fieldName": "hp_challenges"
@@ -933,7 +797,7 @@
                 ]
               },
               "_dynamicDependencies": {
-                "@local.workshop": [
+                "@local.row_id": [
                   "value"
                 ],
                 "@local.hp_challenges": [
@@ -968,31 +832,6 @@
               "value"
             ]
           }
-        },
-        {
-          "name": "outro_habit_data",
-          "value": "@local.habit_row_data",
-          "_translations": {
-            "value": {}
-          },
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "workshop_activity.outro_habit_data",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@local.habit_row_data",
-                "matchedExpression": "@local.habit_row_data",
-                "type": "local",
-                "fieldName": "habit_row_data"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.habit_row_data": [
-              "value"
-            ]
-          }
         }
       ],
       "_nested_name": "workshop_activity",
@@ -1002,34 +841,34 @@
             "args": {
               "0": [
                 {
-                  "fullExpression": "@local.workshop_hp_review_completed",
-                  "matchedExpression": "@local.workshop_hp_review_completed",
+                  "fullExpression": "@local.row_id_hp_review_completed",
+                  "matchedExpression": "@local.row_id_hp_review_completed",
                   "type": "local",
-                  "fieldName": "workshop_hp_review_completed"
+                  "fieldName": "row_id_hp_review_completed"
                 }
               ]
             },
             "_raw": [
               {
-                "fullExpression": "completed | set_field: @local.workshop_hp_review_completed: true",
-                "matchedExpression": "@local.workshop_hp_review_completed",
+                "fullExpression": "completed | set_field: @local.row_id_hp_review_completed: true",
+                "matchedExpression": "@local.row_id_hp_review_completed",
                 "type": "local",
-                "fieldName": "workshop_hp_review_completed"
+                "fieldName": "row_id_hp_review_completed"
               }
             ],
             "_cleaned": [
               {
-                "fullExpression": "completed | set_field: @local.workshop_hp_review_completed: true",
-                "matchedExpression": "@local.workshop_hp_review_completed",
+                "fullExpression": "completed | set_field: @local.row_id_hp_review_completed: true",
+                "matchedExpression": "@local.row_id_hp_review_completed",
                 "type": "local",
-                "fieldName": "workshop_hp_review_completed"
+                "fieldName": "row_id_hp_review_completed"
               }
             ]
           }
         }
       },
       "_dynamicDependencies": {
-        "@local.workshop_hp_review_completed": [
+        "@local.row_id_hp_review_completed": [
           "action_list.2.args.0",
           "action_list.2._raw",
           "action_list.2._cleaned"

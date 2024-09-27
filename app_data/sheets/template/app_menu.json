@@ -4,6 +4,189 @@
   "status": "released",
   "rows": [
     {
+      "type": "display_group",
+      "name": "dg_dev",
+      "parameter_list": {
+        "style": "column"
+      },
+      "condition": "!@fields.user_mode",
+      "rows": [
+        {
+          "type": "debug_toggle",
+          "name": "debug_toggle",
+          "_nested_name": "dg_dev.debug_toggle"
+        },
+        {
+          "type": "button",
+          "name": "button_templates",
+          "value": "Templates",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "go_to",
+              "args": [
+                "/template"
+              ],
+              "_raw": "click | go_to:/template",
+              "_cleaned": "click | go_to:/template"
+            }
+          ],
+          "exclude_from_translation": true,
+          "_nested_name": "dg_dev.button_templates"
+        },
+        {
+          "type": "button",
+          "name": "button_reset",
+          "value": "Reset app",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "reset_app",
+              "args": [],
+              "_raw": "click | reset_app",
+              "_cleaned": "click | reset_app"
+            }
+          ],
+          "exclude_from_translation": true,
+          "_nested_name": "dg_dev.button_reset"
+        },
+        {
+          "type": "button",
+          "name": "button_open_feedback",
+          "value": "Open feedback",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "feedback",
+              "args": [
+                "open"
+              ],
+              "_raw": "click | feedback:open",
+              "_cleaned": "click | feedback:open"
+            },
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "force_reprocess"
+              ],
+              "_raw": "click | emit: force_reprocess",
+              "_cleaned": "click | emit: force_reprocess"
+            }
+          ],
+          "condition": "!@fields._feedback_sidebar_open",
+          "exclude_from_translation": true,
+          "_nested_name": "dg_dev.button_open_feedback",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "!@fields._feedback_sidebar_open",
+                "matchedExpression": "!@fields._feedback_sidebar_open",
+                "type": "fields",
+                "fieldName": "_feedback_sidebar_open"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "!@fields._feedback_sidebar_open": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_close_feedback",
+          "value": "Close feedback",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "feedback",
+              "args": [
+                "close"
+              ],
+              "_raw": "click | feedback:close",
+              "_cleaned": "click | feedback:close"
+            },
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "force_reprocess"
+              ],
+              "_raw": "click | emit: force_reprocess",
+              "_cleaned": "click | emit: force_reprocess"
+            }
+          ],
+          "condition": "@fields._feedback_sidebar_open",
+          "exclude_from_translation": true,
+          "_nested_name": "dg_dev.button_close_feedback",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "@fields._feedback_sidebar_open",
+                "matchedExpression": "@fields._feedback_sidebar_open",
+                "type": "fields",
+                "fieldName": "_feedback_sidebar_open"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@fields._feedback_sidebar_open": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_import_user",
+          "value": "Import user",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "go_to",
+              "args": [
+                "import_user_data"
+              ],
+              "_raw": "click | go_to: import_user_data",
+              "_cleaned": "click | go_to: import_user_data"
+            }
+          ],
+          "_nested_name": "dg_dev.button_import_user"
+        }
+      ],
+      "_nested_name": "dg_dev",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!@fields.user_mode",
+            "matchedExpression": "!@fields.user_mode",
+            "type": "fields",
+            "fieldName": "user_mode"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@fields.user_mode": [
+          "condition"
+        ]
+      }
+    },
+    {
       "type": "button",
       "name": "button_about",
       "value": "@global.about_this_app",
@@ -214,166 +397,7 @@
           "condition"
         ]
       }
-    },
-    {
-      "type": "display_group",
-      "name": "dg_dev",
-      "parameter_list": {
-        "style": "column"
-      },
-      "condition": "!@fields.user_mode",
-      "rows": [
-        {
-          "type": "button",
-          "name": "button_open_feedback",
-          "value": "Open feedback",
-          "_translations": {
-            "value": {}
-          },
-          "action_list": [
-            {
-              "trigger": "click",
-              "action_id": "feedback",
-              "args": [
-                "open"
-              ],
-              "_raw": "click | feedback:open",
-              "_cleaned": "click | feedback:open"
-            },
-            {
-              "trigger": "click",
-              "action_id": "emit",
-              "args": [
-                "force_reprocess"
-              ],
-              "_raw": "click | emit: force_reprocess",
-              "_cleaned": "click | emit: force_reprocess"
-            }
-          ],
-          "condition": "!@fields._feedback_sidebar_open",
-          "_nested_name": "dg_dev.button_open_feedback",
-          "_dynamicFields": {
-            "condition": [
-              {
-                "fullExpression": "!@fields._feedback_sidebar_open",
-                "matchedExpression": "!@fields._feedback_sidebar_open",
-                "type": "fields",
-                "fieldName": "_feedback_sidebar_open"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "!@fields._feedback_sidebar_open": [
-              "condition"
-            ]
-          }
-        },
-        {
-          "type": "button",
-          "name": "button_close_feedback",
-          "value": "Close feedback",
-          "_translations": {
-            "value": {}
-          },
-          "action_list": [
-            {
-              "trigger": "click",
-              "action_id": "feedback",
-              "args": [
-                "close"
-              ],
-              "_raw": "click | feedback:close",
-              "_cleaned": "click | feedback:close"
-            },
-            {
-              "trigger": "click",
-              "action_id": "emit",
-              "args": [
-                "force_reprocess"
-              ],
-              "_raw": "click | emit: force_reprocess",
-              "_cleaned": "click | emit: force_reprocess"
-            }
-          ],
-          "condition": "@fields._feedback_sidebar_open",
-          "_nested_name": "dg_dev.button_close_feedback",
-          "_dynamicFields": {
-            "condition": [
-              {
-                "fullExpression": "@fields._feedback_sidebar_open",
-                "matchedExpression": "@fields._feedback_sidebar_open",
-                "type": "fields",
-                "fieldName": "_feedback_sidebar_open"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@fields._feedback_sidebar_open": [
-              "condition"
-            ]
-          }
-        },
-        {
-          "type": "button",
-          "name": "button_templates",
-          "value": "Templates",
-          "_translations": {
-            "value": {}
-          },
-          "action_list": [
-            {
-              "trigger": "click",
-              "action_id": "go_to",
-              "args": [
-                "/template"
-              ],
-              "_raw": "click | go_to:/template",
-              "_cleaned": "click | go_to:/template"
-            }
-          ],
-          "_nested_name": "dg_dev.button_templates"
-        },
-        {
-          "type": "button",
-          "name": "button_reset",
-          "value": "Reset app",
-          "_translations": {
-            "value": {}
-          },
-          "action_list": [
-            {
-              "trigger": "click",
-              "action_id": "reset_app",
-              "args": [],
-              "_raw": "click | reset_app",
-              "_cleaned": "click | reset_app"
-            }
-          ],
-          "_nested_name": "dg_dev.button_reset"
-        },
-        {
-          "type": "debug_toggle",
-          "name": "debug_toggle",
-          "_nested_name": "dg_dev.debug_toggle"
-        }
-      ],
-      "_nested_name": "dg_dev",
-      "_dynamicFields": {
-        "condition": [
-          {
-            "fullExpression": "!@fields.user_mode",
-            "matchedExpression": "!@fields.user_mode",
-            "type": "fields",
-            "fieldName": "user_mode"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "!@fields.user_mode": [
-          "condition"
-        ]
-      }
     }
   ],
-  "_xlsxPath": "templates/app_menu.xlsx"
+  "_xlsxPath": "app_menu.xlsx"
 }
