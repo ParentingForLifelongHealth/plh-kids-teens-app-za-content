@@ -386,6 +386,31 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
+    "rulesroutines_explore_article_tasks": {
+      "flow_name": "rulesroutines_explore_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "rulesroutines_home_activity_article_tasks": {
+      "flow_name": "rulesroutines_home_activity_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "rulesroutines_intro_article_tasks": {
+      "flow_name": "rulesroutines_intro_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "rulesroutines_practical_tips_article_tasks": {
+      "flow_name": "rulesroutines_practical_tips_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "rulesroutines_practise_article_tasks": {
+      "flow_name": "rulesroutines_practise_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
     "rulesroutines_relax_article_tasks": {
       "flow_name": "rulesroutines_relax_article_tasks",
       "flow_subtype": "generated",
@@ -441,15 +466,15 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
-    "hp_challenges_data": {
+    "hp_challenges": {
       "flow_type": "data_list",
-      "flow_name": "hp_challenges_data",
+      "flow_name": "hp_challenges",
       "data_list_name": "hp_challenges",
       "_xlsxPath": "ZA hp_review.xlsx"
     },
-    "hp_check_in_data": {
+    "hp_check_in": {
       "flow_type": "data_list",
-      "flow_name": "hp_check_in_data",
+      "flow_name": "hp_check_in",
       "data_list_name": "hp_check_in",
       "_xlsxPath": "ZA hp_review.xlsx"
     },
@@ -472,6 +497,12 @@
       "data_list_name": "terms_and_conditions",
       "flow_subtype": "legal_terms",
       "_xlsxPath": "deployment_data_za.xlsx"
+    },
+    "launch_actions": {
+      "flow_type": "data_list",
+      "flow_subtype": "lifecycle_actions",
+      "flow_name": "launch_actions",
+      "_xlsxPath": "app_launch.xlsx"
     },
     "modules": {
       "flow_type": "data_list",
@@ -857,6 +888,28 @@
       },
       "_xlsxPath": "ZA modules_data_pipes.xlsx"
     },
+    "hp_review_challenges_gen": {
+      "flow_type": "generator",
+      "flow_name": "hp_review_challenges_gen",
+      "parameter_list": {
+        "input_data_list": "hp_challenges",
+        "output_flow_name": "{@gen.id}_hp_review_challenges",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "_xlsxPath": "templates/home_practice_review/hp_review.xlsx"
+    },
+    "hp_review_gen": {
+      "flow_type": "generator",
+      "flow_name": "hp_review_gen",
+      "parameter_list": {
+        "input_data_list": "hp_check_in",
+        "output_flow_name": "{@gen.id}_hp_review",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "_xlsxPath": "templates/home_practice_review/hp_review.xlsx"
+    },
     "instructions_article_gen": {
       "flow_type": "generator",
       "flow_name": "instructions_article_gen",
@@ -944,6 +997,18 @@
       "module_id": "problemsolving",
       "_xlsxPath": "ZA article_generators.xlsx"
     },
+    "rulesroutines_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "rulesroutines_article_gen",
+      "parameter_list": {
+        "input_data_list": "rulesroutines_articles",
+        "output_flow_name": "article_rulesroutines_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "rulesroutines",
+      "_xlsxPath": "ZA article_generators.xlsx"
+    },
     "selfcare_article_gen": {
       "flow_type": "generator",
       "flow_name": "selfcare_article_gen",
@@ -971,6 +1036,11 @@
     }
   },
   "global": {
+    "app_menu_globals": {
+      "flow_type": "global",
+      "flow_name": "app_menu_globals",
+      "_xlsxPath": "app_menu.xlsx"
+    },
     "deployment_global_za": {
       "flow_type": "global",
       "flow_name": "deployment_global_za",
@@ -980,6 +1050,21 @@
     }
   },
   "template": {
+    "app_about": {
+      "flow_type": "template",
+      "flow_name": "app_about",
+      "_xlsxPath": "app_menu.xlsx"
+    },
+    "app_menu": {
+      "flow_type": "template",
+      "flow_name": "app_menu",
+      "_xlsxPath": "app_menu.xlsx"
+    },
+    "app_update_complete": {
+      "flow_type": "template",
+      "flow_name": "app_update_complete",
+      "_xlsxPath": "app_launch.xlsx"
+    },
     "article": {
       "flow_type": "template",
       "flow_name": "article",
@@ -1020,6 +1105,21 @@
       "flow_name": "category_card",
       "_xlsxPath": "templates/modules/module_navigation.xlsx"
     },
+    "check_field_value": {
+      "flow_type": "template",
+      "flow_name": "check_field_value",
+      "_xlsxPath": "library_field_values.xlsx"
+    },
+    "enter_dev_mode": {
+      "flow_type": "template",
+      "flow_name": "enter_dev_mode",
+      "_xlsxPath": "app_menu.xlsx"
+    },
+    "exit_dev_mode": {
+      "flow_type": "template",
+      "flow_name": "exit_dev_mode",
+      "_xlsxPath": "app_menu.xlsx"
+    },
     "extra_text": {
       "flow_type": "template",
       "flow_name": "extra_text",
@@ -1029,6 +1129,21 @@
       "flow_type": "template",
       "flow_name": "feedback",
       "_xlsxPath": "templates/modules/articles.xlsx"
+    },
+    "feedback_debug": {
+      "flow_type": "template",
+      "flow_name": "feedback_debug",
+      "_xlsxPath": "app_feedback.xlsx"
+    },
+    "feedback_default": {
+      "flow_type": "template",
+      "flow_name": "feedback_default",
+      "_xlsxPath": "app_feedback.xlsx"
+    },
+    "feedback_text_select": {
+      "flow_type": "template",
+      "flow_name": "feedback_text_select",
+      "_xlsxPath": "app_feedback.xlsx"
     },
     "footer": {
       "flow_type": "template",
@@ -1660,6 +1775,96 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_rulesroutines_explore_1": {
+      "flow_name": "article_rulesroutines_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_10": {
+      "flow_name": "article_rulesroutines_explore_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_11": {
+      "flow_name": "article_rulesroutines_explore_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_12": {
+      "flow_name": "article_rulesroutines_explore_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_13": {
+      "flow_name": "article_rulesroutines_explore_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_14": {
+      "flow_name": "article_rulesroutines_explore_14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_2": {
+      "flow_name": "article_rulesroutines_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_3": {
+      "flow_name": "article_rulesroutines_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_4": {
+      "flow_name": "article_rulesroutines_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_5": {
+      "flow_name": "article_rulesroutines_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_6": {
+      "flow_name": "article_rulesroutines_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_7": {
+      "flow_name": "article_rulesroutines_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_8": {
+      "flow_name": "article_rulesroutines_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_9": {
+      "flow_name": "article_rulesroutines_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_home_activity_1": {
+      "flow_name": "article_rulesroutines_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_intro_1": {
+      "flow_name": "article_rulesroutines_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_practise": {
+      "flow_name": "article_rulesroutines_practise",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_tips_1": {
+      "flow_name": "article_rulesroutines_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_selfcare_explore_1": {
       "flow_name": "article_selfcare_explore_1",
       "flow_subtype": "generated",
@@ -2075,6 +2280,46 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "childdevelopment_hp_review": {
+      "flow_name": "childdevelopment_hp_review",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "childdevelopment_hp_review_challenges": {
+      "flow_name": "childdevelopment_hp_review_challenges",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "consequences_hp_review": {
+      "flow_name": "consequences_hp_review",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "consequences_hp_review_challenges": {
+      "flow_name": "consequences_hp_review_challenges",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "feelings_hp_review": {
+      "flow_name": "feelings_hp_review",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "feelings_hp_review_challenges": {
+      "flow_name": "feelings_hp_review_challenges",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "instruct_hp_review": {
+      "flow_name": "instruct_hp_review",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "instruct_hp_review_challenges": {
+      "flow_name": "instruct_hp_review_challenges",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_childdevelopment": {
       "flow_name": "module_childdevelopment",
       "flow_subtype": "generated",
@@ -2162,6 +2407,56 @@
     },
     "module_selfcare": {
       "flow_name": "module_selfcare",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "oneononetime_hp_review": {
+      "flow_name": "oneononetime_hp_review",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "oneononetime_hp_review_challenges": {
+      "flow_name": "oneononetime_hp_review_challenges",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "praise_hp_review": {
+      "flow_name": "praise_hp_review",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "praise_hp_review_challenges": {
+      "flow_name": "praise_hp_review_challenges",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "problemsolving_hp_review": {
+      "flow_name": "problemsolving_hp_review",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "problemsolving_hp_review_challenges": {
+      "flow_name": "problemsolving_hp_review_challenges",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "rulesroutines_hp_review": {
+      "flow_name": "rulesroutines_hp_review",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "rulesroutines_hp_review_challenges": {
+      "flow_name": "rulesroutines_hp_review_challenges",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "selfcare_hp_review": {
+      "flow_name": "selfcare_hp_review",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "selfcare_hp_review_challenges": {
+      "flow_name": "selfcare_hp_review_challenges",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -2310,6 +2605,40 @@
       "flow_name": "hp_review_other_challenge",
       "_xlsxPath": "templates/home_practice_review/hp_review.xlsx"
     },
+    "import_user_data": {
+      "flow_type": "template",
+      "flow_name": "import_user_data",
+      "_xlsxPath": "app_menu.xlsx"
+    },
+    "language_select": {
+      "flow_type": "template",
+      "flow_name": "language_select",
+      "_xlsxPath": "app_launch.xlsx"
+    },
+    "accept_terms": {
+      "flow_type": "template",
+      "flow_subtype": "legal_terms",
+      "flow_name": "accept_terms",
+      "_xlsxPath": "app_legal_terms.xlsx"
+    },
+    "accept_terms_warning": {
+      "flow_type": "template",
+      "flow_subtype": "legal_terms",
+      "flow_name": "accept_terms_warning",
+      "_xlsxPath": "app_legal_terms.xlsx"
+    },
+    "app_menu_privacy_policy": {
+      "flow_type": "template",
+      "flow_subtype": "legal_terms",
+      "flow_name": "app_menu_privacy_policy",
+      "_xlsxPath": "app_legal_terms.xlsx"
+    },
+    "app_menu_terms": {
+      "flow_type": "template",
+      "flow_subtype": "legal_terms",
+      "flow_name": "app_menu_terms",
+      "_xlsxPath": "app_legal_terms.xlsx"
+    },
     "lib_books": {
       "flow_type": "template",
       "flow_name": "lib_books",
@@ -2399,6 +2728,11 @@
       "flow_type": "template",
       "flow_name": "section",
       "_xlsxPath": "templates/modules/articles.xlsx"
+    },
+    "user_id": {
+      "flow_type": "template",
+      "flow_name": "user_id",
+      "_xlsxPath": "app_menu.xlsx"
     },
     "workshop_activity": {
       "flow_type": "template",

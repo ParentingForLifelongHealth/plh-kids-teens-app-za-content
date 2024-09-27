@@ -8,6 +8,8 @@ config.git = {
 };
 
 config.google_drive.sheets_folder_ids = [
+  "19wSspWYMbRc75een-kS0q0aq24--75u8", // library_app_menu
+  "1UXVz71HniwdtklFnGUEBzzj8ZHI9oQVo", // library_field_values
   "1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU", // PLH Kids Global
   "1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI" // PLH Kids ZA
 ];
