@@ -16,8 +16,11 @@ on:
           default: Automated PR creation from actions
 jobs:
   sync_content:
-    uses: IDEMSInternational/parenting-app-ui/.github/workflows/reusable-content-sync.yml@master
+    uses: IDEMSInternational/open-app-builder/.github/workflows/reusable-content-sync.yml@master
     with:
       pr-title: ${{ inputs.pr-title }}
       pr-body: ${{ inputs.pr-body }}
-    secrets: inherit
+    secrets:
+      GDRIVE_CREDENTIALS: ${{ secrets.GDRIVE_CREDENTIALS }}
+      GDRIVE_TOKEN: ${{ secrets.GDRIVE_TOKEN }}
+      PAT: ${{ secrets.PAT }}
