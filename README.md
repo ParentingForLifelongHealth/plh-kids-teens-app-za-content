@@ -1,4 +1,4 @@
-# plh-kids-app-sa-content
+# plh-kids-app-za-content
 This package contains data used in the South Africa version of the PLH Kids app
 
 Linked directly to PLH Kids https://github.com/IDEMSInternational/plh-kids-app-content
