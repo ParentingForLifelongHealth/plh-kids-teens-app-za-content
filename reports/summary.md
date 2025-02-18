@@ -77,8 +77,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 88814 KB | 88.8 MB |
-| unused | 135268 KB | 135.3 MB |
+| total | 89833 KB | 89.8 MB |
+| unused | 134248 KB | 134.2 MB |
 </details>
 
 <details open>
@@ -101,11 +101,8 @@ Assets that appear in app-data but do not have references within sheets
 | audio/care_audio/problem_solving_audio.mp3 | 296.8 |
 | audio/care_audio/rulesroutines_audio.mp3 | 174 |
 | audio/care_audio/selfcare_audio.mp3 | 257.8 |
-| audio/caregiver_test_w_instruct.mp3 | 281.3 |
 | audio/celebrate_audio_1.mp3 | 497.1 |
 | audio/relax/relax_1.mp3 | 769.5 |
-| audio/teen_test_w_instruct.mp3 | 212.2 |
-| audio/w_instruct_intro.mp3 | 172.6 |
 | contents.json | 5.9 |
 | images/child_development_yc.png | 758.1 |
 | images/child_development_yc.svg | 243.8 |
@@ -134,14 +131,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/comics/feelings_yc_2.png | 2767.3 |
 | images/comics/feelings_yc_3.png | 2782.6 |
 | images/comics/feelings_yc_4.png | 1778.9 |
-| images/comics/instruct_t_1.svg | 47.3 |
-| images/comics/instruct_t_2.svg | 37.4 |
-| images/comics/instruct_t_3.svg | 42.6 |
-| images/comics/instruct_t_4.svg | 47 |
-| images/comics/instruct_t_5.svg | 39.7 |
-| images/comics/instruct_t_6.svg | 43.4 |
-| images/comics/instruct_t_7.svg | 42.5 |
-| images/comics/instruct_t_8.svg | 53.4 |
 | images/comics/instructions_yc_1.png | 1043.4 |
 | images/comics/instructions_yc_10.png | 1172 |
 | images/comics/instructions_yc_10.svg | 406.6 |
@@ -350,6 +339,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | --- | --- | --- |
 | audio/care_audio_1.mp3 | 527.5 | 3 |
 | audio/care_audio_2.mp3 | 1166.3 | 3 |
+| audio/caregiver_test_w_instruct.mp3 | 281.3 | 2 |
 | audio/connect_audio_1.mp3 | 891.7 | 3 |
 | audio/connect_audio_2.mp3 | 981.4 | 3 |
 | audio/consequences_audio_1.mp3 | 800.2 | 3 |
@@ -374,6 +364,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/rules_audio_2.mp3 | 742.7 | 3 |
 | audio/solve_audio_1.mp3 | 609 | 3 |
 | audio/solve_audio_2.mp3 | 468.1 | 3 |
+| audio/teen_test_w_instruct.mp3 | 212.2 | 2 |
+| audio/w_instruct_intro.mp3 | 172.6 | 2 |
 | images/backgrounds/activity_bottom_left.png | 3538.7 | 1 |
 | images/backgrounds/dunes.png | 1329.3 | 1 |
 | images/backgrounds/kites.svg | 37.3 | 1 |
@@ -390,6 +382,14 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/feelings_yc_2.svg | 176.3 | 3 |
 | images/comics/feelings_yc_3.svg | 183.7 | 3 |
 | images/comics/feelings_yc_4.svg | 159.5 | 3 |
+| images/comics/instruct_t_1.svg | 47.3 | 2 |
+| images/comics/instruct_t_2.svg | 37.4 | 2 |
+| images/comics/instruct_t_3.svg | 42.6 | 2 |
+| images/comics/instruct_t_4.svg | 47 | 2 |
+| images/comics/instruct_t_5.svg | 39.7 | 2 |
+| images/comics/instruct_t_6.svg | 43.4 | 2 |
+| images/comics/instruct_t_7.svg | 42.5 | 2 |
+| images/comics/instruct_t_8.svg | 53.4 | 2 |
 | images/comics/instructions_yc_1.svg | 147.3 | 3 |
 | images/comics/instructions_yc_2.svg | 155.4 | 3 |
 | images/comics/instructions_yc_3.svg | 156 | 3 |
@@ -440,11 +440,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/document.svg | 7.3 | 1 |
 | images/icons/expand_circle_right.png | 0.9 | 1 |
 | images/icons/faces/happiest.svg | 1.3 | 3 |
-| images/icons/faces/happy.svg | 53.5 | 13 |
+| images/icons/faces/happy.svg | 53.5 | 15 |
 | images/icons/faces/happy_face_new.svg | 1.4 | 41 |
-| images/icons/faces/ok.svg | 46.6 | 10 |
+| images/icons/faces/ok.svg | 46.6 | 12 |
 | images/icons/faces/ok_face_new.svg | 0.5 | 41 |
-| images/icons/faces/sad.svg | 48.2 | 13 |
+| images/icons/faces/sad.svg | 48.2 | 21 |
 | images/icons/faces/sad_face_new.svg | 1.5 | 41 |
 | images/icons/faces/scared.svg | 2.1 | 3 |
 | images/icons/feather.svg | 3.5 | 1 |
@@ -494,7 +494,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/gift_box.json | 674.5 | 1 |
 | videos/pause/body_scan.mp4 | 10418.6 | 8 |
-| videos/pause/breath_body_awareness.mp4 | 27250 | 8 |
+| videos/pause/breath_body_awareness.mp4 | 27250 | 9 |
 | videos/pause/loving_kindness_meditation.mp4 | 16605.2 | 7 |
 </details>
 
@@ -503,14 +503,14 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | type | subtype | total |
 | --- | --- | --- |
-| data_list |  | 23 |
+| data_list |  | 24 |
 | data_list | activities | 1 |
 | data_list | app_config_language_list | 1 |
-| data_list | generated | 87 |
+| data_list | generated | 88 |
 | data_list | legal_terms | 2 |
 | data_list | lifecycle_actions | 1 |
 | data_pipe |  | 3 |
-| data_pipe | generated | 34 |
+| data_pipe | generated | 35 |
 | generator |  | 30 |
 | global |  | 5 |
 | global | legal_terms | 1 |
