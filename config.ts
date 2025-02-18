@@ -1,6 +1,6 @@
 import { extendDeploymentConfig } from "scripts";
 
-const config = extendDeploymentConfig({ name: "plh_kids_za", parent: "plh_kids" });
+const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_kids" });
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-app-za-content.git",
@@ -21,15 +21,15 @@ config.google_drive.assets_folder_ids = [
 // Hacky fix to point extended deployment to translations within its own repo
 config.translations.translated_strings_path = "./app_data/translations_source/translated_strings";
 
-config.api.db_name = "plh_kids_za";
+config.api.db_name = "plh_kids_teens_za";
 
 config.app_data.output_path = "./app_data";
 
 config.app_config.APP_LANGUAGES.default = "gb_en";
-config.app_config.APP_SIDEMENU_DEFAULTS.title = "ParentApp for Kids ZA";
-config.app_config.APP_HEADER_DEFAULTS.title = "ParentApp for Kids ZA";
-config.app_config.NOTIFICATION_DEFAULTS.title = "New message from ParentApp for Kids ZA";
-config.app_config.NOTIFICATION_DEFAULTS.text = "You have a new message from ParentApp for Kids ZA";
+config.app_config.APP_SIDEMENU_DEFAULTS.title = "ParentApp for Kids & Teens ZA";
+config.app_config.APP_HEADER_DEFAULTS.title = "ParentApp for Kids & Teens ZA";
+config.app_config.NOTIFICATION_DEFAULTS.title = "New message from ParentApp for Kids & Teens ZA";
+config.app_config.NOTIFICATION_DEFAULTS.text = "You have a new message from ParentApp for Kids & Teens ZA";
 config.error_logging = { dsn: "https://e8c4a7d101684da6bdb1f17f712f15fc@app.glitchtip.com/8362" };
 
 
