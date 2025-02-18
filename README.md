@@ -14,3 +14,7 @@ Data can be synced from corresponding google drive folders via the script
 ```
 yarn workflow sync
 ```
+after which a PR can be created via the script
+```
+yarn workflow repo publish
+```
