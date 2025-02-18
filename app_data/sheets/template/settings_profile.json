@@ -1,0 +1,136 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_profile",
+  "status": "released",
+  "rows": [
+    {
+      "type": "template",
+      "name": "settings_header",
+      "value": "settings_header",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "title",
+          "value": "@global.profile",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "settings_header.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.profile",
+                "matchedExpression": "@global.profile",
+                "type": "global",
+                "fieldName": "profile"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.profile": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "settings_header"
+    },
+    {
+      "type": "template",
+      "name": "user_data",
+      "value": "user_data",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        },
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        }
+      ],
+      "rows": [
+        {
+          "name": "show_title",
+          "value": false,
+          "type": "set_variable",
+          "_nested_name": "user_data.show_title"
+        },
+        {
+          "name": "button_completed",
+          "value": "@global.save",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "user_data.button_completed",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.save",
+                "matchedExpression": "@global.save",
+                "type": "global",
+                "fieldName": "save"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.save": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "user_data"
+    },
+    {
+      "type": "template",
+      "name": "user_id",
+      "value": "user_id",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        },
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        }
+      ],
+      "rows": [],
+      "_nested_name": "user_id"
+    }
+  ],
+  "_xlsxPath": "KW settings.xlsx"
+}

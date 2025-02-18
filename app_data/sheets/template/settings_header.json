@@ -1,0 +1,59 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_header",
+  "status": "released",
+  "rows": [
+    {
+      "type": "display_group",
+      "name": "dg_row",
+      "rows": [
+        {
+          "type": "round_button",
+          "name": "back",
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "click | emit: uncompleted",
+              "_cleaned": "click | emit: uncompleted"
+            }
+          ],
+          "parameter_list": {
+            "icon_src": "chevron-back",
+            "variant": "navigation"
+          },
+          "_nested_name": "dg_row.back"
+        },
+        {
+          "type": "title",
+          "name": "title",
+          "value": "@global.profile",
+          "_translations": {
+            "value": {}
+          },
+          "_nested_name": "dg_row.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.profile",
+                "matchedExpression": "@global.profile",
+                "type": "global",
+                "fieldName": "profile"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.profile": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "dg_row"
+    }
+  ],
+  "_xlsxPath": "KW settings.xlsx"
+}

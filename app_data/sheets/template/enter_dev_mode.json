@@ -18,7 +18,6 @@
       "_translations": {
         "value": {}
       },
-      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "text_box_placeholder"
     },
@@ -89,7 +88,7 @@
     },
     {
       "type": "button",
-      "name": "button_incorrect_code",
+      "name": "button_submit",
       "value": "@local.submit",
       "_translations": {
         "value": {}
@@ -102,13 +101,12 @@
             "reply_entered",
             true
           ],
-          "_raw": "click | set_local:reply_entered:true",
-          "_cleaned": "click | set_local:reply_entered:true"
+          "_raw": "click | set_local: reply_entered: true",
+          "_cleaned": "click | set_local: reply_entered: true"
         }
       ],
-      "hidden": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
       "exclude_from_translation": true,
-      "_nested_name": "button_incorrect_code",
+      "_nested_name": "button_submit",
       "_dynamicFields": {
         "value": [
           {
@@ -117,216 +115,174 @@
             "type": "local",
             "fieldName": "submit"
           }
-        ],
-        "hidden": [
-          {
-            "fullExpression": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
-            "matchedExpression": "@local.text_box",
-            "type": "local",
-            "fieldName": "text_box"
-          },
-          {
-            "fullExpression": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
-            "matchedExpression": "@global.dev_mode_code",
-            "type": "global",
-            "fieldName": "dev_mode_code"
-          },
-          {
-            "fullExpression": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
-            "matchedExpression": "@local.text_box",
-            "type": "local",
-            "fieldName": "text_box"
-          },
-          {
-            "fullExpression": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
-            "matchedExpression": "@global.test_mode_code",
-            "type": "global",
-            "fieldName": "test_mode_code"
-          }
         ]
       },
       "_dynamicDependencies": {
         "@local.submit": [
           "value"
-        ],
-        "@local.text_box": [
-          "hidden",
-          "hidden"
-        ],
-        "@global.dev_mode_code": [
-          "hidden"
-        ],
-        "@global.test_mode_code": [
-          "hidden"
-        ]
-      }
-    },
-    {
-      "type": "button",
-      "name": "button_correct_code",
-      "value": "@local.submit",
-      "_translations": {
-        "value": {}
-      },
-      "action_list": [
-        {
-          "trigger": "click",
-          "action_id": "set_local",
-          "args": [
-            "reply_entered",
-            true
-          ],
-          "_raw": "click | set_local:reply_entered:true",
-          "_cleaned": "click | set_local:reply_entered:true"
-        },
-        {
-          "trigger": "click",
-          "action_id": "set_field",
-          "args": [
-            "user_mode",
-            false
-          ],
-          "_raw": "click | set_field:user_mode:false",
-          "_cleaned": "click | set_field:user_mode:false"
-        },
-        {
-          "trigger": "click",
-          "action_id": "emit",
-          "args": [
-            "force_restart"
-          ],
-          "_raw": "click | emit:force_restart",
-          "_cleaned": "click | emit:force_restart"
-        }
-      ],
-      "hidden": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
-      "exclude_from_translation": true,
-      "_nested_name": "button_correct_code",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@local.submit",
-            "matchedExpression": "@local.submit",
-            "type": "local",
-            "fieldName": "submit"
-          }
-        ],
-        "hidden": [
-          {
-            "fullExpression": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
-            "matchedExpression": "@local.text_box",
-            "type": "local",
-            "fieldName": "text_box"
-          },
-          {
-            "fullExpression": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
-            "matchedExpression": "@global.dev_mode_code",
-            "type": "global",
-            "fieldName": "dev_mode_code"
-          },
-          {
-            "fullExpression": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
-            "matchedExpression": "@local.text_box",
-            "type": "local",
-            "fieldName": "text_box"
-          },
-          {
-            "fullExpression": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
-            "matchedExpression": "@global.test_mode_code",
-            "type": "global",
-            "fieldName": "test_mode_code"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.submit": [
-          "value"
-        ],
-        "@local.text_box": [
-          "hidden",
-          "hidden"
-        ],
-        "@global.dev_mode_code": [
-          "hidden"
-        ],
-        "@global.test_mode_code": [
-          "hidden"
         ]
       }
     },
     {
       "type": "display_group",
-      "name": "enter_replies",
-      "hidden": "!@local.reply_entered",
-      "parameter_list": {
-        "style": "column"
-      },
+      "name": "dg_reply_entered",
+      "condition": "@local.reply_entered",
       "rows": [
         {
           "type": "text",
-          "name": "text_2",
-          "value": "You have successfully entered developer mode.",
-          "_translations": {
-            "value": {}
-          },
-          "hidden": "@fields.user_mode",
-          "_nested_name": "enter_replies.text_2",
-          "_dynamicFields": {
-            "hidden": [
-              {
-                "fullExpression": "@fields.user_mode",
-                "matchedExpression": "@fields.user_mode",
-                "type": "fields",
-                "fieldName": "user_mode"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@fields.user_mode": [
-              "hidden"
-            ]
-          }
-        },
-        {
-          "type": "text",
-          "name": "text_3",
+          "name": "incorrect",
           "value": "You have entered an incorrect code.",
           "_translations": {
             "value": {}
           },
-          "hidden": "!@fields.user_mode",
-          "_nested_name": "enter_replies.text_3",
+          "condition": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
+          "_nested_name": "dg_reply_entered.incorrect",
           "_dynamicFields": {
-            "hidden": [
+            "condition": [
               {
-                "fullExpression": "!@fields.user_mode",
-                "matchedExpression": "!@fields.user_mode",
-                "type": "fields",
-                "fieldName": "user_mode"
+                "fullExpression": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
+                "matchedExpression": "@local.text_box",
+                "type": "local",
+                "fieldName": "text_box"
+              },
+              {
+                "fullExpression": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
+                "matchedExpression": "@global.dev_mode_code",
+                "type": "global",
+                "fieldName": "dev_mode_code"
+              },
+              {
+                "fullExpression": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
+                "matchedExpression": "@local.text_box",
+                "type": "local",
+                "fieldName": "text_box"
+              },
+              {
+                "fullExpression": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
+                "matchedExpression": "@global.test_mode_code",
+                "type": "global",
+                "fieldName": "test_mode_code"
               }
             ]
           },
           "_dynamicDependencies": {
-            "!@fields.user_mode": [
-              "hidden"
+            "@local.text_box": [
+              "condition",
+              "condition"
+            ],
+            "@global.dev_mode_code": [
+              "condition"
+            ],
+            "@global.test_mode_code": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "display_group",
+          "name": "correct",
+          "condition": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
+          "parameter_list": {
+            "style": "column"
+          },
+          "rows": [
+            {
+              "type": "text",
+              "name": "text_2",
+              "value": "This code is correct.",
+              "_translations": {
+                "value": {}
+              },
+              "_nested_name": "dg_reply_entered.correct.text_2"
+            },
+            {
+              "type": "button",
+              "name": "button_enter_dev",
+              "value": "Enter developer mode",
+              "_translations": {
+                "value": {}
+              },
+              "action_list": [
+                {
+                  "trigger": "click",
+                  "action_id": "set_field",
+                  "args": [
+                    "user_mode",
+                    false
+                  ],
+                  "_raw": "click | set_field: user_mode: false",
+                  "_cleaned": "click | set_field: user_mode: false"
+                },
+                {
+                  "trigger": "click",
+                  "action_id": "emit",
+                  "args": [
+                    "force_restart"
+                  ],
+                  "_raw": "click | emit:force_restart",
+                  "_cleaned": "click | emit:force_restart"
+                }
+              ],
+              "_nested_name": "dg_reply_entered.correct.button_enter_dev"
+            }
+          ],
+          "_nested_name": "dg_reply_entered.correct",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
+                "matchedExpression": "@local.text_box",
+                "type": "local",
+                "fieldName": "text_box"
+              },
+              {
+                "fullExpression": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
+                "matchedExpression": "@global.dev_mode_code",
+                "type": "global",
+                "fieldName": "dev_mode_code"
+              },
+              {
+                "fullExpression": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
+                "matchedExpression": "@local.text_box",
+                "type": "local",
+                "fieldName": "text_box"
+              },
+              {
+                "fullExpression": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
+                "matchedExpression": "@global.test_mode_code",
+                "type": "global",
+                "fieldName": "test_mode_code"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.text_box": [
+              "condition",
+              "condition"
+            ],
+            "@global.dev_mode_code": [
+              "condition"
+            ],
+            "@global.test_mode_code": [
+              "condition"
             ]
           }
         }
       ],
-      "_nested_name": "enter_replies",
+      "_nested_name": "dg_reply_entered",
       "_dynamicFields": {
-        "hidden": [
+        "condition": [
           {
-            "fullExpression": "!@local.reply_entered",
-            "matchedExpression": "!@local.reply_entered",
+            "fullExpression": "@local.reply_entered",
+            "matchedExpression": "@local.reply_entered",
             "type": "local",
             "fieldName": "reply_entered"
           }
         ]
       },
       "_dynamicDependencies": {
-        "!@local.reply_entered": [
-          "hidden"
+        "@local.reply_entered": [
+          "condition"
         ]
       }
     }

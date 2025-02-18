@@ -1,0 +1,633 @@
+{
+  "flow_type": "template",
+  "flow_name": "comic_bubble",
+  "status": "released",
+  "rows": [
+    {
+      "name": "article_id",
+      "value": "explore_1",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "article_id"
+    },
+    {
+      "name": "module_id",
+      "value": "selfcare",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "module_id"
+    },
+    {
+      "name": "bubble_no",
+      "value": 1,
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "bubble_no"
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "articles"
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.module_id",
+            "type": "local",
+            "fieldName": "module_id"
+          },
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.articles",
+            "type": "local",
+            "fieldName": "articles"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.module_id": [
+          "value"
+        ],
+        "@local.articles": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "concat_article_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.data.@local.article_id",
+            "matchedExpression": "@local.data",
+            "type": "local",
+            "fieldName": "data"
+          },
+          {
+            "fullExpression": "@local.data.@local.article_id",
+            "matchedExpression": "@local.article_id",
+            "type": "local",
+            "fieldName": "article_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.data": [
+          "value"
+        ],
+        "@local.article_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "article_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.concat_article_id",
+            "matchedExpression": "@local.concat_article_id",
+            "type": "local",
+            "fieldName": "concat_article_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.concat_article_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "text",
+      "value": "_text",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "text"
+    },
+    {
+      "name": "text_column",
+      "value": "character_@local.bubble_no@local.text",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "text_column",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "character_@local.bubble_no@local.text",
+            "matchedExpression": "@local.bubble_no",
+            "type": "local",
+            "fieldName": "bubble_no"
+          },
+          {
+            "fullExpression": "character_@local.bubble_no@local.text",
+            "matchedExpression": "@local.text",
+            "type": "local",
+            "fieldName": "text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.bubble_no": [
+          "value"
+        ],
+        "@local.text": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "concat_text",
+      "value": "article_data.@local.text_column",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "concat_text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "article_data.@local.text_column",
+            "matchedExpression": "@local.text_column",
+            "type": "local",
+            "fieldName": "text_column"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.text_column": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.@local.concat_text",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "bubble_text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.@local.concat_text",
+            "matchedExpression": "@local.concat_text",
+            "type": "local",
+            "fieldName": "concat_text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.concat_text": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "id",
+      "value": "_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "id"
+    },
+    {
+      "name": "id_column",
+      "value": "character_@local.bubble_no@local.id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "id_column",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "character_@local.bubble_no@local.id",
+            "matchedExpression": "@local.bubble_no",
+            "type": "local",
+            "fieldName": "bubble_no"
+          },
+          {
+            "fullExpression": "character_@local.bubble_no@local.id",
+            "matchedExpression": "@local.id",
+            "type": "local",
+            "fieldName": "id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.bubble_no": [
+          "value"
+        ],
+        "@local.id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "concat_id",
+      "value": "article_data.@local.id_column",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "concat_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "article_data.@local.id_column",
+            "matchedExpression": "@local.id_column",
+            "type": "local",
+            "fieldName": "id_column"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.id_column": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "character_id",
+      "value": "@local.@local.concat_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "character_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.@local.concat_id",
+            "matchedExpression": "@local.concat_id",
+            "type": "local",
+            "fieldName": "concat_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.concat_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "concat_character",
+      "value": "characters.@local.character_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "concat_character",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "characters.@local.character_id",
+            "matchedExpression": "@local.character_id",
+            "type": "local",
+            "fieldName": "character_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "character_data",
+      "value": "@data.@local.concat_character",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "character_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.concat_character",
+            "matchedExpression": "@local.concat_character",
+            "type": "local",
+            "fieldName": "concat_character"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.concat_character": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "character_name",
+      "value": "@local.character_data.name",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "character_name",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.character_data.name",
+            "matchedExpression": "@local.character_data.name",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.name": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "character_image_asset",
+      "value": "@local.character_data.image_asset",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "character_image_asset",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.character_data.image_asset",
+            "matchedExpression": "@local.character_data.image_asset",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.image_asset": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "speaker_position",
+      "value": "right",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "speaker_position",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role == \"caregiver\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "speaker_position",
+      "value": "left",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role != \"caregiver\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "speaker_position",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role != \"caregiver\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "variant",
+      "value": "primary",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "variant",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role == \"caregiver\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "variant",
+      "value": "secondary",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role == \"child\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "variant",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role == \"child\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "variant",
+      "value": "gray",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role == \"facilitator\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "variant",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role == \"facilitator\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text_bubble",
+      "name": "text_bubble",
+      "value": "@local.bubble_text",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "speaker_image_asset": "@local.character_image_asset",
+        "speaker_name": "@local.character_name",
+        "speaker_position": "@local.speaker_position",
+        "variant": "@local.variant"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "text_bubble",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.bubble_text",
+            "matchedExpression": "@local.bubble_text",
+            "type": "local",
+            "fieldName": "bubble_text"
+          }
+        ],
+        "parameter_list": {
+          "speaker_image_asset": [
+            {
+              "fullExpression": "@local.character_image_asset",
+              "matchedExpression": "@local.character_image_asset",
+              "type": "local",
+              "fieldName": "character_image_asset"
+            }
+          ],
+          "speaker_name": [
+            {
+              "fullExpression": "@local.character_name",
+              "matchedExpression": "@local.character_name",
+              "type": "local",
+              "fieldName": "character_name"
+            }
+          ],
+          "speaker_position": [
+            {
+              "fullExpression": "@local.speaker_position",
+              "matchedExpression": "@local.speaker_position",
+              "type": "local",
+              "fieldName": "speaker_position"
+            }
+          ],
+          "variant": [
+            {
+              "fullExpression": "@local.variant",
+              "matchedExpression": "@local.variant",
+              "type": "local",
+              "fieldName": "variant"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.bubble_text": [
+          "value"
+        ],
+        "@local.character_image_asset": [
+          "parameter_list.speaker_image_asset"
+        ],
+        "@local.character_name": [
+          "parameter_list.speaker_name"
+        ],
+        "@local.speaker_position": [
+          "parameter_list.speaker_position"
+        ],
+        "@local.variant": [
+          "parameter_list.variant"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/modules/articles.xlsx"
+}

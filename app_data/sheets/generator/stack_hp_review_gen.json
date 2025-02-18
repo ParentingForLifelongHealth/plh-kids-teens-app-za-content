@@ -1,0 +1,211 @@
+{
+  "flow_type": "generator",
+  "flow_name": "stack_hp_review_gen",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "hp_check_in",
+    "output_flow_name": "stack_hp_review_{@gen.id}",
+    "output_flow_type": "template",
+    "output_flow_subtype": "generated"
+  },
+  "rows": [
+    {
+      "type": "data_items",
+      "name": "check_if_already_unlocked_activity",
+      "value": "hp_check_in",
+      "parameter_list": [
+        "filter: @item.id == \"@gen.id\"",
+        "limit: 1"
+      ],
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "data_items",
+          "name": "if_no_pick_random_locked_activity",
+          "value": "@data.activity_tasks",
+          "parameter_list": [
+            "filter: @item.locked",
+            "shuffle",
+            "limit: 1"
+          ],
+          "exclude_from_translation": true,
+          "condition": "!@item.unlocked_activity",
+          "rows": [
+            {
+              "type": "template",
+              "name": "hp_review",
+              "value": "hp_review",
+              "action_list": [
+                {
+                  "trigger": "completed",
+                  "action_id": "set_item",
+                  "args": [],
+                  "_raw": "completed | set_item | locked: false",
+                  "_cleaned": "completed | set_item | locked: false",
+                  "params": {
+                    "locked": false
+                  }
+                },
+                {
+                  "trigger": "completed",
+                  "action_id": "set_data",
+                  "args": [],
+                  "_raw": "completed | set_data | _list_id: hp_check_in, _id: @gen.id, unlocked_activity: TRUE",
+                  "_cleaned": "completed | set_data | _list_id: hp_check_in, _id: @gen.id, unlocked_activity: TRUE",
+                  "params": {
+                    "_list_id": "hp_check_in",
+                    "_id": "@gen.id",
+                    "unlocked_activity": true
+                  }
+                },
+                {
+                  "trigger": "completed",
+                  "action_id": "set_field",
+                  "args": [
+                    "latest_unlocked_activity",
+                    "@item.id"
+                  ],
+                  "_raw": "completed | set_field: latest_unlocked_activity: @item.id",
+                  "_cleaned": "completed | set_field: latest_unlocked_activity: @item.id"
+                },
+                {
+                  "trigger": "completed",
+                  "action_id": "nav_stack",
+                  "args": [
+                    "close_top"
+                  ],
+                  "_raw": "completed | nav_stack: close_top",
+                  "_cleaned": "completed | nav_stack: close_top"
+                },
+                {
+                  "trigger": "completed",
+                  "action_id": "pop_up",
+                  "args": [
+                    "unlock_play"
+                  ],
+                  "_raw": "completed | pop_up: unlock_play | variant: plh_completion",
+                  "_cleaned": "completed | pop_up: unlock_play | variant: plh_completion",
+                  "params": {
+                    "variant": "plh_completion"
+                  }
+                },
+                {
+                  "trigger": "uncompleted",
+                  "action_id": "nav_stack",
+                  "args": [
+                    "close_top"
+                  ],
+                  "_raw": "uncompleted | nav_stack: close_top",
+                  "_cleaned": "uncompleted | nav_stack: close_top"
+                }
+              ],
+              "exclude_from_translation": true,
+              "rows": [
+                {
+                  "name": "row_id",
+                  "value": "@gen.id",
+                  "exclude_from_translation": true
+                },
+                {
+                  "name": "completion_icon",
+                  "value": "@global.first_completion_icon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "template",
+          "name": "if_yes",
+          "value": "hp_review",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "nav_stack",
+              "args": [
+                "close_top"
+              ],
+              "_raw": "completed | nav_stack: close_top",
+              "_cleaned": "completed | nav_stack: close_top"
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "nav_stack",
+              "args": [
+                "close_top"
+              ],
+              "_raw": "uncompleted | nav_stack: close_top",
+              "_cleaned": "uncompleted | nav_stack: close_top"
+            }
+          ],
+          "exclude_from_translation": true,
+          "condition": "@item.unlocked_activity",
+          "rows": [
+            {
+              "name": "row_id",
+              "value": "@gen.id",
+              "exclude_from_translation": true
+            },
+            {
+              "name": "completion_icon",
+              "value": "@global.subsequent_completion_icon"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_xlsxPath": "templates/home_practice_review/hp_review.xlsx",
+  "_output_flows": [
+    {
+      "flow_name": "stack_hp_review_oneononetime",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_hp_review_feelings",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_hp_review_praise",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_hp_review_instructions",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_hp_review_rulesroutines",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_hp_review_consequences",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_hp_review_problemsolving",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_hp_review_selfcare",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_hp_review_childdevelopment",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_hp_review_instructions_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    }
+  ]
+}

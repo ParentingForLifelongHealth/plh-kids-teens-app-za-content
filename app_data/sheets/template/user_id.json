@@ -4,6 +4,12 @@
   "status": "released",
   "rows": [
     {
+      "name": "show_title",
+      "value": true,
+      "type": "set_variable",
+      "_nested_name": "show_title"
+    },
+    {
       "name": "user_id",
       "value": "@calc(this.app_user_id)",
       "_translations": {
@@ -87,24 +93,36 @@
     {
       "type": "title",
       "name": "title",
-      "value": "@global.uuid_title",
+      "value": "@global.user_id_text",
       "_translations": {
         "value": {}
       },
+      "condition": "!!(@local.show_title)",
       "_nested_name": "title",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@global.uuid_title",
-            "matchedExpression": "@global.uuid_title",
+            "fullExpression": "@global.user_id_text",
+            "matchedExpression": "@global.user_id_text",
             "type": "global",
-            "fieldName": "uuid_title"
+            "fieldName": "user_id_text"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!(@local.show_title)",
+            "matchedExpression": "@local.show_title",
+            "type": "local",
+            "fieldName": "show_title"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@global.uuid_title": [
+        "@global.user_id_text": [
           "value"
+        ],
+        "@local.show_title": [
+          "condition"
         ]
       }
     },
@@ -189,30 +207,6 @@
             ],
             "@local.copied": [
               "parameter_list.copied_text"
-            ]
-          }
-        },
-        {
-          "type": "text",
-          "name": "text",
-          "value": "You may be asked to share this code with people who will support your @global.app_name journey.",
-          "_translations": {
-            "value": {}
-          },
-          "_nested_name": "has_ever_been_synced.text",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "You may be asked to share this code with people who will support your @global.app_name journey.",
-                "matchedExpression": "@global.app_name",
-                "type": "global",
-                "fieldName": "app_name"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@global.app_name": [
-              "value"
             ]
           }
         },

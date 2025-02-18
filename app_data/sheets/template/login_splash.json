@@ -1,0 +1,33 @@
+{
+  "flow_type": "template",
+  "flow_name": "login_splash",
+  "status": "released",
+  "rows": [
+    {
+      "type": "template",
+      "name": "login",
+      "value": "login",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        }
+      ],
+      "rows": [],
+      "_nested_name": "login"
+    },
+    {
+      "type": "template",
+      "name": "splash_footer",
+      "value": "splash_footer",
+      "rows": [],
+      "_nested_name": "splash_footer"
+    }
+  ],
+  "_xlsxPath": "KW app_launch.xlsx"
+}

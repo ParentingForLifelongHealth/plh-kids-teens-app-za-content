@@ -1,0 +1,23 @@
+{
+  "flow_name": "prep_instructions_t_categories",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "completed: FALSE",
+        "task_child: instructions_t_{@row.id}_article_tasks"
+      ],
+      "input_source": "common_categories",
+      "output_target": "instructions_t_category_tasks"
+    }
+  ],
+  "_output_flows": [
+    {
+      "flow_name": "instructions_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    }
+  ]
+}

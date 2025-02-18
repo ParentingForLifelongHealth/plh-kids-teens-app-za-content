@@ -1,0 +1,345 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_landing_sub",
+  "status": "released",
+  "rows": [
+    {
+      "name": "module_start_at_id",
+      "type": "set_variable",
+      "_nested_name": "module_start_at_id"
+    },
+    {
+      "name": "articles_data_list_name",
+      "type": "set_variable",
+      "_nested_name": "articles_data_list_name"
+    },
+    {
+      "type": "data_items",
+      "name": "loop_inner",
+      "value": "@local.articles_data_list_name",
+      "parameter_list": {
+        "filter": "!@item.completed",
+        "limit": "1"
+      },
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "text",
+          "name": "first_uncompleted_article_id",
+          "value": "@item.id",
+          "_translations": {
+            "value": {}
+          },
+          "condition": false,
+          "exclude_from_translation": true,
+          "_nested_name": "loop_inner.first_uncompleted_article_id",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_start",
+          "value": "@global.lets_begin",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "current_start_article_id",
+                "@item.id"
+              ],
+              "_raw": "click | set_field: current_start_article_id: @item.id",
+              "_cleaned": "click | set_field: current_start_article_id: @item.id"
+            },
+            {
+              "trigger": "click",
+              "action_id": "nav_stack",
+              "args": [
+                "open"
+              ],
+              "_raw": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
+              "_cleaned": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
+              "params": {
+                "template": "@local.module_start_at_id",
+                "header": false
+              }
+            }
+          ],
+          "condition": "@item.row_index == 0",
+          "exclude_from_translation": true,
+          "_nested_name": "loop_inner.button_start",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.lets_begin",
+                "matchedExpression": "@global.lets_begin",
+                "type": "global",
+                "fieldName": "lets_begin"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@item.id",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: current_start_article_id: @item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | set_field: current_start_article_id: @item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              },
+              "1": {
+                "_raw": [
+                  {
+                    "fullExpression": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
+                    "matchedExpression": "@local.module_start_at_id",
+                    "type": "local",
+                    "fieldName": "module_start_at_id"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
+                    "matchedExpression": "@local.module_start_at_id",
+                    "type": "local",
+                    "fieldName": "module_start_at_id"
+                  }
+                ],
+                "params": {
+                  "template": [
+                    {
+                      "fullExpression": "@local.module_start_at_id",
+                      "matchedExpression": "@local.module_start_at_id",
+                      "type": "local",
+                      "fieldName": "module_start_at_id"
+                    }
+                  ]
+                }
+              }
+            },
+            "condition": [
+              {
+                "fullExpression": "@item.row_index == 0",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.lets_begin": [
+              "value"
+            ],
+            "@item.id": [
+              "action_list.0.args.1",
+              "action_list.0._raw",
+              "action_list.0._cleaned"
+            ],
+            "@local.module_start_at_id": [
+              "action_list.1._raw",
+              "action_list.1._cleaned",
+              "action_list.1.params.template"
+            ],
+            "@item.row_index": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_continue",
+          "value": "@global.continue",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "current_start_article_id",
+                "@item.id"
+              ],
+              "_raw": "click | set_field: current_start_article_id: @item.id",
+              "_cleaned": "click | set_field: current_start_article_id: @item.id"
+            },
+            {
+              "trigger": "click",
+              "action_id": "nav_stack",
+              "args": [
+                "open"
+              ],
+              "_raw": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
+              "_cleaned": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
+              "params": {
+                "template": "@local.module_start_at_id",
+                "header": false
+              }
+            }
+          ],
+          "condition": "@item.row_index != 0",
+          "exclude_from_translation": true,
+          "_nested_name": "loop_inner.button_continue",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.continue",
+                "matchedExpression": "@global.continue",
+                "type": "global",
+                "fieldName": "continue"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@item.id",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: current_start_article_id: @item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | set_field: current_start_article_id: @item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              },
+              "1": {
+                "_raw": [
+                  {
+                    "fullExpression": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
+                    "matchedExpression": "@local.module_start_at_id",
+                    "type": "local",
+                    "fieldName": "module_start_at_id"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
+                    "matchedExpression": "@local.module_start_at_id",
+                    "type": "local",
+                    "fieldName": "module_start_at_id"
+                  }
+                ],
+                "params": {
+                  "template": [
+                    {
+                      "fullExpression": "@local.module_start_at_id",
+                      "matchedExpression": "@local.module_start_at_id",
+                      "type": "local",
+                      "fieldName": "module_start_at_id"
+                    }
+                  ]
+                }
+              }
+            },
+            "condition": [
+              {
+                "fullExpression": "@item.row_index != 0",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.continue": [
+              "value"
+            ],
+            "@item.id": [
+              "action_list.0.args.1",
+              "action_list.0._raw",
+              "action_list.0._cleaned"
+            ],
+            "@local.module_start_at_id": [
+              "action_list.1._raw",
+              "action_list.1._cleaned",
+              "action_list.1.params.template"
+            ],
+            "@item.row_index": [
+              "condition"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "loop_inner",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.articles_data_list_name",
+            "matchedExpression": "@local.articles_data_list_name",
+            "type": "local",
+            "fieldName": "articles_data_list_name"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.completed",
+              "matchedExpression": "!@item.completed",
+              "type": "item",
+              "fieldName": "completed"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.articles_data_list_name": [
+          "value"
+        ],
+        "!@item.completed": [
+          "parameter_list.filter"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "KW module_navigation.xlsx"
+}

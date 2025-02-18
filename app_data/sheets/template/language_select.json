@@ -4,12 +4,19 @@
   "status": "released",
   "rows": [
     {
+      "name": "show_title",
+      "value": true,
+      "type": "set_variable",
+      "_nested_name": "show_title"
+    },
+    {
       "type": "title",
       "name": "title",
       "value": "@global.language",
       "_translations": {
         "value": {}
       },
+      "condition": "!!(@local.show_title)",
       "_nested_name": "title",
       "_dynamicFields": {
         "value": [
@@ -19,11 +26,22 @@
             "type": "global",
             "fieldName": "language"
           }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!(@local.show_title)",
+            "matchedExpression": "@local.show_title",
+            "type": "local",
+            "fieldName": "show_title"
+          }
         ]
       },
       "_dynamicDependencies": {
         "@global.language": [
           "value"
+        ],
+        "@local.show_title": [
+          "condition"
         ]
       }
     },
@@ -48,6 +66,42 @@
       "_dynamicDependencies": {
         "@data.language": [
           "value"
+        ]
+      }
+    },
+    {
+      "name": "language_select_options",
+      "value": "@data.language_reversed",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@fields._app_language_direction == \"rtl\"",
+      "type": "set_variable",
+      "_nested_name": "language_select_options",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.language_reversed",
+            "matchedExpression": "@data.language_reversed",
+            "type": "data",
+            "fieldName": "language_reversed"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "@fields._app_language_direction == \"rtl\"",
+            "matchedExpression": "@fields._app_language_direction",
+            "type": "fields",
+            "fieldName": "_app_language_direction"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.language_reversed": [
+          "value"
+        ],
+        "@fields._app_language_direction": [
+          "condition"
         ]
       }
     },
@@ -147,15 +201,6 @@
       "action_list": [
         {
           "trigger": "click",
-          "action_id": "emit",
-          "args": [
-            "completed"
-          ],
-          "_raw": "click | emit: completed",
-          "_cleaned": "click | emit: completed"
-        },
-        {
-          "trigger": "click",
           "action_id": "set_field",
           "args": [
             "language_selected",
@@ -163,6 +208,15 @@
           ],
           "_raw": "click | set_field: language_selected: TRUE",
           "_cleaned": "click | set_field: language_selected: TRUE"
+        },
+        {
+          "trigger": "click",
+          "action_id": "emit",
+          "args": [
+            "force_restart"
+          ],
+          "_raw": "click | emit: force_restart",
+          "_cleaned": "click | emit: force_restart"
         }
       ],
       "parameter_list": {

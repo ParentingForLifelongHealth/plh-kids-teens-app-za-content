@@ -1,0 +1,109 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_language_select",
+  "status": "released",
+  "rows": [
+    {
+      "type": "template",
+      "name": "settings_header",
+      "value": "settings_header",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "title",
+          "value": "@global.language",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "settings_header.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.language",
+                "matchedExpression": "@global.language",
+                "type": "global",
+                "fieldName": "language"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.language": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "settings_header"
+    },
+    {
+      "type": "template",
+      "name": "language_select",
+      "value": "language_select",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        },
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        }
+      ],
+      "rows": [
+        {
+          "name": "show_title",
+          "value": false,
+          "type": "set_variable",
+          "_nested_name": "language_select.show_title"
+        },
+        {
+          "name": "button_completed",
+          "value": "@global.save",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "language_select.button_completed",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.save",
+                "matchedExpression": "@global.save",
+                "type": "global",
+                "fieldName": "save"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.save": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "language_select"
+    }
+  ],
+  "_xlsxPath": "KW settings.xlsx"
+}

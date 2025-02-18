@@ -18,6 +18,26 @@
         },
         {
           "type": "button",
+          "name": "button_delay_days",
+          "value": "Change countdown days",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "go_to",
+              "args": [
+                "countdown_days"
+              ],
+              "_raw": "click | go_to: countdown_days",
+              "_cleaned": "click | go_to: countdown_days"
+            }
+          ],
+          "_nested_name": "dg_dev.button_delay_days"
+        },
+        {
+          "type": "button",
           "name": "button_templates",
           "value": "Templates",
           "_translations": {
@@ -34,8 +54,27 @@
               "_cleaned": "click | go_to:/template"
             }
           ],
-          "exclude_from_translation": true,
           "_nested_name": "dg_dev.button_templates"
+        },
+        {
+          "type": "button",
+          "name": "button_dynamic_data",
+          "value": "Dynamic data",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "go_to",
+              "args": [
+                "/user"
+              ],
+              "_raw": "click | go_to:/user",
+              "_cleaned": "click | go_to:/user"
+            }
+          ],
+          "_nested_name": "dg_dev.button_dynamic_data"
         },
         {
           "type": "button",
@@ -53,7 +92,6 @@
               "_cleaned": "click | reset_app"
             }
           ],
-          "exclude_from_translation": true,
           "_nested_name": "dg_dev.button_reset"
         },
         {
@@ -84,7 +122,6 @@
             }
           ],
           "condition": "!@fields._feedback_sidebar_open",
-          "exclude_from_translation": true,
           "_nested_name": "dg_dev.button_open_feedback",
           "_dynamicFields": {
             "condition": [
@@ -130,7 +167,6 @@
             }
           ],
           "condition": "@fields._feedback_sidebar_open",
-          "exclude_from_translation": true,
           "_nested_name": "dg_dev.button_close_feedback",
           "_dynamicFields": {
             "condition": [
@@ -183,146 +219,6 @@
       "_dynamicDependencies": {
         "!@fields.user_mode": [
           "condition"
-        ]
-      }
-    },
-    {
-      "type": "button",
-      "name": "button_about",
-      "value": "@global.about_this_app",
-      "_translations": {
-        "value": {}
-      },
-      "action_list": [
-        {
-          "trigger": "click",
-          "action_id": "go_to",
-          "args": [
-            "app_about"
-          ],
-          "_raw": "click | go_to: app_about",
-          "_cleaned": "click | go_to: app_about"
-        }
-      ],
-      "_nested_name": "button_about",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@global.about_this_app",
-            "matchedExpression": "@global.about_this_app",
-            "type": "global",
-            "fieldName": "about_this_app"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@global.about_this_app": [
-          "value"
-        ]
-      }
-    },
-    {
-      "type": "button",
-      "name": "button_terms",
-      "value": "@global.terms_and_conditions",
-      "_translations": {
-        "value": {}
-      },
-      "action_list": [
-        {
-          "trigger": "click",
-          "action_id": "go_to",
-          "args": [
-            "app_menu_terms"
-          ],
-          "_raw": "click | go_to: app_menu_terms",
-          "_cleaned": "click | go_to: app_menu_terms"
-        }
-      ],
-      "_nested_name": "button_terms",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@global.terms_and_conditions",
-            "matchedExpression": "@global.terms_and_conditions",
-            "type": "global",
-            "fieldName": "terms_and_conditions"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@global.terms_and_conditions": [
-          "value"
-        ]
-      }
-    },
-    {
-      "type": "button",
-      "name": "button_privacy",
-      "value": "@global.privacy_policy",
-      "_translations": {
-        "value": {}
-      },
-      "action_list": [
-        {
-          "trigger": "click",
-          "action_id": "go_to",
-          "args": [
-            "app_menu_privacy_policy"
-          ],
-          "_raw": "click | go_to: app_menu_privacy_policy",
-          "_cleaned": "click | go_to: app_menu_privacy_policy"
-        }
-      ],
-      "_nested_name": "button_privacy",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@global.privacy_policy",
-            "matchedExpression": "@global.privacy_policy",
-            "type": "global",
-            "fieldName": "privacy_policy"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@global.privacy_policy": [
-          "value"
-        ]
-      }
-    },
-    {
-      "type": "button",
-      "name": "button_language",
-      "value": "@global.language",
-      "_translations": {
-        "value": {}
-      },
-      "action_list": [
-        {
-          "trigger": "click",
-          "action_id": "go_to",
-          "args": [
-            "language_select"
-          ],
-          "_raw": "click | go_to: language_select",
-          "_cleaned": "click | go_to: language_select"
-        }
-      ],
-      "_nested_name": "button_language",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@global.language",
-            "matchedExpression": "@global.language",
-            "type": "global",
-            "fieldName": "language"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@global.language": [
-          "value"
         ]
       }
     },
@@ -399,5 +295,5 @@
       }
     }
   ],
-  "_xlsxPath": "app_menu.xlsx"
+  "_xlsxPath": "KW app_navigation.xlsx"
 }

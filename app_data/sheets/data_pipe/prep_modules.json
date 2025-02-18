@@ -1,0 +1,24 @@
+{
+  "flow_type": "data_pipe",
+  "flow_name": "prep_modules",
+  "status": "released",
+  "rows": [
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "completed: FALSE",
+        "task_child: {@row.id}_article_tasks"
+      ],
+      "input_source": "modules",
+      "output_target": "module_tasks"
+    }
+  ],
+  "_xlsxPath": "KW modules_data_pipes.xlsx",
+  "_output_flows": [
+    {
+      "flow_name": "module_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    }
+  ]
+}
