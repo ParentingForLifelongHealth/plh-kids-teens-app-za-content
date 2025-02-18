@@ -7,7 +7,7 @@ UAT: https://plh-kids-teens-za-uat.web.app/
 Released: https://plh-kids-teens-za.web.app/
 
 ## Syncing data updates (automatic)
-A pull request syncing all spreadsheets and assets can be created automatically by running the following GitHub workflow: [Sync Content](https://github.com/IDEMSInternational/plh-kids-teens-app-za-content/actions/workflows/content-sync.yml)
+A pull request syncing all spreadsheets and assets can be created automatically by running the following GitHub workflow: [Sync Content](https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content/actions/workflows/content-sync.yml)
 
 ## Syncing data updates (manual)
 Data can be synced from corresponding google drive folders via the script
