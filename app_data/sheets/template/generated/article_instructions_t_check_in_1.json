@@ -1,5 +1,5 @@
 {
-  "flow_name": "article_instructions_t_@gen.check_in_id",
+  "flow_name": "article_instructions_t_check_in_1",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
@@ -41,28 +41,13 @@
         },
         {
           "name": "article_id",
-          "value": "@gen.check_in_id",
+          "value": "check_in_1",
           "_translations": {
             "value": {}
           },
           "exclude_from_translation": true,
           "type": "set_variable",
-          "_nested_name": "article.article_id",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@gen.check_in_id",
-                "matchedExpression": "@gen.check_in_id",
-                "type": "gen",
-                "fieldName": "check_in_id"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@gen.check_in_id": [
-              "value"
-            ]
-          }
+          "_nested_name": "article.article_id"
         },
         {
           "name": "perform_category_header_computations",
