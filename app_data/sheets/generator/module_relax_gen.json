@@ -1,0 +1,112 @@
+{
+  "flow_type": "generator",
+  "flow_name": "module_relax_gen",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "article_{@gen.id}_{@gen.relax_id}",
+    "output_flow_type": "template",
+    "output_flow_subtype": "generated"
+  },
+  "rows": [
+    {
+      "type": "template",
+      "name": "header",
+      "value": "header",
+      "rows": [
+        {
+          "name": "title",
+          "value": "@data.common_categories.relax.title"
+        },
+        {
+          "name": "icon_asset",
+          "value": "@data.common_categories.relax.icon_asset"
+        }
+      ]
+    },
+    {
+      "type": "template",
+      "name": "article",
+      "value": "relax",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "id",
+          "value": "@gen.relax_id"
+        }
+      ]
+    }
+  ],
+  "_xlsxPath": "KW articles template generators.xlsx",
+  "_output_flows": [
+    {
+      "flow_name": "article_selfcare_relax_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_childdevelopment_relax_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_oneononetime_relax_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_praise_relax_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_feelings_relax_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_instructions_relax_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_rulesroutines_relax_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_consequences_relax_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_problemsolving_relax_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_instructions_t_relax_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    }
+  ]
+}

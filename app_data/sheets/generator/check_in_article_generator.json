@@ -3,8 +3,8 @@
   "flow_name": "check_in_article_generator",
   "status": "released",
   "parameter_list": {
-    "input_data_list": "check_in",
-    "output_flow_name": "article_@gen.id",
+    "input_data_list": "modules",
+    "output_flow_name": "article_{@gen.id}_@gen.check_in_id",
     "output_flow_type": "template",
     "output_flow_subtype": "generated"
   },
@@ -33,6 +33,7 @@
           "_cleaned": "uncompleted | emit: uncompleted"
         }
       ],
+      "exclude_from_translation": true,
       "rows": [
         {
           "name": "data",
@@ -41,7 +42,12 @@
         },
         {
           "name": "article_id",
-          "value": "@gen.id"
+          "value": "@gen.check_in_id",
+          "exclude_from_translation": true
+        },
+        {
+          "name": "perform_category_header_computations",
+          "value": false
         },
         {
           "type": "nested_properties",
@@ -63,12 +69,65 @@
           "rows": [
             {
               "name": "radio_button_grid_width",
-              "value": "100%"
+              "value": "100%",
+              "exclude_from_translation": true
             }
           ]
         }
       ]
     }
   ],
-  "_xlsxPath": "templates/modules/check_in article_generator.xlsx"
+  "_xlsxPath": "KW articles template generators.xlsx",
+  "_output_flows": [
+    {
+      "flow_name": "article_selfcare_check_in_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_childdevelopment_check_in_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_oneononetime_check_in_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_praise_check_in_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_feelings_check_in_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_instructions_check_in_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_rulesroutines_check_in_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_consequences_check_in_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_problemsolving_check_in_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_instructions_t_@gen.check_in_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    }
+  ]
 }

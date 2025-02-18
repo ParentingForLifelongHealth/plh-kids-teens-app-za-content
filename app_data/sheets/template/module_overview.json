@@ -17,7 +17,6 @@
           "_cleaned": "nav_resume | emit: force_reload"
         }
       ],
-      "condition": false,
       "exclude_from_translation": true,
       "_nested_name": "custom_actions_1"
     },
@@ -126,6 +125,48 @@
       }
     },
     {
+      "name": "articles",
+      "value": "_article_tasks",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "articles"
+    },
+    {
+      "name": "article_data",
+      "value": "@local.module_id@local.articles",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "article_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.module_id",
+            "type": "local",
+            "fieldName": "module_id"
+          },
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.articles",
+            "type": "local",
+            "fieldName": "articles"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.module_id": [
+          "value"
+        ],
+        "@local.articles": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "display_group",
       "name": "top",
       "exclude_from_translation": true,
@@ -196,6 +237,7 @@
       "_translations": {
         "value": {}
       },
+      "condition": false,
       "exclude_from_translation": true,
       "_nested_name": "text",
       "_dynamicFields": {
@@ -215,8 +257,16 @@
       }
     },
     {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_13",
+      "_nested_name": "set_variable_13"
+    },
+    {
       "type": "items",
+      "name": "category_loop",
       "value": "@data.@local.category_data",
+      "exclude_from_translation": true,
       "rows": [
         {
           "type": "template",
@@ -232,7 +282,7 @@
               },
               "exclude_from_translation": true,
               "type": "set_variable",
-              "_nested_name": "items_24.card_@item.id.module_id",
+              "_nested_name": "category_loop.card_@item.id.module_id",
               "_dynamicFields": {
                 "value": [
                   {
@@ -244,7 +294,7 @@
                 ],
                 "_nested_name": [
                   {
-                    "fullExpression": "items_24.card_@item.id.module_id",
+                    "fullExpression": "category_loop.card_@item.id.module_id",
                     "matchedExpression": "@item.id.module_id",
                     "type": "item",
                     "fieldName": "id"
@@ -268,7 +318,7 @@
               },
               "exclude_from_translation": true,
               "type": "set_variable",
-              "_nested_name": "items_24.card_@item.id.category_id",
+              "_nested_name": "category_loop.card_@item.id.category_id",
               "_dynamicFields": {
                 "value": [
                   {
@@ -280,7 +330,7 @@
                 ],
                 "_nested_name": [
                   {
-                    "fullExpression": "items_24.card_@item.id.category_id",
+                    "fullExpression": "category_loop.card_@item.id.category_id",
                     "matchedExpression": "@item.id.category_id",
                     "type": "item",
                     "fieldName": "id"
@@ -297,7 +347,7 @@
               }
             }
           ],
-          "_nested_name": "items_24.card_@item.id",
+          "_nested_name": "category_loop.card_@item.id",
           "_dynamicFields": {
             "name": [
               {
@@ -309,7 +359,7 @@
             ],
             "_nested_name": [
               {
-                "fullExpression": "items_24.card_@item.id",
+                "fullExpression": "category_loop.card_@item.id",
                 "matchedExpression": "@item.id",
                 "type": "item",
                 "fieldName": "id"
@@ -324,8 +374,7 @@
           }
         }
       ],
-      "name": "items_24",
-      "_nested_name": "items_24",
+      "_nested_name": "category_loop",
       "_dynamicFields": {
         "value": [
           {

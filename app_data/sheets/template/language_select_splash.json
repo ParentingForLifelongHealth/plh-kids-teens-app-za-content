@@ -1,0 +1,33 @@
+{
+  "flow_type": "template",
+  "flow_name": "language_select_splash",
+  "status": "released",
+  "rows": [
+    {
+      "type": "template",
+      "name": "language_select",
+      "value": "language_select",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        }
+      ],
+      "rows": [],
+      "_nested_name": "language_select"
+    },
+    {
+      "type": "template",
+      "name": "splash_footer",
+      "value": "splash_footer",
+      "rows": [],
+      "_nested_name": "splash_footer"
+    }
+  ],
+  "_xlsxPath": "KW app_launch.xlsx"
+}

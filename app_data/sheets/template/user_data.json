@@ -1,0 +1,490 @@
+{
+  "flow_type": "template",
+  "flow_name": "user_data",
+  "status": "released",
+  "rows": [
+    {
+      "name": "show_title",
+      "value": true,
+      "type": "set_variable",
+      "_nested_name": "show_title"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.user_data_title",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!(@local.show_title)",
+      "_nested_name": "title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.user_data_title",
+            "matchedExpression": "@global.user_data_title",
+            "type": "global",
+            "fieldName": "user_data_title"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!(@local.show_title)",
+            "matchedExpression": "@local.show_title",
+            "type": "local",
+            "fieldName": "show_title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.user_data_title": [
+          "value"
+        ],
+        "@local.show_title": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "user_gender_select_question",
+      "value": "@global.user_gender_select_question",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "user_gender_select_question",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.user_gender_select_question",
+            "matchedExpression": "@global.user_gender_select_question",
+            "type": "global",
+            "fieldName": "user_gender_select_question"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.user_gender_select_question": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "user_gender_select_options",
+      "value": "@data.user_gender",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "user_gender_select_options",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.user_gender",
+            "matchedExpression": "@data.user_gender",
+            "type": "data",
+            "fieldName": "user_gender"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.user_gender": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "combo_box",
+      "name": "user_gender_select",
+      "value": "@fields.user_gender",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "changed",
+          "action_id": "set_field",
+          "args": [
+            "user_gender",
+            "this.value"
+          ],
+          "_raw": "changed | set_field: user_gender: @local.user_gender_select",
+          "_cleaned": "changed | set_field: user_gender: @local.user_gender_select"
+        }
+      ],
+      "parameter_list": {
+        "answer_list": "@local.user_gender_select_options"
+      },
+      "_nested_name": "user_gender_select",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.user_gender",
+            "matchedExpression": "@fields.user_gender",
+            "type": "fields",
+            "fieldName": "user_gender"
+          }
+        ],
+        "action_list": {
+          "0": {
+            "_raw": [
+              {
+                "fullExpression": "changed | set_field: user_gender: @local.user_gender_select",
+                "matchedExpression": "@local.user_gender_select",
+                "type": "local",
+                "fieldName": "user_gender_select"
+              }
+            ],
+            "_cleaned": [
+              {
+                "fullExpression": "changed | set_field: user_gender: @local.user_gender_select",
+                "matchedExpression": "@local.user_gender_select",
+                "type": "local",
+                "fieldName": "user_gender_select"
+              }
+            ]
+          }
+        },
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@local.user_gender_select_options",
+              "matchedExpression": "@local.user_gender_select_options",
+              "type": "local",
+              "fieldName": "user_gender_select_options"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@fields.user_gender": [
+          "value"
+        ],
+        "@local.user_gender_select": [
+          "action_list.0._raw",
+          "action_list.0._cleaned"
+        ],
+        "@local.user_gender_select_options": [
+          "parameter_list.answer_list"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "user_type_select_question",
+      "value": "@global.user_type_select_question",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "user_type_select_question",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.user_type_select_question",
+            "matchedExpression": "@global.user_type_select_question",
+            "type": "global",
+            "fieldName": "user_type_select_question"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.user_type_select_question": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "user_type_select_options",
+      "value": "@data.user_type",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "user_type_select_options",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.user_type",
+            "matchedExpression": "@data.user_type",
+            "type": "data",
+            "fieldName": "user_type"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.user_type": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "combo_box",
+      "name": "user_type_select",
+      "value": "@fields.user_type",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "changed",
+          "action_id": "set_field",
+          "args": [
+            "user_type",
+            "this.value"
+          ],
+          "_raw": "changed | set_field: user_type: @local.user_type_select",
+          "_cleaned": "changed | set_field: user_type: @local.user_type_select"
+        }
+      ],
+      "parameter_list": {
+        "answer_list": "@local.user_type_select_options"
+      },
+      "_nested_name": "user_type_select",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.user_type",
+            "matchedExpression": "@fields.user_type",
+            "type": "fields",
+            "fieldName": "user_type"
+          }
+        ],
+        "action_list": {
+          "0": {
+            "_raw": [
+              {
+                "fullExpression": "changed | set_field: user_type: @local.user_type_select",
+                "matchedExpression": "@local.user_type_select",
+                "type": "local",
+                "fieldName": "user_type_select"
+              }
+            ],
+            "_cleaned": [
+              {
+                "fullExpression": "changed | set_field: user_type: @local.user_type_select",
+                "matchedExpression": "@local.user_type_select",
+                "type": "local",
+                "fieldName": "user_type_select"
+              }
+            ]
+          }
+        },
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@local.user_type_select_options",
+              "matchedExpression": "@local.user_type_select_options",
+              "type": "local",
+              "fieldName": "user_type_select_options"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@fields.user_type": [
+          "value"
+        ],
+        "@local.user_type_select": [
+          "action_list.0._raw",
+          "action_list.0._cleaned"
+        ],
+        "@local.user_type_select_options": [
+          "parameter_list.answer_list"
+        ]
+      }
+    },
+    {
+      "name": "completed_enabled",
+      "value": "!!@fields.user_gender && !!@fields.user_type",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "completed_enabled",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "!!@fields.user_gender && !!@fields.user_type",
+            "matchedExpression": "!@fields.user_gender",
+            "type": "fields",
+            "fieldName": "user_gender"
+          },
+          {
+            "fullExpression": "!!@fields.user_gender && !!@fields.user_type",
+            "matchedExpression": "!@fields.user_type",
+            "type": "fields",
+            "fieldName": "user_type"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@fields.user_gender": [
+          "value"
+        ],
+        "!@fields.user_type": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "user_gender",
+            "@local.user_gender_select"
+          ],
+          "_raw": "click | set_field: user_gender: @local.user_gender_select",
+          "_cleaned": "click | set_field: user_gender: @local.user_gender_select"
+        },
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "user_type",
+            "@local.user_type_select"
+          ],
+          "_raw": "click | set_field: user_type: @local.user_type_select",
+          "_cleaned": "click | set_field: user_type: @local.user_type_select"
+        },
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "user_data_completed",
+            true
+          ],
+          "_raw": "click | set_field: user_data_completed: true",
+          "_cleaned": "click | set_field: user_data_completed: true"
+        },
+        {
+          "trigger": "click",
+          "action_id": "emit",
+          "args": [
+            "server_sync"
+          ],
+          "_raw": "click | emit: server_sync",
+          "_cleaned": "click | emit: server_sync"
+        },
+        {
+          "trigger": "click",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "click | emit: completed",
+          "_cleaned": "click | emit: completed"
+        }
+      ],
+      "parameter_list": {
+        "style": "navigation",
+        "disabled": "!@local.completed_enabled"
+      },
+      "_nested_name": "button_completed",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.continue",
+            "matchedExpression": "@global.continue",
+            "type": "global",
+            "fieldName": "continue"
+          }
+        ],
+        "action_list": {
+          "0": {
+            "args": {
+              "1": [
+                {
+                  "fullExpression": "@local.user_gender_select",
+                  "matchedExpression": "@local.user_gender_select",
+                  "type": "local",
+                  "fieldName": "user_gender_select"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: user_gender: @local.user_gender_select",
+                "matchedExpression": "@local.user_gender_select",
+                "type": "local",
+                "fieldName": "user_gender_select"
+              }
+            ],
+            "_cleaned": [
+              {
+                "fullExpression": "click | set_field: user_gender: @local.user_gender_select",
+                "matchedExpression": "@local.user_gender_select",
+                "type": "local",
+                "fieldName": "user_gender_select"
+              }
+            ]
+          },
+          "1": {
+            "args": {
+              "1": [
+                {
+                  "fullExpression": "@local.user_type_select",
+                  "matchedExpression": "@local.user_type_select",
+                  "type": "local",
+                  "fieldName": "user_type_select"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: user_type: @local.user_type_select",
+                "matchedExpression": "@local.user_type_select",
+                "type": "local",
+                "fieldName": "user_type_select"
+              }
+            ],
+            "_cleaned": [
+              {
+                "fullExpression": "click | set_field: user_type: @local.user_type_select",
+                "matchedExpression": "@local.user_type_select",
+                "type": "local",
+                "fieldName": "user_type_select"
+              }
+            ]
+          }
+        },
+        "parameter_list": {
+          "disabled": [
+            {
+              "fullExpression": "!@local.completed_enabled",
+              "matchedExpression": "!@local.completed_enabled",
+              "type": "local",
+              "fieldName": "completed_enabled"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@global.continue": [
+          "value"
+        ],
+        "@local.user_gender_select": [
+          "action_list.0.args.1",
+          "action_list.0._raw",
+          "action_list.0._cleaned"
+        ],
+        "@local.user_type_select": [
+          "action_list.1.args.1",
+          "action_list.1._raw",
+          "action_list.1._cleaned"
+        ],
+        "!@local.completed_enabled": [
+          "parameter_list.disabled"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/kids app_launch.xlsx"
+}

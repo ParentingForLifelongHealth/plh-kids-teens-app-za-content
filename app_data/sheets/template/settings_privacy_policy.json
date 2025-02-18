@@ -1,0 +1,85 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_privacy_policy",
+  "status": "released",
+  "rows": [
+    {
+      "type": "template",
+      "name": "settings_header",
+      "value": "settings_header",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "title",
+          "value": "@global.privacy_policy",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "settings_header.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.privacy_policy",
+                "matchedExpression": "@global.privacy_policy",
+                "type": "global",
+                "fieldName": "privacy_policy"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.privacy_policy": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "settings_header"
+    },
+    {
+      "type": "template",
+      "name": "app_menu_privacy_policy",
+      "value": "app_menu_privacy_policy",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        },
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        }
+      ],
+      "rows": [
+        {
+          "name": "show_title",
+          "value": false,
+          "type": "set_variable",
+          "_nested_name": "app_menu_privacy_policy.show_title"
+        }
+      ],
+      "_nested_name": "app_menu_privacy_policy"
+    }
+  ],
+  "_xlsxPath": "KW settings.xlsx"
+}

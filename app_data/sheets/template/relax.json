@@ -133,14 +133,117 @@
       }
     },
     {
-      "name": "audio_asset",
+      "name": "lottie_asset",
+      "value": "lottie/bulging_circles.json",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!@local.row_data.lottie_asset",
+      "type": "set_variable",
+      "_nested_name": "lottie_asset",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!@local.row_data.lottie_asset",
+            "matchedExpression": "!@local.row_data.lottie_asset",
+            "type": "local",
+            "fieldName": "row_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.row_data.lottie_asset": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "lottie_asset",
+      "value": "@local.row_data.lottie_asset",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!@local.row_data.lottie_asset",
+      "type": "set_variable",
+      "_nested_name": "lottie_asset",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.row_data.lottie_asset",
+            "matchedExpression": "@local.row_data.lottie_asset",
+            "type": "local",
+            "fieldName": "row_data"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@local.row_data.lottie_asset",
+            "matchedExpression": "!@local.row_data.lottie_asset",
+            "type": "local",
+            "fieldName": "row_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.row_data.lottie_asset": [
+          "value"
+        ],
+        "!@local.row_data.lottie_asset": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "lottie_animation",
+      "name": "lottie_display",
+      "value": "@local.lottie_asset",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "condition": "@local.row_data.media_type == \"audio\"",
+      "_nested_name": "lottie_display",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.lottie_asset",
+            "matchedExpression": "@local.lottie_asset",
+            "type": "local",
+            "fieldName": "lottie_asset"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "@local.row_data.media_type == \"audio\"",
+            "matchedExpression": "@local.row_data.media_type",
+            "type": "local",
+            "fieldName": "row_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.lottie_asset": [
+          "value"
+        ],
+        "@local.row_data.media_type": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "audio",
+      "name": "audio",
       "value": "@local.row_data.media_asset",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "audio_asset",
+      "parameter_list": {
+        "title": "@local.row_data.title",
+        "transcript_text": "@local.row_data.transcript"
+      },
+      "condition": "@local.row_data.media_type == \"audio\"",
+      "_nested_name": "audio",
       "_dynamicFields": {
         "value": [
           {
@@ -148,44 +251,6 @@
             "matchedExpression": "@local.row_data.media_asset",
             "type": "local",
             "fieldName": "row_data"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.row_data.media_asset": [
-          "value"
-        ]
-      }
-    },
-    {
-      "type": "lottie_animation",
-      "name": "lottie_circles",
-      "value": "lottie/bulging_circles.json",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true,
-      "_nested_name": "lottie_circles"
-    },
-    {
-      "type": "audio",
-      "name": "audio",
-      "value": "@local.audio_asset",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true,
-      "parameter_list": {
-        "title": "@local.row_data.title"
-      },
-      "_nested_name": "audio",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@local.audio_asset",
-            "matchedExpression": "@local.audio_asset",
-            "type": "local",
-            "fieldName": "audio_asset"
           }
         ],
         "parameter_list": {
@@ -196,94 +261,73 @@
               "type": "local",
               "fieldName": "row_data"
             }
+          ],
+          "transcript_text": [
+            {
+              "fullExpression": "@local.row_data.transcript",
+              "matchedExpression": "@local.row_data.transcript",
+              "type": "local",
+              "fieldName": "row_data"
+            }
           ]
-        }
+        },
+        "condition": [
+          {
+            "fullExpression": "@local.row_data.media_type == \"audio\"",
+            "matchedExpression": "@local.row_data.media_type",
+            "type": "local",
+            "fieldName": "row_data"
+          }
+        ]
       },
       "_dynamicDependencies": {
-        "@local.audio_asset": [
+        "@local.row_data.media_asset": [
           "value"
         ],
         "@local.row_data.title": [
           "parameter_list.title"
+        ],
+        "@local.row_data.transcript": [
+          "parameter_list.transcript_text"
+        ],
+        "@local.row_data.media_type": [
+          "condition"
         ]
       }
     },
     {
-      "type": "button",
-      "name": "button_@item.id",
-      "value": "Read the transcript",
+      "type": "video",
+      "name": "video",
+      "value": "@local.row_data.media_asset",
       "_translations": {
         "value": {}
       },
-      "action_list": [
-        {
-          "trigger": "click",
-          "action_id": "pop_up",
-          "args": [
-            "text_@local.id"
-          ],
-          "_raw": "click | pop_up: text_@local.id",
-          "_cleaned": "click | pop_up: text_@local.id"
-        }
-      ],
-      "_nested_name": "button_@item.id",
+      "condition": "@local.row_data.media_type == \"video\"",
+      "_nested_name": "video",
       "_dynamicFields": {
-        "name": [
+        "value": [
           {
-            "fullExpression": "button_@item.id",
-            "matchedExpression": "@item.id",
-            "type": "item",
-            "fieldName": "id"
+            "fullExpression": "@local.row_data.media_asset",
+            "matchedExpression": "@local.row_data.media_asset",
+            "type": "local",
+            "fieldName": "row_data"
           }
         ],
-        "action_list": {
-          "0": {
-            "args": {
-              "0": [
-                {
-                  "fullExpression": "text_@local.id",
-                  "matchedExpression": "@local.id",
-                  "type": "local",
-                  "fieldName": "id"
-                }
-              ]
-            },
-            "_raw": [
-              {
-                "fullExpression": "click | pop_up: text_@local.id",
-                "matchedExpression": "@local.id",
-                "type": "local",
-                "fieldName": "id"
-              }
-            ],
-            "_cleaned": [
-              {
-                "fullExpression": "click | pop_up: text_@local.id",
-                "matchedExpression": "@local.id",
-                "type": "local",
-                "fieldName": "id"
-              }
-            ]
-          }
-        },
-        "_nested_name": [
+        "condition": [
           {
-            "fullExpression": "button_@item.id",
-            "matchedExpression": "@item.id",
-            "type": "item",
-            "fieldName": "id"
+            "fullExpression": "@local.row_data.media_type == \"video\"",
+            "matchedExpression": "@local.row_data.media_type",
+            "type": "local",
+            "fieldName": "row_data"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@item.id": [
-          "name",
-          "_nested_name"
+        "@local.row_data.media_asset": [
+          "value"
         ],
-        "@local.id": [
-          "action_list.0.args.0",
-          "action_list.0._raw",
-          "action_list.0._cleaned"
+        "@local.row_data.media_type": [
+          "condition"
         ]
       }
     },
@@ -313,14 +357,30 @@
       ],
       "rows": [
         {
-          "name": "display_uncompleted",
-          "value": false,
+          "name": "is_standalone_task",
+          "value": true,
+          "condition": "@fields._deployment_name == \"plh_kids_tz\"",
           "type": "set_variable",
-          "_nested_name": "nav_buttons.display_uncompleted"
+          "_nested_name": "nav_buttons.is_standalone_task",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "@fields._deployment_name == \"plh_kids_tz\"",
+                "matchedExpression": "@fields._deployment_name",
+                "type": "fields",
+                "fieldName": "_deployment_name"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@fields._deployment_name": [
+              "condition"
+            ]
+          }
         }
       ],
       "_nested_name": "nav_buttons"
     }
   ],
-  "_xlsxPath": "templates/library/relax_activities.xlsx"
+  "_xlsxPath": "templates/relax_activities.xlsx"
 }

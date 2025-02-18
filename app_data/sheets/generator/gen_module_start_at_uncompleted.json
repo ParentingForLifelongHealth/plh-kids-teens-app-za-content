@@ -1,0 +1,141 @@
+{
+  "flow_type": "generator",
+  "flow_name": "gen_module_start_at_uncompleted",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "module_{@gen.id}_start_at_uncompleted",
+    "output_flow_type": "template",
+    "output_flow_subtype": "generated"
+  },
+  "rows": [
+    {
+      "name": "module_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "data_items",
+      "name": "find_first_uncompleted_article",
+      "value": "@local.articles_data",
+      "parameter_list": [
+        "filter: !@item.completed",
+        "limit: 1"
+      ],
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "template",
+          "name": "module_start_at_id",
+          "value": "module_start_at_id",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "completed | emit: completed",
+              "_cleaned": "completed | emit: completed"
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "uncompleted | emit: uncompleted",
+              "_cleaned": "uncompleted | emit: uncompleted"
+            }
+          ],
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "module_id",
+              "value": "@gen.id",
+              "exclude_from_translation": true
+            },
+            {
+              "name": "article_id",
+              "value": "@item.id",
+              "exclude_from_translation": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_xlsxPath": "templates/modules/module_navigation.xlsx",
+  "_output_flows": [
+    {
+      "flow_name": "module_selfcare_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "module_childdevelopment_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "module_oneononetime_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "module_praise_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "module_feelings_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "module_instructions_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "module_rulesroutines_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "module_consequences_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "module_problemsolving_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "module_instructions_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "flow_name": "stack_module_oneononetime",
+  "flow_subtype": "generated",
+  "flow_type": "template",
+  "rows": [
+    {
+      "type": "template",
+      "name": "module",
+      "value": "module",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "nav_stack",
+          "args": [
+            "close_top"
+          ],
+          "_raw": "completed | nav_stack: close_top",
+          "_cleaned": "completed | nav_stack: close_top"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "nav_stack",
+          "args": [
+            "close_top"
+          ],
+          "_raw": "uncompleted | nav_stack: close_top",
+          "_cleaned": "uncompleted | nav_stack: close_top"
+        }
+      ],
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "name": "module_id",
+          "value": "oneononetime",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "module.module_id"
+        },
+        {
+          "name": "show_progress_bar",
+          "value": false,
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "module.show_progress_bar"
+        },
+        {
+          "type": "nested_properties",
+          "name": "article_last",
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "type": "nested_properties",
+              "name": "article",
+              "exclude_from_translation": true,
+              "rows": [
+                {
+                  "type": "nested_properties",
+                  "name": "nav_buttons",
+                  "exclude_from_translation": true,
+                  "rows": [
+                    {
+                      "name": "next_icon_src",
+                      "value": "@global.subsequent_completion_icon",
+                      "_translations": {
+                        "value": {}
+                      },
+                      "exclude_from_translation": true,
+                      "type": "set_variable",
+                      "_nested_name": "module.article_last.article.nav_buttons.next_icon_src",
+                      "_dynamicFields": {
+                        "value": [
+                          {
+                            "fullExpression": "@global.subsequent_completion_icon",
+                            "matchedExpression": "@global.subsequent_completion_icon",
+                            "type": "global",
+                            "fieldName": "subsequent_completion_icon"
+                          }
+                        ]
+                      },
+                      "_dynamicDependencies": {
+                        "@global.subsequent_completion_icon": [
+                          "value"
+                        ]
+                      }
+                    }
+                  ],
+                  "_nested_name": "module.article_last.article.nav_buttons"
+                }
+              ],
+              "_nested_name": "module.article_last.article"
+            }
+          ],
+          "_nested_name": "module.article_last"
+        }
+      ],
+      "_nested_name": "module"
+    }
+  ]
+}

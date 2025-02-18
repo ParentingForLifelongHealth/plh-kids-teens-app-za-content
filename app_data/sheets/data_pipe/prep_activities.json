@@ -1,0 +1,25 @@
+{
+  "flow_type": "data_pipe",
+  "flow_name": "prep_activities",
+  "status": "released",
+  "rows": [
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "accessed: FALSE",
+        "locked: TRUE",
+        "favourite: FALSE"
+      ],
+      "input_source": "activities",
+      "output_target": "activity_tasks"
+    }
+  ],
+  "_xlsxPath": "KW activity library.xlsx",
+  "_output_flows": [
+    {
+      "flow_name": "activity_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    }
+  ]
+}

@@ -1,0 +1,854 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings",
+  "status": "released",
+  "parameter_list": {
+    "app_config": {
+      "LAYOUT": {
+        "page_padding": "24px 0"
+      }
+    }
+  },
+  "rows": [
+    {
+      "name": "next_icon_asset",
+      "value": "chevron-forward",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "next_icon_asset"
+    },
+    {
+      "name": "profile_icon",
+      "value": "images/icons/profile_card.svg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "profile_icon"
+    },
+    {
+      "name": "language_icon",
+      "value": "images/icons/world.svg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "language_icon"
+    },
+    {
+      "name": "user_id_icon",
+      "value": "images/icons/key.svg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "user_id_icon"
+    },
+    {
+      "name": "about_icon",
+      "value": "images/icons/magnify_glass.svg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "about_icon"
+    },
+    {
+      "name": "terms_icon",
+      "value": "images/icons/feather.svg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "terms_icon"
+    },
+    {
+      "name": "privacy_icon",
+      "value": "images/icons/document.svg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "privacy_icon"
+    },
+    {
+      "type": "title",
+      "name": "settings",
+      "value": "@global.settings",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "variant": "page_banner"
+      },
+      "style_list": [
+        "padding-inline: 24px"
+      ],
+      "exclude_from_translation": true,
+      "_nested_name": "settings",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.settings",
+            "matchedExpression": "@global.settings",
+            "type": "global",
+            "fieldName": "settings"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.settings": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "title",
+      "name": "account",
+      "value": "@global.account",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "variant": "section_banner"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "account",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.account",
+            "matchedExpression": "@global.account",
+            "type": "global",
+            "fieldName": "account"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.account": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "dg_account",
+      "parameter_list": {
+        "variant": "inline_padding",
+        "style": "column"
+      },
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "button",
+          "name": "button_login",
+          "value": "@global.login",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "variant": "card",
+            "icon": "@local.user_id_icon",
+            "icon_secondary_asset": "@local.next_icon_asset",
+            "style": "no-background",
+            "text_align": "left"
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "pop_up",
+              "args": [
+                "settings_login"
+              ],
+              "_raw": "click | pop_up: settings_login | fullscreen: true, showCloseButton: false",
+              "_cleaned": "click | pop_up: settings_login | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
+            }
+          ],
+          "condition": "!(@fields._auth_user_id)",
+          "exclude_from_translation": true,
+          "_nested_name": "dg_account.button_login",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.login",
+                "matchedExpression": "@global.login",
+                "type": "global",
+                "fieldName": "login"
+              }
+            ],
+            "parameter_list": {
+              "icon": [
+                {
+                  "fullExpression": "@local.user_id_icon",
+                  "matchedExpression": "@local.user_id_icon",
+                  "type": "local",
+                  "fieldName": "user_id_icon"
+                }
+              ],
+              "icon_secondary_asset": [
+                {
+                  "fullExpression": "@local.next_icon_asset",
+                  "matchedExpression": "@local.next_icon_asset",
+                  "type": "local",
+                  "fieldName": "next_icon_asset"
+                }
+              ]
+            },
+            "condition": [
+              {
+                "fullExpression": "!(@fields._auth_user_id)",
+                "matchedExpression": "@fields._auth_user_id",
+                "type": "fields",
+                "fieldName": "_auth_user_id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.login": [
+              "value"
+            ],
+            "@local.user_id_icon": [
+              "parameter_list.icon"
+            ],
+            "@local.next_icon_asset": [
+              "parameter_list.icon_secondary_asset"
+            ],
+            "@fields._auth_user_id": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_logout",
+          "value": "@global.logout",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "variant": "card",
+            "icon": "@local.user_id_icon",
+            "icon_secondary_asset": "@local.next_icon_asset",
+            "style": "no-background",
+            "text_align": "left"
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "pop_up",
+              "args": [
+                "settings_login"
+              ],
+              "_raw": "click | pop_up: settings_login | fullscreen: true, showCloseButton: false",
+              "_cleaned": "click | pop_up: settings_login | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
+            }
+          ],
+          "condition": "!!(@fields._auth_user_id)",
+          "exclude_from_translation": true,
+          "_nested_name": "dg_account.button_logout",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.logout",
+                "matchedExpression": "@global.logout",
+                "type": "global",
+                "fieldName": "logout"
+              }
+            ],
+            "parameter_list": {
+              "icon": [
+                {
+                  "fullExpression": "@local.user_id_icon",
+                  "matchedExpression": "@local.user_id_icon",
+                  "type": "local",
+                  "fieldName": "user_id_icon"
+                }
+              ],
+              "icon_secondary_asset": [
+                {
+                  "fullExpression": "@local.next_icon_asset",
+                  "matchedExpression": "@local.next_icon_asset",
+                  "type": "local",
+                  "fieldName": "next_icon_asset"
+                }
+              ]
+            },
+            "condition": [
+              {
+                "fullExpression": "!!(@fields._auth_user_id)",
+                "matchedExpression": "@fields._auth_user_id",
+                "type": "fields",
+                "fieldName": "_auth_user_id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.logout": [
+              "value"
+            ],
+            "@local.user_id_icon": [
+              "parameter_list.icon"
+            ],
+            "@local.next_icon_asset": [
+              "parameter_list.icon_secondary_asset"
+            ],
+            "@fields._auth_user_id": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_profile",
+          "value": "@global.profile",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "variant": "card",
+            "icon": "@local.profile_icon",
+            "icon_secondary_asset": "@local.next_icon_asset",
+            "style": "no-background",
+            "text_align": "left"
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "pop_up",
+              "args": [
+                "settings_profile"
+              ],
+              "_raw": "click | pop_up: settings_profile | fullscreen: true, showCloseButton: false",
+              "_cleaned": "click | pop_up: settings_profile | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
+            }
+          ],
+          "exclude_from_translation": true,
+          "_nested_name": "dg_account.button_profile",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.profile",
+                "matchedExpression": "@global.profile",
+                "type": "global",
+                "fieldName": "profile"
+              }
+            ],
+            "parameter_list": {
+              "icon": [
+                {
+                  "fullExpression": "@local.profile_icon",
+                  "matchedExpression": "@local.profile_icon",
+                  "type": "local",
+                  "fieldName": "profile_icon"
+                }
+              ],
+              "icon_secondary_asset": [
+                {
+                  "fullExpression": "@local.next_icon_asset",
+                  "matchedExpression": "@local.next_icon_asset",
+                  "type": "local",
+                  "fieldName": "next_icon_asset"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.profile": [
+              "value"
+            ],
+            "@local.profile_icon": [
+              "parameter_list.icon"
+            ],
+            "@local.next_icon_asset": [
+              "parameter_list.icon_secondary_asset"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_language",
+          "value": "@global.language",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "variant": "card",
+            "icon": "@local.language_icon",
+            "icon_secondary_asset": "@local.next_icon_asset",
+            "style": "no-background",
+            "text_align": "left"
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "pop_up",
+              "args": [
+                "settings_language_select"
+              ],
+              "_raw": "click | pop_up: settings_language_select | fullscreen: true, showCloseButton: false",
+              "_cleaned": "click | pop_up: settings_language_select | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
+            }
+          ],
+          "exclude_from_translation": true,
+          "_nested_name": "dg_account.button_language",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.language",
+                "matchedExpression": "@global.language",
+                "type": "global",
+                "fieldName": "language"
+              }
+            ],
+            "parameter_list": {
+              "icon": [
+                {
+                  "fullExpression": "@local.language_icon",
+                  "matchedExpression": "@local.language_icon",
+                  "type": "local",
+                  "fieldName": "language_icon"
+                }
+              ],
+              "icon_secondary_asset": [
+                {
+                  "fullExpression": "@local.next_icon_asset",
+                  "matchedExpression": "@local.next_icon_asset",
+                  "type": "local",
+                  "fieldName": "next_icon_asset"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.language": [
+              "value"
+            ],
+            "@local.language_icon": [
+              "parameter_list.icon"
+            ],
+            "@local.next_icon_asset": [
+              "parameter_list.icon_secondary_asset"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_user_id",
+          "value": "@global.user_id_text",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "variant": "card",
+            "icon": "@local.user_id_icon",
+            "icon_secondary_asset": "@local.next_icon_asset",
+            "style": "no-background",
+            "text_align": "left"
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "pop_up",
+              "args": [
+                "settings_user_id"
+              ],
+              "_raw": "click | pop_up: settings_user_id | fullscreen: true, showCloseButton: false",
+              "_cleaned": "click | pop_up: settings_user_id | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
+            }
+          ],
+          "condition": false,
+          "exclude_from_translation": true,
+          "_nested_name": "dg_account.button_user_id",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.user_id_text",
+                "matchedExpression": "@global.user_id_text",
+                "type": "global",
+                "fieldName": "user_id_text"
+              }
+            ],
+            "parameter_list": {
+              "icon": [
+                {
+                  "fullExpression": "@local.user_id_icon",
+                  "matchedExpression": "@local.user_id_icon",
+                  "type": "local",
+                  "fieldName": "user_id_icon"
+                }
+              ],
+              "icon_secondary_asset": [
+                {
+                  "fullExpression": "@local.next_icon_asset",
+                  "matchedExpression": "@local.next_icon_asset",
+                  "type": "local",
+                  "fieldName": "next_icon_asset"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.user_id_text": [
+              "value"
+            ],
+            "@local.user_id_icon": [
+              "parameter_list.icon"
+            ],
+            "@local.next_icon_asset": [
+              "parameter_list.icon_secondary_asset"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "dg_account"
+    },
+    {
+      "type": "title",
+      "name": "general",
+      "value": "@global.general",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "variant": "section_banner"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "general",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.general",
+            "matchedExpression": "@global.general",
+            "type": "global",
+            "fieldName": "general"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.general": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "dg_general",
+      "parameter_list": {
+        "variant": "inline_padding",
+        "style": "column"
+      },
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "button",
+          "name": "button_about",
+          "value": "@global.about_this_app",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "variant": "card",
+            "icon": "@local.about_icon",
+            "icon_secondary_asset": "@local.next_icon_asset",
+            "style": "no-background",
+            "text_align": "left"
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "pop_up",
+              "args": [
+                "settings_about"
+              ],
+              "_raw": "click | pop_up: settings_about | fullscreen: true, showCloseButton: false",
+              "_cleaned": "click | pop_up: settings_about | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
+            }
+          ],
+          "exclude_from_translation": true,
+          "_nested_name": "dg_general.button_about",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.about_this_app",
+                "matchedExpression": "@global.about_this_app",
+                "type": "global",
+                "fieldName": "about_this_app"
+              }
+            ],
+            "parameter_list": {
+              "icon": [
+                {
+                  "fullExpression": "@local.about_icon",
+                  "matchedExpression": "@local.about_icon",
+                  "type": "local",
+                  "fieldName": "about_icon"
+                }
+              ],
+              "icon_secondary_asset": [
+                {
+                  "fullExpression": "@local.next_icon_asset",
+                  "matchedExpression": "@local.next_icon_asset",
+                  "type": "local",
+                  "fieldName": "next_icon_asset"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.about_this_app": [
+              "value"
+            ],
+            "@local.about_icon": [
+              "parameter_list.icon"
+            ],
+            "@local.next_icon_asset": [
+              "parameter_list.icon_secondary_asset"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_terms",
+          "value": "@global.terms_and_conditions",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "variant": "card",
+            "icon": "@local.terms_icon",
+            "icon_secondary_asset": "@local.next_icon_asset",
+            "style": "no-background",
+            "text_align": "left"
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "pop_up",
+              "args": [
+                "settings_terms"
+              ],
+              "_raw": "click | pop_up: settings_terms | fullscreen: true, showCloseButton: false",
+              "_cleaned": "click | pop_up: settings_terms | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
+            }
+          ],
+          "exclude_from_translation": true,
+          "_nested_name": "dg_general.button_terms",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.terms_and_conditions",
+                "matchedExpression": "@global.terms_and_conditions",
+                "type": "global",
+                "fieldName": "terms_and_conditions"
+              }
+            ],
+            "parameter_list": {
+              "icon": [
+                {
+                  "fullExpression": "@local.terms_icon",
+                  "matchedExpression": "@local.terms_icon",
+                  "type": "local",
+                  "fieldName": "terms_icon"
+                }
+              ],
+              "icon_secondary_asset": [
+                {
+                  "fullExpression": "@local.next_icon_asset",
+                  "matchedExpression": "@local.next_icon_asset",
+                  "type": "local",
+                  "fieldName": "next_icon_asset"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.terms_and_conditions": [
+              "value"
+            ],
+            "@local.terms_icon": [
+              "parameter_list.icon"
+            ],
+            "@local.next_icon_asset": [
+              "parameter_list.icon_secondary_asset"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_privacy",
+          "value": "@global.privacy_policy",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "variant": "card",
+            "icon": "@local.privacy_icon",
+            "icon_secondary_asset": "@local.next_icon_asset",
+            "style": "no-background",
+            "text_align": "left"
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "pop_up",
+              "args": [
+                "settings_privacy_policy"
+              ],
+              "_raw": "click | pop_up: settings_privacy_policy | fullscreen: true, showCloseButton: false",
+              "_cleaned": "click | pop_up: settings_privacy_policy | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
+            }
+          ],
+          "exclude_from_translation": true,
+          "_nested_name": "dg_general.button_privacy",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.privacy_policy",
+                "matchedExpression": "@global.privacy_policy",
+                "type": "global",
+                "fieldName": "privacy_policy"
+              }
+            ],
+            "parameter_list": {
+              "icon": [
+                {
+                  "fullExpression": "@local.privacy_icon",
+                  "matchedExpression": "@local.privacy_icon",
+                  "type": "local",
+                  "fieldName": "privacy_icon"
+                }
+              ],
+              "icon_secondary_asset": [
+                {
+                  "fullExpression": "@local.next_icon_asset",
+                  "matchedExpression": "@local.next_icon_asset",
+                  "type": "local",
+                  "fieldName": "next_icon_asset"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.privacy_policy": [
+              "value"
+            ],
+            "@local.privacy_icon": [
+              "parameter_list.icon"
+            ],
+            "@local.next_icon_asset": [
+              "parameter_list.icon_secondary_asset"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "dg_general"
+    },
+    {
+      "type": "title",
+      "name": "feedback",
+      "value": "@global.feedback",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "variant": "section_banner"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "feedback",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.feedback",
+            "matchedExpression": "@global.feedback",
+            "type": "global",
+            "fieldName": "feedback"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.feedback": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@fields._content_version (@fields._app_version)",
+      "_translations": {
+        "value": {}
+      },
+      "style_list": [
+        "padding-inline: 12px"
+      ],
+      "exclude_from_translation": true,
+      "_nested_name": "text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields._content_version (@fields._app_version)",
+            "matchedExpression": "@fields._content_version",
+            "type": "fields",
+            "fieldName": "_content_version"
+          },
+          {
+            "fullExpression": "@fields._content_version (@fields._app_version)",
+            "matchedExpression": "@fields._app_version",
+            "type": "fields",
+            "fieldName": "_app_version"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields._content_version": [
+          "value"
+        ],
+        "@fields._app_version": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "KW settings.xlsx"
+}

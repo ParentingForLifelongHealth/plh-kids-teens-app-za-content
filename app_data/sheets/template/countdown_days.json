@@ -1,0 +1,170 @@
+{
+  "flow_type": "template",
+  "flow_name": "countdown_days",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Change countdown days",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "title"
+    },
+    {
+      "name": "countdown_days",
+      "value": "@fields.countdown_days",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "countdown_days",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.countdown_days",
+            "matchedExpression": "@fields.countdown_days",
+            "type": "fields",
+            "fieldName": "countdown_days"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.countdown_days": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "Countdown days: @local.countdown_days",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "text_1",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Countdown days: @local.countdown_days",
+            "matchedExpression": "@local.countdown_days",
+            "type": "local",
+            "fieldName": "countdown_days"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.countdown_days": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "Choose a number of days to count down",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "text_2"
+    },
+    {
+      "type": "number_selector",
+      "name": "countdown_days",
+      "value": "@fields.countdown_days",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "max_value": "14"
+      },
+      "_nested_name": "countdown_days",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.countdown_days",
+            "matchedExpression": "@fields.countdown_days",
+            "type": "fields",
+            "fieldName": "countdown_days"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.countdown_days": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Save",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "countdown_days",
+            "@local.countdown_days"
+          ],
+          "_raw": "click | set_field: countdown_days: @local.countdown_days",
+          "_cleaned": "click | set_field: countdown_days: @local.countdown_days"
+        },
+        {
+          "trigger": "click",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "click | emit: completed",
+          "_cleaned": "click | emit: completed"
+        }
+      ],
+      "_nested_name": "button",
+      "_dynamicFields": {
+        "action_list": {
+          "0": {
+            "args": {
+              "1": [
+                {
+                  "fullExpression": "@local.countdown_days",
+                  "matchedExpression": "@local.countdown_days",
+                  "type": "local",
+                  "fieldName": "countdown_days"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: countdown_days: @local.countdown_days",
+                "matchedExpression": "@local.countdown_days",
+                "type": "local",
+                "fieldName": "countdown_days"
+              }
+            ],
+            "_cleaned": [
+              {
+                "fullExpression": "click | set_field: countdown_days: @local.countdown_days",
+                "matchedExpression": "@local.countdown_days",
+                "type": "local",
+                "fieldName": "countdown_days"
+              }
+            ]
+          }
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.countdown_days": [
+          "action_list.0.args.1",
+          "action_list.0._raw",
+          "action_list.0._cleaned"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "KW app_navigation.xlsx"
+}

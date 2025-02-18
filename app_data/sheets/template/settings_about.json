@@ -1,0 +1,85 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_about",
+  "status": "released",
+  "rows": [
+    {
+      "type": "template",
+      "name": "settings_header",
+      "value": "settings_header",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "title",
+          "value": "@global.about_this_app",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "settings_header.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.about_this_app",
+                "matchedExpression": "@global.about_this_app",
+                "type": "global",
+                "fieldName": "about_this_app"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.about_this_app": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "settings_header"
+    },
+    {
+      "type": "template",
+      "name": "app_about",
+      "value": "app_about",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        },
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        }
+      ],
+      "rows": [
+        {
+          "name": "show_title",
+          "value": false,
+          "type": "set_variable",
+          "_nested_name": "app_about.show_title"
+        }
+      ],
+      "_nested_name": "app_about"
+    }
+  ],
+  "_xlsxPath": "KW settings.xlsx"
+}
