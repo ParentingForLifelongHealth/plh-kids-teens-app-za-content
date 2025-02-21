@@ -6,6 +6,7 @@
     {
       "name": "show_title",
       "value": true,
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "show_title"
     },
@@ -17,6 +18,7 @@
         "value": {}
       },
       "condition": "!!(@local.show_title)",
+      "exclude_from_translation": true,
       "_nested_name": "title",
       "_dynamicFields": {
         "value": [
@@ -52,6 +54,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "_nested_name": "user_gender_select_question",
       "_dynamicFields": {
         "value": [
@@ -75,6 +78,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "user_gender_select_options",
       "_dynamicFields": {
@@ -115,6 +119,7 @@
       "parameter_list": {
         "answer_list": "@local.user_gender_select_options"
       },
+      "exclude_from_translation": true,
       "_nested_name": "user_gender_select",
       "_dynamicFields": {
         "value": [
@@ -176,6 +181,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "_nested_name": "user_type_select_question",
       "_dynamicFields": {
         "value": [
@@ -199,6 +205,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "user_type_select_options",
       "_dynamicFields": {
@@ -239,6 +246,7 @@
       "parameter_list": {
         "answer_list": "@local.user_type_select_options"
       },
+      "exclude_from_translation": true,
       "_nested_name": "user_type_select",
       "_dynamicFields": {
         "value": [
@@ -299,6 +307,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "completed_enabled",
       "_dynamicFields": {
@@ -387,6 +396,7 @@
         "style": "navigation",
         "disabled": "!@local.completed_enabled"
       },
+      "exclude_from_translation": true,
       "_nested_name": "button_completed",
       "_dynamicFields": {
         "value": [

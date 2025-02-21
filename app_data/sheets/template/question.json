@@ -2504,11 +2504,15 @@
       }
     },
     {
-      "type": "radio_group",
+      "type": "radio_button_grid",
       "name": "selection_tool",
       "condition": "@local.has_any_image && @fields._deployment_name ==\"plh_kids_kw\"",
       "parameter_list": {
-        "answer_list": "@local.answer_list_2"
+        "answer_list": "@local.answer_list_2",
+        "variant": "flex",
+        "style": "secondary",
+        "item_width": "96px",
+        "grid_gap": "8px"
       },
       "exclude_from_translation": true,
       "_nested_name": "selection_tool",

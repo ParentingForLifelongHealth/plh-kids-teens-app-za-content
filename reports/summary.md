@@ -24,8 +24,7 @@
 | plh_module_list_item | 1 |
 | plh_progress_path | 1 |
 | qr_code | 1 |
-| radio_button_grid | 5 |
-| radio_group | 2 |
+| radio_button_grid | 6 |
 | round_button | 4 |
 | select_text | 1 |
 | set_field | 4 |
@@ -65,7 +64,7 @@
 | pop_up | 41 |
 | reset_app | 1 |
 | set_data | 37 |
-| set_field | 50 |
+| set_field | 49 |
 | set_item | 37 |
 | set_local | 19 |
 | task | 3 |
@@ -77,8 +76,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 90091 KB | 90.1 MB |
-| unused | 133991 KB | 134 MB |
+| total | 90095 KB | 90.1 MB |
+| unused | 133993 KB | 134 MB |
 </details>
 
 <details open>
@@ -194,8 +193,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/clock_blue.png | 4.5 |
 | images/icons/diamond_blue.png | 4.7 |
 | images/icons/eye_blue.png | 4.2 |
-| images/icons/faces/angry.svg | 1.1 |
-| images/icons/faces/confused.svg | 1.8 |
+| images/icons/faces/angry.svg | 4.9 |
 | images/icons/faces/flushed_face.svg | 4.9 |
 | images/icons/faces/happier.svg | 0.6 |
 | images/icons/faces/neutral.svg | 0.5 |
@@ -430,12 +428,13 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/diamond_active.png | 1.7 | 1 |
 | images/icons/document.svg | 7.3 | 1 |
 | images/icons/expand_circle_right.png | 0.9 | 1 |
+| images/icons/faces/confused.svg | 4.9 | 4 |
 | images/icons/faces/happiest.svg | 1.3 | 2 |
 | images/icons/faces/happy.svg | 53.5 | 14 |
 | images/icons/faces/happy_face_new.svg | 1.4 | 30 |
 | images/icons/faces/ok.svg | 46.6 | 12 |
 | images/icons/faces/ok_face_new.svg | 0.5 | 30 |
-| images/icons/faces/sad.svg | 48.2 | 20 |
+| images/icons/faces/sad.svg | 48.2 | 16 |
 | images/icons/faces/sad_face_new.svg | 1.5 | 30 |
 | images/icons/faces/scared.svg | 2.1 | 2 |
 | images/icons/feather.svg | 3.5 | 1 |
@@ -503,12 +502,13 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | type | subtype | total |
 | --- | --- | --- |
-| data_list |  | 23 |
+| data_list |  | 11 |
 | data_list | activities | 1 |
 | data_list | app_config_language_list | 1 |
 | data_list | generated | 22 |
 | data_list | legal_terms | 2 |
 | data_list | lifecycle_actions | 1 |
+| data_list | modules | 12 |
 | data_pipe |  | 2 |
 | data_pipe | generated | 20 |
 | generator |  | 28 |

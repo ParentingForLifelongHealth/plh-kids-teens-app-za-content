@@ -360,7 +360,10 @@
           "exclude_from_translation": true,
           "parameter_list": {
             "answer_list": "@local.answer_list_done",
-            "item_width": "50px"
+            "variant": "flex",
+            "style": "secondary",
+            "item_width": "96px",
+            "grid_gap": "8px"
           },
           "_nested_name": "dg_1.radio_group_done",
           "_dynamicFields": {
@@ -628,111 +631,13 @@
                   "_cleaned": "changed | set_field:@local.radio_group_mood_tracker:@local.radio_group_mood"
                 }
               ],
-              "condition": "@fields._deployment_name !=\"plh_kids_kw\"",
-              "parameter_list": {
-                "answer_list": "@local.answer_list_mood",
-                "item_width": "50px"
-              },
-              "_nested_name": "dg_1.reply_yes_dg.radio_group_mood",
-              "_dynamicFields": {
-                "action_list": {
-                  "0": {
-                    "args": {
-                      "0": [
-                        {
-                          "fullExpression": "@local.radio_group_mood_tracker",
-                          "matchedExpression": "@local.radio_group_mood_tracker",
-                          "type": "local",
-                          "fieldName": "radio_group_mood_tracker"
-                        }
-                      ]
-                    },
-                    "_raw": [
-                      {
-                        "fullExpression": "changed | set_field:@local.radio_group_mood_tracker:@local.radio_group_mood",
-                        "matchedExpression": "@local.radio_group_mood_tracker",
-                        "type": "local",
-                        "fieldName": "radio_group_mood_tracker"
-                      },
-                      {
-                        "fullExpression": "changed | set_field:@local.radio_group_mood_tracker:@local.radio_group_mood",
-                        "matchedExpression": "@local.radio_group_mood",
-                        "type": "local",
-                        "fieldName": "radio_group_mood"
-                      }
-                    ],
-                    "_cleaned": [
-                      {
-                        "fullExpression": "changed | set_field:@local.radio_group_mood_tracker:@local.radio_group_mood",
-                        "matchedExpression": "@local.radio_group_mood_tracker",
-                        "type": "local",
-                        "fieldName": "radio_group_mood_tracker"
-                      },
-                      {
-                        "fullExpression": "changed | set_field:@local.radio_group_mood_tracker:@local.radio_group_mood",
-                        "matchedExpression": "@local.radio_group_mood",
-                        "type": "local",
-                        "fieldName": "radio_group_mood"
-                      }
-                    ]
-                  }
-                },
-                "condition": [
-                  {
-                    "fullExpression": "@fields._deployment_name !=\"plh_kids_kw\"",
-                    "matchedExpression": "@fields._deployment_name",
-                    "type": "fields",
-                    "fieldName": "_deployment_name"
-                  }
-                ],
-                "parameter_list": {
-                  "answer_list": [
-                    {
-                      "fullExpression": "@local.answer_list_mood",
-                      "matchedExpression": "@local.answer_list_mood",
-                      "type": "local",
-                      "fieldName": "answer_list_mood"
-                    }
-                  ]
-                }
-              },
-              "_dynamicDependencies": {
-                "@local.radio_group_mood_tracker": [
-                  "action_list.0.args.0",
-                  "action_list.0._raw",
-                  "action_list.0._cleaned"
-                ],
-                "@local.radio_group_mood": [
-                  "action_list.0._raw",
-                  "action_list.0._cleaned"
-                ],
-                "@fields._deployment_name": [
-                  "condition"
-                ],
-                "@local.answer_list_mood": [
-                  "parameter_list.answer_list"
-                ]
-              }
-            },
-            {
-              "type": "radio_group",
-              "name": "radio_group_mood",
-              "action_list": [
-                {
-                  "trigger": "changed",
-                  "action_id": "set_field",
-                  "args": [
-                    "@local.radio_group_mood_tracker",
-                    "this.value"
-                  ],
-                  "_raw": "changed | set_field:@local.radio_group_mood_tracker:@local.radio_group_mood",
-                  "_cleaned": "changed | set_field:@local.radio_group_mood_tracker:@local.radio_group_mood"
-                }
-              ],
-              "condition": "@fields._deployment_name ==\"plh_kids_kw\"",
               "exclude_from_translation": true,
               "parameter_list": {
-                "answer_list": "@local.answer_list_mood"
+                "answer_list": "@local.answer_list_mood",
+                "variant": "flex",
+                "style": "secondary",
+                "item_width": "96px",
+                "grid_gap": "8px"
               },
               "_nested_name": "dg_1.reply_yes_dg.radio_group_mood",
               "_dynamicFields": {
@@ -778,14 +683,6 @@
                     ]
                   }
                 },
-                "condition": [
-                  {
-                    "fullExpression": "@fields._deployment_name ==\"plh_kids_kw\"",
-                    "matchedExpression": "@fields._deployment_name",
-                    "type": "fields",
-                    "fieldName": "_deployment_name"
-                  }
-                ],
                 "parameter_list": {
                   "answer_list": [
                     {
@@ -806,9 +703,6 @@
                 "@local.radio_group_mood": [
                   "action_list.0._raw",
                   "action_list.0._cleaned"
-                ],
-                "@fields._deployment_name": [
-                  "condition"
                 ],
                 "@local.answer_list_mood": [
                   "parameter_list.answer_list"
