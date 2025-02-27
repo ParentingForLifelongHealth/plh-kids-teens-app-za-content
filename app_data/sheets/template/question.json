@@ -2351,13 +2351,22 @@
       "_nested_name": "selection_tool"
     },
     {
+      "name": "placeholder",
+      "value": "Tap and choose",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "placeholder"
+    },
+    {
       "type": "combo_box",
       "name": "selection_tool",
       "condition": "!@local.has_any_image",
       "parameter_list": {
         "input_allowed": "false",
         "answer_list": "@local.answer_list_1",
-        "placeholder": "Tap and choose"
+        "placeholder": "@local.placeholder"
       },
       "exclude_from_translation": true,
       "_nested_name": "selection_tool",
@@ -2378,6 +2387,14 @@
               "type": "local",
               "fieldName": "answer_list_1"
             }
+          ],
+          "placeholder": [
+            {
+              "fullExpression": "@local.placeholder",
+              "matchedExpression": "@local.placeholder",
+              "type": "local",
+              "fieldName": "placeholder"
+            }
           ]
         }
       },
@@ -2387,6 +2404,9 @@
         ],
         "@local.answer_list_1": [
           "parameter_list.answer_list"
+        ],
+        "@local.placeholder": [
+          "parameter_list.placeholder"
         ]
       }
     },
