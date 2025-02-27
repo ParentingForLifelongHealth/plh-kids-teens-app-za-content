@@ -479,7 +479,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/kw_f3_mother.svg | 15.1 | 1 |
 | images/kw_f3_son_4.svg | 24.6 | 1 |
 | images/kw_f3_uncle.svg | 14.3 | 1 |
-| images/kw_facilitator.svg | 23.6 | 2 |
+| images/kw_facilitator.svg | 23.6 | 3 |
 | images/logos/IDEMS.png | 84.6 | 1 |
 | images/logos/app_logo.png | 36 | 1 |
 | images/one_on_one_challenges.svg | 13.3 | 2 |
@@ -502,10 +502,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | type | subtype | total |
 | --- | --- | --- |
-| data_list |  | 11 |
+| data_list |  | 9 |
 | data_list | activities | 1 |
 | data_list | app_config_language_list | 1 |
 | data_list | generated | 22 |
+| data_list | hp_review | 2 |
 | data_list | legal_terms | 2 |
 | data_list | lifecycle_actions | 1 |
 | data_list | modules | 12 |
