@@ -182,6 +182,14 @@
       "_nested_name": "dg_top"
     },
     {
+      "type": "text",
+      "name": "margin",
+      "style_list": [
+        "margin-top: -36px"
+      ],
+      "_nested_name": "margin"
+    },
+    {
       "type": "template",
       "name": "module_path",
       "value": "module_path",
@@ -206,187 +214,15 @@
       }
     },
     {
-      "name": "module_data_list_name",
-      "value": "module_tasks",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "module_data_list_name"
-    },
-    {
-      "type": "display_group",
+      "type": "template",
       "name": "module_list",
-      "parameter_list": {
-        "variant": "inline_padding",
-        "style": "column"
-      },
+      "value": "module_list",
       "condition": "@fields.display_modules_as_list",
       "exclude_from_translation": true,
-      "rows": [
-        {
-          "name": "is_locked",
-          "value": false,
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "module_list.is_locked"
-        },
-        {
-          "type": "data_items",
-          "name": "loop_modules",
-          "value": "@data.module_tasks",
-          "exclude_from_translation": true,
-          "rows": [
-            {
-              "type": "template",
-              "name": "module_@item.id",
-              "value": "module_list_item",
-              "exclude_from_translation": true,
-              "rows": [
-                {
-                  "name": "module_id",
-                  "value": "@item.id",
-                  "_translations": {
-                    "value": {}
-                  },
-                  "exclude_from_translation": true,
-                  "type": "set_variable",
-                  "_nested_name": "module_list.loop_modules.module_@item.id.module_id",
-                  "_dynamicFields": {
-                    "value": [
-                      {
-                        "fullExpression": "@item.id",
-                        "matchedExpression": "@item.id",
-                        "type": "item",
-                        "fieldName": "id"
-                      }
-                    ],
-                    "_nested_name": [
-                      {
-                        "fullExpression": "module_list.loop_modules.module_@item.id.module_id",
-                        "matchedExpression": "@item.id.module_id",
-                        "type": "item",
-                        "fieldName": "id"
-                      }
-                    ]
-                  },
-                  "_dynamicDependencies": {
-                    "@item.id": [
-                      "value"
-                    ],
-                    "@item.id.module_id": [
-                      "_nested_name"
-                    ]
-                  }
-                },
-                {
-                  "name": "is_locked",
-                  "value": "@local.is_locked",
-                  "_translations": {
-                    "value": {}
-                  },
-                  "exclude_from_translation": true,
-                  "type": "set_variable",
-                  "_nested_name": "module_list.loop_modules.module_@item.id.is_locked",
-                  "_dynamicFields": {
-                    "value": [
-                      {
-                        "fullExpression": "@local.is_locked",
-                        "matchedExpression": "@local.is_locked",
-                        "type": "local",
-                        "fieldName": "is_locked"
-                      }
-                    ],
-                    "_nested_name": [
-                      {
-                        "fullExpression": "module_list.loop_modules.module_@item.id.is_locked",
-                        "matchedExpression": "@item.id.is_locked",
-                        "type": "item",
-                        "fieldName": "id"
-                      }
-                    ]
-                  },
-                  "_dynamicDependencies": {
-                    "@local.is_locked": [
-                      "value"
-                    ],
-                    "@item.id.is_locked": [
-                      "_nested_name"
-                    ]
-                  }
-                }
-              ],
-              "_nested_name": "module_list.loop_modules.module_@item.id",
-              "_dynamicFields": {
-                "name": [
-                  {
-                    "fullExpression": "module_@item.id",
-                    "matchedExpression": "@item.id",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
-                ],
-                "_nested_name": [
-                  {
-                    "fullExpression": "module_list.loop_modules.module_@item.id",
-                    "matchedExpression": "@item.id",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@item.id": [
-                  "name",
-                  "_nested_name"
-                ]
-              }
-            },
-            {
-              "name": "is_locked",
-              "value": "!@item.completed",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "module_list.loop_modules.is_locked",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "!@item.completed",
-                    "matchedExpression": "!@item.completed",
-                    "type": "item",
-                    "fieldName": "completed"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "!@item.completed": [
-                  "value"
-                ]
-              }
-            }
-          ],
-          "_nested_name": "module_list.loop_modules",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@data.module_tasks",
-                "matchedExpression": "@data.module_tasks",
-                "type": "data",
-                "fieldName": "module_tasks"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@data.module_tasks": [
-              "value"
-            ]
-          }
-        }
+      "style_list": [
+        "padding: 0 24px"
       ],
+      "rows": [],
       "_nested_name": "module_list",
       "_dynamicFields": {
         "condition": [
@@ -405,5 +241,5 @@
       }
     }
   ],
-  "_xlsxPath": "KW app_navigation.xlsx"
+  "_xlsxPath": "PLH app_navigation.xlsx"
 }

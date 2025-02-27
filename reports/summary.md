@@ -9,12 +9,12 @@
 | begin_display_group | 1 |
 | button | 60 |
 | combo_box | 4 |
-| data_items | 67 |
+| data_items | 66 |
 | debug_toggle | 1 |
 | display_grid | 2 |
-| display_group | 58 |
+| display_group | 56 |
 | google_sign_in_button | 2 |
-| image | 11 |
+| image | 10 |
 | items | 9 |
 | lottie_animation | 3 |
 | nested_properties | 65 |
@@ -29,16 +29,16 @@
 | round_button | 4 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 1188 |
+| set_variable | 1183 |
 | simple_checkbox | 1 |
 | task_card | 3 |
 | task_progress_bar | 2 |
 | template | 366 |
-| text | 83 |
+| text | 84 |
 | text_area | 2 |
 | text_box | 4 |
 | text_bubble | 2 |
-| title | 35 |
+| title | 34 |
 | toggle_bar | 5 |
 | update_action_list | 2 |
 | video | 3 |
@@ -444,22 +444,22 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/local_library_active.svg | 1.6 | 1 |
 | images/icons/locked.png | 0.7 | 6 |
 | images/icons/magnify_glass.svg | 1.9 | 1 |
-| images/icons/magnifying_glass.svg | 0.9 | 1 |
+| images/icons/magnifying_glass.svg | 0.9 | 11 |
 | images/icons/notification_bell.png | 0.9 | 1 |
-| images/icons/parent_child_heart.svg | 3 | 1 |
-| images/icons/pencil.svg | 1.1 | 1 |
+| images/icons/parent_child_heart.svg | 3 | 11 |
+| images/icons/pencil.svg | 1.1 | 11 |
 | images/icons/profile_card.svg | 7.4 | 1 |
 | images/icons/question_blue.png | 3.4 | 2 |
 | images/icons/repeat_blue.png | 5.4 | 2 |
 | images/icons/settings.svg | 2.4 | 1 |
 | images/icons/settings_active.svg | 2.4 | 1 |
 | images/icons/single_speech_blue.png | 3.3 | 4 |
-| images/icons/smile_eyes_down.svg | 0.9 | 2 |
-| images/icons/smile_eyes_up.svg | 1 | 12 |
+| images/icons/smile_eyes_down.svg | 0.9 | 12 |
+| images/icons/smile_eyes_up.svg | 1 | 22 |
 | images/icons/speech_bubble_blue.png | 4.2 | 6 |
 | images/icons/star_filled_blue.png | 5.1 | 10 |
-| images/icons/star_outline_blue.svg | 1 | 1 |
-| images/icons/thought_bubble.svg | 2.1 | 1 |
+| images/icons/star_outline_blue.svg | 1 | 11 |
+| images/icons/thought_bubble.svg | 2.1 | 11 |
 | images/icons/tick.svg | 0.3 | 1 |
 | images/icons/tick_white.svg | 0.3 | 1 |
 | images/icons/trophy.png | 1.6 | 1 |
@@ -505,13 +505,13 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_list |  | 11 |
 | data_list | activities | 1 |
 | data_list | app_config_language_list | 1 |
-| data_list | generated | 12 |
+| data_list | generated | 22 |
 | data_list | legal_terms | 2 |
 | data_list | lifecycle_actions | 1 |
 | data_list | modules | 12 |
 | data_pipe |  | 2 |
-| data_pipe | generated | 10 |
-| generator |  | 21 |
+| data_pipe | generated | 20 |
+| generator |  | 22 |
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 73 |
