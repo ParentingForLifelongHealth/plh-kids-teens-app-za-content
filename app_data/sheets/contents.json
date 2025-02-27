@@ -5,14 +5,14 @@
       "flow_type": "data_list",
       "flow_name": "about_this_app",
       "data_list_name": "about_this_app",
-      "_xlsxPath": "deployment_data_za.xlsx"
+      "_xlsxPath": "data/deployment_data_za.xlsx"
     },
     "activities": {
       "flow_type": "data_list",
       "flow_name": "activities",
       "data_list_name": "activities",
       "flow_subtype": "activities",
-      "_xlsxPath": "KW activities.xlsx",
+      "_xlsxPath": "data/ZA activities.xlsx",
       "_metadata": {
         "child_age_list": {
           "type": "number"
@@ -24,13 +24,13 @@
       "flow_name": "language",
       "data_list_name": "language",
       "flow_subtype": "app_config_language_list",
-      "_xlsxPath": "deployment_data_za.xlsx"
+      "_xlsxPath": "data/deployment_data_za.xlsx"
     },
     "characters": {
       "flow_type": "data_list",
       "flow_name": "characters",
       "data_list_name": "characters",
-      "_xlsxPath": "ZA characters.xlsx",
+      "_xlsxPath": "data/ZA characters.xlsx",
       "_metadata": {
         "family_no": {
           "type": "number"
@@ -44,7 +44,8 @@
       "flow_type": "data_list",
       "flow_name": "check_in",
       "data_list_name": "check_in",
-      "_xlsxPath": "ZA check_in.xlsx"
+      "flow_subtype": "check_in",
+      "_xlsxPath": "data/ZA check_in.xlsx"
     },
     "activity_tasks": {
       "flow_name": "activity_tasks",
@@ -232,39 +233,35 @@
       "flow_type": "data_list",
       "flow_name": "hp_challenges",
       "data_list_name": "hp_challenges",
-      "_xlsxPath": "ZA hp_review.xlsx"
+      "flow_subtype": "hp_review",
+      "_xlsxPath": "data/ZA hp_review.xlsx"
     },
     "hp_check_in": {
       "flow_type": "data_list",
       "flow_name": "hp_check_in",
       "data_list_name": "hp_check_in",
-      "_xlsxPath": "ZA hp_review.xlsx"
-    },
-    "language_reversed": {
-      "flow_type": "data_list",
-      "flow_name": "language_reversed",
-      "data_list_name": "language_reversed",
-      "_xlsxPath": "deployment_data_kw.xlsx"
+      "flow_subtype": "hp_review",
+      "_xlsxPath": "data/ZA hp_review.xlsx"
     },
     "privacy_policy": {
       "flow_type": "data_list",
       "flow_name": "privacy_policy",
       "data_list_name": "privacy_policy",
       "flow_subtype": "legal_terms",
-      "_xlsxPath": "deployment_data_za.xlsx"
+      "_xlsxPath": "data/deployment_data_za.xlsx"
     },
     "terms_and_conditions": {
       "flow_type": "data_list",
       "flow_name": "terms_and_conditions",
       "data_list_name": "terms_and_conditions",
       "flow_subtype": "legal_terms",
-      "_xlsxPath": "deployment_data_za.xlsx"
+      "_xlsxPath": "data/deployment_data_za.xlsx"
     },
     "launch_actions": {
       "flow_type": "data_list",
       "flow_name": "launch_actions",
       "flow_subtype": "lifecycle_actions",
-      "_xlsxPath": "KW app_launch.xlsx",
+      "_xlsxPath": "PLH app_launch.xlsx",
       "_metadata": {
         "priority": {
           "type": "number"
@@ -364,19 +361,20 @@
       "flow_type": "data_list",
       "flow_name": "organisation",
       "data_list_name": "organisation",
-      "_xlsxPath": "deployment_data_za.xlsx"
+      "_xlsxPath": "data/deployment_data_za.xlsx"
     },
     "organisation_group": {
       "flow_type": "data_list",
       "flow_name": "organisation_group",
       "data_list_name": "organisation_group",
-      "_xlsxPath": "deployment_data_za.xlsx"
+      "_xlsxPath": "data/deployment_data_za.xlsx"
     },
     "relax": {
       "flow_type": "data_list",
       "flow_name": "relax",
       "data_list_name": "relax",
-      "_xlsxPath": "ZA relax.xlsx"
+      "flow_subtype": "relax",
+      "_xlsxPath": "data/ZA relax.xlsx"
     },
     "user_gender": {
       "flow_type": "data_list",
@@ -635,7 +633,7 @@
     "prep_activities": {
       "flow_type": "data_pipe",
       "flow_name": "prep_activities",
-      "_xlsxPath": "KW activity library.xlsx",
+      "_xlsxPath": "PLH activity library.xlsx",
       "_output_flows": [
         {
           "flow_name": "activity_tasks",
@@ -952,7 +950,7 @@
         "output_flow_type": "template",
         "output_flow_subtype": "generated"
       },
-      "_xlsxPath": "KW activity library.xlsx",
+      "_xlsxPath": "PLH activity library.xlsx",
       "_output_flows": [
         {
           "flow_name": "activity_cooking_with_math",
@@ -2406,19 +2404,12 @@
       "flow_name": "app_menu_globals",
       "_xlsxPath": "app_menu.xlsx"
     },
-    "deployment_global_kw": {
-      "flow_type": "global",
-      "flow_name": "deployment_global_kw",
-      "override_target": "deployment_global",
-      "override_condition": "@fields._deployment_name == \"plh_kids_kw\"",
-      "_xlsxPath": "deployment_data_kw.xlsx"
-    },
     "deployment_global_za": {
       "flow_type": "global",
       "flow_name": "deployment_global_za",
       "override_target": "deployment_global",
-      "override_condition": "@fields._deployment_name == \"plh_kids_za\"",
-      "_xlsxPath": "deployment_data_za.xlsx"
+      "override_condition": "@fields._deployment_name == \"plh_kids_teens_za\"",
+      "_xlsxPath": "data/deployment_data_za.xlsx"
     },
     "legal_terms_global": {
       "flow_type": "global",
@@ -2429,7 +2420,7 @@
     "misc_global": {
       "flow_type": "global",
       "flow_name": "misc_global",
-      "_xlsxPath": "deployment_data_kw.xlsx"
+      "_xlsxPath": "data/deployment_data_za.xlsx"
     },
     "user_data_global": {
       "flow_type": "global",
@@ -2441,12 +2432,12 @@
     "activity": {
       "flow_type": "template",
       "flow_name": "activity",
-      "_xlsxPath": "KW activity library.xlsx"
+      "_xlsxPath": "PLH activity library.xlsx"
     },
     "activity_library": {
       "flow_type": "template",
       "flow_name": "activity_library",
-      "_xlsxPath": "KW activity library.xlsx"
+      "_xlsxPath": "PLH activity library.xlsx"
     },
     "app_about": {
       "flow_type": "template",
@@ -2497,7 +2488,7 @@
     "debug_activity_unlocking": {
       "flow_type": "template",
       "flow_name": "debug_activity_unlocking",
-      "_xlsxPath": "KW activity library.xlsx"
+      "_xlsxPath": "PLH activity library.xlsx"
     },
     "enter_dev_mode": {
       "flow_type": "template",
@@ -3924,7 +3915,7 @@
     "language_select_splash": {
       "flow_type": "template",
       "flow_name": "language_select_splash",
-      "_xlsxPath": "KW app_launch.xlsx"
+      "_xlsxPath": "PLH app_launch.xlsx"
     },
     "accept_terms": {
       "flow_type": "template",
@@ -3963,7 +3954,7 @@
     "login_splash": {
       "flow_type": "template",
       "flow_name": "login_splash",
-      "_xlsxPath": "KW app_launch.xlsx"
+      "_xlsxPath": "PLH app_launch.xlsx"
     },
     "media_transcript": {
       "flow_type": "template",
@@ -4217,57 +4208,57 @@
           }
         }
       },
-      "_xlsxPath": "KW settings.xlsx"
+      "_xlsxPath": "PLH settings.xlsx"
     },
     "settings_about": {
       "flow_type": "template",
       "flow_name": "settings_about",
-      "_xlsxPath": "KW settings.xlsx"
+      "_xlsxPath": "PLH settings.xlsx"
     },
     "settings_header": {
       "flow_type": "template",
       "flow_name": "settings_header",
-      "_xlsxPath": "KW settings.xlsx"
+      "_xlsxPath": "PLH settings.xlsx"
     },
     "settings_language_select": {
       "flow_type": "template",
       "flow_name": "settings_language_select",
-      "_xlsxPath": "KW settings.xlsx"
+      "_xlsxPath": "PLH settings.xlsx"
     },
     "settings_login": {
       "flow_type": "template",
       "flow_name": "settings_login",
-      "_xlsxPath": "KW settings.xlsx"
+      "_xlsxPath": "PLH settings.xlsx"
     },
     "settings_privacy_policy": {
       "flow_type": "template",
       "flow_name": "settings_privacy_policy",
-      "_xlsxPath": "KW settings.xlsx"
+      "_xlsxPath": "PLH settings.xlsx"
     },
     "settings_profile": {
       "flow_type": "template",
       "flow_name": "settings_profile",
-      "_xlsxPath": "KW settings.xlsx"
+      "_xlsxPath": "PLH settings.xlsx"
     },
     "settings_terms": {
       "flow_type": "template",
       "flow_name": "settings_terms",
-      "_xlsxPath": "KW settings.xlsx"
+      "_xlsxPath": "PLH settings.xlsx"
     },
     "settings_user_id": {
       "flow_type": "template",
       "flow_name": "settings_user_id",
-      "_xlsxPath": "KW settings.xlsx"
+      "_xlsxPath": "PLH settings.xlsx"
     },
     "splash_footer": {
       "flow_type": "template",
       "flow_name": "splash_footer",
-      "_xlsxPath": "KW app_launch.xlsx"
+      "_xlsxPath": "PLH app_launch.xlsx"
     },
     "unlock_play": {
       "flow_type": "template",
       "flow_name": "unlock_play",
-      "_xlsxPath": "KW activity library.xlsx"
+      "_xlsxPath": "PLH activity library.xlsx"
     },
     "user_data": {
       "flow_type": "template",
@@ -4277,7 +4268,7 @@
     "user_data_splash": {
       "flow_type": "template",
       "flow_name": "user_data_splash",
-      "_xlsxPath": "KW app_launch.xlsx"
+      "_xlsxPath": "PLH app_launch.xlsx"
     },
     "user_id": {
       "flow_type": "template",
