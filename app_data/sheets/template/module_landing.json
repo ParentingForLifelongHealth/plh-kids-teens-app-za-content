@@ -899,6 +899,30 @@
                           "value"
                         ]
                       }
+                    },
+                    {
+                      "name": "module_id",
+                      "value": "@local.module_id",
+                      "_translations": {
+                        "value": {}
+                      },
+                      "type": "set_variable",
+                      "_nested_name": "dg_bottom.loop_outer.dg_module_not_completed.loop_inner.module_id",
+                      "_dynamicFields": {
+                        "value": [
+                          {
+                            "fullExpression": "@local.module_id",
+                            "matchedExpression": "@local.module_id",
+                            "type": "local",
+                            "fieldName": "module_id"
+                          }
+                        ]
+                      },
+                      "_dynamicDependencies": {
+                        "@local.module_id": [
+                          "value"
+                        ]
+                      }
                     }
                   ],
                   "_nested_name": "dg_bottom.loop_outer.dg_module_not_completed.loop_inner"
@@ -1041,5 +1065,5 @@
       "_nested_name": "dg_bottom"
     }
   ],
-  "_xlsxPath": "KW module_navigation.xlsx"
+  "_xlsxPath": "PLH module_navigation.xlsx"
 }

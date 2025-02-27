@@ -185,6 +185,13 @@
       }
     },
     {
+      "name": "is_highlighted",
+      "value": false,
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "is_highlighted"
+    },
+    {
       "type": "plh_module_list_item",
       "name": "plh_module_list_item",
       "value": "@local.module_title",
@@ -206,7 +213,8 @@
         "module_image_asset": "@local.module_image_asset",
         "nav_image_asset": "@local.nav_image_asset",
         "locked_image_asset": "@local.locked_image_asset",
-        "is_locked": "@local.is_locked"
+        "is_locked": "@local.is_locked",
+        "highlighted": "@local.is_highlighted"
       },
       "exclude_from_translation": true,
       "_nested_name": "plh_module_list_item",
@@ -281,6 +289,14 @@
               "type": "local",
               "fieldName": "is_locked"
             }
+          ],
+          "highlighted": [
+            {
+              "fullExpression": "@local.is_highlighted",
+              "matchedExpression": "@local.is_highlighted",
+              "type": "local",
+              "fieldName": "is_highlighted"
+            }
           ]
         }
       },
@@ -304,9 +320,12 @@
         ],
         "@local.is_locked": [
           "parameter_list.is_locked"
+        ],
+        "@local.is_highlighted": [
+          "parameter_list.highlighted"
         ]
       }
     }
   ],
-  "_xlsxPath": "KW module_navigation.xlsx"
+  "_xlsxPath": "PLH module_navigation.xlsx"
 }

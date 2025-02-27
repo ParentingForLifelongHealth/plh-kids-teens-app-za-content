@@ -14,6 +14,11 @@
       "_nested_name": "articles_data_list_name"
     },
     {
+      "name": "module_id",
+      "type": "set_variable",
+      "_nested_name": "module_id"
+    },
+    {
       "type": "data_items",
       "name": "loop_inner",
       "value": "@local.articles_data_list_name",
@@ -78,6 +83,18 @@
               "params": {
                 "template": "@local.module_start_at_id",
                 "header": false
+              }
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
+              "_cleaned": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
+              "params": {
+                "_list_id": "module_tasks",
+                "_id": "@local.module_id",
+                "started_ts": "@calc(now())"
               }
             }
           ],
@@ -149,6 +166,54 @@
                     }
                   ]
                 }
+              },
+              "2": {
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
+                    "matchedExpression": "@local.module_id",
+                    "type": "local",
+                    "fieldName": "module_id"
+                  },
+                  {
+                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
+                    "matchedExpression": "@calc(now())",
+                    "type": "calc",
+                    "fieldName": "now()"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
+                    "matchedExpression": "@local.module_id",
+                    "type": "local",
+                    "fieldName": "module_id"
+                  },
+                  {
+                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
+                    "matchedExpression": "@calc(now())",
+                    "type": "calc",
+                    "fieldName": "now()"
+                  }
+                ],
+                "params": {
+                  "_id": [
+                    {
+                      "fullExpression": "@local.module_id",
+                      "matchedExpression": "@local.module_id",
+                      "type": "local",
+                      "fieldName": "module_id"
+                    }
+                  ],
+                  "started_ts": [
+                    {
+                      "fullExpression": "@calc(now())",
+                      "matchedExpression": "@calc(now())",
+                      "type": "calc",
+                      "fieldName": "now()"
+                    }
+                  ]
+                }
               }
             },
             "condition": [
@@ -173,6 +238,16 @@
               "action_list.1._raw",
               "action_list.1._cleaned",
               "action_list.1.params.template"
+            ],
+            "@local.module_id": [
+              "action_list.2._raw",
+              "action_list.2._cleaned",
+              "action_list.2.params._id"
+            ],
+            "@calc(now())": [
+              "action_list.2._raw",
+              "action_list.2._cleaned",
+              "action_list.2.params.started_ts"
             ],
             "@item.row_index": [
               "condition"
@@ -341,5 +416,5 @@
       }
     }
   ],
-  "_xlsxPath": "KW module_navigation.xlsx"
+  "_xlsxPath": "PLH module_navigation.xlsx"
 }
