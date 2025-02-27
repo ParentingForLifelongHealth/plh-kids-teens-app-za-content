@@ -44,6 +44,7 @@
       "flow_type": "data_list",
       "flow_name": "check_in",
       "data_list_name": "check_in",
+      "flow_subtype": "check_in",
       "_xlsxPath": "data/ZA check_in.xlsx"
     },
     "activity_tasks": {
@@ -242,12 +243,6 @@
       "flow_subtype": "hp_review",
       "_xlsxPath": "data/ZA hp_review.xlsx"
     },
-    "language_reversed": {
-      "flow_type": "data_list",
-      "flow_name": "language_reversed",
-      "data_list_name": "language_reversed",
-      "_xlsxPath": "deployment_data_kw.xlsx"
-    },
     "privacy_policy": {
       "flow_type": "data_list",
       "flow_name": "privacy_policy",
@@ -378,6 +373,7 @@
       "flow_type": "data_list",
       "flow_name": "relax",
       "data_list_name": "relax",
+      "flow_subtype": "relax",
       "_xlsxPath": "data/ZA relax.xlsx"
     },
     "user_gender": {
@@ -2407,13 +2403,6 @@
       "flow_type": "global",
       "flow_name": "app_menu_globals",
       "_xlsxPath": "app_menu.xlsx"
-    },
-    "deployment_global_kw": {
-      "flow_type": "global",
-      "flow_name": "deployment_global_kw",
-      "override_target": "deployment_global",
-      "override_condition": "@fields._deployment_name == \"plh_kids_kw\"",
-      "_xlsxPath": "deployment_data_kw.xlsx"
     },
     "deployment_global_za": {
       "flow_type": "global",
