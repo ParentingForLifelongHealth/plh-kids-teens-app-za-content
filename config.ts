@@ -4,18 +4,20 @@ const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.1.5",
+  content_tag_latest: "1.1.6",
 };
 
 config.google_drive.sheets_folder_ids = [
   "19wSspWYMbRc75een-kS0q0aq24--75u8", // library_app_menu
   "1UXVz71HniwdtklFnGUEBzzj8ZHI9oQVo", // library_field_values
   "1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU", // kids_global
+  "1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9", // kids_teens_global
   "1AGh4vVHx1Z9tPTmkYlU-I8LmAuIQ3gVi", // sheets copied from KW
   "1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI" // kids_teens_za
 ];
 config.google_drive.assets_folder_ids = [
   "1abaL1QGd33NqqLoKuo2t9fVWKmh5ouM9", // kids_global
+  "13COzYq0iK7sXXZYekPgkwloWtuGoxBNt", // kids_teens_global
   "1UeLyEG3-PcXHSbS54GQ1B1HwZ8ihbSY1", // assets copied from KW
   "1T93qsaSBbYa-lCF6ChPkfoX85PLugJCZ" // kids_teens_za
 ];

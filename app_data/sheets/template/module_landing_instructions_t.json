@@ -1,12 +1,21 @@
 {
-  "flow_name": "category_oneononetime_home_activity_1",
-  "flow_subtype": "generated",
   "flow_type": "template",
+  "flow_name": "module_landing_instructions_t",
+  "status": "released",
+  "parameter_list": {
+    "app_config": {
+      "LAYOUT": {
+        "page_padding": "0 0"
+      }
+    }
+  },
+  "comment": "instructions_t",
+  "comment_2": 29,
   "rows": [
     {
       "type": "template",
-      "name": "category",
-      "value": "category",
+      "name": "module_landing",
+      "value": "module_landing",
       "action_list": [
         {
           "trigger": "completed",
@@ -29,27 +38,18 @@
       ],
       "rows": [
         {
-          "name": "category_id",
-          "value": "home_activity_1",
-          "_translations": {
-            "value": {}
-          },
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "category.category_id"
-        },
-        {
           "name": "module_id",
-          "value": "oneononetime",
+          "value": "instructions_t",
           "_translations": {
             "value": {}
           },
           "exclude_from_translation": true,
           "type": "set_variable",
-          "_nested_name": "category.module_id"
+          "_nested_name": "module_landing.module_id"
         }
       ],
-      "_nested_name": "category"
+      "_nested_name": "module_landing"
     }
-  ]
+  ],
+  "_xlsxPath": "templates/ZA module_landing.xlsx"
 }
