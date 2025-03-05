@@ -52,6 +52,30 @@
       }
     },
     {
+      "name": "rewards",
+      "value": "@global.rewards",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "rewards",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.rewards",
+            "matchedExpression": "@global.rewards",
+            "type": "global",
+            "fieldName": "rewards"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.rewards": [
+          "value"
+        ]
+      }
+    },
+    {
       "name": "library",
       "value": "@global.library",
       "_translations": {
@@ -86,11 +110,18 @@
           "target_template": "home_screen"
         },
         {
+          "name": "rewards_button",
+          "label": "@local.rewards",
+          "icon": "images/icons/trophy_footer.svg",
+          "active_icon": "images/icons/trophy_footer_active.svg",
+          "target_template": "activity_library"
+        },
+        {
           "name": "library_button",
           "label": "@local.library",
           "icon": "images/icons/local_library.svg",
           "active_icon": "images/icons/local_library_active.svg",
-          "target_template": "activity_library"
+          "target_template": "library"
         },
         {
           "name": "settings_button",
@@ -117,6 +148,16 @@
           "1": {
             "label": [
               {
+                "fullExpression": "@local.rewards",
+                "matchedExpression": "@local.rewards",
+                "type": "local",
+                "fieldName": "rewards"
+              }
+            ]
+          },
+          "2": {
+            "label": [
+              {
                 "fullExpression": "@local.library",
                 "matchedExpression": "@local.library",
                 "type": "local",
@@ -124,7 +165,7 @@
               }
             ]
           },
-          "2": {
+          "3": {
             "label": [
               {
                 "fullExpression": "@local.settings",
@@ -140,11 +181,14 @@
         "@local.home": [
           "value.0.label"
         ],
-        "@local.library": [
+        "@local.rewards": [
           "value.1.label"
         ],
-        "@local.settings": [
+        "@local.library": [
           "value.2.label"
+        ],
+        "@local.settings": [
+          "value.3.label"
         ]
       }
     },
@@ -153,8 +197,8 @@
       "parameter_list": {
         "button_list": "@local.button_list"
       },
-      "name": "plh_bottom_nav_6",
-      "_nested_name": "plh_bottom_nav_6",
+      "name": "plh_bottom_nav_7",
+      "_nested_name": "plh_bottom_nav_7",
       "_dynamicFields": {
         "parameter_list": {
           "button_list": [
@@ -174,5 +218,5 @@
       }
     }
   ],
-  "_xlsxPath": "PLH app_navigation.xlsx"
+  "_xlsxPath": "templates/ZA app_navigation.xlsx"
 }

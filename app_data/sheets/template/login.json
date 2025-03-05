@@ -157,11 +157,11 @@
               "trigger": "click",
               "action_id": "set_field",
               "args": [
-                "login_skipped",
+                "login_passed",
                 true
               ],
-              "_raw": "click | set_field: login_skipped: true",
-              "_cleaned": "click | set_field: login_skipped: true"
+              "_raw": "click | set_field: login_passed: true",
+              "_cleaned": "click | set_field: login_passed: true"
             }
           ],
           "parameter_list": {
@@ -375,6 +375,16 @@
                 },
                 {
                   "trigger": "click",
+                  "action_id": "set_field",
+                  "args": [
+                    "login_passed",
+                    true
+                  ],
+                  "_raw": "click | set_field: login_passed: true",
+                  "_cleaned": "click | set_field: login_passed: true"
+                },
+                {
+                  "trigger": "click",
                   "action_id": "emit",
                   "args": [
                     "force_restart"
@@ -457,6 +467,16 @@
               ],
               "_raw": "click | emit: completed",
               "_cleaned": "click | emit: completed"
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "login_passed",
+                true
+              ],
+              "_raw": "click | set_field: login_passed: true",
+              "_cleaned": "click | set_field: login_passed: true"
             }
           ],
           "condition": "!@fields.exists_previous_auth_id",
