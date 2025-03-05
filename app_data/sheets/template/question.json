@@ -35,7 +35,7 @@
     },
     {
       "name": "articles",
-      "value": "_articles",
+      "value": "_article_tasks",
       "_translations": {
         "value": {}
       },
@@ -214,6 +214,66 @@
       }
     },
     {
+      "name": "response",
+      "value": "response",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "response"
+    },
+    {
+      "name": "response_column",
+      "value": "quiz@local.join@local.question_no@local.join@local.response",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "response_column",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "quiz@local.join@local.question_no@local.join@local.response",
+            "matchedExpression": "@local.join",
+            "type": "local",
+            "fieldName": "join"
+          },
+          {
+            "fullExpression": "quiz@local.join@local.question_no@local.join@local.response",
+            "matchedExpression": "@local.question_no",
+            "type": "local",
+            "fieldName": "question_no"
+          },
+          {
+            "fullExpression": "quiz@local.join@local.question_no@local.join@local.response",
+            "matchedExpression": "@local.join",
+            "type": "local",
+            "fieldName": "join"
+          },
+          {
+            "fullExpression": "quiz@local.join@local.question_no@local.join@local.response",
+            "matchedExpression": "@local.response",
+            "type": "local",
+            "fieldName": "response"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.join": [
+          "value",
+          "value"
+        ],
+        "@local.question_no": [
+          "value"
+        ],
+        "@local.response": [
+          "value"
+        ]
+      }
+    },
+    {
       "name": "concat_quiz",
       "value": "article_data.@local.question_column",
       "_translations": {
@@ -265,12 +325,6 @@
           "value"
         ]
       }
-    },
-    {
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "name": "set_variable_15",
-      "_nested_name": "set_variable_15"
     },
     {
       "name": "text",
@@ -576,8 +630,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_26",
-      "_nested_name": "set_variable_26"
+      "name": "set_variable_27",
+      "_nested_name": "set_variable_27"
     },
     {
       "name": "option_no_2",
@@ -853,8 +907,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_34",
-      "_nested_name": "set_variable_34"
+      "name": "set_variable_35",
+      "_nested_name": "set_variable_35"
     },
     {
       "name": "option_no_3",
@@ -1130,8 +1184,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_42",
-      "_nested_name": "set_variable_42"
+      "name": "set_variable_43",
+      "_nested_name": "set_variable_43"
     },
     {
       "name": "option_no_4",
@@ -1407,8 +1461,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_50",
-      "_nested_name": "set_variable_50"
+      "name": "set_variable_51",
+      "_nested_name": "set_variable_51"
     },
     {
       "name": "option_no_5",
@@ -1684,8 +1738,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_58",
-      "_nested_name": "set_variable_58"
+      "name": "set_variable_59",
+      "_nested_name": "set_variable_59"
     },
     {
       "name": "option_no_6",
@@ -1961,8 +2015,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_66",
-      "_nested_name": "set_variable_66"
+      "name": "set_variable_67",
+      "_nested_name": "set_variable_67"
     },
     {
       "name": "answer_list_1",
@@ -2352,61 +2406,174 @@
     },
     {
       "name": "placeholder",
-      "value": "Tap and choose",
+      "value": "@global.combo_box_placeholder",
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
-      "_nested_name": "placeholder"
+      "_nested_name": "placeholder",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.combo_box_placeholder",
+            "matchedExpression": "@global.combo_box_placeholder",
+            "type": "global",
+            "fieldName": "combo_box_placeholder"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.combo_box_placeholder": [
+          "value"
+        ]
+      }
     },
     {
-      "type": "combo_box",
-      "name": "selection_tool",
-      "condition": "!@local.has_any_image",
+      "type": "data_items",
+      "name": "loop_select_combo",
+      "value": "@local.data",
       "parameter_list": {
-        "input_allowed": "false",
-        "answer_list": "@local.answer_list_1",
-        "placeholder": "@local.placeholder"
+        "filter": "@item.id == @local.article_id"
       },
-      "exclude_from_translation": true,
-      "_nested_name": "selection_tool",
+      "rows": [
+        {
+          "type": "combo_box",
+          "name": "selection_tool",
+          "value": "@item.@local.response_column",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "changed",
+              "action_id": "set_item",
+              "args": [],
+              "_raw": "changed | set_item | @local.response_column: this.value",
+              "_cleaned": "changed | set_item | @local.response_column: this.value",
+              "params": {
+                "@local.response_column": "this.value"
+              }
+            }
+          ],
+          "condition": "!@local.has_any_image",
+          "parameter_list": {
+            "input_allowed": "false",
+            "answer_list": "@local.answer_list_1",
+            "placeholder": "@local.placeholder"
+          },
+          "exclude_from_translation": true,
+          "_nested_name": "loop_select_combo.selection_tool",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@item.@local.response_column",
+                "matchedExpression": "@local.response_column",
+                "type": "local",
+                "fieldName": "response_column"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "changed | set_item | @local.response_column: this.value",
+                    "matchedExpression": "@local.response_column",
+                    "type": "local",
+                    "fieldName": "response_column"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "changed | set_item | @local.response_column: this.value",
+                    "matchedExpression": "@local.response_column",
+                    "type": "local",
+                    "fieldName": "response_column"
+                  }
+                ]
+              }
+            },
+            "condition": [
+              {
+                "fullExpression": "!@local.has_any_image",
+                "matchedExpression": "!@local.has_any_image",
+                "type": "local",
+                "fieldName": "has_any_image"
+              }
+            ],
+            "parameter_list": {
+              "answer_list": [
+                {
+                  "fullExpression": "@local.answer_list_1",
+                  "matchedExpression": "@local.answer_list_1",
+                  "type": "local",
+                  "fieldName": "answer_list_1"
+                }
+              ],
+              "placeholder": [
+                {
+                  "fullExpression": "@local.placeholder",
+                  "matchedExpression": "@local.placeholder",
+                  "type": "local",
+                  "fieldName": "placeholder"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@local.response_column": [
+              "value",
+              "action_list.0._raw",
+              "action_list.0._cleaned"
+            ],
+            "!@local.has_any_image": [
+              "condition"
+            ],
+            "@local.answer_list_1": [
+              "parameter_list.answer_list"
+            ],
+            "@local.placeholder": [
+              "parameter_list.placeholder"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "loop_select_combo",
       "_dynamicFields": {
-        "condition": [
+        "value": [
           {
-            "fullExpression": "!@local.has_any_image",
-            "matchedExpression": "!@local.has_any_image",
+            "fullExpression": "@local.data",
+            "matchedExpression": "@local.data",
             "type": "local",
-            "fieldName": "has_any_image"
+            "fieldName": "data"
           }
         ],
         "parameter_list": {
-          "answer_list": [
+          "filter": [
             {
-              "fullExpression": "@local.answer_list_1",
-              "matchedExpression": "@local.answer_list_1",
-              "type": "local",
-              "fieldName": "answer_list_1"
-            }
-          ],
-          "placeholder": [
+              "fullExpression": "@item.id == @local.article_id",
+              "matchedExpression": "@item.id",
+              "type": "item",
+              "fieldName": "id"
+            },
             {
-              "fullExpression": "@local.placeholder",
-              "matchedExpression": "@local.placeholder",
+              "fullExpression": "@item.id == @local.article_id",
+              "matchedExpression": "@local.article_id",
               "type": "local",
-              "fieldName": "placeholder"
+              "fieldName": "article_id"
             }
           ]
         }
       },
       "_dynamicDependencies": {
-        "!@local.has_any_image": [
-          "condition"
+        "@local.data": [
+          "value"
         ],
-        "@local.answer_list_1": [
-          "parameter_list.answer_list"
+        "@item.id": [
+          "parameter_list.filter"
         ],
-        "@local.placeholder": [
-          "parameter_list.placeholder"
+        "@local.article_id": [
+          "parameter_list.filter"
         ]
       }
     },
@@ -2441,1102 +2608,1296 @@
       "_nested_name": "radio_button_grid_gap"
     },
     {
-      "type": "radio_button_grid",
-      "name": "selection_tool",
-      "condition": "@local.has_any_image && @fields._deployment_name !=\"plh_kids_kw\"",
+      "type": "data_items",
+      "name": "loop_select_radio",
+      "value": "@local.data",
       "parameter_list": {
-        "answer_list": "@local.answer_list_2",
-        "item_width": "@local.radio_button_grid_item_width",
-        "grid_width": "@local.radio_button_grid_width",
-        "grid_gap": "@local.radio_button_grid_gap"
+        "filter": "@item.id == @local.article_id"
       },
-      "exclude_from_translation": true,
-      "_nested_name": "selection_tool",
-      "_dynamicFields": {
-        "condition": [
-          {
-            "fullExpression": "@local.has_any_image && @fields._deployment_name !=\"plh_kids_kw\"",
-            "matchedExpression": "@local.has_any_image",
-            "type": "local",
-            "fieldName": "has_any_image"
-          },
-          {
-            "fullExpression": "@local.has_any_image && @fields._deployment_name !=\"plh_kids_kw\"",
-            "matchedExpression": "@fields._deployment_name",
-            "type": "fields",
-            "fieldName": "_deployment_name"
-          }
-        ],
-        "parameter_list": {
-          "answer_list": [
-            {
-              "fullExpression": "@local.answer_list_2",
-              "matchedExpression": "@local.answer_list_2",
-              "type": "local",
-              "fieldName": "answer_list_2"
-            }
-          ],
-          "item_width": [
-            {
-              "fullExpression": "@local.radio_button_grid_item_width",
-              "matchedExpression": "@local.radio_button_grid_item_width",
-              "type": "local",
-              "fieldName": "radio_button_grid_item_width"
-            }
-          ],
-          "grid_width": [
-            {
-              "fullExpression": "@local.radio_button_grid_width",
-              "matchedExpression": "@local.radio_button_grid_width",
-              "type": "local",
-              "fieldName": "radio_button_grid_width"
-            }
-          ],
-          "grid_gap": [
-            {
-              "fullExpression": "@local.radio_button_grid_gap",
-              "matchedExpression": "@local.radio_button_grid_gap",
-              "type": "local",
-              "fieldName": "radio_button_grid_gap"
-            }
-          ]
-        }
-      },
-      "_dynamicDependencies": {
-        "@local.has_any_image": [
-          "condition"
-        ],
-        "@fields._deployment_name": [
-          "condition"
-        ],
-        "@local.answer_list_2": [
-          "parameter_list.answer_list"
-        ],
-        "@local.radio_button_grid_item_width": [
-          "parameter_list.item_width"
-        ],
-        "@local.radio_button_grid_width": [
-          "parameter_list.grid_width"
-        ],
-        "@local.radio_button_grid_gap": [
-          "parameter_list.grid_gap"
-        ]
-      }
-    },
-    {
-      "type": "radio_button_grid",
-      "name": "selection_tool",
-      "condition": "@local.has_any_image && @fields._deployment_name ==\"plh_kids_kw\"",
-      "parameter_list": {
-        "answer_list": "@local.answer_list_2",
-        "variant": "flex",
-        "style": "secondary",
-        "item_width": "96px",
-        "grid_gap": "8px"
-      },
-      "exclude_from_translation": true,
-      "_nested_name": "selection_tool",
-      "_dynamicFields": {
-        "condition": [
-          {
-            "fullExpression": "@local.has_any_image && @fields._deployment_name ==\"plh_kids_kw\"",
-            "matchedExpression": "@local.has_any_image",
-            "type": "local",
-            "fieldName": "has_any_image"
-          },
-          {
-            "fullExpression": "@local.has_any_image && @fields._deployment_name ==\"plh_kids_kw\"",
-            "matchedExpression": "@fields._deployment_name",
-            "type": "fields",
-            "fieldName": "_deployment_name"
-          }
-        ],
-        "parameter_list": {
-          "answer_list": [
-            {
-              "fullExpression": "@local.answer_list_2",
-              "matchedExpression": "@local.answer_list_2",
-              "type": "local",
-              "fieldName": "answer_list_2"
-            }
-          ]
-        }
-      },
-      "_dynamicDependencies": {
-        "@local.has_any_image": [
-          "condition"
-        ],
-        "@fields._deployment_name": [
-          "condition"
-        ],
-        "@local.answer_list_2": [
-          "parameter_list.answer_list"
-        ]
-      }
-    },
-    {
-      "type": "display_group",
-      "name": "dg_feedback",
-      "condition": "!!@local.selection_tool",
-      "exclude_from_translation": true,
       "rows": [
         {
-          "type": "template",
-          "name": "option_1",
-          "value": "feedback",
-          "condition": "@local.selection_tool==\"option_1\"",
-          "exclude_from_translation": true,
-          "rows": [
+          "type": "radio_button_grid",
+          "name": "selection_tool",
+          "value": "@item.@local.response_column",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
             {
-              "name": "character_id",
-              "value": "@local.character_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_1.character_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.character_id",
-                    "matchedExpression": "@local.character_id",
-                    "type": "local",
-                    "fieldName": "character_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.character_id": [
-                  "value"
-                ]
+              "trigger": "changed",
+              "action_id": "set_item",
+              "args": [],
+              "_raw": "changed | set_item | @local.response_column: this.value",
+              "_cleaned": "changed | set_item | @local.response_column: this.value",
+              "params": {
+                "@local.response_column": "this.value"
               }
-            },
-            {
-              "name": "article_id",
-              "value": "@local.article_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_1.article_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.article_id",
-                    "matchedExpression": "@local.article_id",
-                    "type": "local",
-                    "fieldName": "article_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.article_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "module_id",
-              "value": "@local.module_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_1.module_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.module_id",
-                    "matchedExpression": "@local.module_id",
-                    "type": "local",
-                    "fieldName": "module_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.module_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "data",
-              "value": "@local.data",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_1.data",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.data",
-                    "matchedExpression": "@local.data",
-                    "type": "local",
-                    "fieldName": "data"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.data": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "question_no",
-              "value": "@local.question_no",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_1.question_no",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.question_no",
-                    "matchedExpression": "@local.question_no",
-                    "type": "local",
-                    "fieldName": "question_no"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.question_no": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "feedback_no",
-              "value": 1,
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_1.feedback_no"
             }
           ],
-          "_nested_name": "dg_feedback.option_1",
+          "condition": "@local.has_any_image && @fields._deployment_name == \"plh_kids_tz\"",
+          "parameter_list": {
+            "answer_list": "@local.answer_list_2",
+            "item_width": "@local.radio_button_grid_item_width",
+            "grid_width": "@local.radio_button_grid_width",
+            "grid_gap": "@local.radio_button_grid_gap"
+          },
+          "exclude_from_translation": true,
+          "_nested_name": "loop_select_radio.selection_tool",
           "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@item.@local.response_column",
+                "matchedExpression": "@local.response_column",
+                "type": "local",
+                "fieldName": "response_column"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "changed | set_item | @local.response_column: this.value",
+                    "matchedExpression": "@local.response_column",
+                    "type": "local",
+                    "fieldName": "response_column"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "changed | set_item | @local.response_column: this.value",
+                    "matchedExpression": "@local.response_column",
+                    "type": "local",
+                    "fieldName": "response_column"
+                  }
+                ]
+              }
+            },
             "condition": [
               {
-                "fullExpression": "@local.selection_tool==\"option_1\"",
-                "matchedExpression": "@local.selection_tool",
+                "fullExpression": "@local.has_any_image && @fields._deployment_name == \"plh_kids_tz\"",
+                "matchedExpression": "@local.has_any_image",
                 "type": "local",
-                "fieldName": "selection_tool"
+                "fieldName": "has_any_image"
+              },
+              {
+                "fullExpression": "@local.has_any_image && @fields._deployment_name == \"plh_kids_tz\"",
+                "matchedExpression": "@fields._deployment_name",
+                "type": "fields",
+                "fieldName": "_deployment_name"
               }
-            ]
+            ],
+            "parameter_list": {
+              "answer_list": [
+                {
+                  "fullExpression": "@local.answer_list_2",
+                  "matchedExpression": "@local.answer_list_2",
+                  "type": "local",
+                  "fieldName": "answer_list_2"
+                }
+              ],
+              "item_width": [
+                {
+                  "fullExpression": "@local.radio_button_grid_item_width",
+                  "matchedExpression": "@local.radio_button_grid_item_width",
+                  "type": "local",
+                  "fieldName": "radio_button_grid_item_width"
+                }
+              ],
+              "grid_width": [
+                {
+                  "fullExpression": "@local.radio_button_grid_width",
+                  "matchedExpression": "@local.radio_button_grid_width",
+                  "type": "local",
+                  "fieldName": "radio_button_grid_width"
+                }
+              ],
+              "grid_gap": [
+                {
+                  "fullExpression": "@local.radio_button_grid_gap",
+                  "matchedExpression": "@local.radio_button_grid_gap",
+                  "type": "local",
+                  "fieldName": "radio_button_grid_gap"
+                }
+              ]
+            }
           },
           "_dynamicDependencies": {
-            "@local.selection_tool": [
+            "@local.response_column": [
+              "value",
+              "action_list.0._raw",
+              "action_list.0._cleaned"
+            ],
+            "@local.has_any_image": [
               "condition"
+            ],
+            "@fields._deployment_name": [
+              "condition"
+            ],
+            "@local.answer_list_2": [
+              "parameter_list.answer_list"
+            ],
+            "@local.radio_button_grid_item_width": [
+              "parameter_list.item_width"
+            ],
+            "@local.radio_button_grid_width": [
+              "parameter_list.grid_width"
+            ],
+            "@local.radio_button_grid_gap": [
+              "parameter_list.grid_gap"
             ]
           }
         },
         {
-          "type": "template",
-          "name": "option_2",
-          "value": "feedback",
-          "condition": "@local.selection_tool==\"option_2\"",
-          "exclude_from_translation": true,
-          "rows": [
+          "type": "radio_button_grid",
+          "name": "selection_tool",
+          "value": "@item.@local.response_column",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
             {
-              "name": "character_id",
-              "value": "@local.character_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_2.character_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.character_id",
-                    "matchedExpression": "@local.character_id",
-                    "type": "local",
-                    "fieldName": "character_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.character_id": [
-                  "value"
-                ]
+              "trigger": "changed",
+              "action_id": "set_item",
+              "args": [],
+              "_raw": "changed | set_item | @local.response_column: this.value",
+              "_cleaned": "changed | set_item | @local.response_column: this.value",
+              "params": {
+                "@local.response_column": "this.value"
               }
-            },
-            {
-              "name": "article_id",
-              "value": "@local.article_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_2.article_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.article_id",
-                    "matchedExpression": "@local.article_id",
-                    "type": "local",
-                    "fieldName": "article_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.article_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "module_id",
-              "value": "@local.module_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_2.module_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.module_id",
-                    "matchedExpression": "@local.module_id",
-                    "type": "local",
-                    "fieldName": "module_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.module_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "data",
-              "value": "@local.data",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_2.data",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.data",
-                    "matchedExpression": "@local.data",
-                    "type": "local",
-                    "fieldName": "data"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.data": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "question_no",
-              "value": "@local.question_no",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_2.question_no",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.question_no",
-                    "matchedExpression": "@local.question_no",
-                    "type": "local",
-                    "fieldName": "question_no"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.question_no": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "feedback_no",
-              "value": 2,
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_2.feedback_no"
             }
           ],
-          "_nested_name": "dg_feedback.option_2",
+          "condition": "@local.has_any_image && @fields._deployment_name != \"plh_kids_tz\"",
+          "parameter_list": {
+            "answer_list": "@local.answer_list_2",
+            "variant": "flex",
+            "style": "secondary",
+            "item_width": "96px",
+            "grid_gap": "8px"
+          },
+          "exclude_from_translation": true,
+          "_nested_name": "loop_select_radio.selection_tool",
           "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@item.@local.response_column",
+                "matchedExpression": "@local.response_column",
+                "type": "local",
+                "fieldName": "response_column"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "changed | set_item | @local.response_column: this.value",
+                    "matchedExpression": "@local.response_column",
+                    "type": "local",
+                    "fieldName": "response_column"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "changed | set_item | @local.response_column: this.value",
+                    "matchedExpression": "@local.response_column",
+                    "type": "local",
+                    "fieldName": "response_column"
+                  }
+                ]
+              }
+            },
             "condition": [
               {
-                "fullExpression": "@local.selection_tool==\"option_2\"",
-                "matchedExpression": "@local.selection_tool",
+                "fullExpression": "@local.has_any_image && @fields._deployment_name != \"plh_kids_tz\"",
+                "matchedExpression": "@local.has_any_image",
                 "type": "local",
-                "fieldName": "selection_tool"
+                "fieldName": "has_any_image"
+              },
+              {
+                "fullExpression": "@local.has_any_image && @fields._deployment_name != \"plh_kids_tz\"",
+                "matchedExpression": "@fields._deployment_name",
+                "type": "fields",
+                "fieldName": "_deployment_name"
               }
-            ]
+            ],
+            "parameter_list": {
+              "answer_list": [
+                {
+                  "fullExpression": "@local.answer_list_2",
+                  "matchedExpression": "@local.answer_list_2",
+                  "type": "local",
+                  "fieldName": "answer_list_2"
+                }
+              ]
+            }
           },
           "_dynamicDependencies": {
-            "@local.selection_tool": [
+            "@local.response_column": [
+              "value",
+              "action_list.0._raw",
+              "action_list.0._cleaned"
+            ],
+            "@local.has_any_image": [
               "condition"
+            ],
+            "@fields._deployment_name": [
+              "condition"
+            ],
+            "@local.answer_list_2": [
+              "parameter_list.answer_list"
             ]
           }
-        },
-        {
-          "type": "template",
-          "name": "option_3",
-          "value": "feedback",
-          "condition": "@local.selection_tool==\"option_3\"",
-          "exclude_from_translation": true,
-          "rows": [
-            {
-              "name": "character_id",
-              "value": "@local.character_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_3.character_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.character_id",
-                    "matchedExpression": "@local.character_id",
-                    "type": "local",
-                    "fieldName": "character_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.character_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "article_id",
-              "value": "@local.article_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_3.article_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.article_id",
-                    "matchedExpression": "@local.article_id",
-                    "type": "local",
-                    "fieldName": "article_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.article_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "module_id",
-              "value": "@local.module_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_3.module_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.module_id",
-                    "matchedExpression": "@local.module_id",
-                    "type": "local",
-                    "fieldName": "module_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.module_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "data",
-              "value": "@local.data",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_3.data",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.data",
-                    "matchedExpression": "@local.data",
-                    "type": "local",
-                    "fieldName": "data"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.data": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "question_no",
-              "value": "@local.question_no",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_3.question_no",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.question_no",
-                    "matchedExpression": "@local.question_no",
-                    "type": "local",
-                    "fieldName": "question_no"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.question_no": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "feedback_no",
-              "value": 3,
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_3.feedback_no"
-            }
-          ],
-          "_nested_name": "dg_feedback.option_3",
-          "_dynamicFields": {
-            "condition": [
-              {
-                "fullExpression": "@local.selection_tool==\"option_3\"",
-                "matchedExpression": "@local.selection_tool",
-                "type": "local",
-                "fieldName": "selection_tool"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.selection_tool": [
-              "condition"
-            ]
+        }
+      ],
+      "_nested_name": "loop_select_radio",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.data",
+            "matchedExpression": "@local.data",
+            "type": "local",
+            "fieldName": "data"
           }
-        },
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.id == @local.article_id",
+              "matchedExpression": "@item.id",
+              "type": "item",
+              "fieldName": "id"
+            },
+            {
+              "fullExpression": "@item.id == @local.article_id",
+              "matchedExpression": "@local.article_id",
+              "type": "local",
+              "fieldName": "article_id"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.data": [
+          "value"
+        ],
+        "@item.id": [
+          "parameter_list.filter"
+        ],
+        "@local.article_id": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "data_items",
+      "name": "feedback",
+      "value": "@local.data",
+      "parameter_list": {
+        "filter": "@item.id == @local.article_id"
+      },
+      "rows": [
         {
-          "type": "template",
-          "name": "option_4",
-          "value": "feedback",
-          "condition": "@local.selection_tool==\"option_4\"",
+          "type": "display_group",
+          "name": "dg_feedback",
+          "condition": "!!@item.@local.response_column",
           "exclude_from_translation": true,
           "rows": [
             {
-              "name": "character_id",
-              "value": "@local.character_id",
-              "_translations": {
-                "value": {}
-              },
+              "type": "template",
+              "name": "option_1",
+              "value": "feedback",
+              "condition": "@item.@local.response_column==\"option_1\"",
               "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_4.character_id",
+              "rows": [
+                {
+                  "name": "character_id",
+                  "value": "@local.character_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_1.character_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.character_id",
+                        "matchedExpression": "@local.character_id",
+                        "type": "local",
+                        "fieldName": "character_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.character_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "article_id",
+                  "value": "@local.article_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_1.article_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.article_id",
+                        "matchedExpression": "@local.article_id",
+                        "type": "local",
+                        "fieldName": "article_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.article_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "module_id",
+                  "value": "@local.module_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_1.module_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.module_id",
+                        "matchedExpression": "@local.module_id",
+                        "type": "local",
+                        "fieldName": "module_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.module_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "data",
+                  "value": "@local.data",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_1.data",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.data",
+                        "matchedExpression": "@local.data",
+                        "type": "local",
+                        "fieldName": "data"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.data": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "question_no",
+                  "value": "@local.question_no",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_1.question_no",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.question_no",
+                        "matchedExpression": "@local.question_no",
+                        "type": "local",
+                        "fieldName": "question_no"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.question_no": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "feedback_no",
+                  "value": 1,
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_1.feedback_no"
+                }
+              ],
+              "_nested_name": "feedback.dg_feedback.option_1",
               "_dynamicFields": {
-                "value": [
+                "condition": [
                   {
-                    "fullExpression": "@local.character_id",
-                    "matchedExpression": "@local.character_id",
+                    "fullExpression": "@item.@local.response_column==\"option_1\"",
+                    "matchedExpression": "@local.response_column",
                     "type": "local",
-                    "fieldName": "character_id"
+                    "fieldName": "response_column"
                   }
                 ]
               },
               "_dynamicDependencies": {
-                "@local.character_id": [
-                  "value"
+                "@local.response_column": [
+                  "condition"
                 ]
               }
             },
             {
-              "name": "article_id",
-              "value": "@local.article_id",
-              "_translations": {
-                "value": {}
-              },
+              "type": "template",
+              "name": "option_2",
+              "value": "feedback",
+              "condition": "@item.@local.response_column==\"option_2\"",
               "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_4.article_id",
+              "rows": [
+                {
+                  "name": "character_id",
+                  "value": "@local.character_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_2.character_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.character_id",
+                        "matchedExpression": "@local.character_id",
+                        "type": "local",
+                        "fieldName": "character_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.character_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "article_id",
+                  "value": "@local.article_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_2.article_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.article_id",
+                        "matchedExpression": "@local.article_id",
+                        "type": "local",
+                        "fieldName": "article_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.article_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "module_id",
+                  "value": "@local.module_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_2.module_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.module_id",
+                        "matchedExpression": "@local.module_id",
+                        "type": "local",
+                        "fieldName": "module_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.module_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "data",
+                  "value": "@local.data",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_2.data",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.data",
+                        "matchedExpression": "@local.data",
+                        "type": "local",
+                        "fieldName": "data"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.data": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "question_no",
+                  "value": "@local.question_no",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_2.question_no",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.question_no",
+                        "matchedExpression": "@local.question_no",
+                        "type": "local",
+                        "fieldName": "question_no"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.question_no": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "feedback_no",
+                  "value": 2,
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_2.feedback_no"
+                }
+              ],
+              "_nested_name": "feedback.dg_feedback.option_2",
               "_dynamicFields": {
-                "value": [
+                "condition": [
                   {
-                    "fullExpression": "@local.article_id",
-                    "matchedExpression": "@local.article_id",
+                    "fullExpression": "@item.@local.response_column==\"option_2\"",
+                    "matchedExpression": "@local.response_column",
                     "type": "local",
-                    "fieldName": "article_id"
+                    "fieldName": "response_column"
                   }
                 ]
               },
               "_dynamicDependencies": {
-                "@local.article_id": [
-                  "value"
+                "@local.response_column": [
+                  "condition"
                 ]
               }
             },
             {
-              "name": "module_id",
-              "value": "@local.module_id",
-              "_translations": {
-                "value": {}
-              },
+              "type": "template",
+              "name": "option_3",
+              "value": "feedback",
+              "condition": "@item.@local.response_column==\"option_3\"",
               "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_4.module_id",
+              "rows": [
+                {
+                  "name": "character_id",
+                  "value": "@local.character_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_3.character_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.character_id",
+                        "matchedExpression": "@local.character_id",
+                        "type": "local",
+                        "fieldName": "character_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.character_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "article_id",
+                  "value": "@local.article_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_3.article_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.article_id",
+                        "matchedExpression": "@local.article_id",
+                        "type": "local",
+                        "fieldName": "article_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.article_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "module_id",
+                  "value": "@local.module_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_3.module_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.module_id",
+                        "matchedExpression": "@local.module_id",
+                        "type": "local",
+                        "fieldName": "module_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.module_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "data",
+                  "value": "@local.data",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_3.data",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.data",
+                        "matchedExpression": "@local.data",
+                        "type": "local",
+                        "fieldName": "data"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.data": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "question_no",
+                  "value": "@local.question_no",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_3.question_no",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.question_no",
+                        "matchedExpression": "@local.question_no",
+                        "type": "local",
+                        "fieldName": "question_no"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.question_no": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "feedback_no",
+                  "value": 3,
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_3.feedback_no"
+                }
+              ],
+              "_nested_name": "feedback.dg_feedback.option_3",
               "_dynamicFields": {
-                "value": [
+                "condition": [
                   {
-                    "fullExpression": "@local.module_id",
-                    "matchedExpression": "@local.module_id",
+                    "fullExpression": "@item.@local.response_column==\"option_3\"",
+                    "matchedExpression": "@local.response_column",
                     "type": "local",
-                    "fieldName": "module_id"
+                    "fieldName": "response_column"
                   }
                 ]
               },
               "_dynamicDependencies": {
-                "@local.module_id": [
-                  "value"
+                "@local.response_column": [
+                  "condition"
                 ]
               }
             },
             {
-              "name": "data",
-              "value": "@local.data",
-              "_translations": {
-                "value": {}
-              },
+              "type": "template",
+              "name": "option_4",
+              "value": "feedback",
+              "condition": "@item.@local.response_column==\"option_4\"",
               "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_4.data",
+              "rows": [
+                {
+                  "name": "character_id",
+                  "value": "@local.character_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_4.character_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.character_id",
+                        "matchedExpression": "@local.character_id",
+                        "type": "local",
+                        "fieldName": "character_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.character_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "article_id",
+                  "value": "@local.article_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_4.article_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.article_id",
+                        "matchedExpression": "@local.article_id",
+                        "type": "local",
+                        "fieldName": "article_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.article_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "module_id",
+                  "value": "@local.module_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_4.module_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.module_id",
+                        "matchedExpression": "@local.module_id",
+                        "type": "local",
+                        "fieldName": "module_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.module_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "data",
+                  "value": "@local.data",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_4.data",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.data",
+                        "matchedExpression": "@local.data",
+                        "type": "local",
+                        "fieldName": "data"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.data": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "question_no",
+                  "value": "@local.question_no",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_4.question_no",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.question_no",
+                        "matchedExpression": "@local.question_no",
+                        "type": "local",
+                        "fieldName": "question_no"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.question_no": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "feedback_no",
+                  "value": 4,
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_4.feedback_no"
+                }
+              ],
+              "_nested_name": "feedback.dg_feedback.option_4",
               "_dynamicFields": {
-                "value": [
+                "condition": [
                   {
-                    "fullExpression": "@local.data",
-                    "matchedExpression": "@local.data",
+                    "fullExpression": "@item.@local.response_column==\"option_4\"",
+                    "matchedExpression": "@local.response_column",
                     "type": "local",
-                    "fieldName": "data"
+                    "fieldName": "response_column"
                   }
                 ]
               },
               "_dynamicDependencies": {
-                "@local.data": [
-                  "value"
+                "@local.response_column": [
+                  "condition"
                 ]
               }
             },
             {
-              "name": "question_no",
-              "value": "@local.question_no",
-              "_translations": {
-                "value": {}
-              },
+              "type": "template",
+              "name": "option_5",
+              "value": "feedback",
+              "condition": "@item.@local.response_column==\"option_5\"",
               "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_4.question_no",
+              "rows": [
+                {
+                  "name": "character_id",
+                  "value": "@local.character_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_5.character_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.character_id",
+                        "matchedExpression": "@local.character_id",
+                        "type": "local",
+                        "fieldName": "character_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.character_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "article_id",
+                  "value": "@local.article_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_5.article_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.article_id",
+                        "matchedExpression": "@local.article_id",
+                        "type": "local",
+                        "fieldName": "article_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.article_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "module_id",
+                  "value": "@local.module_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_5.module_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.module_id",
+                        "matchedExpression": "@local.module_id",
+                        "type": "local",
+                        "fieldName": "module_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.module_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "data",
+                  "value": "@local.data",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_5.data",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.data",
+                        "matchedExpression": "@local.data",
+                        "type": "local",
+                        "fieldName": "data"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.data": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "question_no",
+                  "value": "@local.question_no",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_5.question_no",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.question_no",
+                        "matchedExpression": "@local.question_no",
+                        "type": "local",
+                        "fieldName": "question_no"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.question_no": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "feedback_no",
+                  "value": 5,
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_5.feedback_no"
+                }
+              ],
+              "_nested_name": "feedback.dg_feedback.option_5",
               "_dynamicFields": {
-                "value": [
+                "condition": [
                   {
-                    "fullExpression": "@local.question_no",
-                    "matchedExpression": "@local.question_no",
+                    "fullExpression": "@item.@local.response_column==\"option_5\"",
+                    "matchedExpression": "@local.response_column",
                     "type": "local",
-                    "fieldName": "question_no"
+                    "fieldName": "response_column"
                   }
                 ]
               },
               "_dynamicDependencies": {
-                "@local.question_no": [
-                  "value"
+                "@local.response_column": [
+                  "condition"
                 ]
               }
             },
             {
-              "name": "feedback_no",
-              "value": 4,
+              "type": "template",
+              "name": "option_6",
+              "value": "feedback",
+              "condition": "@item.@local.response_column==\"option_6\"",
               "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_4.feedback_no"
+              "rows": [
+                {
+                  "name": "character_id",
+                  "value": "@local.character_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_6.character_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.character_id",
+                        "matchedExpression": "@local.character_id",
+                        "type": "local",
+                        "fieldName": "character_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.character_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "article_id",
+                  "value": "@local.article_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_6.article_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.article_id",
+                        "matchedExpression": "@local.article_id",
+                        "type": "local",
+                        "fieldName": "article_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.article_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "module_id",
+                  "value": "@local.module_id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_6.module_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.module_id",
+                        "matchedExpression": "@local.module_id",
+                        "type": "local",
+                        "fieldName": "module_id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.module_id": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "data",
+                  "value": "@local.data",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_6.data",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.data",
+                        "matchedExpression": "@local.data",
+                        "type": "local",
+                        "fieldName": "data"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.data": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "question_no",
+                  "value": "@local.question_no",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_6.question_no",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.question_no",
+                        "matchedExpression": "@local.question_no",
+                        "type": "local",
+                        "fieldName": "question_no"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.question_no": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "feedback_no",
+                  "value": 6,
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_6.feedback_no"
+                }
+              ],
+              "_nested_name": "feedback.dg_feedback.option_6",
+              "_dynamicFields": {
+                "condition": [
+                  {
+                    "fullExpression": "@item.@local.response_column==\"option_6\"",
+                    "matchedExpression": "@local.response_column",
+                    "type": "local",
+                    "fieldName": "response_column"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.response_column": [
+                  "condition"
+                ]
+              }
             }
           ],
-          "_nested_name": "dg_feedback.option_4",
+          "_nested_name": "feedback.dg_feedback",
           "_dynamicFields": {
             "condition": [
               {
-                "fullExpression": "@local.selection_tool==\"option_4\"",
-                "matchedExpression": "@local.selection_tool",
+                "fullExpression": "!!@item.@local.response_column",
+                "matchedExpression": "@local.response_column",
                 "type": "local",
-                "fieldName": "selection_tool"
+                "fieldName": "response_column"
               }
             ]
           },
           "_dynamicDependencies": {
-            "@local.selection_tool": [
-              "condition"
-            ]
-          }
-        },
-        {
-          "type": "template",
-          "name": "option_5",
-          "value": "feedback",
-          "condition": "@local.selection_tool==\"option_5\"",
-          "exclude_from_translation": true,
-          "rows": [
-            {
-              "name": "character_id",
-              "value": "@local.character_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_5.character_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.character_id",
-                    "matchedExpression": "@local.character_id",
-                    "type": "local",
-                    "fieldName": "character_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.character_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "article_id",
-              "value": "@local.article_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_5.article_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.article_id",
-                    "matchedExpression": "@local.article_id",
-                    "type": "local",
-                    "fieldName": "article_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.article_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "module_id",
-              "value": "@local.module_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_5.module_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.module_id",
-                    "matchedExpression": "@local.module_id",
-                    "type": "local",
-                    "fieldName": "module_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.module_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "data",
-              "value": "@local.data",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_5.data",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.data",
-                    "matchedExpression": "@local.data",
-                    "type": "local",
-                    "fieldName": "data"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.data": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "question_no",
-              "value": "@local.question_no",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_5.question_no",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.question_no",
-                    "matchedExpression": "@local.question_no",
-                    "type": "local",
-                    "fieldName": "question_no"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.question_no": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "feedback_no",
-              "value": 5,
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_5.feedback_no"
-            }
-          ],
-          "_nested_name": "dg_feedback.option_5",
-          "_dynamicFields": {
-            "condition": [
-              {
-                "fullExpression": "@local.selection_tool==\"option_5\"",
-                "matchedExpression": "@local.selection_tool",
-                "type": "local",
-                "fieldName": "selection_tool"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.selection_tool": [
-              "condition"
-            ]
-          }
-        },
-        {
-          "type": "template",
-          "name": "option_6",
-          "value": "feedback",
-          "condition": "@local.selection_tool==\"option_6\"",
-          "exclude_from_translation": true,
-          "rows": [
-            {
-              "name": "character_id",
-              "value": "@local.character_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_6.character_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.character_id",
-                    "matchedExpression": "@local.character_id",
-                    "type": "local",
-                    "fieldName": "character_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.character_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "article_id",
-              "value": "@local.article_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_6.article_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.article_id",
-                    "matchedExpression": "@local.article_id",
-                    "type": "local",
-                    "fieldName": "article_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.article_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "module_id",
-              "value": "@local.module_id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_6.module_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.module_id",
-                    "matchedExpression": "@local.module_id",
-                    "type": "local",
-                    "fieldName": "module_id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.module_id": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "data",
-              "value": "@local.data",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_6.data",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.data",
-                    "matchedExpression": "@local.data",
-                    "type": "local",
-                    "fieldName": "data"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.data": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "question_no",
-              "value": "@local.question_no",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_6.question_no",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.question_no",
-                    "matchedExpression": "@local.question_no",
-                    "type": "local",
-                    "fieldName": "question_no"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.question_no": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "name": "feedback_no",
-              "value": 6,
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_feedback.option_6.feedback_no"
-            }
-          ],
-          "_nested_name": "dg_feedback.option_6",
-          "_dynamicFields": {
-            "condition": [
-              {
-                "fullExpression": "@local.selection_tool==\"option_6\"",
-                "matchedExpression": "@local.selection_tool",
-                "type": "local",
-                "fieldName": "selection_tool"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.selection_tool": [
+            "@local.response_column": [
               "condition"
             ]
           }
         }
       ],
-      "_nested_name": "dg_feedback",
+      "_nested_name": "feedback",
       "_dynamicFields": {
-        "condition": [
+        "value": [
           {
-            "fullExpression": "!!@local.selection_tool",
-            "matchedExpression": "!@local.selection_tool",
+            "fullExpression": "@local.data",
+            "matchedExpression": "@local.data",
             "type": "local",
-            "fieldName": "selection_tool"
+            "fieldName": "data"
           }
-        ]
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.id == @local.article_id",
+              "matchedExpression": "@item.id",
+              "type": "item",
+              "fieldName": "id"
+            },
+            {
+              "fullExpression": "@item.id == @local.article_id",
+              "matchedExpression": "@local.article_id",
+              "type": "local",
+              "fieldName": "article_id"
+            }
+          ]
+        }
       },
       "_dynamicDependencies": {
-        "!@local.selection_tool": [
-          "condition"
+        "@local.data": [
+          "value"
+        ],
+        "@item.id": [
+          "parameter_list.filter"
+        ],
+        "@local.article_id": [
+          "parameter_list.filter"
         ]
       }
     }
