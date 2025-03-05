@@ -29,7 +29,7 @@
 | round_button | 4 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 1298 |
+| set_variable | 1299 |
 | simple_checkbox | 1 |
 | task_card | 3 |
 | task_progress_bar | 2 |
@@ -65,7 +65,7 @@
 | pop_up | 31 |
 | reset_app | 1 |
 | set_data | 28 |
-| set_field | 38 |
+| set_field | 40 |
 | set_item | 37 |
 | set_local | 26 |
 | task | 3 |
@@ -77,7 +77,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 90191 KB | 90.2 MB |
+| total | 90199 KB | 90.2 MB |
 | unused | 156486 KB | 156.5 MB |
 </details>
 
@@ -659,6 +659,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/trophy.png | 1.6 | 1 |
 | images/icons/trophy_active.png | 1.7 | 1 |
 | images/icons/trophy_blue.png | 5.1 | 4 |
+| images/icons/trophy_footer.svg | 3.9 | 1 |
+| images/icons/trophy_footer_active.svg | 3.9 | 1 |
 | images/icons/world.svg | 6.2 | 1 |
 | images/instructions.svg | 23.6 | 4 |
 | images/kw_f1_daughter_2.svg | 34.2 | 1 |
