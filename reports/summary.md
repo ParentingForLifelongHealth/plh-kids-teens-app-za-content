@@ -3,21 +3,23 @@
 
 | type | count |
 | --- | --- |
-| accordion | 1 |
-| accordion_section | 1 |
+| accordion | 2 |
+| accordion_section | 5 |
 | audio | 3 |
 | begin_display_group | 1 |
-| button | 60 |
-| combo_box | 6 |
+| button | 82 |
+| carousel | 1 |
+| combo_box | 7 |
+| dashed_box | 1 |
 | data_items | 72 |
 | debug_toggle | 1 |
 | display_grid | 2 |
-| display_group | 57 |
+| display_group | 74 |
 | google_sign_in_button | 2 |
-| image | 10 |
-| items | 9 |
+| image | 12 |
+| items | 20 |
 | lottie_animation | 3 |
-| nested_properties | 65 |
+| nested_properties | 66 |
 | number_selector | 1 |
 | plh_activity_check_in | 1 |
 | plh_bottom_nav | 1 |
@@ -27,19 +29,21 @@
 | qr_code | 1 |
 | radio_button_grid | 8 |
 | round_button | 4 |
-| select_text | 1 |
+| select_text | 4 |
 | set_field | 4 |
-| set_variable | 1299 |
-| simple_checkbox | 1 |
+| set_variable | 1455 |
+| simple_checkbox | 3 |
+| subtitle | 3 |
 | task_card | 3 |
 | task_progress_bar | 2 |
-| template | 372 |
-| text | 85 |
-| text_area | 2 |
-| text_box | 4 |
+| template | 415 |
+| text | 105 |
+| text_area | 3 |
+| text_box | 7 |
 | text_bubble | 2 |
-| title | 34 |
-| toggle_bar | 5 |
+| tile_component | 4 |
+| title | 45 |
+| toggle_bar | 7 |
 | update_action_list | 2 |
 | video | 3 |
 | youtube | 4 |
@@ -52,22 +56,23 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 274 |
-| emit: force_reload | 3 |
+| emit: completed | 305 |
+| emit: force_reload | 4 |
 | emit: force_reprocess | 11 |
 | emit: force_restart | 5 |
-| emit: server_sync | 3 |
+| emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 273 |
-| feedback | 13 |
-| go_to | 13 |
+| emit: uncompleted | 274 |
+| feedback | 14 |
+| go_to | 36 |
+| go_to_url | 3 |
 | nav_stack | 87 |
-| pop_up | 31 |
+| pop_up | 34 |
 | reset_app | 1 |
 | set_data | 28 |
-| set_field | 40 |
+| set_field | 53 |
 | set_item | 37 |
-| set_local | 26 |
+| set_local | 27 |
 | task | 3 |
 | user | 3 |
 </details>
@@ -77,8 +82,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 90199 KB | 90.2 MB |
-| unused | 156486 KB | 156.5 MB |
+| total | 97891 KB | 97.9 MB |
+| unused | 156480 KB | 156.5 MB |
 </details>
 
 <details open>
@@ -234,11 +239,21 @@ Assets that appear in app-data but do not have references within sheets
 | images/self_care_yc.svg | 94 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
+| plh_images/learn_play/talk_1.svg | 76.9 |
+| plh_images/learn_play/talk_1_icon.svg | 45 |
+| plh_images/learn_play/talk_2.svg | 37 |
+| plh_images/learn_play/talk_2_icon.svg | 19.1 |
+| plh_images/learn_play/talk_3.svg | 42.5 |
+| plh_images/learn_play/talk_3_icon.svg | 27.7 |
+| plh_images/learn_play/talk_4.svg | 77 |
+| plh_images/learn_play/talk_4_icon.svg | 46.3 |
+| plh_images/learn_play/talk_5.svg | 81.3 |
+| plh_images/learn_play/talk_5_icon.svg | 53.3 |
+| plh_images/learn_play/talk_6.svg | 37.5 |
+| plh_images/learn_play/talk_6_icon.svg | 23.5 |
+| plh_images/learn_play/talk_7.svg | 38.2 |
+| plh_images/learn_play/talk_7_icon.svg | 22.9 |
 | plh_images/workshops/w_1on1/tools.svg | 48.5 |
-| plh_images/workshops/w_celebrate/read/slide_1.svg | 152.3 |
-| plh_images/workshops/w_celebrate/read/slide_2.svg | 34.9 |
-| plh_images/workshops/w_celebrate/read/slide_3.svg | 89.6 |
-| plh_images/workshops/w_celebrate/read/slide_4.svg | 166.6 |
 | plh_images/workshops/w_celebrate/tools.svg | 36.3 |
 | plh_images/workshops/w_consequence/read_1/slide_1.svg | 72.4 |
 | plh_images/workshops/w_consequence/read_1/slide_2.svg | 46.5 |
@@ -369,10 +384,6 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/workshops/w_solve/read_3/slide_2.svg | 31.9 |
 | plh_images/workshops/w_solve/read_3/slide_3.svg | 31.3 |
 | plh_images/workshops/w_solve/tools.svg | 53.7 |
-| plh_images/workshops/w_solve/tools/tool_1.svg | 42.1 |
-| plh_images/workshops/w_solve/tools/tool_2.svg | 75.3 |
-| plh_images/workshops/w_solve/tools/tool_3.svg | 39.4 |
-| plh_images/workshops/w_solve/tools/tool_4.svg | 33.4 |
 | plh_images/workshops/w_srh/learn/sex_talk_age/slide_1.svg | 125 |
 | plh_images/workshops/w_srh/learn/sex_talk_age/slide_2.svg | 70.9 |
 | plh_images/workshops/w_srh/learn/sex_talk_age/slide_3.svg | 25.6 |
@@ -498,6 +509,25 @@ Assets that have references within sheets but do not appear in app-data
 | https://img.youtube.com/vi/wng0kJZJoT0/hqdefault.jpg | 2 |
 | images/backgrounds/library_bottom_right.png | 1 |
 | images/logos/plh.jpg | 1 |
+| plh_images/characters/elder/large.svg | 1 |
+| plh_images/icons/globe_circle.svg | 1 |
+| plh_images/icons/heart.svg | 1 |
+| plh_images/icons/heart_filled.svg | 1 |
+| plh_images/icons/tick.svg | 1 |
+| plh_images/parent_centre/ltp_activities/talk_1.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_1_icon.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_2.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_2_icon.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_3.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_3_icon.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_4.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_4_icon.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_5.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_5_icon.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_6.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_6_icon.svg | 2 |
+| plh_images/parent_centre/ltp_activities/talk_7.svg | 1 |
+| plh_images/parent_centre/ltp_activities/talk_7_icon.svg | 1 |
 </details>
 
 <details >
@@ -688,6 +718,50 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/talk_feelings_challenges.svg | 19.6 | 2 |
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/gift_box.json | 674.5 | 1 |
+| plh_images/icons/light_bulb_white.svg | 2.4 | 1 |
+| plh_images/icons/parent_child_talk_white.svg | 2.2 | 1 |
+| plh_images/icons/smile_eyes_down_white.svg | 0.9 | 1 |
+| plh_images/icons/speech_bubble_question_white.svg | 1.6 | 1 |
+| plh_images/learn_play/bao.svg | 5661.9 | 1 |
+| plh_images/learn_play/bao_icon.svg | 8.6 | 1 |
+| plh_images/learn_play/charades.svg | 38.9 | 1 |
+| plh_images/learn_play/charades_icon.svg | 35.6 | 1 |
+| plh_images/learn_play/chores.svg | 110.2 | 1 |
+| plh_images/learn_play/chores_icon.svg | 9.5 | 1 |
+| plh_images/learn_play/clean.svg | 39.9 | 1 |
+| plh_images/learn_play/clean_icon.svg | 35.4 | 1 |
+| plh_images/learn_play/cook.svg | 45.1 | 1 |
+| plh_images/learn_play/cook_icon.svg | 12.4 | 1 |
+| plh_images/learn_play/cook_traditional.svg | 40.7 | 1 |
+| plh_images/learn_play/cook_traditional_icon.svg | 56.1 | 1 |
+| plh_images/learn_play/dance.svg | 42.3 | 1 |
+| plh_images/learn_play/dance_icon.svg | 33 | 1 |
+| plh_images/learn_play/find_pair.svg | 36.9 | 1 |
+| plh_images/learn_play/find_pair_icon.svg | 29.1 | 1 |
+| plh_images/learn_play/garden.svg | 109.9 | 1 |
+| plh_images/learn_play/garden_icon.svg | 15.4 | 1 |
+| plh_images/learn_play/long_term_goal.svg | 59.8 | 1 |
+| plh_images/learn_play/long_term_goal_icon.svg | 62.1 | 1 |
+| plh_images/learn_play/memory_game.svg | 40 | 1 |
+| plh_images/learn_play/memory_game_icon.svg | 31.5 | 1 |
+| plh_images/learn_play/mystery_box.svg | 58.4 | 1 |
+| plh_images/learn_play/mystery_box_icon.svg | 28.4 | 1 |
+| plh_images/learn_play/role_play.svg | 38.5 | 1 |
+| plh_images/learn_play/role_play_icon.svg | 35.6 | 1 |
+| plh_images/learn_play/short_term_goal.svg | 41.9 | 1 |
+| plh_images/learn_play/short_term_goal_icon.svg | 25 | 1 |
+| plh_images/learn_play/tell_stories.svg | 40.9 | 1 |
+| plh_images/learn_play/tell_stories_icon.svg | 28.6 | 1 |
+| plh_images/learn_play/walk.svg | 101.3 | 1 |
+| plh_images/learn_play/walk_icon.svg | 98.4 | 1 |
+| plh_images/workshops/w_celebrate/read/slide_1.svg | 152.3 | 1 |
+| plh_images/workshops/w_celebrate/read/slide_2.svg | 34.9 | 1 |
+| plh_images/workshops/w_celebrate/read/slide_3.svg | 89.6 | 1 |
+| plh_images/workshops/w_celebrate/read/slide_4.svg | 166.6 | 1 |
+| plh_images/workshops/w_solve/tools/tool_1.svg | 42.1 | 1 |
+| plh_images/workshops/w_solve/tools/tool_2.svg | 75.3 | 1 |
+| plh_images/workshops/w_solve/tools/tool_3.svg | 39.4 | 1 |
+| plh_images/workshops/w_solve/tools/tool_4.svg | 33.4 | 1 |
 | video/pause/body_scan.mp4 | 10418.6 | 4 |
 | video/pause/breath_body_awareness.mp4 | 27250 | 5 |
 | video/pause/loving_kindness_meditation.mp4 | 16605.2 | 4 |
@@ -698,8 +772,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | type | subtype | total |
 | --- | --- | --- |
-| data_list |  | 6 |
-| data_list | activities | 1 |
+| data_list |  | 8 |
+| data_list | activities | 3 |
 | data_list | app_config_language_list | 1 |
 | data_list | check_in | 1 |
 | data_list | generated | 22 |
@@ -710,10 +784,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_list | relax | 1 |
 | data_pipe |  | 2 |
 | data_pipe | generated | 20 |
-| generator |  | 22 |
-| global |  | 4 |
+| generator |  | 23 |
+| global |  | 5 |
 | global | legal_terms | 1 |
-| template |  | 74 |
-| template | generated | 269 |
+| template |  | 88 |
+| template | generated | 297 |
 | template | legal_terms | 4 |
 </details>
