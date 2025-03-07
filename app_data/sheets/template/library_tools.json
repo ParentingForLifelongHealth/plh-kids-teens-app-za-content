@@ -1,0 +1,132 @@
+{
+  "flow_type": "template",
+  "flow_name": "library_tools",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@data.library.essential_tools.title",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.library.essential_tools.title",
+            "matchedExpression": "@data.library.essential_tools.title",
+            "type": "data",
+            "fieldName": "library"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.library.essential_tools.title": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "tool_tiles",
+      "parameter_list": {
+        "style": "two_columns"
+      },
+      "rows": [
+        {
+          "type": "items",
+          "value": "@data.workshop",
+          "rows": [
+            {
+              "type": "template",
+              "name": "tool_tile_@item.id",
+              "value": "tool_tile",
+              "rows": [
+                {
+                  "name": "workshop",
+                  "value": "@item.id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "tool_tiles.items_1.tool_tile_@item.id.workshop",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@item.id",
+                        "matchedExpression": "@item.id",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ],
+                    "_nested_name": [
+                      {
+                        "fullExpression": "tool_tiles.items_1.tool_tile_@item.id.workshop",
+                        "matchedExpression": "@item.id.workshop",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@item.id": [
+                      "value"
+                    ],
+                    "@item.id.workshop": [
+                      "_nested_name"
+                    ]
+                  }
+                }
+              ],
+              "_nested_name": "tool_tiles.items_1.tool_tile_@item.id",
+              "_dynamicFields": {
+                "name": [
+                  {
+                    "fullExpression": "tool_tile_@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "_nested_name": [
+                  {
+                    "fullExpression": "tool_tiles.items_1.tool_tile_@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.id": [
+                  "name",
+                  "_nested_name"
+                ]
+              }
+            }
+          ],
+          "name": "items_1",
+          "_nested_name": "tool_tiles.items_1",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@data.workshop",
+                "matchedExpression": "@data.workshop",
+                "type": "data",
+                "fieldName": "workshop"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@data.workshop": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "tool_tiles"
+    }
+  ],
+  "_xlsxPath": "templates/ZA library templates.xlsx"
+}

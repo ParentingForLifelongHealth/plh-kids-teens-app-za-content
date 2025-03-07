@@ -1,0 +1,95 @@
+{
+  "flow_type": "template",
+  "flow_name": "library_help",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@data.library.help.title",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "style": "tiny"
+      },
+      "_nested_name": "title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.library.help.title",
+            "matchedExpression": "@data.library.help.title",
+            "type": "data",
+            "fieldName": "library"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.library.help.title": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button_1",
+      "value": "Support Contacts",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "parent_centre_support_con"
+          ],
+          "_raw": "click | go_to: parent_centre_support_con",
+          "_cleaned": "click | go_to: parent_centre_support_con"
+        }
+      ],
+      "_nested_name": "button_1"
+    },
+    {
+      "type": "button",
+      "name": "button_2",
+      "value": "Quick Parenting Tips",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "parenting_tips"
+          ],
+          "_raw": "click | go_to: parenting_tips",
+          "_cleaned": "click | go_to: parenting_tips"
+        }
+      ],
+      "_nested_name": "button_2"
+    },
+    {
+      "type": "button",
+      "name": "button_3",
+      "value": "Technical Support",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "parent_centre_technical_support"
+          ],
+          "_raw": "click | go_to: parent_centre_technical_support",
+          "_cleaned": "click | go_to: parent_centre_technical_support"
+        }
+      ],
+      "_nested_name": "button_3"
+    }
+  ],
+  "_xlsxPath": "templates/ZA library templates.xlsx"
+}
