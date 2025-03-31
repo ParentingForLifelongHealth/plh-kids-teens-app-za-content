@@ -138,29 +138,77 @@
     {
       "name": "show_progress_bar",
       "value": true,
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "show_progress_bar"
     },
     {
-      "type": "task_progress_bar",
-      "name": "task_progress_bar",
+      "type": "display_group",
+      "name": "dg_progress_bar",
       "parameter_list": {
-        "task_group_data": "@local.articles_data_list_name"
+        "sticky": "top",
+        "style": "background_solid",
+        "variant": "inline_padding"
       },
       "exclude_from_translation": true,
       "condition": "!!@local.show_progress_bar",
-      "_nested_name": "task_progress_bar",
-      "_dynamicFields": {
-        "parameter_list": {
-          "task_group_data": [
-            {
-              "fullExpression": "@local.articles_data_list_name",
-              "matchedExpression": "@local.articles_data_list_name",
-              "type": "local",
-              "fieldName": "articles_data_list_name"
+      "style_list": [
+        "padding-inline-start: 24px"
+      ],
+      "rows": [
+        {
+          "type": "task_progress_bar",
+          "name": "task_progress_bar",
+          "parameter_list": {
+            "task_group_data": "@local.articles_data_list_name"
+          },
+          "exclude_from_translation": true,
+          "style_list": [
+            "flex: 1"
+          ],
+          "_nested_name": "dg_progress_bar.task_progress_bar",
+          "_dynamicFields": {
+            "parameter_list": {
+              "task_group_data": [
+                {
+                  "fullExpression": "@local.articles_data_list_name",
+                  "matchedExpression": "@local.articles_data_list_name",
+                  "type": "local",
+                  "fieldName": "articles_data_list_name"
+                }
+              ]
             }
-          ]
+          },
+          "_dynamicDependencies": {
+            "@local.articles_data_list_name": [
+              "parameter_list.task_group_data"
+            ]
+          }
         },
+        {
+          "type": "round_button",
+          "name": "close_button",
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "click | emit: uncompleted",
+              "_cleaned": "click | emit: uncompleted"
+            }
+          ],
+          "parameter_list": {
+            "icon_src": "close",
+            "variant": "no-background"
+          },
+          "exclude_from_translation": true,
+          "_nested_name": "dg_progress_bar.close_button"
+        }
+      ],
+      "_nested_name": "dg_progress_bar",
+      "_dynamicFields": {
         "condition": [
           {
             "fullExpression": "!!@local.show_progress_bar",
@@ -171,9 +219,6 @@
         ]
       },
       "_dynamicDependencies": {
-        "@local.articles_data_list_name": [
-          "parameter_list.task_group_data"
-        ],
         "!@local.show_progress_bar": [
           "condition"
         ]
