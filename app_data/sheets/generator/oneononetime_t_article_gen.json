@@ -1,18 +1,19 @@
 {
   "flow_type": "generator",
-  "flow_name": "gen_module_overview",
+  "flow_name": "oneononetime_t_article_gen",
   "status": "released",
   "parameter_list": {
-    "input_data_list": "modules",
-    "output_flow_name": "module_overview_@gen.id",
+    "input_data_list": "oneononetime_t_articles",
+    "output_flow_name": "article_oneononetime_t_@gen.id",
     "output_flow_type": "template",
     "output_flow_subtype": "generated"
   },
+  "module_id": "oneononetime_t",
   "rows": [
     {
       "type": "template",
-      "name": "module_overview",
-      "value": "module_overview",
+      "name": "article",
+      "value": "article",
       "action_list": [
         {
           "trigger": "completed",
@@ -35,71 +36,66 @@
       ],
       "rows": [
         {
-          "name": "module_id",
+          "name": "article_id",
           "value": "@gen.id"
+        },
+        {
+          "name": "module_id",
+          "value": "instructions_t",
+          "exclude_from_translation": true
         }
       ]
     }
   ],
-  "_xlsxPath": "templates/modules/module_navigation.xlsx",
+  "_xlsxPath": "templates/ZA article template generators.xlsx",
   "_output_flows": [
     {
-      "flow_name": "module_overview_selfcare",
+      "flow_name": "article_oneononetime_t_intro_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "module_overview_childdevelopment",
+      "flow_name": "article_oneononetime_t_explore_2",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "module_overview_oneononetime",
+      "flow_name": "article_oneononetime_t_explore_3",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "module_overview_praise",
+      "flow_name": "article_oneononetime_t_explore_4",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "module_overview_feelings",
+      "flow_name": "article_oneononetime_t_explore_5",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "module_overview_instructions",
+      "flow_name": "article_oneononetime_t_explore_6",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "module_overview_rulesroutines",
+      "flow_name": "article_oneononetime_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "module_overview_consequences",
+      "flow_name": "article_oneononetime_t_practise",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "module_overview_problemsolving",
+      "flow_name": "article_oneononetime_t_home_activity_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "module_overview_oneononetime_t",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    {
-      "flow_name": "module_overview_praise_t",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    {
-      "flow_name": "module_overview_instructions_t",
+      "flow_name": "article_oneononetime_t_teen_test_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     }
