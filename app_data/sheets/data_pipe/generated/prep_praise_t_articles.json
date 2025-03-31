@@ -1,12 +1,12 @@
 {
-  "flow_name": "prep_instructions_t_articles",
+  "flow_name": "prep_praise_t_articles",
   "flow_subtype": "generated",
   "flow_type": "data_pipe",
   "rows": [
     {
       "operation": "filter",
       "args_list": [
-        "id == \"relax_3\""
+        "id == \"relax_4\""
       ],
       "input_source": "relax"
     },
@@ -15,12 +15,12 @@
       "args_list": [
         "category_id: relax"
       ],
-      "output_target": "instructions_t_relax | local_only;"
+      "output_target": "praise_t_relax | local_only;"
     },
     {
       "operation": "filter",
       "args_list": [
-        "id == \"check_in_17\""
+        "id == \"check_in_3\""
       ],
       "input_source": "check_in"
     },
@@ -29,14 +29,14 @@
       "args_list": [
         "category_id: check_in"
       ],
-      "output_target": "instructions_t_check_in | local_only;"
+      "output_target": "praise_t_check_in | local_only;"
     },
     {
       "operation": "concat",
       "args_list": [
-        "instructions_t_relax",
-        "instructions_t_check_in",
-        "instructions_t_articles"
+        "praise_t_relax",
+        "praise_t_check_in",
+        "praise_t_articles"
       ],
       "input_source": false
     },
@@ -45,12 +45,12 @@
       "args_list": [
         "completed: FALSE"
       ],
-      "output_target": "instructions_t_article_tasks"
+      "output_target": "praise_t_article_tasks"
     }
   ],
   "_output_flows": [
     {
-      "flow_name": "instructions_t_article_tasks",
+      "flow_name": "praise_t_article_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
     }
