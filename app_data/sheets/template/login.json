@@ -102,6 +102,53 @@
           }
         },
         {
+          "type": "apple_sign_in_button",
+          "name": "button_apple_sign_in",
+          "value": "@global.login_apple",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "force_reprocess"
+              ],
+              "_raw": "click | emit: force_reprocess",
+              "_cleaned": "click | emit: force_reprocess"
+            }
+          ],
+          "condition": "@fields._platform === \"ios\"",
+          "_nested_name": "login.button_apple_sign_in",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.login_apple",
+                "matchedExpression": "@global.login_apple",
+                "type": "global",
+                "fieldName": "login_apple"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@fields._platform === \"ios\"",
+                "matchedExpression": "@fields._platform",
+                "type": "fields",
+                "fieldName": "_platform"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.login_apple": [
+              "value"
+            ],
+            "@fields._platform": [
+              "condition"
+            ]
+          }
+        },
+        {
           "type": "google_sign_in_button",
           "name": "button_google_sign_in",
           "value": "@global.login_google",

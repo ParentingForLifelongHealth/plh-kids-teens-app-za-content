@@ -327,6 +327,12 @@
       }
     },
     {
+      "name": "use_pop_up",
+      "value": true,
+      "type": "set_variable",
+      "_nested_name": "use_pop_up"
+    },
+    {
       "type": "task_card",
       "name": "task_card_@local.category_id",
       "action_list": [
@@ -345,6 +351,7 @@
         "image": "@local.card_icon",
         "variant": "button"
       },
+      "condition": "!@local.use_pop_up",
       "exclude_from_translation": true,
       "_nested_name": "task_card_@local.category_id",
       "_dynamicFields": {
@@ -404,6 +411,14 @@
             }
           ]
         },
+        "condition": [
+          {
+            "fullExpression": "!@local.use_pop_up",
+            "matchedExpression": "!@local.use_pop_up",
+            "type": "local",
+            "fieldName": "use_pop_up"
+          }
+        ],
         "_nested_name": [
           {
             "fullExpression": "task_card_@local.category_id",
@@ -428,6 +443,130 @@
         ],
         "@local.card_icon": [
           "parameter_list.image"
+        ],
+        "!@local.use_pop_up": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "task_card",
+      "name": "task_card_@local.category_id",
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "@local.target_template"
+          ],
+          "_raw": "click | pop_up: @local.target_template | fullscreen: true, showCloseButton: false",
+          "_cleaned": "click | pop_up: @local.target_template | fullscreen: true, showCloseButton: false",
+          "params": {
+            "fullscreen": true,
+            "showCloseButton": false
+          }
+        }
+      ],
+      "parameter_list": {
+        "title": "@local.card_title",
+        "image": "@local.card_icon",
+        "variant": "button"
+      },
+      "condition": "@local.use_pop_up",
+      "exclude_from_translation": true,
+      "_nested_name": "task_card_@local.category_id",
+      "_dynamicFields": {
+        "name": [
+          {
+            "fullExpression": "task_card_@local.category_id",
+            "matchedExpression": "@local.category_id",
+            "type": "local",
+            "fieldName": "category_id"
+          }
+        ],
+        "action_list": {
+          "0": {
+            "args": {
+              "0": [
+                {
+                  "fullExpression": "@local.target_template",
+                  "matchedExpression": "@local.target_template",
+                  "type": "local",
+                  "fieldName": "target_template"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | pop_up: @local.target_template | fullscreen: true, showCloseButton: false",
+                "matchedExpression": "@local.target_template",
+                "type": "local",
+                "fieldName": "target_template"
+              }
+            ],
+            "_cleaned": [
+              {
+                "fullExpression": "click | pop_up: @local.target_template | fullscreen: true, showCloseButton: false",
+                "matchedExpression": "@local.target_template",
+                "type": "local",
+                "fieldName": "target_template"
+              }
+            ]
+          }
+        },
+        "parameter_list": {
+          "title": [
+            {
+              "fullExpression": "@local.card_title",
+              "matchedExpression": "@local.card_title",
+              "type": "local",
+              "fieldName": "card_title"
+            }
+          ],
+          "image": [
+            {
+              "fullExpression": "@local.card_icon",
+              "matchedExpression": "@local.card_icon",
+              "type": "local",
+              "fieldName": "card_icon"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "@local.use_pop_up",
+            "matchedExpression": "@local.use_pop_up",
+            "type": "local",
+            "fieldName": "use_pop_up"
+          }
+        ],
+        "_nested_name": [
+          {
+            "fullExpression": "task_card_@local.category_id",
+            "matchedExpression": "@local.category_id",
+            "type": "local",
+            "fieldName": "category_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.category_id": [
+          "name",
+          "_nested_name"
+        ],
+        "@local.target_template": [
+          "action_list.0.args.0",
+          "action_list.0._raw",
+          "action_list.0._cleaned"
+        ],
+        "@local.card_title": [
+          "parameter_list.title"
+        ],
+        "@local.card_icon": [
+          "parameter_list.image"
+        ],
+        "@local.use_pop_up": [
+          "condition"
         ]
       }
     }

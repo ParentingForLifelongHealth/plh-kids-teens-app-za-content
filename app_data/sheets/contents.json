@@ -2540,12 +2540,22 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "stack_hp_review_oneononetime_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "stack_hp_review_feelings",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "stack_hp_review_praise",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_praise_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -2610,6 +2620,20 @@
       "flow_type": "global",
       "flow_name": "library_globals",
       "_xlsxPath": "data/ZA library.xlsx"
+    },
+    "localisation_options_za": {
+      "flow_type": "global",
+      "flow_name": "localisation_options_za",
+      "override_target": "localisation_options",
+      "override_condition": "@fields._deployment_name == \"plh_teens_za\"",
+      "_xlsxPath": "data/localisation_globals_za.xlsx"
+    },
+    "localised_names_za": {
+      "flow_type": "global",
+      "flow_name": "localised_names_za",
+      "override_target": "localised_names",
+      "override_condition": "@fields._deployment_name == \"plh_teens_za\"",
+      "_xlsxPath": "data/localisation_globals_za.xlsx"
     },
     "misc_global": {
       "flow_type": "global",
@@ -4094,8 +4118,18 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "stack_hp_review_oneononetime_t": {
+      "flow_name": "stack_hp_review_oneononetime_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "stack_hp_review_praise": {
       "flow_name": "stack_hp_review_praise",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_hp_review_praise_t": {
+      "flow_name": "stack_hp_review_praise_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
