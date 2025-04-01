@@ -160,6 +160,21 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
+    "managingstress_t_article_tasks": {
+      "flow_name": "managingstress_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "managingstress_t_category_tasks": {
+      "flow_name": "managingstress_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
     "module_tasks": {
       "flow_name": "module_tasks",
       "flow_subtype": "generated",
@@ -245,6 +260,16 @@
     },
     "problemsolving_category_tasks": {
       "flow_name": "problemsolving_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "problemsolving_t_category_tasks": {
+      "flow_name": "problemsolving_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "rules_t_category_tasks": {
+      "flow_name": "rules_t_category_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
@@ -365,6 +390,13 @@
       "flow_subtype": "modules",
       "_xlsxPath": "data/ZA modules.xlsx"
     },
+    "managingstress_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "managingstress_t_articles",
+      "data_list_name": "managingstress_t_articles",
+      "flow_subtype": "modules",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
     "modules": {
       "flow_type": "data_list",
       "flow_name": "modules",
@@ -411,6 +443,20 @@
       "data_list_name": "problemsolving_articles",
       "flow_subtype": "modules",
       "_xlsxPath": "data/ZA modules.xlsx"
+    },
+    "problemsolving_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "problemsolving_t_articles",
+      "data_list_name": "problemsolving_t_articles",
+      "flow_subtype": "modules",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
+    "rules_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "rules_t_articles",
+      "data_list_name": "rules_t_articles",
+      "flow_subtype": "modules",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
     },
     "rulesroutines_articles": {
       "flow_type": "data_list",
@@ -585,6 +631,30 @@
         }
       ]
     },
+    "prep_managingstress_t_articles": {
+      "flow_name": "prep_managingstress_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "managingstress_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_managingstress_t_categories": {
+      "flow_name": "prep_managingstress_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "managingstress_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
     "prep_oneononetime_articles": {
       "flow_name": "prep_oneononetime_articles",
       "flow_subtype": "generated",
@@ -700,6 +770,30 @@
       "_output_flows": [
         {
           "flow_name": "problemsolving_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_problemsolving_t_categories": {
+      "flow_name": "prep_problemsolving_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "problemsolving_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_rules_t_categories": {
+      "flow_name": "prep_rules_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "rules_t_category_tasks",
           "flow_subtype": "generated",
           "flow_type": "data_list"
         }
@@ -847,6 +941,21 @@
         },
         {
           "flow_name": "article_instructions_t_check_in_17",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_check_in_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_check_in_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_check_in_15",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -1535,6 +1644,21 @@
           "flow_name": "module_instructions_t",
           "flow_subtype": "generated",
           "flow_type": "template"
+        },
+        {
+          "flow_name": "module_problemsolving_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_managingstress_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_rules_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
         }
       ]
     },
@@ -1606,6 +1730,21 @@
         },
         {
           "flow_name": "module_overview_instructions_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_problemsolving_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_managingstress_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_rules_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -1681,6 +1820,21 @@
           "flow_name": "module_instructions_t_start_at_uncompleted",
           "flow_subtype": "generated",
           "flow_type": "template"
+        },
+        {
+          "flow_name": "module_problemsolving_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_managingstress_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_rules_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
         }
       ]
     },
@@ -1754,6 +1908,21 @@
           "flow_name": "prep_instructions_t_articles",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_problemsolving_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_managingstress_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_rules_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
         }
       ]
     },
@@ -1825,6 +1994,21 @@
         },
         {
           "flow_name": "prep_instructions_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_problemsolving_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_managingstress_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_rules_t_categories",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
         }
@@ -2033,6 +2217,21 @@
           "flow_name": "stack_module_instructions_t",
           "flow_subtype": "generated",
           "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_problemsolving_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_managingstress_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_rules_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
         }
       ]
     },
@@ -2104,6 +2303,21 @@
         },
         {
           "flow_name": "stack_module_instructions_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_problemsolving_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_managingstress_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_rules_t_start_at_id",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -2297,6 +2511,120 @@
         }
       ]
     },
+    "managingstress_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "managingstress_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "managingstress_t_articles",
+        "output_flow_name": "article_managingstress_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "managingstress_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_managingstress_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_explore_13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_practise",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_teen_test_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
     "module_relax_gen": {
       "flow_type": "generator",
       "flow_name": "module_relax_gen",
@@ -2365,6 +2693,21 @@
         },
         {
           "flow_name": "article_instructions_t_relax_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_relax_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_managingstress_t_relax_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_relax_9",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -2690,6 +3033,289 @@
         }
       ]
     },
+    "problemsolving_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "problemsolving_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "problemsolving_t_articles",
+        "output_flow_name": "article_problemsolving_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "problemsolving_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_problemsolving_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_practise",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_home_activity_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_home_activity_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_home_activity_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_practise",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_teen_test_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
+    "rules_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "rules_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "rules_t_articles",
+        "output_flow_name": "article_rules_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "rules_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_rules_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_explore_13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_practise",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rules_t_teen_test_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
     "rulesroutines_article_gen": {
       "flow_type": "generator",
       "flow_name": "rulesroutines_article_gen",
@@ -2895,6 +3521,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "stack_hp_review_problemsolving_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "stack_hp_review_selfcare",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -2906,6 +3537,16 @@
         },
         {
           "flow_name": "stack_hp_review_instructions_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_managingstress_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_rules_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -3678,6 +4319,116 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_managingstress_t_@gen.id": {
+      "flow_name": "article_managingstress_t_@gen.id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_check_in_5": {
+      "flow_name": "article_managingstress_t_check_in_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_1": {
+      "flow_name": "article_managingstress_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_10": {
+      "flow_name": "article_managingstress_t_explore_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_11": {
+      "flow_name": "article_managingstress_t_explore_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_12": {
+      "flow_name": "article_managingstress_t_explore_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_13": {
+      "flow_name": "article_managingstress_t_explore_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_2": {
+      "flow_name": "article_managingstress_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_3": {
+      "flow_name": "article_managingstress_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_4": {
+      "flow_name": "article_managingstress_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_5": {
+      "flow_name": "article_managingstress_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_6": {
+      "flow_name": "article_managingstress_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_7": {
+      "flow_name": "article_managingstress_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_8": {
+      "flow_name": "article_managingstress_t_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_explore_9": {
+      "flow_name": "article_managingstress_t_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_home_activity_1": {
+      "flow_name": "article_managingstress_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_intro_1": {
+      "flow_name": "article_managingstress_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_intro_2": {
+      "flow_name": "article_managingstress_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_practise": {
+      "flow_name": "article_managingstress_t_practise",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_relax_7": {
+      "flow_name": "article_managingstress_t_relax_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_teen_test_1": {
+      "flow_name": "article_managingstress_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_managingstress_t_tips_1": {
+      "flow_name": "article_managingstress_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_oneononetime_check_in_3": {
       "flow_name": "article_oneononetime_check_in_3",
       "flow_subtype": "generated",
@@ -3973,6 +4724,91 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_problemsolving_t_@gen.id": {
+      "flow_name": "article_problemsolving_t_@gen.id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_check_in_1": {
+      "flow_name": "article_problemsolving_t_check_in_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_explore_1": {
+      "flow_name": "article_problemsolving_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_explore_2": {
+      "flow_name": "article_problemsolving_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_explore_3": {
+      "flow_name": "article_problemsolving_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_explore_4": {
+      "flow_name": "article_problemsolving_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_explore_5": {
+      "flow_name": "article_problemsolving_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_explore_6": {
+      "flow_name": "article_problemsolving_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_home_activity_1": {
+      "flow_name": "article_problemsolving_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_home_activity_2": {
+      "flow_name": "article_problemsolving_t_home_activity_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_home_activity_3": {
+      "flow_name": "article_problemsolving_t_home_activity_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_intro_1": {
+      "flow_name": "article_problemsolving_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_intro_2": {
+      "flow_name": "article_problemsolving_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise": {
+      "flow_name": "article_problemsolving_t_practise",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_relax_1": {
+      "flow_name": "article_problemsolving_t_relax_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_teen_test_1": {
+      "flow_name": "article_problemsolving_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_tips_1": {
+      "flow_name": "article_problemsolving_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_problemsolving_tips_1": {
       "flow_name": "article_problemsolving_tips_1",
       "flow_subtype": "generated",
@@ -4095,6 +4931,116 @@
     },
     "article_relax_9": {
       "flow_name": "article_relax_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_@gen.id": {
+      "flow_name": "article_rules_t_@gen.id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_check_in_15": {
+      "flow_name": "article_rules_t_check_in_15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_1": {
+      "flow_name": "article_rules_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_10": {
+      "flow_name": "article_rules_t_explore_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_11": {
+      "flow_name": "article_rules_t_explore_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_12": {
+      "flow_name": "article_rules_t_explore_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_13": {
+      "flow_name": "article_rules_t_explore_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_2": {
+      "flow_name": "article_rules_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_3": {
+      "flow_name": "article_rules_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_4": {
+      "flow_name": "article_rules_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_5": {
+      "flow_name": "article_rules_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_6": {
+      "flow_name": "article_rules_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_7": {
+      "flow_name": "article_rules_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_8": {
+      "flow_name": "article_rules_t_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_explore_9": {
+      "flow_name": "article_rules_t_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_home_activity_1": {
+      "flow_name": "article_rules_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_intro_1": {
+      "flow_name": "article_rules_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_intro_2": {
+      "flow_name": "article_rules_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_practise": {
+      "flow_name": "article_rules_t_practise",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_relax_9": {
+      "flow_name": "article_rules_t_relax_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_teen_test_1": {
+      "flow_name": "article_rules_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_tips_1": {
+      "flow_name": "article_rules_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4428,6 +5374,16 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_managingstress_t": {
+      "flow_name": "module_managingstress_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_managingstress_t_start_at_uncompleted": {
+      "flow_name": "module_managingstress_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_oneononetime": {
       "flow_name": "module_oneononetime",
       "flow_subtype": "generated",
@@ -4473,6 +5429,11 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_overview_managingstress_t": {
+      "flow_name": "module_overview_managingstress_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_overview_oneononetime": {
       "flow_name": "module_overview_oneononetime",
       "flow_subtype": "generated",
@@ -4495,6 +5456,16 @@
     },
     "module_overview_problemsolving": {
       "flow_name": "module_overview_problemsolving",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_problemsolving_t": {
+      "flow_name": "module_overview_problemsolving_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_rules_t": {
+      "flow_name": "module_overview_rules_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4535,6 +5506,26 @@
     },
     "module_problemsolving_start_at_uncompleted": {
       "flow_name": "module_problemsolving_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_problemsolving_t": {
+      "flow_name": "module_problemsolving_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_problemsolving_t_start_at_uncompleted": {
+      "flow_name": "module_problemsolving_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_rules_t": {
+      "flow_name": "module_rules_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_rules_t_start_at_uncompleted": {
+      "flow_name": "module_rules_t_start_at_uncompleted",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4583,6 +5574,11 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "stack_hp_review_managingstress_t": {
+      "flow_name": "stack_hp_review_managingstress_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "stack_hp_review_oneononetime": {
       "flow_name": "stack_hp_review_oneononetime",
       "flow_subtype": "generated",
@@ -4605,6 +5601,16 @@
     },
     "stack_hp_review_problemsolving": {
       "flow_name": "stack_hp_review_problemsolving",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_hp_review_problemsolving_t": {
+      "flow_name": "stack_hp_review_problemsolving_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_hp_review_rules_t": {
+      "flow_name": "stack_hp_review_rules_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4668,6 +5674,16 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "stack_module_managingstress_t": {
+      "flow_name": "stack_module_managingstress_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_managingstress_t_start_at_id": {
+      "flow_name": "stack_module_managingstress_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "stack_module_oneononetime": {
       "flow_name": "stack_module_oneononetime",
       "flow_subtype": "generated",
@@ -4715,6 +5731,26 @@
     },
     "stack_module_problemsolving_start_at_id": {
       "flow_name": "stack_module_problemsolving_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_problemsolving_t": {
+      "flow_name": "stack_module_problemsolving_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_problemsolving_t_start_at_id": {
+      "flow_name": "stack_module_problemsolving_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_rules_t": {
+      "flow_name": "stack_module_rules_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_rules_t_start_at_id": {
+      "flow_name": "stack_module_rules_t_start_at_id",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4966,6 +6002,20 @@
       "comment_2": 29,
       "_xlsxPath": "templates/ZA module_landing.xlsx"
     },
+    "module_landing_managingstress_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_managingstress_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "managingstress_t",
+      "comment_2": 31,
+      "_xlsxPath": "templates/ZA module_landing.xlsx"
+    },
     "module_landing_oneononetime": {
       "flow_type": "template",
       "flow_name": "module_landing_oneononetime",
@@ -5034,6 +6084,34 @@
       },
       "comment": "problemsolving",
       "comment_2": 29,
+      "_xlsxPath": "templates/ZA module_landing.xlsx"
+    },
+    "module_landing_problemsolving_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_problemsolving_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "problemsolving_t",
+      "comment_2": 31,
+      "_xlsxPath": "templates/ZA module_landing.xlsx"
+    },
+    "module_landing_rules_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_rules_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "rules_t",
+      "comment_2": 22,
       "_xlsxPath": "templates/ZA module_landing.xlsx"
     },
     "module_landing_rulesroutines": {

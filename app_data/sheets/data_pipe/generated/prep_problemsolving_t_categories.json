@@ -1,0 +1,19 @@
+{
+  "flow_name": "prep_problemsolving_t_categories",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "append_columns",
+      "input_source": "common_categories",
+      "output_target": "problemsolving_t_category_tasks"
+    }
+  ],
+  "_output_flows": [
+    {
+      "flow_name": "problemsolving_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    }
+  ]
+}
