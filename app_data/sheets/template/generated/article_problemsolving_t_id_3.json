@@ -1,5 +1,5 @@
 {
-  "flow_name": "article_rules_t_@gen.id",
+  "flow_name": "article_problemsolving_t_id_3",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
@@ -30,31 +30,16 @@
       "rows": [
         {
           "name": "article_id",
-          "value": "@gen.id",
+          "value": "id_3",
           "_translations": {
             "value": {}
           },
           "type": "set_variable",
-          "_nested_name": "article.article_id",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@gen.id",
-                "matchedExpression": "@gen.id",
-                "type": "gen",
-                "fieldName": "id"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@gen.id": [
-              "value"
-            ]
-          }
+          "_nested_name": "article.article_id"
         },
         {
           "name": "module_id",
-          "value": "rules_t",
+          "value": "problemsolving_t",
           "_translations": {
             "value": {}
           },

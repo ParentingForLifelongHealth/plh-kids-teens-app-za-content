@@ -263,10 +263,30 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
+    "problemsolving_t_article_tasks": {
+      "flow_name": "problemsolving_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
     "problemsolving_t_category_tasks": {
       "flow_name": "problemsolving_t_category_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
+    },
+    "rules_t_article_tasks": {
+      "flow_name": "rules_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
     },
     "rules_t_category_tasks": {
       "flow_name": "rules_t_category_tasks",
@@ -775,6 +795,18 @@
         }
       ]
     },
+    "prep_problemsolving_t_articles": {
+      "flow_name": "prep_problemsolving_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "problemsolving_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
     "prep_problemsolving_t_categories": {
       "flow_name": "prep_problemsolving_t_categories",
       "flow_subtype": "generated",
@@ -782,6 +814,18 @@
       "_output_flows": [
         {
           "flow_name": "problemsolving_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_rules_t_articles": {
+      "flow_name": "prep_rules_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "rules_t_article_tasks",
           "flow_subtype": "generated",
           "flow_type": "data_list"
         }
@@ -3091,62 +3135,62 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_practise",
+          "flow_name": "article_problemsolving_t_id_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_2",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_3",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_4",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_5",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_6",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_7",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_8",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_9",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_10",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_11",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_@gen.id",
+          "flow_name": "article_problemsolving_t_id_12",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -3161,12 +3205,12 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_home_activity_2",
+          "flow_name": "article_problemsolving_t_home_activity_3",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_home_activity_3",
+          "flow_name": "article_problemsolving_t_home_activity_4",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -3275,27 +3319,27 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_rules_t_@gen.id",
+          "flow_name": "article_rules_t_id_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_rules_t_@gen.id",
+          "flow_name": "article_rules_t_id_2",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_rules_t_@gen.id",
+          "flow_name": "article_rules_t_id_3",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_rules_t_@gen.id",
+          "flow_name": "article_rules_t_id_4",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_rules_t_@gen.id",
+          "flow_name": "article_rules_t_id_5",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -3581,13 +3625,6 @@
       "flow_type": "global",
       "flow_name": "localisation_options_za",
       "override_target": "localisation_options",
-      "override_condition": "@fields._deployment_name == \"plh_teens_za\"",
-      "_xlsxPath": "data/localisation_globals_za.xlsx"
-    },
-    "localised_names_za": {
-      "flow_type": "global",
-      "flow_name": "localised_names_za",
-      "override_target": "localised_names",
       "override_condition": "@fields._deployment_name == \"plh_teens_za\"",
       "_xlsxPath": "data/localisation_globals_za.xlsx"
     },
@@ -4724,11 +4761,6 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_problemsolving_t_@gen.id": {
-      "flow_name": "article_problemsolving_t_@gen.id",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
     "article_problemsolving_t_check_in_1": {
       "flow_name": "article_problemsolving_t_check_in_1",
       "flow_subtype": "generated",
@@ -4776,6 +4808,71 @@
     },
     "article_problemsolving_t_home_activity_3": {
       "flow_name": "article_problemsolving_t_home_activity_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_home_activity_4": {
+      "flow_name": "article_problemsolving_t_home_activity_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_1": {
+      "flow_name": "article_problemsolving_t_id_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_10": {
+      "flow_name": "article_problemsolving_t_id_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_11": {
+      "flow_name": "article_problemsolving_t_id_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_12": {
+      "flow_name": "article_problemsolving_t_id_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_2": {
+      "flow_name": "article_problemsolving_t_id_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_3": {
+      "flow_name": "article_problemsolving_t_id_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_4": {
+      "flow_name": "article_problemsolving_t_id_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_5": {
+      "flow_name": "article_problemsolving_t_id_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_6": {
+      "flow_name": "article_problemsolving_t_id_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_7": {
+      "flow_name": "article_problemsolving_t_id_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_8": {
+      "flow_name": "article_problemsolving_t_id_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_id_9": {
+      "flow_name": "article_problemsolving_t_id_9",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4934,11 +5031,6 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_rules_t_@gen.id": {
-      "flow_name": "article_rules_t_@gen.id",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
     "article_rules_t_check_in_15": {
       "flow_name": "article_rules_t_check_in_15",
       "flow_subtype": "generated",
@@ -5011,6 +5103,31 @@
     },
     "article_rules_t_home_activity_1": {
       "flow_name": "article_rules_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_id_1": {
+      "flow_name": "article_rules_t_id_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_id_2": {
+      "flow_name": "article_rules_t_id_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_id_3": {
+      "flow_name": "article_rules_t_id_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_id_4": {
+      "flow_name": "article_rules_t_id_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rules_t_id_5": {
+      "flow_name": "article_rules_t_id_5",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
