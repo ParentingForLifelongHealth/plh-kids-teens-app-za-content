@@ -12,7 +12,7 @@
 | carousel | 1 |
 | combo_box | 7 |
 | dashed_box | 1 |
-| data_items | 95 |
+| data_items | 93 |
 | debug_toggle | 1 |
 | display_grid | 2 |
 | display_group | 75 |
@@ -20,7 +20,7 @@
 | image | 12 |
 | items | 20 |
 | lottie_animation | 3 |
-| nested_properties | 96 |
+| nested_properties | 90 |
 | number_selector | 1 |
 | plh_activity_check_in | 1 |
 | plh_bottom_nav | 1 |
@@ -32,12 +32,12 @@
 | round_button | 5 |
 | select_text | 4 |
 | set_field | 4 |
-| set_variable | 1753 |
+| set_variable | 1759 |
 | simple_checkbox | 3 |
 | subtitle | 3 |
 | task_card | 4 |
 | task_progress_bar | 2 |
-| template | 545 |
+| template | 552 |
 | text | 105 |
 | text_area | 3 |
 | text_box | 7 |
@@ -57,22 +57,22 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 412 |
+| emit: completed | 422 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 12 |
 | emit: force_restart | 5 |
 | emit: server_sync | 5 |
 | emit: set_language | 1 |
-| emit: uncompleted | 380 |
+| emit: uncompleted | 390 |
 | feedback | 14 |
 | go_to | 35 |
 | go_to_url | 3 |
-| nav_stack | 127 |
-| pop_up | 45 |
+| nav_stack | 123 |
+| pop_up | 44 |
 | reset_app | 1 |
-| set_data | 38 |
-| set_field | 66 |
-| set_item | 47 |
+| set_data | 37 |
+| set_field | 65 |
+| set_item | 46 |
 | set_local | 29 |
 | task | 3 |
 | user | 3 |
@@ -448,7 +448,7 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_23.mp3 | 1 |
 | audio/relax/relax_5.mp3 | 1 |
 | audio/relax/relax_7.mp3 | 2 |
-| audio/relax/relax_9.mp3 | 1 |
+| audio/relax/relax_9.mp3 | 2 |
 | https://img.youtube.com/vi/3rj6-Dy_Q68/hqdefault.jpg | 2 |
 | https://img.youtube.com/vi/676iBYMa00I/hqdefault.jpg | 2 |
 | https://img.youtube.com/vi/6GdWUOPAov0/hqdefault.jpg | 2 |
@@ -510,7 +510,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/care_audio_1.mp3 | 527.5 | 2 |
 | audio/care_audio_2.mp3 | 1166.3 | 2 |
 | audio/caregiver_test_w_instruct.mp3 | 281.3 | 2 |
-| audio/connect_audio_1.mp3 | 891.7 | 11 |
+| audio/connect_audio_1.mp3 | 891.7 | 14 |
 | audio/connect_audio_2.mp3 | 981.4 | 2 |
 | audio/consequences_audio_1.mp3 | 800.2 | 2 |
 | audio/consequences_audio_2.mp3 | 1206.6 | 2 |
@@ -577,7 +577,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/one_on_one_yc_4.svg | 67.5 | 2 |
 | images/comics/play_yc_1.svg | 288 | 2 |
 | images/comics/play_yc_2.svg | 284.9 | 2 |
-| images/comics/play_yc_3.svg | 81.2 | 14 |
+| images/comics/play_yc_3.svg | 81.2 | 26 |
 | images/comics/play_yc_4.svg | 99 | 2 |
 | images/comics/praise_yc_1.svg | 99.3 | 8 |
 | images/comics/praise_yc_2.svg | 101 | 2 |
@@ -614,11 +614,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/faces/confused.svg | 4.9 | 4 |
 | images/icons/faces/flushed_face.svg | 4.9 | 2 |
 | images/icons/faces/happy.svg | 53.5 | 29 |
-| images/icons/faces/happy_face_new.svg | 1.4 | 32 |
+| images/icons/faces/happy_face_new.svg | 1.4 | 33 |
 | images/icons/faces/ok.svg | 46.6 | 25 |
-| images/icons/faces/ok_face_new.svg | 0.5 | 30 |
+| images/icons/faces/ok_face_new.svg | 0.5 | 31 |
 | images/icons/faces/sad.svg | 48.2 | 25 |
-| images/icons/faces/sad_face_new.svg | 1.5 | 30 |
+| images/icons/faces/sad_face_new.svg | 1.5 | 31 |
 | images/icons/faces/smiling.svg | 5.1 | 8 |
 | images/icons/faces/stressed.svg | 60 | 2 |
 | images/icons/faces/tired.svg | 54 | 2 |
@@ -639,22 +639,22 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/local_library_active.svg | 1.6 | 1 |
 | images/icons/locked.png | 0.7 | 6 |
 | images/icons/magnify_glass.svg | 1.9 | 1 |
-| images/icons/magnifying_glass.svg | 0.9 | 16 |
+| images/icons/magnifying_glass.svg | 0.9 | 15 |
 | images/icons/notification_bell.png | 0.9 | 1 |
-| images/icons/parent_child_heart.svg | 3 | 16 |
-| images/icons/pencil.svg | 1.1 | 16 |
+| images/icons/parent_child_heart.svg | 3 | 15 |
+| images/icons/pencil.svg | 1.1 | 15 |
 | images/icons/profile_card.svg | 7.4 | 1 |
 | images/icons/question_blue.png | 3.4 | 2 |
 | images/icons/repeat_blue.png | 5.4 | 2 |
 | images/icons/settings.svg | 2.4 | 1 |
 | images/icons/settings_active.svg | 2.4 | 1 |
 | images/icons/single_speech_blue.png | 3.3 | 6 |
-| images/icons/smile_eyes_down.svg | 0.9 | 17 |
-| images/icons/smile_eyes_up.svg | 1 | 32 |
+| images/icons/smile_eyes_down.svg | 0.9 | 16 |
+| images/icons/smile_eyes_up.svg | 1 | 30 |
 | images/icons/speech_bubble_blue.png | 4.2 | 6 |
 | images/icons/star_filled_blue.png | 5.1 | 10 |
-| images/icons/star_outline_blue.svg | 1 | 16 |
-| images/icons/thought_bubble.svg | 2.1 | 16 |
+| images/icons/star_outline_blue.svg | 1 | 15 |
+| images/icons/thought_bubble.svg | 2.1 | 15 |
 | images/icons/tick.svg | 0.3 | 1 |
 | images/icons/tick_white.svg | 0.3 | 1 |
 | images/icons/trophy.png | 1.6 | 1 |
@@ -667,7 +667,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/kw_f1_daughter_2.svg | 34.2 | 1 |
 | images/kw_f1_daughter_6.svg | 37 | 1 |
 | images/kw_f1_father.svg | 27.8 | 1 |
-| images/kw_f1_mother.svg | 15 | 11 |
+| images/kw_f1_mother.svg | 15 | 53 |
 | images/kw_f2_daughter_3.svg | 61.6 | 1 |
 | images/kw_f2_grandfather.svg | 26.1 | 1 |
 | images/kw_f2_grandmother.svg | 13.4 | 1 |
@@ -681,7 +681,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/logos/app_logo.png | 36 | 1 |
 | images/one_on_one_challenges.svg | 13.3 | 4 |
 | images/praise.svg | 11.5 | 4 |
-| images/problemsolving.svg | 19.9 | 4 |
+| images/problemsolving.svg | 19.9 | 2 |
 | images/rulesroutines.jpg | 102.2 | 2 |
 | images/selfcare.jpg | 96.6 | 6 |
 | images/shell_closed.png | 452.4 | 1 |
@@ -770,9 +770,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_pipe |  | 2 |
 | data_pipe | generated | 28 |
 | generator |  | 28 |
-| global |  | 7 |
+| global |  | 6 |
 | global | legal_terms | 1 |
 | template |  | 94 |
-| template | generated | 413 |
+| template | generated | 421 |
 | template | legal_terms | 4 |
 </details>
