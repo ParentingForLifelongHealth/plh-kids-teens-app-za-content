@@ -1,0 +1,58 @@
+{
+  "flow_name": "prep_selfcare_t_articles",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"relax_5\""
+      ],
+      "input_source": "relax"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: relax"
+      ],
+      "output_target": "selfcare_t_relax | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"check_in_8\""
+      ],
+      "input_source": "check_in"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: check_in"
+      ],
+      "output_target": "selfcare_t_check_in | local_only;"
+    },
+    {
+      "operation": "concat",
+      "args_list": [
+        "selfcare_t_relax",
+        "selfcare_t_check_in",
+        "selfcare_t_articles"
+      ],
+      "input_source": false
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "completed: FALSE"
+      ],
+      "output_target": "selfcare_t_article_tasks"
+    }
+  ],
+  "_output_flows": [
+    {
+      "flow_name": "selfcare_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    }
+  ]
+}

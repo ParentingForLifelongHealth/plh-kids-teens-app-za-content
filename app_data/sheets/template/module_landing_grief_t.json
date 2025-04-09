@@ -1,0 +1,55 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_landing_grief_t",
+  "status": "released",
+  "parameter_list": {
+    "app_config": {
+      "LAYOUT": {
+        "page_padding": "0 0"
+      }
+    }
+  },
+  "comment": "grief_t",
+  "comment_2": 22,
+  "rows": [
+    {
+      "type": "template",
+      "name": "module_landing",
+      "value": "module_landing",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "module_id",
+          "value": "grief_t",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "module_landing.module_id"
+        }
+      ],
+      "_nested_name": "module_landing"
+    }
+  ],
+  "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+}

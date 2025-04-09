@@ -1,0 +1,58 @@
+{
+  "flow_name": "prep_consequences_t_articles",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"relax_10\""
+      ],
+      "input_source": "relax"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: relax"
+      ],
+      "output_target": "consequences_t_relax | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"check_in_8\""
+      ],
+      "input_source": "check_in"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: check_in"
+      ],
+      "output_target": "consequences_t_check_in | local_only;"
+    },
+    {
+      "operation": "concat",
+      "args_list": [
+        "consequences_t_relax",
+        "consequences_t_check_in",
+        "consequences_t_articles"
+      ],
+      "input_source": false
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "completed: FALSE"
+      ],
+      "output_target": "consequences_t_article_tasks"
+    }
+  ],
+  "_output_flows": [
+    {
+      "flow_name": "consequences_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    }
+  ]
+}

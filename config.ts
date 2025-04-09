@@ -4,7 +4,7 @@ const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.1.16",
+  content_tag_latest: "1.1.17",
 };
 
 config.google_drive.sheets_folder_ids = [
@@ -23,6 +23,10 @@ config.google_drive.assets_folder_ids = [
 
 // Hacky fix to point extended deployment to translations within its own repo
 config.translations.translated_strings_path = "./app_data/translations_source/translated_strings";
+
+// To reduce app size, exclude uncompressed assets
+config.app_data.assets_filter_function = (fileEntry) =>
+  !fileEntry.relativePath.includes("uncompressed")
 
 config.api.db_name = "plh_kids_teens_za";
 

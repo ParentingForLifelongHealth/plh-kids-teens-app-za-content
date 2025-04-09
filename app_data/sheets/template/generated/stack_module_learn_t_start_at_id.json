@@ -1,0 +1,207 @@
+{
+  "flow_name": "stack_module_learn_t_start_at_id",
+  "flow_subtype": "generated",
+  "flow_type": "template",
+  "rows": [
+    {
+      "type": "data_items",
+      "name": "pick_random_locked_activity",
+      "value": "@data.activity_tasks",
+      "parameter_list": {
+        "filter": "@item.locked",
+        "shuffle": "true",
+        "limit": "1"
+      },
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "template",
+          "name": "module_start_at_id",
+          "value": "module_start_at_id",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "set_item",
+              "args": [],
+              "_raw": "completed | set_item | locked: false",
+              "_cleaned": "completed | set_item | locked: false",
+              "params": {
+                "locked": false
+              }
+            },
+            {
+              "trigger": "completed",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "completed | set_data | _list_id: module_tasks, _id: learn_t, unlocked_activity: TRUE",
+              "_cleaned": "completed | set_data | _list_id: module_tasks, _id: learn_t, unlocked_activity: TRUE",
+              "params": {
+                "_list_id": "module_tasks",
+                "_id": "learn_t",
+                "unlocked_activity": true
+              }
+            },
+            {
+              "trigger": "completed",
+              "action_id": "set_field",
+              "args": [
+                "latest_unlocked_activity",
+                "@item.id"
+              ],
+              "_raw": "completed | set_field: latest_unlocked_activity: @item.id",
+              "_cleaned": "completed | set_field: latest_unlocked_activity: @item.id"
+            },
+            {
+              "trigger": "completed",
+              "action_id": "nav_stack",
+              "args": [
+                "close_top"
+              ],
+              "_raw": "completed | nav_stack: close_top",
+              "_cleaned": "completed | nav_stack: close_top"
+            },
+            {
+              "trigger": "completed",
+              "action_id": "pop_up",
+              "args": [
+                "unlock_play"
+              ],
+              "_raw": "completed | pop_up: unlock_play | variant: plh_completion",
+              "_cleaned": "completed | pop_up: unlock_play | variant: plh_completion",
+              "params": {
+                "variant": "plh_completion"
+              }
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "nav_stack",
+              "args": [
+                "close_top"
+              ],
+              "_raw": "uncompleted | nav_stack: close_top",
+              "_cleaned": "uncompleted | nav_stack: close_top"
+            }
+          ],
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "module_id",
+              "value": "learn_t",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "pick_random_locked_activity.module_start_at_id.module_id"
+            },
+            {
+              "name": "article_id",
+              "value": "@fields.current_start_article_id",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "pick_random_locked_activity.module_start_at_id.article_id",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@fields.current_start_article_id",
+                    "matchedExpression": "@fields.current_start_article_id",
+                    "type": "fields",
+                    "fieldName": "current_start_article_id"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@fields.current_start_article_id": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "nested_properties",
+              "name": "module",
+              "rows": [
+                {
+                  "name": "show_progress_bar",
+                  "value": false,
+                  "type": "set_variable",
+                  "_nested_name": "pick_random_locked_activity.module_start_at_id.module.show_progress_bar"
+                }
+              ],
+              "_nested_name": "pick_random_locked_activity.module_start_at_id.module"
+            }
+          ],
+          "_nested_name": "pick_random_locked_activity.module_start_at_id",
+          "_dynamicFields": {
+            "action_list": {
+              "2": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@item.id",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_field: latest_unlocked_activity: @item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "completed | set_field: latest_unlocked_activity: @item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              }
+            }
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "action_list.2.args.1",
+              "action_list.2._raw",
+              "action_list.2._cleaned"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "pick_random_locked_activity",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.activity_tasks",
+            "matchedExpression": "@data.activity_tasks",
+            "type": "data",
+            "fieldName": "activity_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.locked",
+              "matchedExpression": "@item.locked",
+              "type": "item",
+              "fieldName": "locked"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.activity_tasks": [
+          "value"
+        ],
+        "@item.locked": [
+          "parameter_list.filter"
+        ]
+      }
+    }
+  ]
+}
