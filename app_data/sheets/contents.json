@@ -45,6 +45,11 @@
       "flow_subtype": "app_config_language_list",
       "_xlsxPath": "data/deployment_data_za.xlsx"
     },
+    "article_data": {
+      "flow_type": "data_list",
+      "flow_name": "article_data",
+      "_xlsxPath": "data/Nisso_ZA articles_09.04.2025.xlsx"
+    },
     "characters": {
       "flow_type": "data_list",
       "flow_name": "characters",
@@ -85,6 +90,21 @@
         }
       }
     },
+    "celebrate_t_article_tasks": {
+      "flow_name": "celebrate_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "celebrate_t_category_tasks": {
+      "flow_name": "celebrate_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
     "childdevelopment_article_tasks": {
       "flow_name": "childdevelopment_article_tasks",
       "flow_subtype": "generated",
@@ -115,6 +135,36 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
+    "consequences_t_article_tasks": {
+      "flow_name": "consequences_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "consequences_t_category_tasks": {
+      "flow_name": "consequences_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "crisis_t_article_tasks": {
+      "flow_name": "crisis_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "crisis_t_category_tasks": {
+      "flow_name": "crisis_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
     "feelings_article_tasks": {
       "flow_name": "feelings_article_tasks",
       "flow_subtype": "generated",
@@ -127,6 +177,21 @@
     },
     "feelings_category_tasks": {
       "flow_name": "feelings_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "grief_t_article_tasks": {
+      "flow_name": "grief_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "grief_t_category_tasks": {
+      "flow_name": "grief_t_category_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
@@ -160,8 +225,8 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
-    "managingstress_t_article_tasks": {
-      "flow_name": "managingstress_t_article_tasks",
+    "learn_t_article_tasks": {
+      "flow_name": "learn_t_article_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list",
       "_metadata": {
@@ -170,8 +235,8 @@
         }
       }
     },
-    "managingstress_t_category_tasks": {
-      "flow_name": "managingstress_t_category_tasks",
+    "learn_t_category_tasks": {
+      "flow_name": "learn_t_category_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
@@ -187,6 +252,21 @@
           "type": "boolean"
         }
       }
+    },
+    "money_t_article_tasks": {
+      "flow_name": "money_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "money_t_category_tasks": {
+      "flow_name": "money_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
     },
     "oneononetime_article_tasks": {
       "flow_name": "oneononetime_article_tasks",
@@ -308,6 +388,21 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
+    "safety_t_article_tasks": {
+      "flow_name": "safety_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "safety_t_category_tasks": {
+      "flow_name": "safety_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
     "selfcare_article_tasks": {
       "flow_name": "selfcare_article_tasks",
       "flow_subtype": "generated",
@@ -322,6 +417,72 @@
       "flow_name": "selfcare_category_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
+    },
+    "selfcare_t_article_tasks": {
+      "flow_name": "selfcare_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "selfcare_t_category_tasks": {
+      "flow_name": "selfcare_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "srh_t_article_tasks": {
+      "flow_name": "srh_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "srh_t_category_tasks": {
+      "flow_name": "srh_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "stayingsafe_t_article_tasks": {
+      "flow_name": "stayingsafe_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "stayingsafe_t_category_tasks": {
+      "flow_name": "stayingsafe_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "stress_t_article_tasks": {
+      "flow_name": "stress_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "stress_t_category_tasks": {
+      "flow_name": "stress_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
+    "home_screen_section_data": {
+      "flow_type": "data_list",
+      "flow_name": "home_screen_section_data",
+      "data_list_name": "home_screen_section",
+      "_xlsxPath": "data/Nisso_ZA articles_09.04.2025.xlsx"
     },
     "hp_challenges": {
       "flow_type": "data_list",
@@ -368,6 +529,20 @@
         }
       }
     },
+    "media_data": {
+      "flow_type": "data_list",
+      "flow_name": "media_data",
+      "data_list_name": "media",
+      "_xlsxPath": "data/Nisso_ZA articles_09.04.2025.xlsx"
+    },
+    "celebrate_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "celebrate_t_articles",
+      "data_list_name": "celebrate_t_articles",
+      "flow_subtype": "modules",
+      "module": "celebrate_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
     "childdevelopment_articles": {
       "flow_type": "data_list",
       "flow_name": "childdevelopment_articles",
@@ -389,12 +564,36 @@
       "flow_subtype": "modules",
       "_xlsxPath": "data/ZA modules.xlsx"
     },
+    "consequences_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "consequences_t_articles",
+      "data_list_name": "consequences_t_articles",
+      "flow_subtype": "modules",
+      "module": "consequences_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
+    "crisis_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "crisis_t_articles",
+      "data_list_name": "crisis_t_articles",
+      "flow_subtype": "modules",
+      "module": "crisis_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
     "feelings_articles": {
       "flow_type": "data_list",
       "flow_name": "feelings_articles",
       "data_list_name": "feelings_articles",
       "flow_subtype": "modules",
       "_xlsxPath": "data/ZA modules.xlsx"
+    },
+    "grief_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "grief_t_articles",
+      "data_list_name": "grief_t_articles",
+      "flow_subtype": "modules",
+      "module": "grief_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
     },
     "instructions_articles": {
       "flow_type": "data_list",
@@ -408,13 +607,15 @@
       "flow_name": "instructions_t_articles",
       "data_list_name": "instructions_t_articles",
       "flow_subtype": "modules",
-      "_xlsxPath": "data/ZA modules.xlsx"
+      "module": "instructions_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
     },
-    "managingstress_t_articles": {
+    "learn_t_articles": {
       "flow_type": "data_list",
-      "flow_name": "managingstress_t_articles",
-      "data_list_name": "managingstress_t_articles",
+      "flow_name": "learn_t_articles",
+      "data_list_name": "learn_t_articles",
       "flow_subtype": "modules",
+      "module": "learn_t",
       "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
     },
     "modules": {
@@ -429,6 +630,14 @@
         }
       }
     },
+    "money_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "money_t_articles",
+      "data_list_name": "money_t_articles",
+      "flow_subtype": "modules",
+      "module": "money_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
     "oneononetime_articles": {
       "flow_type": "data_list",
       "flow_name": "oneononetime_articles",
@@ -441,6 +650,7 @@
       "flow_name": "oneononetime_t_articles",
       "data_list_name": "oneononetime_t_articles",
       "flow_subtype": "modules",
+      "module": "oneononetime_t",
       "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
     },
     "praise_articles": {
@@ -455,6 +665,7 @@
       "flow_name": "praise_t_articles",
       "data_list_name": "praise_t_articles",
       "flow_subtype": "modules",
+      "module": "praise_t",
       "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
     },
     "problemsolving_articles": {
@@ -469,6 +680,7 @@
       "flow_name": "problemsolving_t_articles",
       "data_list_name": "problemsolving_t_articles",
       "flow_subtype": "modules",
+      "module": "problemsolving_t",
       "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
     },
     "rules_t_articles": {
@@ -476,6 +688,7 @@
       "flow_name": "rules_t_articles",
       "data_list_name": "rules_t_articles",
       "flow_subtype": "modules",
+      "module": "rules_t",
       "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
     },
     "rulesroutines_articles": {
@@ -485,12 +698,52 @@
       "flow_subtype": "modules",
       "_xlsxPath": "data/ZA modules.xlsx"
     },
+    "safety_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "safety_t_articles",
+      "data_list_name": "safety_t_articles",
+      "flow_subtype": "modules",
+      "module": "safety_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
     "selfcare_articles": {
       "flow_type": "data_list",
       "flow_name": "selfcare_articles",
       "data_list_name": "selfcare_articles",
       "flow_subtype": "modules",
       "_xlsxPath": "data/ZA modules.xlsx"
+    },
+    "selfcare_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "selfcare_t_articles",
+      "data_list_name": "selfcare_t_articles",
+      "flow_subtype": "modules",
+      "module": "selfcare_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
+    "srh_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "srh_t_articles",
+      "data_list_name": "srh_t_articles",
+      "flow_subtype": "modules",
+      "module": "srh_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
+    "stayingsafe_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "stayingsafe_t_articles",
+      "data_list_name": "stayingsafe_t_articles",
+      "flow_subtype": "modules",
+      "module": "stayingsafe_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
+    },
+    "stress_t_articles": {
+      "flow_type": "data_list",
+      "flow_name": "stress_t_articles",
+      "data_list_name": "stress_t_articles",
+      "flow_subtype": "modules",
+      "module": "stress_t",
+      "_xlsxPath": "data/Nisso_ZA modules_26.03.2025.xlsx"
     },
     "organisation": {
       "flow_type": "data_list",
@@ -504,12 +757,41 @@
       "data_list_name": "organisation_group",
       "_xlsxPath": "data/deployment_data_za.xlsx"
     },
+    "pdf_data": {
+      "flow_type": "data_list",
+      "flow_name": "pdf_data",
+      "data_list_name": "pdf",
+      "_xlsxPath": "data/Nisso_ZA articles_09.04.2025.xlsx",
+      "_metadata": {
+        "library_asset": {
+          "type": "boolean"
+        }
+      }
+    },
     "relax": {
       "flow_type": "data_list",
       "flow_name": "relax",
       "data_list_name": "relax",
       "flow_subtype": "relax",
       "_xlsxPath": "data/ZA relax.xlsx"
+    },
+    "report_data": {
+      "flow_type": "data_list",
+      "flow_name": "report_data",
+      "data_list_name": "report",
+      "_xlsxPath": "data/Nisso_ZA articles_09.04.2025.xlsx"
+    },
+    "report_in_person": {
+      "flow_type": "data_list",
+      "flow_name": "report_in_person",
+      "data_list_name": "report_in_person",
+      "_xlsxPath": "data/Nisso_ZA articles_09.04.2025.xlsx"
+    },
+    "tag_data": {
+      "flow_type": "data_list",
+      "flow_name": "tag_data",
+      "data_list_name": "tag",
+      "_xlsxPath": "data/Nisso_ZA articles_09.04.2025.xlsx"
     },
     "tools_data": {
       "flow_type": "data_list",
@@ -531,6 +813,30 @@
     }
   },
   "data_pipe": {
+    "prep_celebrate_t_articles": {
+      "flow_name": "prep_celebrate_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "celebrate_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_celebrate_t_categories": {
+      "flow_name": "prep_celebrate_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "celebrate_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
     "prep_childdevelopment_articles": {
       "flow_name": "prep_childdevelopment_articles",
       "flow_subtype": "generated",
@@ -579,6 +885,54 @@
         }
       ]
     },
+    "prep_consequences_t_articles": {
+      "flow_name": "prep_consequences_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "consequences_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_consequences_t_categories": {
+      "flow_name": "prep_consequences_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "consequences_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_crisis_t_articles": {
+      "flow_name": "prep_crisis_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "crisis_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_crisis_t_categories": {
+      "flow_name": "prep_crisis_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "crisis_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
     "prep_feelings_articles": {
       "flow_name": "prep_feelings_articles",
       "flow_subtype": "generated",
@@ -598,6 +952,30 @@
       "_output_flows": [
         {
           "flow_name": "feelings_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_grief_t_articles": {
+      "flow_name": "prep_grief_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "grief_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_grief_t_categories": {
+      "flow_name": "prep_grief_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "grief_t_category_tasks",
           "flow_subtype": "generated",
           "flow_type": "data_list"
         }
@@ -651,25 +1029,49 @@
         }
       ]
     },
-    "prep_managingstress_t_articles": {
-      "flow_name": "prep_managingstress_t_articles",
+    "prep_learn_t_articles": {
+      "flow_name": "prep_learn_t_articles",
       "flow_subtype": "generated",
       "flow_type": "data_pipe",
       "_output_flows": [
         {
-          "flow_name": "managingstress_t_article_tasks",
+          "flow_name": "learn_t_article_tasks",
           "flow_subtype": "generated",
           "flow_type": "data_list"
         }
       ]
     },
-    "prep_managingstress_t_categories": {
-      "flow_name": "prep_managingstress_t_categories",
+    "prep_learn_t_categories": {
+      "flow_name": "prep_learn_t_categories",
       "flow_subtype": "generated",
       "flow_type": "data_pipe",
       "_output_flows": [
         {
-          "flow_name": "managingstress_t_category_tasks",
+          "flow_name": "learn_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_money_t_articles": {
+      "flow_name": "prep_money_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "money_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_money_t_categories": {
+      "flow_name": "prep_money_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "money_t_category_tasks",
           "flow_subtype": "generated",
           "flow_type": "data_list"
         }
@@ -867,6 +1269,30 @@
         }
       ]
     },
+    "prep_safety_t_articles": {
+      "flow_name": "prep_safety_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "safety_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_safety_t_categories": {
+      "flow_name": "prep_safety_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "safety_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
     "prep_selfcare_articles": {
       "flow_name": "prep_selfcare_articles",
       "flow_subtype": "generated",
@@ -886,6 +1312,102 @@
       "_output_flows": [
         {
           "flow_name": "selfcare_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_selfcare_t_articles": {
+      "flow_name": "prep_selfcare_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "selfcare_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_selfcare_t_categories": {
+      "flow_name": "prep_selfcare_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "selfcare_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_srh_t_articles": {
+      "flow_name": "prep_srh_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "srh_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_srh_t_categories": {
+      "flow_name": "prep_srh_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "srh_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_stayingsafe_t_articles": {
+      "flow_name": "prep_stayingsafe_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "stayingsafe_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_stayingsafe_t_categories": {
+      "flow_name": "prep_stayingsafe_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "stayingsafe_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_stress_t_articles": {
+      "flow_name": "prep_stress_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "stress_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_stress_t_categories": {
+      "flow_name": "prep_stress_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "stress_t_category_tasks",
           "flow_subtype": "generated",
           "flow_type": "data_list"
         }
@@ -917,6 +1439,40 @@
     }
   },
   "generator": {
+    "celebrate_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "celebrate_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "celebrate_t_articles",
+        "output_flow_name": "article_celebrate_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "celebrate_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_celebrate_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_celebrate_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_celebrate_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_celebrate_t_teen_test_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
     "check_in_article_generator": {
       "flow_type": "generator",
       "flow_name": "check_in_article_generator",
@@ -974,6 +1530,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "article_selfcare_t_check_in_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "article_oneononetime_t_check_in_2",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -984,7 +1545,12 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_instructions_t_check_in_17",
+          "flow_name": "article_instructions_t_check_in_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_check_in_5",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -994,12 +1560,52 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_check_in_5",
+          "flow_name": "article_money_t_check_in_6",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "article_rules_t_check_in_15",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_check_in_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_check_in_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_check_in_11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_celebrate_t_check_in_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_check_in_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_check_in_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_check_in_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_learn_t_check_in_2",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -1163,6 +1769,279 @@
         },
         {
           "flow_name": "article_consequences_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
+    "consequences_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "consequences_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "consequences_t_articles",
+        "output_flow_name": "article_consequences_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "consequences_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_consequences_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_@gen.id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_tips_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_teent_test",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
+    "crisis_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "crisis_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "crisis_t_articles",
+        "output_flow_name": "article_crisis_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "crisis_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_crisis_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_explore_13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_practise_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_practise_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_practise_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_practise_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_practise_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_practise_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_teen_test_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_@gen.id",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -1675,6 +2554,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "module_selfcare_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "module_oneononetime_t",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -1690,17 +2574,62 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "module_stress_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "module_problemsolving_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "module_managingstress_t",
+          "flow_name": "module_money_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "module_rules_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_consequences_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_safety_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_crisis_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_celebrate_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_srh_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_stayingsafe_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_grief_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_learn_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -1763,6 +2692,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "module_overview_selfcare_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "module_overview_oneononetime_t",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -1778,17 +2712,62 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "module_overview_stress_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "module_overview_problemsolving_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "module_overview_managingstress_t",
+          "flow_name": "module_overview_money_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "module_overview_rules_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_consequences_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_safety_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_crisis_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_celebrate_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_srh_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_stayingsafe_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_grief_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_learn_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -1851,6 +2830,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "module_selfcare_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "module_oneononetime_t_start_at_uncompleted",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -1866,17 +2850,62 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "module_stress_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "module_problemsolving_t_start_at_uncompleted",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "module_managingstress_t_start_at_uncompleted",
+          "flow_name": "module_money_t_start_at_uncompleted",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "module_rules_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_consequences_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_safety_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_crisis_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_celebrate_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_srh_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_stayingsafe_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_grief_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_learn_t_start_at_uncompleted",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -1939,6 +2968,11 @@
           "flow_type": "data_pipe"
         },
         {
+          "flow_name": "prep_selfcare_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
           "flow_name": "prep_oneononetime_t_articles",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
@@ -1954,17 +2988,62 @@
           "flow_type": "data_pipe"
         },
         {
+          "flow_name": "prep_stress_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
           "flow_name": "prep_problemsolving_t_articles",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
         },
         {
-          "flow_name": "prep_managingstress_t_articles",
+          "flow_name": "prep_money_t_articles",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
         },
         {
           "flow_name": "prep_rules_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_consequences_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_safety_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_crisis_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_celebrate_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_srh_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_stayingsafe_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_grief_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_learn_t_articles",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
         }
@@ -2027,6 +3106,11 @@
           "flow_type": "data_pipe"
         },
         {
+          "flow_name": "prep_selfcare_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
           "flow_name": "prep_oneononetime_t_categories",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
@@ -2042,17 +3126,62 @@
           "flow_type": "data_pipe"
         },
         {
+          "flow_name": "prep_stress_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
           "flow_name": "prep_problemsolving_t_categories",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
         },
         {
-          "flow_name": "prep_managingstress_t_categories",
+          "flow_name": "prep_money_t_categories",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
         },
         {
           "flow_name": "prep_rules_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_consequences_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_safety_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_crisis_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_celebrate_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_srh_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_stayingsafe_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_grief_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_learn_t_categories",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
         }
@@ -2248,6 +3377,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "stack_module_selfcare_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "stack_module_oneononetime_t",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -2263,17 +3397,62 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "stack_module_stress_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "stack_module_problemsolving_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "stack_module_managingstress_t",
+          "flow_name": "stack_module_money_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "stack_module_rules_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_consequences_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_safety_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_crisis_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_celebrate_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_srh_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_stayingsafe_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_grief_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_learn_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -2336,6 +3515,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "stack_module_selfcare_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "stack_module_oneononetime_t_start_at_id",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -2351,17 +3535,156 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "stack_module_stress_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "stack_module_problemsolving_t_start_at_id",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "stack_module_managingstress_t_start_at_id",
+          "flow_name": "stack_module_money_t_start_at_id",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "stack_module_rules_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_consequences_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_safety_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_crisis_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_celebrate_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_srh_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_stayingsafe_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_grief_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_learn_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
+    "grief_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "grief_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "grief_t_articles",
+        "output_flow_name": "article_grief_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "grief_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_grief_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_explore_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_practise_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_teen_test_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -2555,115 +3878,95 @@
         }
       ]
     },
-    "managingstress_t_article_gen": {
+    "learn_t_article_gen": {
       "flow_type": "generator",
-      "flow_name": "managingstress_t_article_gen",
+      "flow_name": "learn_t_article_gen",
       "parameter_list": {
-        "input_data_list": "managingstress_t_articles",
-        "output_flow_name": "article_managingstress_t_@gen.id",
+        "input_data_list": "learn_t_articles",
+        "output_flow_name": "article_learn_t_@gen.id",
         "output_flow_type": "template",
         "output_flow_subtype": "generated"
       },
-      "module_id": "managingstress_t",
+      "module_id": "learn_t",
       "_xlsxPath": "templates/ZA article template generators.xlsx",
       "_output_flows": [
         {
-          "flow_name": "article_managingstress_t_intro_1",
+          "flow_name": "article_learn_t_intro_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_intro_2",
+          "flow_name": "article_learn_t_intro_2",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_1",
+          "flow_name": "article_learn_t_explore_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_2",
+          "flow_name": "article_learn_t_explore_2",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_3",
+          "flow_name": "article_learn_t_explore_3",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_4",
+          "flow_name": "article_learn_t_explore_4",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_5",
+          "flow_name": "article_learn_t_explore_5",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_6",
+          "flow_name": "article_learn_t_explore_6",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_7",
+          "flow_name": "article_learn_t_explore_7",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_8",
+          "flow_name": "article_learn_t_explore_8",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_9",
+          "flow_name": "article_learn_t_explore_9",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_10",
+          "flow_name": "article_learn_t_explore_10",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_11",
+          "flow_name": "article_learn_t_tips_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_12",
+          "flow_name": "article_learn_t_tips_2",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_explore_13",
+          "flow_name": "article_learn_t_home_activity_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_@gen.id",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_managingstress_t_practise",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_managingstress_t_tips_1",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_managingstress_t_home_activity_1",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_managingstress_t_teen_test_1",
+          "flow_name": "article_learn_t_teen_test_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -2726,32 +4029,201 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_oneononetime_t_relax_3",
+          "flow_name": "article_selfcare_t_relax_5",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_praise_t_relax_4",
+          "flow_name": "article_oneononetime_t_relax_4",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_instructions_t_relax_3",
+          "flow_name": "article_praise_t_relax_17",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_relax_1",
+          "flow_name": "article_instructions_t_relax_4",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_managingstress_t_relax_7",
+          "flow_name": "article_stress_t_relax_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_relax_11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_relax_8",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "article_rules_t_relax_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_consequences_t_relax_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_relax_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_crisis_t_relax_13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_celebrate_t_relax_14",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_relax_15",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_relax_17",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_grief_t_relax_22",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_learn_t_relax_20",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
+    "money_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "money_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "money_t_articles",
+        "output_flow_name": "article_money_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "money_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_money_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_14",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_15",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_explore_16",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_money_t_teen_test_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -2834,27 +4306,12 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_oneononetime_t_explore_2",
+          "flow_name": "article_oneononetime_t_intro_2",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_oneononetime_t_explore_3",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_oneononetime_t_explore_4",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_oneononetime_t_explore_5",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_oneononetime_t_explore_6",
+          "flow_name": "article_oneononetime_t_explore_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -2987,11 +4444,6 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_praise_t_explore_5",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
           "flow_name": "article_praise_t_tips_1",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -3105,11 +4557,6 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_explore_2",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
           "flow_name": "article_problemsolving_t_explore_3",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -3120,102 +4567,82 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_explore_5",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_problemsolving_t_explore_6",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
           "flow_name": "article_problemsolving_t_tips_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_1",
+          "flow_name": "article_problemsolving_t_practise_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_2",
+          "flow_name": "article_problemsolving_t_practise_2",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_3",
+          "flow_name": "article_problemsolving_t_practise_3",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_4",
+          "flow_name": "article_problemsolving_t_practise_4",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_5",
+          "flow_name": "article_problemsolving_t_practise_5",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_6",
+          "flow_name": "article_problemsolving_t_practise_6",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_7",
+          "flow_name": "article_problemsolving_t_practise_7",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_8",
+          "flow_name": "article_problemsolving_t_practise_8",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_9",
+          "flow_name": "article_problemsolving_t_practise_9",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_10",
+          "flow_name": "article_problemsolving_t_practise_10",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_11",
+          "flow_name": "article_problemsolving_t_practise_11",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_problemsolving_t_id_12",
+          "flow_name": "article_problemsolving_t_practise_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_practise_13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_problemsolving_t_practise_14",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "article_problemsolving_t_home_activity_1",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_problemsolving_t_home_activity_2",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_problemsolving_t_home_activity_3",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_problemsolving_t_home_activity_4",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_problemsolving_t_practise",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -3285,31 +4712,6 @@
         },
         {
           "flow_name": "article_rules_t_explore_8",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_rules_t_explore_9",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_rules_t_explore_10",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_rules_t_explore_11",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_rules_t_explore_12",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_rules_t_explore_13",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -3454,6 +4856,115 @@
         }
       ]
     },
+    "safety_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "safety_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "safety_t_articles",
+        "output_flow_name": "article_safety_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "safety_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_safety_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_explore_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_explore_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_practise_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_practise_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_practise_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_practise_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_practise_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_safety_t_teen_test_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
     "selfcare_article_gen": {
       "flow_type": "generator",
       "flow_name": "selfcare_article_gen",
@@ -3503,6 +5014,169 @@
         },
         {
           "flow_name": "article_selfcare_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
+    "selfcare_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "selfcare_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "selfcare_t_articles",
+        "output_flow_name": "article_selfcare_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "selfcare_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_selfcare_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_teen_test1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
+    "srh_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "srh_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "srh_t_articles",
+        "output_flow_name": "article_srh_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "srh_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_srh_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_14",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_explore_15",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_teen_test_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -3585,12 +5259,280 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "stack_hp_review_managingstress_t",
+          "flow_name": "stack_hp_review_stress_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
           "flow_name": "stack_hp_review_rules_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_consequences_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_safety_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_crisis_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_money_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_srh_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_stayingsafe_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_hp_review_grief_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
+    "stayingsafe_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "stayingsafe_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "stayingsafe_t_articles",
+        "output_flow_name": "article_stayingsafe_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "stayingsafe_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_stayingsafe_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_explore_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_explore_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_tips_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_tips_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_tips_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_tips_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_practise_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stayingsafe_t_teen_test_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        }
+      ]
+    },
+    "stress_t_article_gen": {
+      "flow_type": "generator",
+      "flow_name": "stress_t_article_gen",
+      "parameter_list": {
+        "input_data_list": "stress_t_articles",
+        "output_flow_name": "article_stress_t_@gen.id",
+        "output_flow_type": "template",
+        "output_flow_subtype": "generated"
+      },
+      "module_id": "stress_t",
+      "_xlsxPath": "templates/ZA article template generators.xlsx",
+      "_output_flows": [
+        {
+          "flow_name": "article_stress_t_intro_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_intro_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_14",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_15",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_16",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_explore_17",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_home_activity_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_stress_t_teen_test_1",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -3602,6 +5544,11 @@
       "flow_type": "global",
       "flow_name": "app_menu_globals",
       "_xlsxPath": "app_menu.xlsx"
+    },
+    "article_global": {
+      "flow_type": "global",
+      "flow_name": "article_global",
+      "_xlsxPath": "data/Nisso_ZA articles_09.04.2025.xlsx"
     },
     "deployment_global_za": {
       "flow_type": "global",
@@ -3966,6 +5913,36 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_celebrate_t_check_in_1": {
+      "flow_name": "article_celebrate_t_check_in_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_celebrate_t_explore_1": {
+      "flow_name": "article_celebrate_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_celebrate_t_intro_1": {
+      "flow_name": "article_celebrate_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_celebrate_t_relax_14": {
+      "flow_name": "article_celebrate_t_relax_14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_celebrate_t_teen_test_1": {
+      "flow_name": "article_celebrate_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_celebrate_t_tips_1": {
+      "flow_name": "article_celebrate_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_childdevelopment_check_in_2": {
       "flow_name": "article_childdevelopment_check_in_2",
       "flow_subtype": "generated",
@@ -4116,8 +6093,273 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_consequences_t_@gen.id": {
+      "flow_name": "article_consequences_t_@gen.id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_check_in_8": {
+      "flow_name": "article_consequences_t_check_in_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_explore_1": {
+      "flow_name": "article_consequences_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_explore_2": {
+      "flow_name": "article_consequences_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_explore_3": {
+      "flow_name": "article_consequences_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_explore_4": {
+      "flow_name": "article_consequences_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_explore_5": {
+      "flow_name": "article_consequences_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_explore_6": {
+      "flow_name": "article_consequences_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_explore_7": {
+      "flow_name": "article_consequences_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_home_activity_1": {
+      "flow_name": "article_consequences_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_intro_1": {
+      "flow_name": "article_consequences_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_intro_2": {
+      "flow_name": "article_consequences_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_relax_10": {
+      "flow_name": "article_consequences_t_relax_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_teent_test": {
+      "flow_name": "article_consequences_t_teent_test",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_1": {
+      "flow_name": "article_consequences_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_10": {
+      "flow_name": "article_consequences_t_tips_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_11": {
+      "flow_name": "article_consequences_t_tips_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_12": {
+      "flow_name": "article_consequences_t_tips_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_2": {
+      "flow_name": "article_consequences_t_tips_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_3": {
+      "flow_name": "article_consequences_t_tips_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_4": {
+      "flow_name": "article_consequences_t_tips_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_5": {
+      "flow_name": "article_consequences_t_tips_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_6": {
+      "flow_name": "article_consequences_t_tips_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_7": {
+      "flow_name": "article_consequences_t_tips_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_8": {
+      "flow_name": "article_consequences_t_tips_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_consequences_t_tips_9": {
+      "flow_name": "article_consequences_t_tips_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_consequences_tips_1": {
       "flow_name": "article_consequences_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_@gen.id": {
+      "flow_name": "article_crisis_t_@gen.id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_check_in_11": {
+      "flow_name": "article_crisis_t_check_in_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_1": {
+      "flow_name": "article_crisis_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_10": {
+      "flow_name": "article_crisis_t_explore_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_11": {
+      "flow_name": "article_crisis_t_explore_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_12": {
+      "flow_name": "article_crisis_t_explore_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_13": {
+      "flow_name": "article_crisis_t_explore_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_2": {
+      "flow_name": "article_crisis_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_3": {
+      "flow_name": "article_crisis_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_4": {
+      "flow_name": "article_crisis_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_5": {
+      "flow_name": "article_crisis_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_6": {
+      "flow_name": "article_crisis_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_7": {
+      "flow_name": "article_crisis_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_8": {
+      "flow_name": "article_crisis_t_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_explore_9": {
+      "flow_name": "article_crisis_t_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_home_activity_1": {
+      "flow_name": "article_crisis_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_intro_1": {
+      "flow_name": "article_crisis_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_intro_2": {
+      "flow_name": "article_crisis_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_practise_1": {
+      "flow_name": "article_crisis_t_practise_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_practise_2": {
+      "flow_name": "article_crisis_t_practise_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_practise_3": {
+      "flow_name": "article_crisis_t_practise_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_practise_4": {
+      "flow_name": "article_crisis_t_practise_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_practise_5": {
+      "flow_name": "article_crisis_t_practise_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_practise_6": {
+      "flow_name": "article_crisis_t_practise_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_relax_13": {
+      "flow_name": "article_crisis_t_relax_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_teen_test_1": {
+      "flow_name": "article_crisis_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_crisis_t_tips_1": {
+      "flow_name": "article_crisis_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4173,6 +6415,96 @@
     },
     "article_feelings_tips_1": {
       "flow_name": "article_feelings_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_check_in_1": {
+      "flow_name": "article_grief_t_check_in_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_1": {
+      "flow_name": "article_grief_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_10": {
+      "flow_name": "article_grief_t_explore_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_2": {
+      "flow_name": "article_grief_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_3": {
+      "flow_name": "article_grief_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_4": {
+      "flow_name": "article_grief_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_5": {
+      "flow_name": "article_grief_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_6": {
+      "flow_name": "article_grief_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_7": {
+      "flow_name": "article_grief_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_8": {
+      "flow_name": "article_grief_t_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_explore_9": {
+      "flow_name": "article_grief_t_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_home_activity_1": {
+      "flow_name": "article_grief_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_intro_1": {
+      "flow_name": "article_grief_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_intro_2": {
+      "flow_name": "article_grief_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_practise_1": {
+      "flow_name": "article_grief_t_practise_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_relax_22": {
+      "flow_name": "article_grief_t_relax_22",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_teen_test_1": {
+      "flow_name": "article_grief_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_grief_t_tips_1": {
+      "flow_name": "article_grief_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4251,8 +6583,8 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_instructions_t_check_in_17": {
-      "flow_name": "article_instructions_t_check_in_17",
+    "article_instructions_t_check_in_9": {
+      "flow_name": "article_instructions_t_check_in_9",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4336,8 +6668,8 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_instructions_t_relax_3": {
-      "flow_name": "article_instructions_t_relax_3",
+    "article_instructions_t_relax_4": {
+      "flow_name": "article_instructions_t_relax_4",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4356,113 +6688,208 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_@gen.id": {
-      "flow_name": "article_managingstress_t_@gen.id",
+    "article_learn_t_check_in_2": {
+      "flow_name": "article_learn_t_check_in_2",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_check_in_5": {
-      "flow_name": "article_managingstress_t_check_in_5",
+    "article_learn_t_explore_1": {
+      "flow_name": "article_learn_t_explore_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_1": {
-      "flow_name": "article_managingstress_t_explore_1",
+    "article_learn_t_explore_10": {
+      "flow_name": "article_learn_t_explore_10",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_10": {
-      "flow_name": "article_managingstress_t_explore_10",
+    "article_learn_t_explore_2": {
+      "flow_name": "article_learn_t_explore_2",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_11": {
-      "flow_name": "article_managingstress_t_explore_11",
+    "article_learn_t_explore_3": {
+      "flow_name": "article_learn_t_explore_3",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_12": {
-      "flow_name": "article_managingstress_t_explore_12",
+    "article_learn_t_explore_4": {
+      "flow_name": "article_learn_t_explore_4",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_13": {
-      "flow_name": "article_managingstress_t_explore_13",
+    "article_learn_t_explore_5": {
+      "flow_name": "article_learn_t_explore_5",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_2": {
-      "flow_name": "article_managingstress_t_explore_2",
+    "article_learn_t_explore_6": {
+      "flow_name": "article_learn_t_explore_6",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_3": {
-      "flow_name": "article_managingstress_t_explore_3",
+    "article_learn_t_explore_7": {
+      "flow_name": "article_learn_t_explore_7",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_4": {
-      "flow_name": "article_managingstress_t_explore_4",
+    "article_learn_t_explore_8": {
+      "flow_name": "article_learn_t_explore_8",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_5": {
-      "flow_name": "article_managingstress_t_explore_5",
+    "article_learn_t_explore_9": {
+      "flow_name": "article_learn_t_explore_9",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_6": {
-      "flow_name": "article_managingstress_t_explore_6",
+    "article_learn_t_home_activity_1": {
+      "flow_name": "article_learn_t_home_activity_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_7": {
-      "flow_name": "article_managingstress_t_explore_7",
+    "article_learn_t_intro_1": {
+      "flow_name": "article_learn_t_intro_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_8": {
-      "flow_name": "article_managingstress_t_explore_8",
+    "article_learn_t_intro_2": {
+      "flow_name": "article_learn_t_intro_2",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_explore_9": {
-      "flow_name": "article_managingstress_t_explore_9",
+    "article_learn_t_relax_20": {
+      "flow_name": "article_learn_t_relax_20",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_home_activity_1": {
-      "flow_name": "article_managingstress_t_home_activity_1",
+    "article_learn_t_teen_test_1": {
+      "flow_name": "article_learn_t_teen_test_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_intro_1": {
-      "flow_name": "article_managingstress_t_intro_1",
+    "article_learn_t_tips_1": {
+      "flow_name": "article_learn_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_intro_2": {
-      "flow_name": "article_managingstress_t_intro_2",
+    "article_learn_t_tips_2": {
+      "flow_name": "article_learn_t_tips_2",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_practise": {
-      "flow_name": "article_managingstress_t_practise",
+    "article_money_t_check_in_6": {
+      "flow_name": "article_money_t_check_in_6",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_relax_7": {
-      "flow_name": "article_managingstress_t_relax_7",
+    "article_money_t_explore_1": {
+      "flow_name": "article_money_t_explore_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_teen_test_1": {
-      "flow_name": "article_managingstress_t_teen_test_1",
+    "article_money_t_explore_10": {
+      "flow_name": "article_money_t_explore_10",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_managingstress_t_tips_1": {
-      "flow_name": "article_managingstress_t_tips_1",
+    "article_money_t_explore_11": {
+      "flow_name": "article_money_t_explore_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_12": {
+      "flow_name": "article_money_t_explore_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_13": {
+      "flow_name": "article_money_t_explore_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_14": {
+      "flow_name": "article_money_t_explore_14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_15": {
+      "flow_name": "article_money_t_explore_15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_16": {
+      "flow_name": "article_money_t_explore_16",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_2": {
+      "flow_name": "article_money_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_3": {
+      "flow_name": "article_money_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_4": {
+      "flow_name": "article_money_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_5": {
+      "flow_name": "article_money_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_6": {
+      "flow_name": "article_money_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_7": {
+      "flow_name": "article_money_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_8": {
+      "flow_name": "article_money_t_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_explore_9": {
+      "flow_name": "article_money_t_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_home_activity_1": {
+      "flow_name": "article_money_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_intro_1": {
+      "flow_name": "article_money_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_intro_2": {
+      "flow_name": "article_money_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_relax_8": {
+      "flow_name": "article_money_t_relax_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_teen_test_1": {
+      "flow_name": "article_money_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_money_t_tips_1": {
+      "flow_name": "article_money_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4521,28 +6948,8 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_oneononetime_t_explore_2": {
-      "flow_name": "article_oneononetime_t_explore_2",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_oneononetime_t_explore_3": {
-      "flow_name": "article_oneononetime_t_explore_3",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_oneononetime_t_explore_4": {
-      "flow_name": "article_oneononetime_t_explore_4",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_oneononetime_t_explore_5": {
-      "flow_name": "article_oneononetime_t_explore_5",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_oneononetime_t_explore_6": {
-      "flow_name": "article_oneononetime_t_explore_6",
+    "article_oneononetime_t_explore_1": {
+      "flow_name": "article_oneononetime_t_explore_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4556,13 +6963,18 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_oneononetime_t_intro_2": {
+      "flow_name": "article_oneononetime_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_oneononetime_t_practise": {
       "flow_name": "article_oneononetime_t_practise",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_oneononetime_t_relax_3": {
-      "flow_name": "article_oneononetime_t_relax_3",
+    "article_oneononetime_t_relax_4": {
+      "flow_name": "article_oneononetime_t_relax_4",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4661,11 +7073,6 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_praise_t_explore_5": {
-      "flow_name": "article_praise_t_explore_5",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
     "article_praise_t_home_activity_1": {
       "flow_name": "article_praise_t_home_activity_1",
       "flow_subtype": "generated",
@@ -4686,8 +7093,8 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_praise_t_relax_4": {
-      "flow_name": "article_praise_t_relax_4",
+    "article_praise_t_relax_17": {
+      "flow_name": "article_praise_t_relax_17",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4771,11 +7178,6 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_problemsolving_t_explore_2": {
-      "flow_name": "article_problemsolving_t_explore_2",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
     "article_problemsolving_t_explore_3": {
       "flow_name": "article_problemsolving_t_explore_3",
       "flow_subtype": "generated",
@@ -4786,93 +7188,8 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_problemsolving_t_explore_5": {
-      "flow_name": "article_problemsolving_t_explore_5",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_explore_6": {
-      "flow_name": "article_problemsolving_t_explore_6",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
     "article_problemsolving_t_home_activity_1": {
       "flow_name": "article_problemsolving_t_home_activity_1",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_home_activity_2": {
-      "flow_name": "article_problemsolving_t_home_activity_2",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_home_activity_3": {
-      "flow_name": "article_problemsolving_t_home_activity_3",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_home_activity_4": {
-      "flow_name": "article_problemsolving_t_home_activity_4",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_1": {
-      "flow_name": "article_problemsolving_t_id_1",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_10": {
-      "flow_name": "article_problemsolving_t_id_10",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_11": {
-      "flow_name": "article_problemsolving_t_id_11",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_12": {
-      "flow_name": "article_problemsolving_t_id_12",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_2": {
-      "flow_name": "article_problemsolving_t_id_2",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_3": {
-      "flow_name": "article_problemsolving_t_id_3",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_4": {
-      "flow_name": "article_problemsolving_t_id_4",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_5": {
-      "flow_name": "article_problemsolving_t_id_5",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_6": {
-      "flow_name": "article_problemsolving_t_id_6",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_7": {
-      "flow_name": "article_problemsolving_t_id_7",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_8": {
-      "flow_name": "article_problemsolving_t_id_8",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_problemsolving_t_id_9": {
-      "flow_name": "article_problemsolving_t_id_9",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -4886,13 +7203,78 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_problemsolving_t_practise": {
-      "flow_name": "article_problemsolving_t_practise",
+    "article_problemsolving_t_practise_1": {
+      "flow_name": "article_problemsolving_t_practise_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_problemsolving_t_relax_1": {
-      "flow_name": "article_problemsolving_t_relax_1",
+    "article_problemsolving_t_practise_10": {
+      "flow_name": "article_problemsolving_t_practise_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_11": {
+      "flow_name": "article_problemsolving_t_practise_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_12": {
+      "flow_name": "article_problemsolving_t_practise_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_13": {
+      "flow_name": "article_problemsolving_t_practise_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_14": {
+      "flow_name": "article_problemsolving_t_practise_14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_2": {
+      "flow_name": "article_problemsolving_t_practise_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_3": {
+      "flow_name": "article_problemsolving_t_practise_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_4": {
+      "flow_name": "article_problemsolving_t_practise_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_5": {
+      "flow_name": "article_problemsolving_t_practise_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_6": {
+      "flow_name": "article_problemsolving_t_practise_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_7": {
+      "flow_name": "article_problemsolving_t_practise_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_8": {
+      "flow_name": "article_problemsolving_t_practise_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_practise_9": {
+      "flow_name": "article_problemsolving_t_practise_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_problemsolving_t_relax_11": {
+      "flow_name": "article_problemsolving_t_relax_11",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5041,26 +7423,6 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_rules_t_explore_10": {
-      "flow_name": "article_rules_t_explore_10",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_rules_t_explore_11": {
-      "flow_name": "article_rules_t_explore_11",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_rules_t_explore_12": {
-      "flow_name": "article_rules_t_explore_12",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_rules_t_explore_13": {
-      "flow_name": "article_rules_t_explore_13",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
     "article_rules_t_explore_2": {
       "flow_name": "article_rules_t_explore_2",
       "flow_subtype": "generated",
@@ -5093,11 +7455,6 @@
     },
     "article_rules_t_explore_8": {
       "flow_name": "article_rules_t_explore_8",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_rules_t_explore_9": {
-      "flow_name": "article_rules_t_explore_9",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5251,6 +7608,111 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_safety_t_check_in_10": {
+      "flow_name": "article_safety_t_check_in_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_explore_1": {
+      "flow_name": "article_safety_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_explore_2": {
+      "flow_name": "article_safety_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_explore_3": {
+      "flow_name": "article_safety_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_explore_4": {
+      "flow_name": "article_safety_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_explore_5": {
+      "flow_name": "article_safety_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_explore_6": {
+      "flow_name": "article_safety_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_explore_7": {
+      "flow_name": "article_safety_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_explore_8": {
+      "flow_name": "article_safety_t_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_explore_9": {
+      "flow_name": "article_safety_t_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_home_activity_1": {
+      "flow_name": "article_safety_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_intro_1": {
+      "flow_name": "article_safety_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_intro_2": {
+      "flow_name": "article_safety_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_practise_1": {
+      "flow_name": "article_safety_t_practise_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_practise_2": {
+      "flow_name": "article_safety_t_practise_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_practise_3": {
+      "flow_name": "article_safety_t_practise_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_practise_4": {
+      "flow_name": "article_safety_t_practise_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_practise_5": {
+      "flow_name": "article_safety_t_practise_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_relax_12": {
+      "flow_name": "article_safety_t_relax_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_teen_test_1": {
+      "flow_name": "article_safety_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_safety_t_tips_1": {
+      "flow_name": "article_safety_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_selfcare_check_in_1": {
       "flow_name": "article_selfcare_check_in_1",
       "flow_subtype": "generated",
@@ -5296,8 +7758,388 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_selfcare_t_check_in_8": {
+      "flow_name": "article_selfcare_t_check_in_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_selfcare_t_explore_1": {
+      "flow_name": "article_selfcare_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_selfcare_t_explore_2": {
+      "flow_name": "article_selfcare_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_selfcare_t_home_activity_1": {
+      "flow_name": "article_selfcare_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_selfcare_t_intro_1": {
+      "flow_name": "article_selfcare_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_selfcare_t_intro_2": {
+      "flow_name": "article_selfcare_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_selfcare_t_relax_5": {
+      "flow_name": "article_selfcare_t_relax_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_selfcare_t_teen_test1": {
+      "flow_name": "article_selfcare_t_teen_test1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_selfcare_t_tips_1": {
+      "flow_name": "article_selfcare_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_selfcare_tips_1": {
       "flow_name": "article_selfcare_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_check_in_1": {
+      "flow_name": "article_srh_t_check_in_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_1": {
+      "flow_name": "article_srh_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_10": {
+      "flow_name": "article_srh_t_explore_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_11": {
+      "flow_name": "article_srh_t_explore_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_12": {
+      "flow_name": "article_srh_t_explore_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_13": {
+      "flow_name": "article_srh_t_explore_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_14": {
+      "flow_name": "article_srh_t_explore_14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_15": {
+      "flow_name": "article_srh_t_explore_15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_2": {
+      "flow_name": "article_srh_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_3": {
+      "flow_name": "article_srh_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_4": {
+      "flow_name": "article_srh_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_5": {
+      "flow_name": "article_srh_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_6": {
+      "flow_name": "article_srh_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_7": {
+      "flow_name": "article_srh_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_8": {
+      "flow_name": "article_srh_t_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_explore_9": {
+      "flow_name": "article_srh_t_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_home_activity_1": {
+      "flow_name": "article_srh_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_intro_1": {
+      "flow_name": "article_srh_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_intro_2": {
+      "flow_name": "article_srh_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_relax_15": {
+      "flow_name": "article_srh_t_relax_15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_teen_test_1": {
+      "flow_name": "article_srh_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_tips_1": {
+      "flow_name": "article_srh_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_check_in_10": {
+      "flow_name": "article_stayingsafe_t_check_in_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_explore_1": {
+      "flow_name": "article_stayingsafe_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_explore_2": {
+      "flow_name": "article_stayingsafe_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_explore_3": {
+      "flow_name": "article_stayingsafe_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_explore_4": {
+      "flow_name": "article_stayingsafe_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_explore_5": {
+      "flow_name": "article_stayingsafe_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_explore_6": {
+      "flow_name": "article_stayingsafe_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_explore_7": {
+      "flow_name": "article_stayingsafe_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_explore_8": {
+      "flow_name": "article_stayingsafe_t_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_explore_9": {
+      "flow_name": "article_stayingsafe_t_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_home_activity_1": {
+      "flow_name": "article_stayingsafe_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_intro_1": {
+      "flow_name": "article_stayingsafe_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_intro_2": {
+      "flow_name": "article_stayingsafe_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_practise_1": {
+      "flow_name": "article_stayingsafe_t_practise_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_relax_17": {
+      "flow_name": "article_stayingsafe_t_relax_17",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_teen_test_1": {
+      "flow_name": "article_stayingsafe_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_tips_1": {
+      "flow_name": "article_stayingsafe_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_tips_2": {
+      "flow_name": "article_stayingsafe_t_tips_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_tips_3": {
+      "flow_name": "article_stayingsafe_t_tips_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_tips_4": {
+      "flow_name": "article_stayingsafe_t_tips_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stayingsafe_t_tips_5": {
+      "flow_name": "article_stayingsafe_t_tips_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_check_in_5": {
+      "flow_name": "article_stress_t_check_in_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_1": {
+      "flow_name": "article_stress_t_explore_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_10": {
+      "flow_name": "article_stress_t_explore_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_11": {
+      "flow_name": "article_stress_t_explore_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_12": {
+      "flow_name": "article_stress_t_explore_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_13": {
+      "flow_name": "article_stress_t_explore_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_14": {
+      "flow_name": "article_stress_t_explore_14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_15": {
+      "flow_name": "article_stress_t_explore_15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_16": {
+      "flow_name": "article_stress_t_explore_16",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_17": {
+      "flow_name": "article_stress_t_explore_17",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_2": {
+      "flow_name": "article_stress_t_explore_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_3": {
+      "flow_name": "article_stress_t_explore_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_4": {
+      "flow_name": "article_stress_t_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_5": {
+      "flow_name": "article_stress_t_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_6": {
+      "flow_name": "article_stress_t_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_7": {
+      "flow_name": "article_stress_t_explore_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_8": {
+      "flow_name": "article_stress_t_explore_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_explore_9": {
+      "flow_name": "article_stress_t_explore_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_home_activity_1": {
+      "flow_name": "article_stress_t_home_activity_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_intro_1": {
+      "flow_name": "article_stress_t_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_intro_2": {
+      "flow_name": "article_stress_t_intro_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_relax_7": {
+      "flow_name": "article_stress_t_relax_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_teen_test_1": {
+      "flow_name": "article_stress_t_teen_test_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_stress_t_tips_1": {
+      "flow_name": "article_stress_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5441,6 +8283,16 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_celebrate_t": {
+      "flow_name": "module_celebrate_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_celebrate_t_start_at_uncompleted": {
+      "flow_name": "module_celebrate_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_childdevelopment": {
       "flow_name": "module_childdevelopment",
       "flow_subtype": "generated",
@@ -5461,6 +8313,26 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_consequences_t": {
+      "flow_name": "module_consequences_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_consequences_t_start_at_uncompleted": {
+      "flow_name": "module_consequences_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_crisis_t": {
+      "flow_name": "module_crisis_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_crisis_t_start_at_uncompleted": {
+      "flow_name": "module_crisis_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_feelings": {
       "flow_name": "module_feelings",
       "flow_subtype": "generated",
@@ -5468,6 +8340,16 @@
     },
     "module_feelings_start_at_uncompleted": {
       "flow_name": "module_feelings_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_grief_t": {
+      "flow_name": "module_grief_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_grief_t_start_at_uncompleted": {
+      "flow_name": "module_grief_t_start_at_uncompleted",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5491,13 +8373,23 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "module_managingstress_t": {
-      "flow_name": "module_managingstress_t",
+    "module_learn_t": {
+      "flow_name": "module_learn_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "module_managingstress_t_start_at_uncompleted": {
-      "flow_name": "module_managingstress_t_start_at_uncompleted",
+    "module_learn_t_start_at_uncompleted": {
+      "flow_name": "module_learn_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_money_t": {
+      "flow_name": "module_money_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_money_t_start_at_uncompleted": {
+      "flow_name": "module_money_t_start_at_uncompleted",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5521,6 +8413,11 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_overview_celebrate_t": {
+      "flow_name": "module_overview_celebrate_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_overview_childdevelopment": {
       "flow_name": "module_overview_childdevelopment",
       "flow_subtype": "generated",
@@ -5531,8 +8428,23 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_overview_consequences_t": {
+      "flow_name": "module_overview_consequences_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_crisis_t": {
+      "flow_name": "module_overview_crisis_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_overview_feelings": {
       "flow_name": "module_overview_feelings",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_grief_t": {
+      "flow_name": "module_overview_grief_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5546,8 +8458,13 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "module_overview_managingstress_t": {
-      "flow_name": "module_overview_managingstress_t",
+    "module_overview_learn_t": {
+      "flow_name": "module_overview_learn_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_money_t": {
+      "flow_name": "module_overview_money_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5591,8 +8508,33 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_overview_safety_t": {
+      "flow_name": "module_overview_safety_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_overview_selfcare": {
       "flow_name": "module_overview_selfcare",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_selfcare_t": {
+      "flow_name": "module_overview_selfcare_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_srh_t": {
+      "flow_name": "module_overview_srh_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_stayingsafe_t": {
+      "flow_name": "module_overview_stayingsafe_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_stress_t": {
+      "flow_name": "module_overview_stress_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5656,6 +8598,16 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_safety_t": {
+      "flow_name": "module_safety_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_safety_t_start_at_uncompleted": {
+      "flow_name": "module_safety_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_selfcare": {
       "flow_name": "module_selfcare",
       "flow_subtype": "generated",
@@ -5663,6 +8615,46 @@
     },
     "module_selfcare_start_at_uncompleted": {
       "flow_name": "module_selfcare_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_selfcare_t": {
+      "flow_name": "module_selfcare_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_selfcare_t_start_at_uncompleted": {
+      "flow_name": "module_selfcare_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_srh_t": {
+      "flow_name": "module_srh_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_srh_t_start_at_uncompleted": {
+      "flow_name": "module_srh_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_stayingsafe_t": {
+      "flow_name": "module_stayingsafe_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_stayingsafe_t_start_at_uncompleted": {
+      "flow_name": "module_stayingsafe_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_stress_t": {
+      "flow_name": "module_stress_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_stress_t_start_at_uncompleted": {
+      "flow_name": "module_stress_t_start_at_uncompleted",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5676,8 +8668,23 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "stack_hp_review_consequences_t": {
+      "flow_name": "stack_hp_review_consequences_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_hp_review_crisis_t": {
+      "flow_name": "stack_hp_review_crisis_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "stack_hp_review_feelings": {
       "flow_name": "stack_hp_review_feelings",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_hp_review_grief_t": {
+      "flow_name": "stack_hp_review_grief_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5691,8 +8698,8 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "stack_hp_review_managingstress_t": {
-      "flow_name": "stack_hp_review_managingstress_t",
+    "stack_hp_review_money_t": {
+      "flow_name": "stack_hp_review_money_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5736,8 +8743,38 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "stack_hp_review_safety_t": {
+      "flow_name": "stack_hp_review_safety_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "stack_hp_review_selfcare": {
       "flow_name": "stack_hp_review_selfcare",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_hp_review_srh_t": {
+      "flow_name": "stack_hp_review_srh_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_hp_review_stayingsafe_t": {
+      "flow_name": "stack_hp_review_stayingsafe_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_hp_review_stress_t": {
+      "flow_name": "stack_hp_review_stress_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_celebrate_t": {
+      "flow_name": "stack_module_celebrate_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_celebrate_t_start_at_id": {
+      "flow_name": "stack_module_celebrate_t_start_at_id",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5761,6 +8798,26 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "stack_module_consequences_t": {
+      "flow_name": "stack_module_consequences_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_consequences_t_start_at_id": {
+      "flow_name": "stack_module_consequences_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_crisis_t": {
+      "flow_name": "stack_module_crisis_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_crisis_t_start_at_id": {
+      "flow_name": "stack_module_crisis_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "stack_module_feelings": {
       "flow_name": "stack_module_feelings",
       "flow_subtype": "generated",
@@ -5768,6 +8825,16 @@
     },
     "stack_module_feelings_start_at_id": {
       "flow_name": "stack_module_feelings_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_grief_t": {
+      "flow_name": "stack_module_grief_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_grief_t_start_at_id": {
+      "flow_name": "stack_module_grief_t_start_at_id",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5791,13 +8858,23 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "stack_module_managingstress_t": {
-      "flow_name": "stack_module_managingstress_t",
+    "stack_module_learn_t": {
+      "flow_name": "stack_module_learn_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "stack_module_managingstress_t_start_at_id": {
-      "flow_name": "stack_module_managingstress_t_start_at_id",
+    "stack_module_learn_t_start_at_id": {
+      "flow_name": "stack_module_learn_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_money_t": {
+      "flow_name": "stack_module_money_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_money_t_start_at_id": {
+      "flow_name": "stack_module_money_t_start_at_id",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -5881,6 +8958,16 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "stack_module_safety_t": {
+      "flow_name": "stack_module_safety_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_safety_t_start_at_id": {
+      "flow_name": "stack_module_safety_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "stack_module_selfcare": {
       "flow_name": "stack_module_selfcare",
       "flow_subtype": "generated",
@@ -5888,6 +8975,46 @@
     },
     "stack_module_selfcare_start_at_id": {
       "flow_name": "stack_module_selfcare_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_selfcare_t": {
+      "flow_name": "stack_module_selfcare_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_selfcare_t_start_at_id": {
+      "flow_name": "stack_module_selfcare_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_srh_t": {
+      "flow_name": "stack_module_srh_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_srh_t_start_at_id": {
+      "flow_name": "stack_module_srh_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_stayingsafe_t": {
+      "flow_name": "stack_module_stayingsafe_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_stayingsafe_t_start_at_id": {
+      "flow_name": "stack_module_stayingsafe_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_stress_t": {
+      "flow_name": "stack_module_stress_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_stress_t_start_at_id": {
+      "flow_name": "stack_module_stress_t_start_at_id",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -6049,6 +9176,20 @@
       },
       "_xlsxPath": "PLH module_navigation.xlsx"
     },
+    "module_landing_celebrate_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_celebrate_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "celebrate_t",
+      "comment_2": 26,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
     "module_landing_childdevelopment": {
       "flow_type": "template",
       "flow_name": "module_landing_childdevelopment",
@@ -6061,7 +9202,7 @@
       },
       "comment": "childdevelopment",
       "comment_2": 31,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_consequences": {
       "flow_type": "template",
@@ -6075,7 +9216,35 @@
       },
       "comment": "consequences",
       "comment_2": 27,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
+    "module_landing_consequences_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_consequences_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "consequences_t",
+      "comment_2": 29,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
+    "module_landing_crisis_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_crisis_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "crisis_t",
+      "comment_2": 23,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_feelings": {
       "flow_type": "template",
@@ -6089,7 +9258,21 @@
       },
       "comment": "feelings",
       "comment_2": 23,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
+    "module_landing_grief_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_grief_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "grief_t",
+      "comment_2": 22,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_instructions": {
       "flow_type": "template",
@@ -6103,7 +9286,7 @@
       },
       "comment": "instructions",
       "comment_2": 27,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_instructions_t": {
       "flow_type": "template",
@@ -6117,11 +9300,11 @@
       },
       "comment": "instructions_t",
       "comment_2": 29,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
-    "module_landing_managingstress_t": {
+    "module_landing_learn_t": {
       "flow_type": "template",
-      "flow_name": "module_landing_managingstress_t",
+      "flow_name": "module_landing_learn_t",
       "parameter_list": {
         "app_config": {
           "LAYOUT": {
@@ -6129,9 +9312,23 @@
           }
         }
       },
-      "comment": "managingstress_t",
-      "comment_2": 31,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "comment": "learn_t",
+      "comment_2": 22,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
+    "module_landing_money_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_money_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "money_t",
+      "comment_2": 22,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_oneononetime": {
       "flow_type": "template",
@@ -6145,7 +9342,7 @@
       },
       "comment": "oneononetime",
       "comment_2": 27,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_oneononetime_t": {
       "flow_type": "template",
@@ -6159,7 +9356,7 @@
       },
       "comment": "oneononetime_t",
       "comment_2": 29,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_praise": {
       "flow_type": "template",
@@ -6173,7 +9370,7 @@
       },
       "comment": "praise",
       "comment_2": 21,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_praise_t": {
       "flow_type": "template",
@@ -6187,7 +9384,7 @@
       },
       "comment": "praise_t",
       "comment_2": 23,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_problemsolving": {
       "flow_type": "template",
@@ -6201,7 +9398,7 @@
       },
       "comment": "problemsolving",
       "comment_2": 29,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_problemsolving_t": {
       "flow_type": "template",
@@ -6215,7 +9412,7 @@
       },
       "comment": "problemsolving_t",
       "comment_2": 31,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_rules_t": {
       "flow_type": "template",
@@ -6229,7 +9426,7 @@
       },
       "comment": "rules_t",
       "comment_2": 22,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_rulesroutines": {
       "flow_type": "template",
@@ -6243,7 +9440,21 @@
       },
       "comment": "rulesroutines",
       "comment_2": 28,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
+    "module_landing_safety_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_safety_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "safety_t",
+      "comment_2": 23,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_selfcare": {
       "flow_type": "template",
@@ -6257,7 +9468,63 @@
       },
       "comment": "selfcare",
       "comment_2": 23,
-      "_xlsxPath": "templates/ZA module_landing.xlsx"
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
+    "module_landing_selfcare_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_selfcare_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "selfcare_t",
+      "comment_2": 25,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
+    "module_landing_srh_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_srh_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "srh_t",
+      "comment_2": 20,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
+    "module_landing_stayingsafe_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_stayingsafe_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "stayingsafe_t",
+      "comment_2": 28,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+    },
+    "module_landing_stress_t": {
+      "flow_type": "template",
+      "flow_name": "module_landing_stress_t",
+      "parameter_list": {
+        "app_config": {
+          "LAYOUT": {
+            "page_padding": "0 0"
+          }
+        }
+      },
+      "comment": "stress_t",
+      "comment_2": 23,
+      "_xlsxPath": "templates/ZA module_landing templates.xlsx"
     },
     "module_landing_sub": {
       "flow_type": "template",

@@ -1,0 +1,100 @@
+{
+  "flow_name": "article_safety_t_relax_12",
+  "flow_subtype": "generated",
+  "flow_type": "template",
+  "rows": [
+    {
+      "type": "template",
+      "name": "header",
+      "value": "header",
+      "rows": [
+        {
+          "name": "title",
+          "value": "@data.common_categories.relax.title",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "header.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@data.common_categories.relax.title",
+                "matchedExpression": "@data.common_categories.relax.title",
+                "type": "data",
+                "fieldName": "common_categories"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@data.common_categories.relax.title": [
+              "value"
+            ]
+          }
+        },
+        {
+          "name": "icon_asset",
+          "value": "@data.common_categories.relax.icon_asset",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "header.icon_asset",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@data.common_categories.relax.icon_asset",
+                "matchedExpression": "@data.common_categories.relax.icon_asset",
+                "type": "data",
+                "fieldName": "common_categories"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@data.common_categories.relax.icon_asset": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "header"
+    },
+    {
+      "type": "template",
+      "name": "article",
+      "value": "relax",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "id",
+          "value": "relax_12",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "article.id"
+        }
+      ],
+      "_nested_name": "article"
+    }
+  ]
+}

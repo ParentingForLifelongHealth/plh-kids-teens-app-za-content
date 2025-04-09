@@ -1,0 +1,104 @@
+{
+  "flow_name": "article_stress_t_check_in_5",
+  "flow_subtype": "generated",
+  "flow_type": "template",
+  "rows": [
+    {
+      "type": "template",
+      "name": "article",
+      "value": "article",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "name": "data",
+          "value": "check_in",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "article.data"
+        },
+        {
+          "name": "article_id",
+          "value": "check_in_5",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "article.article_id"
+        },
+        {
+          "name": "perform_category_header_computations",
+          "value": false,
+          "type": "set_variable",
+          "_nested_name": "article.perform_category_header_computations"
+        },
+        {
+          "type": "nested_properties",
+          "name": "header",
+          "rows": [
+            {
+              "name": "title",
+              "value": "Check-in",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "article.header.title"
+            },
+            {
+              "name": "icon_asset",
+              "value": "images/icons/smile_eyes_up.svg",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "article.header.icon_asset"
+            }
+          ],
+          "_nested_name": "article.header"
+        },
+        {
+          "type": "nested_properties",
+          "name": "question_1",
+          "rows": [
+            {
+              "name": "radio_button_grid_width",
+              "value": "100%",
+              "_translations": {
+                "value": {}
+              },
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "article.question_1.radio_button_grid_width"
+            }
+          ],
+          "_nested_name": "article.question_1"
+        }
+      ],
+      "_nested_name": "article"
+    }
+  ]
+}
