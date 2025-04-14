@@ -7,12 +7,12 @@
 | accordion_section | 5 |
 | apple_sign_in_button | 1 |
 | audio | 3 |
-| begin_display_group | 2 |
+| begin_display_group | 3 |
 | button | 83 |
 | carousel | 1 |
 | combo_box | 7 |
 | dashed_box | 1 |
-| data_items | 129 |
+| data_items | 132 |
 | debug_toggle | 1 |
 | display_grid | 2 |
 | display_group | 75 |
@@ -32,12 +32,12 @@
 | round_button | 5 |
 | select_text | 4 |
 | set_field | 4 |
-| set_variable | 2383 |
+| set_variable | 2388 |
 | simple_checkbox | 3 |
 | subtitle | 3 |
 | task_card | 4 |
 | task_progress_bar | 2 |
-| template | 825 |
+| template | 826 |
 | text | 105 |
 | text_area | 3 |
 | text_box | 7 |
@@ -73,7 +73,7 @@
 | set_data | 55 |
 | set_field | 83 |
 | set_item | 64 |
-| set_local | 29 |
+| set_local | 31 |
 | task | 3 |
 | user | 3 |
 </details>
@@ -83,8 +83,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 146532 KB | 146.5 MB |
-| unused | 136748 KB | 136.7 MB |
+| total | 93163 KB | 93.2 MB |
+| unused | 190117 KB | 190.1 MB |
 </details>
 
 <details open>
@@ -108,9 +108,6 @@ Assets that appear in app-data but do not have references within sheets
 | audio/care_audio/rulesroutines_audio.mp3 | 174 |
 | audio/care_audio/selfcare_audio.mp3 | 257.8 |
 | audio/celebrate_audio_1.mp3 | 497.1 |
-| audio/relax/relax_1.mp3 | 265.1 |
-| audio/relax/relax_2.mp3 | 404.4 |
-| audio/relax/relax_3.mp3 | 235.1 |
 | audio/testimonials/caregiver/caregiver_test_w_instruct.mp3 | 281.3 |
 | audio/testimonials/caregiver/caregiver_test_w_self_care.mp3 | 132.8 |
 | audio/testimonials/teen/teen_test_w_instruct.mp3 | 212.2 |
@@ -273,6 +270,9 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/workshops/w_svp/tools.svg | 25.4 |
 | video/modules/connect/join_child.mp4 | 10726.2 |
 | video/modules/connect/shared_reading.mp4 | 36376.3 |
+| video/pause/body_scan.mp4 | 10418.6 |
+| video/pause/breath_body_awareness.mp4 | 27250 |
+| video/pause/loving_kindness_meditation.mp4 | 16605.2 |
 | video/plh_video/lets_slow_down.srt | 1.7 |
 | video/plh_video/lets_slow_down.vtt | 1.8 |
 </details>
@@ -364,6 +364,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/learn_audio_2.mp3 | 254.5 | 2 |
 | audio/praise_audio_1.mp3 | 344 | 2 |
 | audio/praise_audio_2.mp3 | 1042.6 | 2 |
+| audio/relax/relax_1.mp3 | 265.1 | 4 |
 | audio/relax/relax_10.mp3 | 404.9 | 2 |
 | audio/relax/relax_11.mp3 | 445.6 | 2 |
 | audio/relax/relax_12.mp3 | 539.7 | 2 |
@@ -374,11 +375,13 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/relax/relax_17.mp3 | 148 | 3 |
 | audio/relax/relax_18.mp3 | 312.9 | 1 |
 | audio/relax/relax_19.mp3 | 454 | 1 |
+| audio/relax/relax_2.mp3 | 404.4 | 4 |
 | audio/relax/relax_20.mp3 | 539.8 | 2 |
 | audio/relax/relax_21.mp3 | 189.3 | 1 |
 | audio/relax/relax_22.mp3 | 109.8 | 2 |
 | audio/relax/relax_23.mp3 | 122.9 | 1 |
 | audio/relax/relax_24.mp3 | 121.3 | 1 |
+| audio/relax/relax_3.mp3 | 235.1 | 4 |
 | audio/relax/relax_4.mp3 | 514.5 | 3 |
 | audio/relax/relax_5.mp3 | 195.7 | 2 |
 | audio/relax/relax_6.mp3 | 280.7 | 1 |
@@ -572,7 +575,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/kw_f1_daughter_2.svg | 34.2 | 1 |
 | images/kw_f1_daughter_6.svg | 37 | 1 |
 | images/kw_f1_father.svg | 27.8 | 1 |
-| images/kw_f1_mother.svg | 15 | 57 |
+| images/kw_f1_mother.svg | 15 | 1 |
 | images/kw_f2_daughter_3.svg | 61.6 | 1 |
 | images/kw_f2_grandfather.svg | 26.1 | 1 |
 | images/kw_f2_grandmother.svg | 13.4 | 1 |
@@ -781,7 +784,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/workshops/w_srh/learn/sex_talk_when/slide_1.svg | 58.6 | 2 |
 | plh_images/workshops/w_srh/learn/sex_talk_when/slide_2.svg | 89.8 | 2 |
 | plh_images/workshops/w_srh/learn/sex_talk_when/slide_3.svg | 203.3 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_when/slide_4.svg | 52.8 | 4 |
+| plh_images/workshops/w_srh/learn/sex_talk_when/slide_4.svg | 52.8 | 2 |
 | plh_images/workshops/w_srh/learn/sex_talk_who/slide_1.svg | 27.1 | 2 |
 | plh_images/workshops/w_srh/read_new_boyfriend/slide_1.svg | 44 | 2 |
 | plh_images/workshops/w_srh/read_new_boyfriend/slide_2.svg | 44 | 2 |
@@ -819,9 +822,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/workshops/w_svp/use_body/zone_1.gif | 2008.5 | 2 |
 | plh_images/workshops/w_svp/use_body/zone_2.gif | 844.1 | 2 |
 | plh_images/workshops/w_svp/use_voice.svg | 18.4 | 2 |
-| video/pause/body_scan.mp4 | 10418.6 | 4 |
-| video/pause/breath_body_awareness.mp4 | 27250 | 4 |
-| video/pause/loving_kindness_meditation.mp4 | 16605.2 | 4 |
 | video/plh_video/lets_slow_down.mp4 | 13482.2 | 2 |
 </details>
 
@@ -845,7 +845,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | generator |  | 38 |
 | global |  | 7 |
 | global | legal_terms | 1 |
-| template |  | 104 |
+| template |  | 105 |
 | template | generated | 666 |
 | template | legal_terms | 4 |
 </details>
