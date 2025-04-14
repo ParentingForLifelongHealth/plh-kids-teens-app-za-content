@@ -339,7 +339,7 @@ Assets that have references within sheets but do not appear in app-data
 | plh_images/characters/elder/large.svg | 1 |
 | plh_images/icons/globe_circle.svg | 1 |
 | plh_images/icons/tick.svg | 1 |
-| plh_images/workshops/w_selfcare/tools.svg | 3 |
+| plh_images/workshops/w_selfcare/tools.svg | 2 |
 </details>
 
 <details >
@@ -749,7 +749,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/workshops/w_safe/tools.svg | 23.9 | 4 |
 | plh_images/workshops/w_self_care/individual/recognise.svg | 34.7 | 2 |
 | plh_images/workshops/w_self_care/individual/reward.svg | 27.9 | 2 |
-| plh_images/workshops/w_self_care/tools.svg | 10 | 2 |
+| plh_images/workshops/w_self_care/tools.svg | 10 | 3 |
 | plh_images/workshops/w_solve/read_1/slide_1.svg | 35.6 | 2 |
 | plh_images/workshops/w_solve/read_1/slide_2.svg | 33.4 | 2 |
 | plh_images/workshops/w_solve/read_1/slide_3.svg | 33.6 | 2 |

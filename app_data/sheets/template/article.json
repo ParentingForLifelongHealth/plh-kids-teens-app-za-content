@@ -1076,17 +1076,20 @@
     {
       "type": "text",
       "name": "print_media_title",
-      "value": "**@local.media_title**",
+      "value": "@local.media_title",
       "_translations": {
         "value": {}
       },
       "condition": "!!(@local.article_data.media_title)",
+      "parameter_list": {
+        "style": "emphasised"
+      },
       "exclude_from_translation": true,
       "_nested_name": "print_media_title",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "**@local.media_title**",
+            "fullExpression": "@local.media_title",
             "matchedExpression": "@local.media_title",
             "type": "local",
             "fieldName": "media_title"
