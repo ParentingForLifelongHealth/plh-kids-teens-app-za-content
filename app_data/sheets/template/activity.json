@@ -283,6 +283,42 @@
       "_nested_name": "display_group_6"
     },
     {
+      "type": "text",
+      "name": "text",
+      "value": "@local.activity_row.text",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!@local.activity_row.text",
+      "_nested_name": "text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.activity_row.text",
+            "matchedExpression": "@local.activity_row.text",
+            "type": "local",
+            "fieldName": "activity_row"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@local.activity_row.text",
+            "matchedExpression": "!@local.activity_row.text",
+            "type": "local",
+            "fieldName": "activity_row"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.activity_row.text": [
+          "value"
+        ],
+        "!@local.activity_row.text": [
+          "condition"
+        ]
+      }
+    },
+    {
       "type": "video",
       "name": "video",
       "value": "@local.article_data.media_asset",
@@ -658,14 +694,14 @@
     },
     {
       "type": "text",
-      "name": "text",
+      "name": "text_source",
       "value": "@local.source: @local.activity_row.attribution",
       "_translations": {
         "value": {}
       },
       "condition": "!!(@local.activity_row.attribution)",
       "exclude_from_translation": true,
-      "_nested_name": "text",
+      "_nested_name": "text_source",
       "_dynamicFields": {
         "value": [
           {
