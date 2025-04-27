@@ -1,0 +1,71 @@
+{
+  "flow_type": "template",
+  "flow_name": "activity_library_testing",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.moments_of_play",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.moments_of_play",
+            "matchedExpression": "@global.moments_of_play",
+            "type": "global",
+            "fieldName": "moments_of_play"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.moments_of_play": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button_unlock_all",
+      "value": "@global.unlock_all_moments_of_play",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_data",
+          "args": [],
+          "_raw": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
+          "_cleaned": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
+          "params": {
+            "_list_id": "activity_tasks",
+            "locked": false
+          }
+        }
+      ],
+      "exclude_from_translation": true,
+      "_nested_name": "button_unlock_all",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.unlock_all_moments_of_play",
+            "matchedExpression": "@global.unlock_all_moments_of_play",
+            "type": "global",
+            "fieldName": "unlock_all_moments_of_play"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.unlock_all_moments_of_play": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "PLH activity library.xlsx"
+}
