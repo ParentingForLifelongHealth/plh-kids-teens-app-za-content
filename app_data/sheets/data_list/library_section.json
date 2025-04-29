@@ -1,12 +1,13 @@
 {
   "flow_type": "data_list",
-  "flow_name": "home_screen_section_data",
+  "flow_name": "library_section",
   "status": "released",
-  "data_list_name": "home_screen_section",
+  "data_list_name": "library_section",
   "rows": [
     {
       "id": "support",
       "image": "images/faq_no_participation_general.svg",
+      "template": "parent_centre_support_con",
       "title": "Support Contacts",
       "_translations": {
         "title": {}
@@ -20,6 +21,7 @@
     {
       "id": "tips",
       "image": "images/faq_h_parents_insult.svg",
+      "template": "parenting_tips",
       "title": "Quick Parenting Tips",
       "_translations": {
         "title": {}
@@ -31,21 +33,9 @@
       }
     },
     {
-      "id": "tech",
-      "image": "images/talk_feelings_challenges.svg",
-      "title": "Technical Support",
-      "_translations": {
-        "title": {}
-      },
-      "_translatedFields": {
-        "title": {
-          "eng": "Technical Support"
-        }
-      }
-    },
-    {
       "id": "essential_tools",
       "image": "images/faq_h_self_harm.svg",
+      "template": "library_essential_tools",
       "title": "Essential Tools",
       "_translations": {
         "title": {}
@@ -58,6 +48,7 @@
     },
     {
       "id": "relax",
+      "template": "relax_activities",
       "title": "Relax Activities",
       "_translations": {
         "title": {}

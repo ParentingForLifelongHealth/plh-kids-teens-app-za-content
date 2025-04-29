@@ -466,12 +466,6 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
-    "home_screen_section_data": {
-      "flow_type": "data_list",
-      "flow_name": "home_screen_section_data",
-      "data_list_name": "home_screen_section",
-      "_xlsxPath": "data/ZA articles.xlsx"
-    },
     "hp_challenges": {
       "flow_type": "data_list",
       "flow_name": "hp_challenges",
@@ -500,11 +494,11 @@
       "flow_subtype": "legal_terms",
       "_xlsxPath": "data/deployment_data_za.xlsx"
     },
-    "library": {
+    "library_section": {
       "flow_type": "data_list",
-      "data_list_name": "library",
-      "flow_name": "library",
-      "_xlsxPath": "data/ZA library.xlsx"
+      "flow_name": "library_section",
+      "data_list_name": "library_section",
+      "_xlsxPath": "data/ZA articles.xlsx"
     },
     "launch_actions": {
       "flow_type": "data_list",
@@ -516,12 +510,6 @@
           "type": "number"
         }
       }
-    },
-    "media_data": {
-      "flow_type": "data_list",
-      "flow_name": "media_data",
-      "data_list_name": "media",
-      "_xlsxPath": "data/ZA articles.xlsx"
     },
     "celebrate_t_articles": {
       "flow_type": "data_list",
@@ -745,35 +733,12 @@
       "data_list_name": "organisation_group",
       "_xlsxPath": "data/deployment_data_za.xlsx"
     },
-    "pdf_data": {
-      "flow_type": "data_list",
-      "flow_name": "pdf_data",
-      "data_list_name": "pdf",
-      "_xlsxPath": "data/ZA articles.xlsx",
-      "_metadata": {
-        "library_asset": {
-          "type": "boolean"
-        }
-      }
-    },
     "relax": {
       "flow_type": "data_list",
       "flow_name": "relax",
       "data_list_name": "relax",
       "flow_subtype": "relax",
       "_xlsxPath": "data/ZA relax.xlsx"
-    },
-    "report_data": {
-      "flow_type": "data_list",
-      "flow_name": "report_data",
-      "data_list_name": "report",
-      "_xlsxPath": "data/ZA articles.xlsx"
-    },
-    "report_in_person": {
-      "flow_type": "data_list",
-      "flow_name": "report_in_person",
-      "data_list_name": "report_in_person",
-      "_xlsxPath": "data/ZA articles.xlsx"
     },
     "tag_data": {
       "flow_type": "data_list",
@@ -5444,6 +5409,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "stack_hp_review_selfcare_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "stack_hp_review_childdevelopment",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -5735,11 +5705,6 @@
       "flow_name": "app_menu_globals",
       "_xlsxPath": "app_menu.xlsx"
     },
-    "article_global": {
-      "flow_type": "global",
-      "flow_name": "article_global",
-      "_xlsxPath": "data/ZA articles.xlsx"
-    },
     "deployment_global_za": {
       "flow_type": "global",
       "flow_name": "deployment_global_za",
@@ -5752,11 +5717,6 @@
       "flow_subtype": "legal_terms",
       "flow_name": "legal_terms_global",
       "_xlsxPath": "app_legal_terms.xlsx"
-    },
-    "library_globals": {
-      "flow_type": "global",
-      "flow_name": "library_globals",
-      "_xlsxPath": "data/ZA library.xlsx"
     },
     "localisation_options_za": {
       "flow_type": "global",
@@ -9168,6 +9128,11 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "stack_hp_review_selfcare_t": {
+      "flow_name": "stack_hp_review_selfcare_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "stack_hp_review_srh_t": {
       "flow_name": "stack_hp_review_srh_t",
       "flow_subtype": "generated",
@@ -9513,11 +9478,6 @@
       "flow_type": "template",
       "flow_name": "library_activities",
       "_xlsxPath": "templates/ZA library relax and activities.xlsx"
-    },
-    "library_help": {
-      "flow_type": "template",
-      "flow_name": "library_help",
-      "_xlsxPath": "templates/ZA library templates.xlsx"
     },
     "library_my_relaxes": {
       "flow_type": "template",

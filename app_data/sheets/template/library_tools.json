@@ -6,7 +6,7 @@
     {
       "type": "title",
       "name": "title",
-      "value": "@data.library.essential_tools.title",
+      "value": "@data.library.tools.title",
       "_translations": {
         "value": {}
       },
@@ -14,15 +14,15 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@data.library.essential_tools.title",
-            "matchedExpression": "@data.library.essential_tools.title",
+            "fullExpression": "@data.library.tools.title",
+            "matchedExpression": "@data.library.tools.title",
             "type": "data",
             "fieldName": "library"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@data.library.essential_tools.title": [
+        "@data.library.tools.title": [
           "value"
         ]
       }
@@ -36,7 +36,7 @@
       "rows": [
         {
           "type": "items",
-          "value": "@data.workshop",
+          "value": "@data.modules",
           "rows": [
             {
               "type": "template",
@@ -44,13 +44,13 @@
               "value": "tool_tile",
               "rows": [
                 {
-                  "name": "workshop",
+                  "name": "module_id",
                   "value": "@item.id",
                   "_translations": {
                     "value": {}
                   },
                   "type": "set_variable",
-                  "_nested_name": "tool_tiles.items_1.tool_tile_@item.id.workshop",
+                  "_nested_name": "tool_tiles.items_1.tool_tile_@item.id.module_id",
                   "_dynamicFields": {
                     "value": [
                       {
@@ -62,8 +62,8 @@
                     ],
                     "_nested_name": [
                       {
-                        "fullExpression": "tool_tiles.items_1.tool_tile_@item.id.workshop",
-                        "matchedExpression": "@item.id.workshop",
+                        "fullExpression": "tool_tiles.items_1.tool_tile_@item.id.module_id",
+                        "matchedExpression": "@item.id.module_id",
                         "type": "item",
                         "fieldName": "id"
                       }
@@ -73,7 +73,7 @@
                     "@item.id": [
                       "value"
                     ],
-                    "@item.id.workshop": [
+                    "@item.id.module_id": [
                       "_nested_name"
                     ]
                   }
@@ -111,15 +111,15 @@
           "_dynamicFields": {
             "value": [
               {
-                "fullExpression": "@data.workshop",
-                "matchedExpression": "@data.workshop",
+                "fullExpression": "@data.modules",
+                "matchedExpression": "@data.modules",
                 "type": "data",
-                "fieldName": "workshop"
+                "fieldName": "modules"
               }
             ]
           },
           "_dynamicDependencies": {
-            "@data.workshop": [
+            "@data.modules": [
               "value"
             ]
           }

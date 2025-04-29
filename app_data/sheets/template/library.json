@@ -36,7 +36,7 @@
       "rows": [
         {
           "type": "items",
-          "value": "@data.library",
+          "value": "@data.library_section",
           "rows": [
             {
               "type": "tile_component",
@@ -54,7 +54,6 @@
               ],
               "exclude_from_translation": true,
               "parameter_list": {
-                "style": "@item.tile_style",
                 "icon_src": "@item.icon_asset",
                 "first_line_text": "@item.title"
               },
@@ -99,14 +98,6 @@
                   }
                 },
                 "parameter_list": {
-                  "style": [
-                    {
-                      "fullExpression": "@item.tile_style",
-                      "matchedExpression": "@item.tile_style",
-                      "type": "item",
-                      "fieldName": "tile_style"
-                    }
-                  ],
                   "icon_src": [
                     {
                       "fullExpression": "@item.icon_asset",
@@ -143,9 +134,6 @@
                   "action_list.0._raw",
                   "action_list.0._cleaned"
                 ],
-                "@item.tile_style": [
-                  "parameter_list.style"
-                ],
                 "@item.icon_asset": [
                   "parameter_list.icon_src"
                 ],
@@ -160,15 +148,15 @@
           "_dynamicFields": {
             "value": [
               {
-                "fullExpression": "@data.library",
-                "matchedExpression": "@data.library",
+                "fullExpression": "@data.library_section",
+                "matchedExpression": "@data.library_section",
                 "type": "data",
-                "fieldName": "library"
+                "fieldName": "library_section"
               }
             ]
           },
           "_dynamicDependencies": {
-            "@data.library": [
+            "@data.library_section": [
               "value"
             ]
           }
