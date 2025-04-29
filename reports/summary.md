@@ -3,8 +3,8 @@
 
 | type | count |
 | --- | --- |
-| accordion | 2 |
-| accordion_section | 5 |
+| accordion | 3 |
+| accordion_section | 9 |
 | apple_sign_in_button | 2 |
 | audio | 3 |
 | begin_display_group | 3 |
@@ -12,7 +12,7 @@
 | carousel | 1 |
 | combo_box | 7 |
 | dashed_box | 1 |
-| data_items | 132 |
+| data_items | 134 |
 | debug_toggle | 1 |
 | display_grid | 2 |
 | display_group | 75 |
@@ -32,13 +32,13 @@
 | round_button | 5 |
 | select_text | 4 |
 | set_field | 4 |
-| set_variable | 2431 |
+| set_variable | 2439 |
 | simple_checkbox | 3 |
 | subtitle | 3 |
 | task_card | 4 |
 | task_progress_bar | 2 |
-| template | 869 |
-| text | 106 |
+| template | 871 |
+| text | 110 |
 | text_area | 3 |
 | text_box | 7 |
 | text_bubble | 2 |
@@ -67,12 +67,12 @@
 | feedback | 14 |
 | go_to | 35 |
 | go_to_url | 3 |
-| nav_stack | 195 |
-| pop_up | 62 |
+| nav_stack | 199 |
+| pop_up | 63 |
 | reset_app | 1 |
-| set_data | 56 |
-| set_field | 83 |
-| set_item | 64 |
+| set_data | 57 |
+| set_field | 84 |
+| set_item | 65 |
 | set_local | 32 |
 | task | 3 |
 | user | 3 |
@@ -352,7 +352,6 @@ Assets that have references within sheets but do not appear in app-data
 | images/faq_h_parents_insult.svg | 1 |
 | images/faq_h_self_harm.svg | 1 |
 | images/faq_no_participation_general.svg | 1 |
-| images/icons/start_filled_blue.png | 2 |
 | images/logos/plh.jpg | 1 |
 | plh_images/characters/elder/large.svg | 1 |
 | plh_images/icons/globe_circle.svg | 1 |
@@ -525,9 +524,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/faces/confused.svg | 1.8 | 10 |
 | images/faces/happier.svg | 0.6 | 2 |
 | images/faces/happiest.svg | 1.3 | 8 |
-| images/faces/happy.svg | 0.6 | 32 |
-| images/faces/neutral.svg | 0.5 | 30 |
-| images/faces/sad.svg | 0.6 | 35 |
+| images/faces/happy.svg | 0.6 | 33 |
+| images/faces/neutral.svg | 0.5 | 31 |
+| images/faces/sad.svg | 0.6 | 36 |
 | images/faces/scared.svg | 2.1 | 6 |
 | images/faces/tired.svg | 2.4 | 4 |
 | images/flags/gb.svg | 0.5 | 2 |
@@ -582,7 +581,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/smile_eyes_down.svg | 0.9 | 29 |
 | images/icons/smile_eyes_up.svg | 1 | 52 |
 | images/icons/speech_bubble_blue.png | 4.2 | 12 |
-| images/icons/star_filled_blue.png | 5.1 | 20 |
+| images/icons/star_filled_blue.png | 5.1 | 22 |
 | images/icons/star_outline_blue.svg | 1 | 26 |
 | images/icons/thought_bubble.svg | 2.1 | 26 |
 | images/icons/tick.svg | 0.3 | 1 |
@@ -623,7 +622,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/icons/parent_child_talk_white.svg | 2.2 | 1 |
 | plh_images/icons/smile_eyes_down_white.svg | 0.9 | 1 |
 | plh_images/icons/speech_bubble_question_white.svg | 1.6 | 1 |
-| plh_images/workshops/w_1on1/tools.svg | 48.5 | 4 |
+| plh_images/workshops/w_1on1/tools.svg | 48.5 | 2 |
 | plh_images/workshops/w_celebrate/cup.svg | 60.9 | 2 |
 | plh_images/workshops/w_celebrate/read/slide_1.svg | 152.3 | 3 |
 | plh_images/workshops/w_celebrate/read/slide_2.svg | 34.9 | 3 |
@@ -826,6 +825,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 7 |
 | global | legal_terms | 1 |
 | template |  | 106 |
-| template | generated | 709 |
+| template | generated | 710 |
 | template | legal_terms | 4 |
 </details>
