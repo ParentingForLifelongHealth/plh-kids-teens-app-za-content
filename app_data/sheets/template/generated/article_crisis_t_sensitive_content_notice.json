@@ -1,5 +1,5 @@
 {
-  "flow_name": "article_crisis_t_@gen.id",
+  "flow_name": "article_crisis_t_sensitive_content_notice",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
@@ -30,27 +30,12 @@
       "rows": [
         {
           "name": "article_id",
-          "value": "@gen.id",
+          "value": "sensitive_content_notice",
           "_translations": {
             "value": {}
           },
           "type": "set_variable",
-          "_nested_name": "article.article_id",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@gen.id",
-                "matchedExpression": "@gen.id",
-                "type": "gen",
-                "fieldName": "id"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@gen.id": [
-              "value"
-            ]
-          }
+          "_nested_name": "article.article_id"
         },
         {
           "name": "module_id",
