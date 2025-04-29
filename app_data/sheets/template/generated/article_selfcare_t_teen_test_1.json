@@ -1,5 +1,5 @@
 {
-  "flow_name": "article_consequences_t_@gen.id",
+  "flow_name": "article_selfcare_t_teen_test_1",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
@@ -30,31 +30,16 @@
       "rows": [
         {
           "name": "article_id",
-          "value": "@gen.id",
+          "value": "teen_test_1",
           "_translations": {
             "value": {}
           },
           "type": "set_variable",
-          "_nested_name": "article.article_id",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@gen.id",
-                "matchedExpression": "@gen.id",
-                "type": "gen",
-                "fieldName": "id"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@gen.id": [
-              "value"
-            ]
-          }
+          "_nested_name": "article.article_id"
         },
         {
           "name": "module_id",
-          "value": "consequences_t",
+          "value": "selfcare_t",
           "_translations": {
             "value": {}
           },
