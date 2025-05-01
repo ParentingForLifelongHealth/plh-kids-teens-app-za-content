@@ -1007,44 +1007,6 @@
                   "condition"
                 ]
               }
-            },
-            {
-              "type": "image",
-              "name": "image_asset",
-              "value": "@local.section_image_asset",
-              "_translations": {
-                "value": {}
-              },
-              "condition": "!!(@local.section_image_asset)",
-              "style_list": [
-                "width: 80px"
-              ],
-              "exclude_from_translation": true,
-              "_nested_name": "dg.dg_top.image_asset",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.section_image_asset",
-                    "matchedExpression": "@local.section_image_asset",
-                    "type": "local",
-                    "fieldName": "section_image_asset"
-                  }
-                ],
-                "condition": [
-                  {
-                    "fullExpression": "!!(@local.section_image_asset)",
-                    "matchedExpression": "@local.section_image_asset",
-                    "type": "local",
-                    "fieldName": "section_image_asset"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.section_image_asset": [
-                  "value",
-                  "condition"
-                ]
-              }
             }
           ],
           "_nested_name": "dg.dg_top"
@@ -1071,6 +1033,44 @@
           "_dynamicDependencies": {
             "@local.section_text": [
               "value"
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "name": "image_asset",
+          "value": "@local.section_image_asset",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "!!(@local.section_image_asset)",
+          "parameter_list": {
+            "style": "rounded_corners"
+          },
+          "exclude_from_translation": true,
+          "_nested_name": "dg.image_asset",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.section_image_asset",
+                "matchedExpression": "@local.section_image_asset",
+                "type": "local",
+                "fieldName": "section_image_asset"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!(@local.section_image_asset)",
+                "matchedExpression": "@local.section_image_asset",
+                "type": "local",
+                "fieldName": "section_image_asset"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.section_image_asset": [
+              "value",
+              "condition"
             ]
           }
         },

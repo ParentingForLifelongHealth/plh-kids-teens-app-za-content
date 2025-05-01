@@ -25,6 +25,7 @@
     },
     {
       "type": "data_items",
+      "name": "compute_completed_length",
       "value": "@data.module_tasks",
       "_translations": {
         "value": {}
@@ -44,8 +45,7 @@
       "parameter_list": {
         "filter": "@item.completed"
       },
-      "name": "data_items_5",
-      "_nested_name": "data_items_5",
+      "_nested_name": "compute_completed_length",
       "_dynamicFields": {
         "value": [
           {
@@ -77,6 +77,7 @@
     },
     {
       "type": "data_items",
+      "name": "compute_current_module_id",
       "value": "@data.module_tasks",
       "_translations": {
         "value": {}
@@ -97,8 +98,7 @@
         "filter": "!@item.completed",
         "limit": "1"
       },
-      "name": "data_items_6",
-      "_nested_name": "data_items_6",
+      "_nested_name": "compute_current_module_id",
       "_dynamicFields": {
         "value": [
           {
