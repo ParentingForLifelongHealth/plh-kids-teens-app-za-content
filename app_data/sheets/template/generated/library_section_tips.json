@@ -65,41 +65,14 @@
           "_nested_name": "library_section.display_title"
         },
         {
-          "name": "articles_data",
-          "value": "@data.relax",
+          "name": "articles_data_list_name",
+          "value": "library_article",
           "_translations": {
             "value": {}
           },
-          "condition": "@local.library_id == \"relax\"",
           "exclude_from_translation": true,
           "type": "set_variable",
-          "_nested_name": "library_section.articles_data",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@data.relax",
-                "matchedExpression": "@data.relax",
-                "type": "data",
-                "fieldName": "relax"
-              }
-            ],
-            "condition": [
-              {
-                "fullExpression": "@local.library_id == \"relax\"",
-                "matchedExpression": "@local.library_id",
-                "type": "local",
-                "fieldName": "library_id"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@data.relax": [
-              "value"
-            ],
-            "@local.library_id": [
-              "condition"
-            ]
-          }
+          "_nested_name": "library_section.articles_data_list_name"
         }
       ],
       "_nested_name": "library_section"

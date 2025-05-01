@@ -22,8 +22,17 @@
       "_nested_name": "display_title"
     },
     {
+      "name": "articles_data_list_name",
+      "value": "library_article",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "articles_data_list_name"
+    },
+    {
       "name": "articles_data",
-      "value": "@data.library_article",
+      "value": "@data.@local.articles_data_list_name",
       "_translations": {
         "value": {}
       },
@@ -32,15 +41,15 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@data.library_article",
-            "matchedExpression": "@data.library_article",
-            "type": "data",
-            "fieldName": "library_article"
+            "fullExpression": "@data.@local.articles_data_list_name",
+            "matchedExpression": "@local.articles_data_list_name",
+            "type": "local",
+            "fieldName": "articles_data_list_name"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@data.library_article": [
+        "@local.articles_data_list_name": [
           "value"
         ]
       }
@@ -102,7 +111,7 @@
           "exclude_from_translation": true,
           "condition": "!@item.tag_list || !@global.has_multiple_content_packages",
           "type": "set_variable",
-          "_nested_name": "items_7.packages",
+          "_nested_name": "items_8.packages",
           "_dynamicFields": {
             "condition": [
               {
@@ -133,7 +142,7 @@
           "value": true,
           "condition": "!@item.tag_list || !@global.has_multiple_content_packages",
           "type": "set_variable",
-          "_nested_name": "items_7.condition_package",
+          "_nested_name": "items_8.condition_package",
           "_dynamicFields": {
             "condition": [
               {
@@ -167,7 +176,7 @@
           },
           "condition": "!!@item.tag_list && @global.has_multiple_content_packages",
           "type": "set_variable",
-          "_nested_name": "items_7.packages",
+          "_nested_name": "items_8.packages",
           "_dynamicFields": {
             "value": [
               {
@@ -212,7 +221,7 @@
           },
           "condition": "!!@item.tag_list && @global.has_multiple_content_packages",
           "type": "set_variable",
-          "_nested_name": "items_7.condition_package",
+          "_nested_name": "items_8.condition_package",
           "_dynamicFields": {
             "value": [
               {
@@ -269,6 +278,7 @@
         },
         {
           "type": "button",
+          "name": "button_@item.id",
           "value": "@item.title",
           "_translations": {
             "value": {}
@@ -287,10 +297,17 @@
           "parameter_list": {
             "variant": "faq"
           },
-          "condition": "@item.library_section_list == @local.library_id && @local.condition_package",
-          "name": "button_5",
-          "_nested_name": "items_7.button_5",
+          "condition": "(@local.articles_data_list_name != \"library_article\" || @item.library_section_list == @local.library_id) && @local.condition_package",
+          "_nested_name": "items_8.button_@item.id",
           "_dynamicFields": {
+            "name": [
+              {
+                "fullExpression": "button_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
             "value": [
               {
                 "fullExpression": "@item.title",
@@ -331,33 +348,52 @@
             },
             "condition": [
               {
-                "fullExpression": "@item.library_section_list == @local.library_id && @local.condition_package",
+                "fullExpression": "(@local.articles_data_list_name != \"library_article\" || @item.library_section_list == @local.library_id) && @local.condition_package",
+                "matchedExpression": "@local.articles_data_list_name",
+                "type": "local",
+                "fieldName": "articles_data_list_name"
+              },
+              {
+                "fullExpression": "(@local.articles_data_list_name != \"library_article\" || @item.library_section_list == @local.library_id) && @local.condition_package",
                 "matchedExpression": "@item.library_section_list",
                 "type": "item",
                 "fieldName": "library_section_list"
               },
               {
-                "fullExpression": "@item.library_section_list == @local.library_id && @local.condition_package",
+                "fullExpression": "(@local.articles_data_list_name != \"library_article\" || @item.library_section_list == @local.library_id) && @local.condition_package",
                 "matchedExpression": "@local.library_id",
                 "type": "local",
                 "fieldName": "library_id"
               },
               {
-                "fullExpression": "@item.library_section_list == @local.library_id && @local.condition_package",
+                "fullExpression": "(@local.articles_data_list_name != \"library_article\" || @item.library_section_list == @local.library_id) && @local.condition_package",
                 "matchedExpression": "@local.condition_package",
                 "type": "local",
                 "fieldName": "condition_package"
               }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "items_8.button_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
             ]
           },
           "_dynamicDependencies": {
+            "@item.id": [
+              "name",
+              "action_list.0.args.0",
+              "action_list.0._raw",
+              "action_list.0._cleaned",
+              "_nested_name"
+            ],
             "@item.title": [
               "value"
             ],
-            "@item.id": [
-              "action_list.0.args.0",
-              "action_list.0._raw",
-              "action_list.0._cleaned"
+            "@local.articles_data_list_name": [
+              "condition"
             ],
             "@item.library_section_list": [
               "condition"
@@ -371,8 +407,8 @@
           }
         }
       ],
-      "name": "items_7",
-      "_nested_name": "items_7",
+      "name": "items_8",
+      "_nested_name": "items_8",
       "_dynamicFields": {
         "value": [
           {
