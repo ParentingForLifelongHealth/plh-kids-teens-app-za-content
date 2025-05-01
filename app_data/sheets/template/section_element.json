@@ -1,0 +1,101 @@
+{
+  "flow_type": "template",
+  "flow_name": "section_element",
+  "status": "released",
+  "rows": [
+    {
+      "name": "title",
+      "value": "test",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "title"
+    },
+    {
+      "name": "text",
+      "value": "test",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "text"
+    },
+    {
+      "type": "accordion",
+      "name": "accordion",
+      "condition": "!!(@local.title)",
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "accordion_section",
+          "name": "first",
+          "value": "@local.title",
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "type": "text",
+              "name": "accordion_content",
+              "value": "@local.text",
+              "_translations": {
+                "value": {}
+              },
+              "exclude_from_translation": true,
+              "_nested_name": "accordion.first.accordion_content",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@local.text",
+                    "matchedExpression": "@local.text",
+                    "type": "local",
+                    "fieldName": "text"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.text": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "accordion.first",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.title",
+                "matchedExpression": "@local.title",
+                "type": "local",
+                "fieldName": "title"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.title": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "accordion",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!!(@local.title)",
+            "matchedExpression": "@local.title",
+            "type": "local",
+            "fieldName": "title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.title": [
+          "condition"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/ZA article_elements.xlsx"
+}

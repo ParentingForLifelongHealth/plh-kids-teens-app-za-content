@@ -1,0 +1,215 @@
+{
+  "flow_type": "template",
+  "flow_name": "section_header",
+  "status": "released",
+  "rows": [
+    {
+      "name": "section_id",
+      "type": "set_variable",
+      "_nested_name": "section_id"
+    },
+    {
+      "name": "section_data",
+      "value": "library_section",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "section_data"
+    },
+    {
+      "name": "concat_app_section_id",
+      "value": "@local.section_data.@local.section_id",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!@local.section_id",
+      "type": "set_variable",
+      "_nested_name": "concat_app_section_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.section_data.@local.section_id",
+            "matchedExpression": "@local.section_data",
+            "type": "local",
+            "fieldName": "section_data"
+          },
+          {
+            "fullExpression": "@local.section_data.@local.section_id",
+            "matchedExpression": "@local.section_id",
+            "type": "local",
+            "fieldName": "section_id"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@local.section_id",
+            "matchedExpression": "!@local.section_id",
+            "type": "local",
+            "fieldName": "section_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.section_data": [
+          "value"
+        ],
+        "@local.section_id": [
+          "value"
+        ],
+        "!@local.section_id": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "app_section_data",
+      "value": "@data.@local.concat_app_section_id",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!@local.section_id",
+      "type": "set_variable",
+      "_nested_name": "app_section_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.concat_app_section_id",
+            "matchedExpression": "@local.concat_app_section_id",
+            "type": "local",
+            "fieldName": "concat_app_section_id"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@local.section_id",
+            "matchedExpression": "!@local.section_id",
+            "type": "local",
+            "fieldName": "section_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.concat_app_section_id": [
+          "value"
+        ],
+        "!@local.section_id": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "show_back",
+      "value": true,
+      "type": "set_variable",
+      "_nested_name": "show_back"
+    },
+    {
+      "name": "title",
+      "value": "@local.app_section_data.title",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.app_section_data.title",
+            "matchedExpression": "@local.app_section_data.title",
+            "type": "local",
+            "fieldName": "app_section_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.app_section_data.title": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "dg_header",
+      "rows": [
+        {
+          "type": "round_button",
+          "name": "back",
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "click | emit: uncompleted",
+              "_cleaned": "click | emit: uncompleted"
+            }
+          ],
+          "parameter_list": {
+            "icon_src": "chevron-back",
+            "variant": "navigation"
+          },
+          "condition": "@local.show_back",
+          "_nested_name": "dg_header.back",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "@local.show_back",
+                "matchedExpression": "@local.show_back",
+                "type": "local",
+                "fieldName": "show_back"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.show_back": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "title",
+          "name": "print_title",
+          "value": "@local.title",
+          "_translations": {
+            "value": {}
+          },
+          "style_list": [
+            "flex:1"
+          ],
+          "condition": "!!@local.title",
+          "_nested_name": "dg_header.print_title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.title",
+                "matchedExpression": "@local.title",
+                "type": "local",
+                "fieldName": "title"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@local.title",
+                "matchedExpression": "!@local.title",
+                "type": "local",
+                "fieldName": "title"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.title": [
+              "value"
+            ],
+            "!@local.title": [
+              "condition"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "dg_header"
+    }
+  ],
+  "_xlsxPath": "templates/ZA library templates.xlsx"
+}
