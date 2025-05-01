@@ -1,0 +1,217 @@
+{
+  "flow_type": "generator",
+  "flow_name": "gen_library_relax",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "relax",
+    "output_flow_name": "library_article_@gen.id",
+    "output_flow_type": "template",
+    "output_flow_subtype": "generated"
+  },
+  "rows": [
+    {
+      "name": "data_list_name",
+      "value": "relax",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id",
+      "value": "relax_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_name_id",
+      "value": "@local.data_list_name.@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_name_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "audio_transcript",
+      "value": "@local.row_data.audio_transcript",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "lottie_asset",
+      "value": "lottie/bulging_circles.json",
+      "condition": "!@local.row_data.lottie_asset"
+    },
+    {
+      "name": "lottie_asset",
+      "value": "@local.row_data.lottie_asset",
+      "condition": "!!@local.row_data.lottie_asset"
+    },
+    {
+      "type": "template",
+      "name": "header",
+      "value": "section_header",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "title",
+          "value": "@local.row_data.title",
+          "condition": true
+        }
+      ]
+    },
+    {
+      "type": "lottie_animation",
+      "name": "lottie_display",
+      "value": "@local.lottie_asset",
+      "exclude_from_translation": true,
+      "condition": "@local.row_data.media_type == \"audio\""
+    },
+    {
+      "type": "audio",
+      "name": "audio",
+      "value": "@local.row_data.media_asset",
+      "exclude_from_translation": true,
+      "parameter_list": [
+        "transcript_text: @local.row_data.transcript"
+      ],
+      "condition": "@local.row_data.media_type == \"audio\""
+    },
+    {
+      "type": "video",
+      "name": "video",
+      "value": "@local.row_data.media_asset",
+      "condition": "@local.row_data.media_type == \"video\""
+    }
+  ],
+  "_xlsxPath": "templates/ZA library templates.xlsx",
+  "_output_flows": [
+    {
+      "flow_name": "library_article_relax_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_16",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_17",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_18",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_19",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_20",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_21",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_22",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_23",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_relax_24",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    }
+  ]
+}

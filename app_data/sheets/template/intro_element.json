@@ -1,0 +1,162 @@
+{
+  "flow_type": "template",
+  "flow_name": "intro_element",
+  "status": "released",
+  "rows": [
+    {
+      "name": "text",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "text"
+    },
+    {
+      "name": "image",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "image"
+    },
+    {
+      "name": "text_2",
+      "type": "set_variable",
+      "_nested_name": "text_2"
+    },
+    {
+      "type": "display_group",
+      "name": "dg_box",
+      "parameter_list": {
+        "style": "column"
+      },
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "text",
+          "name": "text",
+          "value": "@local.text",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "@local.text && @local.text !== \"\"",
+          "exclude_from_translation": true,
+          "_nested_name": "dg_box.text",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.text",
+                "matchedExpression": "@local.text",
+                "type": "local",
+                "fieldName": "text"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@local.text && @local.text !== \"\"",
+                "matchedExpression": "@local.text",
+                "type": "local",
+                "fieldName": "text"
+              },
+              {
+                "fullExpression": "@local.text && @local.text !== \"\"",
+                "matchedExpression": "@local.text",
+                "type": "local",
+                "fieldName": "text"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.text": [
+              "value",
+              "condition",
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "name": "image",
+          "value": "@local.image",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "@local.image && @local.image !== \"\"",
+          "exclude_from_translation": true,
+          "_nested_name": "dg_box.image",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.image",
+                "matchedExpression": "@local.image",
+                "type": "local",
+                "fieldName": "image"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@local.image && @local.image !== \"\"",
+                "matchedExpression": "@local.image",
+                "type": "local",
+                "fieldName": "image"
+              },
+              {
+                "fullExpression": "@local.image && @local.image !== \"\"",
+                "matchedExpression": "@local.image",
+                "type": "local",
+                "fieldName": "image"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.image": [
+              "value",
+              "condition",
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "name": "text_2",
+          "value": "@local.text_2",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "@local.text_2 && @local.text_2 !== \"\"",
+          "exclude_from_translation": true,
+          "_nested_name": "dg_box.text_2",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.text_2",
+                "matchedExpression": "@local.text_2",
+                "type": "local",
+                "fieldName": "text_2"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@local.text_2 && @local.text_2 !== \"\"",
+                "matchedExpression": "@local.text_2",
+                "type": "local",
+                "fieldName": "text_2"
+              },
+              {
+                "fullExpression": "@local.text_2 && @local.text_2 !== \"\"",
+                "matchedExpression": "@local.text_2",
+                "type": "local",
+                "fieldName": "text_2"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.text_2": [
+              "value",
+              "condition",
+              "condition"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "dg_box"
+    }
+  ],
+  "_xlsxPath": "templates/ZA article_elements.xlsx"
+}

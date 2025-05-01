@@ -1,0 +1,108 @@
+{
+  "flow_name": "library_section_tips",
+  "flow_subtype": "generated",
+  "flow_type": "template",
+  "rows": [
+    {
+      "name": "library_id",
+      "value": "tips",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "library_id"
+    },
+    {
+      "type": "template",
+      "name": "library_section",
+      "value": "library_section",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "name": "library_id",
+          "value": "@local.library_id",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "library_section.library_id",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.library_id",
+                "matchedExpression": "@local.library_id",
+                "type": "local",
+                "fieldName": "library_id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.library_id": [
+              "value"
+            ]
+          }
+        },
+        {
+          "name": "display_title",
+          "value": "Quick Parenting Tips",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "library_section.display_title"
+        },
+        {
+          "name": "articles_data",
+          "value": "@data.relax",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "@local.library_id == \"relax\"",
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "library_section.articles_data",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@data.relax",
+                "matchedExpression": "@data.relax",
+                "type": "data",
+                "fieldName": "relax"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@local.library_id == \"relax\"",
+                "matchedExpression": "@local.library_id",
+                "type": "local",
+                "fieldName": "library_id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@data.relax": [
+              "value"
+            ],
+            "@local.library_id": [
+              "condition"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "library_section"
+    }
+  ]
+}

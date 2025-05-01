@@ -28,96 +28,61 @@
       }
     },
     {
-      "type": "display_group",
-      "name": "tiles",
-      "parameter_list": {
-        "style": "column"
-      },
+      "type": "data_items",
+      "value": "@data.library_section",
       "rows": [
         {
-          "type": "items",
-          "value": "@data.library_section",
+          "type": "task_card",
+          "name": "card_@item.id",
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "go_to",
+              "args": [
+                "library_section_@item.id"
+              ],
+              "_raw": "click | go_to: library_section_@item.id",
+              "_cleaned": "click | go_to: library_section_@item.id"
+            }
+          ],
           "rows": [
             {
-              "type": "tile_component",
-              "name": "tile_@item.id",
-              "action_list": [
-                {
-                  "trigger": "click",
-                  "action_id": "go_to",
-                  "args": [
-                    "@item.template"
-                  ],
-                  "_raw": "click | go_to:@item.template",
-                  "_cleaned": "click | go_to:@item.template"
-                }
-              ],
-              "exclude_from_translation": true,
-              "parameter_list": {
-                "icon_src": "@item.icon_asset",
-                "first_line_text": "@item.title"
+              "type": "image",
+              "name": "image_@item.id",
+              "value": "@item.image",
+              "_translations": {
+                "value": {}
               },
-              "_nested_name": "tiles.items_1.tile_@item.id",
+              "style_list": [
+                "flex: 1"
+              ],
+              "_nested_name": "data_items_3.card_@item.id.image_@item.id",
               "_dynamicFields": {
                 "name": [
                   {
-                    "fullExpression": "tile_@item.id",
+                    "fullExpression": "image_@item.id",
                     "matchedExpression": "@item.id",
                     "type": "item",
                     "fieldName": "id"
                   }
                 ],
-                "action_list": {
-                  "0": {
-                    "args": {
-                      "0": [
-                        {
-                          "fullExpression": "@item.template",
-                          "matchedExpression": "@item.template",
-                          "type": "item",
-                          "fieldName": "template"
-                        }
-                      ]
-                    },
-                    "_raw": [
-                      {
-                        "fullExpression": "click | go_to:@item.template",
-                        "matchedExpression": "@item.template",
-                        "type": "item",
-                        "fieldName": "template"
-                      }
-                    ],
-                    "_cleaned": [
-                      {
-                        "fullExpression": "click | go_to:@item.template",
-                        "matchedExpression": "@item.template",
-                        "type": "item",
-                        "fieldName": "template"
-                      }
-                    ]
+                "value": [
+                  {
+                    "fullExpression": "@item.image",
+                    "matchedExpression": "@item.image",
+                    "type": "item",
+                    "fieldName": "image"
                   }
-                },
-                "parameter_list": {
-                  "icon_src": [
-                    {
-                      "fullExpression": "@item.icon_asset",
-                      "matchedExpression": "@item.icon_asset",
-                      "type": "item",
-                      "fieldName": "icon_asset"
-                    }
-                  ],
-                  "first_line_text": [
-                    {
-                      "fullExpression": "@item.title",
-                      "matchedExpression": "@item.title",
-                      "type": "item",
-                      "fieldName": "title"
-                    }
-                  ]
-                },
+                ],
                 "_nested_name": [
                   {
-                    "fullExpression": "tiles.items_1.tile_@item.id",
+                    "fullExpression": "data_items_3.card_@item.id.image_@item.id",
+                    "matchedExpression": "@item.id.image_",
+                    "type": "item",
+                    "fieldName": "id"
+                  },
+                  {
+                    "fullExpression": "data_items_3.card_@item.id.image_@item.id",
                     "matchedExpression": "@item.id",
                     "type": "item",
                     "fieldName": "id"
@@ -129,40 +94,151 @@
                   "name",
                   "_nested_name"
                 ],
-                "@item.template": [
-                  "action_list.0.args.0",
-                  "action_list.0._raw",
-                  "action_list.0._cleaned"
+                "@item.image": [
+                  "value"
                 ],
-                "@item.icon_asset": [
-                  "parameter_list.icon_src"
+                "@item.id.image_": [
+                  "_nested_name"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "text_@item.id",
+              "value": "@item.title",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "style": "emphasised"
+              },
+              "style_list": [
+                "flex: 3"
+              ],
+              "_nested_name": "data_items_3.card_@item.id.text_@item.id",
+              "_dynamicFields": {
+                "name": [
+                  {
+                    "fullExpression": "text_@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "value": [
+                  {
+                    "fullExpression": "@item.title",
+                    "matchedExpression": "@item.title",
+                    "type": "item",
+                    "fieldName": "title"
+                  }
+                ],
+                "_nested_name": [
+                  {
+                    "fullExpression": "data_items_3.card_@item.id.text_@item.id",
+                    "matchedExpression": "@item.id.text_",
+                    "type": "item",
+                    "fieldName": "id"
+                  },
+                  {
+                    "fullExpression": "data_items_3.card_@item.id.text_@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.id": [
+                  "name",
+                  "_nested_name"
                 ],
                 "@item.title": [
-                  "parameter_list.first_line_text"
+                  "value"
+                ],
+                "@item.id.text_": [
+                  "_nested_name"
                 ]
               }
             }
           ],
-          "name": "items_1",
-          "_nested_name": "tiles.items_1",
+          "_nested_name": "data_items_3.card_@item.id",
           "_dynamicFields": {
-            "value": [
+            "name": [
               {
-                "fullExpression": "@data.library_section",
-                "matchedExpression": "@data.library_section",
-                "type": "data",
-                "fieldName": "library_section"
+                "fullExpression": "card_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "args": {
+                  "0": [
+                    {
+                      "fullExpression": "library_section_@item.id",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | go_to: library_section_@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | go_to: library_section_@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              }
+            },
+            "_nested_name": [
+              {
+                "fullExpression": "data_items_3.card_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
               }
             ]
           },
           "_dynamicDependencies": {
-            "@data.library_section": [
-              "value"
+            "@item.id": [
+              "name",
+              "action_list.0.args.0",
+              "action_list.0._raw",
+              "action_list.0._cleaned",
+              "_nested_name"
             ]
           }
         }
       ],
-      "_nested_name": "tiles"
+      "name": "data_items_3",
+      "_nested_name": "data_items_3",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.library_section",
+            "matchedExpression": "@data.library_section",
+            "type": "data",
+            "fieldName": "library_section"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.library_section": [
+          "value"
+        ]
+      }
     }
   ],
   "_xlsxPath": "templates/ZA library templates.xlsx"
