@@ -294,6 +294,7 @@
               "name": "task_progress_bar",
               "parameter_list": {
                 "task_group_data": "@local.articles_data_list_name",
+                "filter": "!@task_item.nested",
                 "variant": "wheel",
                 "wheel_title": "@local.wheel_title"
               },

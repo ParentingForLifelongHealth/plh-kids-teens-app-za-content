@@ -228,6 +228,9 @@
       "type": "data_items",
       "name": "enable_dynamic_data_actions",
       "value": "@local.articles_data_list_name",
+      "parameter_list": {
+        "filter": "!@item.nested"
+      },
       "exclude_from_translation": true,
       "rows": [
         {
@@ -1141,11 +1144,24 @@
             "type": "local",
             "fieldName": "articles_data_list_name"
           }
-        ]
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.nested",
+              "matchedExpression": "!@item.nested",
+              "type": "item",
+              "fieldName": "nested"
+            }
+          ]
+        }
       },
       "_dynamicDependencies": {
         "@local.articles_data_list_name": [
           "value"
+        ],
+        "!@item.nested": [
+          "parameter_list.filter"
         ]
       }
     }

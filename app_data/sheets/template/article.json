@@ -153,6 +153,54 @@
       "_nested_name": "perform_category_header_computations"
     },
     {
+      "name": "show_header",
+      "value": "!@local.article_data.nested",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "show_header",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "!@local.article_data.nested",
+            "matchedExpression": "!@local.article_data.nested",
+            "type": "local",
+            "fieldName": "article_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.article_data.nested": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "show_nav_buttons",
+      "value": "!@local.article_data.nested",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "show_nav_buttons",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "!@local.article_data.nested",
+            "matchedExpression": "!@local.article_data.nested",
+            "type": "local",
+            "fieldName": "article_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.article_data.nested": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "display_group",
       "name": "dg_category_header_computations",
       "condition": "!!(@local.perform_category_header_computations)",
@@ -331,6 +379,7 @@
           "_cleaned": "uncompleted | emit: uncompleted"
         }
       ],
+      "condition": "@local.show_header",
       "exclude_from_translation": true,
       "rows": [
         {
@@ -384,7 +433,22 @@
           }
         }
       ],
-      "_nested_name": "header"
+      "_nested_name": "header",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.show_header",
+            "matchedExpression": "@local.show_header",
+            "type": "local",
+            "fieldName": "show_header"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.show_header": [
+          "condition"
+        ]
+      }
     },
     {
       "type": "title",
@@ -2273,9 +2337,25 @@
           "_cleaned": "uncompleted | emit: uncompleted"
         }
       ],
+      "condition": "@local.show_nav_buttons",
       "exclude_from_translation": true,
       "rows": [],
-      "_nested_name": "nav_buttons"
+      "_nested_name": "nav_buttons",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.show_nav_buttons",
+            "matchedExpression": "@local.show_nav_buttons",
+            "type": "local",
+            "fieldName": "show_nav_buttons"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.show_nav_buttons": [
+          "condition"
+        ]
+      }
     }
   ],
   "_xlsxPath": "templates/modules/articles.xlsx",
