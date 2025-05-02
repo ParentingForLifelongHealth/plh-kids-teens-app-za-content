@@ -31,11 +31,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2698 |
+| set_variable | 2700 |
 | simple_checkbox | 1 |
 | task_card | 5 |
 | task_progress_bar | 2 |
-| template | 930 |
+| template | 931 |
 | text | 108 |
 | text_area | 2 |
 | text_box | 4 |
@@ -54,13 +54,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 689 |
+| emit: completed | 690 |
 | emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 744 |
+| emit: uncompleted | 745 |
 | feedback | 13 |
 | go_to | 24 |
 | nav_stack | 199 |
@@ -81,8 +81,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 85964 KB | 86 MB |
-| unused | 198818 KB | 198.8 MB |
+| total | 85717 KB | 85.7 MB |
+| unused | 199066 KB | 199.1 MB |
 </details>
 
 <details open>
@@ -205,9 +205,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/faces/happier.svg | 0.6 |
 | images/icons/faces/happiest.svg | 1.3 |
 | images/icons/faces/neutral.svg | 0.5 |
-| images/icons/faces/sadder.svg | 1.1 |
 | images/icons/faces/saddest.svg | 2 |
-| images/icons/faces/scared.svg | 2.1 |
 | images/icons/faces/tired.svg | 54 |
 | images/icons/fire.png | 0.9 |
 | images/icons/heart.svg | 0.6 |
@@ -224,7 +222,17 @@ Assets that appear in app-data but do not have references within sheets
 | images/instructions_yc.png | 752.7 |
 | images/instructions_yc.svg | 208.8 |
 | images/kw_f1_daughter_2.svg | 34.2 |
+| images/kw_f1_daughter_6.svg | 37 |
+| images/kw_f1_father.svg | 27.8 |
 | images/kw_f1_mother.svg | 15 |
+| images/kw_f2_daughter_3.svg | 61.6 |
+| images/kw_f2_grandfather.svg | 26.1 |
+| images/kw_f2_grandmother.svg | 13.4 |
+| images/kw_f2_son_8.svg | 16.8 |
+| images/kw_f3_daughter_7.svg | 14.1 |
+| images/kw_f3_mother.svg | 15.1 |
+| images/kw_f3_son_4.svg | 24.6 |
+| images/kw_f3_uncle.svg | 14.3 |
 | images/logos/PLH.png | 26.6 |
 | images/logos/favicon.png | 6.3 |
 | images/logos/kuwait.png | 248 |
@@ -527,14 +535,14 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/self_care_yc_3.svg | 146.8 | 2 |
 | images/comics/teach_consequences_yc_3.jpg | 3174 | 2 |
 | images/consequences.jpg | 115.1 | 2 |
-| images/faces/angry.svg | 1.1 | 10 |
-| images/faces/confused.svg | 1.8 | 10 |
+| images/faces/angry.svg | 1.1 | 8 |
+| images/faces/confused.svg | 1.8 | 8 |
 | images/faces/happier.svg | 0.6 | 2 |
 | images/faces/happiest.svg | 1.3 | 8 |
 | images/faces/happy.svg | 0.6 | 33 |
 | images/faces/neutral.svg | 0.5 | 31 |
-| images/faces/sad.svg | 0.6 | 36 |
-| images/faces/scared.svg | 2.1 | 6 |
+| images/faces/sad.svg | 0.6 | 34 |
+| images/faces/scared.svg | 2.1 | 4 |
 | images/faces/tired.svg | 2.4 | 4 |
 | images/flags/gb.svg | 0.5 | 2 |
 | images/icons/balance_blue.png | 4.7 | 2 |
@@ -546,15 +554,17 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/document.svg | 7.3 | 1 |
 | images/icons/expand_circle_right.png | 0.9 | 1 |
 | images/icons/eye_blue.png | 4.2 | 14 |
-| images/icons/faces/angry.svg | 4.9 | 2 |
-| images/icons/faces/confused.svg | 4.9 | 2 |
+| images/icons/faces/angry.svg | 4.9 | 4 |
+| images/icons/faces/confused.svg | 4.9 | 4 |
 | images/icons/faces/flushed_face.svg | 4.9 | 2 |
-| images/icons/faces/happy.svg | 53.5 | 8 |
+| images/icons/faces/happy.svg | 53.5 | 10 |
 | images/icons/faces/happy_face_new.svg | 1.4 | 43 |
 | images/icons/faces/ok.svg | 46.6 | 4 |
 | images/icons/faces/ok_face_new.svg | 0.5 | 41 |
 | images/icons/faces/sad.svg | 48.2 | 7 |
 | images/icons/faces/sad_face_new.svg | 1.5 | 41 |
+| images/icons/faces/sadder.svg | 1.1 | 2 |
+| images/icons/faces/scared.svg | 2.1 | 2 |
 | images/icons/faces/smiling.svg | 5.1 | 2 |
 | images/icons/faces/stressed.svg | 60 | 2 |
 | images/icons/feather.svg | 3.5 | 1 |
@@ -601,16 +611,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/trophy_footer_active.svg | 3.9 | 1 |
 | images/icons/world.svg | 6.2 | 1 |
 | images/instructions.svg | 23.6 | 2 |
-| images/kw_f1_daughter_6.svg | 37 | 1 |
-| images/kw_f1_father.svg | 27.8 | 1 |
-| images/kw_f2_daughter_3.svg | 61.6 | 1 |
-| images/kw_f2_grandfather.svg | 26.1 | 1 |
-| images/kw_f2_grandmother.svg | 13.4 | 1 |
-| images/kw_f2_son_8.svg | 16.8 | 1 |
-| images/kw_f3_daughter_7.svg | 14.1 | 1 |
-| images/kw_f3_mother.svg | 15.1 | 1 |
-| images/kw_f3_son_4.svg | 24.6 | 1 |
-| images/kw_f3_uncle.svg | 14.3 | 1 |
 | images/kw_facilitator.svg | 23.6 | 1 |
 | images/logos/IDEMS.png | 84.6 | 1 |
 | images/logos/app_logo.png | 36 | 1 |
@@ -826,6 +826,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 104 |
-| template | generated | 764 |
+| template | generated | 765 |
 | template | legal_terms | 4 |
 </details>
