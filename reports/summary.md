@@ -7,13 +7,13 @@
 | accordion_section | 6 |
 | apple_sign_in_button | 2 |
 | audio | 28 |
-| begin_display_group | 3 |
+| begin_display_group | 1 |
 | button | 71 |
 | combo_box | 6 |
 | data_items | 137 |
 | debug_toggle | 1 |
 | display_grid | 2 |
-| display_group | 75 |
+| display_group | 77 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 13 |
@@ -31,7 +31,7 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2725 |
+| set_variable | 2591 |
 | simple_checkbox | 1 |
 | task_card | 5 |
 | task_progress_bar | 2 |
@@ -69,7 +69,7 @@
 | save_to_device | 2 |
 | set_data | 57 |
 | set_field | 72 |
-| set_item | 68 |
+| set_item | 65 |
 | set_local | 32 |
 | share | 2 |
 | task | 3 |
@@ -825,7 +825,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | generator |  | 40 |
 | global |  | 5 |
 | global | legal_terms | 1 |
-| template |  | 104 |
+| template |  | 103 |
 | template | generated | 765 |
 | template | legal_terms | 4 |
 </details>
