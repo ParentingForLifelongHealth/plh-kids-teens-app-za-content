@@ -1,21 +1,12 @@
 {
+  "flow_name": "article_consequences_t_explore_12",
+  "flow_subtype": "generated",
   "flow_type": "template",
-  "flow_name": "module_landing_rulesroutines",
-  "status": "released",
-  "parameter_list": {
-    "app_config": {
-      "LAYOUT": {
-        "page_padding": "0 0"
-      }
-    }
-  },
-  "comment": "rulesroutines",
-  "comment_2": 28,
   "rows": [
     {
       "type": "template",
-      "name": "module_landing",
-      "value": "module_landing",
+      "name": "article",
+      "value": "article",
       "action_list": [
         {
           "trigger": "completed",
@@ -38,18 +29,26 @@
       ],
       "rows": [
         {
+          "name": "article_id",
+          "value": "explore_12",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "article.article_id"
+        },
+        {
           "name": "module_id",
-          "value": "rulesroutines",
+          "value": "consequences_t",
           "_translations": {
             "value": {}
           },
           "exclude_from_translation": true,
           "type": "set_variable",
-          "_nested_name": "module_landing.module_id"
+          "_nested_name": "article.module_id"
         }
       ],
-      "_nested_name": "module_landing"
+      "_nested_name": "article"
     }
-  ],
-  "_xlsxPath": "templates/ZA module_landing templates.xlsx"
+  ]
 }
