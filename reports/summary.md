@@ -7,13 +7,12 @@
 | accordion_section | 6 |
 | apple_sign_in_button | 2 |
 | audio | 28 |
-| begin_display_group | 1 |
 | button | 71 |
 | combo_box | 6 |
 | data_items | 139 |
 | debug_toggle | 1 |
 | display_grid | 2 |
-| display_group | 77 |
+| display_group | 78 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 13 |
