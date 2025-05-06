@@ -119,12 +119,304 @@
       }
     },
     {
-      "type": "begin_display_group",
+      "type": "display_group",
       "name": "dg_all_modules",
       "parameter_list": {
         "style": "column"
       },
       "condition": "@local.completed_count !== undefined",
+      "rows": [
+        {
+          "type": "data_items",
+          "name": "loop_modules",
+          "value": "@data.module_tasks",
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "completed_midnight",
+              "value": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "dg_all_modules.loop_modules.completed_midnight",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
+                    "matchedExpression": "@item.completed_ts",
+                    "type": "item",
+                    "fieldName": "completed_ts"
+                  },
+                  {
+                    "fullExpression": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
+                    "matchedExpression": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
+                    "type": "calc",
+                    "fieldName": "new Date(@item.completed_ts).setHours(0,0,0,0)"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.completed_ts": [
+                  "value"
+                ],
+                "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "name": "days_since_completed",
+              "value": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "dg_all_modules.loop_modules.days_since_completed",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
+                    "matchedExpression": "@local.completed_midnight",
+                    "type": "local",
+                    "fieldName": "completed_midnight"
+                  },
+                  {
+                    "fullExpression": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
+                    "matchedExpression": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
+                    "type": "calc",
+                    "fieldName": "window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight))"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.completed_midnight": [
+                  "value"
+                ],
+                "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "name": "is_highlighted",
+              "value": "@item.completed && @local.days_since_completed >= +@fields.countdown_days",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "dg_all_modules.loop_modules.is_highlighted",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@item.completed && @local.days_since_completed >= +@fields.countdown_days",
+                    "matchedExpression": "@item.completed",
+                    "type": "item",
+                    "fieldName": "completed"
+                  },
+                  {
+                    "fullExpression": "@item.completed && @local.days_since_completed >= +@fields.countdown_days",
+                    "matchedExpression": "@local.days_since_completed",
+                    "type": "local",
+                    "fieldName": "days_since_completed"
+                  },
+                  {
+                    "fullExpression": "@item.completed && @local.days_since_completed >= +@fields.countdown_days",
+                    "matchedExpression": "@fields.countdown_days",
+                    "type": "fields",
+                    "fieldName": "countdown_days"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.completed": [
+                  "value"
+                ],
+                "@local.days_since_completed": [
+                  "value"
+                ],
+                "@fields.countdown_days": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "template",
+              "name": "module_@item.id",
+              "value": "module_list_item",
+              "exclude_from_translation": true,
+              "rows": [
+                {
+                  "name": "module_id",
+                  "value": "@item.id",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "dg_all_modules.loop_modules.module_@item.id.module_id",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@item.id",
+                        "matchedExpression": "@item.id",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ],
+                    "_nested_name": [
+                      {
+                        "fullExpression": "dg_all_modules.loop_modules.module_@item.id.module_id",
+                        "matchedExpression": "@item.id.module_id",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@item.id": [
+                      "value"
+                    ],
+                    "@item.id.module_id": [
+                      "_nested_name"
+                    ]
+                  }
+                },
+                {
+                  "name": "is_locked",
+                  "value": "!(@item.id == @local.current_module_id || @item.completed)",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "dg_all_modules.loop_modules.module_@item.id.is_locked",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
+                        "matchedExpression": "@item.id",
+                        "type": "item",
+                        "fieldName": "id"
+                      },
+                      {
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
+                        "matchedExpression": "@local.current_module_id",
+                        "type": "local",
+                        "fieldName": "current_module_id"
+                      },
+                      {
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
+                        "matchedExpression": "@item.completed",
+                        "type": "item",
+                        "fieldName": "completed"
+                      }
+                    ],
+                    "_nested_name": [
+                      {
+                        "fullExpression": "dg_all_modules.loop_modules.module_@item.id.is_locked",
+                        "matchedExpression": "@item.id.is_locked",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@item.id": [
+                      "value"
+                    ],
+                    "@local.current_module_id": [
+                      "value"
+                    ],
+                    "@item.completed": [
+                      "value"
+                    ],
+                    "@item.id.is_locked": [
+                      "_nested_name"
+                    ]
+                  }
+                },
+                {
+                  "name": "is_highlighted",
+                  "value": "@local.is_highlighted",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "dg_all_modules.loop_modules.module_@item.id.is_highlighted",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.is_highlighted",
+                        "matchedExpression": "@local.is_highlighted",
+                        "type": "local",
+                        "fieldName": "is_highlighted"
+                      }
+                    ],
+                    "_nested_name": [
+                      {
+                        "fullExpression": "dg_all_modules.loop_modules.module_@item.id.is_highlighted",
+                        "matchedExpression": "@item.id.is_highlighted",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.is_highlighted": [
+                      "value"
+                    ],
+                    "@item.id.is_highlighted": [
+                      "_nested_name"
+                    ]
+                  }
+                }
+              ],
+              "_nested_name": "dg_all_modules.loop_modules.module_@item.id",
+              "_dynamicFields": {
+                "name": [
+                  {
+                    "fullExpression": "module_@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "_nested_name": [
+                  {
+                    "fullExpression": "dg_all_modules.loop_modules.module_@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.id": [
+                  "name",
+                  "_nested_name"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "dg_all_modules.loop_modules",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@data.module_tasks",
+                "matchedExpression": "@data.module_tasks",
+                "type": "data",
+                "fieldName": "module_tasks"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@data.module_tasks": [
+              "value"
+            ]
+          }
+        }
+      ],
       "_nested_name": "dg_all_modules",
       "_dynamicFields": {
         "condition": [
@@ -139,296 +431,6 @@
       "_dynamicDependencies": {
         "@local.completed_count": [
           "condition"
-        ]
-      }
-    },
-    {
-      "type": "data_items",
-      "name": "loop_modules",
-      "value": "@data.module_tasks",
-      "exclude_from_translation": true,
-      "rows": [
-        {
-          "name": "completed_midnight",
-          "value": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
-          "_translations": {
-            "value": {}
-          },
-          "type": "set_variable",
-          "_nested_name": "loop_modules.completed_midnight",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
-                "matchedExpression": "@item.completed_ts",
-                "type": "item",
-                "fieldName": "completed_ts"
-              },
-              {
-                "fullExpression": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
-                "matchedExpression": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
-                "type": "calc",
-                "fieldName": "new Date(@item.completed_ts).setHours(0,0,0,0)"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@item.completed_ts": [
-              "value"
-            ],
-            "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))": [
-              "value"
-            ]
-          }
-        },
-        {
-          "name": "days_since_completed",
-          "value": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
-          "_translations": {
-            "value": {}
-          },
-          "type": "set_variable",
-          "_nested_name": "loop_modules.days_since_completed",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
-                "matchedExpression": "@local.completed_midnight",
-                "type": "local",
-                "fieldName": "completed_midnight"
-              },
-              {
-                "fullExpression": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
-                "matchedExpression": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
-                "type": "calc",
-                "fieldName": "window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight))"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.completed_midnight": [
-              "value"
-            ],
-            "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))": [
-              "value"
-            ]
-          }
-        },
-        {
-          "name": "is_highlighted",
-          "value": "@item.completed && @local.days_since_completed >= +@fields.countdown_days",
-          "_translations": {
-            "value": {}
-          },
-          "type": "set_variable",
-          "_nested_name": "loop_modules.is_highlighted",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@item.completed && @local.days_since_completed >= +@fields.countdown_days",
-                "matchedExpression": "@item.completed",
-                "type": "item",
-                "fieldName": "completed"
-              },
-              {
-                "fullExpression": "@item.completed && @local.days_since_completed >= +@fields.countdown_days",
-                "matchedExpression": "@local.days_since_completed",
-                "type": "local",
-                "fieldName": "days_since_completed"
-              },
-              {
-                "fullExpression": "@item.completed && @local.days_since_completed >= +@fields.countdown_days",
-                "matchedExpression": "@fields.countdown_days",
-                "type": "fields",
-                "fieldName": "countdown_days"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@item.completed": [
-              "value"
-            ],
-            "@local.days_since_completed": [
-              "value"
-            ],
-            "@fields.countdown_days": [
-              "value"
-            ]
-          }
-        },
-        {
-          "type": "template",
-          "name": "module_@item.id",
-          "value": "module_list_item",
-          "exclude_from_translation": true,
-          "rows": [
-            {
-              "name": "module_id",
-              "value": "@item.id",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "loop_modules.module_@item.id.module_id",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@item.id",
-                    "matchedExpression": "@item.id",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
-                ],
-                "_nested_name": [
-                  {
-                    "fullExpression": "loop_modules.module_@item.id.module_id",
-                    "matchedExpression": "@item.id.module_id",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@item.id": [
-                  "value"
-                ],
-                "@item.id.module_id": [
-                  "_nested_name"
-                ]
-              }
-            },
-            {
-              "name": "is_locked",
-              "value": "!(@item.id == @local.current_module_id || @item.completed)",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "loop_modules.module_@item.id.is_locked",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
-                    "matchedExpression": "@item.id",
-                    "type": "item",
-                    "fieldName": "id"
-                  },
-                  {
-                    "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
-                    "matchedExpression": "@local.current_module_id",
-                    "type": "local",
-                    "fieldName": "current_module_id"
-                  },
-                  {
-                    "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
-                    "matchedExpression": "@item.completed",
-                    "type": "item",
-                    "fieldName": "completed"
-                  }
-                ],
-                "_nested_name": [
-                  {
-                    "fullExpression": "loop_modules.module_@item.id.is_locked",
-                    "matchedExpression": "@item.id.is_locked",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@item.id": [
-                  "value"
-                ],
-                "@local.current_module_id": [
-                  "value"
-                ],
-                "@item.completed": [
-                  "value"
-                ],
-                "@item.id.is_locked": [
-                  "_nested_name"
-                ]
-              }
-            },
-            {
-              "name": "is_highlighted",
-              "value": "@local.is_highlighted",
-              "_translations": {
-                "value": {}
-              },
-              "type": "set_variable",
-              "_nested_name": "loop_modules.module_@item.id.is_highlighted",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@local.is_highlighted",
-                    "matchedExpression": "@local.is_highlighted",
-                    "type": "local",
-                    "fieldName": "is_highlighted"
-                  }
-                ],
-                "_nested_name": [
-                  {
-                    "fullExpression": "loop_modules.module_@item.id.is_highlighted",
-                    "matchedExpression": "@item.id.is_highlighted",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@local.is_highlighted": [
-                  "value"
-                ],
-                "@item.id.is_highlighted": [
-                  "_nested_name"
-                ]
-              }
-            }
-          ],
-          "_nested_name": "loop_modules.module_@item.id",
-          "_dynamicFields": {
-            "name": [
-              {
-                "fullExpression": "module_@item.id",
-                "matchedExpression": "@item.id",
-                "type": "item",
-                "fieldName": "id"
-              }
-            ],
-            "_nested_name": [
-              {
-                "fullExpression": "loop_modules.module_@item.id",
-                "matchedExpression": "@item.id",
-                "type": "item",
-                "fieldName": "id"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@item.id": [
-              "name",
-              "_nested_name"
-            ]
-          }
-        }
-      ],
-      "_nested_name": "loop_modules",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@data.module_tasks",
-            "matchedExpression": "@data.module_tasks",
-            "type": "data",
-            "fieldName": "module_tasks"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@data.module_tasks": [
-          "value"
         ]
       }
     }
