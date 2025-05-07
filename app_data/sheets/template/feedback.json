@@ -4,6 +4,12 @@
   "status": "released",
   "rows": [
     {
+      "name": "in_library",
+      "value": false,
+      "type": "set_variable",
+      "_nested_name": "in_library"
+    },
+    {
       "name": "bubble_text",
       "exclude_from_translation": true,
       "type": "set_variable",
@@ -420,13 +426,14 @@
           }
         },
         {
-          "type": "template",
-          "name": "nested_article",
+          "name": "nested_template",
           "value": "article_@local.module_id@local.join@local.@local.concat_nested_id",
-          "condition": "!!@local.@local.concat_nested_id",
-          "exclude_from_translation": true,
-          "rows": [],
-          "_nested_name": "dg_module_related.nested_article",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "!@local.in_library",
+          "type": "set_variable",
+          "_nested_name": "dg_module_related.nested_template",
           "_dynamicFields": {
             "value": [
               {
@@ -450,10 +457,10 @@
             ],
             "condition": [
               {
-                "fullExpression": "!!@local.@local.concat_nested_id",
-                "matchedExpression": "@local.concat_nested_id",
+                "fullExpression": "!@local.in_library",
+                "matchedExpression": "!@local.in_library",
                 "type": "local",
-                "fieldName": "concat_nested_id"
+                "fieldName": "in_library"
               }
             ]
           },
@@ -465,7 +472,80 @@
               "value"
             ],
             "@local.concat_nested_id": [
-              "value",
+              "value"
+            ],
+            "!@local.in_library": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "name": "nested_template",
+          "value": "library_article_@local.@local.concat_nested_id",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "@local.in_library",
+          "type": "set_variable",
+          "_nested_name": "dg_module_related.nested_template",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "library_article_@local.@local.concat_nested_id",
+                "matchedExpression": "@local.concat_nested_id",
+                "type": "local",
+                "fieldName": "concat_nested_id"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@local.in_library",
+                "matchedExpression": "@local.in_library",
+                "type": "local",
+                "fieldName": "in_library"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.concat_nested_id": [
+              "value"
+            ],
+            "@local.in_library": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "template",
+          "name": "nested_article",
+          "value": "@local.nested_template",
+          "condition": "!!@local.@local.concat_nested_id",
+          "exclude_from_translation": true,
+          "rows": [],
+          "_nested_name": "dg_module_related.nested_article",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.nested_template",
+                "matchedExpression": "@local.nested_template",
+                "type": "local",
+                "fieldName": "nested_template"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@local.@local.concat_nested_id",
+                "matchedExpression": "@local.concat_nested_id",
+                "type": "local",
+                "fieldName": "concat_nested_id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.nested_template": [
+              "value"
+            ],
+            "@local.concat_nested_id": [
               "condition"
             ]
           }

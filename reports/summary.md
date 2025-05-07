@@ -7,7 +7,7 @@
 | accordion_section | 6 |
 | apple_sign_in_button | 2 |
 | audio | 28 |
-| button | 71 |
+| button | 72 |
 | combo_box | 6 |
 | data_items | 139 |
 | debug_toggle | 1 |
@@ -30,12 +30,12 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2592 |
+| set_variable | 2620 |
 | simple_checkbox | 1 |
 | task_card | 5 |
 | task_progress_bar | 2 |
-| template | 916 |
-| text | 107 |
+| template | 923 |
+| text | 108 |
 | text_area | 2 |
 | text_box | 4 |
 | text_bubble | 2 |
@@ -59,10 +59,10 @@
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 733 |
+| emit: uncompleted | 739 |
 | feedback | 13 |
 | go_to | 24 |
-| nav_stack | 203 |
+| nav_stack | 204 |
 | pop_up | 64 |
 | reset_app | 1 |
 | save_to_device | 2 |
@@ -821,6 +821,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 103 |
-| template | generated | 754 |
+| template | generated | 760 |
 | template | legal_terms | 4 |
 </details>
