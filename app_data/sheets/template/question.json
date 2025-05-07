@@ -4,6 +4,12 @@
   "status": "released",
   "rows": [
     {
+      "name": "in_library",
+      "value": false,
+      "type": "set_variable",
+      "_nested_name": "in_library"
+    },
+    {
       "name": "character_id",
       "value": "facilitator",
       "_translations": {
@@ -630,8 +636,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_27",
-      "_nested_name": "set_variable_27"
+      "name": "set_variable_28",
+      "_nested_name": "set_variable_28"
     },
     {
       "name": "option_no_2",
@@ -907,8 +913,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_35",
-      "_nested_name": "set_variable_35"
+      "name": "set_variable_36",
+      "_nested_name": "set_variable_36"
     },
     {
       "name": "option_no_3",
@@ -1184,8 +1190,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_43",
-      "_nested_name": "set_variable_43"
+      "name": "set_variable_44",
+      "_nested_name": "set_variable_44"
     },
     {
       "name": "option_no_4",
@@ -1461,8 +1467,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_51",
-      "_nested_name": "set_variable_51"
+      "name": "set_variable_52",
+      "_nested_name": "set_variable_52"
     },
     {
       "name": "option_no_5",
@@ -1738,8 +1744,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_59",
-      "_nested_name": "set_variable_59"
+      "name": "set_variable_60",
+      "_nested_name": "set_variable_60"
     },
     {
       "name": "option_no_6",
@@ -2015,8 +2021,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_67",
-      "_nested_name": "set_variable_67"
+      "name": "set_variable_68",
+      "_nested_name": "set_variable_68"
     },
     {
       "name": "answer_list_1",
@@ -2909,6 +2915,30 @@
               "exclude_from_translation": true,
               "rows": [
                 {
+                  "name": "in_library",
+                  "value": "@local.in_library",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_1.in_library",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.in_library",
+                        "matchedExpression": "@local.in_library",
+                        "type": "local",
+                        "fieldName": "in_library"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.in_library": [
+                      "value"
+                    ]
+                  }
+                },
+                {
                   "name": "character_id",
                   "value": "@local.character_id",
                   "_translations": {
@@ -3065,6 +3095,30 @@
               "condition": "@item.@local.response_column==\"option_2\"",
               "exclude_from_translation": true,
               "rows": [
+                {
+                  "name": "in_library",
+                  "value": "@local.in_library",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_2.in_library",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.in_library",
+                        "matchedExpression": "@local.in_library",
+                        "type": "local",
+                        "fieldName": "in_library"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.in_library": [
+                      "value"
+                    ]
+                  }
+                },
                 {
                   "name": "character_id",
                   "value": "@local.character_id",
@@ -3223,6 +3277,30 @@
               "exclude_from_translation": true,
               "rows": [
                 {
+                  "name": "in_library",
+                  "value": "@local.in_library",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_3.in_library",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.in_library",
+                        "matchedExpression": "@local.in_library",
+                        "type": "local",
+                        "fieldName": "in_library"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.in_library": [
+                      "value"
+                    ]
+                  }
+                },
+                {
                   "name": "character_id",
                   "value": "@local.character_id",
                   "_translations": {
@@ -3379,6 +3457,30 @@
               "condition": "@item.@local.response_column==\"option_4\"",
               "exclude_from_translation": true,
               "rows": [
+                {
+                  "name": "in_library",
+                  "value": "@local.in_library",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_4.in_library",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.in_library",
+                        "matchedExpression": "@local.in_library",
+                        "type": "local",
+                        "fieldName": "in_library"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.in_library": [
+                      "value"
+                    ]
+                  }
+                },
                 {
                   "name": "character_id",
                   "value": "@local.character_id",
@@ -3537,6 +3639,30 @@
               "exclude_from_translation": true,
               "rows": [
                 {
+                  "name": "in_library",
+                  "value": "@local.in_library",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_5.in_library",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.in_library",
+                        "matchedExpression": "@local.in_library",
+                        "type": "local",
+                        "fieldName": "in_library"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.in_library": [
+                      "value"
+                    ]
+                  }
+                },
+                {
                   "name": "character_id",
                   "value": "@local.character_id",
                   "_translations": {
@@ -3693,6 +3819,30 @@
               "condition": "@item.@local.response_column==\"option_6\"",
               "exclude_from_translation": true,
               "rows": [
+                {
+                  "name": "in_library",
+                  "value": "@local.in_library",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "feedback.dg_feedback.option_6.in_library",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.in_library",
+                        "matchedExpression": "@local.in_library",
+                        "type": "local",
+                        "fieldName": "in_library"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.in_library": [
+                      "value"
+                    ]
+                  }
+                },
                 {
                   "name": "character_id",
                   "value": "@local.character_id",

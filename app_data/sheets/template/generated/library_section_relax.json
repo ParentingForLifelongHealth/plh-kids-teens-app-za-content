@@ -65,6 +65,43 @@
           "_nested_name": "library_section.display_title"
         },
         {
+          "name": "introduction",
+          "value": "@gen.introduction",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "!!@gen.introduction",
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "library_section.introduction",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@gen.introduction",
+                "matchedExpression": "@gen.introduction",
+                "type": "gen",
+                "fieldName": "introduction"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@gen.introduction",
+                "matchedExpression": "!@gen.introduction",
+                "type": "gen",
+                "fieldName": "introduction"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@gen.introduction": [
+              "value"
+            ],
+            "!@gen.introduction": [
+              "condition"
+            ]
+          }
+        },
+        {
           "name": "articles_data_list_name",
           "value": "relax",
           "_translations": {
