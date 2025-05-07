@@ -30,11 +30,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2591 |
+| set_variable | 2592 |
 | simple_checkbox | 1 |
 | task_card | 5 |
 | task_progress_bar | 2 |
-| template | 915 |
+| template | 916 |
 | text | 107 |
 | text_area | 2 |
 | text_box | 4 |
@@ -59,7 +59,7 @@
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 732 |
+| emit: uncompleted | 733 |
 | feedback | 13 |
 | go_to | 24 |
 | nav_stack | 203 |
@@ -80,7 +80,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 85720 KB | 85.7 MB |
+| total | 85719 KB | 85.7 MB |
 | unused | 199063 KB | 199.1 MB |
 </details>
 
@@ -204,13 +204,13 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/faces/happier.svg | 0.6 |
 | images/icons/faces/happiest.svg | 1.3 |
 | images/icons/faces/neutral.svg | 0.5 |
+| images/icons/faces/sadder.svg | 1.1 |
 | images/icons/faces/saddest.svg | 2 |
 | images/icons/faces/tired.svg | 54 |
 | images/icons/fire.png | 0.9 |
 | images/icons/heart.svg | 0.6 |
 | images/icons/heart_filled.svg | 1.4 |
 | images/icons/in_progress_white.svg | 1.1 |
-| images/icons/pause.svg | 0.7 |
 | images/icons/pause_white.svg | 0.7 |
 | images/icons/play.svg | 0.5 |
 | images/icons/play_white.svg | 0.5 |
@@ -547,7 +547,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/document.svg | 7.3 | 1 |
 | images/icons/expand_circle_right.png | 0.9 | 1 |
 | images/icons/eye_blue.png | 4.2 | 14 |
-| images/icons/faces/angry.svg | 4.9 | 4 |
+| images/icons/faces/angry.svg | 4.9 | 2 |
 | images/icons/faces/confused.svg | 4.9 | 4 |
 | images/icons/faces/flushed_face.svg | 4.9 | 2 |
 | images/icons/faces/happy.svg | 53.5 | 10 |
@@ -556,7 +556,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/faces/ok_face_new.svg | 0.5 | 41 |
 | images/icons/faces/sad.svg | 48.2 | 7 |
 | images/icons/faces/sad_face_new.svg | 1.5 | 41 |
-| images/icons/faces/sadder.svg | 1.1 | 2 |
 | images/icons/faces/scared.svg | 2.1 | 2 |
 | images/icons/faces/smiling.svg | 5.1 | 2 |
 | images/icons/faces/stressed.svg | 60 | 2 |
@@ -581,6 +580,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/notification_bell.png | 0.9 | 1 |
 | images/icons/parent_child.svg | 2 | 1 |
 | images/icons/parent_child_heart.svg | 3 | 26 |
+| images/icons/pause.svg | 0.7 | 26 |
 | images/icons/pencil.svg | 1.1 | 26 |
 | images/icons/picture_book.svg | 1.8 | 26 |
 | images/icons/profile_card.svg | 7.4 | 1 |
@@ -821,6 +821,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 103 |
-| template | generated | 753 |
+| template | generated | 754 |
 | template | legal_terms | 4 |
 </details>
