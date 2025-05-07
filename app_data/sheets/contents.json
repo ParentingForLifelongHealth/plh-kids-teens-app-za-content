@@ -337,9 +337,6 @@
       "flow_subtype": "generated",
       "flow_type": "data_list",
       "_metadata": {
-        "nested": {
-          "type": "boolean"
-        },
         "completed": {
           "type": "boolean"
         }
@@ -533,6 +530,7 @@
       "data_list_name": "celebrate_t_articles",
       "flow_subtype": "modules",
       "module": "celebrate_t",
+      "Final Review Complete?": "done",
       "__EMPTY_1": "done",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
@@ -567,7 +565,7 @@
       "data_list_name": "consequences_t_articles",
       "flow_subtype": "modules",
       "module": "consequences_t",
-      "Final Review Complete?": "no - problem with syncing.",
+      "Final Review Complete?": "done",
       "__EMPTY_1": "resynced",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
@@ -578,6 +576,7 @@
       "data_list_name": "crisis_t_articles",
       "flow_subtype": "modules",
       "module": "crisis_t",
+      "Final Review Complete?": "done",
       "__EMPTY_1": "resynced",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
@@ -596,6 +595,7 @@
       "data_list_name": "grief_t_articles",
       "flow_subtype": "modules",
       "module": "grief_t",
+      "Final Review Complete?": "done",
       "__EMPTY_1": "resynced",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
@@ -624,6 +624,7 @@
       "data_list_name": "learn_t_articles",
       "flow_subtype": "modules",
       "module": "learn_t",
+      "Final Review Complete?": "done",
       "__EMPTY_1": "resynced",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
@@ -647,7 +648,7 @@
       "data_list_name": "money_t_articles",
       "flow_subtype": "modules",
       "module": "money_t",
-      "Final Review Complete?": "ISH - problem with syncing",
+      "Final Review Complete?": "done",
       "__EMPTY_1": "resynced",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
@@ -702,14 +703,9 @@
       "data_list_name": "problemsolving_t_articles",
       "flow_subtype": "modules",
       "module": "problemsolving_t",
-      "Final Review Complete?": "ISH - problem with syncing",
+      "Final Review Complete?": "done",
       "_xlsxPath": "data/ZA modules .xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
-      "_metadata": {
-        "nested": {
-          "type": "boolean"
-        }
-      }
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
     "rules_t_articles": {
       "flow_type": "data_list",
@@ -717,7 +713,7 @@
       "data_list_name": "rules_t_articles",
       "flow_subtype": "modules",
       "module": "rules_t",
-      "Final Review Complete?": "ISH - problem with syncing",
+      "Final Review Complete?": "done",
       "__EMPTY_1": "resynced",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
@@ -764,7 +760,7 @@
       "data_list_name": "srh_t_articles",
       "flow_subtype": "modules",
       "module": "srh_t",
-      "__EMPTY_1": "too late",
+      "Final Review Complete?": "Done - issue is nesting",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
@@ -774,6 +770,7 @@
       "data_list_name": "stayingsafe_t_articles",
       "flow_subtype": "modules",
       "module": "stayingsafe_t",
+      "Final Review Complete?": "done",
       "__EMPTY_1": "resynced",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
@@ -784,7 +781,7 @@
       "data_list_name": "stress_t_articles",
       "flow_subtype": "modules",
       "module": "stress_t",
-      "Final Review Complete?": "Need CWBSA ",
+      "Final Review Complete?": "done",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
@@ -2790,6 +2787,11 @@
         },
         {
           "flow_name": "library_article_support_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "library_article_tips",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -9237,6 +9239,11 @@
     },
     "library_article_support_9": {
       "flow_name": "library_article_support_9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "library_article_tips": {
+      "flow_name": "library_article_tips",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
