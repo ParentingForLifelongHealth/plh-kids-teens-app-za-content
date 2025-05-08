@@ -80,8 +80,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 85719 KB | 85.7 MB |
-| unused | 199063 KB | 199.1 MB |
+| total | 85870 KB | 85.9 MB |
+| unused | 198913 KB | 198.9 MB |
 </details>
 
 <details open>
@@ -336,8 +336,6 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/workshops/w_instruct/read_2/slide_4.svg | 42.5 |
 | plh_images/workshops/w_instruct/read_2/slide_5.svg | 53.4 |
 | plh_images/workshops/w_safe/read_2/slide_3.svg | 33 |
-| plh_images/workshops/w_srh/learn/sex_talk_who/slide_2.svg | 45.5 |
-| plh_images/workshops/w_srh/learn/sex_talk_who/slide_3.svg | 105 |
 | plh_images/workshops/w_stress/read_1/slide_5.svg | 228.4 |
 | plh_images/workshops/w_stress/read_2/slide_1.svg | 60.6 |
 | plh_images/workshops/w_svp/tools.svg | 25.4 |
@@ -760,6 +758,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/workshops/w_srh/learn/sex_talk_when/slide_3.svg | 203.3 | 2 |
 | plh_images/workshops/w_srh/learn/sex_talk_when/slide_4.svg | 52.8 | 2 |
 | plh_images/workshops/w_srh/learn/sex_talk_who/slide_1.svg | 27.1 | 2 |
+| plh_images/workshops/w_srh/learn/sex_talk_who/slide_2.svg | 45.5 | 2 |
+| plh_images/workshops/w_srh/learn/sex_talk_who/slide_3.svg | 105 | 2 |
 | plh_images/workshops/w_srh/read_new_boyfriend/slide_1.svg | 44 | 2 |
 | plh_images/workshops/w_srh/read_new_boyfriend/slide_2.svg | 44 | 2 |
 | plh_images/workshops/w_srh/read_new_boyfriend/slide_3.svg | 28.7 | 2 |
