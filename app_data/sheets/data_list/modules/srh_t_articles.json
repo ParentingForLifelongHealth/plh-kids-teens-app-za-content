@@ -154,10 +154,10 @@
           "eng": "What is this talk of sex in my house! You are too young…"
         },
         "character_2_text": {
-          "eng": "But Gogo, it’s not like that…!"
+          "eng": "But @data.characters.f2_grandmother.role_name, it’s not like that…!"
         }
       },
-      "character_2_text": "But Gogo, it’s not like that…!"
+      "character_2_text": "But @data.characters.f2_grandmother.role_name, it’s not like that…!"
     },
     {
       "id": "explore_4",
@@ -175,10 +175,10 @@
           "eng": "No, no, no, @data.characters.f2_daughter_19.name ! I will not have this discussion with you. Is that what you do at school? Talking about things not suited for your age instead of focusing on school? You won’t go out with those friends of yours anymore. You want to bring shame in this home. Come here now! I am going to hit you. Stupid girl!"
         },
         "character_2_text": {
-          "eng": "No Gogo, please don’t hit me, it is not what you think!"
+          "eng": "No @data.characters.f2_grandmother.role_name, please don’t hit me, it is not what you think!"
         }
       },
-      "character_2_text": "No Gogo, please don’t hit me, it is not what you think!"
+      "character_2_text": "No @data.characters.f2_grandmother.role_name, please don’t hit me, it is not what you think!"
     },
     {
       "id": "explore_5",
@@ -285,13 +285,13 @@
           "eng": "We saw how challenging that moment was for @data.characters.f2_grandmother.name and her granddaughter, @data.characters.f2_daughter_19.name.\n\nTalking about boyfriends and girlfriends is not always easy - for parents or teens.\n\nLet’s look at an example of how this kind of conversation can happen calmly."
         },
         "character_1_text": {
-          "eng": "Mother, can I talk to you about something?"
+          "eng": "@data.characters.f1_mother.role_name, can I talk to you about something?"
         },
         "character_2_text": {
           "eng": "(calmly) Sure, my darling. What is the matter?"
         }
       },
-      "character_1_text": "Mother, can I talk to you about something?",
+      "character_1_text": "@data.characters.f1_mother.role_name, can I talk to you about something?",
       "character_2_text": "(calmly) Sure, my darling. What is the matter?"
     },
     {
@@ -372,10 +372,10 @@
           "eng": "That would be fine as long as his parents also know. I will chat with his mother when I see her later today. And after you get back, we can talk about how it went."
         },
         "character_2_text": {
-          "eng": "(_hugs @data.characters.f1_mother.name_) Okay. Thank you for coming up with a plan together, Mother."
+          "eng": "(_hugs @data.characters.f1_mother.name_) Okay. Thank you for coming up with a plan together, @data.characters.f1_mother.role_name."
         }
       },
-      "character_2_text": "(_hugs @data.characters.f1_mother.name_) Okay. Thank you for coming up with a plan together, Mother."
+      "character_2_text": "(_hugs @data.characters.f1_mother.name_) Okay. Thank you for coming up with a plan together, @data.characters.f1_mother.role_name."
     },
     {
       "id": "explore_11",
@@ -524,20 +524,17 @@
     {
       "id": "explore_12",
       "category_id": "explore",
-      "quiz_1_feedback_1_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_who/slide_1.svg",
-      "quiz_1_feedback_2_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_who/slide_2",
-      "quiz_1_feedback_3_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_who/slide_3",
       "text_1_facilitator": "@data.characters.f1_mother.name did well by finding solutions together with @data.characters.f1_daughter_16.name. But this can be hard to do.\n\nMany parents want to help their teens but find it difficult to talk about sensitive topics, like body changes and relationships.",
       "_translations": {
         "text_1_facilitator": {},
         "text_2": {},
         "quiz_1_question": {},
         "quiz_1_option_1_text": {},
-        "quiz_1_feedback_1": {},
+        "quiz_1_feedback_1_id": {},
         "quiz_1_option_2_text": {},
-        "quiz_1_feedback_2": {},
+        "quiz_1_feedback_2_id": {},
         "quiz_1_option_3_text": {},
-        "quiz_1_feedback_3": {}
+        "quiz_1_feedback_3_id": {}
       },
       "_translatedFields": {
         "text_1_facilitator": {
@@ -552,50 +549,91 @@
         "quiz_1_option_1_text": {
           "eng": "The teen's friend"
         },
-        "quiz_1_feedback_1": {
-          "eng": "This is not quite right. \n\nRemember, friends can sometimes mislead or have wrong information themselves. \n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_1_id": {
+          "eng": "explore_12_nested_1"
         },
         "quiz_1_option_2_text": {
           "eng": "The teen"
         },
-        "quiz_1_feedback_2": {
-          "eng": "This is not quite right. \n\nYour teen might feel uncomfortable or scared to start that conversation with you.\n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_2_id": {
+          "eng": "explore_12_nested_2"
         },
         "quiz_1_option_3_text": {
           "eng": "The parent"
         },
-        "quiz_1_feedback_3": {
-          "eng": "Yes, you may need to start the conversation - and it’s okay to feel shy. Be open and use the right words for any body parts you discuss (like breasts, penis, or vagina).\n\nYou can practise with a friend and ask a health worker or social worker for more information. The more you know, the better you can help your teen.\n\nAnd remember, it’s also okay not to know everything. You can say, “I’m not sure - let me find out and tell you later.”"
+        "quiz_1_feedback_3_id": {
+          "eng": "explore_12_nested_3"
         }
       },
       "text_2": "Here are some questions from other parents to help you begin.",
       "quiz_1_question": "Who should start the conversation about body changes and intimate relationships?",
       "quiz_1_option_1_text": "The teen's friend",
-      "quiz_1_feedback_1": "This is not quite right. \n\nRemember, friends can sometimes mislead or have wrong information themselves. \n\nTry selecting each option for more tips!",
+      "quiz_1_feedback_1_id": "explore_12_nested_1",
       "quiz_1_option_2_text": "The teen",
-      "quiz_1_feedback_2": "This is not quite right. \n\nYour teen might feel uncomfortable or scared to start that conversation with you.\n\nTry selecting each option for more tips!",
+      "quiz_1_feedback_2_id": "explore_12_nested_2",
       "quiz_1_option_3_text": "The parent",
-      "quiz_1_feedback_3": "Yes, you may need to start the conversation - and it’s okay to feel shy. Be open and use the right words for any body parts you discuss (like breasts, penis, or vagina).\n\nYou can practise with a friend and ask a health worker or social worker for more information. The more you know, the better you can help your teen.\n\nAnd remember, it’s also okay not to know everything. You can say, “I’m not sure - let me find out and tell you later.”"
+      "quiz_1_feedback_3_id": "explore_12_nested_3"
+    },
+    {
+      "id": "explore_12_nested_1",
+      "category_id": "practise",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_who/slide_1.svg",
+      "text_1_facilitator": "This is not quite right. \n\nRemember, friends can sometimes mislead or have wrong information themselves. \n\nTap on each option to see more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "This is not quite right. \n\nRemember, friends can sometimes mislead or have wrong information themselves. \n\nTap on each option to see more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_12_nested_2",
+      "category_id": "practise",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_who/slide_2",
+      "text_1_facilitator": "This is not quite right. \n\nYour teen might feel uncomfortable or scared to start that conversation with you.\n\nTap on each option to see more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "This is not quite right. \n\nYour teen might feel uncomfortable or scared to start that conversation with you.\n\nTap on each option to see more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_12_nested_3",
+      "category_id": "practise",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_who/slide_3",
+      "text_1_facilitator": "Yes, you may need to start the conversation - and it’s okay to feel shy. Be open and use the right words for any body parts you discuss (like breasts, penis, or vagina).\n\nYou can practise with a friend and ask a health worker or social worker for more information. The more you know, the better you can help your teen.\n\nAnd remember, it’s also okay not to know everything. You can say, “I’m not sure - let me find out and tell you later.”\n\nTap on each option to see more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "Yes, you may need to start the conversation - and it’s okay to feel shy. Be open and use the right words for any body parts you discuss (like breasts, penis, or vagina).\n\nYou can practise with a friend and ask a health worker or social worker for more information. The more you know, the better you can help your teen.\n\nAnd remember, it’s also okay not to know everything. You can say, “I’m not sure - let me find out and tell you later.”\n\nTap on each option to see more tips!"
+        }
+      }
     },
     {
       "id": "explore_13",
       "category_id": "explore",
-      "quiz_1_feedback_1_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_when/slide_1.svg",
-      "quiz_1_feedback_2_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_when/slide_2.svg",
-      "quiz_1_feedback_3_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_when/slide_3.svg",
-      "quiz_1_feedback_4_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_when/slide_4.svg",
       "text_2": "Other parents also wonder:",
       "_translations": {
         "text_2": {},
         "quiz_1_question": {},
         "quiz_1_option_1_text": {},
-        "quiz_1_feedback_1": {},
+        "quiz_1_feedback_1_id": {},
         "quiz_1_option_2_text": {},
-        "quiz_1_feedback_2": {},
+        "quiz_1_feedback_2_id": {},
         "quiz_1_option_3_text": {},
-        "quiz_1_feedback_3": {},
+        "quiz_1_feedback_3_id": {},
         "quiz_1_option_4_text": {},
-        "quiz_1_feedback_4": {}
+        "quiz_1_feedback_4_id": {}
       },
       "_translatedFields": {
         "text_2": {
@@ -607,60 +645,115 @@
         "quiz_1_option_1_text": {
           "eng": "When you find out they have a boyfriend or girlfriend"
         },
-        "quiz_1_feedback_1": {
-          "eng": "That’s not quite right.\n\nTeens need to learn about body changes and relationships early, so they are prepared and can make good choices.\n\nIf you find out your teen is having sex, try to stay calm and share your worries gently. Getting angry can make it harder for your teen to talk to you.\n\nTry selecting other options for more tips!"
+        "quiz_1_feedback_1_id": {
+          "eng": "explore_13_nested_1"
         },
         "quiz_1_option_2_text": {
           "eng": "When they turn 10"
         },
-        "quiz_1_feedback_2": {
-          "eng": "This is not quite right. \n\nFrom the age of 10, children start to enter the puberty stage and need to already know about how their bodies and feelings may change.\n\nThis will also help them cope better with sexual feelings safely.\n\nTry selecting other options for more tips!"
+        "quiz_1_feedback_2_id": {
+          "eng": "explore_13_nested_2"
         },
         "quiz_1_option_3_text": {
           "eng": "Before they turn 10"
         },
-        "quiz_1_feedback_3": {
-          "eng": "That's right! \n\nFrom the age of 10, children start to enter the puberty stage and need to already know about how their bodies and feelings may change.\n\nThis will also help them cope better with sexual feelings safely.\n\nTry selecting other options for more tips!"
+        "quiz_1_feedback_3_id": {
+          "eng": "explore_13_nested_3"
         },
         "quiz_1_option_4_text": {
           "eng": "When you get an opportunity"
         },
-        "quiz_1_feedback_4": {
-          "eng": "It’s good to start talking about body changes and relationships early—before age 9—by gently answering your child’s questions.\n\nYou don’t need to explain everything. Just give simple, honest answers that match their age and understanding.\n\nTry selecting other options for more tips!"
+        "quiz_1_feedback_4_id": {
+          "eng": "explore_13_nested_4"
         }
       },
       "quiz_1_question": "When is the right time to start talking about body changes and intimate relationships?",
       "quiz_1_option_1_text": "When you find out they have a boyfriend or girlfriend",
-      "quiz_1_feedback_1": "That’s not quite right.\n\nTeens need to learn about body changes and relationships early, so they are prepared and can make good choices.\n\nIf you find out your teen is having sex, try to stay calm and share your worries gently. Getting angry can make it harder for your teen to talk to you.\n\nTry selecting other options for more tips!",
+      "quiz_1_feedback_1_id": "explore_13_nested_1",
       "quiz_1_option_2_text": "When they turn 10",
-      "quiz_1_feedback_2": "This is not quite right. \n\nFrom the age of 10, children start to enter the puberty stage and need to already know about how their bodies and feelings may change.\n\nThis will also help them cope better with sexual feelings safely.\n\nTry selecting other options for more tips!",
+      "quiz_1_feedback_2_id": "explore_13_nested_2",
       "quiz_1_option_3_text": "Before they turn 10",
-      "quiz_1_feedback_3": "That's right! \n\nFrom the age of 10, children start to enter the puberty stage and need to already know about how their bodies and feelings may change.\n\nThis will also help them cope better with sexual feelings safely.\n\nTry selecting other options for more tips!",
+      "quiz_1_feedback_3_id": "explore_13_nested_3",
       "quiz_1_option_4_text": "When you get an opportunity",
-      "quiz_1_feedback_4": "It’s good to start talking about body changes and relationships early—before age 9—by gently answering your child’s questions.\n\nYou don’t need to explain everything. Just give simple, honest answers that match their age and understanding.\n\nTry selecting other options for more tips!"
+      "quiz_1_feedback_4_id": "explore_13_nested_4"
+    },
+    {
+      "id": "explore_13_nested_1",
+      "category_id": "explore",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_when/slide_1.svg",
+      "text_1_facilitator": "That’s not quite right.\n\nTeens need to learn about body changes and relationships early, so they are prepared and can make good choices.\n\nIf you find out your teen is having sex, try to stay calm and share your worries gently. Getting angry can make it harder for your teen to talk to you.\n\nTry selecting other options for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "That’s not quite right.\n\nTeens need to learn about body changes and relationships early, so they are prepared and can make good choices.\n\nIf you find out your teen is having sex, try to stay calm and share your worries gently. Getting angry can make it harder for your teen to talk to you.\n\nTry selecting other options for more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_13_nested_2",
+      "category_id": "explore",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_when/slide_2.svg",
+      "text_1_facilitator": "This is not quite right. \n\nFrom the age of 10, children start to enter the puberty stage and need to already know about how their bodies and feelings may change.\n\nThis will also help them cope better with sexual feelings safely.\n\nTry selecting other options for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "This is not quite right. \n\nFrom the age of 10, children start to enter the puberty stage and need to already know about how their bodies and feelings may change.\n\nThis will also help them cope better with sexual feelings safely.\n\nTry selecting other options for more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_13_nested_3",
+      "category_id": "explore",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_when/slide_3.svg",
+      "text_1_facilitator": "That's right! \n\nFrom the age of 10, children start to enter the puberty stage and need to already know about how their bodies and feelings may change.\n\nThis will also help them cope better with sexual feelings safely.\n\nTry selecting other options for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "That's right! \n\nFrom the age of 10, children start to enter the puberty stage and need to already know about how their bodies and feelings may change.\n\nThis will also help them cope better with sexual feelings safely.\n\nTry selecting other options for more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_13_nested_4",
+      "category_id": "explore",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_when/slide_4.svg",
+      "text_1_facilitator": "It’s good to start talking about body changes and relationships early—before age 9—by gently answering your child’s questions.\n\nYou don’t need to explain everything. Just give simple, honest answers that match their age and understanding.\n\nTry selecting other options for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "It’s good to start talking about body changes and relationships early—before age 9—by gently answering your child’s questions.\n\nYou don’t need to explain everything. Just give simple, honest answers that match their age and understanding.\n\nTry selecting other options for more tips!"
+        }
+      }
     },
     {
       "id": "explore_14",
       "category_id": "explore",
-      "quiz_1_feedback_1_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_1.svg",
-      "quiz_1_feedback_2_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_2.svg",
-      "quiz_1_feedback_3_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_3.svg",
-      "quiz_1_feedback_4_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_4.svg",
-      "quiz_1_feedback_5_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_5.svg",
       "text_2": "Many parents ask as well:",
       "_translations": {
         "text_2": {},
         "quiz_1_question": {},
         "quiz_1_option_1_text": {},
-        "quiz_1_feedback_1": {},
+        "quiz_1_feedback_1_id": {},
         "quiz_1_option_2_text": {},
-        "quiz_1_feedback_2": {},
+        "quiz_1_feedback_2_id": {},
         "quiz_1_option_3_text": {},
-        "quiz_1_feedback_3": {},
+        "quiz_1_feedback_3_id": {},
         "quiz_1_option_4_text": {},
-        "quiz_1_feedback_4": {},
+        "quiz_1_feedback_4_id": {},
         "quiz_1_option_5_text": {},
-        "quiz_1_feedback_5": {}
+        "quiz_1_feedback_5_id": {}
       },
       "_translatedFields": {
         "text_2": {
@@ -672,62 +765,134 @@
         "quiz_1_option_1_text": {
           "eng": "I determine what my teen can and cannot do"
         },
-        "quiz_1_feedback_1": {
-          "eng": "This may not work.\n\nWhen we try to control too much, teens may do the opposite of what we want.\n\nBut when we guide them and give them space to make choices, they often act more responsibly.\n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_1_id": {
+          "eng": "explore_14_nested_1"
         },
         "quiz_1_option_2_text": {
           "eng": "I keep information or bad influences away from them"
         },
-        "quiz_1_feedback_2": {
-          "eng": "This may not work. \n\nTeens get pressure and information from many places we can’t control.\n\nAs parents, we can guide and prepare them to know what is right or wrong—and help them feel confident to make good decisions.\n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_2_id": {
+          "eng": "explore_14_nested_2"
         },
         "quiz_1_option_3_text": {
           "eng": "I build a healthy trusting relationship with my teen"
         },
-        "quiz_1_feedback_3": {
-          "eng": "That’s right.\n\nWhen your teen feels trusted, they are more likely to trust you and come to you for advice or help.\n\nPraise and thank them when they share. Avoid judging, so they feel safe to talk to you again.\n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_3_id": {
+          "eng": "explore_14_nested_3"
         },
         "quiz_1_option_4_text": {
           "eng": "I discuss consequences and solutions with my teen"
         },
-        "quiz_1_feedback_4": {
-          "eng": "That’s right.\n\nGood decisions come from thinking through the consequences. Talk openly with your teen when there’s a problem. Listen to each other and find solutions together.\n\nEach challenge is an opportunity to teach your teen that actions have consequences—and you can handle them as a team.\n\nRemember to praise each other for working through tough situations together.\n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_4_id": {
+          "eng": "explore_14_nested_4"
         },
         "quiz_1_option_5_text": {
           "eng": "I emphasize that pressure is never okay"
         },
-        "quiz_1_feedback_5": {
-          "eng": "That’s right.\n\nTo stay safe, your teen needs to know the difference between respectful behaviours and relationships, and unhealthy ones..\n\nRespectful relationships feel caring, safe, and fair. Unhealthy ones involve pressure, discomfort, or feeling unsafe.\n\nNo one should be forced to do something they’re not okay with. You can learn more about this in the Staying Safe module.\n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_5_id": {
+          "eng": "explore_14_nested_5"
         }
       },
       "quiz_1_question": "How can I best keep my teen safe?",
       "quiz_1_option_1_text": "I determine what my teen can and cannot do",
-      "quiz_1_feedback_1": "This may not work.\n\nWhen we try to control too much, teens may do the opposite of what we want.\n\nBut when we guide them and give them space to make choices, they often act more responsibly.\n\nTry selecting each option for more tips!",
+      "quiz_1_feedback_1_id": "explore_14_nested_1",
       "quiz_1_option_2_text": "I keep information or bad influences away from them",
-      "quiz_1_feedback_2": "This may not work. \n\nTeens get pressure and information from many places we can’t control.\n\nAs parents, we can guide and prepare them to know what is right or wrong—and help them feel confident to make good decisions.\n\nTry selecting each option for more tips!",
+      "quiz_1_feedback_2_id": "explore_14_nested_2",
       "quiz_1_option_3_text": "I build a healthy trusting relationship with my teen",
-      "quiz_1_feedback_3": "That’s right.\n\nWhen your teen feels trusted, they are more likely to trust you and come to you for advice or help.\n\nPraise and thank them when they share. Avoid judging, so they feel safe to talk to you again.\n\nTry selecting each option for more tips!",
+      "quiz_1_feedback_3_id": "explore_14_nested_3",
       "quiz_1_option_4_text": "I discuss consequences and solutions with my teen",
-      "quiz_1_feedback_4": "That’s right.\n\nGood decisions come from thinking through the consequences. Talk openly with your teen when there’s a problem. Listen to each other and find solutions together.\n\nEach challenge is an opportunity to teach your teen that actions have consequences—and you can handle them as a team.\n\nRemember to praise each other for working through tough situations together.\n\nTry selecting each option for more tips!",
+      "quiz_1_feedback_4_id": "explore_14_nested_4",
       "quiz_1_option_5_text": "I emphasize that pressure is never okay",
-      "quiz_1_feedback_5": "That’s right.\n\nTo stay safe, your teen needs to know the difference between respectful behaviours and relationships, and unhealthy ones..\n\nRespectful relationships feel caring, safe, and fair. Unhealthy ones involve pressure, discomfort, or feeling unsafe.\n\nNo one should be forced to do something they’re not okay with. You can learn more about this in the Staying Safe module.\n\nTry selecting each option for more tips!"
+      "quiz_1_feedback_5_id": "explore_14_nested_5"
+    },
+    {
+      "id": "explore_14_nested_1",
+      "category_id": "practise",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_1.svg",
+      "text_1_facilitator": "This may not work.\n\nWhen we try to control too much, teens may do the opposite of what we want.\n\nBut when we guide them and give them space to make choices, they often act more responsibly.\n\nTry selecting each option for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "This may not work.\n\nWhen we try to control too much, teens may do the opposite of what we want.\n\nBut when we guide them and give them space to make choices, they often act more responsibly.\n\nTry selecting each option for more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_14_nested_2",
+      "category_id": "practise",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_2.svg",
+      "text_1_facilitator": "This may not work. \n\nTeens get pressure and information from many places we can’t control.\n\nAs parents, we can guide and prepare them to know what is right or wrong—and help them feel confident to make good decisions.\n\nTry selecting each option for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "This may not work. \n\nTeens get pressure and information from many places we can’t control.\n\nAs parents, we can guide and prepare them to know what is right or wrong—and help them feel confident to make good decisions.\n\nTry selecting each option for more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_14_nested_3",
+      "category_id": "practise",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_3.svg",
+      "text_1_facilitator": "That’s right.\n\nWhen your teen feels trusted, they are more likely to trust you and come to you for advice or help.\n\nPraise and thank them when they share. Avoid judging, so they feel safe to talk to you again.\n\nTry selecting each option for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "That’s right.\n\nWhen your teen feels trusted, they are more likely to trust you and come to you for advice or help.\n\nPraise and thank them when they share. Avoid judging, so they feel safe to talk to you again.\n\nTry selecting each option for more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_14_nested_4",
+      "category_id": "practise",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_4.svg",
+      "text_1_facilitator": "That’s right.\n\nGood decisions come from thinking through the consequences. Talk openly with your teen when there’s a problem. Listen to each other and find solutions together.\n\nEach challenge is an opportunity to teach your teen that actions have consequences—and you can handle them as a team.\n\nRemember to praise each other for working through tough situations together.\n\nTry selecting each option for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "That’s right.\n\nGood decisions come from thinking through the consequences. Talk openly with your teen when there’s a problem. Listen to each other and find solutions together.\n\nEach challenge is an opportunity to teach your teen that actions have consequences—and you can handle them as a team.\n\nRemember to praise each other for working through tough situations together.\n\nTry selecting each option for more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_14_nested_5",
+      "category_id": "practise",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_safe/slide_5.svg",
+      "text_1_facilitator": "That’s right.\n\nTo stay safe, your teen needs to know the difference between respectful behaviours and relationships, and unhealthy ones..\n\nRespectful relationships feel caring, safe, and fair. Unhealthy ones involve pressure, discomfort, or feeling unsafe.\n\nNo one should be forced to do something they’re not okay with. You can learn more about this in the Staying Safe module.\n\nTry selecting each option for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "That’s right.\n\nTo stay safe, your teen needs to know the difference between respectful behaviours and relationships, and unhealthy ones..\n\nRespectful relationships feel caring, safe, and fair. Unhealthy ones involve pressure, discomfort, or feeling unsafe.\n\nNo one should be forced to do something they’re not okay with. You can learn more about this in the Staying Safe module.\n\nTry selecting each option for more tips!"
+        }
+      }
     },
     {
       "id": "explore_15",
       "category_id": "explore",
-      "quiz_1_feedback_1_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_age/slide_1.svg",
-      "quiz_1_feedback_2_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_age/slide_2.svg",
-      "quiz_1_feedback_3_image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_age/slide_3.svg",
       "text_2": "Another common question among parents:",
       "_translations": {
         "text_2": {},
         "quiz_1_question": {},
         "quiz_1_option_1_text": {},
-        "quiz_1_feedback_1": {},
+        "quiz_1_feedback_1_id": {},
         "quiz_1_option_2_text": {},
-        "quiz_1_feedback_2": {},
+        "quiz_1_feedback_2_id": {},
         "quiz_1_option_3_text": {},
-        "quiz_1_feedback_3": {}
+        "quiz_1_feedback_3_id": {}
       },
       "_translatedFields": {
         "text_2": {
@@ -739,29 +904,74 @@
         "quiz_1_option_1_text": {
           "eng": "Keep any information about sex away from them"
         },
-        "quiz_1_feedback_1": {
-          "eng": "That’s not quite right.\n\nTeens hear many things about sex—from school, friends, or social media. Some of it is wrong.\n\nKnowing about sex doesn’t mean they are having sex. Good information helps them stay safe and understand why waiting to have sex can be a good choice.\n\nWithout this knowledge, they may face problems, like not knowing how pregnancy happens or the risks of sex.\n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_1_id": {
+          "eng": "explore_15_nested_1"
         },
         "quiz_1_option_2_text": {
           "eng": "Forbid them to have a boyfriend or girlfriend"
         },
-        "quiz_1_feedback_2": {
-          "eng": "That’s not quite right.\n\nYour teen might have a boyfriend or girlfriend and not tell you.\n\nIf you make them hide it, they may not come to you with questions or problems—and this can lead to risky situations.\n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_2_id": {
+          "eng": "explore_15_nested_2"
         },
         "quiz_1_option_3_text": {
           "eng": "Have an open discussion on how and why they could wait to have sex"
         },
-        "quiz_1_feedback_3": {
-          "eng": "That’s right.\n\nTeens are figuring out who they are. They look to friends and media for answers, and may feel pressure to do things they’re not ready for.\n\nTalk calmly with your teen about waiting to have sex until they feel ready, are in a safe relationship, and understand the consequences. Focus on guiding them calmly to make healthy choices.\n\nTry selecting each option for more tips!"
+        "quiz_1_feedback_3_id": {
+          "eng": "explore_15_nested_3"
         }
       },
       "quiz_1_question": "How can I help prevent my teen from having sex too young?",
       "quiz_1_option_1_text": "Keep any information about sex away from them",
-      "quiz_1_feedback_1": "That’s not quite right.\n\nTeens hear many things about sex—from school, friends, or social media. Some of it is wrong.\n\nKnowing about sex doesn’t mean they are having sex. Good information helps them stay safe and understand why waiting to have sex can be a good choice.\n\nWithout this knowledge, they may face problems, like not knowing how pregnancy happens or the risks of sex.\n\nTry selecting each option for more tips!",
+      "quiz_1_feedback_1_id": "explore_15_nested_1",
       "quiz_1_option_2_text": "Forbid them to have a boyfriend or girlfriend",
-      "quiz_1_feedback_2": "That’s not quite right.\n\nYour teen might have a boyfriend or girlfriend and not tell you.\n\nIf you make them hide it, they may not come to you with questions or problems—and this can lead to risky situations.\n\nTry selecting each option for more tips!",
+      "quiz_1_feedback_2_id": "explore_15_nested_2",
       "quiz_1_option_3_text": "Have an open discussion on how and why they could wait to have sex",
-      "quiz_1_feedback_3": "That’s right.\n\nTeens are figuring out who they are. They look to friends and media for answers, and may feel pressure to do things they’re not ready for.\n\nTalk calmly with your teen about waiting to have sex until they feel ready, are in a safe relationship, and understand the consequences. Focus on guiding them calmly to make healthy choices.\n\nTry selecting each option for more tips!"
+      "quiz_1_feedback_3_id": "explore_15_nested_3"
+    },
+    {
+      "id": "explore_15_nested_1",
+      "category_id": "explore",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_age/slide_1.svg",
+      "text_1_facilitator": "That’s not quite right.\n\nTeens hear many things about sex—from school, friends, or social media. Some of it is wrong.\n\nKnowing about sex doesn’t mean they are having sex. Good information helps them stay safe and understand why waiting to have sex can be a good choice.\n\nWithout this knowledge, they may face problems, like not knowing how pregnancy happens or the risks of sex.\n\nTry selecting each option for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "That’s not quite right.\n\nTeens hear many things about sex—from school, friends, or social media. Some of it is wrong.\n\nKnowing about sex doesn’t mean they are having sex. Good information helps them stay safe and understand why waiting to have sex can be a good choice.\n\nWithout this knowledge, they may face problems, like not knowing how pregnancy happens or the risks of sex.\n\nTry selecting each option for more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_15_nested_2",
+      "category_id": "explore",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_age/slide_2.svg",
+      "text_1_facilitator": "That’s not quite right.\n\nYour teen might have a boyfriend or girlfriend and not tell you.\n\nIf you make them hide it, they may not come to you with questions or problems—and this can lead to risky situations.\n\nTry selecting each option for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "That’s not quite right.\n\nYour teen might have a boyfriend or girlfriend and not tell you.\n\nIf you make them hide it, they may not come to you with questions or problems—and this can lead to risky situations.\n\nTry selecting each option for more tips!"
+        }
+      }
+    },
+    {
+      "id": "explore_15_nested_3",
+      "category_id": "explore",
+      "nested": true,
+      "image_asset": "/plh_images/workshops/w_srh/learn/sex_talk_age/slide_3.svg",
+      "text_1_facilitator": "That’s right.\n\nTeens are figuring out who they are. They look to friends and media for answers, and may feel pressure to do things they’re not ready for.\n\nTalk calmly with your teen about waiting to have sex until they feel ready, are in a safe relationship, and understand the consequences. Focus on guiding them calmly to make healthy choices.\n\nTry selecting each option for more tips!",
+      "_translations": {
+        "text_1_facilitator": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "That’s right.\n\nTeens are figuring out who they are. They look to friends and media for answers, and may feel pressure to do things they’re not ready for.\n\nTalk calmly with your teen about waiting to have sex until they feel ready, are in a safe relationship, and understand the consequences. Focus on guiding them calmly to make healthy choices.\n\nTry selecting each option for more tips!"
+        }
+      }
     },
     {
       "id": "tips_1",
@@ -884,5 +1094,10 @@
     }
   ],
   "_xlsxPath": "data/ZA modules .xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+  "_metadata": {
+    "nested": {
+      "type": "boolean"
+    }
+  }
 }

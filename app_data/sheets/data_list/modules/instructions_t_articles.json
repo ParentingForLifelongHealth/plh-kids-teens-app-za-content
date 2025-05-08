@@ -6,6 +6,8 @@
   "flow_subtype": "modules",
   "module": "instructions_t",
   "Final Review Complete?": "Done",
+  "Ready for translation? ": "ready",
+  "__EMPTY_1": "check Gogo ",
   "rows": [
     {
       "id": "intro_1",
@@ -62,20 +64,15 @@
       "id": "explore_1",
       "category_id": "explore",
       "image_asset": "/plh_images/workshops/w_instruct/guide_2/think/slide_1.svg",
-      "text_1_facilitator": "Let’s do a thought experiment!",
+      "text_1_facilitator": "Let’s do a thought experiment!\n\nDO NOT THINK ABOUT AN ELEPHANT.",
       "_translations": {
-        "text_1_facilitator": {},
-        "text_2": {}
+        "text_1_facilitator": {}
       },
       "_translatedFields": {
         "text_1_facilitator": {
-          "eng": "Let’s do a thought experiment!"
-        },
-        "text_2": {
-          "eng": "DO NOT THINK ABOUT AN ELEPHANT"
+          "eng": "Let’s do a thought experiment!\n\nDO NOT THINK ABOUT AN ELEPHANT."
         }
-      },
-      "text_2": "DO NOT THINK ABOUT AN ELEPHANT"
+      }
     },
     {
       "id": "explore_2",
@@ -100,20 +97,15 @@
       "id": "explore_3",
       "category_id": "explore",
       "image_asset": "/plh_images/workshops/w_instruct/guide_2/think/slide_1.svg",
-      "text_1_facilitator": "NOW, THINK ABOUT A CHEETAH!",
+      "text_1_facilitator": "NOW, THINK ABOUT A CHEETAH!\n\nWhat are you thinking about?",
       "_translations": {
-        "text_1_facilitator": {},
-        "text_2": {}
+        "text_1_facilitator": {}
       },
       "_translatedFields": {
         "text_1_facilitator": {
-          "eng": "NOW, THINK ABOUT A CHEETAH!"
-        },
-        "text_2": {
-          "eng": "What are you thinking about?"
+          "eng": "NOW, THINK ABOUT A CHEETAH!\n\nWhat are you thinking about?"
         }
-      },
-      "text_2": "What are you thinking about?"
+      }
     },
     {
       "id": "explore_4",
@@ -238,7 +230,7 @@
       "quiz_1_option_1_image_asset": "/images/faces/sad.svg",
       "quiz_1_option_2_image_asset": "/images/faces/confused.svg",
       "quiz_1_option_3_image_asset": "/images/faces/angry.svg",
-      "text_1_facilitator": "Let's look at what happened here with @data.characters.f2_daughter_19.name and her Gogo, @data.characters.f2_grandmother.name.",
+      "text_1_facilitator": "Let's look at what happened here with @data.characters.f2_daughter_19.name and her @data.characters.f2_grandmother.role_name, @data.characters.f2_grandmother.name.",
       "_translations": {
         "text_1_facilitator": {},
         "quiz_1_question": {},
@@ -251,7 +243,7 @@
       },
       "_translatedFields": {
         "text_1_facilitator": {
-          "eng": "Let's look at what happened here with @data.characters.f2_daughter_19.name and her Gogo, @data.characters.f2_grandmother.name."
+          "eng": "Let's look at what happened here with @data.characters.f2_daughter_19.name and her @data.characters.f2_grandmother.role_name, @data.characters.f2_grandmother.name."
         },
         "quiz_1_question": {
           "eng": "How do you think @data.characters.f2_daughter_19.name felt about the way @data.characters.f2_grandmother.name responded?"
@@ -313,13 +305,13 @@
       "category_id": "explore",
       "image_asset": "/images/comics/instruct_t_5.svg",
       "character_1_id": "f2_daughter_19",
-      "character_1_text": "Okay, Gogo!",
+      "character_1_text": "Okay, @data.characters.f2_grandmother.role_name!",
       "_translations": {
         "character_1_text": {}
       },
       "_translatedFields": {
         "character_1_text": {
-          "eng": "Okay, Gogo!"
+          "eng": "Okay, @data.characters.f2_grandmother.role_name!"
         }
       }
     },
@@ -373,7 +365,7 @@
       "quiz_1_option_1_image_asset": "/images/faces/happy.svg",
       "quiz_1_option_2_image_asset": "/images/faces/neutral.svg",
       "quiz_1_option_3_image_asset": "/images/faces/sad.svg",
-      "quiz_1_question": "How does @data.characters.f2_grandmother.name and her granddaughter ,@data.characters.f2_daughter_19.name, feel now?",
+      "quiz_1_question": "How does @data.characters.f2_grandmother.name and her granddaughter, @data.characters.f2_daughter_19.name, feel now?",
       "_translations": {
         "quiz_1_question": {},
         "quiz_1_option_1_text": {},
@@ -392,7 +384,7 @@
       },
       "_translatedFields": {
         "quiz_1_question": {
-          "eng": "How does @data.characters.f2_grandmother.name and her granddaughter ,@data.characters.f2_daughter_19.name, feel now?"
+          "eng": "How does @data.characters.f2_grandmother.name and her granddaughter, @data.characters.f2_daughter_19.name, feel now?"
         },
         "quiz_1_option_1_text": {
           "eng": "Happy"
@@ -416,7 +408,7 @@
           "eng": "Why do you think the situation went better for @data.characters.f2_grandmother.name this time?"
         },
         "quiz_2_option_1_text": {
-          "eng": "@data.characters.f2_daughter_19.name felt respected and loved by her Gogo"
+          "eng": "@data.characters.f2_daughter_19.name felt respected and loved by her @data.characters.f2_grandmother.role_name"
         },
         "quiz_2_feedback_1": {
           "eng": "Exactly. Staying calm and positive helps our teens feel respected and loved!"
@@ -441,7 +433,7 @@
       "quiz_1_option_3_text": "Sad",
       "quiz_1_feedback_3": "Try again! @data.characters.f2_daughter_19.name was able to practise and share her dance moves. She probably feels happy!",
       "quiz_2_question": "Why do you think the situation went better for @data.characters.f2_grandmother.name this time?",
-      "quiz_2_option_1_text": "@data.characters.f2_daughter_19.name felt respected and loved by her Gogo",
+      "quiz_2_option_1_text": "@data.characters.f2_daughter_19.name felt respected and loved by her @data.characters.f2_grandmother.role_name",
       "quiz_2_feedback_1": "Exactly. Staying calm and positive helps our teens feel respected and loved!",
       "quiz_2_option_2_text": "@data.characters.f2_grandmother.name was able to stay calm",
       "quiz_2_feedback_2": "Exactly. Staying calm and positive helps our teens feel respected and loved!",
@@ -598,13 +590,13 @@
           "eng": "More positive instructions means less frustrations. And that is something we all want, right?"
         },
         "media_title": {
-          "eng": "Hear how positive instructions helped @data.characters.media_female_3.name's teen"
+          "eng": "Hear how positive instructions helped @data.characters.media_daughter_3.name and her mother"
         },
         "media_transcript": {
           "eng": "At first, I did not care much that my mother was doing with @global.app_name. But then I started to see my mother change how she communicated with us.\n\nOne day, when I was going out with my friends, she said I must be home by 6pm. I was like “Hmmm okay,” because she normally did not give clear instructions on what she wanted – she would just say nothing and then shout at me for being late when I got home.\n\nWhen I got home around 5pm, my mother gave me a hug and said “Thank you for being on time.” It was strange, but I liked it.\n\nSince then, we have much clearer communication in the house."
         }
       },
-      "media_title": "Hear how positive instructions helped @data.characters.media_female_3.name's teen",
+      "media_title": "Hear how positive instructions helped @data.characters.media_daughter_3.name and her mother",
       "media_transcript": "At first, I did not care much that my mother was doing with @global.app_name. But then I started to see my mother change how she communicated with us.\n\nOne day, when I was going out with my friends, she said I must be home by 6pm. I was like “Hmmm okay,” because she normally did not give clear instructions on what she wanted – she would just say nothing and then shout at me for being late when I got home.\n\nWhen I got home around 5pm, my mother gave me a hug and said “Thank you for being on time.” It was strange, but I liked it.\n\nSince then, we have much clearer communication in the house."
     }
   ],
