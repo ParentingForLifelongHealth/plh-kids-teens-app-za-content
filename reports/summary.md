@@ -7,7 +7,7 @@
 | accordion_section | 6 |
 | apple_sign_in_button | 2 |
 | audio | 28 |
-| button | 72 |
+| button | 71 |
 | combo_box | 6 |
 | data_items | 139 |
 | debug_toggle | 1 |
@@ -30,11 +30,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2620 |
+| set_variable | 2650 |
 | simple_checkbox | 1 |
 | task_card | 5 |
 | task_progress_bar | 2 |
-| template | 923 |
+| template | 938 |
 | text | 108 |
 | text_area | 2 |
 | text_box | 4 |
@@ -53,16 +53,16 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 693 |
+| emit: completed | 708 |
 | emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 739 |
+| emit: uncompleted | 754 |
 | feedback | 13 |
 | go_to | 24 |
-| nav_stack | 204 |
+| nav_stack | 203 |
 | pop_up | 64 |
 | reset_app | 1 |
 | save_to_device | 2 |
@@ -694,7 +694,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/workshops/w_money/tools.svg | 32.5 | 2 |
 | plh_images/workshops/w_praise/read/slide_1.svg | 164.8 | 2 |
 | plh_images/workshops/w_praise/read/slide_2.svg | 44.8 | 2 |
-| plh_images/workshops/w_praise/tools.svg | 32.2 | 4 |
+| plh_images/workshops/w_praise/tools.svg | 32.2 | 2 |
 | plh_images/workshops/w_rules/read_1/slide_1.svg | 30.5 | 2 |
 | plh_images/workshops/w_rules/read_1/slide_3.svg | 32.1 | 2 |
 | plh_images/workshops/w_rules/read_1/slide_4.svg | 29.6 | 2 |
@@ -821,6 +821,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 103 |
-| template | generated | 760 |
+| template | generated | 775 |
 | template | legal_terms | 4 |
 </details>
