@@ -604,12 +604,93 @@
               }
             },
             {
+              "name": "hp_review_count",
+              "type": "set_variable",
+              "_nested_name": "dg_bottom.dg_wheel_and_hp.hp_review_count"
+            },
+            {
+              "type": "data_items",
+              "name": "hp_review_exists",
+              "value": "hp_check_in",
+              "_translations": {
+                "value": {}
+              },
+              "action_list": [
+                {
+                  "trigger": "data_changed",
+                  "action_id": "set_local",
+                  "args": [
+                    "hp_review_count",
+                    "@items.length"
+                  ],
+                  "_raw": "data_changed | set_local : hp_review_count : @items.length",
+                  "_cleaned": "data_changed | set_local : hp_review_count : @items.length"
+                }
+              ],
+              "parameter_list": {
+                "filter": "@item.id == @local.module_id"
+              },
+              "_nested_name": "dg_bottom.dg_wheel_and_hp.hp_review_exists",
+              "_dynamicFields": {
+                "parameter_list": {
+                  "filter": [
+                    {
+                      "fullExpression": "@item.id == @local.module_id",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    },
+                    {
+                      "fullExpression": "@item.id == @local.module_id",
+                      "matchedExpression": "@local.module_id",
+                      "type": "local",
+                      "fieldName": "module_id"
+                    }
+                  ]
+                }
+              },
+              "_dynamicDependencies": {
+                "@item.id": [
+                  "parameter_list.filter"
+                ],
+                "@local.module_id": [
+                  "parameter_list.filter"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "debug_hp_review_count",
+              "value": "hp_review_count: @local.hp_review_count",
+              "_translations": {
+                "value": {}
+              },
+              "exclude_from_translation": true,
+              "_nested_name": "dg_bottom.dg_wheel_and_hp.debug_hp_review_count",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "hp_review_count: @local.hp_review_count",
+                    "matchedExpression": "@local.hp_review_count",
+                    "type": "local",
+                    "fieldName": "hp_review_count"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.hp_review_count": [
+                  "value"
+                ]
+              }
+            },
+            {
               "type": "data_items",
               "name": "check_in",
               "value": "module_tasks",
               "parameter_list": {
                 "filter": "@item.id == @local.module_id"
               },
+              "condition": "@local.hp_review_count !== undefined",
               "exclude_from_translation": true,
               "rows": [
                 {
@@ -815,7 +896,15 @@
                       "fieldName": "module_id"
                     }
                   ]
-                }
+                },
+                "condition": [
+                  {
+                    "fullExpression": "@local.hp_review_count !== undefined",
+                    "matchedExpression": "@local.hp_review_count",
+                    "type": "local",
+                    "fieldName": "hp_review_count"
+                  }
+                ]
               },
               "_dynamicDependencies": {
                 "@item.id": [
@@ -823,6 +912,9 @@
                 ],
                 "@local.module_id": [
                   "parameter_list.filter"
+                ],
+                "@local.hp_review_count": [
+                  "condition"
                 ]
               }
             }
