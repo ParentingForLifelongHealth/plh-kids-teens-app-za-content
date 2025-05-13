@@ -1,12 +1,12 @@
 {
-  "flow_name": "article_consequences_intro_2",
+  "flow_name": "activity_tell_stories",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
     {
       "type": "template",
-      "name": "article",
-      "value": "article",
+      "name": "activity",
+      "value": "activity",
       "action_list": [
         {
           "trigger": "completed",
@@ -29,26 +29,16 @@
       ],
       "rows": [
         {
-          "name": "article_id",
-          "value": "intro_2",
+          "name": "activity_id",
+          "value": "tell_stories",
           "_translations": {
             "value": {}
           },
           "type": "set_variable",
-          "_nested_name": "article.article_id"
-        },
-        {
-          "name": "module_id",
-          "value": "consequences",
-          "_translations": {
-            "value": {}
-          },
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "article.module_id"
+          "_nested_name": "activity.activity_id"
         }
       ],
-      "_nested_name": "article"
+      "_nested_name": "activity"
     }
   ]
 }
