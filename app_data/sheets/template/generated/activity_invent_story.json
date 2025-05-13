@@ -1,12 +1,12 @@
 {
-  "flow_name": "article_childdevelopment_practise",
+  "flow_name": "activity_invent_story",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
     {
       "type": "template",
-      "name": "article",
-      "value": "article",
+      "name": "activity",
+      "value": "activity",
       "action_list": [
         {
           "trigger": "completed",
@@ -29,26 +29,16 @@
       ],
       "rows": [
         {
-          "name": "article_id",
-          "value": "practise",
+          "name": "activity_id",
+          "value": "invent_story",
           "_translations": {
             "value": {}
           },
           "type": "set_variable",
-          "_nested_name": "article.article_id"
-        },
-        {
-          "name": "module_id",
-          "value": "childdevelopment",
-          "_translations": {
-            "value": {}
-          },
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "article.module_id"
+          "_nested_name": "activity.activity_id"
         }
       ],
-      "_nested_name": "article"
+      "_nested_name": "activity"
     }
   ]
 }
