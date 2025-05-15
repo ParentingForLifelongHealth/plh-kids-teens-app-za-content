@@ -297,7 +297,7 @@
           "type": "display_group",
           "name": "dg_wheel_and_hp",
           "style_list": [
-            "justify-content: space-between"
+            "justify-content: space-evenly"
           ],
           "exclude_from_translation": true,
           "rows": [
@@ -379,6 +379,9 @@
                 "variant": "wheel",
                 "wheel_title": "@local.wheel_title"
               },
+              "style_list": [
+                "max-width: max-content"
+              ],
               "exclude_from_translation": true,
               "_nested_name": "dg_bottom.dg_wheel_and_hp.task_progress_bar",
               "_dynamicFields": {

@@ -7,12 +7,12 @@
 | accordion_section | 6 |
 | apple_sign_in_button | 2 |
 | audio | 28 |
-| button | 72 |
+| button | 71 |
 | combo_box | 6 |
-| data_items | 142 |
+| data_items | 140 |
 | debug_toggle | 1 |
 | display_grid | 2 |
-| display_group | 82 |
+| display_group | 78 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 13 |
@@ -20,9 +20,9 @@
 | lottie_animation | 27 |
 | nested_properties | 156 |
 | number_selector | 1 |
-| plh_activity_check_in | 2 |
+| plh_activity_check_in | 1 |
 | plh_bottom_nav | 1 |
-| plh_module_details_header | 2 |
+| plh_module_details_header | 1 |
 | plh_module_list_item | 3 |
 | plh_progress_path | 1 |
 | qr_code | 1 |
@@ -30,18 +30,18 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2691 |
+| set_variable | 2672 |
 | simple_checkbox | 1 |
 | task_card | 5 |
-| task_progress_bar | 3 |
-| template | 960 |
-| text | 110 |
+| task_progress_bar | 2 |
+| template | 961 |
+| text | 109 |
 | text_area | 2 |
 | text_box | 4 |
 | text_bubble | 2 |
 | title | 39 |
 | toggle_bar | 5 |
-| update_action_list | 3 |
+| update_action_list | 2 |
 | video | 28 |
 | youtube | 4 |
 </details>
@@ -53,16 +53,16 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 729 |
-| emit: force_reload | 4 |
+| emit: completed | 731 |
+| emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 775 |
+| emit: uncompleted | 777 |
 | feedback | 13 |
 | go_to | 24 |
-| nav_stack | 205 |
+| nav_stack | 203 |
 | pop_up | 64 |
 | reset_app | 1 |
 | save_to_device | 2 |
@@ -347,7 +347,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | path | size_kb | count |
 | --- | --- | --- |
 | audio/caregiver_test_w_instruct.mp3 | 281.3 | 2 |
-| audio/relax/relax_1.mp3 | 265.1 | 4 |
+| audio/relax/relax_1.mp3 | 265.1 | 3 |
 | audio/relax/relax_10.mp3 | 404.9 | 2 |
 | audio/relax/relax_11.mp3 | 445.6 | 2 |
 | audio/relax/relax_12.mp3 | 539.7 | 2 |
@@ -366,7 +366,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/relax/relax_24.mp3 | 121.3 | 1 |
 | audio/relax/relax_3.mp3 | 235.1 | 4 |
 | audio/relax/relax_4.mp3 | 514.5 | 3 |
-| audio/relax/relax_5.mp3 | 195.7 | 2 |
+| audio/relax/relax_5.mp3 | 195.7 | 3 |
 | audio/relax/relax_6.mp3 | 280.7 | 1 |
 | audio/relax/relax_7.mp3 | 285.3 | 2 |
 | audio/relax/relax_8.mp3 | 302 | 2 |
@@ -439,7 +439,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/backgrounds/kites.svg | 37.3 | 1 |
 | images/backgrounds/library_top_right.png | 1358.6 | 1 |
 | images/backgrounds/map_view_bg.jpg | 166.3 | 1 |
-| images/backgrounds/progress_arc.png | 255.4 | 2 |
+| images/backgrounds/progress_arc.png | 255.4 | 1 |
 | images/childdevelopment.svg | 20.5 | 2 |
 | images/comics/consequences_yc_1.svg | 118.4 | 2 |
 | images/comics/consequences_yc_2.svg | 151.3 | 2 |
@@ -448,7 +448,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/consequences_yc_5.svg | 65.3 | 2 |
 | images/comics/feelings_yc_1.svg | 107.3 | 2 |
 | images/comics/feelings_yc_2.svg | 176.3 | 2 |
-| images/comics/feelings_yc_3.svg | 183.7 | 2 |
+| images/comics/feelings_yc_3.svg | 183.7 | 4 |
 | images/comics/feelings_yc_4.svg | 159.5 | 2 |
 | images/comics/instruct_t_1.svg | 47.3 | 2 |
 | images/comics/instruct_t_2.svg | 37.4 | 2 |
@@ -481,7 +481,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/praise_yc_1.svg | 99.3 | 2 |
 | images/comics/praise_yc_2.svg | 101 | 2 |
 | images/comics/praise_yc_3.svg | 97 | 2 |
-| images/comics/praise_yc_4.svg | 105.5 | 2 |
+| images/comics/praise_yc_4.svg | 105.5 | 4 |
 | images/comics/problem_solving_yc_1.svg | 42.4 | 2 |
 | images/comics/problem_solving_yc_2.svg | 48.6 | 2 |
 | images/comics/problem_solving_yc_3.svg | 47.3 | 2 |
@@ -543,10 +543,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/lightbulb_blue.png | 3.6 | 4 |
 | images/icons/local_library.svg | 1.6 | 1 |
 | images/icons/local_library_active.svg | 1.6 | 1 |
-| images/icons/locked.png | 0.7 | 7 |
+| images/icons/locked.png | 0.7 | 6 |
 | images/icons/magnify_glass.svg | 1.9 | 1 |
 | images/icons/magnifying_glass.svg | 0.9 | 26 |
-| images/icons/notification_bell.png | 0.9 | 2 |
+| images/icons/notification_bell.png | 0.9 | 1 |
 | images/icons/parent_child.svg | 2 | 1 |
 | images/icons/parent_child_heart.svg | 3 | 26 |
 | images/icons/pause.svg | 0.7 | 26 |
@@ -582,8 +582,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/praise.svg | 11.5 | 2 |
 | images/problemsolving.svg | 19.9 | 2 |
 | images/rulesroutines.jpg | 102.2 | 2 |
-| images/shell_closed.png | 452.4 | 2 |
-| images/shell_open.png | 1031.9 | 2 |
+| images/shell_closed.png | 452.4 | 1 |
+| images/shell_open.png | 1031.9 | 1 |
 | images/talk_feelings_challenges.svg | 19.6 | 2 |
 | lottie/bulging_circles.json | 11.8 | 27 |
 | lottie/gift_box.json | 674.5 | 1 |
@@ -814,7 +814,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | generator |  | 40 |
 | global |  | 5 |
 | global | legal_terms | 1 |
-| template |  | 104 |
-| template | generated | 796 |
+| template |  | 103 |
+| template | generated | 798 |
 | template | legal_terms | 4 |
 </details>
