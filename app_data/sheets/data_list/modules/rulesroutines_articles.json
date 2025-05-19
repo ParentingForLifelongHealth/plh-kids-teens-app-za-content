@@ -5,7 +5,6 @@
   "status": "released",
   "flow_subtype": "modules",
   "module": "rulesroutines",
-  "Ready for review?": "ready",
   "rows": [
     {
       "id": "intro_1",
@@ -50,13 +49,13 @@
           "eng": "Let’s look at an example together. @data.characters.f1_daughter_6.name is spending too much time watching TV before her homework is finished. @data.characters.f1_mother.name helps her create a family rule about this:"
         },
         "character_1_text": {
-          "eng": "It is important that you get your homework done so you can do well in school. Let’s make a rule about watching TV so that you have enough time for homework, too.”"
+          "eng": "It is important that you get your homework done so you can do well in school. Let’s make a rule about watching TV so that you have enough time for homework, too."
         },
         "character_2_text": {
           "eng": "Okay, @data.characters.f1_mother.role_name."
         }
       },
-      "character_1_text": "It is important that you get your homework done so you can do well in school. Let’s make a rule about watching TV so that you have enough time for homework, too.”",
+      "character_1_text": "It is important that you get your homework done so you can do well in school. Let’s make a rule about watching TV so that you have enough time for homework, too.",
       "character_2_text": "Okay, @data.characters.f1_mother.role_name."
     },
     {
@@ -204,6 +203,25 @@
       "quiz_2_feedback_1": "Yes, by doing this @data.characters.f1_mother.name makes it more likely that @data.characters.f1_daughter_6.name will keep following the rule about TV watching.",
       "quiz_2_option_2_text": "She gives her a simple reward",
       "quiz_2_feedback_2": "Yes, by doing this @data.characters.f1_mother.name makes it more likely that @data.characters.f1_daughter_6.name will keep following the rules about TV watching."
+    },
+    {
+      "id": "explore_5b",
+      "category_id": "explore",
+      "image_asset": "images/comics/routines_yc_3.svg",
+      "text_1_facilitator": "@data.characters.f1_mother.name knows how to make rules work for her!",
+      "_translations": {
+        "text_1_facilitator": {},
+        "text_2": {}
+      },
+      "_translatedFields": {
+        "text_1_facilitator": {
+          "eng": "@data.characters.f1_mother.name knows how to make rules work for her!"
+        },
+        "text_2": {
+          "eng": "Praise and a simple reward will make it more likely that @data.characters.f1_daughter_6.name will keep following the household rules."
+        }
+      },
+      "text_2": "Praise and a simple reward will make it more likely that @data.characters.f1_daughter_6.name will keep following the household rules."
     },
     {
       "id": "explore_6",
@@ -505,7 +523,7 @@
     {
       "id": "practise",
       "category_id": "practise",
-      "text_1_facilitator": "Now that you have learned some tips, let’s come up with ideas for rules and routines in your home.",
+      "text_1_facilitator": "Now that you know how, let’s come up with ideas for rules and routines in your home.",
       "_translations": {
         "text_1_facilitator": {},
         "text_2": {},
@@ -534,7 +552,7 @@
       },
       "_translatedFields": {
         "text_1_facilitator": {
-          "eng": "Now that you have learned some tips, let’s come up with ideas for rules and routines in your home."
+          "eng": "Now that you know how, let’s come up with ideas for rules and routines in your home."
         },
         "text_2": {
           "eng": "Here are some of the rules and routines that other families created."
@@ -635,7 +653,6 @@
       "category_id": "home_activity",
       "media_type": "audio",
       "media_asset": "/audio/yc/rules_audio_2.mp3",
-      "quiz_1_option_3_image_asset": "No",
       "text_1_facilitator": "Your home activity is to set *one* rule and *one* routine with your child this week. \n\nRemember to be realistic and consistent, and praise your child for following each rule or routine!",
       "_translations": {
         "text_1_facilitator": {},
@@ -646,7 +663,8 @@
         "quiz_1_feedback_1": {},
         "quiz_1_option_2_text": {},
         "quiz_1_feedback_2": {},
-        "quiz_1_option_4_text": {}
+        "quiz_1_option_3_text": {},
+        "quiz_1_feedback_3": {}
       },
       "_translatedFields": {
         "text_1_facilitator": {
@@ -673,7 +691,10 @@
         "quiz_1_feedback_2": {
           "eng": "You can do it! Setting rules and routines is hard in the beginning, but it becomes easier when you find a way that works for you."
         },
-        "quiz_1_option_4_text": {
+        "quiz_1_option_3_text": {
+          "eng": "No"
+        },
+        "quiz_1_feedback_3": {
           "eng": "That's okay. Setting rules is hard and including children can feel uncomfortable, especially if you’re not used to it. Keep trying until you find a way that works for you and your children. I promise, it will be worth it!"
         }
       },
@@ -684,7 +705,8 @@
       "quiz_1_feedback_1": "That's great! I hope it makes your home feel easier to manage for everyone.",
       "quiz_1_option_2_text": "I think so",
       "quiz_1_feedback_2": "You can do it! Setting rules and routines is hard in the beginning, but it becomes easier when you find a way that works for you.",
-      "quiz_1_option_4_text": "That's okay. Setting rules is hard and including children can feel uncomfortable, especially if you’re not used to it. Keep trying until you find a way that works for you and your children. I promise, it will be worth it!"
+      "quiz_1_option_3_text": "No",
+      "quiz_1_feedback_3": "That's okay. Setting rules is hard and including children can feel uncomfortable, especially if you’re not used to it. Keep trying until you find a way that works for you and your children. I promise, it will be worth it!"
     }
   ],
   "_xlsxPath": "data/ZA modules .xlsx",

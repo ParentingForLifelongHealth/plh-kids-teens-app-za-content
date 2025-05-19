@@ -1,12 +1,12 @@
 {
-  "flow_name": "module_childdevelopment",
+  "flow_name": "article_developmentplay_explore_2",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
     {
       "type": "template",
-      "name": "module",
-      "value": "module",
+      "name": "article",
+      "value": "article",
       "action_list": [
         {
           "trigger": "completed",
@@ -29,16 +29,26 @@
       ],
       "rows": [
         {
-          "name": "module_id",
-          "value": "childdevelopment",
+          "name": "article_id",
+          "value": "explore_2",
           "_translations": {
             "value": {}
           },
           "type": "set_variable",
-          "_nested_name": "module.module_id"
+          "_nested_name": "article.article_id"
+        },
+        {
+          "name": "module_id",
+          "value": "developmentplay",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "article.module_id"
         }
       ],
-      "_nested_name": "module"
+      "_nested_name": "article"
     }
   ]
 }

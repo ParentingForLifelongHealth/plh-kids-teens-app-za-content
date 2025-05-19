@@ -1,5 +1,5 @@
 {
-  "flow_name": "prep_childdevelopment_articles",
+  "flow_name": "prep_developmentplay_articles",
   "flow_subtype": "generated",
   "flow_type": "data_pipe",
   "rows": [
@@ -15,7 +15,7 @@
       "args_list": [
         "category_id: relax"
       ],
-      "output_target": "childdevelopment_relax | local_only;"
+      "output_target": "developmentplay_relax | local_only;"
     },
     {
       "operation": "filter",
@@ -29,14 +29,14 @@
       "args_list": [
         "category_id: check_in"
       ],
-      "output_target": "childdevelopment_check_in | local_only;"
+      "output_target": "developmentplay_check_in | local_only;"
     },
     {
       "operation": "concat",
       "args_list": [
-        "childdevelopment_relax",
-        "childdevelopment_check_in",
-        "childdevelopment_articles"
+        "developmentplay_relax",
+        "developmentplay_check_in",
+        "developmentplay_articles"
       ],
       "input_source": false
     },
@@ -45,12 +45,12 @@
       "args_list": [
         "completed: FALSE"
       ],
-      "output_target": "childdevelopment_article_tasks"
+      "output_target": "developmentplay_article_tasks"
     }
   ],
   "_output_flows": [
     {
-      "flow_name": "childdevelopment_article_tasks",
+      "flow_name": "developmentplay_article_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
     }
