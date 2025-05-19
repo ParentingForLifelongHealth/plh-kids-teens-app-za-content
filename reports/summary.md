@@ -30,11 +30,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2672 |
+| set_variable | 2674 |
 | simple_checkbox | 1 |
 | task_card | 5 |
 | task_progress_bar | 2 |
-| template | 961 |
+| template | 962 |
 | text | 109 |
 | text_area | 2 |
 | text_box | 4 |
@@ -53,13 +53,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 731 |
+| emit: completed | 732 |
 | emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 777 |
+| emit: uncompleted | 778 |
 | feedback | 13 |
 | go_to | 24 |
 | nav_stack | 203 |
@@ -328,8 +328,6 @@ Assets that have references within sheets but do not appear in app-data
 | --- | --- |
 | audio/care_audio_2.mp3 | 2 |
 | images/backgrounds/library_bottom_right.png | 1 |
-| images/faces/flushed_face.svg | 2 |
-| images/faces/smiling.svg | 2 |
 | images/icons/docs.svg | 1 |
 | images/icons/download.svg | 1 |
 | images/icons/download_white.svg | 1 |
@@ -489,9 +487,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/routines_yc_1.svg | 56.3 | 2 |
 | images/comics/routines_yc_10.svg | 112.4 | 2 |
 | images/comics/routines_yc_2.svg | 62.8 | 2 |
-| images/comics/routines_yc_3.svg | 61.1 | 2 |
+| images/comics/routines_yc_3.svg | 61.1 | 4 |
 | images/comics/routines_yc_4.svg | 74.8 | 2 |
-| images/comics/routines_yc_5.svg | 50.3 | 2 |
+| images/comics/routines_yc_5.svg | 50.3 | 4 |
 | images/comics/routines_yc_6.svg | 47.7 | 2 |
 | images/comics/routines_yc_7.svg | 141.3 | 2 |
 | images/comics/routines_yc_8.svg | 97.4 | 2 |
@@ -503,11 +501,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/faces/angry.svg | 1.1 | 8 |
 | images/faces/confused.svg | 1.8 | 8 |
 | images/faces/happier.svg | 0.6 | 2 |
-| images/faces/happiest.svg | 1.3 | 8 |
-| images/faces/happy.svg | 0.6 | 38 |
+| images/faces/happiest.svg | 1.3 | 10 |
+| images/faces/happy.svg | 0.6 | 40 |
 | images/faces/neutral.svg | 0.5 | 36 |
 | images/faces/sad.svg | 0.6 | 39 |
-| images/faces/sadder.svg | 1.1 | 2 |
+| images/faces/sadder.svg | 1.1 | 4 |
 | images/faces/scared.svg | 2.1 | 4 |
 | images/faces/tired.svg | 2.4 | 4 |
 | images/flags/gb.svg | 0.5 | 2 |
@@ -522,7 +520,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/eye_blue.png | 4.2 | 14 |
 | images/icons/faces/angry.svg | 4.9 | 2 |
 | images/icons/faces/confused.svg | 4.9 | 4 |
-| images/icons/faces/happy.svg | 53.5 | 4 |
+| images/icons/faces/happy.svg | 53.5 | 2 |
 | images/icons/faces/happy_face_new.svg | 1.4 | 41 |
 | images/icons/faces/ok_face_new.svg | 0.5 | 41 |
 | images/icons/faces/sad.svg | 48.2 | 3 |
@@ -540,7 +538,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/hourglass_blue.png | 4.3 | 2 |
 | images/icons/in_progress.svg | 1.1 | 2 |
 | images/icons/key.svg | 5.5 | 1 |
-| images/icons/lightbulb_blue.png | 3.6 | 4 |
+| images/icons/lightbulb_blue.png | 3.6 | 6 |
 | images/icons/local_library.svg | 1.6 | 1 |
 | images/icons/local_library_active.svg | 1.6 | 1 |
 | images/icons/locked.png | 0.7 | 6 |
@@ -558,11 +556,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/repeat_blue.png | 5.4 | 2 |
 | images/icons/settings.svg | 2.4 | 1 |
 | images/icons/settings_active.svg | 2.4 | 1 |
-| images/icons/single_speech_blue.png | 3.3 | 16 |
+| images/icons/single_speech_blue.png | 3.3 | 18 |
 | images/icons/smile_eyes_down.svg | 0.9 | 30 |
 | images/icons/smile_eyes_up.svg | 1 | 52 |
-| images/icons/speech_bubble_blue.png | 4.2 | 16 |
-| images/icons/star_filled_blue.png | 5.1 | 34 |
+| images/icons/speech_bubble_blue.png | 4.2 | 18 |
+| images/icons/star_filled_blue.png | 5.1 | 36 |
 | images/icons/star_outline_blue.svg | 1 | 27 |
 | images/icons/tablet_blue.png | 2.8 | 2 |
 | images/icons/thought_bubble.svg | 2.1 | 26 |
@@ -815,6 +813,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 103 |
-| template | generated | 798 |
+| template | generated | 799 |
 | template | legal_terms | 4 |
 </details>

@@ -1,21 +1,12 @@
 {
+  "flow_name": "article_developmentplay_explore_4",
+  "flow_subtype": "generated",
   "flow_type": "template",
-  "flow_name": "module_landing_childdevelopment",
-  "status": "released",
-  "parameter_list": {
-    "app_config": {
-      "LAYOUT": {
-        "page_padding": "0 0"
-      }
-    }
-  },
-  "comment": "childdevelopment",
-  "comment_2": 31,
   "rows": [
     {
       "type": "template",
-      "name": "module_landing",
-      "value": "module_landing",
+      "name": "article",
+      "value": "article",
       "action_list": [
         {
           "trigger": "completed",
@@ -38,19 +29,26 @@
       ],
       "rows": [
         {
+          "name": "article_id",
+          "value": "explore_4",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "article.article_id"
+        },
+        {
           "name": "module_id",
-          "value": "childdevelopment",
+          "value": "developmentplay",
           "_translations": {
             "value": {}
           },
           "exclude_from_translation": true,
           "type": "set_variable",
-          "_nested_name": "module_landing.module_id"
+          "_nested_name": "article.module_id"
         }
       ],
-      "_nested_name": "module_landing"
+      "_nested_name": "article"
     }
-  ],
-  "_xlsxPath": "templates/ZA module_landing templates.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+  ]
 }

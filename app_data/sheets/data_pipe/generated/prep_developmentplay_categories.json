@@ -1,17 +1,17 @@
 {
-  "flow_name": "prep_childdevelopment_categories",
+  "flow_name": "prep_developmentplay_categories",
   "flow_subtype": "generated",
   "flow_type": "data_pipe",
   "rows": [
     {
       "operation": "append_columns",
       "input_source": "common_categories",
-      "output_target": "childdevelopment_category_tasks"
+      "output_target": "developmentplay_category_tasks"
     }
   ],
   "_output_flows": [
     {
-      "flow_name": "childdevelopment_category_tasks",
+      "flow_name": "developmentplay_category_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
     }

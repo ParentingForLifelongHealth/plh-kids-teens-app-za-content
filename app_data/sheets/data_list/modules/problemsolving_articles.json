@@ -35,20 +35,64 @@
     {
       "id": "explore_1",
       "category_id": "explore",
+      "section_1_icon_asset": "images/icons/speech_bubble_blue.png",
+      "section_2_icon_asset": "images/icons/lightbulb_blue.png",
+      "section_3_icon_asset": "images/icons/star_filled_blue.png",
+      "section_4_icon_asset": "images/icons/single_speech_blue.png",
       "text_1_facilitator": "@data.characters.f3_mother.name is concerned that @data.characters.f3_daughter_7.name is sleeping late every day and waking up tired because she starts her homework late. \n\nNext, we will look at how they try to solve the problem together.",
       "_translations": {
         "text_1_facilitator": {},
-        "text_2": {}
+        "text_2": {},
+        "section_1_title": {},
+        "section_1_text": {},
+        "section_2_title": {},
+        "section_2_text": {},
+        "section_3_title": {},
+        "section_3_text": {},
+        "section_4_title": {},
+        "section_4_text": {}
       },
       "_translatedFields": {
         "text_1_facilitator": {
           "eng": "@data.characters.f3_mother.name is concerned that @data.characters.f3_daughter_7.name is sleeping late every day and waking up tired because she starts her homework late. \n\nNext, we will look at how they try to solve the problem together."
         },
         "text_2": {
-          "eng": "**Hint - they used four steps to problem solve:**\n\n1) Know it: Talk to your child about what the problem is. \n2) Solve it: Think of possible solutions together.\n3) Try it: Choose one solution to try.\n4) Reflect: See if it worked. If not, try another solution."
+          "eng": "**Hint - they used four steps to problem solve:**"
+        },
+        "section_1_title": {
+          "eng": "KNOW IT"
+        },
+        "section_1_text": {
+          "eng": "Talk to your child about what the problem is."
+        },
+        "section_2_title": {
+          "eng": "SOLVE IT"
+        },
+        "section_2_text": {
+          "eng": "Think of possible solutions together."
+        },
+        "section_3_title": {
+          "eng": "TRY IT"
+        },
+        "section_3_text": {
+          "eng": "Choose one solution to try."
+        },
+        "section_4_title": {
+          "eng": "REFLECT"
+        },
+        "section_4_text": {
+          "eng": "See if it worked. If not, try another solution."
         }
       },
-      "text_2": "**Hint - they used four steps to problem solve:**\n\n1) Know it: Talk to your child about what the problem is. \n2) Solve it: Think of possible solutions together.\n3) Try it: Choose one solution to try.\n4) Reflect: See if it worked. If not, try another solution."
+      "text_2": "**Hint - they used four steps to problem solve:**",
+      "section_1_title": "KNOW IT",
+      "section_1_text": "Talk to your child about what the problem is.",
+      "section_2_title": "SOLVE IT",
+      "section_2_text": "Think of possible solutions together.",
+      "section_3_title": "TRY IT",
+      "section_3_text": "Choose one solution to try.",
+      "section_4_title": "REFLECT",
+      "section_4_text": "See if it worked. If not, try another solution."
     },
     {
       "id": "explore_2",
@@ -113,7 +157,7 @@
           "eng": "Maybe I can start earlier?"
         },
         "character_3_text": {
-          "eng": "Shall we make a rule that you start your homework half an hour after you get home from school? That way, you can finish it and have some time to eat and relax before bed, too! I am happy to help you remember when to start"
+          "eng": "Shall we make a rule that you start your homework half an hour after you get home from school? That way, you can finish it and have some time to eat and relax before bed, too! I am happy to help you remember when to start."
         },
         "character_4_text": {
           "eng": "Okay, @data.characters.f3_mother.role_name."
@@ -122,7 +166,7 @@
       "text_2": "",
       "character_1_text": "How can we make sure you get all your work done and still get to bed on time so that you get enough sleep?",
       "character_2_text": "Maybe I can start earlier?",
-      "character_3_text": "Shall we make a rule that you start your homework half an hour after you get home from school? That way, you can finish it and have some time to eat and relax before bed, too! I am happy to help you remember when to start",
+      "character_3_text": "Shall we make a rule that you start your homework half an hour after you get home from school? That way, you can finish it and have some time to eat and relax before bed, too! I am happy to help you remember when to start.",
       "character_4_text": "Okay, @data.characters.f3_mother.role_name."
     },
     {
@@ -151,16 +195,16 @@
           "eng": "@data.characters.f3_daughter_7.name, have you started your homework yet?"
         },
         "character_2_text": {
-          "eng": "I'll start now, @data.characters.f3_mother.name! But can you help me with this one problem? I was having trouble with it yesterday."
+          "eng": "I'll start now, @data.characters.f3_mother.role_name.! But can you help me with this one problem? I was having trouble with it yesterday."
         },
         "character_3_text": {
-          "eng": "“Of course, my dear.”"
+          "eng": "Of course, my dear."
         }
       },
       "text_2": "*The next day.*",
       "character_1_text": "@data.characters.f3_daughter_7.name, have you started your homework yet?",
-      "character_2_text": "I'll start now, @data.characters.f3_mother.name! But can you help me with this one problem? I was having trouble with it yesterday.",
-      "character_3_text": "“Of course, my dear.”"
+      "character_2_text": "I'll start now, @data.characters.f3_mother.role_name.! But can you help me with this one problem? I was having trouble with it yesterday.",
+      "character_3_text": "Of course, my dear."
     },
     {
       "id": "explore_5",
@@ -449,7 +493,7 @@
           "eng": "Your home activity is to identify a problem your child may have and practise the four steps of problem-solving together: \nKnow It, Solve It, Try It, Reflect. \n\nKnowing how to solve problems is something they can use for the rest of their lives!"
         },
         "media_title": {
-          "eng": "Hear how @data.charachters.media_female_5.name and her daughter found solutions together, using the four steps of problem solving"
+          "eng": "Hear how @data.characters.media_female_5.name and her daughter found solutions together, using the four steps of problem solving"
         },
         "media_transcript": {
           "eng": "I did not have a good relationship with my daughter. I was always shouting at her, and she was refusing to go to school. \n\nOnly when I started spending One-on-One Time with her, I realised that she did not want to go to school because she was being bullied at school. We sat down and used the four steps of problem solving. We identified the problem, and figured out solutions together: “What can I do as a parent so you can attend school and feel safe?”\n\nWe agreed I would go talk to the teacher to find a way forward. We really found the solutions together, and we are closer now."
@@ -476,7 +520,7 @@
           "eng": "That's okay. Try to work on a simple problem with your child, before you tackle a big one together."
         }
       },
-      "media_title": "Hear how @data.charachters.media_female_5.name and her daughter found solutions together, using the four steps of problem solving",
+      "media_title": "Hear how @data.characters.media_female_5.name and her daughter found solutions together, using the four steps of problem solving",
       "media_transcript": "I did not have a good relationship with my daughter. I was always shouting at her, and she was refusing to go to school. \n\nOnly when I started spending One-on-One Time with her, I realised that she did not want to go to school because she was being bullied at school. We sat down and used the four steps of problem solving. We identified the problem, and figured out solutions together: “What can I do as a parent so you can attend school and feel safe?”\n\nWe agreed I would go talk to the teacher to find a way forward. We really found the solutions together, and we are closer now.",
       "quiz_1_question": "Can you try to solve a problem with your child?",
       "quiz_1_option_1_text": "Yes",

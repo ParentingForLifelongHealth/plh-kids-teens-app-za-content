@@ -1,12 +1,12 @@
 {
-  "flow_name": "module_overview_childdevelopment",
+  "flow_name": "module_developmentplay",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
     {
       "type": "template",
-      "name": "module_overview",
-      "value": "module_overview",
+      "name": "module",
+      "value": "module",
       "action_list": [
         {
           "trigger": "completed",
@@ -30,15 +30,15 @@
       "rows": [
         {
           "name": "module_id",
-          "value": "childdevelopment",
+          "value": "developmentplay",
           "_translations": {
             "value": {}
           },
           "type": "set_variable",
-          "_nested_name": "module_overview.module_id"
+          "_nested_name": "module.module_id"
         }
       ],
-      "_nested_name": "module_overview"
+      "_nested_name": "module"
     }
   ]
 }
