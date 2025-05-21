@@ -292,6 +292,9 @@
       "flow_subtype": "generated",
       "flow_type": "data_list",
       "_metadata": {
+        "nested": {
+          "type": "boolean"
+        },
         "completed": {
           "type": "boolean"
         }
@@ -612,8 +615,16 @@
       "flow_name": "praise_articles",
       "data_list_name": "praise_articles",
       "flow_subtype": "modules",
-      "_xlsxPath": "data/OLD_ZA modules.xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+      "module": "praise",
+      "Updated with feedback? ": "uploaded",
+      "Review done by CWBSA?": "done-ish",
+      "_xlsxPath": "data/ZA modules .xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+      "_metadata": {
+        "nested": {
+          "type": "boolean"
+        }
+      }
     },
     "problemsolving_articles": {
       "flow_type": "data_list",
@@ -5069,6 +5080,21 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "article_praise_explore_6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_praise_explore_6_nested_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_praise_explore_6_nested_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "article_praise_tips_1",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -8338,6 +8364,21 @@
     },
     "article_praise_explore_5": {
       "flow_name": "article_praise_explore_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_praise_explore_6": {
+      "flow_name": "article_praise_explore_6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_praise_explore_6_nested_1": {
+      "flow_name": "article_praise_explore_6_nested_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_praise_explore_6_nested_2": {
+      "flow_name": "article_praise_explore_6_nested_2",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
