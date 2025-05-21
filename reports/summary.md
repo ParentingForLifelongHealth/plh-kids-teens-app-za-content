@@ -345,7 +345,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | path | size_kb | count |
 | --- | --- | --- |
 | audio/caregiver_test_w_instruct.mp3 | 281.3 | 2 |
-| audio/relax/relax_1.mp3 | 265.1 | 2 |
+| audio/relax/relax_1.mp3 | 265.1 | 3 |
 | audio/relax/relax_10.mp3 | 404.9 | 2 |
 | audio/relax/relax_11.mp3 | 445.6 | 2 |
 | audio/relax/relax_12.mp3 | 539.7 | 2 |
@@ -426,8 +426,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/yc/instructions_audio_2.mp3 | 784.2 | 2 |
 | audio/yc/learn_audio_1.mp3 | 563.1 | 2 |
 | audio/yc/learn_audio_2.mp3 | 254.5 | 2 |
-| audio/yc/praise_audio_1.mp3 | 344 | 1 |
-| audio/yc/praise_audio_2.mp3 | 1042.6 | 1 |
+| audio/yc/praise_audio_1.mp3 | 344 | 2 |
+| audio/yc/praise_audio_2.mp3 | 1042.6 | 2 |
 | audio/yc/rules_audio_1.mp3 | 427.6 | 2 |
 | audio/yc/rules_audio_2.mp3 | 742.7 | 2 |
 | audio/yc/solve_audio_1.mp3 | 609 | 2 |
@@ -476,10 +476,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/play_yc_2.svg | 284.9 | 2 |
 | images/comics/play_yc_3.svg | 81.2 | 2 |
 | images/comics/play_yc_4.svg | 99 | 2 |
-| images/comics/praise_yc_1.svg | 99.3 | 1 |
-| images/comics/praise_yc_2.svg | 101 | 1 |
-| images/comics/praise_yc_3.svg | 97 | 1 |
-| images/comics/praise_yc_4.svg | 105.5 | 3 |
+| images/comics/praise_yc_1.svg | 99.3 | 2 |
+| images/comics/praise_yc_2.svg | 101 | 2 |
+| images/comics/praise_yc_3.svg | 97 | 2 |
+| images/comics/praise_yc_4.svg | 105.5 | 6 |
 | images/comics/problem_solving_yc_1.svg | 42.4 | 2 |
 | images/comics/problem_solving_yc_2.svg | 48.6 | 2 |
 | images/comics/problem_solving_yc_3.svg | 47.3 | 2 |
@@ -501,11 +501,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/faces/angry.svg | 1.1 | 8 |
 | images/faces/confused.svg | 1.8 | 8 |
 | images/faces/happier.svg | 0.6 | 2 |
-| images/faces/happiest.svg | 1.3 | 9 |
-| images/faces/happy.svg | 0.6 | 39 |
+| images/faces/happiest.svg | 1.3 | 10 |
+| images/faces/happy.svg | 0.6 | 40 |
 | images/faces/neutral.svg | 0.5 | 36 |
-| images/faces/sad.svg | 0.6 | 38 |
-| images/faces/sadder.svg | 1.1 | 3 |
+| images/faces/sad.svg | 0.6 | 39 |
+| images/faces/sadder.svg | 1.1 | 4 |
 | images/faces/scared.svg | 2.1 | 4 |
 | images/faces/tired.svg | 2.4 | 4 |
 | images/flags/gb.svg | 0.5 | 2 |
@@ -517,14 +517,14 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/diamond_blue.png | 4.7 | 4 |
 | images/icons/document.svg | 7.3 | 1 |
 | images/icons/expand_circle_right.png | 0.9 | 1 |
-| images/icons/eye_blue.png | 4.2 | 13 |
+| images/icons/eye_blue.png | 4.2 | 14 |
 | images/icons/faces/angry.svg | 4.9 | 2 |
 | images/icons/faces/confused.svg | 4.9 | 4 |
 | images/icons/faces/happy.svg | 53.5 | 2 |
-| images/icons/faces/happy_face_new.svg | 1.4 | 40 |
-| images/icons/faces/ok_face_new.svg | 0.5 | 40 |
+| images/icons/faces/happy_face_new.svg | 1.4 | 41 |
+| images/icons/faces/ok_face_new.svg | 0.5 | 41 |
 | images/icons/faces/sad.svg | 48.2 | 3 |
-| images/icons/faces/sad_face_new.svg | 1.5 | 40 |
+| images/icons/faces/sad_face_new.svg | 1.5 | 41 |
 | images/icons/faces/scared.svg | 2.1 | 2 |
 | images/icons/feather.svg | 3.5 | 1 |
 | images/icons/football_blue.png | 5.1 | 2 |
@@ -556,7 +556,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/repeat_blue.png | 5.4 | 2 |
 | images/icons/settings.svg | 2.4 | 1 |
 | images/icons/settings_active.svg | 2.4 | 1 |
-| images/icons/single_speech_blue.png | 3.3 | 17 |
+| images/icons/single_speech_blue.png | 3.3 | 18 |
 | images/icons/smile_eyes_down.svg | 0.9 | 30 |
 | images/icons/smile_eyes_up.svg | 1 | 52 |
 | images/icons/speech_bubble_blue.png | 4.2 | 18 |
@@ -568,7 +568,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/tick_white.svg | 0.3 | 1 |
 | images/icons/trophy.png | 1.6 | 1 |
 | images/icons/trophy_active.png | 1.7 | 1 |
-| images/icons/trophy_blue.png | 5.1 | 15 |
+| images/icons/trophy_blue.png | 5.1 | 16 |
 | images/icons/trophy_footer.svg | 3.9 | 1 |
 | images/icons/trophy_footer_active.svg | 3.9 | 1 |
 | images/icons/world.svg | 6.2 | 1 |
@@ -785,7 +785,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_list | activities | 2 |
 | data_list | app_config_language_list | 1 |
 | data_list | check_in | 1 |
-| data_list | generated | 51 |
+| data_list | generated | 52 |
 | data_list | hp_review | 2 |
 | data_list | legal_terms | 2 |
 | data_list | lifecycle_actions | 1 |
@@ -808,7 +808,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_list | modules_stress_t | 1 |
 | data_list | relax | 1 |
 | data_pipe |  | 2 |
-| data_pipe | generated | 49 |
+| data_pipe | generated | 50 |
 | generator |  | 40 |
 | global |  | 5 |
 | global | legal_terms | 1 |
