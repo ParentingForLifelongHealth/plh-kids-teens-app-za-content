@@ -217,7 +217,9 @@
         "text_1_facilitator": {},
         "quiz_1_question": {},
         "quiz_1_option_1_text": {},
-        "quiz_1_option_2_text": {}
+        "quiz_1_feedback_1_id": {},
+        "quiz_1_option_2_text": {},
+        "quiz_1_feedback_2_id": {}
       },
       "_translatedFields": {
         "text_1_facilitator": {
@@ -229,18 +231,26 @@
         "quiz_1_option_1_text": {
           "eng": "She praises her"
         },
+        "quiz_1_feedback_1_id": {
+          "eng": "explore_6_nested_1"
+        },
         "quiz_1_option_2_text": {
           "eng": "She gives her a simple reward"
+        },
+        "quiz_1_feedback_2_id": {
+          "eng": "explore_6_nested_2"
         }
       },
       "quiz_1_question": "What does @data.characters.f1_mother.name do when @data.characters.f1_daughter_6.name follows the rule?",
       "quiz_1_option_1_text": "She praises her",
-      "quiz_1_option_2_text": "She gives her a simple reward"
+      "quiz_1_feedback_1_id": "explore_6_nested_1",
+      "quiz_1_option_2_text": "She gives her a simple reward",
+      "quiz_1_feedback_2_id": "explore_6_nested_2"
     },
     {
       "id": "explore_6_nested_1",
       "category_id": "practise",
-      "nested": true,
+      "nested": "TRUE",
       "image_asset": "images/comics/routines_yc_3.svg",
       "text_2": "Exactly! Praise and a simple reward will make it more likely that @data.characters.f1_daughter_6.name will keep following the household rules.",
       "_translations": {
@@ -255,7 +265,7 @@
     {
       "id": "explore_6_nested_2",
       "category_id": "practise",
-      "nested": true,
+      "nested": "TRUE",
       "image_asset": "images/comics/routines_yc_3.svg",
       "text_2": "Exactly! Praise and a simple reward will make it more likely that @data.characters.f1_daughter_6.name will keep following the household rules.",
       "_translations": {
@@ -699,10 +709,5 @@
     }
   ],
   "_xlsxPath": "data/ZA modules .xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
-  "_metadata": {
-    "nested": {
-      "type": "boolean"
-    }
-  }
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
 }
