@@ -367,6 +367,9 @@
       "flow_subtype": "generated",
       "flow_type": "data_list",
       "_metadata": {
+        "nested": {
+          "type": "boolean"
+        },
         "completed": {
           "type": "boolean"
         }
@@ -556,6 +559,7 @@
       "flow_subtype": "modules",
       "module": "developmentplay",
       "Updated with feedback? ": "uploaded",
+      "Review done by CWBSA?": "done",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
@@ -575,6 +579,7 @@
       "data_list_name": "instructions_articles",
       "flow_subtype": "modules",
       "module": "instructions",
+      "Updated with feedback? ": "uploaded",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
@@ -597,6 +602,8 @@
       "data_list_name": "oneononetime_articles",
       "flow_subtype": "modules",
       "module": "oneononetime",
+      "Updated with feedback? ": "uploaded",
+      "Review done by CWBSA?": "?",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
@@ -605,8 +612,7 @@
       "flow_name": "praise_articles",
       "data_list_name": "praise_articles",
       "flow_subtype": "modules",
-      "module": "praise",
-      "_xlsxPath": "data/ZA modules .xlsx",
+      "_xlsxPath": "data/OLD_ZA modules.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
     "problemsolving_articles": {
@@ -625,7 +631,12 @@
       "flow_subtype": "modules",
       "module": "rulesroutines",
       "_xlsxPath": "data/ZA modules .xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+      "_metadata": {
+        "nested": {
+          "type": "boolean"
+        }
+      }
     },
     "selfcare_articles": {
       "flow_type": "data_list",
@@ -634,6 +645,7 @@
       "flow_subtype": "modules",
       "module": "selfcare",
       "Updated with feedback? ": "uploaded",
+      "Review done by CWBSA?": "done",
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
@@ -4413,6 +4425,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "article_instructions_explore_10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "article_instructions_tips_1",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -5047,11 +5064,6 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_praise_explore_6",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
           "flow_name": "article_praise_tips_1",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -5497,12 +5509,17 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_rulesroutines_explore_5b",
+          "flow_name": "article_rulesroutines_explore_6",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
         {
-          "flow_name": "article_rulesroutines_explore_6",
+          "flow_name": "article_rulesroutines_explore_6_nested_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rulesroutines_explore_6_nested_2",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -5533,6 +5550,11 @@
         },
         {
           "flow_name": "article_rulesroutines_explore_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_rulesroutines_explore_13",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -5703,6 +5725,11 @@
         },
         {
           "flow_name": "article_selfcare_explore_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_explore_5",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -7799,6 +7826,11 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_instructions_explore_10": {
+      "flow_name": "article_instructions_explore_10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_instructions_explore_2": {
       "flow_name": "article_instructions_explore_2",
       "flow_subtype": "generated",
@@ -8296,11 +8328,6 @@
     },
     "article_praise_explore_5": {
       "flow_name": "article_praise_explore_5",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "article_praise_explore_6": {
-      "flow_name": "article_praise_explore_6",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -8844,6 +8871,11 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_rulesroutines_explore_13": {
+      "flow_name": "article_rulesroutines_explore_13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_rulesroutines_explore_2": {
       "flow_name": "article_rulesroutines_explore_2",
       "flow_subtype": "generated",
@@ -8864,13 +8896,18 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_rulesroutines_explore_5b": {
-      "flow_name": "article_rulesroutines_explore_5b",
+    "article_rulesroutines_explore_6": {
+      "flow_name": "article_rulesroutines_explore_6",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
-    "article_rulesroutines_explore_6": {
-      "flow_name": "article_rulesroutines_explore_6",
+    "article_rulesroutines_explore_6_nested_1": {
+      "flow_name": "article_rulesroutines_explore_6_nested_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_rulesroutines_explore_6_nested_2": {
+      "flow_name": "article_rulesroutines_explore_6_nested_2",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -9046,6 +9083,11 @@
     },
     "article_selfcare_explore_4": {
       "flow_name": "article_selfcare_explore_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_selfcare_explore_5": {
+      "flow_name": "article_selfcare_explore_5",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
