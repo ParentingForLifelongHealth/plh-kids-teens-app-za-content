@@ -30,11 +30,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2686 |
+| set_variable | 2614 |
 | simple_checkbox | 1 |
 | task_card | 5 |
 | task_progress_bar | 2 |
-| template | 968 |
+| template | 896 |
 | text | 109 |
 | text_area | 2 |
 | text_box | 4 |
@@ -53,13 +53,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 738 |
+| emit: completed | 666 |
 | emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 784 |
+| emit: uncompleted | 712 |
 | feedback | 13 |
 | go_to | 24 |
 | nav_stack | 203 |
@@ -80,8 +80,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 83089 KB | 83.1 MB |
-| unused | 200371 KB | 200.4 MB |
+| total | 83052 KB | 83.1 MB |
+| unused | 200408 KB | 200.4 MB |
 </details>
 
 <details open>
@@ -252,49 +252,50 @@ Assets that appear in app-data but do not have references within sheets
 | images/selfcare.jpg | 96.6 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
+| plh_images/activities/bao.svg | 5661.9 |
+| plh_images/activities/bao_icon.svg | 8.6 |
+| plh_images/activities/charades.svg | 38.9 |
+| plh_images/activities/charades_icon.svg | 35.6 |
+| plh_images/activities/chores.svg | 110.2 |
+| plh_images/activities/chores_icon.svg | 9.5 |
+| plh_images/activities/clean.svg | 39.9 |
+| plh_images/activities/clean_icon.svg | 35.4 |
+| plh_images/activities/cook.svg | 45.1 |
+| plh_images/activities/cook_icon.svg | 12.4 |
+| plh_images/activities/cook_traditional.svg | 40.7 |
+| plh_images/activities/cook_traditional_icon.svg | 56.1 |
+| plh_images/activities/dance.svg | 42.3 |
+| plh_images/activities/dance_icon.svg | 33 |
+| plh_images/activities/find_pair.svg | 36.9 |
+| plh_images/activities/find_pair_icon.svg | 29.1 |
+| plh_images/activities/garden.svg | 109.9 |
+| plh_images/activities/garden_icon.svg | 15.4 |
+| plh_images/activities/long_term_goal.svg | 59.8 |
+| plh_images/activities/long_term_goal_icon.svg | 62.1 |
+| plh_images/activities/memory_game.svg | 40 |
+| plh_images/activities/memory_game_icon.svg | 31.5 |
+| plh_images/activities/mystery_box.svg | 58.4 |
+| plh_images/activities/mystery_box_icon.svg | 28.4 |
+| plh_images/activities/role_play.svg | 38.5 |
+| plh_images/activities/role_play_icon.svg | 35.6 |
+| plh_images/activities/short_term_goal.svg | 41.9 |
+| plh_images/activities/short_term_goal_icon.svg | 25 |
+| plh_images/activities/talk_1_icon.svg | 45 |
+| plh_images/activities/talk_2.svg | 37 |
+| plh_images/activities/talk_2_icon.svg | 19.1 |
+| plh_images/activities/talk_3_icon.svg | 27.7 |
+| plh_images/activities/talk_4_icon.svg | 46.3 |
+| plh_images/activities/talk_5_icon.svg | 53.3 |
+| plh_images/activities/talk_6_icon.svg | 23.5 |
+| plh_images/activities/talk_7_icon.svg | 22.9 |
+| plh_images/activities/tell_stories.svg | 40.9 |
+| plh_images/activities/tell_stories_icon.svg | 28.6 |
+| plh_images/activities/walk.svg | 101.3 |
+| plh_images/activities/walk_icon.svg | 98.4 |
 | plh_images/icons/light_bulb_white.svg | 2.4 |
 | plh_images/icons/parent_child_talk_white.svg | 2.2 |
 | plh_images/icons/smile_eyes_down_white.svg | 0.9 |
 | plh_images/icons/speech_bubble_question_white.svg | 1.6 |
-| plh_images/learn_play/bao.svg | 5661.9 |
-| plh_images/learn_play/bao_icon.svg | 8.6 |
-| plh_images/learn_play/charades.svg | 38.9 |
-| plh_images/learn_play/charades_icon.svg | 35.6 |
-| plh_images/learn_play/chores.svg | 110.2 |
-| plh_images/learn_play/chores_icon.svg | 9.5 |
-| plh_images/learn_play/clean.svg | 39.9 |
-| plh_images/learn_play/clean_icon.svg | 35.4 |
-| plh_images/learn_play/cook.svg | 45.1 |
-| plh_images/learn_play/cook_icon.svg | 12.4 |
-| plh_images/learn_play/cook_traditional.svg | 40.7 |
-| plh_images/learn_play/cook_traditional_icon.svg | 56.1 |
-| plh_images/learn_play/dance.svg | 42.3 |
-| plh_images/learn_play/dance_icon.svg | 33 |
-| plh_images/learn_play/find_pair.svg | 36.9 |
-| plh_images/learn_play/find_pair_icon.svg | 29.1 |
-| plh_images/learn_play/garden.svg | 109.9 |
-| plh_images/learn_play/garden_icon.svg | 15.4 |
-| plh_images/learn_play/long_term_goal.svg | 59.8 |
-| plh_images/learn_play/long_term_goal_icon.svg | 62.1 |
-| plh_images/learn_play/memory_game.svg | 40 |
-| plh_images/learn_play/memory_game_icon.svg | 31.5 |
-| plh_images/learn_play/mystery_box.svg | 58.4 |
-| plh_images/learn_play/mystery_box_icon.svg | 28.4 |
-| plh_images/learn_play/role_play.svg | 38.5 |
-| plh_images/learn_play/role_play_icon.svg | 35.6 |
-| plh_images/learn_play/short_term_goal.svg | 41.9 |
-| plh_images/learn_play/short_term_goal_icon.svg | 25 |
-| plh_images/learn_play/talk_1_icon.svg | 45 |
-| plh_images/learn_play/talk_2_icon.svg | 19.1 |
-| plh_images/learn_play/talk_3_icon.svg | 27.7 |
-| plh_images/learn_play/talk_4_icon.svg | 46.3 |
-| plh_images/learn_play/talk_5_icon.svg | 53.3 |
-| plh_images/learn_play/talk_6_icon.svg | 23.5 |
-| plh_images/learn_play/talk_7_icon.svg | 22.9 |
-| plh_images/learn_play/tell_stories.svg | 40.9 |
-| plh_images/learn_play/tell_stories_icon.svg | 28.6 |
-| plh_images/learn_play/walk.svg | 101.3 |
-| plh_images/learn_play/walk_icon.svg | 98.4 |
 | plh_images/workshops/HomePage.png | 180.3 |
 | plh_images/workshops/w_crisis/read_2/slide_4.svg | 55.5 |
 | plh_images/workshops/w_crisis/read_2/slide_5.svg | 55.5 |
@@ -479,7 +480,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/praise_yc_1.svg | 99.3 | 2 |
 | images/comics/praise_yc_2.svg | 101 | 2 |
 | images/comics/praise_yc_3.svg | 97 | 2 |
-| images/comics/praise_yc_4.svg | 105.5 | 6 |
+| images/comics/praise_yc_4.svg | 105.5 | 2 |
 | images/comics/problem_solving_yc_1.svg | 42.4 | 2 |
 | images/comics/problem_solving_yc_2.svg | 48.6 | 2 |
 | images/comics/problem_solving_yc_3.svg | 47.3 | 2 |
@@ -501,10 +502,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/faces/angry.svg | 1.1 | 8 |
 | images/faces/confused.svg | 1.8 | 8 |
 | images/faces/happier.svg | 0.6 | 2 |
-| images/faces/happiest.svg | 1.3 | 10 |
-| images/faces/happy.svg | 0.6 | 40 |
-| images/faces/neutral.svg | 0.5 | 36 |
-| images/faces/sad.svg | 0.6 | 39 |
+| images/faces/happiest.svg | 1.3 | 12 |
+| images/faces/happy.svg | 0.6 | 42 |
+| images/faces/neutral.svg | 0.5 | 38 |
+| images/faces/sad.svg | 0.6 | 37 |
 | images/faces/sadder.svg | 1.1 | 4 |
 | images/faces/scared.svg | 2.1 | 4 |
 | images/faces/tired.svg | 2.4 | 4 |
@@ -538,7 +539,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/hourglass_blue.png | 4.3 | 2 |
 | images/icons/in_progress.svg | 1.1 | 2 |
 | images/icons/key.svg | 5.5 | 1 |
-| images/icons/lightbulb_blue.png | 3.6 | 6 |
+| images/icons/lightbulb_blue.png | 3.6 | 4 |
 | images/icons/local_library.svg | 1.6 | 1 |
 | images/icons/local_library_active.svg | 1.6 | 1 |
 | images/icons/locked.png | 0.7 | 6 |
@@ -556,11 +557,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/repeat_blue.png | 5.4 | 2 |
 | images/icons/settings.svg | 2.4 | 1 |
 | images/icons/settings_active.svg | 2.4 | 1 |
-| images/icons/single_speech_blue.png | 3.3 | 18 |
+| images/icons/single_speech_blue.png | 3.3 | 16 |
 | images/icons/smile_eyes_down.svg | 0.9 | 30 |
 | images/icons/smile_eyes_up.svg | 1 | 52 |
-| images/icons/speech_bubble_blue.png | 4.2 | 18 |
-| images/icons/star_filled_blue.png | 5.1 | 36 |
+| images/icons/speech_bubble_blue.png | 4.2 | 16 |
+| images/icons/star_filled_blue.png | 5.1 | 34 |
 | images/icons/star_outline_blue.svg | 1 | 27 |
 | images/icons/tablet_blue.png | 2.8 | 2 |
 | images/icons/thought_bubble.svg | 2.1 | 26 |
@@ -585,13 +586,12 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/talk_feelings_challenges.svg | 19.6 | 2 |
 | lottie/bulging_circles.json | 11.8 | 27 |
 | lottie/gift_box.json | 674.5 | 1 |
-| plh_images/learn_play/talk_1.svg | 76.9 | 6 |
-| plh_images/learn_play/talk_2.svg | 37 | 4 |
-| plh_images/learn_play/talk_3.svg | 42.5 | 4 |
-| plh_images/learn_play/talk_4.svg | 77 | 4 |
-| plh_images/learn_play/talk_5.svg | 81.3 | 4 |
-| plh_images/learn_play/talk_6.svg | 37.5 | 4 |
-| plh_images/learn_play/talk_7.svg | 38.2 | 2 |
+| plh_images/activities/talk_1.svg | 76.9 | 24 |
+| plh_images/activities/talk_3.svg | 42.5 | 22 |
+| plh_images/activities/talk_4.svg | 77 | 24 |
+| plh_images/activities/talk_5.svg | 81.3 | 22 |
+| plh_images/activities/talk_6.svg | 37.5 | 22 |
+| plh_images/activities/talk_7.svg | 38.2 | 22 |
 | plh_images/workshops/w_1on1/tools.svg | 48.5 | 2 |
 | plh_images/workshops/w_celebrate/cup.svg | 60.9 | 2 |
 | plh_images/workshops/w_celebrate/read/slide_1.svg | 152.3 | 3 |
@@ -813,6 +813,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 103 |
-| template | generated | 805 |
+| template | generated | 733 |
 | template | legal_terms | 4 |
 </details>
