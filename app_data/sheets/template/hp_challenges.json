@@ -152,6 +152,7 @@
       "parameter_list": {
         "filter": "@item.id == @local.row_id"
       },
+      "exclude_from_translation": true,
       "_nested_name": "radio_to_local",
       "_dynamicFields": {
         "parameter_list": {
@@ -187,6 +188,7 @@
         "value": {}
       },
       "condition": "!(@local.hp_done_from_data)",
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "hp_done_field_value",
       "_dynamicFields": {
@@ -212,6 +214,7 @@
         "value": {}
       },
       "condition": "!!(@local.hp_done_from_data)",
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "hp_done_field_value",
       "_dynamicFields": {

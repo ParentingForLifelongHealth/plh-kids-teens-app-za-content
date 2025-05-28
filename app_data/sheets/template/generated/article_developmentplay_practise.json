@@ -1,12 +1,12 @@
 {
-  "flow_name": "activity_2truth_1lie",
+  "flow_name": "article_developmentplay_practise",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
     {
       "type": "template",
-      "name": "activity",
-      "value": "activity",
+      "name": "article",
+      "value": "article",
       "action_list": [
         {
           "trigger": "completed",
@@ -29,16 +29,26 @@
       ],
       "rows": [
         {
-          "name": "activity_id",
-          "value": "2truth_1lie",
+          "name": "article_id",
+          "value": "practise",
           "_translations": {
             "value": {}
           },
           "type": "set_variable",
-          "_nested_name": "activity.activity_id"
+          "_nested_name": "article.article_id"
+        },
+        {
+          "name": "module_id",
+          "value": "developmentplay",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "article.module_id"
         }
       ],
-      "_nested_name": "activity"
+      "_nested_name": "article"
     }
   ]
 }
