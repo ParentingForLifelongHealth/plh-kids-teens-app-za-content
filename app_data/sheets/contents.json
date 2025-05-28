@@ -292,6 +292,9 @@
       "flow_subtype": "generated",
       "flow_type": "data_list",
       "_metadata": {
+        "nested": {
+          "type": "boolean"
+        },
         "completed": {
           "type": "boolean"
         }
@@ -367,6 +370,9 @@
       "flow_subtype": "generated",
       "flow_type": "data_list",
       "_metadata": {
+        "nested": {
+          "type": "boolean"
+        },
         "completed": {
           "type": "boolean"
         }
@@ -623,7 +629,12 @@
       "Review done by CWBSA?": "done",
       "Synced back to sheets?": "done",
       "_xlsxPath": "data/ZA modules .xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+      "_metadata": {
+        "nested": {
+          "type": "boolean"
+        }
+      }
     },
     "problemsolving_articles": {
       "flow_type": "data_list",
@@ -647,7 +658,12 @@
       "Review done by CWBSA?": "done",
       "Synced back to sheets?": "commencts for CWBSA ",
       "_xlsxPath": "data/ZA modules .xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+      "_metadata": {
+        "nested": {
+          "type": "boolean"
+        }
+      }
     },
     "selfcare_articles": {
       "flow_type": "data_list",
@@ -2099,6 +2115,11 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "article_developmentplay_practise",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "article_developmentplay_home_activity_1",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -2273,11 +2294,6 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "activity_shapes_everywhere",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
           "flow_name": "activity_be_an_artist",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -2434,11 +2450,6 @@
         },
         {
           "flow_name": "activity_express_yourself",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "activity_2truth_1lie",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -6178,11 +6189,6 @@
       "_xlsxPath": "templates/ZA app_navigation.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
-    "activity_2truth_1lie": {
-      "flow_name": "activity_2truth_1lie",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
     "activity_a_friendly_chat": {
       "flow_name": "activity_a_friendly_chat",
       "flow_subtype": "generated",
@@ -6445,11 +6451,6 @@
     },
     "activity_setting_goal": {
       "flow_name": "activity_setting_goal",
-      "flow_subtype": "generated",
-      "flow_type": "template"
-    },
-    "activity_shapes_everywhere": {
-      "flow_name": "activity_shapes_everywhere",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -6940,6 +6941,11 @@
     },
     "article_developmentplay_intro_1": {
       "flow_name": "article_developmentplay_intro_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_developmentplay_practise": {
+      "flow_name": "article_developmentplay_practise",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
