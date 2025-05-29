@@ -5,63 +5,7 @@
   "rows": [
     {
       "type": "template",
-      "name": "header",
-      "value": "header",
-      "rows": [
-        {
-          "name": "title",
-          "value": "@data.common_categories.relax.title",
-          "_translations": {
-            "value": {}
-          },
-          "type": "set_variable",
-          "_nested_name": "header.title",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@data.common_categories.relax.title",
-                "matchedExpression": "@data.common_categories.relax.title",
-                "type": "data",
-                "fieldName": "common_categories"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@data.common_categories.relax.title": [
-              "value"
-            ]
-          }
-        },
-        {
-          "name": "icon_asset",
-          "value": "@data.common_categories.relax.icon_asset",
-          "_translations": {
-            "value": {}
-          },
-          "type": "set_variable",
-          "_nested_name": "header.icon_asset",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@data.common_categories.relax.icon_asset",
-                "matchedExpression": "@data.common_categories.relax.icon_asset",
-                "type": "data",
-                "fieldName": "common_categories"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@data.common_categories.relax.icon_asset": [
-              "value"
-            ]
-          }
-        }
-      ],
-      "_nested_name": "header"
-    },
-    {
-      "type": "template",
-      "name": "article",
+      "name": "relax",
       "value": "relax",
       "action_list": [
         {
@@ -91,10 +35,10 @@
             "value": {}
           },
           "type": "set_variable",
-          "_nested_name": "article.id"
+          "_nested_name": "relax.id"
         }
       ],
-      "_nested_name": "article"
+      "_nested_name": "relax"
     }
   ]
 }

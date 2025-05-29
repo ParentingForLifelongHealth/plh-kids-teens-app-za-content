@@ -89,6 +89,15 @@
       }
     },
     {
+      "name": "article_prefix",
+      "value": "library_article_",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "article_prefix"
+    },
+    {
       "name": "article_suffix",
       "value": "_tips_1",
       "_translations": {
@@ -336,10 +345,10 @@
               "args": [
                 "open"
               ],
-              "_raw": "click | nav_stack: open | template: module_@item.id@local.article_suffix, header: false",
-              "_cleaned": "click | nav_stack: open | template: module_@item.id@local.article_suffix, header: false",
+              "_raw": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
+              "_cleaned": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
               "params": {
-                "template": "module_@item.id@local.article_suffix",
+                "template": "@local.article_prefix@item.id@local.article_suffix",
                 "header": false
               }
             }
@@ -369,13 +378,19 @@
               "0": {
                 "_raw": [
                   {
-                    "fullExpression": "click | nav_stack: open | template: module_@item.id@local.article_suffix, header: false",
+                    "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
+                    "matchedExpression": "@local.article_prefix",
+                    "type": "local",
+                    "fieldName": "article_prefix"
+                  },
+                  {
+                    "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
                     "matchedExpression": "@item.id",
                     "type": "item",
                     "fieldName": "id"
                   },
                   {
-                    "fullExpression": "click | nav_stack: open | template: module_@item.id@local.article_suffix, header: false",
+                    "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
                     "matchedExpression": "@local.article_suffix",
                     "type": "local",
                     "fieldName": "article_suffix"
@@ -383,13 +398,19 @@
                 ],
                 "_cleaned": [
                   {
-                    "fullExpression": "click | nav_stack: open | template: module_@item.id@local.article_suffix, header: false",
+                    "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
+                    "matchedExpression": "@local.article_prefix",
+                    "type": "local",
+                    "fieldName": "article_prefix"
+                  },
+                  {
+                    "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
                     "matchedExpression": "@item.id",
                     "type": "item",
                     "fieldName": "id"
                   },
                   {
-                    "fullExpression": "click | nav_stack: open | template: module_@item.id@local.article_suffix, header: false",
+                    "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
                     "matchedExpression": "@local.article_suffix",
                     "type": "local",
                     "fieldName": "article_suffix"
@@ -398,13 +419,19 @@
                 "params": {
                   "template": [
                     {
-                      "fullExpression": "module_@item.id@local.article_suffix",
+                      "fullExpression": "@local.article_prefix@item.id@local.article_suffix",
+                      "matchedExpression": "@local.article_prefix",
+                      "type": "local",
+                      "fieldName": "article_prefix"
+                    },
+                    {
+                      "fullExpression": "@local.article_prefix@item.id@local.article_suffix",
                       "matchedExpression": "@item.id",
                       "type": "item",
                       "fieldName": "id"
                     },
                     {
-                      "fullExpression": "module_@item.id@local.article_suffix",
+                      "fullExpression": "@local.article_prefix@item.id@local.article_suffix",
                       "matchedExpression": "@local.article_suffix",
                       "type": "local",
                       "fieldName": "article_suffix"
@@ -432,6 +459,11 @@
             ],
             "@item.title": [
               "value"
+            ],
+            "@local.article_prefix": [
+              "action_list.0._raw",
+              "action_list.0._cleaned",
+              "action_list.0.params.template"
             ],
             "@local.article_suffix": [
               "action_list.0._raw",

@@ -10,85 +10,54 @@
   },
   "rows": [
     {
-      "name": "data_list_name",
-      "value": "relax",
-      "exclude_from_translation": true
-    },
-    {
-      "name": "id",
-      "value": "@gen.id",
-      "exclude_from_translation": true
-    },
-    {
-      "name": "data_list_name_id",
-      "value": "@local.data_list_name.@local.id",
-      "exclude_from_translation": true
-    },
-    {
-      "name": "row_data",
-      "value": "@data.@local.data_list_name_id",
-      "exclude_from_translation": true
-    },
-    {
-      "name": "audio_transcript",
-      "value": "@local.row_data.audio_transcript",
-      "exclude_from_translation": true
-    },
-    {
-      "name": "lottie_asset",
-      "value": "lottie/bulging_circles.json",
-      "condition": "!@local.row_data.lottie_asset"
-    },
-    {
-      "name": "lottie_asset",
-      "value": "@local.row_data.lottie_asset",
-      "condition": "!!@local.row_data.lottie_asset"
-    },
-    {
       "type": "template",
       "name": "header",
-      "value": "section_header",
+      "value": "header",
       "action_list": [
         {
-          "trigger": "uncompleted",
-          "action_id": "emit",
+          "trigger": "completed",
+          "action_id": "nav_stack",
           "args": [
-            "uncompleted"
+            "close_top"
           ],
-          "_raw": "uncompleted | emit: uncompleted",
-          "_cleaned": "uncompleted | emit: uncompleted"
+          "_raw": "completed | nav_stack: close_top",
+          "_cleaned": "completed | nav_stack: close_top"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "nav_stack",
+          "args": [
+            "close_top"
+          ],
+          "_raw": "uncompleted | nav_stack: close_top",
+          "_cleaned": "uncompleted | nav_stack: close_top"
         }
       ],
       "rows": [
         {
           "name": "title",
-          "value": "@local.row_data.title",
-          "condition": true
+          "value": "@data.common_categories.relax.title"
+        },
+        {
+          "name": "icon_asset",
+          "value": "@data.common_categories.relax.icon_asset"
         }
       ]
     },
     {
-      "type": "lottie_animation",
-      "name": "lottie_display",
-      "value": "@local.lottie_asset",
-      "exclude_from_translation": true,
-      "condition": "@local.row_data.media_type == \"audio\""
-    },
-    {
-      "type": "audio",
-      "name": "audio",
-      "value": "@local.row_data.media_asset",
-      "exclude_from_translation": true,
-      "parameter_list": [
-        "transcript_text: @local.row_data.transcript"
-      ],
-      "condition": "@local.row_data.media_type == \"audio\""
-    },
-    {
-      "type": "video",
-      "name": "video",
-      "value": "@local.row_data.media_asset",
-      "condition": "@local.row_data.media_type == \"video\""
+      "type": "template",
+      "name": "article",
+      "value": "relax",
+      "rows": [
+        {
+          "name": "id",
+          "value": "@gen.id"
+        },
+        {
+          "name": "show_nav_buttons",
+          "value": false
+        }
+      ]
     }
   ],
   "_xlsxPath": "templates/ZA library templates.xlsx",
