@@ -1,0 +1,72 @@
+{
+  "flow_name": "library_article_stayingsafe_t_tips_1",
+  "flow_subtype": "generated",
+  "flow_type": "template",
+  "rows": [
+    {
+      "name": "article_suffix",
+      "value": "_tips_1",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "article_suffix"
+    },
+    {
+      "type": "template",
+      "name": "article",
+      "value": "article_stayingsafe_t@local.article_suffix",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "nav_stack",
+          "args": [
+            "close_top"
+          ],
+          "_raw": "completed | nav_stack: close_top",
+          "_cleaned": "completed | nav_stack: close_top"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "nav_stack",
+          "args": [
+            "close_top"
+          ],
+          "_raw": "uncompleted | nav_stack: close_top",
+          "_cleaned": "uncompleted | nav_stack: close_top"
+        }
+      ],
+      "rows": [
+        {
+          "type": "nested_properties",
+          "name": "article",
+          "rows": [
+            {
+              "name": "show_nav_buttons",
+              "value": false,
+              "type": "set_variable",
+              "_nested_name": "article.article.show_nav_buttons"
+            }
+          ],
+          "_nested_name": "article.article"
+        }
+      ],
+      "_nested_name": "article",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "article_stayingsafe_t@local.article_suffix",
+            "matchedExpression": "@local.article_suffix",
+            "type": "local",
+            "fieldName": "article_suffix"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.article_suffix": [
+          "value"
+        ]
+      }
+    }
+  ]
+}
