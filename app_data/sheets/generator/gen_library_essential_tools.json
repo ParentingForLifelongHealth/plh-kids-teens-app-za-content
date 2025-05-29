@@ -1,18 +1,22 @@
 {
   "flow_type": "generator",
-  "flow_name": "gen_library_relax",
+  "flow_name": "gen_library_essential_tools",
   "status": "released",
   "parameter_list": {
-    "input_data_list": "relax",
-    "output_flow_name": "library_article_@gen.id",
+    "input_data_list": "modules",
+    "output_flow_name": "library_article_{@gen.id}_tips_1",
     "output_flow_type": "template",
     "output_flow_subtype": "generated"
   },
   "rows": [
     {
+      "name": "article_suffix",
+      "value": "_tips_1"
+    },
+    {
       "type": "template",
-      "name": "header",
-      "value": "header",
+      "name": "article",
+      "value": "article_@gen.id@local.article_suffix",
       "action_list": [
         {
           "trigger": "completed",
@@ -35,27 +39,14 @@
       ],
       "rows": [
         {
-          "name": "title",
-          "value": "@data.common_categories.relax.title"
-        },
-        {
-          "name": "icon_asset",
-          "value": "@data.common_categories.relax.icon_asset"
-        }
-      ]
-    },
-    {
-      "type": "template",
-      "name": "article",
-      "value": "relax",
-      "rows": [
-        {
-          "name": "id",
-          "value": "@gen.id"
-        },
-        {
-          "name": "show_nav_buttons",
-          "value": false
+          "type": "nested_properties",
+          "name": "article",
+          "rows": [
+            {
+              "name": "show_nav_buttons",
+              "value": false
+            }
+          ]
         }
       ]
     }
@@ -64,122 +55,127 @@
   "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
   "_output_flows": [
     {
-      "flow_name": "library_article_relax_1",
+      "flow_name": "library_article_selfcare_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_2",
+      "flow_name": "library_article_developmentplay_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_3",
+      "flow_name": "library_article_oneononetime_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_4",
+      "flow_name": "library_article_praise_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_5",
+      "flow_name": "library_article_feelings_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_6",
+      "flow_name": "library_article_instructions_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_7",
+      "flow_name": "library_article_rulesroutines_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_8",
+      "flow_name": "library_article_consequences_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_9",
+      "flow_name": "library_article_problemsolving_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_10",
+      "flow_name": "library_article_selfcare_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_11",
+      "flow_name": "library_article_oneononetime_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_12",
+      "flow_name": "library_article_praise_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_13",
+      "flow_name": "library_article_instructions_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_14",
+      "flow_name": "library_article_stress_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_15",
+      "flow_name": "library_article_problemsolving_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_16",
+      "flow_name": "library_article_money_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_17",
+      "flow_name": "library_article_rules_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_18",
+      "flow_name": "library_article_consequences_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_19",
+      "flow_name": "library_article_safety_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_20",
+      "flow_name": "library_article_crisis_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_21",
+      "flow_name": "library_article_srh_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_22",
+      "flow_name": "library_article_stayingsafe_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_23",
+      "flow_name": "library_article_grief_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
     {
-      "flow_name": "library_article_relax_24",
+      "flow_name": "library_article_learn_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "library_article_celebrate_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     }

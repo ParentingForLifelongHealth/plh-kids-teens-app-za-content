@@ -332,6 +332,12 @@
       }
     },
     {
+      "name": "show_nav_buttons",
+      "value": true,
+      "type": "set_variable",
+      "_nested_name": "show_nav_buttons"
+    },
+    {
       "type": "template",
       "name": "nav_buttons",
       "value": "nav_buttons",
@@ -355,6 +361,7 @@
           "_cleaned": "uncompleted | emit: uncompleted"
         }
       ],
+      "condition": "@local.show_nav_buttons",
       "rows": [
         {
           "name": "is_standalone_task",
@@ -379,7 +386,22 @@
           }
         }
       ],
-      "_nested_name": "nav_buttons"
+      "_nested_name": "nav_buttons",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.show_nav_buttons",
+            "matchedExpression": "@local.show_nav_buttons",
+            "type": "local",
+            "fieldName": "show_nav_buttons"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.show_nav_buttons": [
+          "condition"
+        ]
+      }
     }
   ],
   "_xlsxPath": "templates/relax_activities.xlsx",

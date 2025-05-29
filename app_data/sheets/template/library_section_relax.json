@@ -1,11 +1,11 @@
 {
-  "flow_name": "library_section_tips",
-  "flow_subtype": "generated",
   "flow_type": "template",
+  "flow_name": "library_section_relax",
+  "status": "released",
   "rows": [
     {
       "name": "library_id",
-      "value": "tips",
+      "value": "relax",
       "_translations": {
         "value": {}
       },
@@ -55,64 +55,26 @@
           }
         },
         {
-          "name": "display_title",
-          "value": "Quick Parenting Tips",
-          "_translations": {
-            "value": {}
-          },
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "library_section.display_title"
-        },
-        {
-          "name": "introduction",
-          "value": "@gen.introduction",
-          "_translations": {
-            "value": {}
-          },
-          "condition": "!!@gen.introduction",
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "library_section.introduction",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@gen.introduction",
-                "matchedExpression": "@gen.introduction",
-                "type": "gen",
-                "fieldName": "introduction"
-              }
-            ],
-            "condition": [
-              {
-                "fullExpression": "!!@gen.introduction",
-                "matchedExpression": "!@gen.introduction",
-                "type": "gen",
-                "fieldName": "introduction"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@gen.introduction": [
-              "value"
-            ],
-            "!@gen.introduction": [
-              "condition"
-            ]
-          }
-        },
-        {
           "name": "articles_data_list_name",
-          "value": "library_article",
+          "value": "relax",
           "_translations": {
             "value": {}
           },
           "exclude_from_translation": true,
           "type": "set_variable",
           "_nested_name": "library_section.articles_data_list_name"
+        },
+        {
+          "name": "use_stack",
+          "value": true,
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "library_section.use_stack"
         }
       ],
       "_nested_name": "library_section"
     }
-  ]
+  ],
+  "_xlsxPath": "templates/ZA library templates.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
 }
