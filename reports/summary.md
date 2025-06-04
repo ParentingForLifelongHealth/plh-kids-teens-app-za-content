@@ -6,8 +6,8 @@
 | accordion | 3 |
 | accordion_section | 6 |
 | apple_sign_in_button | 2 |
-| audio | 28 |
-| button | 71 |
+| audio | 4 |
+| button | 73 |
 | combo_box | 6 |
 | data_items | 140 |
 | debug_toggle | 1 |
@@ -15,10 +15,10 @@
 | display_group | 78 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
-| image | 13 |
-| items | 14 |
-| lottie_animation | 27 |
-| nested_properties | 156 |
+| image | 14 |
+| items | 15 |
+| lottie_animation | 3 |
+| nested_properties | 181 |
 | number_selector | 1 |
 | plh_activity_check_in | 1 |
 | plh_bottom_nav | 1 |
@@ -30,19 +30,19 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2614 |
+| set_variable | 2570 |
 | simple_checkbox | 1 |
-| task_card | 5 |
+| task_card | 6 |
 | task_progress_bar | 2 |
-| template | 896 |
-| text | 109 |
+| template | 943 |
+| text | 110 |
 | text_area | 2 |
 | text_box | 4 |
 | text_bubble | 2 |
 | title | 39 |
 | toggle_bar | 5 |
 | update_action_list | 2 |
-| video | 28 |
+| video | 4 |
 | youtube | 4 |
 </details>
 
@@ -53,16 +53,16 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 666 |
+| emit: completed | 665 |
 | emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 712 |
+| emit: uncompleted | 686 |
 | feedback | 13 |
-| go_to | 24 |
-| nav_stack | 203 |
+| go_to | 25 |
+| nav_stack | 303 |
 | pop_up | 64 |
 | reset_app | 1 |
 | save_to_device | 2 |
@@ -80,8 +80,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 83052 KB | 83.1 MB |
-| unused | 200408 KB | 200.4 MB |
+| total | 83169 KB | 83.2 MB |
+| unused | 203160 KB | 203.2 MB |
 </details>
 
 <details open>
@@ -144,7 +144,9 @@ Assets that appear in app-data but do not have references within sheets
 | images/comics/instructions_yc_10.svg | 406.6 |
 | images/comics/instructions_yc_11.png | 1150.7 |
 | images/comics/instructions_yc_11.svg | 412.9 |
+| images/comics/instructions_yc_2.jpg | 1428.1 |
 | images/comics/instructions_yc_2.png | 1044.4 |
+| images/comics/instructions_yc_3.jpg | 1441 |
 | images/comics/instructions_yc_3.png | 1060.5 |
 | images/comics/instructions_yc_4.png | 1067.9 |
 | images/comics/instructions_yc_8.png | 1167.2 |
@@ -188,7 +190,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/comics/self_care_yc_2.png | 894.9 |
 | images/comics/self_care_yc_3.png | 1035.2 |
 | images/comics/self_care_yc_4.png | 1050.2 |
-| images/comics/self_care_yc_4.svg | 61.9 |
 | images/comics/teach_consequences_yc_3.jpg | 3174 |
 | images/consequences_yc.png | 629.1 |
 | images/consequences_yc.svg | 153.9 |
@@ -298,7 +299,6 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/icons/speech_bubble_question_white.svg | 1.6 |
 | plh_images/workshops/HomePage.png | 180.3 |
 | plh_images/workshops/w_crisis/read_2/slide_4.svg | 55.5 |
-| plh_images/workshops/w_crisis/read_2/slide_5.svg | 55.5 |
 | plh_images/workshops/w_instruct/read_1/slide_1.svg | 47.3 |
 | plh_images/workshops/w_instruct/read_1/slide_2.svg | 37.4 |
 | plh_images/workshops/w_instruct/read_1/slide_3.svg | 42.6 |
@@ -480,7 +480,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/praise_yc_1.svg | 99.3 | 2 |
 | images/comics/praise_yc_2.svg | 101 | 2 |
 | images/comics/praise_yc_3.svg | 97 | 2 |
-| images/comics/praise_yc_4.svg | 105.5 | 2 |
+| images/comics/praise_yc_4.svg | 105.5 | 6 |
 | images/comics/problem_solving_yc_1.svg | 42.4 | 2 |
 | images/comics/problem_solving_yc_2.svg | 48.6 | 2 |
 | images/comics/problem_solving_yc_3.svg | 47.3 | 2 |
@@ -497,7 +497,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/routines_yc_9.svg | 117.5 | 2 |
 | images/comics/self_care_yc_1.svg | 101.4 | 2 |
 | images/comics/self_care_yc_2.svg | 66.4 | 2 |
-| images/comics/self_care_yc_3.svg | 146.8 | 4 |
+| images/comics/self_care_yc_3.svg | 146.8 | 2 |
+| images/comics/self_care_yc_4.svg | 61.9 | 2 |
 | images/consequences.jpg | 115.1 | 2 |
 | images/faces/angry.svg | 1.1 | 8 |
 | images/faces/confused.svg | 1.8 | 8 |
@@ -584,12 +585,12 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/shell_closed.png | 452.4 | 1 |
 | images/shell_open.png | 1031.9 | 1 |
 | images/talk_feelings_challenges.svg | 19.6 | 2 |
-| lottie/bulging_circles.json | 11.8 | 27 |
+| lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/gift_box.json | 674.5 | 1 |
-| plh_images/activities/talk_1.svg | 76.9 | 24 |
+| plh_images/activities/talk_1.svg | 76.9 | 22 |
 | plh_images/activities/talk_3.svg | 42.5 | 22 |
 | plh_images/activities/talk_4.svg | 77 | 24 |
-| plh_images/activities/talk_5.svg | 81.3 | 22 |
+| plh_images/activities/talk_5.svg | 81.3 | 20 |
 | plh_images/activities/talk_6.svg | 37.5 | 22 |
 | plh_images/activities/talk_7.svg | 38.2 | 22 |
 | plh_images/workshops/w_1on1/tools.svg | 48.5 | 2 |
@@ -627,9 +628,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/workshops/w_crisis/read_1/slide_4.svg | 34.3 | 2 |
 | plh_images/workshops/w_crisis/read_1/slide_5.svg | 37 | 2 |
 | plh_images/workshops/w_crisis/read_1/slide_6.svg | 27.7 | 2 |
-| plh_images/workshops/w_crisis/read_2/slide_1.svg | 77.2 | 4 |
+| plh_images/workshops/w_crisis/read_2/slide_1.svg | 77.2 | 2 |
 | plh_images/workshops/w_crisis/read_2/slide_2.svg | 54.6 | 2 |
 | plh_images/workshops/w_crisis/read_2/slide_3.svg | 58 | 2 |
+| plh_images/workshops/w_crisis/read_2/slide_5.svg | 55.5 | 2 |
 | plh_images/workshops/w_crisis/read_2/slide_6.svg | 56 | 2 |
 | plh_images/workshops/w_crisis/tools.svg | 46.1 | 2 |
 | plh_images/workshops/w_grief/read_grief_conflict/slide_1.svg | 28.3 | 2 |
@@ -812,7 +814,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | generator |  | 40 |
 | global |  | 5 |
 | global | legal_terms | 1 |
-| template |  | 103 |
-| template | generated | 733 |
+| template |  | 106 |
+| template | generated | 753 |
 | template | legal_terms | 4 |
 </details>
