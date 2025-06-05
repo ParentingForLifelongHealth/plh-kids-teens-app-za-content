@@ -1886,55 +1886,36 @@
           },
           "rows": [
             {
-              "type": "text",
-              "name": "text",
-              "value": "@global.other_challenge_apology",
-              "_translations": {
-                "value": {}
-              },
-              "_nested_name": "loop_select_combo.other_challenge.text",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@global.other_challenge_apology",
-                    "matchedExpression": "@global.other_challenge_apology",
-                    "type": "global",
-                    "fieldName": "other_challenge_apology"
+              "type": "template",
+              "name": "facilitator_bubble_other",
+              "value": "feedback",
+              "rows": [
+                {
+                  "name": "bubble_text",
+                  "value": "@global.other_challenge_prompt",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "loop_select_combo.other_challenge.facilitator_bubble_other.bubble_text",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@global.other_challenge_prompt",
+                        "matchedExpression": "@global.other_challenge_prompt",
+                        "type": "global",
+                        "fieldName": "other_challenge_prompt"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@global.other_challenge_prompt": [
+                      "value"
+                    ]
                   }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@global.other_challenge_apology": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "type": "text",
-              "name": "question_text",
-              "value": "@global.other_challenge_prompt",
-              "_translations": {
-                "value": {}
-              },
-              "parameter_list": {
-                "style": "emphasised"
-              },
-              "_nested_name": "loop_select_combo.other_challenge.question_text",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@global.other_challenge_prompt",
-                    "matchedExpression": "@global.other_challenge_prompt",
-                    "type": "global",
-                    "fieldName": "other_challenge_prompt"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@global.other_challenge_prompt": [
-                  "value"
-                ]
-              }
+                }
+              ],
+              "_nested_name": "loop_select_combo.other_challenge.facilitator_bubble_other"
             },
             {
               "type": "text_box",
@@ -2011,23 +1992,38 @@
               }
             },
             {
-              "type": "text",
-              "name": "other_challenge_reply",
-              "value": "@global.other_challenge_reply",
-              "_translations": {
-                "value": {}
-              },
+              "type": "template",
+              "name": "facilitator_bubble_text_input",
+              "value": "feedback",
               "condition": "!!@item.@local.response_other_challenge_column",
-              "_nested_name": "loop_select_combo.other_challenge.other_challenge_reply",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@global.other_challenge_reply",
-                    "matchedExpression": "@global.other_challenge_reply",
-                    "type": "global",
-                    "fieldName": "other_challenge_reply"
+              "rows": [
+                {
+                  "name": "bubble_text",
+                  "value": "@global.other_challenge_reply",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "loop_select_combo.other_challenge.facilitator_bubble_text_input.bubble_text",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@global.other_challenge_reply",
+                        "matchedExpression": "@global.other_challenge_reply",
+                        "type": "global",
+                        "fieldName": "other_challenge_reply"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@global.other_challenge_reply": [
+                      "value"
+                    ]
                   }
-                ],
+                }
+              ],
+              "_nested_name": "loop_select_combo.other_challenge.facilitator_bubble_text_input",
+              "_dynamicFields": {
                 "condition": [
                   {
                     "fullExpression": "!!@item.@local.response_other_challenge_column",
@@ -2038,9 +2034,6 @@
                 ]
               },
               "_dynamicDependencies": {
-                "@global.other_challenge_reply": [
-                  "value"
-                ],
                 "@local.response_other_challenge_column": [
                   "condition"
                 ]
