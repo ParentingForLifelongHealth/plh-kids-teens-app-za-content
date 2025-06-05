@@ -12,7 +12,7 @@
 | data_items | 140 |
 | debug_toggle | 1 |
 | display_grid | 2 |
-| display_group | 78 |
+| display_group | 79 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 14 |
@@ -30,14 +30,14 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2570 |
+| set_variable | 2571 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 2 |
 | template | 943 |
-| text | 110 |
+| text | 113 |
 | text_area | 2 |
-| text_box | 4 |
+| text_box | 5 |
 | text_bubble | 2 |
 | title | 39 |
 | toggle_bar | 5 |
@@ -68,7 +68,7 @@
 | save_to_device | 2 |
 | set_data | 58 |
 | set_field | 73 |
-| set_item | 66 |
+| set_item | 67 |
 | set_local | 33 |
 | share | 2 |
 | task | 3 |
@@ -80,8 +80,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 83169 KB | 83.2 MB |
-| unused | 203160 KB | 203.2 MB |
+| total | 86817 KB | 86.8 MB |
+| unused | 202570 KB | 202.6 MB |
 </details>
 
 <details open>
@@ -255,31 +255,22 @@ Assets that appear in app-data but do not have references within sheets
 | lottie/cascading_stars.json | 140.5 |
 | plh_images/activities/bao.svg | 5661.9 |
 | plh_images/activities/bao_icon.svg | 8.6 |
-| plh_images/activities/charades.svg | 38.9 |
 | plh_images/activities/charades_icon.svg | 35.6 |
 | plh_images/activities/chores.svg | 110.2 |
 | plh_images/activities/chores_icon.svg | 9.5 |
-| plh_images/activities/clean.svg | 39.9 |
 | plh_images/activities/clean_icon.svg | 35.4 |
 | plh_images/activities/cook.svg | 45.1 |
 | plh_images/activities/cook_icon.svg | 12.4 |
-| plh_images/activities/cook_traditional.svg | 40.7 |
 | plh_images/activities/cook_traditional_icon.svg | 56.1 |
-| plh_images/activities/dance.svg | 42.3 |
 | plh_images/activities/dance_icon.svg | 33 |
-| plh_images/activities/find_pair.svg | 36.9 |
 | plh_images/activities/find_pair_icon.svg | 29.1 |
-| plh_images/activities/garden.svg | 109.9 |
 | plh_images/activities/garden_icon.svg | 15.4 |
 | plh_images/activities/long_term_goal.svg | 59.8 |
 | plh_images/activities/long_term_goal_icon.svg | 62.1 |
 | plh_images/activities/memory_game.svg | 40 |
 | plh_images/activities/memory_game_icon.svg | 31.5 |
-| plh_images/activities/mystery_box.svg | 58.4 |
 | plh_images/activities/mystery_box_icon.svg | 28.4 |
-| plh_images/activities/role_play.svg | 38.5 |
 | plh_images/activities/role_play_icon.svg | 35.6 |
-| plh_images/activities/short_term_goal.svg | 41.9 |
 | plh_images/activities/short_term_goal_icon.svg | 25 |
 | plh_images/activities/talk_1_icon.svg | 45 |
 | plh_images/activities/talk_2.svg | 37 |
@@ -289,9 +280,7 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/activities/talk_5_icon.svg | 53.3 |
 | plh_images/activities/talk_6_icon.svg | 23.5 |
 | plh_images/activities/talk_7_icon.svg | 22.9 |
-| plh_images/activities/tell_stories.svg | 40.9 |
 | plh_images/activities/tell_stories_icon.svg | 28.6 |
-| plh_images/activities/walk.svg | 101.3 |
 | plh_images/activities/walk_icon.svg | 98.4 |
 | plh_images/icons/light_bulb_white.svg | 2.4 |
 | plh_images/icons/parent_child_talk_white.svg | 2.2 |
@@ -587,12 +576,33 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/talk_feelings_challenges.svg | 19.6 | 2 |
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/gift_box.json | 674.5 | 1 |
-| plh_images/activities/talk_1.svg | 76.9 | 22 |
-| plh_images/activities/talk_3.svg | 42.5 | 22 |
-| plh_images/activities/talk_4.svg | 77 | 24 |
-| plh_images/activities/talk_5.svg | 81.3 | 20 |
-| plh_images/activities/talk_6.svg | 37.5 | 22 |
-| plh_images/activities/talk_7.svg | 38.2 | 22 |
+| plh_images/activities/act_emotions.svg | 106.6 | 2 |
+| plh_images/activities/artist.svg | 2210.9 | 4 |
+| plh_images/activities/blanket_forts.svg | 81.2 | 2 |
+| plh_images/activities/books.svg | 72.6 | 8 |
+| plh_images/activities/can_you_catch_it.svg | 183.7 | 2 |
+| plh_images/activities/charades.svg | 38.9 | 4 |
+| plh_images/activities/clean.svg | 39.9 | 2 |
+| plh_images/activities/cook_traditional.svg | 40.7 | 2 |
+| plh_images/activities/dance.svg | 42.3 | 6 |
+| plh_images/activities/find_pair.svg | 36.9 | 2 |
+| plh_images/activities/garden.svg | 109.9 | 2 |
+| plh_images/activities/guess_emotion.svg | 71.4 | 4 |
+| plh_images/activities/mystery_box.svg | 58.4 | 2 |
+| plh_images/activities/playing_with_clothes.svg | 67.5 | 2 |
+| plh_images/activities/role_play.svg | 38.5 | 4 |
+| plh_images/activities/rolling_ball_fun.svg | 90.6 | 2 |
+| plh_images/activities/short_term_goal.svg | 41.9 | 2 |
+| plh_images/activities/spy_colours.svg | 65.9 | 4 |
+| plh_images/activities/talk_1.svg | 76.9 | 12 |
+| plh_images/activities/talk_3.svg | 42.5 | 8 |
+| plh_images/activities/talk_4.svg | 77 | 12 |
+| plh_images/activities/talk_5.svg | 81.3 | 12 |
+| plh_images/activities/talk_6.svg | 37.5 | 14 |
+| plh_images/activities/talk_7.svg | 38.2 | 8 |
+| plh_images/activities/tell_stories.svg | 40.9 | 2 |
+| plh_images/activities/thinking_games.svg | 107.3 | 6 |
+| plh_images/activities/walk.svg | 101.3 | 2 |
 | plh_images/workshops/w_1on1/tools.svg | 48.5 | 2 |
 | plh_images/workshops/w_celebrate/cup.svg | 60.9 | 2 |
 | plh_images/workshops/w_celebrate/read/slide_1.svg | 152.3 | 3 |
