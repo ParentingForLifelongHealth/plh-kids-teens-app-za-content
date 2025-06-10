@@ -30,12 +30,12 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2571 |
+| set_variable | 2573 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 2 |
-| template | 943 |
-| text | 113 |
+| template | 945 |
+| text | 110 |
 | text_area | 2 |
 | text_box | 5 |
 | text_bubble | 2 |
@@ -709,7 +709,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/workshops/w_safe/tools.svg | 23.9 | 4 |
 | plh_images/workshops/w_self_care/individual/recognise.svg | 34.7 | 2 |
 | plh_images/workshops/w_self_care/individual/reward.svg | 27.9 | 2 |
-| plh_images/workshops/w_self_care/tools.svg | 10 | 6 |
+| plh_images/workshops/w_self_care/tools.svg | 10 | 4 |
 | plh_images/workshops/w_solve/read_1/slide_1.svg | 35.6 | 2 |
 | plh_images/workshops/w_solve/read_1/slide_2.svg | 33.4 | 2 |
 | plh_images/workshops/w_solve/read_1/slide_3.svg | 33.6 | 2 |
@@ -773,7 +773,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/workshops/w_stress/read_3/slide_4.svg | 103.5 | 2 |
 | plh_images/workshops/w_stress/read_3/slide_5.svg | 71.4 | 2 |
 | plh_images/workshops/w_stress/read_3/slide_6.svg | 57.8 | 2 |
-| plh_images/workshops/w_stress/tools.svg | 16.9 | 2 |
+| plh_images/workshops/w_stress/tools.svg | 16.9 | 4 |
 | plh_images/workshops/w_svp/learn_warning_signs/catcalling.svg | 96.1 | 2 |
 | plh_images/workshops/w_svp/learn_warning_signs/controlling_boyfriend.svg | 39.3 | 2 |
 | plh_images/workshops/w_svp/learn_warning_signs/nude_pic.svg | 49.6 | 2 |
