@@ -80,8 +80,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 86817 KB | 86.8 MB |
-| unused | 202570 KB | 202.6 MB |
+| total | 87576 KB | 87.6 MB |
+| unused | 196899 KB | 196.9 MB |
 </details>
 
 <details open>
@@ -253,8 +253,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/selfcare.jpg | 96.6 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
-| plh_images/activities/bao.svg | 5661.9 |
-| plh_images/activities/bao_icon.svg | 8.6 |
 | plh_images/activities/charades_icon.svg | 35.6 |
 | plh_images/activities/chores.svg | 110.2 |
 | plh_images/activities/chores_icon.svg | 9.5 |
@@ -576,32 +574,40 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/talk_feelings_challenges.svg | 19.6 | 2 |
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/gift_box.json | 674.5 | 1 |
+| plh_images/activities/act_animal.svg | 135.4 | 2 |
+| plh_images/activities/act_animal_infant.svg | 106.2 | 2 |
 | plh_images/activities/act_emotions.svg | 106.6 | 2 |
+| plh_images/activities/animal_sounds.svg | 84.2 | 2 |
 | plh_images/activities/artist.svg | 2210.9 | 4 |
 | plh_images/activities/blanket_forts.svg | 81.2 | 2 |
-| plh_images/activities/books.svg | 72.6 | 8 |
+| plh_images/activities/books.svg | 72.6 | 4 |
 | plh_images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | plh_images/activities/charades.svg | 38.9 | 4 |
+| plh_images/activities/circle_dance.svg | 117.2 | 4 |
 | plh_images/activities/clean.svg | 39.9 | 2 |
 | plh_images/activities/cook_traditional.svg | 40.7 | 2 |
 | plh_images/activities/dance.svg | 42.3 | 6 |
+| plh_images/activities/dream_travel.svg | 136.9 | 2 |
 | plh_images/activities/find_pair.svg | 36.9 | 2 |
 | plh_images/activities/garden.svg | 109.9 | 2 |
 | plh_images/activities/guess_emotion.svg | 71.4 | 4 |
+| plh_images/activities/idea_box.svg | 27.7 | 4 |
+| plh_images/activities/lap_bounce.svg | 81.2 | 2 |
 | plh_images/activities/mystery_box.svg | 58.4 | 2 |
 | plh_images/activities/playing_with_clothes.svg | 67.5 | 2 |
 | plh_images/activities/role_play.svg | 38.5 | 4 |
 | plh_images/activities/rolling_ball_fun.svg | 90.6 | 2 |
 | plh_images/activities/short_term_goal.svg | 41.9 | 2 |
 | plh_images/activities/spy_colours.svg | 65.9 | 4 |
-| plh_images/activities/talk_1.svg | 76.9 | 12 |
-| plh_images/activities/talk_3.svg | 42.5 | 8 |
+| plh_images/activities/talk_1.svg | 76.9 | 8 |
+| plh_images/activities/talk_3.svg | 42.5 | 6 |
 | plh_images/activities/talk_4.svg | 77 | 12 |
-| plh_images/activities/talk_5.svg | 81.3 | 12 |
-| plh_images/activities/talk_6.svg | 37.5 | 14 |
-| plh_images/activities/talk_7.svg | 38.2 | 8 |
+| plh_images/activities/talk_5.svg | 81.3 | 8 |
+| plh_images/activities/talk_6.svg | 37.5 | 10 |
+| plh_images/activities/talk_7.svg | 38.2 | 6 |
 | plh_images/activities/tell_stories.svg | 40.9 | 2 |
 | plh_images/activities/thinking_games.svg | 107.3 | 6 |
+| plh_images/activities/unseen_guesses.svg | 70.8 | 2 |
 | plh_images/activities/walk.svg | 101.3 | 2 |
 | plh_images/workshops/w_1on1/tools.svg | 48.5 | 2 |
 | plh_images/workshops/w_celebrate/cup.svg | 60.9 | 2 |
@@ -793,7 +799,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | type | subtype | total |
 | --- | --- | --- |
-| data_list |  | 10 |
+| data_list |  | 11 |
 | data_list | activities | 2 |
 | data_list | app_config_language_list | 1 |
 | data_list | check_in | 1 |

@@ -168,21 +168,53 @@
             },
             {
               "name": "yes",
-              "value": "Yes",
+              "value": "@global.yes",
               "_translations": {
                 "value": {}
               },
+              "exclude_from_translation": true,
               "type": "set_variable",
-              "_nested_name": "loop_data.dg_1.yes"
+              "_nested_name": "loop_data.dg_1.yes",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.yes",
+                    "matchedExpression": "@global.yes",
+                    "type": "global",
+                    "fieldName": "yes"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.yes": [
+                  "value"
+                ]
+              }
             },
             {
               "name": "no",
-              "value": "No",
+              "value": "@global.no",
               "_translations": {
                 "value": {}
               },
+              "exclude_from_translation": true,
               "type": "set_variable",
-              "_nested_name": "loop_data.dg_1.no"
+              "_nested_name": "loop_data.dg_1.no",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.no",
+                    "matchedExpression": "@global.no",
+                    "type": "global",
+                    "fieldName": "no"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.no": [
+                  "value"
+                ]
+              }
             },
             {
               "name": "radio_group_done_tracker",
