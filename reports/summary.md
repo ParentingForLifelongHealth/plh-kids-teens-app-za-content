@@ -80,8 +80,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 88196 KB | 88.2 MB |
-| unused | 196899 KB | 196.9 MB |
+| total | 88235 KB | 88.2 MB |
+| unused | 196946 KB | 196.9 MB |
 </details>
 
 <details open>
@@ -252,6 +252,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/selfcare.jpg | 96.6 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
+| lottie/relax/breathing_heart.json | 46.7 |
 | plh_images/activities/charades_icon.svg | 35.6 |
 | plh_images/activities/chores.svg | 110.2 |
 | plh_images/activities/chores_icon.svg | 9.5 |
@@ -321,6 +322,7 @@ Assets that have references within sheets but do not appear in app-data
 | images/icons/share.svg | 2 |
 | images/icons/visibility.svg | 1 |
 | images/logos/plh.jpg | 1 |
+| lottie/relax/heart.json | 7 |
 | plh_images/activities/five_stones.svg | 2 |
 | plh_images/activities/follow_sound.svg | 2 |
 | plh_images/activities/mirror_moments.svg | 2 |
@@ -582,6 +584,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/talk_feelings_challenges.svg | 19.6 | 2 |
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/gift_box.json | 674.5 | 1 |
+| lottie/relax/blue_dots.json | 14.7 | 7 |
+| lottie/relax/looping_rings.json | 10.4 | 11 |
+| lottie/relax/soothing_waves.json | 7.6 | 8 |
+| lottie/relax/square_flow.json | 5.9 | 16 |
 | plh_images/activities/act_animal.svg | 135.4 | 2 |
 | plh_images/activities/act_animal_infant.svg | 111.5 | 2 |
 | plh_images/activities/act_emotions.svg | 106.6 | 2 |
