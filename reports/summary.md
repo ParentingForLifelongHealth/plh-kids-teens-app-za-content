@@ -80,7 +80,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 87576 KB | 87.6 MB |
+| total | 88196 KB | 88.2 MB |
 | unused | 196899 KB | 196.9 MB |
 </details>
 
@@ -322,6 +322,14 @@ Assets that have references within sheets but do not appear in app-data
 | images/icons/share.svg | 2 |
 | images/icons/visibility.svg | 1 |
 | images/logos/plh.jpg | 1 |
+| plh_images/activities/five_stones.svg | 2 |
+| plh_images/activities/follow_sound.svg | 2 |
+| plh_images/activities/mirror_moments.svg | 2 |
+| plh_images/activities/name_that_sound.svg | 2 |
+| plh_images/activities/scarf_peekabo.svg | 2 |
+| plh_images/activities/secret_handshake.svg | 2 |
+| plh_images/activities/song.svg | 2 |
+| plh_images/activities/toe_tickle_talk.svg | 2 |
 | plh_images/characters/elder/large.svg | 1 |
 </details>
 
@@ -575,7 +583,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/gift_box.json | 674.5 | 1 |
 | plh_images/activities/act_animal.svg | 135.4 | 2 |
-| plh_images/activities/act_animal_infant.svg | 106.2 | 2 |
+| plh_images/activities/act_animal_infant.svg | 111.5 | 2 |
 | plh_images/activities/act_emotions.svg | 106.6 | 2 |
 | plh_images/activities/animal_sounds.svg | 84.2 | 2 |
 | plh_images/activities/artist.svg | 2210.9 | 4 |
@@ -583,30 +591,38 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/activities/books.svg | 72.6 | 4 |
 | plh_images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | plh_images/activities/charades.svg | 38.9 | 4 |
-| plh_images/activities/circle_dance.svg | 117.2 | 4 |
+| plh_images/activities/circle_dance.svg | 117.2 | 6 |
 | plh_images/activities/clean.svg | 39.9 | 2 |
 | plh_images/activities/cook_traditional.svg | 40.7 | 2 |
+| plh_images/activities/cooking_with_maths.svg | 50.9 | 2 |
 | plh_images/activities/dance.svg | 42.3 | 6 |
 | plh_images/activities/dream_travel.svg | 136.9 | 2 |
+| plh_images/activities/face_to_face_fun.svg | 81.2 | 2 |
 | plh_images/activities/find_pair.svg | 36.9 | 2 |
 | plh_images/activities/garden.svg | 109.9 | 2 |
 | plh_images/activities/guess_emotion.svg | 71.4 | 4 |
-| plh_images/activities/idea_box.svg | 27.7 | 4 |
-| plh_images/activities/lap_bounce.svg | 81.2 | 2 |
+| plh_images/activities/idea_box.svg | 27.7 | 2 |
+| plh_images/activities/lap_bounce.svg | 192.1 | 2 |
+| plh_images/activities/make_story_child.svg | 66.1 | 2 |
+| plh_images/activities/mystery_bag.svg | 7.5 | 2 |
 | plh_images/activities/mystery_box.svg | 58.4 | 2 |
-| plh_images/activities/playing_with_clothes.svg | 67.5 | 2 |
+| plh_images/activities/play_with_clothes.svg | 102.7 | 2 |
 | plh_images/activities/role_play.svg | 38.5 | 4 |
 | plh_images/activities/rolling_ball_fun.svg | 90.6 | 2 |
 | plh_images/activities/short_term_goal.svg | 41.9 | 2 |
+| plh_images/activities/songs.svg | 2.7 | 6 |
 | plh_images/activities/spy_colours.svg | 65.9 | 4 |
-| plh_images/activities/talk_1.svg | 76.9 | 8 |
-| plh_images/activities/talk_3.svg | 42.5 | 6 |
-| plh_images/activities/talk_4.svg | 77 | 12 |
-| plh_images/activities/talk_5.svg | 81.3 | 8 |
-| plh_images/activities/talk_6.svg | 37.5 | 10 |
-| plh_images/activities/talk_7.svg | 38.2 | 6 |
+| plh_images/activities/story_cuddles.svg | 34.6 | 2 |
+| plh_images/activities/talk_1.svg | 76.9 | 2 |
+| plh_images/activities/talk_3.svg | 42.5 | 2 |
+| plh_images/activities/talk_4.svg | 77 | 2 |
+| plh_images/activities/talk_5.svg | 81.3 | 2 |
+| plh_images/activities/talk_6.svg | 37.5 | 6 |
+| plh_images/activities/talk_7.svg | 38.2 | 2 |
+| plh_images/activities/tap_and_shake_band.svg | 118.7 | 2 |
 | plh_images/activities/tell_stories.svg | 40.9 | 2 |
-| plh_images/activities/thinking_games.svg | 107.3 | 6 |
+| plh_images/activities/thinking_games.svg | 107.3 | 4 |
+| plh_images/activities/tummy_time_safari.svg | 106.2 | 2 |
 | plh_images/activities/unseen_guesses.svg | 70.8 | 2 |
 | plh_images/activities/walk.svg | 101.3 | 2 |
 | plh_images/workshops/w_1on1/tools.svg | 48.5 | 2 |
