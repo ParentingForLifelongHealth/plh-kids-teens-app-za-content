@@ -196,7 +196,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/faces/saddest.svg | 2 |
 | images/feelings_yc.png | 578.8 |
 | images/feelings_yc.svg | 202.2 |
-| images/flags/kw.svg | 0.5 |
 | images/flags/tz.svg | 0.5 |
 | images/icons/book_outline_blue.svg | 0.7 |
 | images/icons/book_outline_white.svg | 0.7 |
@@ -316,7 +315,6 @@ Assets that have references within sheets but do not appear in app-data
 | --- | --- |
 | audio/care_audio_2.mp3 | 2 |
 | images/backgrounds/library_bottom_right.png | 1 |
-| images/flags/za.svg | 1 |
 | images/icons/docs.svg | 1 |
 | images/icons/download.svg | 1 |
 | images/icons/download_white.svg | 1 |
@@ -507,6 +505,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/faces/scared.svg | 2.1 | 4 |
 | images/faces/tired.svg | 2.4 | 4 |
 | images/flags/gb.svg | 0.5 | 2 |
+| images/flags/za.svg | 0.8 | 2 |
 | images/icons/balance_blue.png | 4.7 | 2 |
 | images/icons/brain_blue.png | 5.2 | 10 |
 | images/icons/clock_blue.png | 4.5 | 10 |
