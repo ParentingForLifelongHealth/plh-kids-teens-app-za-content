@@ -316,6 +316,7 @@ Assets that have references within sheets but do not appear in app-data
 | --- | --- |
 | audio/care_audio_2.mp3 | 2 |
 | images/backgrounds/library_bottom_right.png | 1 |
+| images/flags/za.svg | 1 |
 | images/icons/docs.svg | 1 |
 | images/icons/download.svg | 1 |
 | images/icons/download_white.svg | 1 |
