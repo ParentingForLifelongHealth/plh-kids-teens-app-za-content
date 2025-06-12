@@ -7,7 +7,9 @@
       "name": "submit",
       "value": "Submit",
       "_translations": {
-        "value": {}
+        "value": {
+          "za_xh": true
+        }
       },
       "type": "set_variable",
       "_nested_name": "submit"
@@ -16,7 +18,9 @@
       "name": "text_box_placeholder",
       "value": "Tap and type",
       "_translations": {
-        "value": {}
+        "value": {
+          "za_xh": true
+        }
       },
       "type": "set_variable",
       "_nested_name": "text_box_placeholder"
@@ -133,7 +137,9 @@
           "name": "incorrect",
           "value": "You have entered an incorrect code.",
           "_translations": {
-            "value": {}
+            "value": {
+              "za_xh": true
+            }
           },
           "condition": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)",
           "_nested_name": "dg_reply_entered.incorrect",
