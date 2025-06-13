@@ -30,11 +30,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2573 |
+| set_variable | 2558 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 2 |
-| template | 945 |
+| template | 930 |
 | text | 110 |
 | text_area | 2 |
 | text_box | 5 |
@@ -53,13 +53,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 665 |
+| emit: completed | 650 |
 | emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 686 |
+| emit: uncompleted | 671 |
 | feedback | 13 |
 | go_to | 25 |
 | nav_stack | 303 |
@@ -80,8 +80,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 88235 KB | 88.2 MB |
-| unused | 196946 KB | 196.9 MB |
+| total | 87608 KB | 87.6 MB |
+| unused | 197573 KB | 197.6 MB |
 </details>
 
 <details open>
@@ -253,6 +253,8 @@ Assets that appear in app-data but do not have references within sheets
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
 | lottie/relax/breathing_heart.json | 46.7 |
+| plh_images/activities/act_animal_infant.svg | 111.5 |
+| plh_images/activities/animal_sounds.svg | 84.2 |
 | plh_images/activities/charades_icon.svg | 35.6 |
 | plh_images/activities/chores.svg | 110.2 |
 | plh_images/activities/chores_icon.svg | 9.5 |
@@ -261,6 +263,7 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/activities/cook_icon.svg | 12.4 |
 | plh_images/activities/cook_traditional_icon.svg | 56.1 |
 | plh_images/activities/dance_icon.svg | 33 |
+| plh_images/activities/face_to_face_fun.svg | 81.2 |
 | plh_images/activities/find_pair_icon.svg | 29.1 |
 | plh_images/activities/garden_icon.svg | 15.4 |
 | plh_images/activities/long_term_goal.svg | 59.8 |
@@ -269,7 +272,9 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/activities/memory_game_icon.svg | 31.5 |
 | plh_images/activities/mystery_box_icon.svg | 28.4 |
 | plh_images/activities/role_play_icon.svg | 35.6 |
+| plh_images/activities/rolling_ball_fun.svg | 90.6 |
 | plh_images/activities/short_term_goal_icon.svg | 25 |
+| plh_images/activities/story_cuddles.svg | 34.6 |
 | plh_images/activities/talk_1_icon.svg | 45 |
 | plh_images/activities/talk_2.svg | 37 |
 | plh_images/activities/talk_2_icon.svg | 19.1 |
@@ -278,7 +283,9 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/activities/talk_5_icon.svg | 53.3 |
 | plh_images/activities/talk_6_icon.svg | 23.5 |
 | plh_images/activities/talk_7_icon.svg | 22.9 |
+| plh_images/activities/tap_and_shake_band.svg | 118.7 |
 | plh_images/activities/tell_stories_icon.svg | 28.6 |
+| plh_images/activities/tummy_time_safari.svg | 106.2 |
 | plh_images/activities/walk_icon.svg | 98.4 |
 | plh_images/icons/light_bulb_white.svg | 2.4 |
 | plh_images/icons/parent_child_talk_white.svg | 2.2 |
@@ -324,13 +331,7 @@ Assets that have references within sheets but do not appear in app-data
 | images/logos/plh.jpg | 1 |
 | lottie/relax/heart.json | 7 |
 | plh_images/activities/five_stones.svg | 2 |
-| plh_images/activities/follow_sound.svg | 2 |
-| plh_images/activities/mirror_moments.svg | 2 |
-| plh_images/activities/name_that_sound.svg | 2 |
-| plh_images/activities/scarf_peekabo.svg | 2 |
-| plh_images/activities/secret_handshake.svg | 2 |
 | plh_images/activities/song.svg | 2 |
-| plh_images/activities/toe_tickle_talk.svg | 2 |
 | plh_images/characters/elder/large.svg | 1 |
 </details>
 
@@ -589,9 +590,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/relax/soothing_waves.json | 7.6 | 8 |
 | lottie/relax/square_flow.json | 5.9 | 16 |
 | plh_images/activities/act_animal.svg | 135.4 | 2 |
-| plh_images/activities/act_animal_infant.svg | 111.5 | 2 |
 | plh_images/activities/act_emotions.svg | 106.6 | 2 |
-| plh_images/activities/animal_sounds.svg | 84.2 | 2 |
 | plh_images/activities/artist.svg | 2210.9 | 4 |
 | plh_images/activities/blanket_forts.svg | 81.2 | 2 |
 | plh_images/activities/books.svg | 72.6 | 4 |
@@ -603,7 +602,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/activities/cooking_with_maths.svg | 50.9 | 2 |
 | plh_images/activities/dance.svg | 42.3 | 6 |
 | plh_images/activities/dream_travel.svg | 136.9 | 2 |
-| plh_images/activities/face_to_face_fun.svg | 81.2 | 2 |
 | plh_images/activities/find_pair.svg | 36.9 | 2 |
 | plh_images/activities/garden.svg | 109.9 | 2 |
 | plh_images/activities/guess_emotion.svg | 71.4 | 4 |
@@ -614,21 +612,17 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/activities/mystery_box.svg | 58.4 | 2 |
 | plh_images/activities/play_with_clothes.svg | 102.7 | 2 |
 | plh_images/activities/role_play.svg | 38.5 | 4 |
-| plh_images/activities/rolling_ball_fun.svg | 90.6 | 2 |
 | plh_images/activities/short_term_goal.svg | 41.9 | 2 |
-| plh_images/activities/songs.svg | 2.7 | 6 |
+| plh_images/activities/songs.svg | 2.7 | 2 |
 | plh_images/activities/spy_colours.svg | 65.9 | 4 |
-| plh_images/activities/story_cuddles.svg | 34.6 | 2 |
 | plh_images/activities/talk_1.svg | 76.9 | 2 |
 | plh_images/activities/talk_3.svg | 42.5 | 2 |
 | plh_images/activities/talk_4.svg | 77 | 2 |
 | plh_images/activities/talk_5.svg | 81.3 | 2 |
 | plh_images/activities/talk_6.svg | 37.5 | 6 |
 | plh_images/activities/talk_7.svg | 38.2 | 2 |
-| plh_images/activities/tap_and_shake_band.svg | 118.7 | 2 |
 | plh_images/activities/tell_stories.svg | 40.9 | 2 |
 | plh_images/activities/thinking_games.svg | 107.3 | 4 |
-| plh_images/activities/tummy_time_safari.svg | 106.2 | 2 |
 | plh_images/activities/unseen_guesses.svg | 70.8 | 2 |
 | plh_images/activities/walk.svg | 101.3 | 2 |
 | plh_images/workshops/w_1on1/tools.svg | 48.5 | 2 |
@@ -829,19 +823,28 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_list | hp_review | 2 |
 | data_list | legal_terms | 2 |
 | data_list | lifecycle_actions | 1 |
-| data_list | modules | 11 |
+| data_list | modules | 2 |
 | data_list | modules_celebrate_t | 1 |
+| data_list | modules_consequences | 1 |
 | data_list | modules_consequences_t | 1 |
 | data_list | modules_crisis_t | 1 |
+| data_list | modules_developmentplay | 1 |
+| data_list | modules_feelings | 1 |
 | data_list | modules_grief_t | 1 |
+| data_list | modules_instructions | 1 |
 | data_list | modules_instructions_t | 1 |
 | data_list | modules_learn_t | 1 |
 | data_list | modules_money_t | 1 |
+| data_list | modules_oneononetime | 1 |
 | data_list | modules_oneononetime_t | 1 |
+| data_list | modules_praise | 1 |
 | data_list | modules_praise_t | 1 |
+| data_list | modules_problemsolving | 1 |
 | data_list | modules_problemsolving_t | 1 |
 | data_list | modules_rules_t | 1 |
+| data_list | modules_rulesroutines | 1 |
 | data_list | modules_safety_t | 1 |
+| data_list | modules_selfcare | 1 |
 | data_list | modules_selfcare_t | 1 |
 | data_list | modules_srh_t | 1 |
 | data_list | modules_stayingsafe_t | 1 |
@@ -853,6 +856,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 106 |
-| template | generated | 753 |
+| template | generated | 738 |
 | template | legal_terms | 4 |
 </details>
