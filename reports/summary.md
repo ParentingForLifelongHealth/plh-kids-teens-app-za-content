@@ -30,11 +30,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2558 |
+| set_variable | 2556 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 2 |
-| template | 930 |
+| template | 928 |
 | text | 110 |
 | text_area | 2 |
 | text_box | 5 |
@@ -53,13 +53,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 650 |
+| emit: completed | 648 |
 | emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 671 |
+| emit: uncompleted | 669 |
 | feedback | 13 |
 | go_to | 25 |
 | nav_stack | 303 |
@@ -593,7 +593,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | plh_images/activities/act_emotions.svg | 106.6 | 2 |
 | plh_images/activities/artist.svg | 2210.9 | 4 |
 | plh_images/activities/blanket_forts.svg | 81.2 | 2 |
-| plh_images/activities/books.svg | 72.6 | 4 |
+| plh_images/activities/books.svg | 72.6 | 2 |
 | plh_images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | plh_images/activities/charades.svg | 38.9 | 4 |
 | plh_images/activities/circle_dance.svg | 117.2 | 6 |
@@ -856,6 +856,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 106 |
-| template | generated | 738 |
+| template | generated | 736 |
 | template | legal_terms | 4 |
 </details>
