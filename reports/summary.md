@@ -7,16 +7,16 @@
 | accordion_section | 6 |
 | apple_sign_in_button | 2 |
 | audio | 4 |
-| button | 73 |
+| button | 71 |
 | combo_box | 6 |
 | data_items | 140 |
 | debug_toggle | 1 |
-| display_grid | 2 |
+| display_grid | 4 |
 | display_group | 79 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 14 |
-| items | 15 |
+| items | 16 |
 | lottie_animation | 3 |
 | nested_properties | 181 |
 | number_selector | 1 |
@@ -30,15 +30,16 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2477 |
+| set_variable | 2486 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 2 |
-| template | 885 |
-| text | 110 |
+| template | 884 |
+| text | 111 |
 | text_area | 2 |
 | text_box | 5 |
 | text_bubble | 2 |
+| tile_component | 2 |
 | title | 39 |
 | toggle_bar | 5 |
 | update_action_list | 2 |
@@ -59,7 +60,7 @@
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 662 |
+| emit: uncompleted | 661 |
 | feedback | 13 |
 | go_to | 25 |
 | nav_stack | 267 |
@@ -855,7 +856,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | generator |  | 40 |
 | global |  | 5 |
 | global | legal_terms | 1 |
-| template |  | 106 |
+| template |  | 105 |
 | template | generated | 711 |
 | template | legal_terms | 4 |
 </details>
