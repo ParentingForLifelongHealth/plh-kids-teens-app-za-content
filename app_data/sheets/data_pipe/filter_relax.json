@@ -1,0 +1,24 @@
+{
+  "flow_type": "data_pipe",
+  "flow_name": "filter_relax",
+  "status": "released",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "in_library == \"yes\""
+      ],
+      "input_source": "relax",
+      "output_target": "library_relax"
+    }
+  ],
+  "_xlsxPath": "data/ZA relax.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+  "_output_flows": [
+    {
+      "flow_name": "library_relax",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    }
+  ]
+}

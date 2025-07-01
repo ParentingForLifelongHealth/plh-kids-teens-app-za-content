@@ -30,11 +30,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2556 |
+| set_variable | 2477 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 2 |
-| template | 928 |
+| template | 885 |
 | text | 110 |
 | text_area | 2 |
 | text_box | 5 |
@@ -59,10 +59,10 @@
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 669 |
+| emit: uncompleted | 662 |
 | feedback | 13 |
 | go_to | 25 |
-| nav_stack | 303 |
+| nav_stack | 267 |
 | pop_up | 64 |
 | reset_app | 1 |
 | save_to_device | 2 |
@@ -80,8 +80,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 87608 KB | 87.6 MB |
-| unused | 197573 KB | 197.6 MB |
+| total | 87606 KB | 87.6 MB |
+| unused | 197575 KB | 197.6 MB |
 </details>
 
 <details open>
@@ -214,6 +214,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/heart.svg | 0.6 |
 | images/icons/heart_filled.svg | 1.4 |
 | images/icons/in_progress_white.svg | 1.1 |
+| images/icons/parent_child.svg | 2 |
 | images/icons/pause_white.svg | 0.7 |
 | images/icons/play.svg | 0.5 |
 | images/icons/play_white.svg | 0.5 |
@@ -329,7 +330,7 @@ Assets that have references within sheets but do not appear in app-data
 | images/icons/share.svg | 2 |
 | images/icons/visibility.svg | 1 |
 | images/logos/plh.jpg | 1 |
-| lottie/relax/heart.json | 7 |
+| lottie/relax/heart.json | 8 |
 | plh_images/activities/five_stones.svg | 2 |
 | plh_images/activities/song.svg | 2 |
 | plh_images/characters/elder/large.svg | 1 |
@@ -343,7 +344,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | path | size_kb | count |
 | --- | --- | --- |
 | audio/caregiver_test_w_instruct.mp3 | 281.3 | 2 |
-| audio/relax/relax_1.mp3 | 265.1 | 3 |
+| audio/relax/relax_1.mp3 | 265.1 | 4 |
 | audio/relax/relax_10.mp3 | 404.9 | 2 |
 | audio/relax/relax_11.mp3 | 445.6 | 2 |
 | audio/relax/relax_12.mp3 | 539.7 | 2 |
@@ -354,19 +355,19 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/relax/relax_17.mp3 | 148 | 3 |
 | audio/relax/relax_18.mp3 | 312.9 | 1 |
 | audio/relax/relax_19.mp3 | 454 | 1 |
-| audio/relax/relax_2.mp3 | 404.4 | 4 |
+| audio/relax/relax_2.mp3 | 404.4 | 5 |
 | audio/relax/relax_20.mp3 | 539.8 | 2 |
 | audio/relax/relax_21.mp3 | 189.3 | 1 |
 | audio/relax/relax_22.mp3 | 109.8 | 2 |
 | audio/relax/relax_23.mp3 | 122.9 | 1 |
 | audio/relax/relax_24.mp3 | 121.3 | 1 |
-| audio/relax/relax_3.mp3 | 235.1 | 4 |
-| audio/relax/relax_4.mp3 | 514.5 | 3 |
-| audio/relax/relax_5.mp3 | 195.7 | 3 |
+| audio/relax/relax_3.mp3 | 235.1 | 5 |
+| audio/relax/relax_4.mp3 | 514.5 | 4 |
+| audio/relax/relax_5.mp3 | 195.7 | 4 |
 | audio/relax/relax_6.mp3 | 280.7 | 1 |
 | audio/relax/relax_7.mp3 | 285.3 | 2 |
 | audio/relax/relax_8.mp3 | 302 | 2 |
-| audio/relax/relax_9.mp3 | 576.6 | 2 |
+| audio/relax/relax_9.mp3 | 576.6 | 3 |
 | audio/testimonials/caregiver/caregiver_test_w_1on1.mp3 | 258.8 | 2 |
 | audio/testimonials/caregiver/caregiver_test_w_consequence.mp3 | 312.3 | 2 |
 | audio/testimonials/caregiver/caregiver_test_w_crisis.mp3 | 178.3 | 2 |
@@ -545,7 +546,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/magnify_glass.svg | 1.9 | 1 |
 | images/icons/magnifying_glass.svg | 0.9 | 26 |
 | images/icons/notification_bell.png | 0.9 | 1 |
-| images/icons/parent_child.svg | 2 | 1 |
 | images/icons/parent_child_heart.svg | 3 | 26 |
 | images/icons/pause.svg | 0.7 | 26 |
 | images/icons/pencil.svg | 1.1 | 26 |
@@ -585,10 +585,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/talk_feelings_challenges.svg | 19.6 | 2 |
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/gift_box.json | 674.5 | 1 |
-| lottie/relax/blue_dots.json | 14.7 | 7 |
-| lottie/relax/looping_rings.json | 10.4 | 11 |
-| lottie/relax/soothing_waves.json | 7.6 | 8 |
-| lottie/relax/square_flow.json | 5.9 | 16 |
+| lottie/relax/blue_dots.json | 14.7 | 8 |
+| lottie/relax/looping_rings.json | 10.4 | 12 |
+| lottie/relax/soothing_waves.json | 7.6 | 9 |
+| lottie/relax/square_flow.json | 5.9 | 18 |
 | plh_images/activities/act_animal.svg | 135.4 | 2 |
 | plh_images/activities/act_emotions.svg | 106.6 | 2 |
 | plh_images/activities/artist.svg | 2210.9 | 4 |
@@ -819,7 +819,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_list | activities | 2 |
 | data_list | app_config_language_list | 1 |
 | data_list | check_in | 1 |
-| data_list | generated | 52 |
+| data_list | generated | 53 |
 | data_list | hp_review | 2 |
 | data_list | legal_terms | 2 |
 | data_list | lifecycle_actions | 1 |
@@ -850,12 +850,12 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_list | modules_stayingsafe_t | 1 |
 | data_list | modules_stress_t | 1 |
 | data_list | relax | 1 |
-| data_pipe |  | 2 |
+| data_pipe |  | 3 |
 | data_pipe | generated | 50 |
 | generator |  | 40 |
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 106 |
-| template | generated | 736 |
+| template | generated | 711 |
 | template | legal_terms | 4 |
 </details>
