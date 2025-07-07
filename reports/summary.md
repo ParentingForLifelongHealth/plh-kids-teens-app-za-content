@@ -30,11 +30,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2486 |
+| set_variable | 2480 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 2 |
-| template | 884 |
+| template | 878 |
 | text | 111 |
 | text_area | 2 |
 | text_box | 5 |
@@ -54,13 +54,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 648 |
+| emit: completed | 642 |
 | emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 661 |
+| emit: uncompleted | 655 |
 | feedback | 13 |
 | go_to | 25 |
 | nav_stack | 267 |
@@ -81,8 +81,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 87606 KB | 87.6 MB |
-| unused | 197575 KB | 197.6 MB |
+| total | 80316 KB | 80.3 MB |
+| unused | 224463 KB | 224.5 MB |
 </details>
 
 <details open>
@@ -113,6 +113,45 @@ Assets that appear in app-data but do not have references within sheets
 | audio/topic_intros/w_instruct_intro.mp3 | 172.6 |
 | audio/yc/celebrate_audio_1.mp3 | 497.1 |
 | contents.json | 5.9 |
+| images/activities/act_animal_infant.svg | 111.5 |
+| images/activities/act_emotions.svg | 106.6 |
+| images/activities/animal_sounds.svg | 84.2 |
+| images/activities/charades_icon.svg | 35.6 |
+| images/activities/chores.svg | 110.2 |
+| images/activities/chores_icon.svg | 9.5 |
+| images/activities/clean_icon.svg | 35.4 |
+| images/activities/cook.svg | 45.1 |
+| images/activities/cook_icon.svg | 12.4 |
+| images/activities/cook_traditional_icon.svg | 56.1 |
+| images/activities/dance_icon.svg | 33 |
+| images/activities/face_to_face_fun.svg | 81.2 |
+| images/activities/find_pair_icon.svg | 29.1 |
+| images/activities/garden_icon.svg | 15.4 |
+| images/activities/idea_box.svg | 27.7 |
+| images/activities/lap_bounce.svg | 192.1 |
+| images/activities/long_term_goal.svg | 59.8 |
+| images/activities/long_term_goal_icon.svg | 62.1 |
+| images/activities/memory_game.svg | 40 |
+| images/activities/memory_game_icon.svg | 31.5 |
+| images/activities/mystery_box.svg | 58.4 |
+| images/activities/mystery_box_icon.svg | 28.4 |
+| images/activities/role_play_icon.svg | 35.6 |
+| images/activities/rolling_ball_fun.svg | 90.6 |
+| images/activities/short_term_goal_icon.svg | 25 |
+| images/activities/story_cuddles.svg | 34.6 |
+| images/activities/talk_1_icon.svg | 45 |
+| images/activities/talk_2.svg | 37 |
+| images/activities/talk_2_icon.svg | 19.1 |
+| images/activities/talk_3_icon.svg | 27.7 |
+| images/activities/talk_4_icon.svg | 46.3 |
+| images/activities/talk_5.svg | 81.3 |
+| images/activities/talk_5_icon.svg | 53.3 |
+| images/activities/talk_6_icon.svg | 23.5 |
+| images/activities/talk_7_icon.svg | 22.9 |
+| images/activities/tap_and_shake_band.svg | 118.7 |
+| images/activities/tell_stories_icon.svg | 28.6 |
+| images/activities/tummy_time_safari.svg | 106.2 |
+| images/activities/walk_icon.svg | 98.4 |
 | images/child_development_yc.png | 758.1 |
 | images/child_development_yc.svg | 243.8 |
 | images/comics/child_development_yc_1.png | 949.2 |
@@ -198,6 +237,9 @@ Assets that appear in app-data but do not have references within sheets
 | images/feelings_yc.png | 578.8 |
 | images/feelings_yc.svg | 202.2 |
 | images/flags/tz.svg | 0.5 |
+| images/homescreen/one_on_one_t.svg | 48.5 |
+| images/homescreen/srh_t.svg | 46.2 |
+| images/homescreen/svp.svg | 25.4 |
 | images/icons/book_outline_blue.svg | 0.7 |
 | images/icons/book_outline_white.svg | 0.7 |
 | images/icons/cancel.svg | 1.7 |
@@ -251,50 +293,85 @@ Assets that appear in app-data but do not have references within sheets
 | images/routines_yc.svg | 1854.9 |
 | images/self_care_yc.png | 608.4 |
 | images/self_care_yc.svg | 94 |
-| images/selfcare.jpg | 96.6 |
+| images/teen_modules/celebrate/celebrate_cup.svg | 60.9 |
+| images/teen_modules/celebrate/celebrate_t_1.svg | 152.3 |
+| images/teen_modules/celebrate/celebrate_t_2.svg | 34.9 |
+| images/teen_modules/celebrate/celebrate_t_3.svg | 89.6 |
+| images/teen_modules/celebrate/celebrate_t_4.svg | 166.6 |
+| images/teen_modules/learn/learn_conflict_t_1.svg | 51.8 |
+| images/teen_modules/learn/learn_conflict_t_2.svg | 69.4 |
+| images/teen_modules/learn/learn_conflict_t_3.svg | 47.4 |
+| images/teen_modules/learn/learn_conflict_t_4.svg | 48.3 |
+| images/teen_modules/learn/learn_support_t_1.svg | 51.8 |
+| images/teen_modules/learn/learn_support_t_2.svg | 69.4 |
+| images/teen_modules/learn/learn_support_t_3.svg | 46 |
+| images/teen_modules/learn/learn_support_t_4.svg | 40.2 |
+| images/teen_modules/money/money3_t_6.svg | 51.9 |
+| images/teen_modules/money/money4_t_1.svg | 47.1 |
+| images/teen_modules/praise/praise1_t_2.svg | 44.8 |
+| images/teen_modules/safe/safe2_t_2.svg | 33 |
+| images/teen_modules/svp/svp_catcalling_t.svg | 96.1 |
+| images/teen_modules/svp/svp_usebody_t_1.gif | 1111.6 |
+| images/teen_modules/svp/svp_usebody_t_2.gif | 2008.5 |
+| images/teen_modules/svp/svp_usebody_t_3.gif | 844.1 |
+| images/teen_modules/svp/svp_usevoice_t.svg | 18.4 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
 | lottie/relax/breathing_heart.json | 46.7 |
-| plh_images/activities/act_animal_infant.svg | 111.5 |
-| plh_images/activities/animal_sounds.svg | 84.2 |
-| plh_images/activities/charades_icon.svg | 35.6 |
-| plh_images/activities/chores.svg | 110.2 |
-| plh_images/activities/chores_icon.svg | 9.5 |
-| plh_images/activities/clean_icon.svg | 35.4 |
-| plh_images/activities/cook.svg | 45.1 |
-| plh_images/activities/cook_icon.svg | 12.4 |
-| plh_images/activities/cook_traditional_icon.svg | 56.1 |
-| plh_images/activities/dance_icon.svg | 33 |
-| plh_images/activities/face_to_face_fun.svg | 81.2 |
-| plh_images/activities/find_pair_icon.svg | 29.1 |
-| plh_images/activities/garden_icon.svg | 15.4 |
-| plh_images/activities/long_term_goal.svg | 59.8 |
-| plh_images/activities/long_term_goal_icon.svg | 62.1 |
-| plh_images/activities/memory_game.svg | 40 |
-| plh_images/activities/memory_game_icon.svg | 31.5 |
-| plh_images/activities/mystery_box_icon.svg | 28.4 |
-| plh_images/activities/role_play_icon.svg | 35.6 |
-| plh_images/activities/rolling_ball_fun.svg | 90.6 |
-| plh_images/activities/short_term_goal_icon.svg | 25 |
-| plh_images/activities/story_cuddles.svg | 34.6 |
-| plh_images/activities/talk_1_icon.svg | 45 |
-| plh_images/activities/talk_2.svg | 37 |
-| plh_images/activities/talk_2_icon.svg | 19.1 |
-| plh_images/activities/talk_3_icon.svg | 27.7 |
-| plh_images/activities/talk_4_icon.svg | 46.3 |
-| plh_images/activities/talk_5_icon.svg | 53.3 |
-| plh_images/activities/talk_6_icon.svg | 23.5 |
-| plh_images/activities/talk_7_icon.svg | 22.9 |
-| plh_images/activities/tap_and_shake_band.svg | 118.7 |
-| plh_images/activities/tell_stories_icon.svg | 28.6 |
-| plh_images/activities/tummy_time_safari.svg | 106.2 |
-| plh_images/activities/walk_icon.svg | 98.4 |
 | plh_images/icons/light_bulb_white.svg | 2.4 |
 | plh_images/icons/parent_child_talk_white.svg | 2.2 |
 | plh_images/icons/smile_eyes_down_white.svg | 0.9 |
 | plh_images/icons/speech_bubble_question_white.svg | 1.6 |
 | plh_images/workshops/HomePage.png | 180.3 |
+| plh_images/workshops/w_1on1/tools.svg | 48.5 |
+| plh_images/workshops/w_celebrate/cup.svg | 60.9 |
+| plh_images/workshops/w_celebrate/tools.svg | 36.3 |
+| plh_images/workshops/w_consequence/read_1/slide_1.svg | 72.4 |
+| plh_images/workshops/w_consequence/read_1/slide_2.svg | 46.5 |
+| plh_images/workshops/w_consequence/read_1/slide_3.svg | 51.3 |
+| plh_images/workshops/w_consequence/read_1/slide_4.svg | 46.4 |
+| plh_images/workshops/w_consequence/read_2/slide_1.svg | 73 |
+| plh_images/workshops/w_consequence/read_2/slide_2.svg | 46.7 |
+| plh_images/workshops/w_consequence/read_2/slide_3.svg | 117.4 |
+| plh_images/workshops/w_consequence/read_3/slide_1.svg | 56 |
+| plh_images/workshops/w_consequence/read_3/slide_2.svg | 61.2 |
+| plh_images/workshops/w_consequence/read_3/slide_3.svg | 56.1 |
+| plh_images/workshops/w_consequence/read_3/slide_4.svg | 57.4 |
+| plh_images/workshops/w_consequence/read_3/slide_5.svg | 66.2 |
+| plh_images/workshops/w_consequence/read_3/slide_6.svg | 47.1 |
+| plh_images/workshops/w_consequence/read_3/slide_7.svg | 48.4 |
+| plh_images/workshops/w_consequence/read_3/slide_8.svg | 47.1 |
+| plh_images/workshops/w_consequence/read_3/slide_9.svg | 53.1 |
+| plh_images/workshops/w_consequence/tools.svg | 23 |
+| plh_images/workshops/w_crisis/learn/slide_1.svg | 42 |
+| plh_images/workshops/w_crisis/learn/slide_2.svg | 74.4 |
+| plh_images/workshops/w_crisis/learn/slide_3.svg | 38.5 |
+| plh_images/workshops/w_crisis/learn/slide_4.svg | 81.6 |
+| plh_images/workshops/w_crisis/learn/slide_5.svg | 41.4 |
+| plh_images/workshops/w_crisis/read_1/slide_1.svg | 36.7 |
+| plh_images/workshops/w_crisis/read_1/slide_2.svg | 33.4 |
+| plh_images/workshops/w_crisis/read_1/slide_3.svg | 36.6 |
+| plh_images/workshops/w_crisis/read_1/slide_4.svg | 34.3 |
+| plh_images/workshops/w_crisis/read_1/slide_5.svg | 37 |
+| plh_images/workshops/w_crisis/read_1/slide_6.svg | 27.7 |
+| plh_images/workshops/w_crisis/read_2/slide_1.svg | 77.2 |
+| plh_images/workshops/w_crisis/read_2/slide_2.svg | 54.6 |
+| plh_images/workshops/w_crisis/read_2/slide_3.svg | 58 |
 | plh_images/workshops/w_crisis/read_2/slide_4.svg | 55.5 |
+| plh_images/workshops/w_crisis/read_2/slide_5.svg | 55.5 |
+| plh_images/workshops/w_crisis/read_2/slide_6.svg | 56 |
+| plh_images/workshops/w_crisis/tools.svg | 46.1 |
+| plh_images/workshops/w_grief/read_grief_conflict/slide_1.svg | 28.3 |
+| plh_images/workshops/w_grief/read_grief_conflict/slide_2.svg | 59.8 |
+| plh_images/workshops/w_grief/read_grief_conflict/slide_3.svg | 32.7 |
+| plh_images/workshops/w_grief/read_grief_support/slide_1.svg | 33 |
+| plh_images/workshops/w_grief/read_grief_support/slide_2.svg | 29.8 |
+| plh_images/workshops/w_grief/read_grief_support/slide_3.svg | 32.2 |
+| plh_images/workshops/w_grief/read_grief_support/slide_4.svg | 32.7 |
+| plh_images/workshops/w_grief/tools.svg | 30.8 |
+| plh_images/workshops/w_instruct/guide_2/think/slide_1.svg | 7.9 |
+| plh_images/workshops/w_instruct/guide_2/think/slide_2.svg | 9.1 |
+| plh_images/workshops/w_instruct/guide_2/think/slide_3.svg | 26.5 |
 | plh_images/workshops/w_instruct/read_1/slide_1.svg | 47.3 |
 | plh_images/workshops/w_instruct/read_1/slide_2.svg | 37.4 |
 | plh_images/workshops/w_instruct/read_1/slide_3.svg | 42.6 |
@@ -303,10 +380,134 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/workshops/w_instruct/read_2/slide_3.svg | 43.4 |
 | plh_images/workshops/w_instruct/read_2/slide_4.svg | 42.5 |
 | plh_images/workshops/w_instruct/read_2/slide_5.svg | 53.4 |
+| plh_images/workshops/w_instruct/tools.svg | 40.6 |
+| plh_images/workshops/w_learn/read_learn_conflict/slide_1.svg | 51.8 |
+| plh_images/workshops/w_learn/read_learn_conflict/slide_2.svg | 69.4 |
+| plh_images/workshops/w_learn/read_learn_conflict/slide_3.svg | 47.4 |
+| plh_images/workshops/w_learn/read_learn_conflict/slide_4.svg | 48.3 |
+| plh_images/workshops/w_learn/read_learn_support/slide_1.svg | 51.8 |
+| plh_images/workshops/w_learn/read_learn_support/slide_2.svg | 69.4 |
+| plh_images/workshops/w_learn/read_learn_support/slide_3.svg | 46 |
+| plh_images/workshops/w_learn/read_learn_support/slide_4.svg | 40.2 |
+| plh_images/workshops/w_learn/tools.svg | 28.4 |
+| plh_images/workshops/w_money/learn/slide_1.svg | 702.9 |
+| plh_images/workshops/w_money/learn/slide_2.svg | 61.8 |
+| plh_images/workshops/w_money/learn/slide_3.svg | 717.1 |
+| plh_images/workshops/w_money/learn/slide_4.svg | 721.6 |
+| plh_images/workshops/w_money/read_1/slide_1.svg | 44.9 |
+| plh_images/workshops/w_money/read_2/slide_1.svg | 38.9 |
+| plh_images/workshops/w_money/read_3/slide_2.svg | 35.3 |
+| plh_images/workshops/w_money/read_3/slide_3.svg | 65 |
+| plh_images/workshops/w_money/read_3/slide_4.svg | 17.8 |
+| plh_images/workshops/w_money/read_3/slide_5.svg | 58.2 |
+| plh_images/workshops/w_money/read_3/slide_6.svg | 51.9 |
+| plh_images/workshops/w_money/read_4/slide_1.svg | 47.1 |
+| plh_images/workshops/w_money/tools.svg | 32.5 |
+| plh_images/workshops/w_praise/read/slide_1.svg | 164.8 |
+| plh_images/workshops/w_praise/read/slide_2.svg | 44.8 |
+| plh_images/workshops/w_praise/tools.svg | 32.2 |
+| plh_images/workshops/w_rules/read_1/slide_1.svg | 30.5 |
+| plh_images/workshops/w_rules/read_1/slide_3.svg | 32.1 |
+| plh_images/workshops/w_rules/read_1/slide_4.svg | 29.6 |
+| plh_images/workshops/w_rules/read_1/slide_5.svg | 29.5 |
+| plh_images/workshops/w_rules/read_1/slide_6.svg | 27.7 |
+| plh_images/workshops/w_rules/read_1/slide_7.svg | 23.3 |
+| plh_images/workshops/w_rules/read_1/slide_8.svg | 35.2 |
+| plh_images/workshops/w_rules/read_2/slide_1.svg | 417.7 |
+| plh_images/workshops/w_rules/read_2/slide_2.svg | 233.3 |
+| plh_images/workshops/w_rules/read_2/slide_3.svg | 231.7 |
+| plh_images/workshops/w_rules/read_2/slide_4.svg | 164.6 |
+| plh_images/workshops/w_rules/read_2/slide_5.svg | 423.4 |
+| plh_images/workshops/w_rules/tools.svg | 41.2 |
+| plh_images/workshops/w_safe/learn/slide_1.svg | 1365.4 |
+| plh_images/workshops/w_safe/learn/slide_2.svg | 1560.3 |
+| plh_images/workshops/w_safe/learn/slide_3.svg | 1991.8 |
+| plh_images/workshops/w_safe/learn/slide_4.svg | 926.4 |
+| plh_images/workshops/w_safe/read_1/slide_1.svg | 32.5 |
+| plh_images/workshops/w_safe/read_1/slide_2.svg | 68.7 |
+| plh_images/workshops/w_safe/read_1/slide_3.svg | 64.3 |
+| plh_images/workshops/w_safe/read_1/slide_4.svg | 41 |
+| plh_images/workshops/w_safe/read_1/slide_5.svg | 41 |
+| plh_images/workshops/w_safe/read_1/slide_6.svg | 32.8 |
+| plh_images/workshops/w_safe/read_2/slide_1.svg | 32.2 |
 | plh_images/workshops/w_safe/read_2/slide_3.svg | 33 |
+| plh_images/workshops/w_safe/tools.svg | 23.9 |
+| plh_images/workshops/w_self_care/individual/recognise.svg | 34.7 |
+| plh_images/workshops/w_self_care/individual/reward.svg | 27.9 |
+| plh_images/workshops/w_solve/read_1/slide_1.svg | 35.6 |
+| plh_images/workshops/w_solve/read_1/slide_2.svg | 33.4 |
+| plh_images/workshops/w_solve/read_1/slide_3.svg | 33.6 |
+| plh_images/workshops/w_solve/read_2/slide_1.svg | 49.2 |
+| plh_images/workshops/w_solve/read_2/slide_10.svg | 25.9 |
+| plh_images/workshops/w_solve/read_2/slide_11.svg | 34.5 |
+| plh_images/workshops/w_solve/read_2/slide_12.svg | 25.7 |
+| plh_images/workshops/w_solve/read_2/slide_2.svg | 46.3 |
+| plh_images/workshops/w_solve/read_2/slide_3.svg | 59.6 |
+| plh_images/workshops/w_solve/read_2/slide_4.svg | 29.8 |
+| plh_images/workshops/w_solve/read_2/slide_5.svg | 33.1 |
+| plh_images/workshops/w_solve/read_2/slide_6.svg | 33.8 |
+| plh_images/workshops/w_solve/read_2/slide_7.svg | 34.7 |
+| plh_images/workshops/w_solve/read_2/slide_8.svg | 38.3 |
+| plh_images/workshops/w_solve/read_2/slide_9.svg | 33.5 |
+| plh_images/workshops/w_solve/read_3/slide_1.svg | 31.5 |
+| plh_images/workshops/w_solve/read_3/slide_2.svg | 31.9 |
+| plh_images/workshops/w_solve/read_3/slide_3.svg | 31.3 |
+| plh_images/workshops/w_solve/tools.svg | 53.7 |
+| plh_images/workshops/w_srh/learn/sex_talk_age/slide_1.svg | 125 |
+| plh_images/workshops/w_srh/learn/sex_talk_age/slide_2.svg | 70.9 |
+| plh_images/workshops/w_srh/learn/sex_talk_age/slide_3.svg | 25.6 |
+| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_1.svg | 70 |
+| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_2.svg | 28.8 |
+| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_3.svg | 44 |
+| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_4.svg | 60.7 |
+| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_5.svg | 76.4 |
+| plh_images/workshops/w_srh/learn/sex_talk_when/slide_1.svg | 58.6 |
+| plh_images/workshops/w_srh/learn/sex_talk_when/slide_2.svg | 89.8 |
+| plh_images/workshops/w_srh/learn/sex_talk_when/slide_3.svg | 203.3 |
+| plh_images/workshops/w_srh/learn/sex_talk_when/slide_4.svg | 52.8 |
+| plh_images/workshops/w_srh/learn/sex_talk_who/slide_1.svg | 27.1 |
+| plh_images/workshops/w_srh/learn/sex_talk_who/slide_2.svg | 45.5 |
+| plh_images/workshops/w_srh/learn/sex_talk_who/slide_3.svg | 105 |
+| plh_images/workshops/w_srh/read_new_boyfriend/slide_1.svg | 44 |
+| plh_images/workshops/w_srh/read_new_boyfriend/slide_2.svg | 44 |
+| plh_images/workshops/w_srh/read_new_boyfriend/slide_3.svg | 28.7 |
+| plh_images/workshops/w_srh/read_new_boyfriend/slide_4.svg | 30.1 |
+| plh_images/workshops/w_srh/read_new_boyfriend/slide_5.svg | 27.2 |
+| plh_images/workshops/w_srh/read_sex_talk/slide_1.svg | 32.5 |
+| plh_images/workshops/w_srh/read_sex_talk/slide_2.svg | 36.9 |
+| plh_images/workshops/w_srh/read_sex_talk/slide_3.svg | 30.6 |
+| plh_images/workshops/w_srh/read_sex_talk/slide_4.svg | 31 |
+| plh_images/workshops/w_srh/tools.svg | 46.2 |
+| plh_images/workshops/w_stress/read_1/slide_1.svg | 61.1 |
+| plh_images/workshops/w_stress/read_1/slide_2.svg | 75.3 |
+| plh_images/workshops/w_stress/read_1/slide_3.svg | 54.7 |
+| plh_images/workshops/w_stress/read_1/slide_4.svg | 243.7 |
 | plh_images/workshops/w_stress/read_1/slide_5.svg | 228.4 |
+| plh_images/workshops/w_stress/read_1/slide_6.svg | 72.3 |
 | plh_images/workshops/w_stress/read_2/slide_1.svg | 60.6 |
+| plh_images/workshops/w_stress/read_2/slide_2.svg | 75.1 |
+| plh_images/workshops/w_stress/read_2/slide_3.svg | 59.4 |
+| plh_images/workshops/w_stress/read_2/slide_4.svg | 55.3 |
+| plh_images/workshops/w_stress/read_2/slide_5.svg | 55.6 |
+| plh_images/workshops/w_stress/read_3/slide_1.svg | 24.3 |
+| plh_images/workshops/w_stress/read_3/slide_2.svg | 42 |
+| plh_images/workshops/w_stress/read_3/slide_3.svg | 38.5 |
+| plh_images/workshops/w_stress/read_3/slide_4.svg | 103.5 |
+| plh_images/workshops/w_stress/read_3/slide_5.svg | 71.4 |
+| plh_images/workshops/w_stress/read_3/slide_6.svg | 57.8 |
+| plh_images/workshops/w_stress/tools.svg | 16.9 |
+| plh_images/workshops/w_svp/learn_warning_signs/catcalling.svg | 96.1 |
+| plh_images/workshops/w_svp/learn_warning_signs/controlling_boyfriend.svg | 39.3 |
+| plh_images/workshops/w_svp/learn_warning_signs/nude_pic.svg | 49.6 |
+| plh_images/workshops/w_svp/learn_warning_signs/private_tutoring.svg | 58.6 |
+| plh_images/workshops/w_svp/learn_warning_signs/pushy_boyfriend.svg | 49.8 |
+| plh_images/workshops/w_svp/learn_warning_signs/pushy_friend.svg | 65.6 |
+| plh_images/workshops/w_svp/learn_warning_signs/rejected_ride.svg | 74.4 |
 | plh_images/workshops/w_svp/tools.svg | 25.4 |
+| plh_images/workshops/w_svp/use_body/moves.gif | 1111.6 |
+| plh_images/workshops/w_svp/use_body/zone_1.gif | 2008.5 |
+| plh_images/workshops/w_svp/use_body/zone_2.gif | 844.1 |
+| plh_images/workshops/w_svp/use_voice.svg | 18.4 |
 | video/modules/connect/join_child.mp4 | 10726.2 |
 | video/modules/connect/shared_reading.mp4 | 36376.3 |
 | video/pause/body_scan.mp4 | 10418.6 |
@@ -324,16 +525,44 @@ Assets that have references within sheets but do not appear in app-data
 | path | count |
 | --- | --- |
 | audio/care_audio_2.mp3 | 2 |
+| images/activities/five_stones.svg | 2 |
+| images/activities/song.svg | 2 |
 | images/backgrounds/library_bottom_right.png | 1 |
+| images/homescreen/1on1_t.svg | 2 |
+| images/homescreen/srh/srh_t.svg | 2 |
 | images/icons/docs.svg | 1 |
 | images/icons/download.svg | 1 |
 | images/icons/download_white.svg | 1 |
 | images/icons/share.svg | 2 |
 | images/icons/visibility.svg | 1 |
 | images/logos/plh.jpg | 1 |
+| images/teen_modules/celebrate_cup.svg | 2 |
+| images/teen_modules/celebrate_t_1.svg | 2 |
+| images/teen_modules/celebrate_t_2.svg | 2 |
+| images/teen_modules/celebrate_t_3.svg | 2 |
+| images/teen_modules/celebrate_t_4.svg | 2 |
+| images/teen_modules/learn_conflict_t_1.svg | 2 |
+| images/teen_modules/learn_conflict_t_2.svg | 2 |
+| images/teen_modules/learn_conflict_t_3.svg | 2 |
+| images/teen_modules/learn_conflict_t_4.svg | 2 |
+| images/teen_modules/learn_support_t_1.svg | 2 |
+| images/teen_modules/learn_support_t_2.svg | 2 |
+| images/teen_modules/learn_support_t_3.svg | 2 |
+| images/teen_modules/learn_support_t_4.svg | 2 |
+| images/teen_modules/money/money3_t_1.svg | 2 |
+| images/teen_modules/money/money4_t_6.svg | 2 |
+| images/teen_modules/money/money_learn_t_1.svg | 2 |
+| images/teen_modules/money/money_learn_t_2.svg | 2 |
+| images/teen_modules/money/money_learn_t_3.svg | 2 |
+| images/teen_modules/money/money_learn_t_4.svg | 2 |
+| images/teen_modules/srh/srh1_t_2.svg | 2 |
+| images/teen_modules/svp/svp_use_body_t_1.gif | 2 |
+| images/teen_modules/svp/svp_use_body_t_2.gif | 2 |
+| images/teen_modules/svp/svp_use_body_t_3.gif | 2 |
+| images/teen_modules/svp/svp_use_voice_t.svg | 2 |
+| images/teen_modules/svp/svp_warning_signs/catcalling_t.svg | 2 |
 | lottie/relax/heart.json | 8 |
-| plh_images/activities/five_stones.svg | 2 |
-| plh_images/activities/song.svg | 2 |
+| plh_images/activities/act_emotions.svg | 2 |
 | plh_images/characters/elder/large.svg | 1 |
 </details>
 
@@ -432,13 +661,43 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/yc/rules_audio_2.mp3 | 742.7 | 2 |
 | audio/yc/solve_audio_1.mp3 | 609 | 2 |
 | audio/yc/solve_audio_2.mp3 | 468.1 | 2 |
+| images/activities/act_animal.svg | 135.4 | 2 |
+| images/activities/artist.svg | 2210.9 | 2 |
+| images/activities/blanket_forts.svg | 81.2 | 2 |
+| images/activities/books.svg | 72.6 | 2 |
+| images/activities/can_you_catch_it.svg | 183.7 | 2 |
+| images/activities/charades.svg | 38.9 | 2 |
+| images/activities/circle_dance.svg | 117.2 | 6 |
+| images/activities/clean.svg | 39.9 | 2 |
+| images/activities/cook_traditional.svg | 40.7 | 2 |
+| images/activities/cooking_with_maths.svg | 50.9 | 2 |
+| images/activities/dance.svg | 42.3 | 6 |
+| images/activities/dream_travel.svg | 136.9 | 2 |
+| images/activities/find_pair.svg | 36.9 | 2 |
+| images/activities/garden.svg | 109.9 | 2 |
+| images/activities/guess_emotion.svg | 71.4 | 4 |
+| images/activities/make_story_child.svg | 66.1 | 2 |
+| images/activities/mystery_bag.svg | 7.5 | 2 |
+| images/activities/play_with_clothes.svg | 102.7 | 2 |
+| images/activities/role_play.svg | 38.5 | 4 |
+| images/activities/short_term_goal.svg | 41.9 | 2 |
+| images/activities/songs.svg | 2.7 | 2 |
+| images/activities/spy_colours.svg | 65.9 | 4 |
+| images/activities/talk_1.svg | 76.9 | 2 |
+| images/activities/talk_3.svg | 42.5 | 2 |
+| images/activities/talk_4.svg | 77 | 2 |
+| images/activities/talk_6.svg | 37.5 | 6 |
+| images/activities/talk_7.svg | 38.2 | 2 |
+| images/activities/tell_stories.svg | 40.9 | 2 |
+| images/activities/thinking_games.svg | 107.3 | 4 |
+| images/activities/unseen_guesses.svg | 70.8 | 2 |
+| images/activities/walk.svg | 101.3 | 2 |
 | images/backgrounds/activity_bottom_left.png | 3538.7 | 1 |
 | images/backgrounds/dunes.png | 1329.3 | 1 |
 | images/backgrounds/kites.svg | 37.3 | 1 |
 | images/backgrounds/library_top_right.png | 1358.6 | 1 |
 | images/backgrounds/map_view_bg.jpg | 166.3 | 1 |
 | images/backgrounds/progress_arc.png | 255.4 | 1 |
-| images/childdevelopment.svg | 20.5 | 2 |
 | images/comics/consequences_yc_1.svg | 118.4 | 2 |
 | images/comics/consequences_yc_2.svg | 151.3 | 2 |
 | images/comics/consequences_yc_3.svg | 157.5 | 2 |
@@ -448,14 +707,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/feelings_yc_2.svg | 176.3 | 2 |
 | images/comics/feelings_yc_3.svg | 183.7 | 4 |
 | images/comics/feelings_yc_4.svg | 159.5 | 2 |
-| images/comics/instruct_t_1.svg | 47.3 | 2 |
-| images/comics/instruct_t_2.svg | 37.4 | 2 |
-| images/comics/instruct_t_3.svg | 42.6 | 2 |
-| images/comics/instruct_t_4.svg | 47 | 2 |
-| images/comics/instruct_t_5.svg | 39.7 | 2 |
-| images/comics/instruct_t_6.svg | 43.4 | 2 |
-| images/comics/instruct_t_7.svg | 42.5 | 2 |
-| images/comics/instruct_t_8.svg | 53.4 | 2 |
 | images/comics/instructions_yc_1.svg | 147.3 | 2 |
 | images/comics/instructions_yc_2.svg | 155.4 | 2 |
 | images/comics/instructions_yc_3.svg | 156 | 2 |
@@ -498,7 +749,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/comics/self_care_yc_2.svg | 66.4 | 2 |
 | images/comics/self_care_yc_3.svg | 146.8 | 2 |
 | images/comics/self_care_yc_4.svg | 61.9 | 2 |
-| images/consequences.jpg | 115.1 | 2 |
 | images/faces/angry.svg | 1.1 | 8 |
 | images/faces/confused.svg | 1.8 | 8 |
 | images/faces/happier.svg | 0.6 | 2 |
@@ -511,6 +761,28 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/faces/tired.svg | 2.4 | 4 |
 | images/flags/gb.svg | 0.5 | 2 |
 | images/flags/za.svg | 0.8 | 2 |
+| images/homescreen/celebrate_t.svg | 36.3 | 2 |
+| images/homescreen/childdevelopment.svg | 20.5 | 2 |
+| images/homescreen/consequence_t.svg | 23 | 2 |
+| images/homescreen/consequences.jpg | 115.1 | 2 |
+| images/homescreen/crisis_t.svg | 46.1 | 2 |
+| images/homescreen/grief_t.svg | 30.8 | 2 |
+| images/homescreen/instruct_t.svg | 40.6 | 2 |
+| images/homescreen/instructions.svg | 23.6 | 2 |
+| images/homescreen/learn_t.svg | 28.4 | 2 |
+| images/homescreen/money_t.svg | 32.5 | 2 |
+| images/homescreen/one_on_one_challenges.svg | 13.3 | 2 |
+| images/homescreen/praise.svg | 11.5 | 2 |
+| images/homescreen/praise_t.svg | 32.2 | 2 |
+| images/homescreen/problemsolving.svg | 19.9 | 2 |
+| images/homescreen/rules_t.svg | 41.2 | 2 |
+| images/homescreen/rulesroutines.jpg | 102.2 | 2 |
+| images/homescreen/safe_t.svg | 23.9 | 4 |
+| images/homescreen/self_care.svg | 10 | 2 |
+| images/homescreen/self_care_t.svg | 10 | 2 |
+| images/homescreen/solve_t.svg | 53.7 | 2 |
+| images/homescreen/stress_t.svg | 16.9 | 2 |
+| images/homescreen/talk_feelings_challenges.svg | 19.6 | 2 |
 | images/icons/balance_blue.png | 4.7 | 2 |
 | images/icons/brain_blue.png | 5.2 | 10 |
 | images/icons/clock_blue.png | 4.5 | 10 |
@@ -573,241 +845,175 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/trophy_footer.svg | 3.9 | 1 |
 | images/icons/trophy_footer_active.svg | 3.9 | 1 |
 | images/icons/world.svg | 6.2 | 1 |
-| images/instructions.svg | 23.6 | 2 |
 | images/kw_facilitator.svg | 23.6 | 1 |
 | images/logos/IDEMS.png | 84.6 | 1 |
 | images/logos/app_logo.png | 36 | 1 |
-| images/one_on_one_challenges.svg | 13.3 | 2 |
-| images/praise.svg | 11.5 | 2 |
-| images/problemsolving.svg | 19.9 | 2 |
-| images/rulesroutines.jpg | 102.2 | 2 |
 | images/shell_closed.png | 452.4 | 1 |
 | images/shell_open.png | 1031.9 | 1 |
-| images/talk_feelings_challenges.svg | 19.6 | 2 |
+| images/teen_modules/consequence/consequence1_t_1.svg | 72.4 | 2 |
+| images/teen_modules/consequence/consequence1_t_2.svg | 46.5 | 2 |
+| images/teen_modules/consequence/consequence1_t_3.svg | 51.3 | 2 |
+| images/teen_modules/consequence/consequence1_t_4.svg | 46.4 | 2 |
+| images/teen_modules/consequence/consequence2_t_1.svg | 73 | 2 |
+| images/teen_modules/consequence/consequence2_t_2.svg | 46.7 | 2 |
+| images/teen_modules/consequence/consequence2_t_3.svg | 117.4 | 2 |
+| images/teen_modules/consequence/consequence3_t_1.svg | 56 | 2 |
+| images/teen_modules/consequence/consequence3_t_2.svg | 61.2 | 2 |
+| images/teen_modules/consequence/consequence3_t_3.svg | 56.1 | 2 |
+| images/teen_modules/consequence/consequence3_t_4.svg | 57.4 | 2 |
+| images/teen_modules/consequence/consequence3_t_5.svg | 66.2 | 2 |
+| images/teen_modules/consequence/consequence3_t_6.svg | 47.1 | 2 |
+| images/teen_modules/consequence/consequence3_t_7.svg | 48.4 | 2 |
+| images/teen_modules/consequence/consequence3_t_8.svg | 47.1 | 2 |
+| images/teen_modules/consequence/consequence3_t_9.svg | 53.1 | 2 |
+| images/teen_modules/crisis/crisis1_t_1.svg | 36.7 | 2 |
+| images/teen_modules/crisis/crisis1_t_2.svg | 33.4 | 2 |
+| images/teen_modules/crisis/crisis1_t_3.svg | 36.6 | 2 |
+| images/teen_modules/crisis/crisis1_t_4.svg | 34.3 | 2 |
+| images/teen_modules/crisis/crisis1_t_5.svg | 37 | 2 |
+| images/teen_modules/crisis/crisis1_t_6.svg | 27.7 | 2 |
+| images/teen_modules/crisis/crisis2_t_1.svg | 77.2 | 2 |
+| images/teen_modules/crisis/crisis2_t_2.svg | 54.6 | 2 |
+| images/teen_modules/crisis/crisis2_t_3.svg | 58 | 2 |
+| images/teen_modules/crisis/crisis2_t_4.svg | 55.5 | 2 |
+| images/teen_modules/crisis/crisis2_t_5.svg | 56 | 2 |
+| images/teen_modules/crisis/crisis_learn_t_1.svg | 42 | 2 |
+| images/teen_modules/crisis/crisis_learn_t_2.svg | 74.4 | 2 |
+| images/teen_modules/crisis/crisis_learn_t_3.svg | 38.5 | 2 |
+| images/teen_modules/crisis/crisis_learn_t_4.svg | 81.6 | 2 |
+| images/teen_modules/crisis/crisis_learn_t_5.svg | 41.4 | 2 |
+| images/teen_modules/grief/grief_conflict_t_1.svg | 28.3 | 2 |
+| images/teen_modules/grief/grief_conflict_t_2.svg | 59.8 | 2 |
+| images/teen_modules/grief/grief_conflict_t_3.svg | 32.7 | 2 |
+| images/teen_modules/grief/grief_support_t_1.svg | 33 | 2 |
+| images/teen_modules/grief/grief_support_t_2.svg | 29.8 | 2 |
+| images/teen_modules/grief/grief_support_t_3.svg | 32.2 | 2 |
+| images/teen_modules/grief/grief_support_t_4.svg | 32.7 | 2 |
+| images/teen_modules/instruct/instruct1_t_1.svg | 7.9 | 4 |
+| images/teen_modules/instruct/instruct1_t_2.svg | 9.1 | 2 |
+| images/teen_modules/instruct/instruct1_t_3.svg | 26.5 | 2 |
+| images/teen_modules/instruct/instruct2_t_1.svg | 47.3 | 2 |
+| images/teen_modules/instruct/instruct2_t_2.svg | 37.4 | 2 |
+| images/teen_modules/instruct/instruct2_t_3.svg | 42.6 | 2 |
+| images/teen_modules/instruct/instruct2_t_4.svg | 47 | 2 |
+| images/teen_modules/instruct/instruct2_t_5.svg | 39.7 | 2 |
+| images/teen_modules/instruct/instruct2_t_6.svg | 43.4 | 2 |
+| images/teen_modules/instruct/instruct2_t_7.svg | 42.5 | 2 |
+| images/teen_modules/instruct/instruct2_t_8.svg | 53.4 | 2 |
+| images/teen_modules/money/money1_t_1.svg | 38.9 | 2 |
+| images/teen_modules/money/money2_t_1.svg | 44.9 | 2 |
+| images/teen_modules/money/money3_t_2.svg | 35.3 | 2 |
+| images/teen_modules/money/money3_t_3.svg | 65 | 2 |
+| images/teen_modules/money/money3_t_4.svg | 17.8 | 2 |
+| images/teen_modules/money/money3_t_5.svg | 58.2 | 2 |
+| images/teen_modules/praise/praise1_t_1.svg | 164.8 | 4 |
+| images/teen_modules/rules/rules1_t_1.svg | 30.5 | 2 |
+| images/teen_modules/rules/rules1_t_2.svg | 32.1 | 2 |
+| images/teen_modules/rules/rules1_t_3.svg | 29.6 | 2 |
+| images/teen_modules/rules/rules1_t_4.svg | 29.5 | 2 |
+| images/teen_modules/rules/rules1_t_5.svg | 27.7 | 2 |
+| images/teen_modules/rules/rules1_t_6.svg | 23.3 | 2 |
+| images/teen_modules/rules/rules1_t_7.svg | 35.2 | 2 |
+| images/teen_modules/rules/rules2_t_1.svg | 417.7 | 2 |
+| images/teen_modules/rules/rules2_t_2.svg | 233.3 | 2 |
+| images/teen_modules/rules/rules2_t_3.svg | 231.7 | 2 |
+| images/teen_modules/rules/rules2_t_4.svg | 164.6 | 2 |
+| images/teen_modules/rules/rules2_t_5.svg | 423.4 | 2 |
+| images/teen_modules/safe/safe1_t_1.svg | 32.5 | 2 |
+| images/teen_modules/safe/safe1_t_2.svg | 68.7 | 2 |
+| images/teen_modules/safe/safe1_t_3.svg | 64.3 | 2 |
+| images/teen_modules/safe/safe1_t_4.svg | 41 | 2 |
+| images/teen_modules/safe/safe1_t_5.svg | 41 | 2 |
+| images/teen_modules/safe/safe1_t_6.svg | 32.8 | 2 |
+| images/teen_modules/safe/safe2_t_1.svg | 35 | 2 |
+| images/teen_modules/safe/safe_learn_t_1.svg | 1365.4 | 2 |
+| images/teen_modules/safe/safe_learn_t_2.svg | 1560.3 | 2 |
+| images/teen_modules/safe/safe_learn_t_3.svg | 1991.8 | 2 |
+| images/teen_modules/safe/safe_learn_t_4.svg | 926.4 | 2 |
+| images/teen_modules/self_care/self_care1_t_1.svg | 34.7 | 2 |
+| images/teen_modules/self_care/self_care1_t_2.svg | 27.9 | 2 |
+| images/teen_modules/solve/solve1_t_1.svg | 35.6 | 2 |
+| images/teen_modules/solve/solve1_t_2.svg | 33.4 | 2 |
+| images/teen_modules/solve/solve1_t_3.svg | 33.6 | 2 |
+| images/teen_modules/solve/solve2_t_1.svg | 49.2 | 2 |
+| images/teen_modules/solve/solve2_t_10.svg | 25.9 | 2 |
+| images/teen_modules/solve/solve2_t_11.svg | 34.5 | 2 |
+| images/teen_modules/solve/solve2_t_12.svg | 25.7 | 2 |
+| images/teen_modules/solve/solve2_t_2.svg | 46.3 | 2 |
+| images/teen_modules/solve/solve2_t_3.svg | 59.6 | 2 |
+| images/teen_modules/solve/solve2_t_4.svg | 29.8 | 2 |
+| images/teen_modules/solve/solve2_t_5.svg | 33.1 | 2 |
+| images/teen_modules/solve/solve2_t_6.svg | 33.8 | 2 |
+| images/teen_modules/solve/solve2_t_7.svg | 34.7 | 2 |
+| images/teen_modules/solve/solve2_t_8.svg | 38.3 | 2 |
+| images/teen_modules/solve/solve2_t_9.svg | 33.5 | 2 |
+| images/teen_modules/solve/solve3_t_1.svg | 31.5 | 2 |
+| images/teen_modules/solve/solve3_t_2.svg | 31.9 | 2 |
+| images/teen_modules/solve/solve3_t_3.svg | 31.3 | 2 |
+| images/teen_modules/solve/solve_tool_t_1.svg | 42.1 | 2 |
+| images/teen_modules/solve/solve_tool_t_2.svg | 75.3 | 2 |
+| images/teen_modules/solve/solve_tool_t_3.svg | 39.4 | 2 |
+| images/teen_modules/solve/solve_tool_t_4.svg | 33.4 | 2 |
+| images/teen_modules/srh/srh1_t_1.svg | 32.5 | 2 |
+| images/teen_modules/srh/srh1_t_3.svg | 30.6 | 2 |
+| images/teen_modules/srh/srh1_t_4.svg | 36.9 | 2 |
+| images/teen_modules/srh/srh2_t_1.svg | 44 | 2 |
+| images/teen_modules/srh/srh2_t_2.svg | 44 | 2 |
+| images/teen_modules/srh/srh2_t_3.svg | 28.7 | 2 |
+| images/teen_modules/srh/srh2_t_4.svg | 30.1 | 2 |
+| images/teen_modules/srh/srh2_t_5.svg | 27.2 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_age_t_1.svg | 125 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_age_t_2.svg | 70.9 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_age_t_3.svg | 25.6 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_safe_t_1.svg | 70 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_safe_t_2.svg | 28.8 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_safe_t_3.svg | 44 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_safe_t_4.svg | 60.7 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_safe_t_5.svg | 76.4 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_when_t_1.svg | 58.6 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_when_t_2.svg | 89.8 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_when_t_3.svg | 203.3 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_when_t_4.svg | 52.8 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_who_t_1.svg | 27.1 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_who_t_2.svg | 45.5 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_who_t_3.svg | 105 | 2 |
+| images/teen_modules/stress/stress1_t_1.svg | 61.1 | 2 |
+| images/teen_modules/stress/stress1_t_2.svg | 75.3 | 2 |
+| images/teen_modules/stress/stress1_t_3.svg | 54.7 | 2 |
+| images/teen_modules/stress/stress1_t_4.svg | 243.7 | 2 |
+| images/teen_modules/stress/stress1_t_5.svg | 72.3 | 2 |
+| images/teen_modules/stress/stress2_t_1.svg | 75.1 | 2 |
+| images/teen_modules/stress/stress2_t_2.svg | 59.4 | 2 |
+| images/teen_modules/stress/stress2_t_3.svg | 55.3 | 2 |
+| images/teen_modules/stress/stress2_t_4.svg | 55.6 | 2 |
+| images/teen_modules/stress/stress3_t_1.svg | 24.3 | 2 |
+| images/teen_modules/stress/stress3_t_2.svg | 42 | 2 |
+| images/teen_modules/stress/stress3_t_3.svg | 38.5 | 2 |
+| images/teen_modules/stress/stress3_t_4.svg | 103.5 | 2 |
+| images/teen_modules/stress/stress3_t_5.svg | 71.4 | 2 |
+| images/teen_modules/stress/stress3_t_6.svg | 57.8 | 2 |
+| images/teen_modules/svp/svp_controlling_boyfriend_t.svg | 39.3 | 2 |
+| images/teen_modules/svp/svp_nude_pic_t.svg | 49.6 | 2 |
+| images/teen_modules/svp/svp_private_tutoring_t.svg | 58.6 | 2 |
+| images/teen_modules/svp/svp_pushy_boyfriend_t.svg | 49.8 | 2 |
+| images/teen_modules/svp/svp_pushy_friend_t.svg | 65.6 | 2 |
+| images/teen_modules/svp/svp_rejected_ride_t.svg | 74.4 | 2 |
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/gift_box.json | 674.5 | 1 |
 | lottie/relax/blue_dots.json | 14.7 | 8 |
 | lottie/relax/looping_rings.json | 10.4 | 12 |
 | lottie/relax/soothing_waves.json | 7.6 | 9 |
 | lottie/relax/square_flow.json | 5.9 | 18 |
-| plh_images/activities/act_animal.svg | 135.4 | 2 |
-| plh_images/activities/act_emotions.svg | 106.6 | 2 |
-| plh_images/activities/artist.svg | 2210.9 | 4 |
-| plh_images/activities/blanket_forts.svg | 81.2 | 2 |
-| plh_images/activities/books.svg | 72.6 | 2 |
-| plh_images/activities/can_you_catch_it.svg | 183.7 | 2 |
-| plh_images/activities/charades.svg | 38.9 | 4 |
-| plh_images/activities/circle_dance.svg | 117.2 | 6 |
-| plh_images/activities/clean.svg | 39.9 | 2 |
-| plh_images/activities/cook_traditional.svg | 40.7 | 2 |
-| plh_images/activities/cooking_with_maths.svg | 50.9 | 2 |
-| plh_images/activities/dance.svg | 42.3 | 6 |
-| plh_images/activities/dream_travel.svg | 136.9 | 2 |
-| plh_images/activities/find_pair.svg | 36.9 | 2 |
-| plh_images/activities/garden.svg | 109.9 | 2 |
-| plh_images/activities/guess_emotion.svg | 71.4 | 4 |
-| plh_images/activities/idea_box.svg | 27.7 | 2 |
-| plh_images/activities/lap_bounce.svg | 192.1 | 2 |
-| plh_images/activities/make_story_child.svg | 66.1 | 2 |
-| plh_images/activities/mystery_bag.svg | 7.5 | 2 |
-| plh_images/activities/mystery_box.svg | 58.4 | 2 |
-| plh_images/activities/play_with_clothes.svg | 102.7 | 2 |
-| plh_images/activities/role_play.svg | 38.5 | 4 |
-| plh_images/activities/short_term_goal.svg | 41.9 | 2 |
-| plh_images/activities/songs.svg | 2.7 | 2 |
-| plh_images/activities/spy_colours.svg | 65.9 | 4 |
-| plh_images/activities/talk_1.svg | 76.9 | 2 |
-| plh_images/activities/talk_3.svg | 42.5 | 2 |
-| plh_images/activities/talk_4.svg | 77 | 2 |
-| plh_images/activities/talk_5.svg | 81.3 | 2 |
-| plh_images/activities/talk_6.svg | 37.5 | 6 |
-| plh_images/activities/talk_7.svg | 38.2 | 2 |
-| plh_images/activities/tell_stories.svg | 40.9 | 2 |
-| plh_images/activities/thinking_games.svg | 107.3 | 4 |
-| plh_images/activities/unseen_guesses.svg | 70.8 | 2 |
-| plh_images/activities/walk.svg | 101.3 | 2 |
-| plh_images/workshops/w_1on1/tools.svg | 48.5 | 2 |
-| plh_images/workshops/w_celebrate/cup.svg | 60.9 | 2 |
-| plh_images/workshops/w_celebrate/read/slide_1.svg | 152.3 | 3 |
-| plh_images/workshops/w_celebrate/read/slide_2.svg | 34.9 | 3 |
-| plh_images/workshops/w_celebrate/read/slide_3.svg | 89.6 | 3 |
-| plh_images/workshops/w_celebrate/read/slide_4.svg | 166.6 | 3 |
-| plh_images/workshops/w_celebrate/tools.svg | 36.3 | 2 |
-| plh_images/workshops/w_consequence/read_1/slide_1.svg | 72.4 | 2 |
-| plh_images/workshops/w_consequence/read_1/slide_2.svg | 46.5 | 2 |
-| plh_images/workshops/w_consequence/read_1/slide_3.svg | 51.3 | 2 |
-| plh_images/workshops/w_consequence/read_1/slide_4.svg | 46.4 | 2 |
-| plh_images/workshops/w_consequence/read_2/slide_1.svg | 73 | 2 |
-| plh_images/workshops/w_consequence/read_2/slide_2.svg | 46.7 | 2 |
-| plh_images/workshops/w_consequence/read_2/slide_3.svg | 117.4 | 2 |
-| plh_images/workshops/w_consequence/read_3/slide_1.svg | 56 | 2 |
-| plh_images/workshops/w_consequence/read_3/slide_2.svg | 61.2 | 2 |
-| plh_images/workshops/w_consequence/read_3/slide_3.svg | 56.1 | 2 |
-| plh_images/workshops/w_consequence/read_3/slide_4.svg | 57.4 | 2 |
-| plh_images/workshops/w_consequence/read_3/slide_5.svg | 66.2 | 2 |
-| plh_images/workshops/w_consequence/read_3/slide_6.svg | 47.1 | 2 |
-| plh_images/workshops/w_consequence/read_3/slide_7.svg | 48.4 | 2 |
-| plh_images/workshops/w_consequence/read_3/slide_8.svg | 47.1 | 2 |
-| plh_images/workshops/w_consequence/read_3/slide_9.svg | 53.1 | 2 |
-| plh_images/workshops/w_consequence/tools.svg | 23 | 2 |
-| plh_images/workshops/w_crisis/learn/slide_1.svg | 42 | 2 |
-| plh_images/workshops/w_crisis/learn/slide_2.svg | 74.4 | 2 |
-| plh_images/workshops/w_crisis/learn/slide_3.svg | 38.5 | 2 |
-| plh_images/workshops/w_crisis/learn/slide_4.svg | 81.6 | 2 |
-| plh_images/workshops/w_crisis/learn/slide_5.svg | 41.4 | 2 |
-| plh_images/workshops/w_crisis/read_1/slide_1.svg | 36.7 | 2 |
-| plh_images/workshops/w_crisis/read_1/slide_2.svg | 33.4 | 2 |
-| plh_images/workshops/w_crisis/read_1/slide_3.svg | 36.6 | 2 |
-| plh_images/workshops/w_crisis/read_1/slide_4.svg | 34.3 | 2 |
-| plh_images/workshops/w_crisis/read_1/slide_5.svg | 37 | 2 |
-| plh_images/workshops/w_crisis/read_1/slide_6.svg | 27.7 | 2 |
-| plh_images/workshops/w_crisis/read_2/slide_1.svg | 77.2 | 2 |
-| plh_images/workshops/w_crisis/read_2/slide_2.svg | 54.6 | 2 |
-| plh_images/workshops/w_crisis/read_2/slide_3.svg | 58 | 2 |
-| plh_images/workshops/w_crisis/read_2/slide_5.svg | 55.5 | 2 |
-| plh_images/workshops/w_crisis/read_2/slide_6.svg | 56 | 2 |
-| plh_images/workshops/w_crisis/tools.svg | 46.1 | 2 |
-| plh_images/workshops/w_grief/read_grief_conflict/slide_1.svg | 28.3 | 2 |
-| plh_images/workshops/w_grief/read_grief_conflict/slide_2.svg | 59.8 | 2 |
-| plh_images/workshops/w_grief/read_grief_conflict/slide_3.svg | 32.7 | 2 |
-| plh_images/workshops/w_grief/read_grief_support/slide_1.svg | 33 | 2 |
-| plh_images/workshops/w_grief/read_grief_support/slide_2.svg | 29.8 | 2 |
-| plh_images/workshops/w_grief/read_grief_support/slide_3.svg | 32.2 | 2 |
-| plh_images/workshops/w_grief/read_grief_support/slide_4.svg | 32.7 | 2 |
-| plh_images/workshops/w_grief/tools.svg | 30.8 | 2 |
-| plh_images/workshops/w_instruct/guide_2/think/slide_1.svg | 7.9 | 4 |
-| plh_images/workshops/w_instruct/guide_2/think/slide_2.svg | 9.1 | 2 |
-| plh_images/workshops/w_instruct/guide_2/think/slide_3.svg | 26.5 | 2 |
-| plh_images/workshops/w_instruct/tools.svg | 40.6 | 2 |
-| plh_images/workshops/w_learn/read_learn_conflict/slide_1.svg | 51.8 | 2 |
-| plh_images/workshops/w_learn/read_learn_conflict/slide_2.svg | 69.4 | 2 |
-| plh_images/workshops/w_learn/read_learn_conflict/slide_3.svg | 47.4 | 2 |
-| plh_images/workshops/w_learn/read_learn_conflict/slide_4.svg | 48.3 | 2 |
-| plh_images/workshops/w_learn/read_learn_support/slide_1.svg | 51.8 | 2 |
-| plh_images/workshops/w_learn/read_learn_support/slide_2.svg | 69.4 | 2 |
-| plh_images/workshops/w_learn/read_learn_support/slide_3.svg | 46 | 2 |
-| plh_images/workshops/w_learn/read_learn_support/slide_4.svg | 40.2 | 2 |
-| plh_images/workshops/w_learn/tools.svg | 28.4 | 2 |
-| plh_images/workshops/w_money/learn/slide_1.svg | 702.9 | 2 |
-| plh_images/workshops/w_money/learn/slide_2.svg | 61.8 | 2 |
-| plh_images/workshops/w_money/learn/slide_3.svg | 717.1 | 2 |
-| plh_images/workshops/w_money/learn/slide_4.svg | 721.6 | 2 |
-| plh_images/workshops/w_money/read_1/slide_1.svg | 44.9 | 2 |
-| plh_images/workshops/w_money/read_2/slide_1.svg | 38.9 | 2 |
-| plh_images/workshops/w_money/read_3/slide_2.svg | 35.3 | 2 |
-| plh_images/workshops/w_money/read_3/slide_3.svg | 65 | 2 |
-| plh_images/workshops/w_money/read_3/slide_4.svg | 17.8 | 2 |
-| plh_images/workshops/w_money/read_3/slide_5.svg | 58.2 | 2 |
-| plh_images/workshops/w_money/read_3/slide_6.svg | 51.9 | 2 |
-| plh_images/workshops/w_money/read_4/slide_1.svg | 47.1 | 2 |
-| plh_images/workshops/w_money/tools.svg | 32.5 | 2 |
-| plh_images/workshops/w_praise/read/slide_1.svg | 164.8 | 2 |
-| plh_images/workshops/w_praise/read/slide_2.svg | 44.8 | 2 |
-| plh_images/workshops/w_praise/tools.svg | 32.2 | 2 |
-| plh_images/workshops/w_rules/read_1/slide_1.svg | 30.5 | 2 |
-| plh_images/workshops/w_rules/read_1/slide_3.svg | 32.1 | 2 |
-| plh_images/workshops/w_rules/read_1/slide_4.svg | 29.6 | 2 |
-| plh_images/workshops/w_rules/read_1/slide_5.svg | 29.5 | 2 |
-| plh_images/workshops/w_rules/read_1/slide_6.svg | 27.7 | 2 |
-| plh_images/workshops/w_rules/read_1/slide_7.svg | 23.3 | 2 |
-| plh_images/workshops/w_rules/read_1/slide_8.svg | 35.2 | 2 |
-| plh_images/workshops/w_rules/read_2/slide_1.svg | 417.7 | 2 |
-| plh_images/workshops/w_rules/read_2/slide_2.svg | 233.3 | 2 |
-| plh_images/workshops/w_rules/read_2/slide_3.svg | 231.7 | 2 |
-| plh_images/workshops/w_rules/read_2/slide_4.svg | 164.6 | 2 |
-| plh_images/workshops/w_rules/read_2/slide_5.svg | 423.4 | 2 |
-| plh_images/workshops/w_rules/tools.svg | 41.2 | 2 |
-| plh_images/workshops/w_safe/learn/slide_1.svg | 1365.4 | 2 |
-| plh_images/workshops/w_safe/learn/slide_2.svg | 1560.3 | 2 |
-| plh_images/workshops/w_safe/learn/slide_3.svg | 1991.8 | 2 |
-| plh_images/workshops/w_safe/learn/slide_4.svg | 926.4 | 2 |
-| plh_images/workshops/w_safe/read_1/slide_1.svg | 32.5 | 2 |
-| plh_images/workshops/w_safe/read_1/slide_2.svg | 68.7 | 2 |
-| plh_images/workshops/w_safe/read_1/slide_3.svg | 64.3 | 2 |
-| plh_images/workshops/w_safe/read_1/slide_4.svg | 41 | 2 |
-| plh_images/workshops/w_safe/read_1/slide_5.svg | 41 | 2 |
-| plh_images/workshops/w_safe/read_1/slide_6.svg | 32.8 | 2 |
-| plh_images/workshops/w_safe/read_2/slide_1.svg | 32.2 | 2 |
+| plh_images/workshops/w_celebrate/read/slide_1.svg | 152.3 | 1 |
+| plh_images/workshops/w_celebrate/read/slide_2.svg | 34.9 | 1 |
+| plh_images/workshops/w_celebrate/read/slide_3.svg | 89.6 | 1 |
+| plh_images/workshops/w_celebrate/read/slide_4.svg | 166.6 | 1 |
 | plh_images/workshops/w_safe/read_2/slide_2.svg | 35 | 2 |
-| plh_images/workshops/w_safe/tools.svg | 23.9 | 4 |
-| plh_images/workshops/w_self_care/individual/recognise.svg | 34.7 | 2 |
-| plh_images/workshops/w_self_care/individual/reward.svg | 27.9 | 2 |
-| plh_images/workshops/w_self_care/tools.svg | 10 | 4 |
-| plh_images/workshops/w_solve/read_1/slide_1.svg | 35.6 | 2 |
-| plh_images/workshops/w_solve/read_1/slide_2.svg | 33.4 | 2 |
-| plh_images/workshops/w_solve/read_1/slide_3.svg | 33.6 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_1.svg | 49.2 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_10.svg | 25.9 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_11.svg | 34.5 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_12.svg | 25.7 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_2.svg | 46.3 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_3.svg | 59.6 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_4.svg | 29.8 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_5.svg | 33.1 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_6.svg | 33.8 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_7.svg | 34.7 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_8.svg | 38.3 | 2 |
-| plh_images/workshops/w_solve/read_2/slide_9.svg | 33.5 | 2 |
-| plh_images/workshops/w_solve/read_3/slide_1.svg | 31.5 | 2 |
-| plh_images/workshops/w_solve/read_3/slide_2.svg | 31.9 | 2 |
-| plh_images/workshops/w_solve/read_3/slide_3.svg | 31.3 | 2 |
-| plh_images/workshops/w_solve/tools.svg | 53.7 | 2 |
-| plh_images/workshops/w_solve/tools/tool_1.svg | 42.1 | 3 |
-| plh_images/workshops/w_solve/tools/tool_2.svg | 75.3 | 3 |
-| plh_images/workshops/w_solve/tools/tool_3.svg | 39.4 | 3 |
-| plh_images/workshops/w_solve/tools/tool_4.svg | 33.4 | 3 |
-| plh_images/workshops/w_srh/learn/sex_talk_age/slide_1.svg | 125 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_age/slide_2.svg | 70.9 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_age/slide_3.svg | 25.6 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_1.svg | 70 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_2.svg | 28.8 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_3.svg | 44 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_4.svg | 60.7 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_safe/slide_5.svg | 76.4 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_when/slide_1.svg | 58.6 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_when/slide_2.svg | 89.8 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_when/slide_3.svg | 203.3 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_when/slide_4.svg | 52.8 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_who/slide_1.svg | 27.1 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_who/slide_2.svg | 45.5 | 2 |
-| plh_images/workshops/w_srh/learn/sex_talk_who/slide_3.svg | 105 | 2 |
-| plh_images/workshops/w_srh/read_new_boyfriend/slide_1.svg | 44 | 2 |
-| plh_images/workshops/w_srh/read_new_boyfriend/slide_2.svg | 44 | 2 |
-| plh_images/workshops/w_srh/read_new_boyfriend/slide_3.svg | 28.7 | 2 |
-| plh_images/workshops/w_srh/read_new_boyfriend/slide_4.svg | 30.1 | 2 |
-| plh_images/workshops/w_srh/read_new_boyfriend/slide_5.svg | 27.2 | 2 |
-| plh_images/workshops/w_srh/read_sex_talk/slide_1.svg | 32.5 | 2 |
-| plh_images/workshops/w_srh/read_sex_talk/slide_2.svg | 36.9 | 2 |
-| plh_images/workshops/w_srh/read_sex_talk/slide_3.svg | 30.6 | 2 |
-| plh_images/workshops/w_srh/read_sex_talk/slide_4.svg | 31 | 2 |
-| plh_images/workshops/w_srh/tools.svg | 46.2 | 2 |
-| plh_images/workshops/w_stress/read_1/slide_1.svg | 61.1 | 2 |
-| plh_images/workshops/w_stress/read_1/slide_2.svg | 75.3 | 2 |
-| plh_images/workshops/w_stress/read_1/slide_3.svg | 54.7 | 2 |
-| plh_images/workshops/w_stress/read_1/slide_4.svg | 243.7 | 2 |
-| plh_images/workshops/w_stress/read_1/slide_6.svg | 72.3 | 2 |
-| plh_images/workshops/w_stress/read_2/slide_2.svg | 75.1 | 2 |
-| plh_images/workshops/w_stress/read_2/slide_3.svg | 59.4 | 2 |
-| plh_images/workshops/w_stress/read_2/slide_4.svg | 55.3 | 2 |
-| plh_images/workshops/w_stress/read_2/slide_5.svg | 55.6 | 2 |
-| plh_images/workshops/w_stress/read_3/slide_1.svg | 24.3 | 2 |
-| plh_images/workshops/w_stress/read_3/slide_2.svg | 42 | 2 |
-| plh_images/workshops/w_stress/read_3/slide_3.svg | 38.5 | 2 |
-| plh_images/workshops/w_stress/read_3/slide_4.svg | 103.5 | 2 |
-| plh_images/workshops/w_stress/read_3/slide_5.svg | 71.4 | 2 |
-| plh_images/workshops/w_stress/read_3/slide_6.svg | 57.8 | 2 |
-| plh_images/workshops/w_stress/tools.svg | 16.9 | 4 |
-| plh_images/workshops/w_svp/learn_warning_signs/catcalling.svg | 96.1 | 2 |
-| plh_images/workshops/w_svp/learn_warning_signs/controlling_boyfriend.svg | 39.3 | 2 |
-| plh_images/workshops/w_svp/learn_warning_signs/nude_pic.svg | 49.6 | 2 |
-| plh_images/workshops/w_svp/learn_warning_signs/private_tutoring.svg | 58.6 | 2 |
-| plh_images/workshops/w_svp/learn_warning_signs/pushy_boyfriend.svg | 49.8 | 2 |
-| plh_images/workshops/w_svp/learn_warning_signs/pushy_friend.svg | 65.6 | 2 |
-| plh_images/workshops/w_svp/learn_warning_signs/rejected_ride.svg | 74.4 | 2 |
-| plh_images/workshops/w_svp/use_body/moves.gif | 1111.6 | 2 |
-| plh_images/workshops/w_svp/use_body/zone_1.gif | 2008.5 | 2 |
-| plh_images/workshops/w_svp/use_body/zone_2.gif | 844.1 | 2 |
-| plh_images/workshops/w_svp/use_voice.svg | 18.4 | 2 |
+| plh_images/workshops/w_self_care/tools.svg | 10 | 2 |
+| plh_images/workshops/w_solve/tools/tool_1.svg | 42.1 | 1 |
+| plh_images/workshops/w_solve/tools/tool_2.svg | 75.3 | 1 |
+| plh_images/workshops/w_solve/tools/tool_3.svg | 39.4 | 1 |
+| plh_images/workshops/w_solve/tools/tool_4.svg | 33.4 | 1 |
 | video/plh_video/lets_slow_down.mp4 | 13482.2 | 2 |
 </details>
 
@@ -857,6 +1063,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 105 |
-| template | generated | 711 |
+| template | generated | 705 |
 | template | legal_terms | 4 |
 </details>
