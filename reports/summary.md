@@ -30,11 +30,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2480 |
+| set_variable | 2477 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 2 |
-| template | 878 |
+| template | 875 |
 | text | 111 |
 | text_area | 2 |
 | text_box | 5 |
@@ -54,13 +54,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 2 |
-| emit: completed | 642 |
+| emit: completed | 639 |
 | emit: force_reload | 3 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 5 |
 | emit: server_sync | 4 |
 | emit: set_language | 1 |
-| emit: uncompleted | 655 |
+| emit: uncompleted | 652 |
 | feedback | 13 |
 | go_to | 25 |
 | nav_stack | 267 |
@@ -81,8 +81,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 80316 KB | 80.3 MB |
-| unused | 224463 KB | 224.5 MB |
+| total | 79646 KB | 79.6 MB |
+| unused | 225133 KB | 225.1 MB |
 </details>
 
 <details open>
@@ -125,6 +125,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/activities/cook_traditional_icon.svg | 56.1 |
 | images/activities/dance_icon.svg | 33 |
 | images/activities/face_to_face_fun.svg | 81.2 |
+| images/activities/find_pair.svg | 36.9 |
 | images/activities/find_pair_icon.svg | 29.1 |
 | images/activities/garden_icon.svg | 15.4 |
 | images/activities/idea_box.svg | 27.7 |
@@ -325,6 +326,10 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/workshops/HomePage.png | 180.3 |
 | plh_images/workshops/w_1on1/tools.svg | 48.5 |
 | plh_images/workshops/w_celebrate/cup.svg | 60.9 |
+| plh_images/workshops/w_celebrate/read/slide_1.svg | 152.3 |
+| plh_images/workshops/w_celebrate/read/slide_2.svg | 34.9 |
+| plh_images/workshops/w_celebrate/read/slide_3.svg | 89.6 |
+| plh_images/workshops/w_celebrate/read/slide_4.svg | 166.6 |
 | plh_images/workshops/w_celebrate/tools.svg | 36.3 |
 | plh_images/workshops/w_consequence/read_1/slide_1.svg | 72.4 |
 | plh_images/workshops/w_consequence/read_1/slide_2.svg | 46.5 |
@@ -453,6 +458,10 @@ Assets that appear in app-data but do not have references within sheets
 | plh_images/workshops/w_solve/read_3/slide_2.svg | 31.9 |
 | plh_images/workshops/w_solve/read_3/slide_3.svg | 31.3 |
 | plh_images/workshops/w_solve/tools.svg | 53.7 |
+| plh_images/workshops/w_solve/tools/tool_1.svg | 42.1 |
+| plh_images/workshops/w_solve/tools/tool_2.svg | 75.3 |
+| plh_images/workshops/w_solve/tools/tool_3.svg | 39.4 |
+| plh_images/workshops/w_solve/tools/tool_4.svg | 33.4 |
 | plh_images/workshops/w_srh/learn/sex_talk_age/slide_1.svg | 125 |
 | plh_images/workshops/w_srh/learn/sex_talk_age/slide_2.svg | 70.9 |
 | plh_images/workshops/w_srh/learn/sex_talk_age/slide_3.svg | 25.6 |
@@ -525,7 +534,6 @@ Assets that have references within sheets but do not appear in app-data
 | path | count |
 | --- | --- |
 | audio/care_audio_2.mp3 | 2 |
-| images/activities/five_stones.svg | 2 |
 | images/activities/song.svg | 2 |
 | images/backgrounds/library_bottom_right.png | 1 |
 | images/homescreen/1on1_t.svg | 2 |
@@ -673,9 +681,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/cooking_with_maths.svg | 50.9 | 2 |
 | images/activities/dance.svg | 42.3 | 6 |
 | images/activities/dream_travel.svg | 136.9 | 2 |
-| images/activities/find_pair.svg | 36.9 | 2 |
 | images/activities/garden.svg | 109.9 | 2 |
-| images/activities/guess_emotion.svg | 71.4 | 4 |
+| images/activities/guess_emotion.svg | 71.4 | 2 |
 | images/activities/make_story_child.svg | 66.1 | 2 |
 | images/activities/mystery_bag.svg | 7.5 | 2 |
 | images/activities/play_with_clothes.svg | 102.7 | 2 |
@@ -689,7 +696,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/talk_6.svg | 37.5 | 6 |
 | images/activities/talk_7.svg | 38.2 | 2 |
 | images/activities/tell_stories.svg | 40.9 | 2 |
-| images/activities/thinking_games.svg | 107.3 | 4 |
+| images/activities/thinking_games.svg | 107.3 | 2 |
 | images/activities/unseen_guesses.svg | 70.8 | 2 |
 | images/activities/walk.svg | 101.3 | 2 |
 | images/backgrounds/activity_bottom_left.png | 3538.7 | 1 |
@@ -1004,16 +1011,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/relax/looping_rings.json | 10.4 | 12 |
 | lottie/relax/soothing_waves.json | 7.6 | 9 |
 | lottie/relax/square_flow.json | 5.9 | 18 |
-| plh_images/workshops/w_celebrate/read/slide_1.svg | 152.3 | 1 |
-| plh_images/workshops/w_celebrate/read/slide_2.svg | 34.9 | 1 |
-| plh_images/workshops/w_celebrate/read/slide_3.svg | 89.6 | 1 |
-| plh_images/workshops/w_celebrate/read/slide_4.svg | 166.6 | 1 |
 | plh_images/workshops/w_safe/read_2/slide_2.svg | 35 | 2 |
 | plh_images/workshops/w_self_care/tools.svg | 10 | 2 |
-| plh_images/workshops/w_solve/tools/tool_1.svg | 42.1 | 1 |
-| plh_images/workshops/w_solve/tools/tool_2.svg | 75.3 | 1 |
-| plh_images/workshops/w_solve/tools/tool_3.svg | 39.4 | 1 |
-| plh_images/workshops/w_solve/tools/tool_4.svg | 33.4 | 1 |
 | video/plh_video/lets_slow_down.mp4 | 13482.2 | 2 |
 </details>
 
@@ -1022,13 +1021,14 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | type | subtype | total |
 | --- | --- | --- |
-| data_list |  | 11 |
+| data_list |  | 7 |
 | data_list | activities | 2 |
 | data_list | app_config_language_list | 1 |
 | data_list | check_in | 1 |
 | data_list | generated | 53 |
 | data_list | hp_review | 2 |
 | data_list | legal_terms | 2 |
+| data_list | library | 3 |
 | data_list | lifecycle_actions | 1 |
 | data_list | modules | 2 |
 | data_list | modules_celebrate_t | 1 |
@@ -1063,6 +1063,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | template |  | 105 |
-| template | generated | 705 |
+| template | generated | 702 |
 | template | legal_terms | 4 |
 </details>
