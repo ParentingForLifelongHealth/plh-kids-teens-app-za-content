@@ -1,4 +1,4 @@
-import { extendDeploymentConfig } from "scripts";
+import { extendDeploymentConfig, loadEncryptedConfig } from "scripts";
 
 const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_kids" });
 
@@ -21,6 +21,14 @@ config.google_drive.assets_folder_ids = [
   "1T93qsaSBbYa-lCF6ChPkfoX85PLugJCZ" // kids_teens_za
 ];
 
+config.firebase = {
+  config: loadEncryptedConfig('firebase.json'),
+}
+
+config.auth = {
+  provider: 'firebase',
+}
+
 // Hacky fix to point extended deployment to translations within its own repo
 config.translations.translated_strings_path = "./app_data/translations_source/translated_strings";
 
@@ -29,7 +37,6 @@ config.app_data.assets_filter_function = (fileEntry) =>
   !fileEntry.relativePath.includes("uncompressed")
 
 config.api.db_name = "plh_kids_teens_za";
-
 config.app_data.output_path = "./app_data";
 
 config.app_config.APP_LANGUAGES.default = "gb_en";
