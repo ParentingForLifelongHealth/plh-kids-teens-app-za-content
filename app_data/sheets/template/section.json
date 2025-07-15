@@ -915,6 +915,41 @@
       }
     },
     {
+      "name": "pop_up_text",
+      "value": "@local.section_extra_text",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!(@local.section_extra_text)",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "pop_up_text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.section_extra_text",
+            "matchedExpression": "@local.section_extra_text",
+            "type": "local",
+            "fieldName": "section_extra_text"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!(@local.section_extra_text)",
+            "matchedExpression": "@local.section_extra_text",
+            "type": "local",
+            "fieldName": "section_extra_text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.section_extra_text": [
+          "value",
+          "condition"
+        ]
+      }
+    },
+    {
       "type": "display_group",
       "name": "dg",
       "parameter_list": {
@@ -1069,41 +1104,6 @@
           },
           "_dynamicDependencies": {
             "@local.section_image_asset": [
-              "value",
-              "condition"
-            ]
-          }
-        },
-        {
-          "name": "pop_up_text",
-          "value": "@local.section_extra_text",
-          "_translations": {
-            "value": {}
-          },
-          "condition": "!!(@local.section_extra_text)",
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "dg.pop_up_text",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@local.section_extra_text",
-                "matchedExpression": "@local.section_extra_text",
-                "type": "local",
-                "fieldName": "section_extra_text"
-              }
-            ],
-            "condition": [
-              {
-                "fullExpression": "!!(@local.section_extra_text)",
-                "matchedExpression": "@local.section_extra_text",
-                "type": "local",
-                "fieldName": "section_extra_text"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.section_extra_text": [
               "value",
               "condition"
             ]

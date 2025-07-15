@@ -1,0 +1,156 @@
+{
+  "flow_type": "template",
+  "flow_name": "delete_account_warning",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.delete_account_warning_title",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.delete_account_warning_title",
+            "matchedExpression": "@global.delete_account_warning_title",
+            "type": "global",
+            "fieldName": "delete_account_warning_title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.delete_account_warning_title": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@global.delete_account_warning_text",
+      "_translations": {
+        "value": {}
+      },
+      "_nested_name": "text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.delete_account_warning_text",
+            "matchedExpression": "@global.delete_account_warning_text",
+            "type": "global",
+            "fieldName": "delete_account_warning_text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.delete_account_warning_text": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "rows": [
+        {
+          "type": "button",
+          "name": "button_back",
+          "value": "@global.no",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "click | emit: completed",
+              "_cleaned": "click | emit: completed"
+            }
+          ],
+          "exclude_from_translation": true,
+          "style_list": [
+            "flex: 1"
+          ],
+          "_nested_name": "display_group_4.button_back",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.no",
+                "matchedExpression": "@global.no",
+                "type": "global",
+                "fieldName": "no"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.no": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_delete_account",
+          "value": "@global.yes",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "auth",
+              "args": [
+                "delete_account"
+              ],
+              "_raw": "click | auth: delete_account",
+              "_cleaned": "click | auth: delete_account"
+            },
+            {
+              "trigger": "click",
+              "action_id": "reset_data",
+              "args": [],
+              "_raw": "click | reset_data",
+              "_cleaned": "click | reset_data"
+            },
+            {
+              "trigger": "click",
+              "action_id": "reset_app",
+              "args": [],
+              "_raw": "click | reset_app",
+              "_cleaned": "click | reset_app"
+            }
+          ],
+          "exclude_from_translation": true,
+          "style_list": [
+            "flex: 1"
+          ],
+          "_nested_name": "display_group_4.button_delete_account",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.yes",
+                "matchedExpression": "@global.yes",
+                "type": "global",
+                "fieldName": "yes"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.yes": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "name": "display_group_4",
+      "_nested_name": "display_group_4"
+    }
+  ],
+  "_xlsxPath": "app_menu.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/19wSspWYMbRc75een-kS0q0aq24--75u8"
+}

@@ -55,6 +55,21 @@
       "_xlsxPath": "data/ZA check_in.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
+    "child_age": {
+      "flow_type": "data_list",
+      "flow_name": "child_age",
+      "data_list_name": "child_age",
+      "_xlsxPath": "data/deployment_data_za.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+      "_metadata": {
+        "name": {
+          "type": "number"
+        },
+        "text": {
+          "type": "number"
+        }
+      }
+    },
     "activity_tasks": {
       "flow_name": "activity_tasks",
       "flow_subtype": "generated",
@@ -530,10 +545,10 @@
     },
     "launch_actions": {
       "flow_type": "data_list",
-      "flow_name": "launch_actions",
       "flow_subtype": "lifecycle_actions",
-      "_xlsxPath": "PLH app_launch.xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9",
+      "flow_name": "launch_actions",
+      "_xlsxPath": "PLH onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR",
       "_metadata": {
         "priority": {
           "type": "number"
@@ -807,6 +822,33 @@
       "_xlsxPath": "data/ZA modules .xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
+    "onboarding_splash_slides": {
+      "flow_type": "data_list",
+      "flow_subtype": "onboarding",
+      "flow_name": "onboarding_splash_slides",
+      "_xlsxPath": "data/ZA onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+      "_metadata": {
+        "duration_sec": {
+          "type": "number"
+        }
+      }
+    },
+    "onboarding_settings_pages": {
+      "flow_type": "data_list",
+      "flow_name": "onboarding_settings_pages",
+      "data_list_name": "onboarding_settings_pages",
+      "_xlsxPath": "templates/ZA onboarding templates.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+      "_metadata": {
+        "completed": {
+          "type": "boolean"
+        },
+        "completed_count": {
+          "type": "number"
+        }
+      }
+    },
     "organisation": {
       "flow_type": "data_list",
       "flow_name": "organisation",
@@ -833,15 +875,15 @@
       "flow_type": "data_list",
       "flow_name": "user_gender",
       "data_list_name": "user_gender",
-      "_xlsxPath": "templates/kids app_launch.xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU"
+      "_xlsxPath": "data/deployment_data_za.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
     "user_type": {
       "flow_type": "data_list",
       "flow_name": "user_type",
       "data_list_name": "user_type",
-      "_xlsxPath": "templates/kids app_launch.xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU"
+      "_xlsxPath": "data/deployment_data_za.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     }
   },
   "data_pipe": {
@@ -5868,6 +5910,20 @@
       "_xlsxPath": "data/deployment_data_za.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
     },
+    "onboarding_global": {
+      "flow_type": "global",
+      "flow_subtype": "onboarding",
+      "flow_name": "onboarding_global",
+      "_xlsxPath": "PLH onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+    },
+    "onboarding_global_za": {
+      "flow_type": "global",
+      "flow_subtype": "onboarding",
+      "flow_name": "onboarding_global_za",
+      "_xlsxPath": "data/ZA onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+    },
     "user_data_global": {
       "flow_type": "global",
       "flow_name": "user_data_global",
@@ -5876,6 +5932,12 @@
     }
   },
   "template": {
+    "account": {
+      "flow_type": "template",
+      "flow_name": "account",
+      "_xlsxPath": "app_menu.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/19wSspWYMbRc75een-kS0q0aq24--75u8"
+    },
     "activity": {
       "flow_type": "template",
       "flow_name": "activity",
@@ -5954,6 +6016,12 @@
       "flow_name": "debug_activity_unlocking",
       "_xlsxPath": "PLH activity library.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9"
+    },
+    "delete_account_warning": {
+      "flow_type": "template",
+      "flow_name": "delete_account_warning",
+      "_xlsxPath": "app_menu.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/19wSspWYMbRc75een-kS0q0aq24--75u8"
     },
     "enter_dev_mode": {
       "flow_type": "template",
@@ -9562,12 +9630,6 @@
       "_xlsxPath": "app_launch.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/19wSspWYMbRc75een-kS0q0aq24--75u8"
     },
-    "language_select_splash": {
-      "flow_type": "template",
-      "flow_name": "language_select_splash",
-      "_xlsxPath": "PLH app_launch.xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9"
-    },
     "accept_terms": {
       "flow_type": "template",
       "flow_subtype": "legal_terms",
@@ -9637,12 +9699,6 @@
       "flow_name": "login",
       "_xlsxPath": "app_menu.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/19wSspWYMbRc75een-kS0q0aq24--75u8"
-    },
-    "login_splash": {
-      "flow_type": "template",
-      "flow_name": "login_splash",
-      "_xlsxPath": "PLH app_launch.xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9"
     },
     "media_transcript": {
       "flow_type": "template",
@@ -10098,12 +10154,6 @@
       "_xlsxPath": "PLH module_navigation.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9"
     },
-    "module_path_debug": {
-      "flow_type": "template",
-      "flow_name": "module_path_debug",
-      "_xlsxPath": "PLH module_navigation.xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9"
-    },
     "module_start_at_id": {
       "flow_type": "template",
       "flow_name": "module_start_at_id",
@@ -10115,6 +10165,60 @@
       "flow_name": "nav_buttons",
       "_xlsxPath": "PLH app_navigation.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9"
+    },
+    "onboarding_footer": {
+      "flow_type": "template",
+      "flow_name": "onboarding_footer",
+      "_xlsxPath": "PLH onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+    },
+    "onboarding_header": {
+      "flow_type": "template",
+      "flow_name": "onboarding_header",
+      "_xlsxPath": "PLH onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+    },
+    "onboarding_language_select": {
+      "flow_type": "template",
+      "flow_name": "onboarding_language_select",
+      "_xlsxPath": "PLH onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+    },
+    "onboarding_settings": {
+      "flow_type": "template",
+      "flow_name": "onboarding_settings",
+      "_xlsxPath": "PLH onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+    },
+    "onboarding_settings_page_1": {
+      "flow_type": "template",
+      "flow_name": "onboarding_settings_page_1",
+      "_xlsxPath": "templates/ZA onboarding templates.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+    },
+    "onboarding_settings_page_2": {
+      "flow_type": "template",
+      "flow_name": "onboarding_settings_page_2",
+      "_xlsxPath": "templates/ZA onboarding templates.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+    },
+    "onboarding_settings_page_3": {
+      "flow_type": "template",
+      "flow_name": "onboarding_settings_page_3",
+      "_xlsxPath": "templates/ZA onboarding templates.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+    },
+    "onboarding_splash": {
+      "flow_type": "template",
+      "flow_name": "onboarding_splash",
+      "_xlsxPath": "PLH onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+    },
+    "onboarding_terms_login": {
+      "flow_type": "template",
+      "flow_name": "onboarding_terms_login",
+      "_xlsxPath": "PLH onboarding.xlsx",
+      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
     },
     "parenting_tips": {
       "flow_type": "template",
@@ -10261,12 +10365,6 @@
       "_xlsxPath": "PLH settings.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9"
     },
-    "splash_footer": {
-      "flow_type": "template",
-      "flow_name": "splash_footer",
-      "_xlsxPath": "PLH app_launch.xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9"
-    },
     "unlock_play": {
       "flow_type": "template",
       "flow_name": "unlock_play",
@@ -10278,12 +10376,6 @@
       "flow_name": "user_data",
       "_xlsxPath": "templates/kids app_launch.xlsx",
       "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU"
-    },
-    "user_data_splash": {
-      "flow_type": "template",
-      "flow_name": "user_data_splash",
-      "_xlsxPath": "PLH app_launch.xlsx",
-      "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9"
     },
     "user_id": {
       "flow_type": "template",

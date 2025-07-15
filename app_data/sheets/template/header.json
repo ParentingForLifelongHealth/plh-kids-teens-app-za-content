@@ -4,6 +4,16 @@
   "status": "released",
   "rows": [
     {
+      "name": "close_icon_asset",
+      "value": "close",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "close_icon_asset"
+    },
+    {
       "type": "display_group",
       "name": "dg_header",
       "parameter_list": {
@@ -17,16 +27,6 @@
         "padding-inline-end: 12px"
       ],
       "rows": [
-        {
-          "name": "close_icon_asset",
-          "value": "close",
-          "_translations": {
-            "value": {}
-          },
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "dg_header.close_icon_asset"
-        },
         {
           "type": "image",
           "name": "icon_asset",

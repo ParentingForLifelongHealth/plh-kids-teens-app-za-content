@@ -615,21 +615,21 @@
       }
     },
     {
+      "name": "choice_2_reply_text",
+      "value": "All teenagers sometimes behave just horribly! One thing that can help with teenage behaviour is to praise them any time that they do something good – however small. Teens may not look like they want or seek your praise but they still really, really do.",
+      "_translations": {
+        "value": {
+          "za_xh": true
+        }
+      },
+      "type": "set_variable",
+      "_nested_name": "choice_2_reply_text"
+    },
+    {
       "type": "display_group",
       "name": "reply_choice_2",
       "condition": "@local.combo_box==\"choice_2\"",
       "rows": [
-        {
-          "name": "choice_2_reply_text",
-          "value": "All teenagers sometimes behave just horribly! One thing that can help with teenage behaviour is to praise them any time that they do something good – however small. Teens may not look like they want or seek your praise but they still really, really do.",
-          "_translations": {
-            "value": {
-              "za_xh": true
-            }
-          },
-          "type": "set_variable",
-          "_nested_name": "reply_choice_2.choice_2_reply_text"
-        },
         {
           "type": "template",
           "name": "reply_choice_2_praise",
@@ -930,21 +930,21 @@
       }
     },
     {
+      "name": "choice_3_reply_text",
+      "value": "Parenting stress is really high right now. We know exactly how overwhelming life can be. Doing something for yourself can reduce your stress. You deserve it! And when you feel overwhelmed, take back control over your body by taking five slow, deep breaths before responding. Lots of parents found this helpful.",
+      "_translations": {
+        "value": {
+          "za_xh": true
+        }
+      },
+      "type": "set_variable",
+      "_nested_name": "choice_3_reply_text"
+    },
+    {
       "type": "display_group",
       "name": "reply_choice_3",
       "condition": "@local.combo_box==\"choice_3\"",
       "rows": [
-        {
-          "name": "choice_3_reply_text",
-          "value": "Parenting stress is really high right now. We know exactly how overwhelming life can be. Doing something for yourself can reduce your stress. You deserve it! And when you feel overwhelmed, take back control over your body by taking five slow, deep breaths before responding. Lots of parents found this helpful.",
-          "_translations": {
-            "value": {
-              "za_xh": true
-            }
-          },
-          "type": "set_variable",
-          "_nested_name": "reply_choice_3.choice_3_reply_text"
-        },
         {
           "type": "template",
           "name": "reply_choice_3_self_care",

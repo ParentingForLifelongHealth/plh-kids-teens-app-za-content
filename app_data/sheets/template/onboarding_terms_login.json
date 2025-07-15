@@ -1,0 +1,1016 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_terms_login",
+  "status": "released",
+  "rows": [
+    {
+      "name": "user_is_logged_in",
+      "value": "!!@fields._auth_user_id",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "user_is_logged_in",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "!!@fields._auth_user_id",
+            "matchedExpression": "!@fields._auth_user_id",
+            "type": "fields",
+            "fieldName": "_auth_user_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@fields._auth_user_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "user_skipped_login",
+      "value": false,
+      "type": "set_variable",
+      "_nested_name": "user_skipped_login"
+    },
+    {
+      "type": "template",
+      "name": "header",
+      "value": "onboarding_header",
+      "condition": "@global.login_is_mandatory || @local.user_is_logged_in || @local.user_skipped_login",
+      "rows": [],
+      "_nested_name": "header",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@global.login_is_mandatory || @local.user_is_logged_in || @local.user_skipped_login",
+            "matchedExpression": "@global.login_is_mandatory",
+            "type": "global",
+            "fieldName": "login_is_mandatory"
+          },
+          {
+            "fullExpression": "@global.login_is_mandatory || @local.user_is_logged_in || @local.user_skipped_login",
+            "matchedExpression": "@local.user_is_logged_in",
+            "type": "local",
+            "fieldName": "user_is_logged_in"
+          },
+          {
+            "fullExpression": "@global.login_is_mandatory || @local.user_is_logged_in || @local.user_skipped_login",
+            "matchedExpression": "@local.user_skipped_login",
+            "type": "local",
+            "fieldName": "user_skipped_login"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.login_is_mandatory": [
+          "condition"
+        ],
+        "@local.user_is_logged_in": [
+          "condition"
+        ],
+        "@local.user_skipped_login": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "before_login",
+      "condition": "!(@local.user_is_logged_in || @local.user_skipped_login)",
+      "parameter_list": {
+        "style": "column"
+      },
+      "style_list": [
+        "align-items: center"
+      ],
+      "rows": [
+        {
+          "type": "title",
+          "name": "title",
+          "value": "@global.welcome_message",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "variant": "header"
+          },
+          "style_list": [
+            "margin-top: 24px"
+          ],
+          "_nested_name": "before_login.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.welcome_message",
+                "matchedExpression": "@global.welcome_message",
+                "type": "global",
+                "fieldName": "welcome_message"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.welcome_message": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "name": "text_login",
+          "value": "@global.login",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "text_align": "center",
+            "style": "emphasised"
+          },
+          "_nested_name": "before_login.text_login",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.login",
+                "matchedExpression": "@global.login",
+                "type": "global",
+                "fieldName": "login"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.login": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "name": "text_login_why",
+          "value": "@global.login_optional_why",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "!@global.login_is_mandatory",
+          "parameter_list": {
+            "text_align": "center"
+          },
+          "_nested_name": "before_login.text_login_why",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.login_optional_why",
+                "matchedExpression": "@global.login_optional_why",
+                "type": "global",
+                "fieldName": "login_optional_why"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!@global.login_is_mandatory",
+                "matchedExpression": "!@global.login_is_mandatory",
+                "type": "global",
+                "fieldName": "login_is_mandatory"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.login_optional_why": [
+              "value"
+            ],
+            "!@global.login_is_mandatory": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "apple_sign_in_button",
+          "name": "button_apple_sign_in",
+          "value": "@global.login_apple",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "force_reprocess"
+              ],
+              "_raw": "click | emit: force_reprocess",
+              "_cleaned": "click | emit: force_reprocess"
+            }
+          ],
+          "condition": "@fields._platform === \"ios\"",
+          "style_list": [
+            "max-width: max-content"
+          ],
+          "_nested_name": "before_login.button_apple_sign_in",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.login_apple",
+                "matchedExpression": "@global.login_apple",
+                "type": "global",
+                "fieldName": "login_apple"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@fields._platform === \"ios\"",
+                "matchedExpression": "@fields._platform",
+                "type": "fields",
+                "fieldName": "_platform"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.login_apple": [
+              "value"
+            ],
+            "@fields._platform": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "google_sign_in_button",
+          "name": "button_google_sign_in",
+          "value": "@global.login_google",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "force_reprocess"
+              ],
+              "_raw": "click | emit: force_reprocess",
+              "_cleaned": "click | emit: force_reprocess"
+            }
+          ],
+          "style_list": [
+            "max-width: max-content"
+          ],
+          "_nested_name": "before_login.button_google_sign_in",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.login_google",
+                "matchedExpression": "@global.login_google",
+                "type": "global",
+                "fieldName": "login_google"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.login_google": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_skip_sign_in",
+          "value": "@global.login_skip",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "click | emit: completed",
+              "_cleaned": "click | emit: completed"
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "onboarding_terms_login_completed",
+                true
+              ],
+              "_raw": "click | set_field: onboarding_terms_login_completed: true",
+              "_cleaned": "click | set_field: onboarding_terms_login_completed: true"
+            }
+          ],
+          "condition": "!@global.login_is_mandatory",
+          "parameter_list": {
+            "variant": "card"
+          },
+          "_nested_name": "before_login.button_skip_sign_in",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.login_skip",
+                "matchedExpression": "@global.login_skip",
+                "type": "global",
+                "fieldName": "login_skip"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!@global.login_is_mandatory",
+                "matchedExpression": "!@global.login_is_mandatory",
+                "type": "global",
+                "fieldName": "login_is_mandatory"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.login_skip": [
+              "value"
+            ],
+            "!@global.login_is_mandatory": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "name": "text",
+          "value": "@global.agree_terms",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "text_align": "center"
+          },
+          "_nested_name": "before_login.text",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.agree_terms",
+                "matchedExpression": "@global.agree_terms",
+                "type": "global",
+                "fieldName": "agree_terms"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.agree_terms": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "display_group",
+          "name": "dg_buttons_terms",
+          "parameter_list": {
+            "style": "column"
+          },
+          "rows": [
+            {
+              "type": "button",
+              "name": "button_terms",
+              "value": "<u>@global.terms_and_conditions</u>",
+              "_translations": {
+                "value": {}
+              },
+              "action_list": [
+                {
+                  "trigger": "click",
+                  "action_id": "pop_up",
+                  "args": [
+                    "app_menu_terms"
+                  ],
+                  "_raw": "click | pop_up: app_menu_terms | fullscreen: true",
+                  "_cleaned": "click | pop_up: app_menu_terms | fullscreen: true",
+                  "params": {
+                    "fullscreen": true
+                  }
+                }
+              ],
+              "parameter_list": {
+                "variant": "card",
+                "style": "no-background"
+              },
+              "style_list": [
+                "margin-block: -12px"
+              ],
+              "exclude_from_translation": true,
+              "_nested_name": "before_login.dg_buttons_terms.button_terms",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "<u>@global.terms_and_conditions</u>",
+                    "matchedExpression": "@global.terms_and_conditions",
+                    "type": "global",
+                    "fieldName": "terms_and_conditions"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.terms_and_conditions": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "name": "button_privacy",
+              "value": "<u>@global.privacy_policy</u>",
+              "_translations": {
+                "value": {}
+              },
+              "action_list": [
+                {
+                  "trigger": "click",
+                  "action_id": "pop_up",
+                  "args": [
+                    "app_menu_privacy_policy"
+                  ],
+                  "_raw": "click | pop_up: app_menu_privacy_policy| fullscreen: true",
+                  "_cleaned": "click | pop_up: app_menu_privacy_policy| fullscreen: true",
+                  "params": {
+                    "fullscreen": true
+                  }
+                }
+              ],
+              "parameter_list": {
+                "variant": "card",
+                "style": "no-background"
+              },
+              "style_list": [
+                "margin-block: -12px"
+              ],
+              "exclude_from_translation": true,
+              "_nested_name": "before_login.dg_buttons_terms.button_privacy",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "<u>@global.privacy_policy</u>",
+                    "matchedExpression": "@global.privacy_policy",
+                    "type": "global",
+                    "fieldName": "privacy_policy"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.privacy_policy": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "before_login.dg_buttons_terms"
+        }
+      ],
+      "_nested_name": "before_login",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!(@local.user_is_logged_in || @local.user_skipped_login)",
+            "matchedExpression": "@local.user_is_logged_in",
+            "type": "local",
+            "fieldName": "user_is_logged_in"
+          },
+          {
+            "fullExpression": "!(@local.user_is_logged_in || @local.user_skipped_login)",
+            "matchedExpression": "@local.user_skipped_login",
+            "type": "local",
+            "fieldName": "user_skipped_login"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.user_is_logged_in": [
+          "condition"
+        ],
+        "@local.user_skipped_login": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "after_login",
+      "condition": "@local.user_is_logged_in",
+      "parameter_list": {
+        "style": "column"
+      },
+      "style_list": [
+        "align-items: center"
+      ],
+      "rows": [
+        {
+          "type": "data_items",
+          "value": "_auth_profiles",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "data_changed",
+              "action_id": "set_field",
+              "args": [
+                "no_previous_auth_id",
+                "@items.length === 0"
+              ],
+              "_raw": "data_changed | set_field : no_previous_auth_id : @items.length === 0",
+              "_cleaned": "data_changed | set_field : no_previous_auth_id : @items.length === 0"
+            }
+          ],
+          "name": "data_items_1",
+          "_nested_name": "after_login.data_items_1"
+        },
+        {
+          "type": "data_items",
+          "name": "find_last_synced_id",
+          "value": "_auth_profiles",
+          "parameter_list": {
+            "sort": "updatedAt",
+            "reverse": "true",
+            "limit": "1"
+          },
+          "rows": [
+            {
+              "type": "display_group",
+              "name": "dg_welcome_existing",
+              "parameter_list": {
+                "style": "column"
+              },
+              "style_list": [
+                "align-items: center"
+              ],
+              "rows": [
+                {
+                  "type": "image",
+                  "name": "img_user",
+                  "value": "@fields._auth_user_picture",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "condition": "!!@fields._auth_user_picture",
+                  "parameter_list": {
+                    "style": "rounded_corners"
+                  },
+                  "style_list": [
+                    "width: 96px",
+                    "height: 96px"
+                  ],
+                  "_nested_name": "after_login.find_last_synced_id.dg_welcome_existing.img_user",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@fields._auth_user_picture",
+                        "matchedExpression": "@fields._auth_user_picture",
+                        "type": "fields",
+                        "fieldName": "_auth_user_picture"
+                      }
+                    ],
+                    "condition": [
+                      {
+                        "fullExpression": "!!@fields._auth_user_picture",
+                        "matchedExpression": "!@fields._auth_user_picture",
+                        "type": "fields",
+                        "fieldName": "_auth_user_picture"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@fields._auth_user_picture": [
+                      "value"
+                    ],
+                    "!@fields._auth_user_picture": [
+                      "condition"
+                    ]
+                  }
+                },
+                {
+                  "type": "title",
+                  "name": "welcome_title",
+                  "value": "@global.logged_in_existing_user",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "condition": "!!@fields._auth_user_given_name",
+                  "parameter_list": {
+                    "variant": "header"
+                  },
+                  "_nested_name": "after_login.find_last_synced_id.dg_welcome_existing.welcome_title",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@global.logged_in_existing_user",
+                        "matchedExpression": "@global.logged_in_existing_user",
+                        "type": "global",
+                        "fieldName": "logged_in_existing_user"
+                      }
+                    ],
+                    "condition": [
+                      {
+                        "fullExpression": "!!@fields._auth_user_given_name",
+                        "matchedExpression": "!@fields._auth_user_given_name",
+                        "type": "fields",
+                        "fieldName": "_auth_user_given_name"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@global.logged_in_existing_user": [
+                      "value"
+                    ],
+                    "!@fields._auth_user_given_name": [
+                      "condition"
+                    ]
+                  }
+                },
+                {
+                  "type": "title",
+                  "name": "welcome_title",
+                  "value": "@global.logged_in_existing",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "condition": "!@fields._auth_user_given_name",
+                  "parameter_list": {
+                    "variant": "header"
+                  },
+                  "_nested_name": "after_login.find_last_synced_id.dg_welcome_existing.welcome_title",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@global.logged_in_existing",
+                        "matchedExpression": "@global.logged_in_existing",
+                        "type": "global",
+                        "fieldName": "logged_in_existing"
+                      }
+                    ],
+                    "condition": [
+                      {
+                        "fullExpression": "!@fields._auth_user_given_name",
+                        "matchedExpression": "!@fields._auth_user_given_name",
+                        "type": "fields",
+                        "fieldName": "_auth_user_given_name"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@global.logged_in_existing": [
+                      "value"
+                    ],
+                    "!@fields._auth_user_given_name": [
+                      "condition"
+                    ]
+                  }
+                },
+                {
+                  "type": "button",
+                  "name": "button_import",
+                  "value": "@global.continue",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "action_list": [
+                    {
+                      "trigger": "click",
+                      "action_id": "user",
+                      "args": [
+                        "import",
+                        "@item.id"
+                      ],
+                      "_raw": "click | user: import: @item.id",
+                      "_cleaned": "click | user: import: @item.id"
+                    },
+                    {
+                      "trigger": "click",
+                      "action_id": "set_field",
+                      "args": [
+                        "onboarding_terms_login_completed",
+                        true
+                      ],
+                      "_raw": "click | set_field: onboarding_terms_login_completed: true",
+                      "_cleaned": "click | set_field: onboarding_terms_login_completed: true"
+                    }
+                  ],
+                  "parameter_list": {
+                    "style": "navigation"
+                  },
+                  "_nested_name": "after_login.find_last_synced_id.dg_welcome_existing.button_import",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@global.continue",
+                        "matchedExpression": "@global.continue",
+                        "type": "global",
+                        "fieldName": "continue"
+                      }
+                    ],
+                    "action_list": {
+                      "0": {
+                        "args": {
+                          "1": [
+                            {
+                              "fullExpression": "@item.id",
+                              "matchedExpression": "@item.id",
+                              "type": "item",
+                              "fieldName": "id"
+                            }
+                          ]
+                        },
+                        "_raw": [
+                          {
+                            "fullExpression": "click | user: import: @item.id",
+                            "matchedExpression": "@item.id",
+                            "type": "item",
+                            "fieldName": "id"
+                          }
+                        ],
+                        "_cleaned": [
+                          {
+                            "fullExpression": "click | user: import: @item.id",
+                            "matchedExpression": "@item.id",
+                            "type": "item",
+                            "fieldName": "id"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "_dynamicDependencies": {
+                    "@global.continue": [
+                      "value"
+                    ],
+                    "@item.id": [
+                      "action_list.0.args.1",
+                      "action_list.0._raw",
+                      "action_list.0._cleaned"
+                    ]
+                  }
+                }
+              ],
+              "_nested_name": "after_login.find_last_synced_id.dg_welcome_existing"
+            }
+          ],
+          "_nested_name": "after_login.find_last_synced_id"
+        },
+        {
+          "type": "display_group",
+          "name": "dg_welcome_new",
+          "condition": "!!@fields.no_previous_auth_id",
+          "parameter_list": {
+            "style": "column"
+          },
+          "style_list": [
+            "align-items: center"
+          ],
+          "rows": [
+            {
+              "type": "image",
+              "name": "img_user",
+              "value": "@fields._auth_user_picture",
+              "_translations": {
+                "value": {}
+              },
+              "condition": "!!@fields._auth_user_picture",
+              "parameter_list": {
+                "style": "rounded_corners"
+              },
+              "style_list": [
+                "width: 96px",
+                "height: 96px"
+              ],
+              "_nested_name": "after_login.dg_welcome_new.img_user",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@fields._auth_user_picture",
+                    "matchedExpression": "@fields._auth_user_picture",
+                    "type": "fields",
+                    "fieldName": "_auth_user_picture"
+                  }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!!@fields._auth_user_picture",
+                    "matchedExpression": "!@fields._auth_user_picture",
+                    "type": "fields",
+                    "fieldName": "_auth_user_picture"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@fields._auth_user_picture": [
+                  "value"
+                ],
+                "!@fields._auth_user_picture": [
+                  "condition"
+                ]
+              }
+            },
+            {
+              "type": "title",
+              "name": "welcome_title",
+              "value": "@global.logged_in_new_user",
+              "_translations": {
+                "value": {}
+              },
+              "condition": "!!@fields._auth_user_given_name",
+              "parameter_list": {
+                "variant": "header"
+              },
+              "_nested_name": "after_login.dg_welcome_new.welcome_title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.logged_in_new_user",
+                    "matchedExpression": "@global.logged_in_new_user",
+                    "type": "global",
+                    "fieldName": "logged_in_new_user"
+                  }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!!@fields._auth_user_given_name",
+                    "matchedExpression": "!@fields._auth_user_given_name",
+                    "type": "fields",
+                    "fieldName": "_auth_user_given_name"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.logged_in_new_user": [
+                  "value"
+                ],
+                "!@fields._auth_user_given_name": [
+                  "condition"
+                ]
+              }
+            },
+            {
+              "type": "title",
+              "name": "welcome_title",
+              "value": "@global.logged_in_new",
+              "_translations": {
+                "value": {}
+              },
+              "condition": "!@fields._auth_user_given_name",
+              "parameter_list": {
+                "variant": "header"
+              },
+              "_nested_name": "after_login.dg_welcome_new.welcome_title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.logged_in_new",
+                    "matchedExpression": "@global.logged_in_new",
+                    "type": "global",
+                    "fieldName": "logged_in_new"
+                  }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!@fields._auth_user_given_name",
+                    "matchedExpression": "!@fields._auth_user_given_name",
+                    "type": "fields",
+                    "fieldName": "_auth_user_given_name"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.logged_in_new": [
+                  "value"
+                ],
+                "!@fields._auth_user_given_name": [
+                  "condition"
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "name": "button_completed",
+              "value": "@global.continue",
+              "_translations": {
+                "value": {}
+              },
+              "action_list": [
+                {
+                  "trigger": "click",
+                  "action_id": "emit",
+                  "args": [
+                    "completed"
+                  ],
+                  "_raw": "click | emit: completed",
+                  "_cleaned": "click | emit: completed"
+                },
+                {
+                  "trigger": "click",
+                  "action_id": "set_field",
+                  "args": [
+                    "onboarding_terms_login_completed",
+                    true
+                  ],
+                  "_raw": "click | set_field: onboarding_terms_login_completed: true",
+                  "_cleaned": "click | set_field: onboarding_terms_login_completed: true"
+                }
+              ],
+              "parameter_list": {
+                "style": "navigation"
+              },
+              "_nested_name": "after_login.dg_welcome_new.button_completed",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.continue",
+                    "matchedExpression": "@global.continue",
+                    "type": "global",
+                    "fieldName": "continue"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.continue": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "after_login.dg_welcome_new",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "!!@fields.no_previous_auth_id",
+                "matchedExpression": "!@fields.no_previous_auth_id",
+                "type": "fields",
+                "fieldName": "no_previous_auth_id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "!@fields.no_previous_auth_id": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_sign_out",
+          "value": "<u>@global.logout</u>",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "reset_data",
+              "args": [],
+              "_raw": "click | reset_data",
+              "_cleaned": "click | reset_data"
+            },
+            {
+              "trigger": "click",
+              "action_id": "reset_app",
+              "args": [],
+              "_raw": "click | reset_app",
+              "_cleaned": "click | reset_app"
+            }
+          ],
+          "parameter_list": {
+            "variant": "card",
+            "style": "no-background"
+          },
+          "exclude_from_translation": true,
+          "_nested_name": "after_login.button_sign_out",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "<u>@global.logout</u>",
+                "matchedExpression": "@global.logout",
+                "type": "global",
+                "fieldName": "logout"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.logout": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "after_login",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.user_is_logged_in",
+            "matchedExpression": "@local.user_is_logged_in",
+            "type": "local",
+            "fieldName": "user_is_logged_in"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.user_is_logged_in": [
+          "condition"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "PLH onboarding.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+}

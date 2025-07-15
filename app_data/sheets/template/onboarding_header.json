@@ -1,0 +1,78 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_header",
+  "status": "released",
+  "rows": [
+    {
+      "type": "display_group",
+      "name": "dg_top",
+      "parameter_list": {
+        "sticky": "top"
+      },
+      "style_list": [
+        "background-color: @global.onboarding_header_background_colour",
+        "border-bottom-left-radius: 36px",
+        "border-bottom-right-radius: 36px",
+        "margin-block: -24px"
+      ],
+      "rows": [
+        {
+          "type": "image",
+          "name": "logo",
+          "value": "@global.onboarding_header_image_asset",
+          "_translations": {
+            "value": {}
+          },
+          "style_list": [
+            "height: 200px",
+            "margin-block: 24px"
+          ],
+          "_nested_name": "dg_top.logo",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.onboarding_header_image_asset",
+                "matchedExpression": "@global.onboarding_header_image_asset",
+                "type": "global",
+                "fieldName": "onboarding_header_image_asset"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.onboarding_header_image_asset": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "dg_top",
+      "_dynamicFields": {
+        "style_list": {
+          "0": [
+            {
+              "fullExpression": "background-color: @global.onboarding_header_background_colour",
+              "matchedExpression": "@global.onboarding_header_background_colour",
+              "type": "global",
+              "fieldName": "onboarding_header_background_colour"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@global.onboarding_header_background_colour": [
+          "style_list.0"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "spacer",
+      "style_list": [
+        "margin-top: 24px"
+      ],
+      "_nested_name": "spacer"
+    }
+  ],
+  "_xlsxPath": "PLH onboarding.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+}
