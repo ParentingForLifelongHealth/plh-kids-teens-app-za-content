@@ -1,0 +1,120 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_language_select",
+  "status": "released",
+  "rows": [
+    {
+      "type": "template",
+      "name": "header",
+      "value": "onboarding_header",
+      "rows": [],
+      "_nested_name": "header"
+    },
+    {
+      "name": "language_select_options",
+      "value": "@data.language",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "language_select_options",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.language",
+            "matchedExpression": "@data.language",
+            "type": "data",
+            "fieldName": "language"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.language": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "language_grid",
+      "action_list": [
+        {
+          "trigger": "changed",
+          "action_id": "emit",
+          "args": [
+            "set_language",
+            "this.value"
+          ],
+          "_raw": "changed | emit: set_language: this.value",
+          "_cleaned": "changed | emit: set_language: this.value"
+        },
+        {
+          "trigger": "changed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "changed | emit: completed",
+          "_cleaned": "changed | emit: completed"
+        },
+        {
+          "trigger": "changed",
+          "action_id": "set_field",
+          "args": [
+            "onboarding_language_select_completed",
+            true
+          ],
+          "_raw": "changed | set_field: onboarding_language_select_completed: true",
+          "_cleaned": "changed | set_field: onboarding_language_select_completed: true"
+        }
+      ],
+      "parameter_list": {
+        "answer_list": "@local.language_select_options",
+        "item_width": "200px"
+      },
+      "_nested_name": "language_grid",
+      "_dynamicFields": {
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@local.language_select_options",
+              "matchedExpression": "@local.language_select_options",
+              "type": "local",
+              "fieldName": "language_select_options"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.language_select_options": [
+          "parameter_list.answer_list"
+        ]
+      }
+    },
+    {
+      "type": "template",
+      "name": "footer",
+      "value": "onboarding_footer",
+      "condition": "!!@global.onboarding_footer_image_asset",
+      "rows": [],
+      "_nested_name": "footer",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!!@global.onboarding_footer_image_asset",
+            "matchedExpression": "!@global.onboarding_footer_image_asset",
+            "type": "global",
+            "fieldName": "onboarding_footer_image_asset"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@global.onboarding_footer_image_asset": [
+          "condition"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "PLH onboarding.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+}

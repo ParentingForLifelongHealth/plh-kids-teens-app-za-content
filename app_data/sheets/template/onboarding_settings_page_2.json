@@ -1,0 +1,680 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_settings_page_2",
+  "status": "released",
+  "rows": [
+    {
+      "name": "speaker_name",
+      "value": "@data.characters.facilitator.name",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "speaker_name",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.characters.facilitator.name",
+            "matchedExpression": "@data.characters.facilitator.name",
+            "type": "data",
+            "fieldName": "characters"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.characters.facilitator.name": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "speaker_image_asset",
+      "value": "@data.characters.facilitator.image_asset",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "speaker_image_asset",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.characters.facilitator.image_asset",
+            "matchedExpression": "@data.characters.facilitator.image_asset",
+            "type": "data",
+            "fieldName": "characters"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.characters.facilitator.image_asset": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "speaker_position",
+      "value": "left",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "speaker_position"
+    },
+    {
+      "name": "variant",
+      "value": "gray",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "variant"
+    },
+    {
+      "type": "text_bubble",
+      "name": "text_bubble",
+      "value": "@global.facilitator_message_2",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "speaker_image_asset": "@local.speaker_image_asset",
+        "speaker_name": "@local.speaker_name",
+        "speaker_position": "@local.speaker_position",
+        "variant": "@local.variant"
+      },
+      "_nested_name": "text_bubble",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.facilitator_message_2",
+            "matchedExpression": "@global.facilitator_message_2",
+            "type": "global",
+            "fieldName": "facilitator_message_2"
+          }
+        ],
+        "parameter_list": {
+          "speaker_image_asset": [
+            {
+              "fullExpression": "@local.speaker_image_asset",
+              "matchedExpression": "@local.speaker_image_asset",
+              "type": "local",
+              "fieldName": "speaker_image_asset"
+            }
+          ],
+          "speaker_name": [
+            {
+              "fullExpression": "@local.speaker_name",
+              "matchedExpression": "@local.speaker_name",
+              "type": "local",
+              "fieldName": "speaker_name"
+            }
+          ],
+          "speaker_position": [
+            {
+              "fullExpression": "@local.speaker_position",
+              "matchedExpression": "@local.speaker_position",
+              "type": "local",
+              "fieldName": "speaker_position"
+            }
+          ],
+          "variant": [
+            {
+              "fullExpression": "@local.variant",
+              "matchedExpression": "@local.variant",
+              "type": "local",
+              "fieldName": "variant"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@global.facilitator_message_2": [
+          "value"
+        ],
+        "@local.speaker_image_asset": [
+          "parameter_list.speaker_image_asset"
+        ],
+        "@local.speaker_name": [
+          "parameter_list.speaker_name"
+        ],
+        "@local.speaker_position": [
+          "parameter_list.speaker_position"
+        ],
+        "@local.variant": [
+          "parameter_list.variant"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "question_user_name",
+      "value": "@global.question_user_name",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "style": "emphasised"
+      },
+      "_nested_name": "question_user_name",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.question_user_name",
+            "matchedExpression": "@global.question_user_name",
+            "type": "global",
+            "fieldName": "question_user_name"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.question_user_name": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text_box",
+      "name": "user_name_input",
+      "value": "@fields._auth_user_given_name",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "placeholder": "@global.placeholder_user_name"
+      },
+      "condition": "!!@fields._auth_user_given_name",
+      "exclude_from_translation": true,
+      "_nested_name": "user_name_input",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields._auth_user_given_name",
+            "matchedExpression": "@fields._auth_user_given_name",
+            "type": "fields",
+            "fieldName": "_auth_user_given_name"
+          }
+        ],
+        "parameter_list": {
+          "placeholder": [
+            {
+              "fullExpression": "@global.placeholder_user_name",
+              "matchedExpression": "@global.placeholder_user_name",
+              "type": "global",
+              "fieldName": "placeholder_user_name"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "!!@fields._auth_user_given_name",
+            "matchedExpression": "!@fields._auth_user_given_name",
+            "type": "fields",
+            "fieldName": "_auth_user_given_name"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields._auth_user_given_name": [
+          "value"
+        ],
+        "@global.placeholder_user_name": [
+          "parameter_list.placeholder"
+        ],
+        "!@fields._auth_user_given_name": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text_box",
+      "name": "user_name_input",
+      "parameter_list": {
+        "placeholder": "@global.placeholder_user_name"
+      },
+      "condition": "!@fields._auth_user_given_name",
+      "exclude_from_translation": true,
+      "_nested_name": "user_name_input",
+      "_dynamicFields": {
+        "parameter_list": {
+          "placeholder": [
+            {
+              "fullExpression": "@global.placeholder_user_name",
+              "matchedExpression": "@global.placeholder_user_name",
+              "type": "global",
+              "fieldName": "placeholder_user_name"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "!@fields._auth_user_given_name",
+            "matchedExpression": "!@fields._auth_user_given_name",
+            "type": "fields",
+            "fieldName": "_auth_user_given_name"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.placeholder_user_name": [
+          "parameter_list.placeholder"
+        ],
+        "!@fields._auth_user_given_name": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "question_user_gender",
+      "value": "@global.question_user_gender",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "style": "emphasised"
+      },
+      "_nested_name": "question_user_gender",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.question_user_gender",
+            "matchedExpression": "@global.question_user_gender",
+            "type": "global",
+            "fieldName": "question_user_gender"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.question_user_gender": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "combo_box",
+      "name": "user_gender_select",
+      "parameter_list": {
+        "answer_list": "@data.user_gender",
+        "placeholder": "@global.placeholder_user_gender",
+        "variant": "dropdown"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "user_gender_select",
+      "_dynamicFields": {
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@data.user_gender",
+              "matchedExpression": "@data.user_gender",
+              "type": "data",
+              "fieldName": "user_gender"
+            }
+          ],
+          "placeholder": [
+            {
+              "fullExpression": "@global.placeholder_user_gender",
+              "matchedExpression": "@global.placeholder_user_gender",
+              "type": "global",
+              "fieldName": "placeholder_user_gender"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.user_gender": [
+          "parameter_list.answer_list"
+        ],
+        "@global.placeholder_user_gender": [
+          "parameter_list.placeholder"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "question_user_type",
+      "value": "@global.question_user_type",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "style": "emphasised"
+      },
+      "_nested_name": "question_user_type",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.question_user_type",
+            "matchedExpression": "@global.question_user_type",
+            "type": "global",
+            "fieldName": "question_user_type"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.question_user_type": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "combo_box",
+      "name": "user_type_select",
+      "value": "@fields.user_type",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "answer_list": "@data.user_type",
+        "placeholder": "@global.placeholder_user_type",
+        "variant": "dropdown"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "user_type_select",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.user_type",
+            "matchedExpression": "@fields.user_type",
+            "type": "fields",
+            "fieldName": "user_type"
+          }
+        ],
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@data.user_type",
+              "matchedExpression": "@data.user_type",
+              "type": "data",
+              "fieldName": "user_type"
+            }
+          ],
+          "placeholder": [
+            {
+              "fullExpression": "@global.placeholder_user_type",
+              "matchedExpression": "@global.placeholder_user_type",
+              "type": "global",
+              "fieldName": "placeholder_user_type"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@fields.user_type": [
+          "value"
+        ],
+        "@data.user_type": [
+          "parameter_list.answer_list"
+        ],
+        "@global.placeholder_user_type": [
+          "parameter_list.placeholder"
+        ]
+      }
+    },
+    {
+      "name": "completed_enabled",
+      "value": "!!@local.user_type_select && !!@local.user_name_input && !!@local.user_gender_select",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "completed_enabled",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "!!@local.user_type_select && !!@local.user_name_input && !!@local.user_gender_select",
+            "matchedExpression": "!@local.user_type_select",
+            "type": "local",
+            "fieldName": "user_type_select"
+          },
+          {
+            "fullExpression": "!!@local.user_type_select && !!@local.user_name_input && !!@local.user_gender_select",
+            "matchedExpression": "!@local.user_name_input",
+            "type": "local",
+            "fieldName": "user_name_input"
+          },
+          {
+            "fullExpression": "!!@local.user_type_select && !!@local.user_name_input && !!@local.user_gender_select",
+            "matchedExpression": "!@local.user_gender_select",
+            "type": "local",
+            "fieldName": "user_gender_select"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.user_type_select": [
+          "value"
+        ],
+        "!@local.user_name_input": [
+          "value"
+        ],
+        "!@local.user_gender_select": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "dg_footer",
+      "parameter_list": {
+        "sticky": "bottom"
+      },
+      "style_list": [
+        "padding: 12px 24px"
+      ],
+      "rows": [
+        {
+          "type": "round_button",
+          "name": "button_back",
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "click | emit: uncompleted",
+              "_cleaned": "click | emit: uncompleted"
+            }
+          ],
+          "parameter_list": {
+            "icon_src": "arrow-back",
+            "variant": "no-background"
+          },
+          "_nested_name": "dg_footer.button_back"
+        },
+        {
+          "type": "button",
+          "name": "button_completed",
+          "value": "@global.continue",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "user_type",
+                "@local.user_type_select"
+              ],
+              "_raw": "click | set_field: user_type: @local.user_type_select",
+              "_cleaned": "click | set_field: user_type: @local.user_type_select"
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "user_name",
+                "@local.user_name_input"
+              ],
+              "_raw": "click | set_field: user_name: @local.user_name_input",
+              "_cleaned": "click | set_field: user_name: @local.user_name_input"
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "user_gender",
+                "@local.user_gender_select"
+              ],
+              "_raw": "click | set_field: user_gender: @local.user_gender_select",
+              "_cleaned": "click | set_field: user_gender: @local.user_gender_select"
+            },
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "click | emit: completed",
+              "_cleaned": "click | emit: completed"
+            }
+          ],
+          "parameter_list": {
+            "style": "navigation",
+            "disabled": "!@local.completed_enabled"
+          },
+          "style_list": [
+            "flex: 1"
+          ],
+          "_nested_name": "dg_footer.button_completed",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.continue",
+                "matchedExpression": "@global.continue",
+                "type": "global",
+                "fieldName": "continue"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.user_type_select",
+                      "matchedExpression": "@local.user_type_select",
+                      "type": "local",
+                      "fieldName": "user_type_select"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: user_type: @local.user_type_select",
+                    "matchedExpression": "@local.user_type_select",
+                    "type": "local",
+                    "fieldName": "user_type_select"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | set_field: user_type: @local.user_type_select",
+                    "matchedExpression": "@local.user_type_select",
+                    "type": "local",
+                    "fieldName": "user_type_select"
+                  }
+                ]
+              },
+              "1": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.user_name_input",
+                      "matchedExpression": "@local.user_name_input",
+                      "type": "local",
+                      "fieldName": "user_name_input"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: user_name: @local.user_name_input",
+                    "matchedExpression": "@local.user_name_input",
+                    "type": "local",
+                    "fieldName": "user_name_input"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | set_field: user_name: @local.user_name_input",
+                    "matchedExpression": "@local.user_name_input",
+                    "type": "local",
+                    "fieldName": "user_name_input"
+                  }
+                ]
+              },
+              "2": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.user_gender_select",
+                      "matchedExpression": "@local.user_gender_select",
+                      "type": "local",
+                      "fieldName": "user_gender_select"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: user_gender: @local.user_gender_select",
+                    "matchedExpression": "@local.user_gender_select",
+                    "type": "local",
+                    "fieldName": "user_gender_select"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | set_field: user_gender: @local.user_gender_select",
+                    "matchedExpression": "@local.user_gender_select",
+                    "type": "local",
+                    "fieldName": "user_gender_select"
+                  }
+                ]
+              }
+            },
+            "parameter_list": {
+              "disabled": [
+                {
+                  "fullExpression": "!@local.completed_enabled",
+                  "matchedExpression": "!@local.completed_enabled",
+                  "type": "local",
+                  "fieldName": "completed_enabled"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.continue": [
+              "value"
+            ],
+            "@local.user_type_select": [
+              "action_list.0.args.1",
+              "action_list.0._raw",
+              "action_list.0._cleaned"
+            ],
+            "@local.user_name_input": [
+              "action_list.1.args.1",
+              "action_list.1._raw",
+              "action_list.1._cleaned"
+            ],
+            "@local.user_gender_select": [
+              "action_list.2.args.1",
+              "action_list.2._raw",
+              "action_list.2._cleaned"
+            ],
+            "!@local.completed_enabled": [
+              "parameter_list.disabled"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "dg_footer"
+    }
+  ],
+  "_xlsxPath": "templates/ZA onboarding templates.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+}
