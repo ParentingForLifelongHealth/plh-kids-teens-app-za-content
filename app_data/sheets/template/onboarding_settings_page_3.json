@@ -177,10 +177,64 @@
     {
       "type": "text_box",
       "name": "child_age_input",
+      "value": "@fields.child_age",
+      "_translations": {
+        "value": {}
+      },
       "parameter_list": {
         "placeholder": "@global.placeholder_child_age",
         "number_input": "true"
       },
+      "condition": "!!@fields.child_age",
+      "_nested_name": "child_age_input",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.child_age",
+            "matchedExpression": "@fields.child_age",
+            "type": "fields",
+            "fieldName": "child_age"
+          }
+        ],
+        "parameter_list": {
+          "placeholder": [
+            {
+              "fullExpression": "@global.placeholder_child_age",
+              "matchedExpression": "@global.placeholder_child_age",
+              "type": "global",
+              "fieldName": "placeholder_child_age"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "!!@fields.child_age",
+            "matchedExpression": "!@fields.child_age",
+            "type": "fields",
+            "fieldName": "child_age"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.child_age": [
+          "value"
+        ],
+        "@global.placeholder_child_age": [
+          "parameter_list.placeholder"
+        ],
+        "!@fields.child_age": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text_box",
+      "name": "child_age_input",
+      "parameter_list": {
+        "placeholder": "@global.placeholder_child_age",
+        "number_input": "true"
+      },
+      "condition": "!@fields.child_age",
       "_nested_name": "child_age_input",
       "_dynamicFields": {
         "parameter_list": {
@@ -192,11 +246,22 @@
               "fieldName": "placeholder_child_age"
             }
           ]
-        }
+        },
+        "condition": [
+          {
+            "fullExpression": "!@fields.child_age",
+            "matchedExpression": "!@fields.child_age",
+            "type": "fields",
+            "fieldName": "child_age"
+          }
+        ]
       },
       "_dynamicDependencies": {
         "@global.placeholder_child_age": [
           "parameter_list.placeholder"
+        ],
+        "!@fields.child_age": [
+          "condition"
         ]
       }
     },
@@ -334,10 +399,64 @@
     {
       "type": "text_box",
       "name": "household_children_input",
+      "value": "@fields.household_children",
+      "_translations": {
+        "value": {}
+      },
       "parameter_list": {
         "placeholder": "@global.placeholder_household_children",
         "number_input": "true"
       },
+      "condition": "!!@fields.household_children",
+      "_nested_name": "household_children_input",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.household_children",
+            "matchedExpression": "@fields.household_children",
+            "type": "fields",
+            "fieldName": "household_children"
+          }
+        ],
+        "parameter_list": {
+          "placeholder": [
+            {
+              "fullExpression": "@global.placeholder_household_children",
+              "matchedExpression": "@global.placeholder_household_children",
+              "type": "global",
+              "fieldName": "placeholder_household_children"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "!!@fields.household_children",
+            "matchedExpression": "!@fields.household_children",
+            "type": "fields",
+            "fieldName": "household_children"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.household_children": [
+          "value"
+        ],
+        "@global.placeholder_household_children": [
+          "parameter_list.placeholder"
+        ],
+        "!@fields.household_children": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text_box",
+      "name": "household_children_input",
+      "parameter_list": {
+        "placeholder": "@global.placeholder_household_children",
+        "number_input": "true"
+      },
+      "condition": "!@fields.household_children",
       "_nested_name": "household_children_input",
       "_dynamicFields": {
         "parameter_list": {
@@ -349,11 +468,22 @@
               "fieldName": "placeholder_household_children"
             }
           ]
-        }
+        },
+        "condition": [
+          {
+            "fullExpression": "!@fields.household_children",
+            "matchedExpression": "!@fields.household_children",
+            "type": "fields",
+            "fieldName": "household_children"
+          }
+        ]
       },
       "_dynamicDependencies": {
         "@global.placeholder_household_children": [
           "parameter_list.placeholder"
+        ],
+        "!@fields.household_children": [
+          "condition"
         ]
       }
     },
@@ -552,6 +682,26 @@
           "action_list": [
             {
               "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "child_age",
+                "@local.child_age_input"
+              ],
+              "_raw": "click | set_field: child_age: @local.child_age_input",
+              "_cleaned": "click | set_field: child_age: @local.child_age_input"
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "household_children",
+                "@local.household_children_input"
+              ],
+              "_raw": "click | set_field: household_children: @local.household_children_input",
+              "_cleaned": "click | set_field: household_children: @local.household_children_input"
+            },
+            {
+              "trigger": "click",
               "action_id": "emit",
               "args": [
                 "completed"
@@ -577,6 +727,64 @@
                 "fieldName": "continue"
               }
             ],
+            "action_list": {
+              "0": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.child_age_input",
+                      "matchedExpression": "@local.child_age_input",
+                      "type": "local",
+                      "fieldName": "child_age_input"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: child_age: @local.child_age_input",
+                    "matchedExpression": "@local.child_age_input",
+                    "type": "local",
+                    "fieldName": "child_age_input"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | set_field: child_age: @local.child_age_input",
+                    "matchedExpression": "@local.child_age_input",
+                    "type": "local",
+                    "fieldName": "child_age_input"
+                  }
+                ]
+              },
+              "1": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.household_children_input",
+                      "matchedExpression": "@local.household_children_input",
+                      "type": "local",
+                      "fieldName": "household_children_input"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: household_children: @local.household_children_input",
+                    "matchedExpression": "@local.household_children_input",
+                    "type": "local",
+                    "fieldName": "household_children_input"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | set_field: household_children: @local.household_children_input",
+                    "matchedExpression": "@local.household_children_input",
+                    "type": "local",
+                    "fieldName": "household_children_input"
+                  }
+                ]
+              }
+            },
             "parameter_list": {
               "disabled": [
                 {
@@ -591,6 +799,16 @@
           "_dynamicDependencies": {
             "@global.continue": [
               "value"
+            ],
+            "@local.child_age_input": [
+              "action_list.0.args.1",
+              "action_list.0._raw",
+              "action_list.0._cleaned"
+            ],
+            "@local.household_children_input": [
+              "action_list.1.args.1",
+              "action_list.1._raw",
+              "action_list.1._cleaned"
             ],
             "!@local.completed_enabled": [
               "parameter_list.disabled"

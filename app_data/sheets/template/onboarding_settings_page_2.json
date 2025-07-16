@@ -177,6 +177,58 @@
     {
       "type": "text_box",
       "name": "user_name_input",
+      "value": "@fields.user_name",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "placeholder": "@global.placeholder_user_name"
+      },
+      "condition": "!!@fields.user_name",
+      "_nested_name": "user_name_input",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.user_name",
+            "matchedExpression": "@fields.user_name",
+            "type": "fields",
+            "fieldName": "user_name"
+          }
+        ],
+        "parameter_list": {
+          "placeholder": [
+            {
+              "fullExpression": "@global.placeholder_user_name",
+              "matchedExpression": "@global.placeholder_user_name",
+              "type": "global",
+              "fieldName": "placeholder_user_name"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "!!@fields.user_name",
+            "matchedExpression": "!@fields.user_name",
+            "type": "fields",
+            "fieldName": "user_name"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.user_name": [
+          "value"
+        ],
+        "@global.placeholder_user_name": [
+          "parameter_list.placeholder"
+        ],
+        "!@fields.user_name": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text_box",
+      "name": "user_name_input",
       "value": "@fields._auth_user_given_name",
       "_translations": {
         "value": {}
@@ -184,7 +236,7 @@
       "parameter_list": {
         "placeholder": "@global.placeholder_user_name"
       },
-      "condition": "!!@fields._auth_user_given_name",
+      "condition": "!@fields.user_name && !!@fields._auth_user_given_name",
       "exclude_from_translation": true,
       "_nested_name": "user_name_input",
       "_dynamicFields": {
@@ -208,7 +260,13 @@
         },
         "condition": [
           {
-            "fullExpression": "!!@fields._auth_user_given_name",
+            "fullExpression": "!@fields.user_name && !!@fields._auth_user_given_name",
+            "matchedExpression": "!@fields.user_name",
+            "type": "fields",
+            "fieldName": "user_name"
+          },
+          {
+            "fullExpression": "!@fields.user_name && !!@fields._auth_user_given_name",
             "matchedExpression": "!@fields._auth_user_given_name",
             "type": "fields",
             "fieldName": "_auth_user_given_name"
@@ -222,6 +280,9 @@
         "@global.placeholder_user_name": [
           "parameter_list.placeholder"
         ],
+        "!@fields.user_name": [
+          "condition"
+        ],
         "!@fields._auth_user_given_name": [
           "condition"
         ]
@@ -233,7 +294,7 @@
       "parameter_list": {
         "placeholder": "@global.placeholder_user_name"
       },
-      "condition": "!@fields._auth_user_given_name",
+      "condition": "!@fields.user_name && !@fields._auth_user_given_name",
       "exclude_from_translation": true,
       "_nested_name": "user_name_input",
       "_dynamicFields": {
@@ -249,7 +310,13 @@
         },
         "condition": [
           {
-            "fullExpression": "!@fields._auth_user_given_name",
+            "fullExpression": "!@fields.user_name && !@fields._auth_user_given_name",
+            "matchedExpression": "!@fields.user_name",
+            "type": "fields",
+            "fieldName": "user_name"
+          },
+          {
+            "fullExpression": "!@fields.user_name && !@fields._auth_user_given_name",
             "matchedExpression": "!@fields._auth_user_given_name",
             "type": "fields",
             "fieldName": "_auth_user_given_name"
@@ -259,6 +326,9 @@
       "_dynamicDependencies": {
         "@global.placeholder_user_name": [
           "parameter_list.placeholder"
+        ],
+        "!@fields.user_name": [
+          "condition"
         ],
         "!@fields._auth_user_given_name": [
           "condition"
@@ -295,11 +365,78 @@
     {
       "type": "combo_box",
       "name": "user_gender_select",
+      "value": "@fields.user_gender",
+      "_translations": {
+        "value": {}
+      },
       "parameter_list": {
         "answer_list": "@data.user_gender",
         "placeholder": "@global.placeholder_user_gender",
         "variant": "dropdown"
       },
+      "condition": "!!@fields.user_gender",
+      "exclude_from_translation": true,
+      "_nested_name": "user_gender_select",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.user_gender",
+            "matchedExpression": "@fields.user_gender",
+            "type": "fields",
+            "fieldName": "user_gender"
+          }
+        ],
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@data.user_gender",
+              "matchedExpression": "@data.user_gender",
+              "type": "data",
+              "fieldName": "user_gender"
+            }
+          ],
+          "placeholder": [
+            {
+              "fullExpression": "@global.placeholder_user_gender",
+              "matchedExpression": "@global.placeholder_user_gender",
+              "type": "global",
+              "fieldName": "placeholder_user_gender"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "!!@fields.user_gender",
+            "matchedExpression": "!@fields.user_gender",
+            "type": "fields",
+            "fieldName": "user_gender"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.user_gender": [
+          "value"
+        ],
+        "@data.user_gender": [
+          "parameter_list.answer_list"
+        ],
+        "@global.placeholder_user_gender": [
+          "parameter_list.placeholder"
+        ],
+        "!@fields.user_gender": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "combo_box",
+      "name": "user_gender_select",
+      "parameter_list": {
+        "answer_list": "@data.user_gender",
+        "placeholder": "@global.placeholder_user_gender",
+        "variant": "dropdown"
+      },
+      "condition": "!@fields.user_gender",
       "exclude_from_translation": true,
       "_nested_name": "user_gender_select",
       "_dynamicFields": {
@@ -320,7 +457,15 @@
               "fieldName": "placeholder_user_gender"
             }
           ]
-        }
+        },
+        "condition": [
+          {
+            "fullExpression": "!@fields.user_gender",
+            "matchedExpression": "!@fields.user_gender",
+            "type": "fields",
+            "fieldName": "user_gender"
+          }
+        ]
       },
       "_dynamicDependencies": {
         "@data.user_gender": [
@@ -328,6 +473,9 @@
         ],
         "@global.placeholder_user_gender": [
           "parameter_list.placeholder"
+        ],
+        "!@fields.user_gender": [
+          "condition"
         ]
       }
     },
@@ -370,6 +518,7 @@
         "placeholder": "@global.placeholder_user_type",
         "variant": "dropdown"
       },
+      "condition": "!!@fields.user_type",
       "exclude_from_translation": true,
       "_nested_name": "user_type_select",
       "_dynamicFields": {
@@ -398,7 +547,15 @@
               "fieldName": "placeholder_user_type"
             }
           ]
-        }
+        },
+        "condition": [
+          {
+            "fullExpression": "!!@fields.user_type",
+            "matchedExpression": "!@fields.user_type",
+            "type": "fields",
+            "fieldName": "user_type"
+          }
+        ]
       },
       "_dynamicDependencies": {
         "@fields.user_type": [
@@ -409,6 +566,60 @@
         ],
         "@global.placeholder_user_type": [
           "parameter_list.placeholder"
+        ],
+        "!@fields.user_type": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "combo_box",
+      "name": "user_type_select",
+      "parameter_list": {
+        "answer_list": "@data.user_type",
+        "placeholder": "@global.placeholder_user_type",
+        "variant": "dropdown"
+      },
+      "condition": "!@fields.user_type",
+      "exclude_from_translation": true,
+      "_nested_name": "user_type_select",
+      "_dynamicFields": {
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@data.user_type",
+              "matchedExpression": "@data.user_type",
+              "type": "data",
+              "fieldName": "user_type"
+            }
+          ],
+          "placeholder": [
+            {
+              "fullExpression": "@global.placeholder_user_type",
+              "matchedExpression": "@global.placeholder_user_type",
+              "type": "global",
+              "fieldName": "placeholder_user_type"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "!@fields.user_type",
+            "matchedExpression": "!@fields.user_type",
+            "type": "fields",
+            "fieldName": "user_type"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.user_type": [
+          "parameter_list.answer_list"
+        ],
+        "@global.placeholder_user_type": [
+          "parameter_list.placeholder"
+        ],
+        "!@fields.user_type": [
+          "condition"
         ]
       }
     },
