@@ -10,7 +10,7 @@
 | apple_sign_in_button | 4 |
 | audio | 4 |
 | button | 86 |
-| combo_box | 8 |
+| combo_box | 10 |
 | data_items | 142 |
 | debug_toggle | 1 |
 | display_grid | 4 |
@@ -39,7 +39,7 @@
 | template | 875 |
 | text | 124 |
 | text_area | 2 |
-| text_box | 9 |
+| text_box | 12 |
 | text_bubble | 5 |
 | tile_component | 2 |
 | title | 46 |
@@ -55,23 +55,23 @@
 | type | count |
 | --- | --- |
 | app_update | 1 |
-| auth | 2 |
+| auth | 4 |
 | emit: completed | 645 |
 | emit: force_reload | 3 |
-| emit: force_reprocess | 16 |
+| emit: force_reprocess | 18 |
 | emit: force_restart | 5 |
-| emit: server_sync | 6 |
+| emit: server_sync | 5 |
 | emit: set_language | 2 |
 | emit: uncompleted | 656 |
 | feedback | 13 |
 | go_to | 25 |
 | nav_stack | 267 |
-| pop_up | 68 |
-| reset_app | 5 |
-| reset_data | 4 |
+| pop_up | 67 |
+| reset_app | 4 |
+| reset_data | 3 |
 | save_to_device | 2 |
 | set_data | 60 |
-| set_field | 82 |
+| set_field | 84 |
 | set_item | 66 |
 | set_local | 33 |
 | share | 2 |
@@ -84,7 +84,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 78665 KB | 78.7 MB |
+| total | 78659 KB | 78.7 MB |
 | unused | 225357 KB | 225.4 MB |
 </details>
 
@@ -964,7 +964,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/solve/solve_tool_t_4.svg | 33.4 | 2 |
 | images/teen_modules/srh/srh1_t_1.svg | 32.5 | 2 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 | 2 |
-| images/teen_modules/srh/srh1_t_4.svg | 36.9 | 2 |
+| images/teen_modules/srh/srh1_t_4.svg | 31 | 2 |
 | images/teen_modules/srh/srh2_t_1.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_2.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_3.svg | 28.7 | 2 |

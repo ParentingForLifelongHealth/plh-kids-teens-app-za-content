@@ -367,26 +367,21 @@
               "action_list": [
                 {
                   "trigger": "click",
+                  "action_id": "auth",
+                  "args": [
+                    "sign_out"
+                  ],
+                  "_raw": "click | auth: sign_out",
+                  "_cleaned": "click | auth: sign_out"
+                },
+                {
+                  "trigger": "click",
                   "action_id": "emit",
                   "args": [
-                    "server_sync"
+                    "force_reprocess"
                   ],
-                  "_raw": "click | emit: server_sync",
-                  "_cleaned": "click | emit: server_sync"
-                },
-                {
-                  "trigger": "click",
-                  "action_id": "reset_data",
-                  "args": [],
-                  "_raw": "click | reset_data",
-                  "_cleaned": "click | reset_data"
-                },
-                {
-                  "trigger": "click",
-                  "action_id": "reset_app",
-                  "args": [],
-                  "_raw": "click | reset_app",
-                  "_cleaned": "click | reset_app"
+                  "_raw": "click | emit: force_reprocess",
+                  "_cleaned": "click | emit: force_reprocess"
                 }
               ],
               "exclude_from_translation": true,
@@ -424,12 +419,21 @@
               "action_list": [
                 {
                   "trigger": "click",
-                  "action_id": "pop_up",
+                  "action_id": "auth",
                   "args": [
-                    "delete_account_warning"
+                    "delete_account"
                   ],
-                  "_raw": "click | pop_up: delete_account_warning",
-                  "_cleaned": "click | pop_up: delete_account_warning"
+                  "_raw": "click | auth: delete_account",
+                  "_cleaned": "click | auth: delete_account"
+                },
+                {
+                  "trigger": "click",
+                  "action_id": "emit",
+                  "args": [
+                    "force_reprocess"
+                  ],
+                  "_raw": "click | emit: force_reprocess",
+                  "_cleaned": "click | emit: force_reprocess"
                 }
               ],
               "exclude_from_translation": true,
