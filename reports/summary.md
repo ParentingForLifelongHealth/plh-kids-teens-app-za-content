@@ -7,17 +7,17 @@
 | accordion_section | 6 |
 | animated_section | 1 |
 | animated_slides | 1 |
-| apple_sign_in_button | 4 |
+| apple_sign_in_button | 2 |
 | audio | 4 |
-| button | 86 |
+| button | 81 |
 | combo_box | 10 |
-| data_items | 142 |
+| data_items | 140 |
 | debug_toggle | 1 |
 | display_grid | 4 |
-| display_group | 99 |
+| display_group | 93 |
 | drawer | 1 |
-| google_sign_in_button | 4 |
-| image | 20 |
+| google_sign_in_button | 2 |
+| image | 19 |
 | items | 17 |
 | lottie_animation | 4 |
 | nested_properties | 181 |
@@ -32,17 +32,17 @@
 | round_button | 12 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2498 |
+| set_variable | 2494 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
-| template | 875 |
-| text | 124 |
+| template | 874 |
+| text | 122 |
 | text_area | 2 |
 | text_box | 12 |
 | text_bubble | 5 |
 | tile_component | 2 |
-| title | 46 |
+| title | 44 |
 | toggle_bar | 4 |
 | update_action_list | 2 |
 | video | 4 |
@@ -56,27 +56,27 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 4 |
-| emit: completed | 645 |
+| emit: completed | 644 |
 | emit: force_reload | 3 |
-| emit: force_reprocess | 18 |
-| emit: force_restart | 5 |
-| emit: server_sync | 5 |
+| emit: force_reprocess | 13 |
+| emit: force_restart | 3 |
+| emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 656 |
+| emit: uncompleted | 655 |
 | feedback | 13 |
 | go_to | 25 |
 | nav_stack | 267 |
-| pop_up | 67 |
+| pop_up | 66 |
 | reset_app | 4 |
 | reset_data | 3 |
 | save_to_device | 2 |
 | set_data | 60 |
-| set_field | 84 |
+| set_field | 80 |
 | set_item | 66 |
 | set_local | 33 |
 | share | 2 |
 | task | 3 |
-| user | 4 |
+| user | 3 |
 </details>
 
 <details open>
@@ -85,7 +85,7 @@
 | assets | KB | MB |
 | --- | --- | --- |
 | total | 78659 KB | 78.7 MB |
-| unused | 225357 KB | 225.4 MB |
+| unused | 227857 KB | 227.9 MB |
 </details>
 
 <details open>
@@ -108,10 +108,18 @@ Assets that appear in app-data but do not have references within sheets
 | audio/care_audio/problem_solving_audio.mp3 | 296.8 |
 | audio/care_audio/rulesroutines_audio.mp3 | 174 |
 | audio/care_audio/selfcare_audio.mp3 | 257.8 |
+| audio/modules/connect/intro_connect_child.m4a | 281.3 |
+| audio/modules/connect/learn_11.m4a | 426.4 |
+| audio/modules/connect/learn_7.m4a | 367.9 |
+| audio/modules/connect/learn_9.m4a | 233.4 |
+| audio/modules/connect/man/intro_connect_child.m4a | 262.7 |
+| audio/modules/connect/man/learn_11.m4a | 393.4 |
+| audio/modules/connect/man/learn_7.m4a | 335 |
+| audio/modules/connect/man/learn_9.m4a | 196.8 |
 | audio/testimonials/caregiver/caregiver_test_w_self_care.mp3 | 132.8 |
 | audio/timer/bell_1.mp3 | 121.6 |
 | audio/yc/celebrate_audio_1.mp3 | 497.1 |
-| contents.json | 5.9 |
+| contents.json | 9.6 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/act_emotions.svg | 106.6 |
 | images/activities/animal_sounds.svg | 84.2 |
@@ -1063,10 +1071,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_pipe |  | 3 |
 | data_pipe | generated | 50 |
 | generator |  | 40 |
-| global |  | 5 |
+| global |  | 6 |
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
-| template |  | 111 |
+| template |  | 110 |
 | template | generated | 702 |
 | template | legal_terms | 4 |
 </details>
