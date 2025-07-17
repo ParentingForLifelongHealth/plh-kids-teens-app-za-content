@@ -84,7 +84,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 78659 KB | 78.7 MB |
+| total | 78665 KB | 78.7 MB |
 | unused | 227857 KB | 227.9 MB |
 </details>
 
@@ -972,7 +972,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/solve/solve_tool_t_4.svg | 33.4 | 2 |
 | images/teen_modules/srh/srh1_t_1.svg | 32.5 | 2 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 | 2 |
-| images/teen_modules/srh/srh1_t_4.svg | 31 | 2 |
+| images/teen_modules/srh/srh1_t_4.svg | 36.9 | 2 |
 | images/teen_modules/srh/srh2_t_1.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_2.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_3.svg | 28.7 | 2 |

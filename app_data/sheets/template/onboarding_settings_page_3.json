@@ -9,6 +9,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "speaker_name",
       "_dynamicFields": {
@@ -33,6 +34,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "speaker_image_asset",
       "_dynamicFields": {
@@ -84,6 +86,7 @@
         "speaker_position": "@local.speaker_position",
         "variant": "@local.variant"
       },
+      "exclude_from_translation": true,
       "_nested_name": "text_bubble",
       "_dynamicFields": {
         "value": [
@@ -157,6 +160,7 @@
       "parameter_list": {
         "style": "emphasised"
       },
+      "exclude_from_translation": true,
       "_nested_name": "question_child_age",
       "_dynamicFields": {
         "value": [
@@ -186,6 +190,7 @@
         "number_input": "true"
       },
       "condition": "!!@fields.child_age",
+      "exclude_from_translation": true,
       "_nested_name": "child_age_input",
       "_dynamicFields": {
         "value": [
@@ -235,6 +240,7 @@
         "number_input": "true"
       },
       "condition": "!@fields.child_age",
+      "exclude_from_translation": true,
       "_nested_name": "child_age_input",
       "_dynamicFields": {
         "parameter_list": {
@@ -341,6 +347,7 @@
         "font-size: 14px"
       ],
       "condition": "!@local.valid_child_age_input",
+      "exclude_from_translation": true,
       "_nested_name": "warning_child_age_input",
       "_dynamicFields": {
         "value": [
@@ -379,6 +386,7 @@
       "parameter_list": {
         "style": "emphasised"
       },
+      "exclude_from_translation": true,
       "_nested_name": "question_household_children",
       "_dynamicFields": {
         "value": [
@@ -408,6 +416,7 @@
         "number_input": "true"
       },
       "condition": "!!@fields.household_children",
+      "exclude_from_translation": true,
       "_nested_name": "household_children_input",
       "_dynamicFields": {
         "value": [
@@ -457,6 +466,7 @@
         "number_input": "true"
       },
       "condition": "!@fields.household_children",
+      "exclude_from_translation": true,
       "_nested_name": "household_children_input",
       "_dynamicFields": {
         "parameter_list": {
@@ -563,6 +573,7 @@
         "font-size: 14px"
       ],
       "condition": "!@local.valid_household_children_input",
+      "exclude_from_translation": true,
       "_nested_name": "warning_household_children_input",
       "_dynamicFields": {
         "value": [
@@ -597,6 +608,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "completed_enabled",
       "_dynamicFields": {
@@ -651,6 +663,7 @@
       "style_list": [
         "padding: 12px 24px"
       ],
+      "exclude_from_translation": true,
       "rows": [
         {
           "type": "round_button",
@@ -670,6 +683,7 @@
             "icon_src": "arrow-back",
             "variant": "no-background"
           },
+          "exclude_from_translation": true,
           "_nested_name": "dg_footer.button_back"
         },
         {
@@ -717,6 +731,7 @@
           "style_list": [
             "flex: 1"
           ],
+          "exclude_from_translation": true,
           "_nested_name": "dg_footer.button_completed_2",
           "_dynamicFields": {
             "value": [
