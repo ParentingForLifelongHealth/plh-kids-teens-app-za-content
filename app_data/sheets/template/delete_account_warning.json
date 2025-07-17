@@ -30,24 +30,72 @@
     {
       "type": "text",
       "name": "text",
-      "value": "@global.delete_account_warning_text",
+      "value": "@global.delete_account_warning_text_login_mandatory",
       "_translations": {
         "value": {}
       },
+      "condition": "@global.login_is_mandatory",
       "_nested_name": "text",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@global.delete_account_warning_text",
-            "matchedExpression": "@global.delete_account_warning_text",
+            "fullExpression": "@global.delete_account_warning_text_login_mandatory",
+            "matchedExpression": "@global.delete_account_warning_text_login_mandatory",
             "type": "global",
-            "fieldName": "delete_account_warning_text"
+            "fieldName": "delete_account_warning_text_login_mandatory"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "@global.login_is_mandatory",
+            "matchedExpression": "@global.login_is_mandatory",
+            "type": "global",
+            "fieldName": "login_is_mandatory"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@global.delete_account_warning_text": [
+        "@global.delete_account_warning_text_login_mandatory": [
           "value"
+        ],
+        "@global.login_is_mandatory": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@global.delete_account_warning_text_login_optional",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!@global.login_is_mandatory",
+      "_nested_name": "text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.delete_account_warning_text_login_optional",
+            "matchedExpression": "@global.delete_account_warning_text_login_optional",
+            "type": "global",
+            "fieldName": "delete_account_warning_text_login_optional"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!@global.login_is_mandatory",
+            "matchedExpression": "!@global.login_is_mandatory",
+            "type": "global",
+            "fieldName": "login_is_mandatory"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.delete_account_warning_text_login_optional": [
+          "value"
+        ],
+        "!@global.login_is_mandatory": [
+          "condition"
         ]
       }
     },
@@ -76,7 +124,7 @@
           "style_list": [
             "flex: 1"
           ],
-          "_nested_name": "display_group_4.button_back",
+          "_nested_name": "display_group_5.button_back",
           "_dynamicFields": {
             "value": [
               {
@@ -125,11 +173,12 @@
               "_cleaned": "click | reset_app"
             }
           ],
+          "condition": "@global.login_is_mandatory",
           "exclude_from_translation": true,
           "style_list": [
             "flex: 1"
           ],
-          "_nested_name": "display_group_4.button_delete_account",
+          "_nested_name": "display_group_5.button_delete_account",
           "_dynamicFields": {
             "value": [
               {
@@ -138,19 +187,90 @@
                 "type": "global",
                 "fieldName": "yes"
               }
+            ],
+            "condition": [
+              {
+                "fullExpression": "@global.login_is_mandatory",
+                "matchedExpression": "@global.login_is_mandatory",
+                "type": "global",
+                "fieldName": "login_is_mandatory"
+              }
             ]
           },
           "_dynamicDependencies": {
             "@global.yes": [
               "value"
+            ],
+            "@global.login_is_mandatory": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_delete_account",
+          "value": "@global.yes",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "auth",
+              "args": [
+                "delete_account"
+              ],
+              "_raw": "click | auth: delete_account",
+              "_cleaned": "click | auth: delete_account"
+            },
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "click | emit: completed",
+              "_cleaned": "click | emit: completed"
+            }
+          ],
+          "condition": "!@global.login_is_mandatory",
+          "exclude_from_translation": true,
+          "style_list": [
+            "flex: 2"
+          ],
+          "_nested_name": "display_group_5.button_delete_account",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.yes",
+                "matchedExpression": "@global.yes",
+                "type": "global",
+                "fieldName": "yes"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!@global.login_is_mandatory",
+                "matchedExpression": "!@global.login_is_mandatory",
+                "type": "global",
+                "fieldName": "login_is_mandatory"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.yes": [
+              "value"
+            ],
+            "!@global.login_is_mandatory": [
+              "condition"
             ]
           }
         }
       ],
-      "name": "display_group_4",
-      "_nested_name": "display_group_4"
+      "name": "display_group_5",
+      "_nested_name": "display_group_5"
     }
   ],
-  "_xlsxPath": "app_menu.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/19wSspWYMbRc75een-kS0q0aq24--75u8"
+  "_xlsxPath": "PLH onboarding.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
 }

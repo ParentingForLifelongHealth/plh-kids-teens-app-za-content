@@ -4,7 +4,7 @@ const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.2.2",
+  content_tag_latest: "1.2.3",
 };
 
 config.google_drive.sheets_folder_ids = [
@@ -44,7 +44,7 @@ config.app_config.APP_LANGUAGES.default = "gb_en";
 config.app_config.APP_SIDEMENU_DEFAULTS.title = "ParentApp for Kids & Teens ZA";
 config.app_config.APP_HEADER_DEFAULTS.title = "ParentApp for Kids & Teens ZA";
 config.app_config.APP_HEADER_DEFAULTS.hidden = true;
-config.app_config.APP_FOOTER_DEFAULTS.templateName = "footer";
+config.app_config.APP_FOOTER_DEFAULTS.template = "footer";
 config.app_config.APP_FOOTER_DEFAULTS.background = "none";
 config.app_config.NOTIFICATION_DEFAULTS.title = "New message from ParentApp for Kids & Teens ZA";
 config.app_config.NOTIFICATION_DEFAULTS.text = "You have a new message from ParentApp for Kids & Teens ZA";
