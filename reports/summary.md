@@ -85,7 +85,7 @@
 | assets | KB | MB |
 | --- | --- | --- |
 | total | 66598 KB | 66.6 MB |
-| unused | 246880 KB | 246.9 MB |
+| unused | 244380 KB | 244.4 MB |
 </details>
 
 <details open>
@@ -108,14 +108,6 @@ Assets that appear in app-data but do not have references within sheets
 | audio/care_audio/problem_solving_audio.mp3 | 296.8 |
 | audio/care_audio/rulesroutines_audio.mp3 | 174 |
 | audio/care_audio/selfcare_audio.mp3 | 257.8 |
-| audio/modules/connect/intro_connect_child.m4a | 281.3 |
-| audio/modules/connect/learn_11.m4a | 426.4 |
-| audio/modules/connect/learn_7.m4a | 367.9 |
-| audio/modules/connect/learn_9.m4a | 233.4 |
-| audio/modules/connect/man/intro_connect_child.m4a | 262.7 |
-| audio/modules/connect/man/learn_11.m4a | 393.4 |
-| audio/modules/connect/man/learn_7.m4a | 335 |
-| audio/modules/connect/man/learn_9.m4a | 196.8 |
 | audio/teens/testimonials/caregiver/caregiver_test_1on1_t.mp3 | 258.8 |
 | audio/teens/testimonials/caregiver/caregiver_test_consequence_t.mp3 | 312.3 |
 | audio/teens/testimonials/caregiver/caregiver_test_crisis_t.mp3 | 178.3 |
@@ -174,7 +166,7 @@ Assets that appear in app-data but do not have references within sheets
 | audio/yc/celebrate_audio_1.mp3 | 497.1 |
 | audio/yc/zold_1on1_audio_2.mp3 | 981.4 |
 | audio/yc/zold_solve_audio_1.mp3 | 609 |
-| contents.json | 9.6 |
+| contents.json | 5.9 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/act_emotions.svg | 106.6 |
 | images/activities/animal_sounds.svg | 84.2 |
