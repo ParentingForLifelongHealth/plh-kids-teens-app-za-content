@@ -90,6 +90,7 @@
           "_translations": {
             "value": {}
           },
+          "condition": "!@global.login_is_mandatory",
           "_nested_name": "login.text_login",
           "_dynamicFields": {
             "value": [
@@ -99,11 +100,22 @@
                 "type": "global",
                 "fieldName": "login_optional_why"
               }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!@global.login_is_mandatory",
+                "matchedExpression": "!@global.login_is_mandatory",
+                "type": "global",
+                "fieldName": "login_is_mandatory"
+              }
             ]
           },
           "_dynamicDependencies": {
             "@global.login_optional_why": [
               "value"
+            ],
+            "!@global.login_is_mandatory": [
+              "condition"
             ]
           }
         },
@@ -250,6 +262,7 @@
               "_translations": {
                 "value": {}
               },
+              "condition": "!!@fields._auth_user_picture",
               "parameter_list": {
                 "style": "rounded_corners"
               },
@@ -266,11 +279,22 @@
                     "type": "fields",
                     "fieldName": "_auth_user_picture"
                   }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!!@fields._auth_user_picture",
+                    "matchedExpression": "!@fields._auth_user_picture",
+                    "type": "fields",
+                    "fieldName": "_auth_user_picture"
+                  }
                 ]
               },
               "_dynamicDependencies": {
                 "@fields._auth_user_picture": [
                   "value"
+                ],
+                "!@fields._auth_user_picture": [
+                  "condition"
                 ]
               }
             },
@@ -281,6 +305,7 @@
               "_translations": {
                 "value": {}
               },
+              "condition": "!!@fields._auth_user_name",
               "parameter_list": {
                 "text_align": "center"
               },
@@ -293,11 +318,61 @@
                     "type": "fields",
                     "fieldName": "_auth_user_name"
                   }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!!@fields._auth_user_name",
+                    "matchedExpression": "!@fields._auth_user_name",
+                    "type": "fields",
+                    "fieldName": "_auth_user_name"
+                  }
                 ]
               },
               "_dynamicDependencies": {
                 "@fields._auth_user_name": [
                   "value"
+                ],
+                "!@fields._auth_user_name": [
+                  "condition"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "name_missing",
+              "value": "@global.logged_in",
+              "_translations": {
+                "value": {}
+              },
+              "condition": "!@fields._auth_user_name",
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "_nested_name": "logged_in.dg_column.name_missing",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.logged_in",
+                    "matchedExpression": "@global.logged_in",
+                    "type": "global",
+                    "fieldName": "logged_in"
+                  }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!@fields._auth_user_name",
+                    "matchedExpression": "!@fields._auth_user_name",
+                    "type": "fields",
+                    "fieldName": "_auth_user_name"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.logged_in": [
+                  "value"
+                ],
+                "!@fields._auth_user_name": [
+                  "condition"
                 ]
               }
             }
@@ -669,6 +744,6 @@
       }
     }
   ],
-  "_xlsxPath": "PLH onboarding.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+  "_xlsxPath": "app_auth.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/19wSspWYMbRc75een-kS0q0aq24--75u8"
 }
