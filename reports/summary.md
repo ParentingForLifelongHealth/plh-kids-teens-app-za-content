@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 67464 KB | 67.5 MB |
-| unused | 252775 KB | 252.8 MB |
+| total | 67527 KB | 67.5 MB |
+| unused | 250314 KB | 250.3 MB |
 </details>
 
 <details open>
@@ -108,14 +108,6 @@ Assets that appear in app-data but do not have references within sheets
 | audio/care_audio/problem_solving_audio.mp3 | 296.8 |
 | audio/care_audio/rulesroutines_audio.mp3 | 174 |
 | audio/care_audio/selfcare_audio.mp3 | 257.8 |
-| audio/modules/connect/intro_connect_child.m4a | 281.3 |
-| audio/modules/connect/learn_11.m4a | 426.4 |
-| audio/modules/connect/learn_7.m4a | 367.9 |
-| audio/modules/connect/learn_9.m4a | 233.4 |
-| audio/modules/connect/man/intro_connect_child.m4a | 262.7 |
-| audio/modules/connect/man/learn_11.m4a | 393.4 |
-| audio/modules/connect/man/learn_7.m4a | 335 |
-| audio/modules/connect/man/learn_9.m4a | 196.8 |
 | audio/teens/testimonials/caregiver/caregiver_test_1on1_t.mp3 | 258.8 |
 | audio/teens/testimonials/caregiver/caregiver_test_consequence_t.mp3 | 312.3 |
 | audio/teens/testimonials/caregiver/caregiver_test_crisis_t.mp3 | 178.3 |
@@ -174,7 +166,7 @@ Assets that appear in app-data but do not have references within sheets
 | audio/yc/celebrate_audio_1.mp3 | 497.1 |
 | audio/yc/zold_1on1_audio_2.mp3 | 981.4 |
 | audio/yc/zold_solve_audio_1.mp3 | 609 |
-| contents.json | 9.6 |
+| contents.json | 5.9 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/act_emotions.svg | 106.6 |
 | images/activities/animal_sounds.svg | 84.2 |
@@ -311,6 +303,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/comics/instructions_yc_8.svg | 250.7 |
 | images/comics/instructions_yc_9.png | 1177.3 |
 | images/comics/instructions_yc_9.svg | 216.8 |
+| images/comics/learn_support_t_4.svg | 40.2 |
 | images/comics/money3_t_6.svg | 51.9 |
 | images/comics/money_t.svg | 32.5 |
 | images/comics/money_tools_t.svg | 37.1 |
@@ -770,7 +763,6 @@ Assets that have references within sheets but do not appear in app-data
 | images/icons/share.svg | 2 |
 | images/icons/visibility.svg | 1 |
 | images/logos/plh.jpg | 1 |
-| images/teen_modules/consequence/consequence2_t_1.svg | 2 |
 | images/teen_modules/crisis/crisis_learn_t_5.svg | 2 |
 | images/teen_modules/money/money3_t_1.svg | 2 |
 | images/teen_modules/money/money4_t_6.svg | 2 |
@@ -1041,8 +1033,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/celebrate/celebrate_t_4.svg | 39.5 | 2 |
 | images/teen_modules/consequence/consequence1_t_1.svg | 52.1 | 2 |
 | images/teen_modules/consequence/consequence1_t_2.svg | 41.9 | 2 |
-| images/teen_modules/consequence/consequence1_t_3.svg | 45.6 | 2 |
+| images/teen_modules/consequence/consequence1_t_3.svg | 46.3 | 2 |
 | images/teen_modules/consequence/consequence1_t_4.svg | 44.6 | 2 |
+| images/teen_modules/consequence/consequence2_t_1.svg | 53.5 | 2 |
 | images/teen_modules/consequence/consequence2_t_2.svg | 54.7 | 2 |
 | images/teen_modules/consequence/consequence2_t_3.svg | 117.4 | 2 |
 | images/teen_modules/consequence/consequence3_t_1.svg | 62 | 2 |
@@ -1094,7 +1087,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/learn/learn_support_t_1.svg | 51.8 | 2 |
 | images/teen_modules/learn/learn_support_t_2.svg | 69.4 | 2 |
 | images/teen_modules/learn/learn_support_t_3.svg | 46 | 2 |
-| images/teen_modules/learn/learn_support_t_4.svg | 40.2 | 2 |
+| images/teen_modules/learn/learn_support_t_4.svg | 42.9 | 2 |
 | images/teen_modules/money/money1_t_1.svg | 38.9 | 2 |
 | images/teen_modules/money/money2_t_1.svg | 44.9 | 2 |
 | images/teen_modules/money/money3_t_2.svg | 35.3 | 2 |
@@ -1151,7 +1144,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/solve/solve_tool_t_4.svg | 33.9 | 2 |
 | images/teen_modules/srh/srh1_t_1.svg | 32.5 | 2 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 | 2 |
-| images/teen_modules/srh/srh1_t_4.svg | 31 | 2 |
+| images/teen_modules/srh/srh1_t_4.svg | 36.9 | 2 |
 | images/teen_modules/srh/srh2_t_1.svg | 49.6 | 2 |
 | images/teen_modules/srh/srh2_t_2.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_3.svg | 28.7 | 2 |
