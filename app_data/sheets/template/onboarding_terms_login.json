@@ -200,7 +200,7 @@
               "_cleaned": "click | emit: force_reprocess"
             }
           ],
-          "condition": "@fields._platform === \"ios\"",
+          "condition": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
           "style_list": [
             "max-width: max-content"
           ],
@@ -216,10 +216,22 @@
             ],
             "condition": [
               {
-                "fullExpression": "@fields._platform === \"ios\"",
+                "fullExpression": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
                 "matchedExpression": "@fields._platform",
                 "type": "fields",
                 "fieldName": "_platform"
+              },
+              {
+                "fullExpression": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
+                "matchedExpression": "@fields._operating_system",
+                "type": "fields",
+                "fieldName": "_operating_system"
+              },
+              {
+                "fullExpression": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
+                "matchedExpression": "@fields._operating_system",
+                "type": "fields",
+                "fieldName": "_operating_system"
               }
             ]
           },
@@ -228,6 +240,10 @@
               "value"
             ],
             "@fields._platform": [
+              "condition"
+            ],
+            "@fields._operating_system": [
+              "condition",
               "condition"
             ]
           }
