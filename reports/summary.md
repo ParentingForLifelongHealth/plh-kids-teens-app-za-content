@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 80642 KB | 80.6 MB |
-| unused | 249974 KB | 250 MB |
+| total | 80648 KB | 80.6 MB |
+| unused | 235022 KB | 235 MB |
 </details>
 
 <details open>
@@ -366,144 +366,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/teen_modules/svp/svp_usebody_t_2.gif | 2008.5 |
 | images/teen_modules/svp/svp_usebody_t_3.gif | 844.1 |
 | images/teen_modules/svp/svp_usevoice_t.svg.svg | 35.5 |
-| images/unused assets/comics /celebrate_t_1.svg | 152.3 |
-| images/unused assets/comics /celebrate_t_2.svg | 34.9 |
-| images/unused assets/comics /celebrate_t_3.svg | 89.6 |
-| images/unused assets/comics /celebrate_t_4.svg | 166.6 |
-| images/unused assets/comics /child_development_yc_1.svg | 125.2 |
-| images/unused assets/comics /child_development_yc_2.svg | 124.4 |
-| images/unused assets/comics /child_development_yc_3.svg | 128.8 |
-| images/unused assets/comics /child_development_yc_4.svg | 123.6 |
-| images/unused assets/comics /consequence1_t_1.svg | 72.4 |
-| images/unused assets/comics /consequence1_t_2.svg | 46.5 |
-| images/unused assets/comics /consequence1_t_3.svg | 51.3 |
-| images/unused assets/comics /consequence1_t_4.svg | 46.4 |
-| images/unused assets/comics /consequence2_t_1.svg | 73 |
-| images/unused assets/comics /consequence2_t_2.svg | 46.7 |
-| images/unused assets/comics /consequence3_t_1.svg | 56 |
-| images/unused assets/comics /consequence3_t_2.svg | 61.2 |
-| images/unused assets/comics /consequence3_t_3.svg | 56.1 |
-| images/unused assets/comics /consequence3_t_4.svg | 57.4 |
-| images/unused assets/comics /consequence3_t_5.svg | 66.2 |
-| images/unused assets/comics /consequence3_t_6.svg | 47.1 |
-| images/unused assets/comics /consequence3_t_7.svg | 48.4 |
-| images/unused assets/comics /consequence3_t_8.svg | 47.1 |
-| images/unused assets/comics /consequence3_t_9.svg | 53.1 |
-| images/unused assets/comics /consequences_yc_1.svg | 118.4 |
-| images/unused assets/comics /consequences_yc_2.svg | 151.3 |
-| images/unused assets/comics /consequences_yc_3.svg | 157.5 |
-| images/unused assets/comics /consequences_yc_4.svg | 147.3 |
-| images/unused assets/comics /consequences_yc_5.svg | 65.3 |
-| images/unused assets/comics /crisis1_t_1.svg | 36.7 |
-| images/unused assets/comics /crisis1_t_2.svg | 33.4 |
-| images/unused assets/comics /crisis1_t_3.svg | 36.6 |
-| images/unused assets/comics /crisis1_t_4.svg | 34.3 |
-| images/unused assets/comics /crisis1_t_5.svg | 37 |
-| images/unused assets/comics /crisis1_t_6.svg | 27.7 |
-| images/unused assets/comics /crisis2_t_1.svg | 77.2 |
-| images/unused assets/comics /crisis2_t_2.svg | 54.6 |
-| images/unused assets/comics /crisis2_t_3.svg | 58 |
-| images/unused assets/comics /crisis2_t_4.svg | 55.5 |
-| images/unused assets/comics /crisis2_t_5.svg | 56 |
-| images/unused assets/comics /crisis_learn_t_5.svg | 41.4 |
-| images/unused assets/comics /feelings_yc_1.svg | 107.3 |
-| images/unused assets/comics /feelings_yc_2.svg | 176.3 |
-| images/unused assets/comics /feelings_yc_3.svg | 183.7 |
-| images/unused assets/comics /feelings_yc_4.svg | 159.5 |
-| images/unused assets/comics /instruct2_t_1.svg | 47.3 |
-| images/unused assets/comics /instruct2_t_2.svg | 37.4 |
-| images/unused assets/comics /instruct2_t_3.svg | 42.6 |
-| images/unused assets/comics /instruct2_t_4.svg | 47 |
-| images/unused assets/comics /instruct2_t_5.svg | 39.7 |
-| images/unused assets/comics /instruct2_t_6.svg | 43.4 |
-| images/unused assets/comics /instruct2_t_7.svg | 42.5 |
-| images/unused assets/comics /instruct2_t_8.svg | 53.4 |
-| images/unused assets/comics /instructions_yc_1.svg | 147.3 |
-| images/unused assets/comics /instructions_yc_2.jpg | 1428.1 |
-| images/unused assets/comics /instructions_yc_2.svg | 155.4 |
-| images/unused assets/comics /instructions_yc_3.jpg | 1441 |
-| images/unused assets/comics /instructions_yc_3.svg | 156 |
-| images/unused assets/comics /instructions_yc_4.svg | 60.8 |
-| images/unused assets/comics /instructions_yc_5.svg | 125.7 |
-| images/unused assets/comics /instructions_yc_6.svg | 122.8 |
-| images/unused assets/comics /instructions_yc_7.svg | 126.6 |
-| images/unused assets/comics /learn_support_t_4.svg | 40.2 |
-| images/unused assets/comics /money3_t_6.svg | 51.9 |
-| images/unused assets/comics /money_t.svg | 32.5 |
-| images/unused assets/comics /money_tools_t.svg | 37.1 |
-| images/unused assets/comics /one_on_one_yc_1.svg | 61.4 |
-| images/unused assets/comics /one_on_one_yc_2.svg | 65.9 |
-| images/unused assets/comics /one_on_one_yc_3.svg | 65.9 |
-| images/unused assets/comics /one_on_one_yc_4.svg | 67.5 |
-| images/unused assets/comics /problem_solving_yc_1.svg | 42.4 |
-| images/unused assets/comics /problem_solving_yc_2.svg | 48.6 |
-| images/unused assets/comics /problem_solving_yc_3.svg | 47.3 |
-| images/unused assets/comics /problem_solving_yc_4.svg | 42.3 |
-| images/unused assets/comics /read_2-20250210T193045Z-001.zip | 91.6 |
-| images/unused assets/comics /routines_yc_1.svg | 56.3 |
-| images/unused assets/comics /routines_yc_2.svg | 62.8 |
-| images/unused assets/comics /routines_yc_3.svg | 61.1 |
-| images/unused assets/comics /routines_yc_4.svg | 74.8 |
-| images/unused assets/comics /rules1_t_1.svg | 30.5 |
-| images/unused assets/comics /rules1_t_2.svg | 32.1 |
-| images/unused assets/comics /rules1_t_3.svg | 29.6 |
-| images/unused assets/comics /rules1_t_4.svg | 29.5 |
-| images/unused assets/comics /rules1_t_5.svg | 27.7 |
-| images/unused assets/comics /rules1_t_6.svg | 23.3 |
-| images/unused assets/comics /rules1_t_7.svg | 35.2 |
-| images/unused assets/comics /safe1_t_1.svg | 32.5 |
-| images/unused assets/comics /safe1_t_2.svg | 68.7 |
-| images/unused assets/comics /safe1_t_3.svg | 64.3 |
-| images/unused assets/comics /safe1_t_4.svg | 41 |
-| images/unused assets/comics /safe1_t_5.svg | 41 |
-| images/unused assets/comics /safe1_t_6.svg | 32.8 |
-| images/unused assets/comics /safe2_t_1.svg | 35 |
-| images/unused assets/comics /safe2_t_2.svg | 33 |
-| images/unused assets/comics /self_care_yc_1.svg | 101.4 |
-| images/unused assets/comics /self_care_yc_2.svg | 66.4 |
-| images/unused assets/comics /self_care_yc_3.svg | 146.8 |
-| images/unused assets/comics /self_care_yc_4.svg | 61.9 |
-| images/unused assets/comics /solve_tool_t_1.svg | 42.1 |
-| images/unused assets/comics /solve_tool_t_2.svg | 75.3 |
-| images/unused assets/comics /solve_tool_t_3.svg | 39.4 |
-| images/unused assets/comics /solve_tool_t_4.svg | 33.4 |
-| images/unused assets/comics /srh2_t_1.svg | 44 |
-| images/unused assets/comics /srh_learn_sex_talk_when_t_2.svg | 89.8 |
-| images/unused assets/comics /srh_learn_sex_talk_who_t_2.svg | 45.5 |
-| images/unused assets/comics /stress1_t_1.svg | 61.1 |
-| images/unused assets/comics /stress1_t_2.svg | 75.3 |
-| images/unused assets/comics /stress1_t_3.svg | 54.7 |
-| images/unused assets/comics /stress1_t_4.svg | 243.7 |
-| images/unused assets/comics /stress1_t_5.svg | 72.3 |
-| images/unused assets/comics /stress2_t_1.svg | 75.1 |
-| images/unused assets/comics /stress2_t_2.svg | 59.4 |
-| images/unused assets/comics /stress2_t_3.svg | 55.3 |
-| images/unused assets/comics /stress2_t_4.svg | 55.6 |
-| images/unused assets/comics /stress3_t_1.svg | 24.3 |
-| images/unused assets/comics /stress3_t_2.svg | 42 |
-| images/unused assets/comics /stress3_t_3.svg | 38.5 |
-| images/unused assets/comics /stress3_t_4.svg | 103.5 |
-| images/unused assets/comics /stress3_t_5.svg | 71.4 |
-| images/unused assets/comics /stress3_t_6.svg | 57.8 |
-| images/unused assets/comics /svp_catcalling_t.svg | 96.1 |
-| images/unused assets/comics /svp_controlling_boyfriend_t.svg | 39.3 |
-| images/unused assets/comics /svp_pushy_boyfriend_t.svg | 49.8 |
-| images/unused assets/comics /svp_pushy_friend_t.svg | 65.6 |
-| images/unused assets/comics /svp_rejected_ride_t.svg | 74.4 |
-| images/unused assets/comics /svp_usevoice_t.svg | 18.4 |
-| images/unused assets/comics /teach_consequences_yc_3.jpg | 3174 |
-| images/unused assets/kw_f2_grandmother.svg | 13.4 |
-| images/unused assets/kw_f3_daughter_7.svg | 14.1 |
-| images/unused assets/kw_facilitator.svg | 23.6 |
-| images/unused assets/zold_childdevelopment.svg | 20.5 |
-| images/unused assets/zold_consequences.jpg | 115.1 |
-| images/unused assets/zold_instructions.svg | 23.6 |
-| images/unused assets/zold_one_on_one_challenges.svg | 13.3 |
-| images/unused assets/zold_praise.svg | 11.5 |
-| images/unused assets/zold_problemsolving.svg | 19.9 |
-| images/unused assets/zold_rulesroutines.jpg | 102.2 |
-| images/unused assets/zold_self_care.svg | 10 |
-| images/unused assets/zold_talk_feelings_challenges.svg | 19.6 |
 | images/yc_modules/problem_solve/problem_solving_yc_1.svg | 47.3 |
 | images/yc_modules/problem_solve/problem_solving_yc_2.svg | 46.3 |
 | images/yc_modules/problem_solve/problem_solving_yc_3.svg | 43.4 |
@@ -1143,7 +1005,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/solve/solve_tool_t_4.svg | 33.9 | 2 |
 | images/teen_modules/srh/srh1_t_1.svg | 32.5 | 2 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 | 2 |
-| images/teen_modules/srh/srh1_t_4.svg | 31 | 2 |
+| images/teen_modules/srh/srh1_t_4.svg | 36.9 | 2 |
 | images/teen_modules/srh/srh2_t_1.svg | 49.6 | 2 |
 | images/teen_modules/srh/srh2_t_2.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_3.svg | 28.7 | 2 |
