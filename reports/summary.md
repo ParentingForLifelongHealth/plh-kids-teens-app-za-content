@@ -85,7 +85,7 @@
 | assets | KB | MB |
 | --- | --- | --- |
 | total | 79151 KB | 79.2 MB |
-| unused | 116878 KB | 116.9 MB |
+| unused | 15499 KB | 15.5 MB |
 </details>
 
 <details open>
@@ -167,13 +167,11 @@ Assets that appear in app-data but do not have references within sheets
 | images/faces/saddest.svg | 2 |
 | images/flags/gb.svg | 0.5 |
 | images/flags/tz.svg | 0.5 |
-| images/flags/za.svg | 0.8 |
 | images/homescreen/check_in/Traditional_rondavel_closed.svg | 24.3 |
 | images/homescreen/check_in/Traditional_rondavel_open.svg | 28.8 |
 | images/homescreen/svp.svg | 25.4 |
 | images/icons/book_outline_blue.svg | 0.7 |
 | images/icons/book_outline_white.svg | 0.7 |
-| images/icons/cancel.svg | 1.7 |
 | images/icons/faces/flushed_face.svg | 4.9 |
 | images/icons/faces/happier.svg | 0.6 |
 | images/icons/faces/happiest.svg | 1.3 |
@@ -217,11 +215,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/yc_modules/problem_solve/problem_solving_yc_4.svg | 43.3 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/relax/breathing_heart.json | 46.7 |
-| video/modules/connect/join_child.mp4 | 10726.2 |
-| video/modules/connect/shared_reading.mp4 | 36376.3 |
-| video/pause/body_scan.mp4 | 10418.6 |
-| video/pause/breath_body_awareness.mp4 | 27250 |
-| video/pause/loving_kindness_meditation.mp4 | 16605.2 |
 | video/plh_video/lets_slow_down.srt | 1.7 |
 | video/plh_video/lets_slow_down.vtt | 1.8 |
 </details>
@@ -236,7 +229,7 @@ Assets that have references within sheets but do not appear in app-data
 | audio/teen/caregiver/caregiver_test_self_care_t.mp3 | 2 |
 | audio/teen/topic_intros/celebrate_intro.mp3 | 2 |
 | audio/teen/topic_intros/workshops_reflection.mp3 | 2 |
-| images/activities/song.svg | 2 |
+| images/activities/songs.svg | 2 |
 | images/backgrounds/library_bottom_right.png | 1 |
 | images/character_icons/F1_SON_15.svg | 1 |
 | images/character_icons/F4_DAUGHTER_13.svg | 1 |
@@ -387,7 +380,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/play_with_clothes.svg | 102.7 | 2 |
 | images/activities/role_play.svg | 38.5 | 4 |
 | images/activities/short_term_goal.svg | 41.9 | 2 |
-| images/activities/songs.svg | 2.7 | 2 |
+| images/activities/song.svg | 2.7 | 2 |
 | images/activities/spy_colours.svg | 65.9 | 4 |
 | images/activities/talk_1.svg | 76.9 | 2 |
 | images/activities/talk_3.svg | 42.5 | 2 |

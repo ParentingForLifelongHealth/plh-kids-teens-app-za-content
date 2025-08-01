@@ -4,7 +4,7 @@ const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.2.12",
+  content_tag_latest: "1.2.13",
 };
 
 config.google_drive.sheets_folder_ids = [
@@ -16,7 +16,6 @@ config.google_drive.sheets_folder_ids = [
   "1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI" // kids_teens_za
 ];
 config.google_drive.assets_folder_ids = [
-  "1abaL1QGd33NqqLoKuo2t9fVWKmh5ouM9", // kids_global
   "13COzYq0iK7sXXZYekPgkwloWtuGoxBNt", // kids_teens_global
   "1T93qsaSBbYa-lCF6ChPkfoX85PLugJCZ" // kids_teens_za
 ];
@@ -32,10 +31,11 @@ config.auth = {
 // Hacky fix to point extended deployment to translations within its own repo
 config.translations.translated_strings_path = "./app_data/translations_source/translated_strings";
 
-// To reduce app size, exclude uncompressed assets
+// To reduce app size, exclude uncompressed assets and unused
 config.app_data.assets_filter_function = (fileEntry) =>
   !fileEntry.relativePath.includes("uncompressed") &&
-  !fileEntry.relativePath.includes("unused");
+  !fileEntry.relativePath.includes("unused")&&
+  !fileEntry.relativePath.includes("video/modules/connect"); // custom path to remove stubborn files that are not visible in drive
 
 config.api.db_name = "plh_kids_teens_za";
 config.app_data.output_path = "./app_data";
