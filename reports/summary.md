@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 79151 KB | 79.2 MB |
-| unused | 15499 KB | 15.5 MB |
+| total | 83331 KB | 83.3 MB |
+| unused | 11319 KB | 11.3 MB |
 </details>
 
 <details open>
@@ -205,14 +205,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/teen_modules/stress/stress1_t_8.svg | 74.3 |
 | images/teen_modules/stress/stress1_t_9.svg | 64.4 |
 | images/teen_modules/svp/svp_catcalling_t.svg | 96.8 |
-| images/teen_modules/svp/svp_usebody_t_1.gif | 1111.6 |
-| images/teen_modules/svp/svp_usebody_t_2.gif | 2008.5 |
-| images/teen_modules/svp/svp_usebody_t_3.gif | 844.1 |
-| images/teen_modules/svp/svp_usevoice_t.svg.svg | 35.5 |
-| images/yc_modules/problem_solve/problem_solving_yc_1.svg | 47.3 |
-| images/yc_modules/problem_solve/problem_solving_yc_2.svg | 46.3 |
-| images/yc_modules/problem_solve/problem_solving_yc_3.svg | 43.4 |
-| images/yc_modules/problem_solve/problem_solving_yc_4.svg | 43.3 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/relax/breathing_heart.json | 46.7 |
 | video/plh_video/lets_slow_down.srt | 1.7 |
@@ -229,7 +221,6 @@ Assets that have references within sheets but do not appear in app-data
 | audio/teen/caregiver/caregiver_test_self_care_t.mp3 | 2 |
 | audio/teen/topic_intros/celebrate_intro.mp3 | 2 |
 | audio/teen/topic_intros/workshops_reflection.mp3 | 2 |
-| images/activities/songs.svg | 2 |
 | images/backgrounds/library_bottom_right.png | 1 |
 | images/character_icons/F1_SON_15.svg | 1 |
 | images/character_icons/F4_DAUGHTER_13.svg | 1 |
@@ -254,15 +245,7 @@ Assets that have references within sheets but do not appear in app-data
 | images/teen_modules/stress/stress2_t_2.svg | 2 |
 | images/teen_modules/stress/stress2_t_3.svg | 2 |
 | images/teen_modules/stress/stress2_t_4.svg | 2 |
-| images/teen_modules/svp/svp_use_body_t_1.gif | 2 |
-| images/teen_modules/svp/svp_use_body_t_2.gif | 2 |
-| images/teen_modules/svp/svp_use_body_t_3.gif | 2 |
-| images/teen_modules/svp/svp_use_voice_t.svg | 2 |
 | images/teen_modules/svp/svp_warning_signs/catcalling_t.svg | 2 |
-| images/yc_module/problem_solve/problem_solving_yc_1.svg | 2 |
-| images/yc_module/problem_solve/problem_solving_yc_2.svg | 2 |
-| images/yc_module/problem_solve/problem_solving_yc_3.svg | 2 |
-| images/yc_module/problem_solve/problem_solving_yc_4.svg | 2 |
 | lottie/relax/heart.json | 8 |
 | plh_images/characters/elder/large.svg | 1 |
 </details>
@@ -380,7 +363,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/play_with_clothes.svg | 102.7 | 2 |
 | images/activities/role_play.svg | 38.5 | 4 |
 | images/activities/short_term_goal.svg | 41.9 | 2 |
-| images/activities/song.svg | 2.7 | 2 |
+| images/activities/song.svg | 2.7 | 4 |
 | images/activities/spy_colours.svg | 65.9 | 4 |
 | images/activities/talk_1.svg | 76.9 | 2 |
 | images/activities/talk_3.svg | 42.5 | 2 |
@@ -681,6 +664,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/svp/svp_pushy_boyfriend_t.svg | 40.8 | 2 |
 | images/teen_modules/svp/svp_pushy_friend_t.svg | 77 | 2 |
 | images/teen_modules/svp/svp_rejected_ride_t.svg | 103.3 | 2 |
+| images/teen_modules/svp/svp_usebody_t_1.gif | 1111.6 | 2 |
+| images/teen_modules/svp/svp_usebody_t_2.gif | 2008.5 | 2 |
+| images/teen_modules/svp/svp_usebody_t_3.gif | 844.1 | 2 |
+| images/teen_modules/svp/svp_usevoice_t.svg | 35.5 | 2 |
 | images/yc_modules/1on1/one_on_one_yc_1.svg | 56.4 | 2 |
 | images/yc_modules/1on1/one_on_one_yc_2.svg | 58.3 | 2 |
 | images/yc_modules/1on1/one_on_one_yc_3.svg | 58.2 | 2 |
@@ -714,6 +701,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/yc_modules/praise/praise_yc_2.svg | 101 | 2 |
 | images/yc_modules/praise/praise_yc_3.svg | 97 | 2 |
 | images/yc_modules/praise/praise_yc_4.svg | 105.5 | 6 |
+| images/yc_modules/problem_solve/problem_solving_yc_1.svg | 47.3 | 2 |
+| images/yc_modules/problem_solve/problem_solving_yc_2.svg | 46.3 | 2 |
+| images/yc_modules/problem_solve/problem_solving_yc_3.svg | 43.4 | 2 |
+| images/yc_modules/problem_solve/problem_solving_yc_4.svg | 43.3 | 2 |
 | images/yc_modules/routines/routines_yc_1.svg | 72.6 | 2 |
 | images/yc_modules/routines/routines_yc_10.svg | 112.4 | 2 |
 | images/yc_modules/routines/routines_yc_2.svg | 74.4 | 6 |
