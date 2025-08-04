@@ -4,58 +4,6 @@
   "status": "released",
   "rows": [
     {
-      "name": "background_image_position",
-      "value": "right",
-      "_translations": {
-        "value": {}
-      },
-      "condition": "@fields._app_language_direction != \"rtl\"",
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "background_image_position",
-      "_dynamicFields": {
-        "condition": [
-          {
-            "fullExpression": "@fields._app_language_direction != \"rtl\"",
-            "matchedExpression": "@fields._app_language_direction",
-            "type": "fields",
-            "fieldName": "_app_language_direction"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@fields._app_language_direction": [
-          "condition"
-        ]
-      }
-    },
-    {
-      "name": "background_image_position",
-      "value": "left",
-      "_translations": {
-        "value": {}
-      },
-      "condition": "@fields._app_language_direction == \"rtl\"",
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "background_image_position",
-      "_dynamicFields": {
-        "condition": [
-          {
-            "fullExpression": "@fields._app_language_direction == \"rtl\"",
-            "matchedExpression": "@fields._app_language_direction",
-            "type": "fields",
-            "fieldName": "_app_language_direction"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@fields._app_language_direction": [
-          "condition"
-        ]
-      }
-    },
-    {
       "type": "display_group",
       "name": "dg_top",
       "parameter_list": {
@@ -87,7 +35,7 @@
               "exclude_from_translation": true,
               "style_list": [
                 "margin-top: 72px",
-                "margin-bottom: -36px"
+                "margin-bottom: -12px"
               ],
               "_nested_name": "dg_top.dg_column.title",
               "_dynamicFields": {
@@ -1805,93 +1753,6 @@
       "_dynamicDependencies": {
         "@local.count_division_string": [
           "value"
-        ]
-      }
-    },
-    {
-      "type": "display_group",
-      "name": "dg_bottom",
-      "parameter_list": {
-        "sticky": "bottom",
-        "background_image_asset": "images/backgrounds/library_bottom_right.png",
-        "background_image_position": "bottom @local.background_image_position",
-        "variant": "inline_padding"
-      },
-      "condition": false,
-      "exclude_from_translation": true,
-      "style_list": [
-        "width: 100%",
-        "min-height: 192px",
-        "align-items: flex-end"
-      ],
-      "rows": [
-        {
-          "type": "text",
-          "name": "spacer",
-          "value": "",
-          "_translations": {
-            "value": {}
-          },
-          "exclude_from_translation": true,
-          "style_list": [
-            "flex: 1"
-          ],
-          "_nested_name": "dg_bottom.spacer"
-        },
-        {
-          "type": "text",
-          "name": "text_unlocked",
-          "value": "@local.count_division_string_ltr\n@global.unlocked",
-          "_translations": {
-            "value": {}
-          },
-          "exclude_from_translation": true,
-          "style_list": [
-            "text-align: end"
-          ],
-          "_nested_name": "dg_bottom.text_unlocked",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@local.count_division_string_ltr\n@global.unlocked",
-                "matchedExpression": "@local.count_division_string_ltr",
-                "type": "local",
-                "fieldName": "count_division_string_ltr"
-              },
-              {
-                "fullExpression": "@local.count_division_string_ltr\n@global.unlocked",
-                "matchedExpression": "@global.unlocked",
-                "type": "global",
-                "fieldName": "unlocked"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.count_division_string_ltr": [
-              "value"
-            ],
-            "@global.unlocked": [
-              "value"
-            ]
-          }
-        }
-      ],
-      "_nested_name": "dg_bottom",
-      "_dynamicFields": {
-        "parameter_list": {
-          "background_image_position": [
-            {
-              "fullExpression": "bottom @local.background_image_position",
-              "matchedExpression": "@local.background_image_position",
-              "type": "local",
-              "fieldName": "background_image_position"
-            }
-          ]
-        }
-      },
-      "_dynamicDependencies": {
-        "@local.background_image_position": [
-          "parameter_list.background_image_position"
         ]
       }
     }
