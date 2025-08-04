@@ -11,6 +11,128 @@
   },
   "rows": [
     {
+      "name": "home_screen_logo",
+      "value": "images/logos/app_logo.png",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!@global.home_screen_logo_asset",
+      "type": "set_variable",
+      "_nested_name": "home_screen_logo",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!@global.home_screen_logo_asset",
+            "matchedExpression": "!@global.home_screen_logo_asset",
+            "type": "global",
+            "fieldName": "home_screen_logo_asset"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@global.home_screen_logo_asset": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "home_screen_logo",
+      "value": "@global.home_screen_logo_asset",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!@global.home_screen_logo_asset",
+      "type": "set_variable",
+      "_nested_name": "home_screen_logo",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.home_screen_logo_asset",
+            "matchedExpression": "@global.home_screen_logo_asset",
+            "type": "global",
+            "fieldName": "home_screen_logo_asset"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@global.home_screen_logo_asset",
+            "matchedExpression": "!@global.home_screen_logo_asset",
+            "type": "global",
+            "fieldName": "home_screen_logo_asset"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.home_screen_logo_asset": [
+          "value"
+        ],
+        "!@global.home_screen_logo_asset": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "home_screen_logo_height",
+      "value": "48px",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!@global.home_screen_logo_height",
+      "type": "set_variable",
+      "_nested_name": "home_screen_logo_height",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!@global.home_screen_logo_height",
+            "matchedExpression": "!@global.home_screen_logo_height",
+            "type": "global",
+            "fieldName": "home_screen_logo_height"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@global.home_screen_logo_height": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "home_screen_logo_height",
+      "value": "@global.home_screen_logo_height",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!@global.home_screen_logo_height",
+      "type": "set_variable",
+      "_nested_name": "home_screen_logo_height",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.home_screen_logo_height",
+            "matchedExpression": "@global.home_screen_logo_height",
+            "type": "global",
+            "fieldName": "home_screen_logo_height"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@global.home_screen_logo_height",
+            "matchedExpression": "!@global.home_screen_logo_height",
+            "type": "global",
+            "fieldName": "home_screen_logo_height"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.home_screen_logo_height": [
+          "value"
+        ],
+        "!@global.home_screen_logo_height": [
+          "condition"
+        ]
+      }
+    },
+    {
       "name": "false_text",
       "value": "@global.map",
       "_translations": {
@@ -76,15 +198,43 @@
         {
           "type": "image",
           "name": "image",
-          "value": "images/logos/app_logo.png",
+          "value": "@local.home_screen_logo",
           "_translations": {
             "value": {}
           },
           "exclude_from_translation": true,
           "style_list": [
-            "width: 96px"
+            "height: @local.home_screen_logo_height"
           ],
-          "_nested_name": "dg_top.image"
+          "_nested_name": "dg_top.image",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.home_screen_logo",
+                "matchedExpression": "@local.home_screen_logo",
+                "type": "local",
+                "fieldName": "home_screen_logo"
+              }
+            ],
+            "style_list": {
+              "0": [
+                {
+                  "fullExpression": "height: @local.home_screen_logo_height",
+                  "matchedExpression": "@local.home_screen_logo_height",
+                  "type": "local",
+                  "fieldName": "home_screen_logo_height"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@local.home_screen_logo": [
+              "value"
+            ],
+            "@local.home_screen_logo_height": [
+              "style_list.0"
+            ]
+          }
         },
         {
           "type": "toggle_bar",
@@ -185,7 +335,7 @@
       "type": "text",
       "name": "margin",
       "style_list": [
-        "margin-top: -36px"
+        "margin-top: -24px"
       ],
       "_nested_name": "margin"
     },

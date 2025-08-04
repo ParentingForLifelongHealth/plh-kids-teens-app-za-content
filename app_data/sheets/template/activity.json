@@ -4,6 +4,45 @@
   "status": "released",
   "rows": [
     {
+      "name": "background_image_asset",
+      "value": "images/backgrounds/activity_bottom_left.png",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "!@global.activity_footer_image_asset": "true"
+      },
+      "type": "set_variable",
+      "_nested_name": "background_image_asset"
+    },
+    {
+      "name": "background_image_asset",
+      "value": "@global.activity_footer_image_asset",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "!!@global.activity_footer_image_asset": "true"
+      },
+      "type": "set_variable",
+      "_nested_name": "background_image_asset",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.activity_footer_image_asset",
+            "matchedExpression": "@global.activity_footer_image_asset",
+            "type": "global",
+            "fieldName": "activity_footer_image_asset"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.activity_footer_image_asset": [
+          "value"
+        ]
+      }
+    },
+    {
       "name": "activity_id",
       "value": "categorise_organise",
       "_translations": {
@@ -94,7 +133,7 @@
             "value": {}
           },
           "exclude_from_translation": true,
-          "_nested_name": "display_group_6.title_@item.id",
+          "_nested_name": "display_group_8.title_@item.id",
           "_dynamicFields": {
             "name": [
               {
@@ -114,7 +153,7 @@
             ],
             "_nested_name": [
               {
-                "fullExpression": "display_group_6.title_@item.id",
+                "fullExpression": "display_group_8.title_@item.id",
                 "matchedExpression": "@item.id",
                 "type": "item",
                 "fieldName": "id"
@@ -166,7 +205,7 @@
                 "icon_false_asset": "images/icons/heart.png"
               },
               "exclude_from_translation": true,
-              "_nested_name": "display_group_6.loop_activities.toggle_@item.id",
+              "_nested_name": "display_group_8.loop_activities.toggle_@item.id",
               "_dynamicFields": {
                 "name": [
                   {
@@ -216,7 +255,7 @@
                 },
                 "_nested_name": [
                   {
-                    "fullExpression": "display_group_6.loop_activities.toggle_@item.id",
+                    "fullExpression": "display_group_8.loop_activities.toggle_@item.id",
                     "matchedExpression": "@item.id",
                     "type": "item",
                     "fieldName": "id"
@@ -239,7 +278,7 @@
               }
             }
           ],
-          "_nested_name": "display_group_6.loop_activities",
+          "_nested_name": "display_group_8.loop_activities",
           "_dynamicFields": {
             "value": [
               {
@@ -279,8 +318,8 @@
           }
         }
       ],
-      "name": "display_group_6",
-      "_nested_name": "display_group_6"
+      "name": "display_group_8",
+      "_nested_name": "display_group_8"
     },
     {
       "type": "text",
@@ -727,7 +766,7 @@
               "_translations": {
                 "value": {}
               },
-              "_nested_name": "accordion_24.resources.resources_text",
+              "_nested_name": "accordion_26.resources.resources_text",
               "_dynamicFields": {
                 "value": [
                   {
@@ -745,7 +784,7 @@
               }
             }
           ],
-          "_nested_name": "accordion_24.resources",
+          "_nested_name": "accordion_26.resources",
           "_dynamicFields": {
             "value": [
               {
@@ -786,7 +825,7 @@
               "_translations": {
                 "value": {}
               },
-              "_nested_name": "accordion_24.steps.steps_text",
+              "_nested_name": "accordion_26.steps.steps_text",
               "_dynamicFields": {
                 "value": [
                   {
@@ -804,7 +843,7 @@
               }
             }
           ],
-          "_nested_name": "accordion_24.steps",
+          "_nested_name": "accordion_26.steps",
           "_dynamicFields": {
             "value": [
               {
@@ -845,7 +884,7 @@
               "_translations": {
                 "value": {}
               },
-              "_nested_name": "accordion_24.tips.tips_text",
+              "_nested_name": "accordion_26.tips.tips_text",
               "_dynamicFields": {
                 "value": [
                   {
@@ -863,7 +902,7 @@
               }
             }
           ],
-          "_nested_name": "accordion_24.tips",
+          "_nested_name": "accordion_26.tips",
           "_dynamicFields": {
             "value": [
               {
@@ -904,7 +943,7 @@
               "_translations": {
                 "value": {}
               },
-              "_nested_name": "accordion_24.extension.extension_text",
+              "_nested_name": "accordion_26.extension.extension_text",
               "_dynamicFields": {
                 "value": [
                   {
@@ -922,7 +961,7 @@
               }
             }
           ],
-          "_nested_name": "accordion_24.extension",
+          "_nested_name": "accordion_26.extension",
           "_dynamicFields": {
             "value": [
               {
@@ -951,8 +990,8 @@
           }
         }
       ],
-      "name": "accordion_24",
-      "_nested_name": "accordion_24"
+      "name": "accordion_26",
+      "_nested_name": "accordion_26"
     },
     {
       "name": "source",
@@ -1028,7 +1067,7 @@
       "name": "dg_bottom",
       "parameter_list": {
         "sticky": "bottom",
-        "background_image_asset": "images/backgrounds/activity_bottom_left.png",
+        "background_image_asset": "@local.background_image_asset",
         "background_image_position": "bottom left"
       },
       "exclude_from_translation": true,
@@ -1037,7 +1076,24 @@
         "width: 110%"
       ],
       "rows": [],
-      "_nested_name": "dg_bottom"
+      "_nested_name": "dg_bottom",
+      "_dynamicFields": {
+        "parameter_list": {
+          "background_image_asset": [
+            {
+              "fullExpression": "@local.background_image_asset",
+              "matchedExpression": "@local.background_image_asset",
+              "type": "local",
+              "fieldName": "background_image_asset"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.background_image_asset": [
+          "parameter_list.background_image_asset"
+        ]
+      }
     }
   ],
   "_xlsxPath": "PLH activity library.xlsx",
