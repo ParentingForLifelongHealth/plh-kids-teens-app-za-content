@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 80402 KB | 80.4 MB |
-| unused | 7342 KB | 7.3 MB |
+| total | 80443 KB | 80.4 MB |
+| unused | 7295 KB | 7.3 MB |
 </details>
 
 <details open>
@@ -190,7 +190,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/teen_modules/svp/svp_catcalling_t.svg | 96.8 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
-| lottie/relax/breathing_heart.json | 46.7 |
 | video/plh_video/lets_slow_down.srt | 1.7 |
 | video/plh_video/lets_slow_down.vtt | 1.8 |
 </details>
@@ -223,7 +222,6 @@ Assets that have references within sheets but do not appear in app-data
 | images/teen_modules/money/money_learn_t_4.svg | 2 |
 | images/teen_modules/srh/srh1_t_2.svg | 2 |
 | images/teen_modules/svp/svp_warning_signs/catcalling_t.svg | 2 |
-| lottie/relax/heart.json | 8 |
 | plh_images/characters/elder/large.svg | 1 |
 </details>
 
@@ -608,7 +606,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/solve/solve_tool_t_4.svg | 33.9 | 2 |
 | images/teen_modules/srh/srh1_t_1.svg | 32.5 | 2 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 | 2 |
-| images/teen_modules/srh/srh1_t_4.svg | 36.9 | 2 |
+| images/teen_modules/srh/srh1_t_4.svg | 31 | 2 |
 | images/teen_modules/srh/srh2_t_1.svg | 49.6 | 2 |
 | images/teen_modules/srh/srh2_t_2.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_3.svg | 28.7 | 2 |
@@ -709,6 +707,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/checkmark.json | 23.6 | 1 |
 | lottie/gift_box.json | 674.5 | 1 |
 | lottie/relax/blue_dots.json | 14.7 | 8 |
+| lottie/relax/heart.json | 46.7 | 8 |
 | lottie/relax/looping_rings.json | 10.4 | 12 |
 | lottie/relax/soothing_waves.json | 7.6 | 9 |
 | lottie/relax/square_flow.json | 5.9 | 18 |
