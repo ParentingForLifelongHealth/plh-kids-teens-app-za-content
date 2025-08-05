@@ -730,7 +730,7 @@
     },
     {
       "name": "tips_title",
-      "value": "Tips",
+      "value": "More tips",
       "_translations": {
         "value": {
           "za_xh": true
@@ -817,6 +817,9 @@
           "name": "steps",
           "value": "@local.steps_title",
           "condition": "!!(@local.activity_row.steps_text)",
+          "parameter_list": {
+            "state": "open"
+          },
           "rows": [
             {
               "type": "text",
