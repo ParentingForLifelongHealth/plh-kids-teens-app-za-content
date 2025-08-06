@@ -164,6 +164,15 @@
         "value": {}
       },
       "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "child_age_tag",
+      "value": "@calc(@fields.child_age <10 ? \"child\" : \"teen\")",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true
     }
   ],
   "_xlsxPath": "data/deployment_data_za.xlsx",

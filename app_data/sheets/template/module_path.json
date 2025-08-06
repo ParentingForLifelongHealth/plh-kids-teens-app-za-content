@@ -164,17 +164,14 @@
       "exclude_from_translation": true,
       "rows": [
         {
-          "type": "plh_progress_path",
-          "parameter_list": {
-            "background_image_asset": "@local.background_image_asset"
-          },
+          "type": "progress_path",
           "exclude_from_translation": true,
           "rows": [
             {
               "name": "is_highlighted",
               "value": false,
               "type": "set_variable",
-              "_nested_name": "dg_all_modules.plh_progress_path_1.is_highlighted"
+              "_nested_name": "dg_all_modules.progress_path_1.is_highlighted"
             },
             {
               "type": "data_items",
@@ -190,7 +187,7 @@
                   },
                   "exclude_from_translation": true,
                   "type": "set_variable",
-                  "_nested_name": "dg_all_modules.plh_progress_path_1.task_cards.completed_midnight",
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.completed_midnight",
                   "_dynamicFields": {
                     "value": [
                       {
@@ -224,7 +221,7 @@
                   },
                   "exclude_from_translation": true,
                   "type": "set_variable",
-                  "_nested_name": "dg_all_modules.plh_progress_path_1.task_cards.days_since_completed",
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.days_since_completed",
                   "_dynamicFields": {
                     "value": [
                       {
@@ -258,7 +255,7 @@
                   },
                   "exclude_from_translation": true,
                   "type": "set_variable",
-                  "_nested_name": "dg_all_modules.plh_progress_path_1.task_cards.is_highlighted",
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.is_highlighted",
                   "_dynamicFields": {
                     "value": [
                       {
@@ -307,7 +304,7 @@
                   },
                   "condition": "!(@item.id == @local.current_module_id || @item.completed)",
                   "exclude_from_translation": true,
-                  "_nested_name": "dg_all_modules.plh_progress_path_1.task_cards.locked_@item.id",
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.locked_@item.id",
                   "_dynamicFields": {
                     "name": [
                       {
@@ -387,7 +384,7 @@
                     ],
                     "_nested_name": [
                       {
-                        "fullExpression": "dg_all_modules.plh_progress_path_1.task_cards.locked_@item.id",
+                        "fullExpression": "dg_all_modules.progress_path_1.task_cards.locked_@item.id",
                         "matchedExpression": "@item.id",
                         "type": "item",
                         "fieldName": "id"
@@ -440,7 +437,7 @@
                   },
                   "condition": "@item.id == @local.current_module_id || @item.completed",
                   "exclude_from_translation": true,
-                  "_nested_name": "dg_all_modules.plh_progress_path_1.task_cards.unlocked_@item.id",
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.unlocked_@item.id",
                   "_dynamicFields": {
                     "name": [
                       {
@@ -520,7 +517,7 @@
                     ],
                     "_nested_name": [
                       {
-                        "fullExpression": "dg_all_modules.plh_progress_path_1.task_cards.unlocked_@item.id",
+                        "fullExpression": "dg_all_modules.progress_path_1.task_cards.unlocked_@item.id",
                         "matchedExpression": "@item.id",
                         "type": "item",
                         "fieldName": "id"
@@ -551,7 +548,7 @@
                   }
                 }
               ],
-              "_nested_name": "dg_all_modules.plh_progress_path_1.task_cards",
+              "_nested_name": "dg_all_modules.progress_path_1.task_cards",
               "_dynamicFields": {
                 "value": [
                   {
@@ -569,25 +566,8 @@
               }
             }
           ],
-          "name": "plh_progress_path_1",
-          "_nested_name": "dg_all_modules.plh_progress_path_1",
-          "_dynamicFields": {
-            "parameter_list": {
-              "background_image_asset": [
-                {
-                  "fullExpression": "@local.background_image_asset",
-                  "matchedExpression": "@local.background_image_asset",
-                  "type": "local",
-                  "fieldName": "background_image_asset"
-                }
-              ]
-            }
-          },
-          "_dynamicDependencies": {
-            "@local.background_image_asset": [
-              "parameter_list.background_image_asset"
-            ]
-          }
+          "name": "progress_path_1",
+          "_nested_name": "dg_all_modules.progress_path_1"
         }
       ],
       "_nested_name": "dg_all_modules",
