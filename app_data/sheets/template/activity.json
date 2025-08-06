@@ -122,27 +122,39 @@
       }
     },
     {
-      "type": "display_group",
+      "name": "close_icon_asset",
+      "value": "close",
+      "_translations": {
+        "value": {}
+      },
       "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "close_icon_asset"
+    },
+    {
+      "type": "display_group",
+      "name": "dg_header",
+      "parameter_list": {
+        "sticky": "top",
+        "style": "background_solid"
+      },
+      "style_list": [
+        "align-items: center",
+        "padding-top: 12px",
+        "padding-inline-start: 24px",
+        "padding-inline-end: 12px"
+      ],
       "rows": [
         {
           "type": "title",
-          "name": "title_@item.id",
+          "name": "title",
           "value": "@local.activity_row.title",
           "_translations": {
             "value": {}
           },
           "exclude_from_translation": true,
-          "_nested_name": "display_group_8.title_@item.id",
+          "_nested_name": "dg_header.title",
           "_dynamicFields": {
-            "name": [
-              {
-                "fullExpression": "title_@item.id",
-                "matchedExpression": "@item.id",
-                "type": "item",
-                "fieldName": "id"
-              }
-            ],
             "value": [
               {
                 "fullExpression": "@local.activity_row.title",
@@ -150,21 +162,9 @@
                 "type": "local",
                 "fieldName": "activity_row"
               }
-            ],
-            "_nested_name": [
-              {
-                "fullExpression": "display_group_8.title_@item.id",
-                "matchedExpression": "@item.id",
-                "type": "item",
-                "fieldName": "id"
-              }
             ]
           },
           "_dynamicDependencies": {
-            "@item.id": [
-              "name",
-              "_nested_name"
-            ],
             "@local.activity_row.title": [
               "value"
             ]
@@ -205,7 +205,7 @@
                 "icon_false_asset": "images/icons/heart.png"
               },
               "exclude_from_translation": true,
-              "_nested_name": "display_group_8.loop_activities.toggle_@item.id",
+              "_nested_name": "dg_header.loop_activities.toggle_@item.id",
               "_dynamicFields": {
                 "name": [
                   {
@@ -255,7 +255,7 @@
                 },
                 "_nested_name": [
                   {
-                    "fullExpression": "display_group_8.loop_activities.toggle_@item.id",
+                    "fullExpression": "dg_header.loop_activities.toggle_@item.id",
                     "matchedExpression": "@item.id",
                     "type": "item",
                     "fieldName": "id"
@@ -278,7 +278,7 @@
               }
             }
           ],
-          "_nested_name": "display_group_8.loop_activities",
+          "_nested_name": "dg_header.loop_activities",
           "_dynamicFields": {
             "value": [
               {
@@ -316,10 +316,50 @@
               "parameter_list.filter"
             ]
           }
+        },
+        {
+          "type": "round_button",
+          "name": "close_button",
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "nav_stack",
+              "args": [
+                "close_top"
+              ],
+              "_raw": "click | nav_stack: close_top",
+              "_cleaned": "click | nav_stack: close_top"
+            }
+          ],
+          "parameter_list": {
+            "variant": "no-background",
+            "icon_src": "@local.close_icon_asset"
+          },
+          "exclude_from_translation": true,
+          "style_list": [
+            "margin-inline-start: auto"
+          ],
+          "_nested_name": "dg_header.close_button",
+          "_dynamicFields": {
+            "parameter_list": {
+              "icon_src": [
+                {
+                  "fullExpression": "@local.close_icon_asset",
+                  "matchedExpression": "@local.close_icon_asset",
+                  "type": "local",
+                  "fieldName": "close_icon_asset"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@local.close_icon_asset": [
+              "parameter_list.icon_src"
+            ]
+          }
         }
       ],
-      "name": "display_group_8",
-      "_nested_name": "display_group_8"
+      "_nested_name": "dg_header"
     },
     {
       "type": "text",

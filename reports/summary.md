@@ -29,10 +29,10 @@
 | progress_path | 1 |
 | qr_code | 1 |
 | radio_button_grid | 8 |
-| round_button | 12 |
+| round_button | 13 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2532 |
+| set_variable | 2533 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
@@ -65,7 +65,7 @@
 | emit: uncompleted | 664 |
 | feedback | 13 |
 | go_to | 25 |
-| nav_stack | 268 |
+| nav_stack | 269 |
 | pop_up | 66 |
 | reset_app | 4 |
 | reset_data | 3 |
