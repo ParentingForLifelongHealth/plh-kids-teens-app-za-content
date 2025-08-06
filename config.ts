@@ -4,7 +4,7 @@ const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.2.19",
+  content_tag_latest: "1.2.20",
 };
 
 config.google_drive.sheets_folder_ids = [
@@ -35,7 +35,8 @@ config.translations.translated_strings_path = "./app_data/translations_source/tr
 config.app_data.assets_filter_function = (fileEntry) =>
   !fileEntry.relativePath.includes("uncompressed") &&
   !fileEntry.relativePath.includes("unused")&&
-  !fileEntry.relativePath.includes("video/modules/connect"); // custom path to remove stubborn files that are not visible in drive
+  !fileEntry.relativePath.includes("video/modules/connect")&& // custom path to remove stubborn files that are not visible in drive
+  !fileEntry.relativePath.includes("audio/modules/connect"); // custom path to remove stubborn files that are not visible in drive
 
 config.api.db_name = "plh_kids_teens_za";
 config.app_data.output_path = "./app_data";
