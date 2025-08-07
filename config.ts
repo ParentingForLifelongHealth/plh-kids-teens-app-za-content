@@ -4,7 +4,7 @@ const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.3.0",
+  content_tag_latest: "1.3.1",
 };
 
 config.google_drive.sheets_folder_ids = [
@@ -19,6 +19,12 @@ config.google_drive.assets_folder_ids = [
   "13COzYq0iK7sXXZYekPgkwloWtuGoxBNt", // kids_teens_global
   "1T93qsaSBbYa-lCF6ChPkfoX85PLugJCZ" // kids_teens_za
 ];
+
+config.ios = {
+  app_id:"international.idems.plh-kids-teens-za",
+  app_name:"ParentApp South Africa",
+  zoom_enabled: true
+};
 
 config.firebase = {
   config: loadEncryptedConfig('firebase.json'),
