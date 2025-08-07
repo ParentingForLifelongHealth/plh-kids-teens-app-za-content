@@ -8,7 +8,7 @@
       "name": "pick_random_locked_activity",
       "value": "@data.activity_tasks",
       "parameter_list": {
-        "filter": "@item.locked",
+        "filter": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
         "shuffle": "true",
         "limit": "1"
       },
@@ -186,10 +186,28 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "@item.locked",
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
               "matchedExpression": "@item.locked",
               "type": "item",
               "fieldName": "locked"
+            },
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "!@item.child_age_list",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@item.child_age_list.includes",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@fields.child_age",
+              "type": "fields",
+              "fieldName": "child_age"
             }
           ]
         }
@@ -199,6 +217,15 @@
           "value"
         ],
         "@item.locked": [
+          "parameter_list.filter"
+        ],
+        "!@item.child_age_list": [
+          "parameter_list.filter"
+        ],
+        "@item.child_age_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age": [
           "parameter_list.filter"
         ]
       }

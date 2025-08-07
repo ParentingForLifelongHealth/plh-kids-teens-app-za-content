@@ -377,6 +377,39 @@
       }
     },
     {
+      "name": "child_age_tag",
+      "value": "@calc(@local.child_age_input <10 ? \"child\" : \"teen\")",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "child_age_tag",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@calc(@local.child_age_input <10 ? \"child\" : \"teen\")",
+            "matchedExpression": "@local.child_age_input",
+            "type": "local",
+            "fieldName": "child_age_input"
+          },
+          {
+            "fullExpression": "@calc(@local.child_age_input <10 ? \"child\" : \"teen\")",
+            "matchedExpression": "@calc(@local.child_age_input <10 ? \"child\" : \"teen\")",
+            "type": "calc",
+            "fieldName": "@local.child_age_input <10 ? \"child\" : \"teen\""
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.child_age_input": [
+          "value"
+        ],
+        "@calc(@local.child_age_input <10 ? \"child\" : \"teen\")": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "text",
       "name": "question_household_children",
       "value": "@global.question_household_children",
@@ -708,6 +741,16 @@
               "trigger": "click",
               "action_id": "set_field",
               "args": [
+                "child_age_tag",
+                "@local.child_age_tag"
+              ],
+              "_raw": "click | set_field: child_age_tag: @local.child_age_tag",
+              "_cleaned": "click | set_field: child_age_tag: @local.child_age_tag"
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
                 "household_children",
                 "@local.household_children_input"
               ],
@@ -775,6 +818,34 @@
                 "args": {
                   "1": [
                     {
+                      "fullExpression": "@local.child_age_tag",
+                      "matchedExpression": "@local.child_age_tag",
+                      "type": "local",
+                      "fieldName": "child_age_tag"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: child_age_tag: @local.child_age_tag",
+                    "matchedExpression": "@local.child_age_tag",
+                    "type": "local",
+                    "fieldName": "child_age_tag"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "click | set_field: child_age_tag: @local.child_age_tag",
+                    "matchedExpression": "@local.child_age_tag",
+                    "type": "local",
+                    "fieldName": "child_age_tag"
+                  }
+                ]
+              },
+              "2": {
+                "args": {
+                  "1": [
+                    {
                       "fullExpression": "@local.household_children_input",
                       "matchedExpression": "@local.household_children_input",
                       "type": "local",
@@ -820,10 +891,15 @@
               "action_list.0._raw",
               "action_list.0._cleaned"
             ],
-            "@local.household_children_input": [
+            "@local.child_age_tag": [
               "action_list.1.args.1",
               "action_list.1._raw",
               "action_list.1._cleaned"
+            ],
+            "@local.household_children_input": [
+              "action_list.2.args.1",
+              "action_list.2._raw",
+              "action_list.2._cleaned"
             ],
             "!@local.completed_enabled": [
               "parameter_list.disabled"

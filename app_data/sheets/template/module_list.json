@@ -32,7 +32,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "@item.completed"
+        "filter": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
       },
       "name": "data_items_4",
       "_nested_name": "data_items_4",
@@ -48,10 +48,28 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "@item.completed",
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@item.completed",
               "type": "item",
               "fieldName": "completed"
+            },
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.tag_list",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@item.tag_list.includes",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@fields.child_age_tag",
+              "type": "fields",
+              "fieldName": "child_age_tag"
             }
           ]
         }
@@ -61,6 +79,15 @@
           "value"
         ],
         "@item.completed": [
+          "parameter_list.filter"
+        ],
+        "!@item.tag_list": [
+          "parameter_list.filter"
+        ],
+        "@item.tag_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age_tag": [
           "parameter_list.filter"
         ]
       }
@@ -84,7 +111,8 @@
         }
       ],
       "parameter_list": {
-        "filter": "!@item.completed",
+        "filter": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+        "sort": "number",
         "limit": "1"
       },
       "name": "data_items_5",
@@ -101,10 +129,28 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "!@item.completed",
+              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "!@item.completed",
               "type": "item",
               "fieldName": "completed"
+            },
+            {
+              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.tag_list",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@item.tag_list.includes",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@fields.child_age_tag",
+              "type": "fields",
+              "fieldName": "child_age_tag"
             }
           ]
         }
@@ -114,6 +160,15 @@
           "value"
         ],
         "!@item.completed": [
+          "parameter_list.filter"
+        ],
+        "!@item.tag_list": [
+          "parameter_list.filter"
+        ],
+        "@item.tag_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age_tag": [
           "parameter_list.filter"
         ]
       }
@@ -130,6 +185,10 @@
           "type": "data_items",
           "name": "loop_modules",
           "value": "@data.module_tasks",
+          "parameter_list": {
+            "filter": "!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)",
+            "sort": "number"
+          },
           "exclude_from_translation": true,
           "rows": [
             {
@@ -408,11 +467,42 @@
                 "type": "data",
                 "fieldName": "module_tasks"
               }
-            ]
+            ],
+            "parameter_list": {
+              "filter": [
+                {
+                  "fullExpression": "!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)",
+                  "matchedExpression": "!@item.tag_list",
+                  "type": "item",
+                  "fieldName": "tag_list"
+                },
+                {
+                  "fullExpression": "!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)",
+                  "matchedExpression": "@item.tag_list.includes",
+                  "type": "item",
+                  "fieldName": "tag_list"
+                },
+                {
+                  "fullExpression": "!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)",
+                  "matchedExpression": "@fields.child_age_tag",
+                  "type": "fields",
+                  "fieldName": "child_age_tag"
+                }
+              ]
+            }
           },
           "_dynamicDependencies": {
             "@data.module_tasks": [
               "value"
+            ],
+            "!@item.tag_list": [
+              "parameter_list.filter"
+            ],
+            "@item.tag_list.includes": [
+              "parameter_list.filter"
+            ],
+            "@fields.child_age_tag": [
+              "parameter_list.filter"
             ]
           }
         }

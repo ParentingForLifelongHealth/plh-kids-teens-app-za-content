@@ -14,7 +14,7 @@
       "name": "pick_random_locked_activity",
       "value": "@data.activity_tasks",
       "parameter_list": [
-        "filter: @item.locked",
+        "filter: @item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
         "shuffle",
         "limit: 1"
       ],

@@ -4,67 +4,1276 @@
   "status": "released",
   "rows": [
     {
-      "type": "title",
-      "name": "title",
-      "value": "@global.moments_of_play",
+      "name": "hp_check_in_not_unlocked_activity_count",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "hp_check_in_not_unlocked_activity_count"
+    },
+    {
+      "type": "data_items",
+      "name": "count_hp_check_in",
+      "value": "@data.hp_check_in",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "hp_check_in_not_unlocked_activity_count",
+            "@items.length"
+          ],
+          "_raw": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length",
+          "_cleaned": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length"
+        }
+      ],
+      "parameter_list": {
+        "filter": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "count_hp_check_in",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.hp_check_in",
+            "matchedExpression": "@data.hp_check_in",
+            "type": "data",
+            "fieldName": "hp_check_in"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.unlocked_activity",
+              "type": "item",
+              "fieldName": "unlocked_activity"
+            },
+            {
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.tag_list",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@item.tag_list.includes",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@fields.child_age_tag",
+              "type": "fields",
+              "fieldName": "child_age_tag"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.hp_check_in": [
+          "value"
+        ],
+        "!@item.unlocked_activity": [
+          "parameter_list.filter"
+        ],
+        "!@item.tag_list": [
+          "parameter_list.filter"
+        ],
+        "@item.tag_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age_tag": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "name": "module_not_unlocked_activity_count",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "module_not_unlocked_activity_count"
+    },
+    {
+      "type": "data_items",
+      "name": "count_modules",
+      "value": "@data.module_tasks",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "module_not_unlocked_activity_count",
+            "@items.length"
+          ],
+          "_raw": "data_changed | set_local: module_not_unlocked_activity_count: @items.length",
+          "_cleaned": "data_changed | set_local: module_not_unlocked_activity_count: @items.length"
+        }
+      ],
+      "parameter_list": {
+        "filter": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "count_modules",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.module_tasks",
+            "matchedExpression": "@data.module_tasks",
+            "type": "data",
+            "fieldName": "module_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.unlocked_activity",
+              "type": "item",
+              "fieldName": "unlocked_activity"
+            },
+            {
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.tag_list",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@item.tag_list.includes",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@fields.child_age_tag",
+              "type": "fields",
+              "fieldName": "child_age_tag"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.module_tasks": [
+          "value"
+        ],
+        "!@item.unlocked_activity": [
+          "parameter_list.filter"
+        ],
+        "!@item.tag_list": [
+          "parameter_list.filter"
+        ],
+        "@item.tag_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age_tag": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "dg_top",
+      "parameter_list": {
+        "sticky": "top",
+        "style": "background_solid",
+        "background_image_asset": "images/backgrounds/library_top_right.png",
+        "background_image_position": "top @local.background_image_position",
+        "variant": "inline_padding"
+      },
+      "exclude_from_translation": true,
+      "style_list": [
+        "width: 100%"
+      ],
+      "rows": [
+        {
+          "type": "display_group",
+          "name": "dg_column",
+          "parameter_list": {
+            "style": "column"
+          },
+          "rows": [
+            {
+              "type": "title",
+              "name": "title",
+              "value": "@global.moments_of_play",
+              "_translations": {
+                "value": {}
+              },
+              "exclude_from_translation": true,
+              "style_list": [
+                "margin-top: 72px",
+                "margin-bottom: -12px"
+              ],
+              "_nested_name": "dg_top.dg_column.title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.moments_of_play",
+                    "matchedExpression": "@global.moments_of_play",
+                    "type": "global",
+                    "fieldName": "moments_of_play"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.moments_of_play": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "display_group",
+              "name": "dg_top_below_background",
+              "parameter_list": {
+                "style": "column"
+              },
+              "exclude_from_translation": true,
+              "rows": [
+                {
+                  "type": "text",
+                  "name": "debug_hp_check_in",
+                  "value": "Total hp checkins not unlocked activity: @local.hp_check_in_not_unlocked_activity_count",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "_nested_name": "dg_top.dg_column.dg_top_below_background.debug_hp_check_in",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "Total hp checkins not unlocked activity: @local.hp_check_in_not_unlocked_activity_count",
+                        "matchedExpression": "@local.hp_check_in_not_unlocked_activity_count",
+                        "type": "local",
+                        "fieldName": "hp_check_in_not_unlocked_activity_count"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.hp_check_in_not_unlocked_activity_count": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "type": "button",
+                  "name": "button_hp_check_in",
+                  "value": "Mark all hp checkins as unlocked activity",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "action_list": [
+                    {
+                      "trigger": "click",
+                      "action_id": "set_data",
+                      "args": [],
+                      "_raw": "click | set_data | \n\n_list_id: hp_check_in,\nunlocked_activity: true",
+                      "_cleaned": "click | set_data | \n\n_list_id: hp_check_in,\nunlocked_activity: true",
+                      "params": {
+                        "_list_id": "hp_check_in",
+                        "unlocked_activity": true
+                      }
+                    }
+                  ],
+                  "exclude_from_translation": true,
+                  "_nested_name": "dg_top.dg_column.dg_top_below_background.button_hp_check_in"
+                },
+                {
+                  "type": "text",
+                  "name": "debug_modules",
+                  "value": "Total modules not unlocked activity: @local.module_not_unlocked_activity_count",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "_nested_name": "dg_top.dg_column.dg_top_below_background.debug_modules",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "Total modules not unlocked activity: @local.module_not_unlocked_activity_count",
+                        "matchedExpression": "@local.module_not_unlocked_activity_count",
+                        "type": "local",
+                        "fieldName": "module_not_unlocked_activity_count"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.module_not_unlocked_activity_count": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "type": "button",
+                  "name": "button_modules",
+                  "value": "Mark all modules as unlocked activity",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "action_list": [
+                    {
+                      "trigger": "click",
+                      "action_id": "set_data",
+                      "args": [],
+                      "_raw": "click | set_data | \n\n_list_id: module_tasks,\nunlocked_activity: true",
+                      "_cleaned": "click | set_data | \n\n_list_id: module_tasks,\nunlocked_activity: true",
+                      "params": {
+                        "_list_id": "module_tasks",
+                        "unlocked_activity": true
+                      }
+                    }
+                  ],
+                  "exclude_from_translation": true,
+                  "_nested_name": "dg_top.dg_column.dg_top_below_background.button_modules"
+                },
+                {
+                  "name": "finished_all_content",
+                  "value": "@local.hp_check_in_not_unlocked_activity_count + @local.module_not_unlocked_activity_count === 0",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "dg_top.dg_column.dg_top_below_background.finished_all_content",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.hp_check_in_not_unlocked_activity_count + @local.module_not_unlocked_activity_count === 0",
+                        "matchedExpression": "@local.hp_check_in_not_unlocked_activity_count",
+                        "type": "local",
+                        "fieldName": "hp_check_in_not_unlocked_activity_count"
+                      },
+                      {
+                        "fullExpression": "@local.hp_check_in_not_unlocked_activity_count + @local.module_not_unlocked_activity_count === 0",
+                        "matchedExpression": "@local.module_not_unlocked_activity_count",
+                        "type": "local",
+                        "fieldName": "module_not_unlocked_activity_count"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.hp_check_in_not_unlocked_activity_count": [
+                      "value"
+                    ],
+                    "@local.module_not_unlocked_activity_count": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "type": "text",
+                  "name": "debug_finished_all_content",
+                  "value": "Finished all content? @local.finished_all_content",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "_nested_name": "dg_top.dg_column.dg_top_below_background.debug_finished_all_content",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "Finished all content? @local.finished_all_content",
+                        "matchedExpression": "@local.finished_all_content",
+                        "type": "local",
+                        "fieldName": "finished_all_content"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.finished_all_content": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "type": "data_items",
+                  "value": "@data.activity_tasks",
+                  "parameter_list": {
+                    "filter": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                    "limit": "1"
+                  },
+                  "condition": "@local.finished_all_content",
+                  "exclude_from_translation": true,
+                  "rows": [
+                    {
+                      "type": "text",
+                      "name": "intro_text",
+                      "value": "@global.well_done_finishing_module_hp",
+                      "_translations": {
+                        "value": {}
+                      },
+                      "exclude_from_translation": true,
+                      "_nested_name": "dg_top.dg_column.dg_top_below_background.data_items_7.intro_text",
+                      "_dynamicFields": {
+                        "value": [
+                          {
+                            "fullExpression": "@global.well_done_finishing_module_hp",
+                            "matchedExpression": "@global.well_done_finishing_module_hp",
+                            "type": "global",
+                            "fieldName": "well_done_finishing_module_hp"
+                          }
+                        ]
+                      },
+                      "_dynamicDependencies": {
+                        "@global.well_done_finishing_module_hp": [
+                          "value"
+                        ]
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "button_unlock_all",
+                      "value": "@global.unlock_all_moments_of_play",
+                      "_translations": {
+                        "value": {}
+                      },
+                      "action_list": [
+                        {
+                          "trigger": "click",
+                          "action_id": "set_data",
+                          "args": [],
+                          "_raw": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
+                          "_cleaned": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
+                          "params": {
+                            "_list_id": "activity_tasks",
+                            "locked": false
+                          }
+                        }
+                      ],
+                      "exclude_from_translation": true,
+                      "_nested_name": "dg_top.dg_column.dg_top_below_background.data_items_7.button_unlock_all",
+                      "_dynamicFields": {
+                        "value": [
+                          {
+                            "fullExpression": "@global.unlock_all_moments_of_play",
+                            "matchedExpression": "@global.unlock_all_moments_of_play",
+                            "type": "global",
+                            "fieldName": "unlock_all_moments_of_play"
+                          }
+                        ]
+                      },
+                      "_dynamicDependencies": {
+                        "@global.unlock_all_moments_of_play": [
+                          "value"
+                        ]
+                      }
+                    }
+                  ],
+                  "name": "data_items_7",
+                  "_nested_name": "dg_top.dg_column.dg_top_below_background.data_items_7",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@data.activity_tasks",
+                        "matchedExpression": "@data.activity_tasks",
+                        "type": "data",
+                        "fieldName": "activity_tasks"
+                      }
+                    ],
+                    "parameter_list": {
+                      "filter": [
+                        {
+                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                          "matchedExpression": "@item.locked",
+                          "type": "item",
+                          "fieldName": "locked"
+                        },
+                        {
+                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                          "matchedExpression": "!@item.tag_list",
+                          "type": "item",
+                          "fieldName": "tag_list"
+                        },
+                        {
+                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                          "matchedExpression": "@item.tag_list.includes",
+                          "type": "item",
+                          "fieldName": "tag_list"
+                        },
+                        {
+                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                          "matchedExpression": "@fields.child_age_tag",
+                          "type": "fields",
+                          "fieldName": "child_age_tag"
+                        }
+                      ]
+                    },
+                    "condition": [
+                      {
+                        "fullExpression": "@local.finished_all_content",
+                        "matchedExpression": "@local.finished_all_content",
+                        "type": "local",
+                        "fieldName": "finished_all_content"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@data.activity_tasks": [
+                      "value"
+                    ],
+                    "@item.locked": [
+                      "parameter_list.filter"
+                    ],
+                    "!@item.tag_list": [
+                      "parameter_list.filter"
+                    ],
+                    "@item.tag_list.includes": [
+                      "parameter_list.filter"
+                    ],
+                    "@fields.child_age_tag": [
+                      "parameter_list.filter"
+                    ],
+                    "@local.finished_all_content": [
+                      "condition"
+                    ]
+                  }
+                }
+              ],
+              "_nested_name": "dg_top.dg_column.dg_top_below_background"
+            }
+          ],
+          "_nested_name": "dg_top.dg_column"
+        }
+      ],
+      "_nested_name": "dg_top",
+      "_dynamicFields": {
+        "parameter_list": {
+          "background_image_position": [
+            {
+              "fullExpression": "top @local.background_image_position",
+              "matchedExpression": "@local.background_image_position",
+              "type": "local",
+              "fieldName": "background_image_position"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.background_image_position": [
+          "parameter_list.background_image_position"
+        ]
+      }
+    },
+    {
+      "name": "activity_count",
+      "value": 1,
+      "type": "set_variable",
+      "_nested_name": "activity_count"
+    },
+    {
+      "type": "data_items",
+      "name": "count_activities",
+      "value": "@data.activity_tasks",
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "activity_count",
+            "@items.length"
+          ],
+          "_raw": "data_changed | set_local: activity_count: @items.length",
+          "_cleaned": "data_changed | set_local: activity_count: @items.length"
+        }
+      ],
+      "parameter_list": {
+        "filter": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)"
+      },
+      "exclude_from_translation": true,
+      "rows": [],
+      "_nested_name": "count_activities",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.activity_tasks",
+            "matchedExpression": "@data.activity_tasks",
+            "type": "data",
+            "fieldName": "activity_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
+              "matchedExpression": "!@item.child_age_list",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
+              "matchedExpression": "@item.child_age_list.includes",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
+              "matchedExpression": "@fields.child_age",
+              "type": "fields",
+              "fieldName": "child_age"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.activity_tasks": [
+          "value"
+        ],
+        "!@item.child_age_list": [
+          "parameter_list.filter"
+        ],
+        "@item.child_age_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "debug_activities",
+      "value": "Total activities: @local.activity_count",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
-      "_nested_name": "title",
+      "_nested_name": "debug_activities",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@global.moments_of_play",
-            "matchedExpression": "@global.moments_of_play",
-            "type": "global",
-            "fieldName": "moments_of_play"
+            "fullExpression": "Total activities: @local.activity_count",
+            "matchedExpression": "@local.activity_count",
+            "type": "local",
+            "fieldName": "activity_count"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@global.moments_of_play": [
+        "@local.activity_count": [
           "value"
         ]
       }
     },
     {
+      "name": "unlocked_count",
+      "value": 0,
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "unlocked_count"
+    },
+    {
+      "type": "data_items",
+      "name": "count_unlocked",
+      "value": "@data.activity_tasks",
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "unlocked_count",
+            "@items.length"
+          ],
+          "_raw": "data_changed | set_local: unlocked_count: @items.length",
+          "_cleaned": "data_changed | set_local: unlocked_count: @items.length"
+        }
+      ],
+      "parameter_list": {
+        "filter": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))"
+      },
+      "exclude_from_translation": true,
+      "rows": [],
+      "_nested_name": "count_unlocked",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.activity_tasks",
+            "matchedExpression": "@data.activity_tasks",
+            "type": "data",
+            "fieldName": "activity_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "!@item.locked",
+              "type": "item",
+              "fieldName": "locked"
+            },
+            {
+              "fullExpression": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "!@item.child_age_list",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@item.child_age_list.includes",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@fields.child_age",
+              "type": "fields",
+              "fieldName": "child_age"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.activity_tasks": [
+          "value"
+        ],
+        "!@item.locked": [
+          "parameter_list.filter"
+        ],
+        "!@item.child_age_list": [
+          "parameter_list.filter"
+        ],
+        "@item.child_age_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "debug_unlocked",
+      "value": "Total unlocked: @local.unlocked_count",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "debug_unlocked",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Total unlocked: @local.unlocked_count",
+            "matchedExpression": "@local.unlocked_count",
+            "type": "local",
+            "fieldName": "unlocked_count"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.unlocked_count": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text_all_locked",
+      "value": "@global.no_unlocked_yet",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.unlocked_count === 0 && @local.filter != \"all\"",
+      "exclude_from_translation": true,
+      "_nested_name": "text_all_locked",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.no_unlocked_yet",
+            "matchedExpression": "@global.no_unlocked_yet",
+            "type": "global",
+            "fieldName": "no_unlocked_yet"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "@local.unlocked_count === 0 && @local.filter != \"all\"",
+            "matchedExpression": "@local.unlocked_count",
+            "type": "local",
+            "fieldName": "unlocked_count"
+          },
+          {
+            "fullExpression": "@local.unlocked_count === 0 && @local.filter != \"all\"",
+            "matchedExpression": "@local.filter",
+            "type": "local",
+            "fieldName": "filter"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.no_unlocked_yet": [
+          "value"
+        ],
+        "@local.unlocked_count": [
+          "condition"
+        ],
+        "@local.filter": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "favourite_count",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "favourite_count"
+    },
+    {
+      "type": "data_items",
+      "name": "count_favourite",
+      "value": "@data.activity_tasks",
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "favourite_count",
+            "@items.length"
+          ],
+          "_raw": "data_changed | set_local: favourite_count: @items.length",
+          "_cleaned": "data_changed | set_local: favourite_count: @items.length"
+        }
+      ],
+      "parameter_list": {
+        "filter": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))"
+      },
+      "exclude_from_translation": true,
+      "rows": [],
+      "_nested_name": "count_favourite",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.activity_tasks",
+            "matchedExpression": "@data.activity_tasks",
+            "type": "data",
+            "fieldName": "activity_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@item.favourite",
+              "type": "item",
+              "fieldName": "favourite"
+            },
+            {
+              "fullExpression": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "!@item.child_age_list",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@item.child_age_list.includes",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@fields.child_age",
+              "type": "fields",
+              "fieldName": "child_age"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.activity_tasks": [
+          "value"
+        ],
+        "@item.favourite": [
+          "parameter_list.filter"
+        ],
+        "!@item.child_age_list": [
+          "parameter_list.filter"
+        ],
+        "@item.child_age_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "debug_favourite",
+      "value": "Total favourite: @local.favourite_count",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "debug_favourite",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Total favourite: @local.favourite_count",
+            "matchedExpression": "@local.favourite_count",
+            "type": "local",
+            "fieldName": "favourite_count"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.favourite_count": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text_no_favourites",
+      "value": "@global.no_favourites_yet",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.favourite_count === 0 && @local.unlocked_count != 0 && @local.filter == \"favourite\"",
+      "exclude_from_translation": true,
+      "_nested_name": "text_no_favourites",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.no_favourites_yet",
+            "matchedExpression": "@global.no_favourites_yet",
+            "type": "global",
+            "fieldName": "no_favourites_yet"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "@local.favourite_count === 0 && @local.unlocked_count != 0 && @local.filter == \"favourite\"",
+            "matchedExpression": "@local.favourite_count",
+            "type": "local",
+            "fieldName": "favourite_count"
+          },
+          {
+            "fullExpression": "@local.favourite_count === 0 && @local.unlocked_count != 0 && @local.filter == \"favourite\"",
+            "matchedExpression": "@local.unlocked_count",
+            "type": "local",
+            "fieldName": "unlocked_count"
+          },
+          {
+            "fullExpression": "@local.favourite_count === 0 && @local.unlocked_count != 0 && @local.filter == \"favourite\"",
+            "matchedExpression": "@local.filter",
+            "type": "local",
+            "fieldName": "filter"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.no_favourites_yet": [
+          "value"
+        ],
+        "@local.favourite_count": [
+          "condition"
+        ],
+        "@local.unlocked_count": [
+          "condition"
+        ],
+        "@local.filter": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "data_items",
+      "name": "pick_random_locked_activity",
+      "value": "@data.activity_tasks",
+      "parameter_list": {
+        "filter": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+        "shuffle": "true",
+        "limit": "1"
+      },
+      "rows": [
+        {
+          "type": "text",
+          "value": "Activity ID: @item.id",
+          "_translations": {
+            "value": {}
+          },
+          "name": "text_1_@item.id",
+          "_nested_name": "pick_random_locked_activity.text_1_@item.id",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "Activity ID: @item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "name": [
+              {
+                "fullExpression": "text_1_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "pick_random_locked_activity.text_1_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "value",
+              "name",
+              "_nested_name"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": "Child_age_list: @item.child_age_list",
+          "_translations": {
+            "value": {}
+          },
+          "name": "text_2_@item.id",
+          "_nested_name": "pick_random_locked_activity.text_2_@item.id",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "Child_age_list: @item.child_age_list",
+                "matchedExpression": "@item.child_age_list",
+                "type": "item",
+                "fieldName": "child_age_list"
+              }
+            ],
+            "name": [
+              {
+                "fullExpression": "text_2_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "pick_random_locked_activity.text_2_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.child_age_list": [
+              "value"
+            ],
+            "@item.id": [
+              "name",
+              "_nested_name"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+          "_translations": {
+            "value": {}
+          },
+          "name": "text_3_@item.id",
+          "_nested_name": "pick_random_locked_activity.text_3_@item.id",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+                "matchedExpression": "@item.locked",
+                "type": "item",
+                "fieldName": "locked"
+              },
+              {
+                "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+                "matchedExpression": "!@item.child_age_list",
+                "type": "item",
+                "fieldName": "child_age_list"
+              },
+              {
+                "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+                "matchedExpression": "@item.child_age_list.includes",
+                "type": "item",
+                "fieldName": "child_age_list"
+              },
+              {
+                "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+                "matchedExpression": "@fields.child_age",
+                "type": "fields",
+                "fieldName": "child_age"
+              }
+            ],
+            "name": [
+              {
+                "fullExpression": "text_3_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "pick_random_locked_activity.text_3_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.locked": [
+              "value"
+            ],
+            "!@item.child_age_list": [
+              "value"
+            ],
+            "@item.child_age_list.includes": [
+              "value"
+            ],
+            "@fields.child_age": [
+              "value"
+            ],
+            "@item.id": [
+              "name",
+              "_nested_name"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": "@item.child_age_list.includes(@fields.child_age)",
+          "_translations": {
+            "value": {}
+          },
+          "name": "text_4_@item.id",
+          "_nested_name": "pick_random_locked_activity.text_4_@item.id",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@item.child_age_list.includes(@fields.child_age)",
+                "matchedExpression": "@item.child_age_list.includes",
+                "type": "item",
+                "fieldName": "child_age_list"
+              },
+              {
+                "fullExpression": "@item.child_age_list.includes(@fields.child_age)",
+                "matchedExpression": "@fields.child_age",
+                "type": "fields",
+                "fieldName": "child_age"
+              }
+            ],
+            "name": [
+              {
+                "fullExpression": "text_4_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "pick_random_locked_activity.text_4_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.child_age_list.includes": [
+              "value"
+            ],
+            "@fields.child_age": [
+              "value"
+            ],
+            "@item.id": [
+              "name",
+              "_nested_name"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "pick_random_locked_activity",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.activity_tasks",
+            "matchedExpression": "@data.activity_tasks",
+            "type": "data",
+            "fieldName": "activity_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@item.locked",
+              "type": "item",
+              "fieldName": "locked"
+            },
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "!@item.child_age_list",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@item.child_age_list.includes",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@fields.child_age",
+              "type": "fields",
+              "fieldName": "child_age"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.activity_tasks": [
+          "value"
+        ],
+        "@item.locked": [
+          "parameter_list.filter"
+        ],
+        "!@item.child_age_list": [
+          "parameter_list.filter"
+        ],
+        "@item.child_age_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
       "type": "button",
-      "name": "button_unlock_all",
-      "value": "@global.unlock_all_moments_of_play",
+      "name": "button",
+      "value": "Randomise",
       "_translations": {
         "value": {}
       },
       "action_list": [
         {
           "trigger": "click",
-          "action_id": "set_data",
-          "args": [],
-          "_raw": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
-          "_cleaned": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
-          "params": {
-            "_list_id": "activity_tasks",
-            "locked": false
-          }
+          "action_id": "emit",
+          "args": [
+            "force_reload"
+          ],
+          "_raw": "click | emit: force_reload",
+          "_cleaned": "click | emit: force_reload"
         }
       ],
-      "exclude_from_translation": true,
-      "_nested_name": "button_unlock_all",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@global.unlock_all_moments_of_play",
-            "matchedExpression": "@global.unlock_all_moments_of_play",
-            "type": "global",
-            "fieldName": "unlock_all_moments_of_play"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@global.unlock_all_moments_of_play": [
-          "value"
-        ]
-      }
+      "_nested_name": "button"
     }
   ],
   "_xlsxPath": "PLH activity library.xlsx",
