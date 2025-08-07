@@ -9,11 +9,11 @@
 | animated_slides | 1 |
 | apple_sign_in_button | 2 |
 | audio | 4 |
-| button | 87 |
+| button | 88 |
 | combo_box | 10 |
 | data_items | 154 |
 | debug_toggle | 1 |
-| display_grid | 5 |
+| display_grid | 4 |
 | display_group | 98 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
@@ -41,7 +41,7 @@
 | text_area | 2 |
 | text_box | 12 |
 | text_bubble | 5 |
-| tile_component | 2 |
+| tile_component | 1 |
 | title | 45 |
 | toggle_bar | 6 |
 | update_action_list | 2 |
@@ -85,7 +85,7 @@
 | assets | KB | MB |
 | --- | --- | --- |
 | total | 81666 KB | 81.7 MB |
-| unused | 3141 KB | 3.1 MB |
+| unused | 3145 KB | 3.1 MB |
 </details>
 
 <details open>
@@ -101,7 +101,7 @@ Assets that appear in app-data but do not have references within sheets
 | android/splash.png | 239 |
 | audio/teen/testimonials/zold_caregiver_test_praise_t.mp3 | 232.3 |
 | audio/yc/celebrate_audio_1.mp3 | 497.1 |
-| contents.json | 5.9 |
+| contents.json | 9.6 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
