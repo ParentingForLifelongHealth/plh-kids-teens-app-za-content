@@ -85,7 +85,7 @@
 | assets | KB | MB |
 | --- | --- | --- |
 | total | 81666 KB | 81.7 MB |
-| unused | 3145 KB | 3.1 MB |
+| unused | 3141 KB | 3.1 MB |
 </details>
 
 <details open>
@@ -101,7 +101,7 @@ Assets that appear in app-data but do not have references within sheets
 | android/splash.png | 239 |
 | audio/teen/testimonials/zold_caregiver_test_praise_t.mp3 | 232.3 |
 | audio/yc/celebrate_audio_1.mp3 | 497.1 |
-| contents.json | 9.6 |
+| contents.json | 5.9 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
