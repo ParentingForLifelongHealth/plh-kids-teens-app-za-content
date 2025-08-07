@@ -382,52 +382,6 @@
           "rows": [
             {
               "type": "button",
-              "name": "button_terms",
-              "value": "<u>@global.terms_and_conditions</u>",
-              "_translations": {
-                "value": {}
-              },
-              "action_list": [
-                {
-                  "trigger": "click",
-                  "action_id": "pop_up",
-                  "args": [
-                    "app_menu_terms"
-                  ],
-                  "_raw": "click | pop_up: app_menu_terms | fullscreen: true",
-                  "_cleaned": "click | pop_up: app_menu_terms | fullscreen: true",
-                  "params": {
-                    "fullscreen": true
-                  }
-                }
-              ],
-              "parameter_list": {
-                "variant": "card",
-                "style": "no-background"
-              },
-              "style_list": [
-                "margin-block: -12px"
-              ],
-              "exclude_from_translation": true,
-              "_nested_name": "before_login.dg_buttons_terms.button_terms",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "<u>@global.terms_and_conditions</u>",
-                    "matchedExpression": "@global.terms_and_conditions",
-                    "type": "global",
-                    "fieldName": "terms_and_conditions"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@global.terms_and_conditions": [
-                  "value"
-                ]
-              }
-            },
-            {
-              "type": "button",
               "name": "button_privacy",
               "value": "<u>@global.privacy_policy</u>",
               "_translations": {
@@ -468,6 +422,52 @@
               },
               "_dynamicDependencies": {
                 "@global.privacy_policy": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "name": "button_terms",
+              "value": "<u>@global.terms_and_conditions</u>",
+              "_translations": {
+                "value": {}
+              },
+              "action_list": [
+                {
+                  "trigger": "click",
+                  "action_id": "pop_up",
+                  "args": [
+                    "app_menu_terms"
+                  ],
+                  "_raw": "click | pop_up: app_menu_terms | fullscreen: true",
+                  "_cleaned": "click | pop_up: app_menu_terms | fullscreen: true",
+                  "params": {
+                    "fullscreen": true
+                  }
+                }
+              ],
+              "parameter_list": {
+                "variant": "card",
+                "style": "no-background"
+              },
+              "style_list": [
+                "margin-block: -12px"
+              ],
+              "exclude_from_translation": true,
+              "_nested_name": "before_login.dg_buttons_terms.button_terms",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "<u>@global.terms_and_conditions</u>",
+                    "matchedExpression": "@global.terms_and_conditions",
+                    "type": "global",
+                    "fieldName": "terms_and_conditions"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.terms_and_conditions": [
                   "value"
                 ]
               }
