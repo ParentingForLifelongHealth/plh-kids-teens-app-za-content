@@ -20,6 +20,12 @@ config.google_drive.assets_folder_ids = [
   "1T93qsaSBbYa-lCF6ChPkfoX85PLugJCZ" // kids_teens_za
 ];
 
+config.ios = {
+  app_id:"international.idems.plh-kids-teens-za",
+  app_name:"ParentApp South Africa",
+  zoom_enabled: true
+};
+
 config.firebase = {
   config: loadEncryptedConfig('firebase.json'),
 }
