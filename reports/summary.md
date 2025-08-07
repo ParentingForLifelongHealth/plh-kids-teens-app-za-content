@@ -9,12 +9,12 @@
 | animated_slides | 1 |
 | apple_sign_in_button | 2 |
 | audio | 4 |
-| button | 84 |
+| button | 87 |
 | combo_box | 10 |
-| data_items | 147 |
+| data_items | 154 |
 | debug_toggle | 1 |
 | display_grid | 5 |
-| display_group | 95 |
+| display_group | 98 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 20 |
@@ -32,12 +32,12 @@
 | round_button | 13 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2533 |
+| set_variable | 2559 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
 | template | 883 |
-| text | 134 |
+| text | 168 |
 | text_area | 2 |
 | text_box | 12 |
 | text_bubble | 5 |
@@ -57,7 +57,7 @@
 | app_update | 1 |
 | auth | 3 |
 | emit: completed | 652 |
-| emit: force_reload | 3 |
+| emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
@@ -70,10 +70,10 @@
 | reset_app | 4 |
 | reset_data | 3 |
 | save_to_device | 2 |
-| set_data | 63 |
-| set_field | 80 |
-| set_item | 69 |
-| set_local | 38 |
+| set_data | 89 |
+| set_field | 81 |
+| set_item | 45 |
+| set_local | 67 |
 | share | 2 |
 | task | 3 |
 | user | 3 |
@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 81433 KB | 81.4 MB |
-| unused | 2913 KB | 2.9 MB |
+| total | 81666 KB | 81.7 MB |
+| unused | 3145 KB | 3.1 MB |
 </details>
 
 <details open>
@@ -99,6 +99,7 @@ Assets that appear in app-data but do not have references within sheets
 | android/icon-foreground.png | 58.3 |
 | android/icon.png | 70.3 |
 | android/splash.png | 239 |
+| audio/teen/testimonials/zold_caregiver_test_praise_t.mp3 | 232.3 |
 | audio/yc/celebrate_audio_1.mp3 | 497.1 |
 | contents.json | 9.6 |
 | images/activities/act_animal_infant.svg | 111.5 |
@@ -223,7 +224,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/testimonials/caregiver/caregiver_test_instruct_t.mp3 | 281.3 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_learn_t.mp3 | 209.4 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_money_t.mp3 | 243.5 | 2 |
-| audio/teen/testimonials/caregiver/caregiver_test_praise_t.mp3 | 232.3 | 2 |
+| audio/teen/testimonials/caregiver/caregiver_test_praise_t.mp3 | 459.3 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_rules_t.mp3 | 241.1 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_safe_t.mp3 | 167.5 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_self_care_t.mp3 | 132.8 | 2 |
@@ -314,7 +315,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/unseen_guesses.svg | 70.8 | 2 |
 | images/activities/walk.svg | 101.3 | 2 |
 | images/backgrounds/kites.svg | 37.3 | 1 |
-| images/backgrounds/library_top_right.png | 1358.6 | 2 |
+| images/backgrounds/library_top_right.png | 1358.6 | 3 |
 | images/backgrounds/mountains.svg | 1.9 | 1 |
 | images/backgrounds/mountains_trees.svg | 51.5 | 1 |
 | images/backgrounds/progress_arc.png | 255.4 | 1 |
@@ -571,7 +572,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/solve/solve_tool_t_4.svg | 33.9 | 2 |
 | images/teen_modules/srh/srh1_t_1.svg | 32.5 | 2 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 | 2 |
-| images/teen_modules/srh/srh1_t_4.svg | 31 | 2 |
+| images/teen_modules/srh/srh1_t_4.svg | 36.9 | 2 |
 | images/teen_modules/srh/srh2_t_1.svg | 49.6 | 2 |
 | images/teen_modules/srh/srh2_t_2.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_3.svg | 28.7 | 2 |
