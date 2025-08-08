@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 81666 KB | 81.7 MB |
-| unused | 3145 KB | 3.1 MB |
+| total | 81687 KB | 81.7 MB |
+| unused | 3109 KB | 3.1 MB |
 </details>
 
 <details open>
@@ -146,9 +146,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/play_white.svg | 0.5 |
 | images/icons/spark.png | 1.6 |
 | images/icons/star_outline_white.svg | 1 |
-| images/logos/PLH.png | 26.6 |
 | images/logos/favicon.png | 6.3 |
-| images/logos/plh.jpeg | 9.4 |
 | images/logos/plh_white.png | 12.8 |
 | images/teen_modules/consequence/consequence1_t_5.svg | 53.6 |
 | images/teen_modules/praise/praise1_t_2.svg | 44.8 |
@@ -446,6 +444,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/trophy_footer_active.svg | 3.9 | 1 |
 | images/icons/world.svg | 6.2 | 1 |
 | images/logos/IDEMS.png | 84.6 | 1 |
+| images/logos/PLH.png | 26.6 | 1 |
 | images/logos/plh_logomark.png | 20.5 | 3 |
 | images/onboarding/facilitator_onboarding_icon.svg | 18.2 | 1 |
 | images/onboarding/frustrated.svg | 22.5 | 1 |
@@ -572,7 +571,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/solve/solve_tool_t_4.svg | 33.9 | 2 |
 | images/teen_modules/srh/srh1_t_1.svg | 32.5 | 2 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 | 2 |
-| images/teen_modules/srh/srh1_t_4.svg | 36.9 | 2 |
+| images/teen_modules/srh/srh1_t_4.svg | 31 | 2 |
 | images/teen_modules/srh/srh2_t_1.svg | 49.6 | 2 |
 | images/teen_modules/srh/srh2_t_2.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_3.svg | 28.7 | 2 |
