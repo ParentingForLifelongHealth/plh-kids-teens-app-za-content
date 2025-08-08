@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 81666 KB | 81.7 MB |
-| unused | 3145 KB | 3.1 MB |
+| total | 81693 KB | 81.7 MB |
+| unused | 3105 KB | 3.1 MB |
 </details>
 
 <details open>
@@ -101,7 +101,7 @@ Assets that appear in app-data but do not have references within sheets
 | android/splash.png | 239 |
 | audio/teen/testimonials/zold_caregiver_test_praise_t.mp3 | 232.3 |
 | audio/yc/celebrate_audio_1.mp3 | 497.1 |
-| contents.json | 9.6 |
+| contents.json | 5.9 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
@@ -146,9 +146,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/play_white.svg | 0.5 |
 | images/icons/spark.png | 1.6 |
 | images/icons/star_outline_white.svg | 1 |
-| images/logos/PLH.png | 26.6 |
 | images/logos/favicon.png | 6.3 |
-| images/logos/plh.jpeg | 9.4 |
 | images/logos/plh_white.png | 12.8 |
 | images/teen_modules/consequence/consequence1_t_5.svg | 53.6 |
 | images/teen_modules/praise/praise1_t_2.svg | 44.8 |
@@ -446,6 +444,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/trophy_footer_active.svg | 3.9 | 1 |
 | images/icons/world.svg | 6.2 | 1 |
 | images/logos/IDEMS.png | 84.6 | 1 |
+| images/logos/PLH.png | 26.6 | 1 |
 | images/logos/plh_logomark.png | 20.5 | 3 |
 | images/onboarding/facilitator_onboarding_icon.svg | 18.2 | 1 |
 | images/onboarding/frustrated.svg | 22.5 | 1 |
