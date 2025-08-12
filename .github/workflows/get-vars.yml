@@ -51,7 +51,7 @@ jobs:
       FIREBASE_HOSTING_TARGET: ${{ steps.export_vars.outputs.FIREBASE_HOSTING_TARGET }}
       FIREBASE_PROJECT_ID: ${{ steps.export_vars.outputs.FIREBASE_PROJECT_ID }}
       FIREBASE_HOSTING_CHANNEL: ${{ steps.export_vars.outputs.FIREBASE_HOSTING_CHANNEL }}
-      FIREBASE_HOSTING_RELEASE_TARGET: ${{ steps.export_vars.outputs.FIREBASE_HOSTING_CHANNEL }} 
+      FIREBASE_HOSTING_RELEASE_TARGET: ${{ steps.export_vars.outputs.FIREBASE_HOSTING_RELEASE_TARGET }} 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
