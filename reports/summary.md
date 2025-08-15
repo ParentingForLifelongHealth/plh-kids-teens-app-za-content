@@ -32,7 +32,7 @@
 | round_button | 13 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2559 |
+| set_variable | 2563 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
@@ -84,7 +84,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 80599 KB | 80.6 MB |
+| total | 80595 KB | 80.6 MB |
 | unused | 80084 KB | 80.1 MB |
 </details>
 
@@ -384,7 +384,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -671,7 +671,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/solve/solve_tool_t_4.svg | 33.9 | 2 |
 | images/teen_modules/srh/srh1_t_1.svg | 32.5 | 2 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 | 2 |
-| images/teen_modules/srh/srh1_t_4.svg | 36.9 | 2 |
+| images/teen_modules/srh/srh1_t_4.svg | 31 | 2 |
 | images/teen_modules/srh/srh2_t_1.svg | 49.6 | 2 |
 | images/teen_modules/srh/srh2_t_2.svg | 44 | 2 |
 | images/teen_modules/srh/srh2_t_3.svg | 28.7 | 2 |
