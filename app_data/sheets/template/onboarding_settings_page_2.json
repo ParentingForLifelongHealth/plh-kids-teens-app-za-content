@@ -84,6 +84,7 @@
         "speaker_position": "@local.speaker_position",
         "variant": "@local.variant"
       },
+      "exclude_from_translation": true,
       "_nested_name": "text_bubble",
       "_dynamicFields": {
         "value": [
@@ -157,6 +158,7 @@
       "parameter_list": {
         "style": "emphasised"
       },
+      "exclude_from_translation": true,
       "_nested_name": "question_user_name",
       "_dynamicFields": {
         "value": [
@@ -185,6 +187,7 @@
         "placeholder": "@global.placeholder_user_name"
       },
       "condition": "!!@fields.user_name",
+      "exclude_from_translation": true,
       "_nested_name": "user_name_input",
       "_dynamicFields": {
         "value": [
