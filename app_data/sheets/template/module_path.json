@@ -213,13 +213,23 @@
       "type": "display_group",
       "name": "dg_all_modules",
       "parameter_list": {
+        "background_image_asset": "images/background_pattern_blue.svg",
         "style": "column"
       },
       "condition": "@local.completed_count !== undefined",
       "exclude_from_translation": true,
+      "style_list": [
+        "padding-top: 24px",
+        "background-size: 670px",
+        "background-repeat: repeat"
+      ],
       "rows": [
         {
           "type": "progress_path",
+          "parameter_list": {
+            "variant": "curved",
+            "vertical_spacing": "10"
+          },
           "exclude_from_translation": true,
           "rows": [
             {

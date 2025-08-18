@@ -74,11 +74,18 @@
       "_nested_name": "variant"
     },
     {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_6",
+      "_nested_name": "set_variable_6"
+    },
+    {
       "name": "facilitator_message",
       "value": "@global.facilitator_message_3",
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "facilitator_message",
       "_dynamicFields": {
@@ -103,6 +110,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "question_child_age",
       "_dynamicFields": {
@@ -128,6 +136,7 @@
         "value": {}
       },
       "condition": "@fields.household_children > 1",
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "facilitator_message",
       "_dynamicFields": {
@@ -164,6 +173,7 @@
         "value": {}
       },
       "condition": "@fields.household_children > 1",
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "question_child_age",
       "_dynamicFields": {
@@ -502,6 +512,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "child_age_tag",
       "_dynamicFields": {
