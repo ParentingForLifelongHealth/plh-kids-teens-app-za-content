@@ -19,7 +19,8 @@
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: relax"
+        "category_id: relax",
+        "nested: FALSE"
       ],
       "output_target": "{@gen.id}_relax | local_only;"
     },
@@ -33,16 +34,25 @@
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: check_in"
+        "category_id: check_in",
+        "nested: FALSE"
       ],
       "output_target": "{@gen.id}_check_in | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "!nested"
+      ],
+      "input_source": "{@gen.id}_articles",
+      "output_target": "{@gen.id}_testing | local_only;"
     },
     {
       "operation": "concat",
       "args_list": [
         "{@gen.id}_relax",
         "{@gen.id}_check_in",
-        "{@gen.id}_articles"
+        "{@gen.id}_testing"
       ],
       "input_source": false
     },

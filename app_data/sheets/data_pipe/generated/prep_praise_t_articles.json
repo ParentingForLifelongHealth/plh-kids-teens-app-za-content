@@ -6,14 +6,15 @@
     {
       "operation": "filter",
       "args_list": [
-        "id == \"relax_17\""
+        "id == \"relax_1\""
       ],
       "input_source": "relax"
     },
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: relax"
+        "category_id: relax",
+        "nested: FALSE"
       ],
       "output_target": "praise_t_relax | local_only;"
     },
@@ -27,16 +28,25 @@
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: check_in"
+        "category_id: check_in",
+        "nested: FALSE"
       ],
       "output_target": "praise_t_check_in | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "!nested"
+      ],
+      "input_source": "praise_t_articles",
+      "output_target": "praise_t_testing | local_only;"
     },
     {
       "operation": "concat",
       "args_list": [
         "praise_t_relax",
         "praise_t_check_in",
-        "praise_t_articles"
+        "praise_t_testing"
       ],
       "input_source": false
     },

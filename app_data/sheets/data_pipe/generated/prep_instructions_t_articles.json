@@ -6,14 +6,15 @@
     {
       "operation": "filter",
       "args_list": [
-        "id == \"relax_4\""
+        "id == \"relax_2\""
       ],
       "input_source": "relax"
     },
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: relax"
+        "category_id: relax",
+        "nested: FALSE"
       ],
       "output_target": "instructions_t_relax | local_only;"
     },
@@ -27,16 +28,25 @@
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: check_in"
+        "category_id: check_in",
+        "nested: FALSE"
       ],
       "output_target": "instructions_t_check_in | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "!nested"
+      ],
+      "input_source": "instructions_t_articles",
+      "output_target": "instructions_t_testing | local_only;"
     },
     {
       "operation": "concat",
       "args_list": [
         "instructions_t_relax",
         "instructions_t_check_in",
-        "instructions_t_articles"
+        "instructions_t_testing"
       ],
       "input_source": false
     },

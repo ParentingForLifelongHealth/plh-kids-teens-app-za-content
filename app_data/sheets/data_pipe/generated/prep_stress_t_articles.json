@@ -13,7 +13,8 @@
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: relax"
+        "category_id: relax",
+        "nested: FALSE"
       ],
       "output_target": "stress_t_relax | local_only;"
     },
@@ -27,16 +28,25 @@
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: check_in"
+        "category_id: check_in",
+        "nested: FALSE"
       ],
       "output_target": "stress_t_check_in | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "!nested"
+      ],
+      "input_source": "stress_t_articles",
+      "output_target": "stress_t_testing | local_only;"
     },
     {
       "operation": "concat",
       "args_list": [
         "stress_t_relax",
         "stress_t_check_in",
-        "stress_t_articles"
+        "stress_t_testing"
       ],
       "input_source": false
     },
