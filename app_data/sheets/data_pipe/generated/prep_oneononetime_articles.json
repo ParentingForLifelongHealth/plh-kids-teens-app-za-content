@@ -13,7 +13,8 @@
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: relax"
+        "category_id: relax",
+        "nested: FALSE"
       ],
       "output_target": "oneononetime_relax | local_only;"
     },
@@ -27,16 +28,25 @@
     {
       "operation": "append_columns",
       "args_list": [
-        "category_id: check_in"
+        "category_id: check_in",
+        "nested: FALSE"
       ],
       "output_target": "oneononetime_check_in | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "!nested"
+      ],
+      "input_source": "oneononetime_articles",
+      "output_target": "oneononetime_testing | local_only;"
     },
     {
       "operation": "concat",
       "args_list": [
         "oneononetime_relax",
         "oneononetime_check_in",
-        "oneononetime_articles"
+        "oneononetime_testing"
       ],
       "input_source": false
     },
