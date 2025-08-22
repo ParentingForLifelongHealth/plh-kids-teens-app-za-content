@@ -231,6 +231,46 @@
       }
     },
     {
+      "type": "text",
+      "name": "print_media_title",
+      "value": "@local.row_data.title",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "parameter_list": {
+        "style": "emphasised"
+      },
+      "condition": "!!@local.row_data.title",
+      "_nested_name": "print_media_title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.row_data.title",
+            "matchedExpression": "@local.row_data.title",
+            "type": "local",
+            "fieldName": "row_data"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@local.row_data.title",
+            "matchedExpression": "!@local.row_data.title",
+            "type": "local",
+            "fieldName": "row_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.row_data.title": [
+          "value"
+        ],
+        "!@local.row_data.title": [
+          "condition"
+        ]
+      }
+    },
+    {
       "type": "audio",
       "name": "audio",
       "value": "@local.row_data.media_asset",
@@ -239,7 +279,6 @@
       },
       "exclude_from_translation": true,
       "parameter_list": {
-        "title": "@local.row_data.title",
         "transcript_text": "@local.row_data.transcript"
       },
       "condition": "@local.row_data.media_type == \"audio\"",
@@ -254,14 +293,6 @@
           }
         ],
         "parameter_list": {
-          "title": [
-            {
-              "fullExpression": "@local.row_data.title",
-              "matchedExpression": "@local.row_data.title",
-              "type": "local",
-              "fieldName": "row_data"
-            }
-          ],
           "transcript_text": [
             {
               "fullExpression": "@local.row_data.transcript",
@@ -283,9 +314,6 @@
       "_dynamicDependencies": {
         "@local.row_data.media_asset": [
           "value"
-        ],
-        "@local.row_data.title": [
-          "parameter_list.title"
         ],
         "@local.row_data.transcript": [
           "parameter_list.transcript_text"
