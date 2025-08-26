@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 83294 KB | 83.3 MB |
-| unused | 79926 KB | 79.9 MB |
+| total | 74863 KB | 74.9 MB |
+| unused | 80113 KB | 80.1 MB |
 </details>
 
 <details open>
@@ -226,7 +226,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/kw_facilitator_rd.jpg | 35.2 |
 | images/kw_facilitator_rd.png | 87.3 |
 | images/kw_facilitator_sq.jpg | 30 |
-| images/logos/favicon.png | 6.3 |
+| images/logos/favicon.png | 193.7 |
 | images/logos/kuwait.png | 248 |
 | images/logos/plh.jpeg | 9.4 |
 | images/logos/plh_white.png | 12.8 |
@@ -347,24 +347,24 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/topic_intros/stress_intro_t.mp3 | 370.3 | 2 |
 | audio/teen/topic_intros/svp_intro_t.mp3 | 603.8 | 2 |
 | audio/teen/topic_intros/workshops_reflection_t.mp3 | 258.6 | 2 |
-| audio/yc/1on1_audio_1.mp3 | 891.7 | 2 |
-| audio/yc/1on1_audio_2.mp3 | 619.1 | 2 |
-| audio/yc/care_audio_1.mp3 | 527.5 | 2 |
-| audio/yc/care_audio_2.mp3 | 1166.3 | 2 |
-| audio/yc/consequences_audio_1.mp3 | 800.2 | 2 |
-| audio/yc/consequences_audio_2.mp3 | 1206.6 | 2 |
-| audio/yc/feelings_audio_1.mp3 | 336 | 2 |
-| audio/yc/feelings_audio_2.mp3 | 635.8 | 2 |
-| audio/yc/instructions_audio_1.mp3 | 613.7 | 2 |
-| audio/yc/instructions_audio_2.mp3 | 784.2 | 2 |
-| audio/yc/learn_audio_1.mp3 | 563.1 | 2 |
-| audio/yc/learn_audio_2.mp3 | 254.5 | 2 |
-| audio/yc/praise_audio_1.mp3 | 344 | 2 |
-| audio/yc/praise_audio_2.mp3 | 1042.6 | 2 |
-| audio/yc/rules_audio_1.mp3 | 427.6 | 2 |
-| audio/yc/rules_audio_2.mp3 | 742.7 | 2 |
-| audio/yc/solve_audio_1.mp3 | 983.4 | 2 |
-| audio/yc/solve_audio_2.mp3 | 468.1 | 2 |
+| audio/yc/1on1_audio_1.mp3 | 267.1 | 2 |
+| audio/yc/1on1_audio_2.mp3 | 401.8 | 2 |
+| audio/yc/care_audio_1.mp3 | 267.3 | 2 |
+| audio/yc/care_audio_2.mp3 | 130.8 | 2 |
+| audio/yc/consequences_audio_1.mp3 | 245 | 2 |
+| audio/yc/consequences_audio_2.mp3 | 369.1 | 2 |
+| audio/yc/feelings_audio_1.mp3 | 106.7 | 2 |
+| audio/yc/feelings_audio_2.mp3 | 132.4 | 2 |
+| audio/yc/instructions_audio_1.mp3 | 309.2 | 2 |
+| audio/yc/instructions_audio_2.mp3 | 226.8 | 2 |
+| audio/yc/learn_audio_1.mp3 | 110.2 | 2 |
+| audio/yc/learn_audio_2.mp3 | 131.7 | 2 |
+| audio/yc/praise_audio_1.mp3 | 93.9 | 2 |
+| audio/yc/praise_audio_2.mp3 | 515.4 | 2 |
+| audio/yc/rules_audio_1.mp3 | 83.9 | 2 |
+| audio/yc/rules_audio_2.mp3 | 237.1 | 2 |
+| audio/yc/solve_audio_1.mp3 | 161.6 | 2 |
+| audio/yc/solve_audio_2.mp3 | 187.6 | 2 |
 | images/activities/act_animal.svg | 135.4 | 2 |
 | images/activities/act_emotions.svg | 106.6 | 4 |
 | images/activities/artist.svg | 2210.9 | 2 |
@@ -373,7 +373,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 118.7 | 4 |
+| images/activities/circle_dance.svg | 117.2 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
