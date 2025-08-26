@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 83293 KB | 83.3 MB |
-| unused | 79940 KB | 79.9 MB |
+| total | 83294 KB | 83.3 MB |
+| unused | 79926 KB | 79.9 MB |
 </details>
 
 <details open>
@@ -95,11 +95,10 @@ Assets that appear in app-data but do not have references within sheets
 
 | path | size_kb |
 | --- | --- |
-| android/icon-background.png | 21.4 |
-| android/icon-foreground.png | 234.1 |
-| android/icon.png | 70.3 |
-| android/old_icon-foreground.png | 58.3 |
-| android/splash.png | 239 |
+| android/icon-background.png | 3.9 |
+| android/icon-foreground.png | 193.7 |
+| android/icon.png | 215.3 |
+| android/splash.png | 195.7 |
 | audio/care_audio_1.mp3 | 527.5 |
 | audio/care_audio_2.mp3 | 1166.3 |
 | audio/celebrate_audio_1.mp3 | 497.1 |
@@ -374,7 +373,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
