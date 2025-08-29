@@ -192,8 +192,7 @@
       },
       "exclude_from_translation": true,
       "style_list": [
-        "justify-content: space-between",
-        "align-items: baseline"
+        "justify-content: space-between"
       ],
       "rows": [
         {
@@ -205,7 +204,8 @@
           },
           "exclude_from_translation": true,
           "style_list": [
-            "height: @local.home_screen_logo_height"
+            "height: @local.home_screen_logo_height",
+            "margin: 4px"
           ],
           "_nested_name": "dg_top.image",
           "_dynamicFields": {
@@ -264,6 +264,7 @@
             "position": "right"
           },
           "exclude_from_translation": true,
+          "hidden": true,
           "_nested_name": "dg_top.display_modules_as_list",
           "_dynamicFields": {
             "value": [
@@ -336,7 +337,7 @@
       "type": "text",
       "name": "margin",
       "style_list": [
-        "margin-top: -24px"
+        "margin-top: -32px"
       ],
       "_nested_name": "margin"
     },
