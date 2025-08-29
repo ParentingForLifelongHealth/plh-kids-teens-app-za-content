@@ -978,6 +978,12 @@
       }
     },
     {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_22",
+      "_nested_name": "set_variable_22"
+    },
+    {
       "type": "data_items",
       "name": "pick_random_locked_activity",
       "value": "@data.activity_tasks",
@@ -986,6 +992,7 @@
         "shuffle": "true",
         "limit": "1"
       },
+      "exclude_from_translation": true,
       "rows": [
         {
           "type": "text",
@@ -993,6 +1000,7 @@
           "_translations": {
             "value": {}
           },
+          "exclude_from_translation": true,
           "name": "text_1_@item.id",
           "_nested_name": "pick_random_locked_activity.text_1_@item.id",
           "_dynamicFields": {
@@ -1035,6 +1043,7 @@
           "_translations": {
             "value": {}
           },
+          "exclude_from_translation": true,
           "name": "text_2_@item.id",
           "_nested_name": "pick_random_locked_activity.text_2_@item.id",
           "_dynamicFields": {
@@ -1079,6 +1088,7 @@
           "_translations": {
             "value": {}
           },
+          "exclude_from_translation": true,
           "name": "text_3_@item.id",
           "_nested_name": "pick_random_locked_activity.text_3_@item.id",
           "_dynamicFields": {
@@ -1150,6 +1160,7 @@
           "_translations": {
             "value": {}
           },
+          "exclude_from_translation": true,
           "name": "text_4_@item.id",
           "_nested_name": "pick_random_locked_activity.text_4_@item.id",
           "_dynamicFields": {
@@ -1273,6 +1284,7 @@
           "_cleaned": "click | emit: force_reload"
         }
       ],
+      "exclude_from_translation": true,
       "_nested_name": "button"
     }
   ],
