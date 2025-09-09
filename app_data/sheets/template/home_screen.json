@@ -183,17 +183,95 @@
       }
     },
     {
+      "name": "now",
+      "value": "@calc(timestamp())",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "now",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@calc(timestamp())",
+            "matchedExpression": "@calc(timestamp())",
+            "type": "calc",
+            "fieldName": "timestamp()"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@calc(timestamp())": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "has_been_clicked_previously",
+      "value": "!!@fields.homescreen_quickstart_click_history",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "has_been_clicked_previously",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "!!@fields.homescreen_quickstart_click_history",
+            "matchedExpression": "!@fields.homescreen_quickstart_click_history",
+            "type": "fields",
+            "fieldName": "homescreen_quickstart_click_history"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@fields.homescreen_quickstart_click_history": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "updated_value",
+      "value": "@fields.homescreen_quickstart_click_history;  @local.now",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "updated_value",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.homescreen_quickstart_click_history;  @local.now",
+            "matchedExpression": "@fields.homescreen_quickstart_click_history",
+            "type": "fields",
+            "fieldName": "homescreen_quickstart_click_history"
+          },
+          {
+            "fullExpression": "@fields.homescreen_quickstart_click_history;  @local.now",
+            "matchedExpression": "@local.now",
+            "type": "local",
+            "fieldName": "now"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.homescreen_quickstart_click_history": [
+          "value"
+        ],
+        "@local.now": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "display_group",
       "name": "dg_top",
       "parameter_list": {
         "sticky": "top",
-        "style": "background_solid",
+        "style": "background_solid column",
         "variant": "inline_padding"
       },
       "exclude_from_translation": true,
-      "style_list": [
-        "justify-content: space-between"
-      ],
       "rows": [
         {
           "type": "image",
@@ -329,6 +407,148 @@
               "parameter_list.true_text"
             ]
           }
+        },
+        {
+          "type": "template",
+          "name": "home_screen_header",
+          "value": "home_screen_header",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "set_item",
+              "args": [],
+              "_raw": "completed | set_item | homescreen_quickstart_click_history: @local.now",
+              "_cleaned": "completed | set_item | homescreen_quickstart_click_history: @local.now",
+              "params": {
+                "homescreen_quickstart_click_history": "@local.now"
+              }
+            }
+          ],
+          "condition": "!@local.has_been_clicked_previously",
+          "style_list": true,
+          "rows": [],
+          "_nested_name": "dg_top.home_screen_header",
+          "_dynamicFields": {
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_item | homescreen_quickstart_click_history: @local.now",
+                    "matchedExpression": "@local.now",
+                    "type": "local",
+                    "fieldName": "now"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "completed | set_item | homescreen_quickstart_click_history: @local.now",
+                    "matchedExpression": "@local.now",
+                    "type": "local",
+                    "fieldName": "now"
+                  }
+                ],
+                "params": {
+                  "homescreen_quickstart_click_history": [
+                    {
+                      "fullExpression": "@local.now",
+                      "matchedExpression": "@local.now",
+                      "type": "local",
+                      "fieldName": "now"
+                    }
+                  ]
+                }
+              }
+            },
+            "condition": [
+              {
+                "fullExpression": "!@local.has_been_clicked_previously",
+                "matchedExpression": "!@local.has_been_clicked_previously",
+                "type": "local",
+                "fieldName": "has_been_clicked_previously"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.now": [
+              "action_list.0._raw",
+              "action_list.0._cleaned",
+              "action_list.0.params.homescreen_quickstart_click_history"
+            ],
+            "!@local.has_been_clicked_previously": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "template",
+          "name": "home_screen_header",
+          "value": "home_screen_header",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "set_item",
+              "args": [],
+              "_raw": "completed | set_item | homescreen_quickstart_click_history: @local.updated_value",
+              "_cleaned": "completed | set_item | homescreen_quickstart_click_history: @local.updated_value",
+              "params": {
+                "homescreen_quickstart_click_history": "@local.updated_value"
+              }
+            }
+          ],
+          "condition": "@local.has_been_clicked_previously",
+          "style_list": true,
+          "rows": [],
+          "_nested_name": "dg_top.home_screen_header",
+          "_dynamicFields": {
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_item | homescreen_quickstart_click_history: @local.updated_value",
+                    "matchedExpression": "@local.updated_value",
+                    "type": "local",
+                    "fieldName": "updated_value"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "completed | set_item | homescreen_quickstart_click_history: @local.updated_value",
+                    "matchedExpression": "@local.updated_value",
+                    "type": "local",
+                    "fieldName": "updated_value"
+                  }
+                ],
+                "params": {
+                  "homescreen_quickstart_click_history": [
+                    {
+                      "fullExpression": "@local.updated_value",
+                      "matchedExpression": "@local.updated_value",
+                      "type": "local",
+                      "fieldName": "updated_value"
+                    }
+                  ]
+                }
+              }
+            },
+            "condition": [
+              {
+                "fullExpression": "@local.has_been_clicked_previously",
+                "matchedExpression": "@local.has_been_clicked_previously",
+                "type": "local",
+                "fieldName": "has_been_clicked_previously"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.updated_value": [
+              "action_list.0._raw",
+              "action_list.0._cleaned",
+              "action_list.0.params.homescreen_quickstart_click_history"
+            ],
+            "@local.has_been_clicked_previously": [
+              "condition"
+            ]
+          }
         }
       ],
       "_nested_name": "dg_top"
@@ -336,6 +556,7 @@
     {
       "type": "text",
       "name": "margin",
+      "condition": false,
       "style_list": [
         "margin-top: -32px"
       ],
