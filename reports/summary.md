@@ -84,8 +84,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 76471 KB | 76.5 MB |
-| unused | 2791 KB | 2.8 MB |
+| total | 74741 KB | 74.7 MB |
+| unused | 2787 KB | 2.8 MB |
 </details>
 
 <details open>
@@ -99,7 +99,7 @@ Assets that appear in app-data but do not have references within sheets
 | android/icon-foreground.png | 193.7 |
 | android/icon.png | 215.3 |
 | android/splash.png | 195.7 |
-| contents.json | 9.6 |
+| contents.json | 5.9 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
@@ -155,6 +155,14 @@ Assets that have references within sheets but do not appear in app-data
 
 | path | count |
 | --- | --- |
+| audio/relax/relax_11.mp3 | 1 |
+| audio/relax/relax_17.mp3 | 1 |
+| audio/relax/relax_18.mp3 | 1 |
+| audio/relax/relax_21.mp3 | 1 |
+| audio/relax/relax_22.mp3 | 1 |
+| audio/relax/relax_23.mp3 | 1 |
+| audio/relax/relax_24.mp3 | 1 |
+| audio/relax/relax_6.mp3 | 1 |
 | images/backgrounds/activity_bottom_left.png | 1 |
 | images/icons/docs.svg | 1 |
 | images/icons/download.svg | 1 |
@@ -177,25 +185,17 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | --- | --- | --- |
 | audio/relax/relax_1.mp3 | 265.1 | 6 |
 | audio/relax/relax_10.mp3 | 404.9 | 2 |
-| audio/relax/relax_11.mp3 | 445.6 | 1 |
 | audio/relax/relax_12.mp3 | 539.7 | 2 |
 | audio/relax/relax_13.mp3 | 398.4 | 1 |
 | audio/relax/relax_14.mp3 | 256.9 | 2 |
 | audio/relax/relax_15.mp3 | 125 | 2 |
 | audio/relax/relax_16.mp3 | 150.9 | 2 |
-| audio/relax/relax_17.mp3 | 148 | 1 |
-| audio/relax/relax_18.mp3 | 312.9 | 1 |
 | audio/relax/relax_19.mp3 | 454 | 2 |
 | audio/relax/relax_2.mp3 | 404.4 | 6 |
 | audio/relax/relax_20.mp3 | 539.8 | 2 |
-| audio/relax/relax_21.mp3 | 189.3 | 1 |
-| audio/relax/relax_22.mp3 | 109.8 | 1 |
-| audio/relax/relax_23.mp3 | 122.9 | 1 |
-| audio/relax/relax_24.mp3 | 121.3 | 1 |
 | audio/relax/relax_3.mp3 | 235.1 | 6 |
 | audio/relax/relax_4.mp3 | 514.5 | 3 |
 | audio/relax/relax_5.mp3 | 195.7 | 4 |
-| audio/relax/relax_6.mp3 | 280.7 | 1 |
 | audio/relax/relax_7.mp3 | 285.3 | 2 |
 | audio/relax/relax_8.mp3 | 302 | 2 |
 | audio/relax/relax_9.mp3 | 576.6 | 3 |
