@@ -24,8 +24,9 @@
             "value": {}
           },
           "style_list": [
-            "height: 200px",
-            "margin-block: 24px"
+            "height: @global.onboarding_header_image_height",
+            "margin-top: 48px",
+            "margin-bottom: 24px"
           ],
           "_nested_name": "dg_top.logo",
           "_dynamicFields": {
@@ -36,11 +37,24 @@
                 "type": "global",
                 "fieldName": "onboarding_header_image_asset"
               }
-            ]
+            ],
+            "style_list": {
+              "0": [
+                {
+                  "fullExpression": "height: @global.onboarding_header_image_height",
+                  "matchedExpression": "@global.onboarding_header_image_height",
+                  "type": "global",
+                  "fieldName": "onboarding_header_image_height"
+                }
+              ]
+            }
           },
           "_dynamicDependencies": {
             "@global.onboarding_header_image_asset": [
               "value"
+            ],
+            "@global.onboarding_header_image_height": [
+              "style_list.0"
             ]
           }
         }
@@ -68,7 +82,7 @@
       "type": "text",
       "name": "spacer",
       "style_list": [
-        "margin-top: 48px"
+        "margin-top: 24px"
       ],
       "_nested_name": "spacer"
     }
