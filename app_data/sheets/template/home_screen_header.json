@@ -4,6 +4,30 @@
   "status": "released",
   "rows": [
     {
+      "name": "countdown_days",
+      "value": "@fields.countdown_days",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "countdown_days",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.countdown_days",
+            "matchedExpression": "@fields.countdown_days",
+            "type": "fields",
+            "fieldName": "countdown_days"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.countdown_days": [
+          "value"
+        ]
+      }
+    },
+    {
       "name": "hp_completed_ids",
       "type": "set_variable",
       "_nested_name": "hp_completed_ids"
@@ -81,7 +105,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= +@fields.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
+        "filter": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
       },
       "exclude_from_translation": true,
       "rows": [],
@@ -98,37 +122,37 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= +@fields.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@item.completed",
               "type": "item",
               "fieldName": "completed"
             },
             {
-              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= +@fields.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@item.completed_ts",
               "type": "item",
               "fieldName": "completed_ts"
             },
             {
-              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= +@fields.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
-              "matchedExpression": "@fields.countdown_days",
-              "type": "fields",
+              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@local.countdown_days",
+              "type": "local",
               "fieldName": "countdown_days"
             },
             {
-              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= +@fields.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "!@item.tag_list",
               "type": "item",
               "fieldName": "tag_list"
             },
             {
-              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= +@fields.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@item.tag_list.includes",
               "type": "item",
               "fieldName": "tag_list"
             },
             {
-              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= +@fields.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "fullExpression": "@item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@fields.child_age_tag",
               "type": "fields",
               "fieldName": "child_age_tag"
@@ -146,7 +170,7 @@
         "@item.completed_ts": [
           "parameter_list.filter"
         ],
-        "@fields.countdown_days": [
+        "@local.countdown_days": [
           "parameter_list.filter"
         ],
         "!@item.tag_list": [
@@ -407,9 +431,144 @@
       }
     },
     {
+      "name": "button_text",
+      "value": "**@local.button_prefix @local.module_title**",
+      "_translations": {
+        "value": {}
+      },
+      "condition": false,
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "button_text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "**@local.button_prefix @local.module_title**",
+            "matchedExpression": "@local.button_prefix",
+            "type": "local",
+            "fieldName": "button_prefix"
+          },
+          {
+            "fullExpression": "**@local.button_prefix @local.module_title**",
+            "matchedExpression": "@local.module_title",
+            "type": "local",
+            "fieldName": "module_title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.button_prefix": [
+          "value"
+        ],
+        "@local.module_title": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "hp_check_in_row",
+      "value": "hp_check_in.@local.hp_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "hp_check_in_row",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "hp_check_in.@local.hp_id",
+            "matchedExpression": "@local.hp_id",
+            "type": "local",
+            "fieldName": "hp_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.hp_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "hp_check_in_data",
+      "value": "@data.@local.hp_check_in_row",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "hp_check_in_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.hp_check_in_row",
+            "matchedExpression": "@local.hp_check_in_row",
+            "type": "local",
+            "fieldName": "hp_check_in_row"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.hp_check_in_row": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "hp_check_in_title",
+      "value": "@local.hp_check_in_data.activity_title",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "hp_check_in_title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.hp_check_in_data.activity_title",
+            "matchedExpression": "@local.hp_check_in_data.activity_title",
+            "type": "local",
+            "fieldName": "hp_check_in_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.hp_check_in_data.activity_title": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "button_text",
+      "value": "**@local.hp_check_in_title**",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "button_text",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "**@local.hp_check_in_title**",
+            "matchedExpression": "@local.hp_check_in_title",
+            "type": "local",
+            "fieldName": "hp_check_in_title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.hp_check_in_title": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "button",
       "name": "button_start",
-      "value": "**@local.button_prefix @local.module_title**",
+      "value": "@local.button_text",
       "_translations": {
         "value": {}
       },
@@ -446,16 +605,10 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "**@local.button_prefix @local.module_title**",
-            "matchedExpression": "@local.button_prefix",
+            "fullExpression": "@local.button_text",
+            "matchedExpression": "@local.button_text",
             "type": "local",
-            "fieldName": "button_prefix"
-          },
-          {
-            "fullExpression": "**@local.button_prefix @local.module_title**",
-            "matchedExpression": "@local.module_title",
-            "type": "local",
-            "fieldName": "module_title"
+            "fieldName": "button_text"
           }
         ],
         "action_list": {
@@ -498,10 +651,7 @@
         ]
       },
       "_dynamicDependencies": {
-        "@local.button_prefix": [
-          "value"
-        ],
-        "@local.module_title": [
+        "@local.button_text": [
           "value"
         ],
         "@local.hp_review_template": [

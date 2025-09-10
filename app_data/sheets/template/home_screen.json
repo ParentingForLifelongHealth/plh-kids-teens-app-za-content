@@ -265,7 +265,7 @@
     },
     {
       "type": "display_group",
-      "name": "dg_top",
+      "name": "dg_sticky_top",
       "parameter_list": {
         "sticky": "top",
         "style": "background_solid column",
@@ -274,139 +274,150 @@
       "exclude_from_translation": true,
       "rows": [
         {
-          "type": "image",
-          "name": "image",
-          "value": "@local.home_screen_logo",
-          "_translations": {
-            "value": {}
-          },
+          "type": "display_group",
+          "name": "dg_row",
           "exclude_from_translation": true,
           "style_list": [
-            "height: @local.home_screen_logo_height",
-            "margin: 4px"
+            "justify-content: space-between"
           ],
-          "_nested_name": "dg_top.image",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@local.home_screen_logo",
-                "matchedExpression": "@local.home_screen_logo",
-                "type": "local",
-                "fieldName": "home_screen_logo"
-              }
-            ],
-            "style_list": {
-              "0": [
-                {
-                  "fullExpression": "height: @local.home_screen_logo_height",
-                  "matchedExpression": "@local.home_screen_logo_height",
-                  "type": "local",
-                  "fieldName": "home_screen_logo_height"
-                }
-              ]
-            }
-          },
-          "_dynamicDependencies": {
-            "@local.home_screen_logo": [
-              "value"
-            ],
-            "@local.home_screen_logo_height": [
-              "style_list.0"
-            ]
-          }
-        },
-        {
-          "type": "toggle_bar",
-          "name": "display_modules_as_list",
-          "value": "@fields.display_modules_as_list",
-          "_translations": {
-            "value": {}
-          },
-          "action_list": [
+          "rows": [
             {
-              "trigger": "changed",
-              "action_id": "set_field",
-              "args": [
-                "display_modules_as_list",
-                "this.value"
+              "type": "image",
+              "name": "image",
+              "value": "@local.home_screen_logo",
+              "_translations": {
+                "value": {}
+              },
+              "exclude_from_translation": true,
+              "style_list": [
+                "height: @local.home_screen_logo_height",
+                "margin: 4px"
               ],
-              "_raw": "changed | set_field: display_modules_as_list: @local.display_modules_as_list",
-              "_cleaned": "changed | set_field: display_modules_as_list: @local.display_modules_as_list"
-            }
-          ],
-          "parameter_list": {
-            "show_icons": "false",
-            "variant": "ios",
-            "false_text": "@local.false_text",
-            "true_text": "@local.true_text",
-            "position": "right"
-          },
-          "exclude_from_translation": true,
-          "hidden": true,
-          "_nested_name": "dg_top.display_modules_as_list",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@fields.display_modules_as_list",
-                "matchedExpression": "@fields.display_modules_as_list",
-                "type": "fields",
-                "fieldName": "display_modules_as_list"
-              }
-            ],
-            "action_list": {
-              "0": {
-                "_raw": [
+              "_nested_name": "dg_sticky_top.dg_row.image",
+              "_dynamicFields": {
+                "value": [
                   {
-                    "fullExpression": "changed | set_field: display_modules_as_list: @local.display_modules_as_list",
-                    "matchedExpression": "@local.display_modules_as_list",
+                    "fullExpression": "@local.home_screen_logo",
+                    "matchedExpression": "@local.home_screen_logo",
                     "type": "local",
-                    "fieldName": "display_modules_as_list"
+                    "fieldName": "home_screen_logo"
                   }
                 ],
-                "_cleaned": [
-                  {
-                    "fullExpression": "changed | set_field: display_modules_as_list: @local.display_modules_as_list",
-                    "matchedExpression": "@local.display_modules_as_list",
-                    "type": "local",
-                    "fieldName": "display_modules_as_list"
-                  }
+                "style_list": {
+                  "0": [
+                    {
+                      "fullExpression": "height: @local.home_screen_logo_height",
+                      "matchedExpression": "@local.home_screen_logo_height",
+                      "type": "local",
+                      "fieldName": "home_screen_logo_height"
+                    }
+                  ]
+                }
+              },
+              "_dynamicDependencies": {
+                "@local.home_screen_logo": [
+                  "value"
+                ],
+                "@local.home_screen_logo_height": [
+                  "style_list.0"
                 ]
               }
             },
-            "parameter_list": {
-              "false_text": [
+            {
+              "type": "toggle_bar",
+              "name": "display_modules_as_list",
+              "value": "@fields.display_modules_as_list",
+              "_translations": {
+                "value": {}
+              },
+              "action_list": [
                 {
-                  "fullExpression": "@local.false_text",
-                  "matchedExpression": "@local.false_text",
-                  "type": "local",
-                  "fieldName": "false_text"
+                  "trigger": "changed",
+                  "action_id": "set_field",
+                  "args": [
+                    "display_modules_as_list",
+                    "this.value"
+                  ],
+                  "_raw": "changed | set_field: display_modules_as_list: @local.display_modules_as_list",
+                  "_cleaned": "changed | set_field: display_modules_as_list: @local.display_modules_as_list"
                 }
               ],
-              "true_text": [
-                {
-                  "fullExpression": "@local.true_text",
-                  "matchedExpression": "@local.true_text",
-                  "type": "local",
-                  "fieldName": "true_text"
+              "parameter_list": {
+                "show_icons": "false",
+                "variant": "ios",
+                "false_text": "@local.false_text",
+                "true_text": "@local.true_text",
+                "position": "right"
+              },
+              "exclude_from_translation": true,
+              "hidden": true,
+              "_nested_name": "dg_sticky_top.dg_row.display_modules_as_list",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@fields.display_modules_as_list",
+                    "matchedExpression": "@fields.display_modules_as_list",
+                    "type": "fields",
+                    "fieldName": "display_modules_as_list"
+                  }
+                ],
+                "action_list": {
+                  "0": {
+                    "_raw": [
+                      {
+                        "fullExpression": "changed | set_field: display_modules_as_list: @local.display_modules_as_list",
+                        "matchedExpression": "@local.display_modules_as_list",
+                        "type": "local",
+                        "fieldName": "display_modules_as_list"
+                      }
+                    ],
+                    "_cleaned": [
+                      {
+                        "fullExpression": "changed | set_field: display_modules_as_list: @local.display_modules_as_list",
+                        "matchedExpression": "@local.display_modules_as_list",
+                        "type": "local",
+                        "fieldName": "display_modules_as_list"
+                      }
+                    ]
+                  }
+                },
+                "parameter_list": {
+                  "false_text": [
+                    {
+                      "fullExpression": "@local.false_text",
+                      "matchedExpression": "@local.false_text",
+                      "type": "local",
+                      "fieldName": "false_text"
+                    }
+                  ],
+                  "true_text": [
+                    {
+                      "fullExpression": "@local.true_text",
+                      "matchedExpression": "@local.true_text",
+                      "type": "local",
+                      "fieldName": "true_text"
+                    }
+                  ]
                 }
-              ]
+              },
+              "_dynamicDependencies": {
+                "@fields.display_modules_as_list": [
+                  "value"
+                ],
+                "@local.display_modules_as_list": [
+                  "action_list.0._raw",
+                  "action_list.0._cleaned"
+                ],
+                "@local.false_text": [
+                  "parameter_list.false_text"
+                ],
+                "@local.true_text": [
+                  "parameter_list.true_text"
+                ]
+              }
             }
-          },
-          "_dynamicDependencies": {
-            "@fields.display_modules_as_list": [
-              "value"
-            ],
-            "@local.display_modules_as_list": [
-              "action_list.0._raw",
-              "action_list.0._cleaned"
-            ],
-            "@local.false_text": [
-              "parameter_list.false_text"
-            ],
-            "@local.true_text": [
-              "parameter_list.true_text"
-            ]
-          }
+          ],
+          "_nested_name": "dg_sticky_top.dg_row"
         },
         {
           "type": "template",
@@ -425,9 +436,12 @@
             }
           ],
           "condition": "!@local.has_been_clicked_previously",
-          "style_list": true,
+          "exclude_from_translation": true,
+          "style_list": [
+            "margin-top: -1em"
+          ],
           "rows": [],
-          "_nested_name": "dg_top.home_screen_header",
+          "_nested_name": "dg_sticky_top.home_screen_header",
           "_dynamicFields": {
             "action_list": {
               "0": {
@@ -496,9 +510,12 @@
             }
           ],
           "condition": "@local.has_been_clicked_previously",
-          "style_list": true,
+          "exclude_from_translation": true,
+          "style_list": [
+            "margin-top: -1em"
+          ],
           "rows": [],
-          "_nested_name": "dg_top.home_screen_header",
+          "_nested_name": "dg_sticky_top.home_screen_header",
           "_dynamicFields": {
             "action_list": {
               "0": {
@@ -551,16 +568,7 @@
           }
         }
       ],
-      "_nested_name": "dg_top"
-    },
-    {
-      "type": "text",
-      "name": "margin",
-      "condition": false,
-      "style_list": [
-        "margin-top: -32px"
-      ],
-      "_nested_name": "margin"
+      "_nested_name": "dg_sticky_top"
     },
     {
       "type": "template",
@@ -593,7 +601,8 @@
       "condition": "@fields.display_modules_as_list",
       "exclude_from_translation": true,
       "style_list": [
-        "padding: 0 24px"
+        "padding: 24px 24px 0px 24px",
+        "margin-top: -1em"
       ],
       "rows": [],
       "_nested_name": "module_list",
