@@ -84,7 +84,7 @@
     },
     {
       "name": "module_image_asset",
-      "value": "@local.module_row.image_asset",
+      "value": "@local.module_row.bottom_aligned_image_asset",
       "_translations": {
         "value": {}
       },
@@ -94,22 +94,22 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@local.module_row.image_asset",
-            "matchedExpression": "@local.module_row.image_asset",
+            "fullExpression": "@local.module_row.bottom_aligned_image_asset",
+            "matchedExpression": "@local.module_row.bottom_aligned_image_asset",
             "type": "local",
             "fieldName": "module_row"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@local.module_row.image_asset": [
+        "@local.module_row.bottom_aligned_image_asset": [
           "value"
         ]
       }
     },
     {
       "name": "nav_image_asset",
-      "value": "images/icons/expand_circle_right.png",
+      "value": "images/icons/expand_circle_right.svg",
       "_translations": {
         "value": {}
       },
@@ -119,7 +119,7 @@
     },
     {
       "name": "locked_image_asset",
-      "value": "images/icons/locked.png",
+      "value": "images/icons/lock.svg",
       "_translations": {
         "value": {}
       },
@@ -185,11 +185,38 @@
       }
     },
     {
-      "name": "is_highlighted",
+      "name": "completed_image_asset",
+      "value": "images/icons/verified.svg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "completed_image_asset"
+    },
+    {
+      "name": "is_completed",
       "value": false,
       "exclude_from_translation": true,
       "type": "set_variable",
+      "_nested_name": "is_completed"
+    },
+    {
+      "name": "is_highlighted",
+      "value": true,
+      "exclude_from_translation": true,
+      "type": "set_variable",
       "_nested_name": "is_highlighted"
+    },
+    {
+      "name": "background",
+      "value": "var(--plh-module-list-item-background-1)",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "background"
     },
     {
       "type": "plh_module_list_item",
@@ -213,8 +240,11 @@
         "module_image_asset": "@local.module_image_asset",
         "nav_image_asset": "@local.nav_image_asset",
         "locked_image_asset": "@local.locked_image_asset",
+        "completed_image_asset": "@local.completed_image_asset",
+        "completed": "@local.is_completed",
         "is_locked": "@local.is_locked",
-        "highlighted": "@local.is_highlighted"
+        "highlighted": "@local.is_highlighted",
+        "background": "@local.background"
       },
       "exclude_from_translation": true,
       "_nested_name": "plh_module_list_item",
@@ -282,6 +312,22 @@
               "fieldName": "locked_image_asset"
             }
           ],
+          "completed_image_asset": [
+            {
+              "fullExpression": "@local.completed_image_asset",
+              "matchedExpression": "@local.completed_image_asset",
+              "type": "local",
+              "fieldName": "completed_image_asset"
+            }
+          ],
+          "completed": [
+            {
+              "fullExpression": "@local.is_completed",
+              "matchedExpression": "@local.is_completed",
+              "type": "local",
+              "fieldName": "is_completed"
+            }
+          ],
           "is_locked": [
             {
               "fullExpression": "@local.is_locked",
@@ -296,6 +342,14 @@
               "matchedExpression": "@local.is_highlighted",
               "type": "local",
               "fieldName": "is_highlighted"
+            }
+          ],
+          "background": [
+            {
+              "fullExpression": "@local.background",
+              "matchedExpression": "@local.background",
+              "type": "local",
+              "fieldName": "background"
             }
           ]
         }
@@ -318,11 +372,20 @@
         "@local.locked_image_asset": [
           "parameter_list.locked_image_asset"
         ],
+        "@local.completed_image_asset": [
+          "parameter_list.completed_image_asset"
+        ],
+        "@local.is_completed": [
+          "parameter_list.completed"
+        ],
         "@local.is_locked": [
           "parameter_list.is_locked"
         ],
         "@local.is_highlighted": [
           "parameter_list.highlighted"
+        ],
+        "@local.background": [
+          "parameter_list.background"
         ]
       }
     }

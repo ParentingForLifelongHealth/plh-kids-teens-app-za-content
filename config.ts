@@ -4,7 +4,7 @@ const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.4.3",
+  content_tag_latest: "1.4.4",
 };
 
 config.google_drive.sheets_folder_ids = [
@@ -65,8 +65,8 @@ config.app_config.APP_FOOTER_DEFAULTS.template = "footer";
 config.app_config.APP_FOOTER_DEFAULTS.background = "none";
 config.app_config.NOTIFICATION_DEFAULTS.title = "New message from SinovuyoApp";
 config.app_config.NOTIFICATION_DEFAULTS.text = "You have a new message from SinovuyoApp";
-config.app_config.APP_THEMES.available = ["plh_kids_kw"];
-config.app_config.APP_THEMES.defaultThemeName = "plh_kids_kw";
+config.app_config.APP_THEMES.available = ["plh_kids_teens_za"];
+config.app_config.APP_THEMES.defaultThemeName = "plh_kids_teens_za";
 config.error_logging = { dsn: "https://e8c4a7d101684da6bdb1f17f712f15fc@app.glitchtip.com/8362" };
 
 
