@@ -1,0 +1,198 @@
+{
+  "flow_type": "template",
+  "flow_name": "hp_review_with_activity",
+  "status": "released",
+  "rows": [
+    {
+      "type": "data_items",
+      "name": "pick_random_locked_activity",
+      "value": "@data.activity_tasks",
+      "parameter_list": {
+        "filter": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+        "shuffle": "true",
+        "limit": "1"
+      },
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "template",
+          "name": "hp_review",
+          "value": "hp_review",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false",
+              "_cleaned": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false",
+              "params": {
+                "_list_id": "activity_tasks",
+                "_id": "@item.id",
+                "locked": false
+              }
+            },
+            {
+              "trigger": "completed",
+              "action_id": "set_field",
+              "args": [
+                "latest_unlocked_activity",
+                "@item.id"
+              ],
+              "_raw": "completed | set_field: latest_unlocked_activity: @item.id",
+              "_cleaned": "completed | set_field: latest_unlocked_activity: @item.id"
+            },
+            {
+              "trigger": "completed",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "completed | emit: completed",
+              "_cleaned": "completed | emit: completed"
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "uncompleted | emit: uncompleted",
+              "_cleaned": "uncompleted | emit: uncompleted"
+            }
+          ],
+          "exclude_from_translation": true,
+          "rows": [],
+          "_nested_name": "pick_random_locked_activity.hp_review",
+          "_dynamicFields": {
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "params": {
+                  "_id": [
+                    {
+                      "fullExpression": "@item.id",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    }
+                  ]
+                }
+              },
+              "1": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@item.id",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_field: latest_unlocked_activity: @item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ],
+                "_cleaned": [
+                  {
+                    "fullExpression": "completed | set_field: latest_unlocked_activity: @item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              }
+            }
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "action_list.0._raw",
+              "action_list.0._cleaned",
+              "action_list.0.params._id",
+              "action_list.1.args.1",
+              "action_list.1._raw",
+              "action_list.1._cleaned"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "pick_random_locked_activity",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.activity_tasks",
+            "matchedExpression": "@data.activity_tasks",
+            "type": "data",
+            "fieldName": "activity_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@item.locked",
+              "type": "item",
+              "fieldName": "locked"
+            },
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "!@item.child_age_list",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@item.child_age_list.includes",
+              "type": "item",
+              "fieldName": "child_age_list"
+            },
+            {
+              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "matchedExpression": "@fields.child_age",
+              "type": "fields",
+              "fieldName": "child_age"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.activity_tasks": [
+          "value"
+        ],
+        "@item.locked": [
+          "parameter_list.filter"
+        ],
+        "!@item.child_age_list": [
+          "parameter_list.filter"
+        ],
+        "@item.child_age_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age": [
+          "parameter_list.filter"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/home_practice_review/hp_review.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU"
+}
