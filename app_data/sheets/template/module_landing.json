@@ -562,37 +562,10 @@
             },
             {
               "name": "locked_image_asset",
-              "value": "images/shell_closed.png",
-              "_translations": {
-                "value": {}
-              },
-              "condition": "!@global.hp_locked_image_asset",
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_bottom.dg_wheel_and_hp.locked_image_asset",
-              "_dynamicFields": {
-                "condition": [
-                  {
-                    "fullExpression": "!@global.hp_locked_image_asset",
-                    "matchedExpression": "!@global.hp_locked_image_asset",
-                    "type": "global",
-                    "fieldName": "hp_locked_image_asset"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "!@global.hp_locked_image_asset": [
-                  "condition"
-                ]
-              }
-            },
-            {
-              "name": "locked_image_asset",
               "value": "@global.hp_locked_image_asset",
               "_translations": {
                 "value": {}
               },
-              "condition": "!!@global.hp_locked_image_asset",
               "type": "set_variable",
               "_nested_name": "dg_bottom.dg_wheel_and_hp.locked_image_asset",
               "_dynamicFields": {
@@ -603,22 +576,11 @@
                     "type": "global",
                     "fieldName": "hp_locked_image_asset"
                   }
-                ],
-                "condition": [
-                  {
-                    "fullExpression": "!!@global.hp_locked_image_asset",
-                    "matchedExpression": "!@global.hp_locked_image_asset",
-                    "type": "global",
-                    "fieldName": "hp_locked_image_asset"
-                  }
                 ]
               },
               "_dynamicDependencies": {
                 "@global.hp_locked_image_asset": [
                   "value"
-                ],
-                "!@global.hp_locked_image_asset": [
-                  "condition"
                 ]
               }
             },
@@ -634,37 +596,10 @@
             },
             {
               "name": "unlocked_image_asset",
-              "value": "images/shell_open.png",
-              "_translations": {
-                "value": {}
-              },
-              "condition": "!@global.hp_unlocked_image_asset",
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "dg_bottom.dg_wheel_and_hp.unlocked_image_asset",
-              "_dynamicFields": {
-                "condition": [
-                  {
-                    "fullExpression": "!@global.hp_unlocked_image_asset",
-                    "matchedExpression": "!@global.hp_unlocked_image_asset",
-                    "type": "global",
-                    "fieldName": "hp_unlocked_image_asset"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "!@global.hp_unlocked_image_asset": [
-                  "condition"
-                ]
-              }
-            },
-            {
-              "name": "unlocked_image_asset",
               "value": "@global.hp_unlocked_image_asset",
               "_translations": {
                 "value": {}
               },
-              "condition": "!!@global.hp_unlocked_image_asset",
               "type": "set_variable",
               "_nested_name": "dg_bottom.dg_wheel_and_hp.unlocked_image_asset",
               "_dynamicFields": {
@@ -675,22 +610,11 @@
                     "type": "global",
                     "fieldName": "hp_unlocked_image_asset"
                   }
-                ],
-                "condition": [
-                  {
-                    "fullExpression": "!!@global.hp_unlocked_image_asset",
-                    "matchedExpression": "!@global.hp_unlocked_image_asset",
-                    "type": "global",
-                    "fieldName": "hp_unlocked_image_asset"
-                  }
                 ]
               },
               "_dynamicDependencies": {
                 "@global.hp_unlocked_image_asset": [
                   "value"
-                ],
-                "!@global.hp_unlocked_image_asset": [
-                  "condition"
                 ]
               }
             },

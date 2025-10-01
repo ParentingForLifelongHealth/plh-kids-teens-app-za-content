@@ -4,119 +4,6 @@
   "flow_type": "template",
   "rows": [
     {
-      "name": "activity_id",
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "activity_id"
-    },
-    {
-      "type": "data_items",
-      "name": "pick_random_locked_activity",
-      "value": "@data.activity_tasks",
-      "_translations": {
-        "value": {}
-      },
-      "action_list": [
-        {
-          "trigger": "data_changed",
-          "action_id": "set_local",
-          "args": [
-            "activity_id",
-            "@items[0]?.id"
-          ],
-          "_raw": "data_changed | set_local: activity_id: @items[0]?.id",
-          "_cleaned": "data_changed | set_local: activity_id: @items[0]?.id"
-        }
-      ],
-      "parameter_list": {
-        "filter": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-        "shuffle": "true",
-        "limit": "1"
-      },
-      "exclude_from_translation": true,
-      "_nested_name": "pick_random_locked_activity",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@data.activity_tasks",
-            "matchedExpression": "@data.activity_tasks",
-            "type": "data",
-            "fieldName": "activity_tasks"
-          }
-        ],
-        "parameter_list": {
-          "filter": [
-            {
-              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "@item.locked",
-              "type": "item",
-              "fieldName": "locked"
-            },
-            {
-              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "!@item.child_age_list",
-              "type": "item",
-              "fieldName": "child_age_list"
-            },
-            {
-              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "@item.child_age_list.includes",
-              "type": "item",
-              "fieldName": "child_age_list"
-            },
-            {
-              "fullExpression": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "@fields.child_age",
-              "type": "fields",
-              "fieldName": "child_age"
-            }
-          ]
-        }
-      },
-      "_dynamicDependencies": {
-        "@data.activity_tasks": [
-          "value"
-        ],
-        "@item.locked": [
-          "parameter_list.filter"
-        ],
-        "!@item.child_age_list": [
-          "parameter_list.filter"
-        ],
-        "@item.child_age_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.child_age": [
-          "parameter_list.filter"
-        ]
-      }
-    },
-    {
-      "type": "text",
-      "name": "debug_activity_id",
-      "value": "@local.activity_id",
-      "_translations": {
-        "value": {}
-      },
-      "condition": false,
-      "_nested_name": "debug_activity_id",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@local.activity_id",
-            "matchedExpression": "@local.activity_id",
-            "type": "local",
-            "fieldName": "activity_id"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.activity_id": [
-          "value"
-        ]
-      }
-    },
-    {
       "type": "data_items",
       "name": "check_if_already_unlocked_activity",
       "value": "hp_check_in",
@@ -128,21 +15,9 @@
       "rows": [
         {
           "type": "template",
-          "name": "hp_review",
-          "value": "hp_review",
+          "name": "if_no",
+          "value": "hp_review_with_activity",
           "action_list": [
-            {
-              "trigger": "completed",
-              "action_id": "set_data",
-              "args": [],
-              "_raw": "completed | set_data | _list_id: activity_tasks, _id: @local.activity_id, locked: false",
-              "_cleaned": "completed | set_data | _list_id: activity_tasks, _id: @local.activity_id, locked: false",
-              "params": {
-                "_list_id": "activity_tasks",
-                "_id": "@local.activity_id",
-                "locked": false
-              }
-            },
             {
               "trigger": "completed",
               "action_id": "set_data",
@@ -154,16 +29,6 @@
                 "_id": "srh_t",
                 "unlocked_activity": true
               }
-            },
-            {
-              "trigger": "completed",
-              "action_id": "set_field",
-              "args": [
-                "latest_unlocked_activity",
-                "@local.activity_id"
-              ],
-              "_raw": "completed | set_field: latest_unlocked_activity: @local.activity_id",
-              "_cleaned": "completed | set_field: latest_unlocked_activity: @local.activity_id"
             },
             {
               "trigger": "completed",
@@ -200,100 +65,50 @@
           "condition": "!@item.unlocked_activity",
           "rows": [
             {
-              "name": "row_id",
-              "value": "srh_t",
-              "_translations": {
-                "value": {}
-              },
-              "exclude_from_translation": true,
-              "type": "set_variable",
-              "_nested_name": "check_if_already_unlocked_activity.hp_review.row_id"
-            },
-            {
-              "name": "completion_icon",
-              "value": "@global.first_completion_icon",
-              "_translations": {
-                "value": {}
-              },
-              "type": "set_variable",
-              "_nested_name": "check_if_already_unlocked_activity.hp_review.completion_icon",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@global.first_completion_icon",
-                    "matchedExpression": "@global.first_completion_icon",
-                    "type": "global",
-                    "fieldName": "first_completion_icon"
+              "type": "template",
+              "name": "hp_review",
+              "value": "hp_review",
+              "rows": [
+                {
+                  "name": "row_id",
+                  "value": "srh_t",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "check_if_already_unlocked_activity.if_no.hp_review.row_id"
+                },
+                {
+                  "name": "completion_icon",
+                  "value": "@global.first_completion_icon",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "check_if_already_unlocked_activity.if_no.hp_review.completion_icon",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@global.first_completion_icon",
+                        "matchedExpression": "@global.first_completion_icon",
+                        "type": "global",
+                        "fieldName": "first_completion_icon"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@global.first_completion_icon": [
+                      "value"
+                    ]
                   }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@global.first_completion_icon": [
-                  "value"
-                ]
-              }
+                }
+              ],
+              "_nested_name": "check_if_already_unlocked_activity.if_no.hp_review"
             }
           ],
-          "_nested_name": "check_if_already_unlocked_activity.hp_review",
+          "_nested_name": "check_if_already_unlocked_activity.if_no",
           "_dynamicFields": {
-            "action_list": {
-              "0": {
-                "_raw": [
-                  {
-                    "fullExpression": "completed | set_data | _list_id: activity_tasks, _id: @local.activity_id, locked: false",
-                    "matchedExpression": "@local.activity_id",
-                    "type": "local",
-                    "fieldName": "activity_id"
-                  }
-                ],
-                "_cleaned": [
-                  {
-                    "fullExpression": "completed | set_data | _list_id: activity_tasks, _id: @local.activity_id, locked: false",
-                    "matchedExpression": "@local.activity_id",
-                    "type": "local",
-                    "fieldName": "activity_id"
-                  }
-                ],
-                "params": {
-                  "_id": [
-                    {
-                      "fullExpression": "@local.activity_id",
-                      "matchedExpression": "@local.activity_id",
-                      "type": "local",
-                      "fieldName": "activity_id"
-                    }
-                  ]
-                }
-              },
-              "2": {
-                "args": {
-                  "1": [
-                    {
-                      "fullExpression": "@local.activity_id",
-                      "matchedExpression": "@local.activity_id",
-                      "type": "local",
-                      "fieldName": "activity_id"
-                    }
-                  ]
-                },
-                "_raw": [
-                  {
-                    "fullExpression": "completed | set_field: latest_unlocked_activity: @local.activity_id",
-                    "matchedExpression": "@local.activity_id",
-                    "type": "local",
-                    "fieldName": "activity_id"
-                  }
-                ],
-                "_cleaned": [
-                  {
-                    "fullExpression": "completed | set_field: latest_unlocked_activity: @local.activity_id",
-                    "matchedExpression": "@local.activity_id",
-                    "type": "local",
-                    "fieldName": "activity_id"
-                  }
-                ]
-              }
-            },
             "condition": [
               {
                 "fullExpression": "!@item.unlocked_activity",
@@ -304,14 +119,6 @@
             ]
           },
           "_dynamicDependencies": {
-            "@local.activity_id": [
-              "action_list.0._raw",
-              "action_list.0._cleaned",
-              "action_list.0.params._id",
-              "action_list.2.args.1",
-              "action_list.2._raw",
-              "action_list.2._cleaned"
-            ],
             "!@item.unlocked_activity": [
               "condition"
             ]
