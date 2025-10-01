@@ -98,7 +98,7 @@ Assets that appear in app-data but do not have references within sheets
 | android/icon-foreground.png | 193.7 |
 | android/icon.png | 215.3 |
 | android/splash.png | 195.7 |
-| contents.json | 6.1 |
+| contents.json | 5.9 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
