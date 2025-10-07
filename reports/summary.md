@@ -84,7 +84,7 @@
 | assets | KB | MB |
 | --- | --- | --- |
 | total | 75647 KB | 75.6 MB |
-| unused | 2631 KB | 2.6 MB |
+| unused | 9550 KB | 9.6 MB |
 </details>
 
 <details open>
@@ -98,7 +98,10 @@ Assets that appear in app-data but do not have references within sheets
 | android/icon-foreground.png | 193.7 |
 | android/icon.png | 215.3 |
 | android/splash.png | 195.7 |
-| contents.json | 5.9 |
+| audio/teen/testimonials/caregiver/caregiver_test_onlinesafety_t.mp3 | 371.8 |
+| audio/teen/testimonials/teen/teen_test_onlinesafety_t.mp3 | 210.8 |
+| audio/teen/topic_intros/onlinesafety_intro_t.mp3 | 258.6 |
+| contents.json | 6.1 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
@@ -141,6 +144,16 @@ Assets that appear in app-data but do not have references within sheets
 | images/logos/plh_white.png | 12.8 |
 | images/logos/sino_mark.svg | 461.7 |
 | images/teen_modules/consequence/consequence1_t_5.svg | 53.6 |
+| images/teen_modules/onlinesafety/onlinesafety2_t_1.png | 481.7 |
+| images/teen_modules/onlinesafety/onlinesafety2_t_2.png | 488 |
+| images/teen_modules/onlinesafety/onlinesafety2_t_3.png | 476.4 |
+| images/teen_modules/onlinesafety/onlinesafety2_t_4.png | 460.4 |
+| images/teen_modules/onlinesafety/onlinesafety_t_1.png | 994.7 |
+| images/teen_modules/onlinesafety/onlinesafety_t_3.png | 488.8 |
+| images/teen_modules/onlinesafety/onlinesafety_t_4.png | 858.2 |
+| images/teen_modules/onlinesafety/onlinesafety_t_5.png | 757.9 |
+| images/teen_modules/onlinesafety/onlinesafety_t_6.png | 544.5 |
+| images/teen_modules/onlinesafety/onlinesafety_t_7.png | 527.2 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
 | video/plh_video/lets_slow_down.srt | 1.7 |
