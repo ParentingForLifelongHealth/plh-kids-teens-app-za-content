@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"rulesroutines\""
       ],
-      "input_source": "rulesroutines_articles",
+      "input_source": "sub_items",
       "output_target": "rulesroutines_testing | local_only;"
     },
     {

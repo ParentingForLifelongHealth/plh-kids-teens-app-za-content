@@ -42,9 +42,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"@gen.id\""
       ],
-      "input_source": "{@gen.id}_articles",
+      "input_source": "sub_items",
       "output_target": "{@gen.id}_testing | local_only;"
     },
     {
@@ -64,8 +64,8 @@
       "output_target": "{@gen.id}_article_tasks"
     }
   ],
-  "_xlsxPath": "PLH modules_data_pipes.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9",
+  "_xlsxPath": "templates/ZA module_data_pipes.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
   "_output_flows": [
     {
       "flow_name": "prep_selfcare_articles",
@@ -184,6 +184,11 @@
     },
     {
       "flow_name": "prep_learn_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe"
+    },
+    {
+      "flow_name": "prep_onlinesafety_t_articles",
       "flow_subtype": "generated",
       "flow_type": "data_pipe"
     },

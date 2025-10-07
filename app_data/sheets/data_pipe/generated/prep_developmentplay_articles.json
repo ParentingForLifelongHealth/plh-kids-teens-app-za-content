@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"developmentplay\""
       ],
-      "input_source": "developmentplay_articles",
+      "input_source": "sub_items",
       "output_target": "developmentplay_testing | local_only;"
     },
     {

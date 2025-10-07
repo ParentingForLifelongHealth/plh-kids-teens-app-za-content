@@ -1,0 +1,72 @@
+{
+  "flow_name": "nested_@gen.nested",
+  "flow_subtype": "generated",
+  "flow_type": "template",
+  "rows": [
+    {
+      "type": "template",
+      "name": "article_sidekick",
+      "value": "article_sidekick",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed",
+          "_cleaned": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted",
+          "_cleaned": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "condition": "@gen.nested",
+      "rows": [
+        {
+          "name": "nested",
+          "value": true,
+          "type": "set_variable",
+          "_nested_name": "article_sidekick.nested"
+        },
+        {
+          "name": "article_id",
+          "value": "sub_item13",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "article_sidekick.article_id"
+        },
+        {
+          "name": "module_id",
+          "type": "set_variable",
+          "_nested_name": "article_sidekick.module_id"
+        }
+      ],
+      "_nested_name": "article_sidekick",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@gen.nested",
+            "matchedExpression": "@gen.nested",
+            "type": "gen",
+            "fieldName": "nested"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@gen.nested": [
+          "condition"
+        ]
+      }
+    }
+  ]
+}

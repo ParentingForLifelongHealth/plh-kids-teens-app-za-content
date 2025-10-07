@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"oneononetime_t\""
       ],
-      "input_source": "oneononetime_t_articles",
+      "input_source": "sub_items",
       "output_target": "oneononetime_t_testing | local_only;"
     },
     {

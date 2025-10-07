@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"stayingsafe_t\""
       ],
-      "input_source": "stayingsafe_t_articles",
+      "input_source": "sub_items",
       "output_target": "stayingsafe_t_testing | local_only;"
     },
     {

@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"stress_t\""
       ],
-      "input_source": "stress_t_articles",
+      "input_source": "sub_items",
       "output_target": "stress_t_testing | local_only;"
     },
     {
