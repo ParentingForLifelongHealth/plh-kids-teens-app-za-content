@@ -601,7 +601,7 @@
       "_translations": {
         "value": {}
       },
-      "condition": "!(@local.article_data.image_text)",
+      "condition": "!(@local.article_data.image_text) && !!(@local.article_data.image_asset)",
       "parameter_list": {
         "style": "rounded_corners"
       },
@@ -618,8 +618,14 @@
         ],
         "condition": [
           {
-            "fullExpression": "!(@local.article_data.image_text)",
+            "fullExpression": "!(@local.article_data.image_text) && !!(@local.article_data.image_asset)",
             "matchedExpression": "@local.article_data.image_text",
+            "type": "local",
+            "fieldName": "article_data"
+          },
+          {
+            "fullExpression": "!(@local.article_data.image_text) && !!(@local.article_data.image_asset)",
+            "matchedExpression": "@local.article_data.image_asset",
             "type": "local",
             "fieldName": "article_data"
           }
@@ -627,7 +633,8 @@
       },
       "_dynamicDependencies": {
         "@local.article_data.image_asset": [
-          "value"
+          "value",
+          "condition"
         ],
         "@local.article_data.image_text": [
           "condition"

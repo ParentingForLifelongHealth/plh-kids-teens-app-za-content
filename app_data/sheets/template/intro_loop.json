@@ -116,7 +116,7 @@
               "_translations": {
                 "value": {}
               },
-              "condition": "!(@item.image_text)",
+              "condition": "!(@item.image_text) && !!(@item.image_asset)",
               "parameter_list": {
                 "style": "rounded_corners"
               },
@@ -133,16 +133,23 @@
                 ],
                 "condition": [
                   {
-                    "fullExpression": "!(@item.image_text)",
+                    "fullExpression": "!(@item.image_text) && !!(@item.image_asset)",
                     "matchedExpression": "@item.image_text",
                     "type": "item",
                     "fieldName": "image_text"
+                  },
+                  {
+                    "fullExpression": "!(@item.image_text) && !!(@item.image_asset)",
+                    "matchedExpression": "@item.image_asset",
+                    "type": "item",
+                    "fieldName": "image_asset"
                   }
                 ]
               },
               "_dynamicDependencies": {
                 "@item.image_asset": [
-                  "value"
+                  "value",
+                  "condition"
                 ],
                 "@item.image_text": [
                   "condition"
