@@ -99,15 +99,6 @@
     },
     {
       "type": "declare_global_constant",
-      "name": "facilitator_face_asset",
-      "value": "images/ZA_FACILITATOR.svg",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true
-    },
-    {
-      "type": "declare_global_constant",
       "name": "combo_box_placeholder",
       "value": "Tap and choose",
       "_translations": {
@@ -165,6 +156,24 @@
       "type": "declare_field_default",
       "name": "display_modules_as_list",
       "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "facilitator_id",
+      "value": "facilitator",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "facilitator_name",
+      "value": "@calc(@fields.faciltator_id === \"facilitator\" ? @data.characters.facilitator.name : \"John\")",
+      "_translations": {
+        "value": {}
+      },
       "exclude_from_translation": true
     }
   ],
