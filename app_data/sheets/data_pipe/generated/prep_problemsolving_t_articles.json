@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"problemsolving_t\""
       ],
-      "input_source": "problemsolving_t_articles",
+      "input_source": "sub_items",
       "output_target": "problemsolving_t_testing | local_only;"
     },
     {

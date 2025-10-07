@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"consequences\""
       ],
-      "input_source": "consequences_articles",
+      "input_source": "sub_items",
       "output_target": "consequences_testing | local_only;"
     },
     {

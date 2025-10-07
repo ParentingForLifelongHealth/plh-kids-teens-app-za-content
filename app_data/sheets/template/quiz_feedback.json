@@ -1,0 +1,430 @@
+{
+  "flow_type": "template",
+  "flow_name": "quiz_feedback",
+  "status": "released",
+  "rows": [
+    {
+      "name": "in_library",
+      "value": false,
+      "type": "set_variable",
+      "_nested_name": "in_library"
+    },
+    {
+      "name": "feedback",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "feedback"
+    },
+    {
+      "name": "feedback_id",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "feedback_id"
+    },
+    {
+      "name": "nested_prefix",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "nested_prefix"
+    },
+    {
+      "name": "nested_template",
+      "value": "@local.nested_prefix@local.feedback_id",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "nested_template",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.nested_prefix@local.feedback_id",
+            "matchedExpression": "@local.nested_prefix",
+            "type": "local",
+            "fieldName": "nested_prefix"
+          },
+          {
+            "fullExpression": "@local.nested_prefix@local.feedback_id",
+            "matchedExpression": "@local.feedback_id",
+            "type": "local",
+            "fieldName": "feedback_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.nested_prefix": [
+          "value"
+        ],
+        "@local.feedback_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "template",
+      "name": "nested_article",
+      "value": "@local.nested_template",
+      "condition": "!!@local.feedback_id",
+      "exclude_from_translation": true,
+      "rows": [],
+      "_nested_name": "nested_article",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.nested_template",
+            "matchedExpression": "@local.nested_template",
+            "type": "local",
+            "fieldName": "nested_template"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@local.feedback_id",
+            "matchedExpression": "!@local.feedback_id",
+            "type": "local",
+            "fieldName": "feedback_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.nested_template": [
+          "value"
+        ],
+        "!@local.feedback_id": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "character_id",
+      "value": "facilitator",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "character_id"
+    },
+    {
+      "name": "concat_character",
+      "value": "characters.@local.character_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "concat_character",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "characters.@local.character_id",
+            "matchedExpression": "@local.character_id",
+            "type": "local",
+            "fieldName": "character_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "character_data",
+      "value": "@data.@local.concat_character",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "character_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.concat_character",
+            "matchedExpression": "@local.concat_character",
+            "type": "local",
+            "fieldName": "concat_character"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.concat_character": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "character_name",
+      "value": "@local.character_data.name",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "character_name",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.character_data.name",
+            "matchedExpression": "@local.character_data.name",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.name": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "character_image_asset",
+      "value": "@local.character_data.image_asset",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "character_image_asset",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.character_data.image_asset",
+            "matchedExpression": "@local.character_data.image_asset",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.image_asset": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "speaker_position",
+      "value": "right",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "speaker_position",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role == \"caregiver\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "speaker_position",
+      "value": "left",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role != \"caregiver\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "speaker_position",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role != \"caregiver\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "variant",
+      "value": "primary",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "variant",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role == \"caregiver\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "variant",
+      "value": "secondary",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role == \"child\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "variant",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role == \"child\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "variant",
+      "value": "gray",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@local.character_data.role == \"facilitator\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "variant",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.character_data.role == \"facilitator\"",
+            "matchedExpression": "@local.character_data.role",
+            "type": "local",
+            "fieldName": "character_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.character_data.role": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "text_bubble",
+      "name": "text_bubble",
+      "value": "@local.feedback",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "speaker_image_asset": "@local.character_image_asset",
+        "speaker_name": "@local.character_name",
+        "speaker_position": "@local.speaker_position",
+        "variant": "@local.variant"
+      },
+      "condition": "!@local.feedback_id",
+      "exclude_from_translation": true,
+      "_nested_name": "text_bubble",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.feedback",
+            "matchedExpression": "@local.feedback",
+            "type": "local",
+            "fieldName": "feedback"
+          }
+        ],
+        "parameter_list": {
+          "speaker_image_asset": [
+            {
+              "fullExpression": "@local.character_image_asset",
+              "matchedExpression": "@local.character_image_asset",
+              "type": "local",
+              "fieldName": "character_image_asset"
+            }
+          ],
+          "speaker_name": [
+            {
+              "fullExpression": "@local.character_name",
+              "matchedExpression": "@local.character_name",
+              "type": "local",
+              "fieldName": "character_name"
+            }
+          ],
+          "speaker_position": [
+            {
+              "fullExpression": "@local.speaker_position",
+              "matchedExpression": "@local.speaker_position",
+              "type": "local",
+              "fieldName": "speaker_position"
+            }
+          ],
+          "variant": [
+            {
+              "fullExpression": "@local.variant",
+              "matchedExpression": "@local.variant",
+              "type": "local",
+              "fieldName": "variant"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "!@local.feedback_id",
+            "matchedExpression": "!@local.feedback_id",
+            "type": "local",
+            "fieldName": "feedback_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.feedback": [
+          "value"
+        ],
+        "@local.character_image_asset": [
+          "parameter_list.speaker_image_asset"
+        ],
+        "@local.character_name": [
+          "parameter_list.speaker_name"
+        ],
+        "@local.speaker_position": [
+          "parameter_list.speaker_position"
+        ],
+        "@local.variant": [
+          "parameter_list.variant"
+        ],
+        "!@local.feedback_id": [
+          "condition"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "templates/ZA articles.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+}

@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"instructions\""
       ],
-      "input_source": "instructions_articles",
+      "input_source": "sub_items",
       "output_target": "instructions_testing | local_only;"
     },
     {

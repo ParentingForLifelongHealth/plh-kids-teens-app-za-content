@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"selfcare_t\""
       ],
-      "input_source": "selfcare_t_articles",
+      "input_source": "sub_items",
       "output_target": "selfcare_t_testing | local_only;"
     },
     {

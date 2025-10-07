@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"praise\""
       ],
-      "input_source": "praise_articles",
+      "input_source": "sub_items",
       "output_target": "praise_testing | local_only;"
     },
     {

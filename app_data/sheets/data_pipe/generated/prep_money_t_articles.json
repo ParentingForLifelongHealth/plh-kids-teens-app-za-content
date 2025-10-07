@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "!nested"
+        "foreign_key == \"money_t\""
       ],
-      "input_source": "money_t_articles",
+      "input_source": "sub_items",
       "output_target": "money_t_testing | local_only;"
     },
     {
