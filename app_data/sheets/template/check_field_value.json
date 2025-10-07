@@ -5,23 +5,23 @@
   "rows": [
     {
       "type": "title",
-      "name": "title",
       "value": "Check the value of a field",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
-      "_nested_name": "title"
+      "name": "title_2",
+      "_nested_name": "title_2"
     },
     {
       "type": "text",
-      "name": "text",
       "value": "Field name",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
-      "_nested_name": "text"
+      "name": "text_3",
+      "_nested_name": "text_3"
     },
     {
       "type": "text_box",
@@ -31,13 +31,13 @@
     },
     {
       "type": "text",
-      "name": "text",
       "value": "Value of the field @local.field_name: @fields.@local.field_name",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
-      "_nested_name": "text",
+      "name": "text_5",
+      "_nested_name": "text_5",
       "_dynamicFields": {
         "value": [
           {
@@ -62,24 +62,83 @@
       }
     },
     {
+      "name": "field_as_local",
+      "value": "@fields.@local.field_name",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "field_as_local",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.@local.field_name",
+            "matchedExpression": "@local.field_name",
+            "type": "local",
+            "fieldName": "field_name"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.field_name": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": "Value of the field @local.field_name (after passing through a local variable): @local.field_as_local",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "name": "text_7",
+      "_nested_name": "text_7",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Value of the field @local.field_name (after passing through a local variable): @local.field_as_local",
+            "matchedExpression": "@local.field_name",
+            "type": "local",
+            "fieldName": "field_name"
+          },
+          {
+            "fullExpression": "Value of the field @local.field_name (after passing through a local variable): @local.field_as_local",
+            "matchedExpression": "@local.field_as_local",
+            "type": "local",
+            "fieldName": "field_as_local"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.field_name": [
+          "value"
+        ],
+        "@local.field_as_local": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "title",
-      "name": "title",
       "value": "Change the value of a field",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
-      "_nested_name": "title"
+      "name": "title_8",
+      "_nested_name": "title_8"
     },
     {
       "type": "text",
-      "name": "text",
       "value": "New field value",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
-      "_nested_name": "text"
+      "name": "text_9",
+      "_nested_name": "text_9"
     },
     {
       "type": "text_box",

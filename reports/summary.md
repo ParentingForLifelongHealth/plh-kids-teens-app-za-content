@@ -32,12 +32,12 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2722 |
+| set_variable | 2723 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
 | template | 968 |
-| text | 148 |
+| text | 149 |
 | text_area | 2 |
 | text_box | 12 |
 | text_bubble | 7 |
@@ -172,7 +172,6 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_23.mp3 | 1 |
 | audio/relax/relax_24.mp3 | 1 |
 | audio/relax/relax_6.mp3 | 1 |
-| images/ZA_FACILITATOR.svg | 1 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
 | images/teen_modules/instruct/instruct2_t_4.svg | 1 |
