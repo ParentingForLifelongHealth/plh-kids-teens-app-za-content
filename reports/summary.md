@@ -83,8 +83,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 82201 KB | 82.2 MB |
-| unused | 2996 KB | 3 MB |
+| total | 82212 KB | 82.2 MB |
+| unused | 2984 KB | 3 MB |
 </details>
 
 <details open>
@@ -113,7 +113,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/activities/story_cuddles.svg | 34.6 |
 | images/activities/tummy_time_safari.svg | 106.2 |
 | images/backgrounds/homescreen_pattern.svg | 156.3 |
-| images/character_icons/F1_SON_5.svg | 11.6 |
 | images/character_icons/faces-22.svg | 24.9 |
 | images/faces/saddest.svg | 2 |
 | images/flags/gb.svg | 0.5 |
@@ -326,6 +325,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/character_icons/F1_FATHER.svg | 54.1 | 1 |
 | images/character_icons/F1_MOTHER.svg | 11.3 | 1 |
 | images/character_icons/F1_SON_18.svg | 12.9 | 1 |
+| images/character_icons/F1_SON_5.svg | 11.6 | 1 |
 | images/character_icons/F2_DAUGHTER_19.svg | 16.6 | 1 |
 | images/character_icons/F2_DAUGHTER_3.svg | 9.2 | 1 |
 | images/character_icons/F2_GRANDFATHER.svg | 20.5 | 1 |
