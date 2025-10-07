@@ -287,6 +287,7 @@
               "_translations": {
                 "value": {}
               },
+              "condition": "!!@item.character_text",
               "parameter_list": {
                 "speaker_image_asset": "@local.character_image_asset",
                 "speaker_name": "@local.character_name",
@@ -300,6 +301,14 @@
                   {
                     "fullExpression": "@item.character_text",
                     "matchedExpression": "@item.character_text",
+                    "type": "item",
+                    "fieldName": "character_text"
+                  }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!!@item.character_text",
+                    "matchedExpression": "!@item.character_text",
                     "type": "item",
                     "fieldName": "character_text"
                   }
@@ -342,6 +351,9 @@
               "_dynamicDependencies": {
                 "@item.character_text": [
                   "value"
+                ],
+                "!@item.character_text": [
+                  "condition"
                 ],
                 "@local.character_image_asset": [
                   "parameter_list.speaker_image_asset"
