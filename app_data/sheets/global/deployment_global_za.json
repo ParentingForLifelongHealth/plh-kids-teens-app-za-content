@@ -170,7 +170,7 @@
     {
       "type": "declare_field_default",
       "name": "facilitator_name",
-      "value": "@calc(@fields.faciltator_id === \"facilitator\" ? @data.characters.facilitator.name : \"John\")",
+      "value": "@data.characters.facilitator.name",
       "_translations": {
         "value": {}
       },
