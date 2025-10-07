@@ -32,11 +32,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2721 |
+| set_variable | 2722 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
-| template | 967 |
+| template | 968 |
 | text | 148 |
 | text_area | 2 |
 | text_box | 12 |
@@ -56,13 +56,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 3 |
-| emit: completed | 704 |
+| emit: completed | 705 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 715 |
+| emit: uncompleted | 716 |
 | feedback | 13 |
 | go_to | 16 |
 | nav_stack | 277 |
@@ -83,8 +83,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 82214 KB | 82.2 MB |
-| unused | 2984 KB | 3 MB |
+| total | 82201 KB | 82.2 MB |
+| unused | 2996 KB | 3 MB |
 </details>
 
 <details open>
@@ -113,6 +113,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/activities/story_cuddles.svg | 34.6 |
 | images/activities/tummy_time_safari.svg | 106.2 |
 | images/backgrounds/homescreen_pattern.svg | 156.3 |
+| images/character_icons/F1_SON_5.svg | 11.6 |
 | images/character_icons/faces-22.svg | 24.9 |
 | images/faces/saddest.svg | 2 |
 | images/flags/gb.svg | 0.5 |
@@ -281,7 +282,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 118.7 | 4 |
+| images/activities/circle_dance.svg | 117.2 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -325,7 +326,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/character_icons/F1_FATHER.svg | 54.1 | 1 |
 | images/character_icons/F1_MOTHER.svg | 11.3 | 1 |
 | images/character_icons/F1_SON_18.svg | 12.9 | 1 |
-| images/character_icons/F1_SON_5.svg | 11.6 | 1 |
 | images/character_icons/F2_DAUGHTER_19.svg | 16.6 | 1 |
 | images/character_icons/F2_DAUGHTER_3.svg | 9.2 | 1 |
 | images/character_icons/F2_GRANDFATHER.svg | 20.5 | 1 |
@@ -739,7 +739,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
-| template |  | 117 |
+| template |  | 118 |
 | template | generated | 762 |
 | template | legal_terms | 4 |
 </details>
