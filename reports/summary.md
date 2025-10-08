@@ -32,11 +32,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2727 |
+| set_variable | 2730 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
-| template | 970 |
+| template | 971 |
 | text | 149 |
 | text_area | 2 |
 | text_box | 12 |
@@ -83,7 +83,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 82212 KB | 82.2 MB |
+| total | 82214 KB | 82.2 MB |
 | unused | 2984 KB | 3 MB |
 </details>
 
@@ -280,7 +280,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
