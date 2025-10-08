@@ -32,11 +32,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2723 |
+| set_variable | 2725 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
-| template | 968 |
+| template | 969 |
 | text | 149 |
 | text_area | 2 |
 | text_box | 12 |
@@ -56,13 +56,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 3 |
-| emit: completed | 705 |
+| emit: completed | 706 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 716 |
+| emit: uncompleted | 717 |
 | feedback | 13 |
 | go_to | 16 |
 | nav_stack | 277 |
@@ -739,6 +739,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
 | template |  | 118 |
-| template | generated | 762 |
+| template | generated | 763 |
 | template | legal_terms | 4 |
 </details>
