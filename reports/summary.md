@@ -32,11 +32,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2725 |
+| set_variable | 2727 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
-| template | 969 |
+| template | 970 |
 | text | 149 |
 | text_area | 2 |
 | text_box | 12 |
@@ -56,13 +56,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 3 |
-| emit: completed | 706 |
+| emit: completed | 707 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 717 |
+| emit: uncompleted | 718 |
 | feedback | 13 |
 | go_to | 16 |
 | nav_stack | 277 |
@@ -83,7 +83,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 82214 KB | 82.2 MB |
+| total | 82212 KB | 82.2 MB |
 | unused | 2984 KB | 3 MB |
 </details>
 
@@ -280,7 +280,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 118.7 | 4 |
+| images/activities/circle_dance.svg | 117.2 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -405,7 +405,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/homescreen/stress_t.svg | 16.9 | 2 |
 | images/homescreen/svp_t.svg | 25.4 | 2 |
 | images/icons/balance_blue.png | 4.7 | 1 |
-| images/icons/brain_blue.png | 5.2 | 6 |
+| images/icons/brain_blue.png | 5.2 | 7 |
 | images/icons/clock_blue.png | 4.5 | 5 |
 | images/icons/diamond.png | 1.8 | 2 |
 | images/icons/diamond_active.png | 1.7 | 2 |
@@ -413,7 +413,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/document.svg | 7.3 | 1 |
 | images/icons/expand_circle_right.svg | 0.5 | 1 |
 | images/icons/expand_circle_right_blue.svg | 2.1 | 1 |
-| images/icons/eye_blue.png | 4.2 | 8 |
+| images/icons/eye_blue.png | 4.2 | 9 |
 | images/icons/faces/happy_face_new.svg | 1.4 | 42 |
 | images/icons/faces/ok_face_new.svg | 0.5 | 42 |
 | images/icons/faces/sad.svg | 0.6 | 1 |
@@ -448,11 +448,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/repeat_blue.png | 5.4 | 1 |
 | images/icons/settings.svg | 2.4 | 1 |
 | images/icons/settings_active.svg | 2.4 | 1 |
-| images/icons/single_speech_blue.png | 3.3 | 9 |
+| images/icons/single_speech_blue.png | 3.3 | 10 |
 | images/icons/smile_eyes_down.svg | 0.9 | 30 |
 | images/icons/smile_eyes_up.svg | 1 | 54 |
 | images/icons/speech_bubble_blue.png | 4.2 | 8 |
-| images/icons/star_filled_blue.png | 5.1 | 18 |
+| images/icons/star_filled_blue.png | 5.1 | 19 |
 | images/icons/star_outline_blue.svg | 1 | 28 |
 | images/icons/tablet_blue.png | 2.8 | 1 |
 | images/icons/thought_bubble.svg | 2.1 | 27 |
@@ -546,7 +546,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/onlinesafety/onlinesafety2_t_1.png | 481.7 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety2_t_2.png | 488 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety2_t_3.png | 476.4 | 1 |
-| images/teen_modules/onlinesafety/onlinesafety2_t_4.png | 460.4 | 1 |
+| images/teen_modules/onlinesafety/onlinesafety2_t_4.png | 460.4 | 2 |
 | images/teen_modules/onlinesafety/onlinesafety_t_1.png | 994.7 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety_t_3.png | 488.8 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety_t_4.png | 858.2 | 1 |
@@ -739,6 +739,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
 | template |  | 118 |
-| template | generated | 763 |
+| template | generated | 764 |
 | template | legal_terms | 4 |
 </details>
