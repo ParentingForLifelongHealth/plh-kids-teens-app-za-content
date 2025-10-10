@@ -1,0 +1,68 @@
+{
+  "flow_name": "prep_praise_t_articles",
+  "flow_subtype": "generated",
+  "flow_type": "data_pipe",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"relax_1\""
+      ],
+      "input_source": "relax"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: relax",
+        "nested: FALSE"
+      ],
+      "output_target": "praise_t_relax | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "id == \"check_in_3\""
+      ],
+      "input_source": "check_in"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "category_id: check_in",
+        "nested: FALSE"
+      ],
+      "output_target": "praise_t_check_in | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": [
+        "foreign_key == \"praise_t\""
+      ],
+      "input_source": "sub_items",
+      "output_target": "praise_t_testing | local_only;"
+    },
+    {
+      "operation": "concat",
+      "args_list": [
+        "praise_t_relax",
+        "praise_t_check_in",
+        "praise_t_testing"
+      ],
+      "input_source": false
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "completed: FALSE"
+      ],
+      "output_target": "praise_t_article_tasks"
+    }
+  ],
+  "_output_flows": [
+    {
+      "flow_name": "praise_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    }
+  ]
+}
