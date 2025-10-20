@@ -83,8 +83,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 84859 KB | 84.9 MB |
-| unused | 15665 KB | 15.7 MB |
+| total | 84884 KB | 84.9 MB |
+| unused | 15640 KB | 15.6 MB |
 </details>
 
 <details open>
@@ -125,7 +125,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/activities/story_cuddles.svg | 34.6 |
 | images/activities/tummy_time_safari.svg | 106.2 |
 | images/backgrounds/homescreen_pattern.svg | 156.3 |
-| images/character_icons/man_in_car_2.svg | 24.9 |
 | images/faces/happier.svg | 0.6 |
 | images/faces/saddest.svg | 2 |
 | images/flags/gb.svg | 0.5 |
@@ -245,7 +244,6 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_24.mp3 | 1 |
 | audio/relax/relax_6.mp3 | 1 |
 | audio/teen/topic_intros/new_onlinesafety_intro_t.mp3 | 1 |
-| images/character_icons/MAN_IN_CAR_2.svg | 1 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
 </details>
@@ -401,6 +399,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/character_icons/FRIEND_MALE_1.svg | 12.3 | 1 |
 | images/character_icons/FRIEND_MALE_2.svg | 22 | 1 |
 | images/character_icons/MAN_IN_CAR.svg | 13.2 | 1 |
+| images/character_icons/MAN_IN_CAR_2.svg | 24.9 | 1 |
 | images/character_icons/TEACHER_1.svg | 20.4 | 1 |
 | images/character_icons/ZA_FACILITATOR.svg | 17.7 | 1 |
 | images/character_icons/phone_icon.svg | 533.7 | 1 |
