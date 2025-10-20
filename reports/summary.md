@@ -32,11 +32,11 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2471 |
+| set_variable | 2434 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
-| template | 858 |
+| template | 843 |
 | text | 149 |
 | text_area | 2 |
 | text_box | 12 |
@@ -56,13 +56,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 3 |
-| emit: completed | 609 |
+| emit: completed | 594 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 621 |
+| emit: uncompleted | 606 |
 | feedback | 13 |
 | go_to | 16 |
 | nav_stack | 253 |
@@ -83,8 +83,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 84884 KB | 84.9 MB |
-| unused | 15640 KB | 15.6 MB |
+| total | 84105 KB | 84.1 MB |
+| unused | 16419 KB | 16.4 MB |
 </details>
 
 <details open>
@@ -104,6 +104,7 @@ Assets that appear in app-data but do not have references within sheets
 | audio/teen/testimonials/caregiver/caregiver_test_svp_t.mp3 | 174.8 |
 | audio/teen/testimonials/teen/teen_test_grief_t.mp3 | 207.9 |
 | audio/teen/testimonials/teen/teen_test_learn_t.mp3 | 330.1 |
+| audio/teen/testimonials/teen/teen_test_rules_t.mp3 | 447.1 |
 | audio/teen/testimonials/teen/teen_test_srh_t.mp3 | 263.5 |
 | audio/teen/testimonials/teen/teen_test_svp_t.mp3 | 202.9 |
 | audio/teen/topic_intros/grief_intro_t.mp3 | 690.8 |
@@ -217,6 +218,11 @@ Assets that appear in app-data but do not have references within sheets
 | images/teen_modules/srh/srh1_t_2.svg | 36.9 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 |
 | images/teen_modules/srh/srh1_t_4.svg | 31 |
+| images/teen_modules/srh/srh_learn_sex_talk_age_t_1.svg | 125 |
+| images/teen_modules/srh/srh_learn_sex_talk_age_t_3.svg | 25.6 |
+| images/teen_modules/srh/srh_learn_sex_talk_safe_t_3.svg | 44 |
+| images/teen_modules/srh/srh_learn_sex_talk_safe_t_4.svg | 60.7 |
+| images/teen_modules/srh/srh_learn_sex_talk_safe_t_5.svg | 76.4 |
 | images/teen_modules/stress/stress3_t_6.svg | 74.5 |
 | images/teen_modules/svp/svp_usebody_t_1.gif | 1111.6 |
 | images/teen_modules/svp/svp_usebody_t_2.gif | 2008.5 |
@@ -277,7 +283,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/testimonials/caregiver/caregiver_test_instruct_t.mp3 | 281.3 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_money_t.mp3 | 243.5 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_onlinesafety_t.mp3 | 371.8 | 2 |
-| audio/teen/testimonials/caregiver/caregiver_test_praise_t.mp3 | 232.3 | 2 |
+| audio/teen/testimonials/caregiver/caregiver_test_praise_t.mp3 | 232.3 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_rules_t.mp3 | 379.2 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_safe_t.mp3 | 167.5 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_self_care_t.mp3 | 132.8 | 1 |
@@ -289,8 +295,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/testimonials/teen/teen_test_instruct_t.mp3 | 397.7 | 1 |
 | audio/teen/testimonials/teen/teen_test_money_t.mp3 | 282.3 | 1 |
 | audio/teen/testimonials/teen/teen_test_onlinesafety_t.mp3 | 210.8 | 2 |
-| audio/teen/testimonials/teen/teen_test_praise_t.mp3 | 148 | 2 |
-| audio/teen/testimonials/teen/teen_test_rules_t.mp3 | 447.1 | 1 |
+| audio/teen/testimonials/teen/teen_test_praise_t.mp3 | 148 | 1 |
 | audio/teen/testimonials/teen/teen_test_safe_t.mp3 | 136.9 | 1 |
 | audio/teen/testimonials/teen/teen_test_self_care_t.mp3 | 312 | 1 |
 | audio/teen/testimonials/teen/teen_test_solve_t.mp3 | 264.6 | 1 |
@@ -302,7 +307,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/topic_intros/instruct_intro_t.mp3 | 231 | 1 |
 | audio/teen/topic_intros/money_intro_t.mp3 | 348.8 | 1 |
 | audio/teen/topic_intros/onlinesafety_intro_t.mp3 | 318.9 | 1 |
-| audio/teen/topic_intros/praise_intro_t.mp3 | 532.2 | 2 |
+| audio/teen/topic_intros/praise_intro_t.mp3 | 532.2 | 1 |
 | audio/teen/topic_intros/rules_intro_t.mp3 | 292.9 | 1 |
 | audio/teen/topic_intros/safe_intro_t.mp3 | 545.9 | 2 |
 | audio/teen/topic_intros/self_care_intro_t.mp3 | 407.6 | 1 |
@@ -403,15 +408,15 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/character_icons/TEACHER_1.svg | 20.4 | 1 |
 | images/character_icons/ZA_FACILITATOR.svg | 17.7 | 1 |
 | images/character_icons/phone_icon.svg | 533.7 | 1 |
-| images/faces/angry.svg | 1.1 | 5 |
+| images/faces/angry.svg | 1.1 | 4 |
 | images/faces/confused.svg | 1.8 | 4 |
-| images/faces/happiest.svg | 1.3 | 7 |
-| images/faces/happy.svg | 0.6 | 35 |
-| images/faces/neutral.svg | 0.5 | 33 |
-| images/faces/sad.svg | 0.6 | 30 |
+| images/faces/happiest.svg | 1.3 | 5 |
+| images/faces/happy.svg | 0.6 | 33 |
+| images/faces/neutral.svg | 0.5 | 31 |
+| images/faces/sad.svg | 0.6 | 29 |
 | images/faces/sadder.svg | 1.1 | 2 |
 | images/faces/scared.svg | 2.1 | 3 |
-| images/faces/tired.svg | 2.4 | 2 |
+| images/faces/tired.svg | 2.4 | 1 |
 | images/homescreen/celebrate_t.svg | 36.3 | 2 |
 | images/homescreen/check_in/traditional_rondavel_closed.svg | 23.9 | 1 |
 | images/homescreen/check_in/traditional_rondavel_open.svg | 28.8 | 1 |
@@ -465,7 +470,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/document.svg | 7.3 | 1 |
 | images/icons/expand_circle_right.svg | 0.5 | 1 |
 | images/icons/expand_circle_right_blue.svg | 2.1 | 1 |
-| images/icons/eye_blue.png | 4.2 | 12 |
+| images/icons/eye_blue.png | 4.2 | 11 |
 | images/icons/faces/happy_face_new.svg | 1.4 | 38 |
 | images/icons/faces/ok_face_new.svg | 0.5 | 38 |
 | images/icons/faces/sad.svg | 0.6 | 1 |
@@ -500,7 +505,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/repeat_blue.png | 5.4 | 1 |
 | images/icons/settings.svg | 2.4 | 1 |
 | images/icons/settings_active.svg | 2.4 | 1 |
-| images/icons/single_speech_blue.png | 3.3 | 11 |
+| images/icons/single_speech_blue.png | 3.3 | 10 |
 | images/icons/smile_eyes_down.svg | 0.9 | 26 |
 | images/icons/smile_eyes_up.svg | 1 | 46 |
 | images/icons/speech_bubble_blue.png | 4.2 | 6 |
@@ -512,7 +517,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/tick_white.svg | 0.3 | 1 |
 | images/icons/trophy.png | 1.6 | 2 |
 | images/icons/trophy_active.png | 1.7 | 2 |
-| images/icons/trophy_blue.png | 5.1 | 11 |
+| images/icons/trophy_blue.png | 5.1 | 10 |
 | images/icons/trophy_footer.svg | 3.9 | 1 |
 | images/icons/trophy_footer_active.svg | 3.9 | 1 |
 | images/icons/verified.svg | 0.5 | 1 |
@@ -595,8 +600,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/onlinesafety/onlinesafety_t_5.png | 757.9 | 2 |
 | images/teen_modules/onlinesafety/onlinesafety_t_6.png | 544.5 | 2 |
 | images/teen_modules/onlinesafety/onlinesafety_t_7.png | 527.2 | 2 |
-| images/teen_modules/praise/praise1_t_1.svg | 164.8 | 2 |
-| images/teen_modules/praise/praise1_t_2.svg | 44.8 | 2 |
+| images/teen_modules/praise/praise1_t_1.svg | 164.8 | 1 |
+| images/teen_modules/praise/praise1_t_2.svg | 44.8 | 1 |
 | images/teen_modules/rules/rules1_t_1.svg | 42.3 | 1 |
 | images/teen_modules/rules/rules1_t_2.svg | 43.6 | 1 |
 | images/teen_modules/rules/rules1_t_3.svg | 48.3 | 1 |
@@ -635,14 +640,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/srh/srh2_t_3.svg | 28.7 | 1 |
 | images/teen_modules/srh/srh2_t_4.svg | 30.1 | 1 |
 | images/teen_modules/srh/srh2_t_5.svg | 27.2 | 1 |
-| images/teen_modules/srh/srh_learn_sex_talk_age_t_1.svg | 125 | 1 |
-| images/teen_modules/srh/srh_learn_sex_talk_age_t_2.svg | 70.9 | 2 |
-| images/teen_modules/srh/srh_learn_sex_talk_age_t_3.svg | 25.6 | 1 |
+| images/teen_modules/srh/srh_learn_sex_talk_age_t_2.svg | 70.9 | 1 |
 | images/teen_modules/srh/srh_learn_sex_talk_safe_t_1.svg | 70 | 1 |
-| images/teen_modules/srh/srh_learn_sex_talk_safe_t_2.svg | 28.8 | 2 |
-| images/teen_modules/srh/srh_learn_sex_talk_safe_t_3.svg | 44 | 1 |
-| images/teen_modules/srh/srh_learn_sex_talk_safe_t_4.svg | 60.7 | 1 |
-| images/teen_modules/srh/srh_learn_sex_talk_safe_t_5.svg | 76.4 | 1 |
+| images/teen_modules/srh/srh_learn_sex_talk_safe_t_2.svg | 28.8 | 1 |
 | images/teen_modules/srh/srh_learn_sex_talk_when_t_1.svg | 58.6 | 1 |
 | images/teen_modules/srh/srh_learn_sex_talk_when_t_2.svg | 95.4 | 1 |
 | images/teen_modules/srh/srh_learn_sex_talk_when_t_3.svg | 203.3 | 2 |
@@ -757,6 +757,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
 | template |  | 118 |
-| template | generated | 655 |
+| template | generated | 640 |
 | template | legal_terms | 4 |
 </details>
