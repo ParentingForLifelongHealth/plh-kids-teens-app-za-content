@@ -52,6 +52,7 @@
                   "_translations": {
                     "value": {}
                   },
+                  "exclude_from_translation": true,
                   "type": "set_variable",
                   "_nested_name": "loop_intros.intro_element.text_1_facilitator.character_id",
                   "_dynamicFields": {
@@ -76,6 +77,7 @@
                   "_translations": {
                     "value": {}
                   },
+                  "exclude_from_translation": true,
                   "type": "set_variable",
                   "_nested_name": "loop_intros.intro_element.text_1_facilitator.bubble_text",
                   "_dynamicFields": {
@@ -167,7 +169,6 @@
                 "variant": "box_white",
                 "style": "column"
               },
-              "exclude_from_translation": true,
               "rows": [
                 {
                   "type": "image",
@@ -264,14 +265,13 @@
               }
             },
             {
-              "type": "text",
               "name": "text_2",
               "value": "@item.text_2",
               "_translations": {
                 "value": {}
               },
               "condition": "!!(@item.text_2)",
-              "exclude_from_translation": true,
+              "type": "set_variable",
               "_nested_name": "loop_intros.intro_element.text_2",
               "_dynamicFields": {
                 "value": [
@@ -294,6 +294,43 @@
               "_dynamicDependencies": {
                 "@item.text_2": [
                   "value",
+                  "condition"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "print_text_2",
+              "value": "@local.text_2",
+              "_translations": {
+                "value": {}
+              },
+              "condition": "!!(@item.text_2)",
+              "exclude_from_translation": true,
+              "_nested_name": "loop_intros.intro_element.print_text_2",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@local.text_2",
+                    "matchedExpression": "@local.text_2",
+                    "type": "local",
+                    "fieldName": "text_2"
+                  }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!!(@item.text_2)",
+                    "matchedExpression": "@item.text_2",
+                    "type": "item",
+                    "fieldName": "text_2"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.text_2": [
+                  "value"
+                ],
+                "@item.text_2": [
                   "condition"
                 ]
               }

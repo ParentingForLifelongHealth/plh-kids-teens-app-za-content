@@ -262,14 +262,20 @@
               "_translations": {
                 "value": {}
               },
-              "condition": "@local.character_data.role == \"facilitator\"",
+              "condition": "@local.character_data.role != \"caregiver\" && @local.character_data.role != \"child\"",
               "exclude_from_translation": true,
               "type": "set_variable",
               "_nested_name": "loop_comics.comic_element.variant",
               "_dynamicFields": {
                 "condition": [
                   {
-                    "fullExpression": "@local.character_data.role == \"facilitator\"",
+                    "fullExpression": "@local.character_data.role != \"caregiver\" && @local.character_data.role != \"child\"",
+                    "matchedExpression": "@local.character_data.role",
+                    "type": "local",
+                    "fieldName": "character_data"
+                  },
+                  {
+                    "fullExpression": "@local.character_data.role != \"caregiver\" && @local.character_data.role != \"child\"",
                     "matchedExpression": "@local.character_data.role",
                     "type": "local",
                     "fieldName": "character_data"
@@ -278,6 +284,7 @@
               },
               "_dynamicDependencies": {
                 "@local.character_data.role": [
+                  "condition",
                   "condition"
                 ]
               }
