@@ -11,7 +11,7 @@
 | audio | 4 |
 | button | 83 |
 | combo_box | 10 |
-| data_items | 133 |
+| data_items | 134 |
 | debug_toggle | 1 |
 | display_grid | 4 |
 | display_group | 99 |
@@ -32,12 +32,12 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2476 |
+| set_variable | 2484 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
-| template | 860 |
-| text | 149 |
+| template | 865 |
+| text | 152 |
 | text_area | 2 |
 | text_box | 12 |
 | text_bubble | 7 |
@@ -65,11 +65,11 @@
 | emit: uncompleted | 623 |
 | feedback | 13 |
 | go_to | 16 |
-| nav_stack | 253 |
-| pop_up | 60 |
+| nav_stack | 257 |
+| pop_up | 61 |
 | reset_app | 4 |
 | reset_data | 3 |
-| set_data | 63 |
+| set_data | 64 |
 | set_field | 54 |
 | set_item | 47 |
 | set_local | 49 |
@@ -83,7 +83,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 84797 KB | 84.8 MB |
+| total | 85805 KB | 85.8 MB |
 | unused | 15726 KB | 15.7 MB |
 </details>
 
@@ -110,7 +110,7 @@ Assets that appear in app-data but do not have references within sheets
 | audio/teen/topic_intros/learn_intro_t.mp3 | 592.2 |
 | audio/teen/topic_intros/srh_intro_t.mp3 | 369.2 |
 | audio/teen/topic_intros/svp_intro_t.mp3 | 603.8 |
-| contents.json | 5.9 |
+| contents.json | 6.1 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
@@ -245,6 +245,7 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_23.mp3 | 1 |
 | audio/relax/relax_24.mp3 | 1 |
 | audio/relax/relax_6.mp3 | 1 |
+| images/backgrounds/map_view_bg.jpg | 1 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
 </details>
@@ -336,7 +337,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -407,9 +408,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/faces/angry.svg | 1.1 | 4 |
 | images/faces/confused.svg | 1.8 | 4 |
 | images/faces/happiest.svg | 1.3 | 5 |
-| images/faces/happy.svg | 0.6 | 33 |
-| images/faces/neutral.svg | 0.5 | 31 |
-| images/faces/sad.svg | 0.6 | 29 |
+| images/faces/happy.svg | 0.6 | 34 |
+| images/faces/neutral.svg | 0.5 | 32 |
+| images/faces/sad.svg | 0.6 | 30 |
 | images/faces/sadder.svg | 1.1 | 2 |
 | images/faces/scared.svg | 2.1 | 3 |
 | images/faces/tired.svg | 2.4 | 1 |
@@ -518,8 +519,25 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/trophy_footer_active.svg | 3.9 | 1 |
 | images/icons/verified.svg | 0.5 | 1 |
 | images/icons/world.svg | 6.2 | 1 |
+| images/logos/CWBSA.png | 34.9 | 1 |
+| images/logos/GISP.png | 34.8 | 1 |
 | images/logos/IDEMS.png | 84.6 | 1 |
+| images/logos/NIMR.png | 29.6 | 1 |
+| images/logos/Oxford.png | 42 | 1 |
 | images/logos/PLH.png | 26.6 | 1 |
+| images/logos/UCT.png | 414.2 | 1 |
+| images/logos/UNICEF.png | 57.9 | 1 |
+| images/logos/Vodacom.png | 30.9 | 1 |
+| images/logos/WHO.jpeg | 165.8 | 1 |
+| images/logos/donors/Agency_fund.png | 17.2 | 1 |
+| images/logos/donors/ERC.png | 38.8 | 1 |
+| images/logos/donors/Human_safety_net.png | 3.9 | 1 |
+| images/logos/donors/LEGO.png | 9.3 | 1 |
+| images/logos/donors/Nuffield_college.png | 32.5 | 1 |
+| images/logos/donors/OAK.png | 17.7 | 1 |
+| images/logos/donors/UKRI.png | 25 | 1 |
+| images/logos/donors/WCF.jpg | 29.6 | 1 |
+| images/logos/donors/Wellspring.jpeg | 22.1 | 1 |
 | images/logos/plh_logomark.png | 20.5 | 1 |
 | images/logos/sino_horizontal.svg | 251 | 1 |
 | images/logos/sino_white.svg | 256.1 | 1 |
@@ -755,7 +773,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
-| template |  | 118 |
-| template | generated | 657 |
+| template |  | 119 |
+| template | generated | 658 |
 | template | legal_terms | 4 |
 </details>
