@@ -118,7 +118,7 @@
         {
           "type": "text",
           "name": "text_login",
-          "value": "@global.login",
+          "value": "@global.welcome_message_subtext",
           "_translations": {
             "value": {}
           },
@@ -130,15 +130,15 @@
           "_dynamicFields": {
             "value": [
               {
-                "fullExpression": "@global.login",
-                "matchedExpression": "@global.login",
+                "fullExpression": "@global.welcome_message_subtext",
+                "matchedExpression": "@global.welcome_message_subtext",
                 "type": "global",
-                "fieldName": "login"
+                "fieldName": "welcome_message_subtext"
               }
             ]
           },
           "_dynamicDependencies": {
-            "@global.login": [
+            "@global.welcome_message_subtext": [
               "value"
             ]
           }
@@ -201,9 +201,6 @@
             }
           ],
           "condition": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
-          "style_list": [
-            "max-width: max-content"
-          ],
           "_nested_name": "before_login.button_apple_sign_in",
           "_dynamicFields": {
             "value": [
@@ -265,9 +262,6 @@
               "_raw": "click | emit: force_reprocess",
               "_cleaned": "click | emit: force_reprocess"
             }
-          ],
-          "style_list": [
-            "max-width: max-content"
           ],
           "_nested_name": "before_login.button_google_sign_in",
           "_dynamicFields": {
@@ -403,7 +397,7 @@
               ],
               "parameter_list": {
                 "variant": "card",
-                "style": "no-background"
+                "style": "no-background short"
               },
               "exclude_from_translation": true,
               "_nested_name": "before_login.dg_buttons_terms.button_terms",
