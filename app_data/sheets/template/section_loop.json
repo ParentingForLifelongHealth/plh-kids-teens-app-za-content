@@ -177,40 +177,6 @@
               }
             },
             {
-              "name": "pop_up_text",
-              "value": "@item.extra_text",
-              "_translations": {
-                "value": {}
-              },
-              "condition": "!!(@item.extra_text)",
-              "type": "set_variable",
-              "_nested_name": "loop_intros.dg.pop_up_text",
-              "_dynamicFields": {
-                "value": [
-                  {
-                    "fullExpression": "@item.extra_text",
-                    "matchedExpression": "@item.extra_text",
-                    "type": "item",
-                    "fieldName": "extra_text"
-                  }
-                ],
-                "condition": [
-                  {
-                    "fullExpression": "!!(@item.extra_text)",
-                    "matchedExpression": "@item.extra_text",
-                    "type": "item",
-                    "fieldName": "extra_text"
-                  }
-                ]
-              },
-              "_dynamicDependencies": {
-                "@item.extra_text": [
-                  "value",
-                  "condition"
-                ]
-              }
-            },
-            {
               "type": "accordion",
               "name": "accordion",
               "condition": "!!(@item.button_text)",
@@ -227,6 +193,7 @@
                       "_translations": {
                         "value": {}
                       },
+                      "condition": "!!(@item.extra_text)",
                       "_nested_name": "loop_intros.dg.accordion.first.accordion_content",
                       "_dynamicFields": {
                         "value": [
@@ -236,11 +203,20 @@
                             "type": "item",
                             "fieldName": "extra_text"
                           }
+                        ],
+                        "condition": [
+                          {
+                            "fullExpression": "!!(@item.extra_text)",
+                            "matchedExpression": "@item.extra_text",
+                            "type": "item",
+                            "fieldName": "extra_text"
+                          }
                         ]
                       },
                       "_dynamicDependencies": {
                         "@item.extra_text": [
-                          "value"
+                          "value",
+                          "condition"
                         ]
                       }
                     }
@@ -264,6 +240,78 @@
                 }
               ],
               "_nested_name": "loop_intros.dg.accordion",
+              "_dynamicFields": {
+                "condition": [
+                  {
+                    "fullExpression": "!!(@item.button_text)",
+                    "matchedExpression": "@item.button_text",
+                    "type": "item",
+                    "fieldName": "button_text"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.button_text": [
+                  "condition"
+                ]
+              }
+            },
+            {
+              "type": "template",
+              "name": "translated_accordion",
+              "value": "translated_accordion",
+              "condition": "!!(@item.button_text)",
+              "rows": [
+                {
+                  "name": "button_text",
+                  "value": "@item.button_text",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "loop_intros.dg.translated_accordion.button_text",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@item.button_text",
+                        "matchedExpression": "@item.button_text",
+                        "type": "item",
+                        "fieldName": "button_text"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@item.button_text": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "extra_text",
+                  "value": "@item.extra_text",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "type": "set_variable",
+                  "_nested_name": "loop_intros.dg.translated_accordion.extra_text",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@item.extra_text",
+                        "matchedExpression": "@item.extra_text",
+                        "type": "item",
+                        "fieldName": "extra_text"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@item.extra_text": [
+                      "value"
+                    ]
+                  }
+                }
+              ],
+              "_nested_name": "loop_intros.dg.translated_accordion",
               "_dynamicFields": {
                 "condition": [
                   {
