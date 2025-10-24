@@ -32,7 +32,7 @@
 | round_button | 10 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2487 |
+| set_variable | 2488 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 3 |
