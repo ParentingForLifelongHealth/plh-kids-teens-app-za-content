@@ -5,12 +5,11 @@
   "rows": [
     {
       "name": "article_id",
-      "value": "test",
+      "value": "onlinesafety_t16",
       "_translations": {
-        "value": {
-          "za_xh": true
-        }
+        "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "article_id"
     },
@@ -185,7 +184,7 @@
                   "type": "accordion_section",
                   "name": "first",
                   "value": "@item.button_text",
-                  "condition": false,
+                  "condition": "!!(@item.button_text)",
                   "rows": [
                     {
                       "type": "text",
@@ -231,11 +230,20 @@
                         "type": "item",
                         "fieldName": "button_text"
                       }
+                    ],
+                    "condition": [
+                      {
+                        "fullExpression": "!!(@item.button_text)",
+                        "matchedExpression": "@item.button_text",
+                        "type": "item",
+                        "fieldName": "button_text"
+                      }
                     ]
                   },
                   "_dynamicDependencies": {
                     "@item.button_text": [
-                      "value"
+                      "value",
+                      "condition"
                     ]
                   }
                 }
