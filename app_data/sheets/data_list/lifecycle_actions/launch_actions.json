@@ -48,20 +48,20 @@
     },
     {
       "lifecycle_event": "app_start",
-      "id": "splash",
+      "id": "splash_auto_advance",
       "priority": 3,
       "condition_list": [
-        "@fields.user_mode && !@fields.onboarding_splash_completed && @global.has_onboarding_splash"
+        "@fields.user_mode && !@fields.onboarding_splash_completed && @global.has_onboarding_splash && !@global.onboarding_splash_manual_advance"
       ],
       "action_list": [
         {
           "trigger": "click",
           "action_id": "pop_up",
           "args": [
-            "onboarding_splash"
+            "onboarding_splash_auto"
           ],
-          "_raw": "pop_up: onboarding_splash | fullscreen: true, showCloseButton: false",
-          "_cleaned": "click | pop_up: onboarding_splash | fullscreen: true, showCloseButton: false",
+          "_raw": "pop_up: onboarding_splash_auto | fullscreen: true, showCloseButton: false",
+          "_cleaned": "click | pop_up: onboarding_splash_auto | fullscreen: true, showCloseButton: false",
           "params": {
             "fullscreen": true,
             "showCloseButton": false
@@ -76,6 +76,29 @@
           ],
           "_raw": "set_field: onboarding_splash_completed: true",
           "_cleaned": "click | set_field: onboarding_splash_completed: true"
+        }
+      ]
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "splash_manual_advance",
+      "priority": 3.1,
+      "condition_list": [
+        "@fields.user_mode && !@fields.onboarding_splash_completed && @global.has_onboarding_splash && @global.onboarding_splash_manual_advance"
+      ],
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "onboarding_splash_manual"
+          ],
+          "_raw": "pop_up: onboarding_splash_manual | fullscreen: true, showCloseButton: false",
+          "_cleaned": "click | pop_up: onboarding_splash_manual | fullscreen: true, showCloseButton: false",
+          "params": {
+            "fullscreen": true,
+            "showCloseButton": false
+          }
         }
       ]
     },

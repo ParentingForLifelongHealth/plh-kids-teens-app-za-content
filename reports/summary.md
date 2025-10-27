@@ -9,12 +9,12 @@
 | animated_slides | 1 |
 | apple_sign_in_button | 2 |
 | audio | 4 |
-| button | 83 |
+| button | 85 |
 | combo_box | 10 |
-| data_items | 134 |
+| data_items | 137 |
 | debug_toggle | 1 |
 | display_grid | 4 |
-| display_group | 99 |
+| display_group | 102 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 24 |
@@ -29,15 +29,15 @@
 | progress_path | 1 |
 | qr_code | 1 |
 | radio_button_grid | 10 |
-| round_button | 10 |
+| round_button | 11 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2488 |
+| set_variable | 2499 |
 | simple_checkbox | 1 |
 | task_card | 6 |
-| task_progress_bar | 3 |
-| template | 866 |
-| text | 153 |
+| task_progress_bar | 4 |
+| template | 869 |
+| text | 154 |
 | text_area | 2 |
 | text_box | 12 |
 | text_bubble | 7 |
@@ -56,23 +56,23 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 3 |
-| emit: completed | 611 |
+| emit: completed | 614 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 623 |
+| emit: uncompleted | 624 |
 | feedback | 13 |
 | go_to | 16 |
 | nav_stack | 257 |
 | pop_up | 61 |
 | reset_app | 4 |
 | reset_data | 3 |
-| set_data | 64 |
-| set_field | 54 |
+| set_data | 68 |
+| set_field | 56 |
 | set_item | 47 |
-| set_local | 49 |
+| set_local | 51 |
 | share | 2 |
 | task | 3 |
 | user | 3 |
@@ -110,7 +110,7 @@ Assets that appear in app-data but do not have references within sheets
 | audio/teen/topic_intros/learn_intro_t.mp3 | 592.2 |
 | audio/teen/topic_intros/srh_intro_t.mp3 | 369.2 |
 | audio/teen/topic_intros/svp_intro_t.mp3 | 603.8 |
-| contents.json | 5.9 |
+| contents.json | 6.1 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
@@ -773,7 +773,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 5 |
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
-| template |  | 120 |
+| template |  | 122 |
 | template | generated | 658 |
 | template | legal_terms | 4 |
 </details>
