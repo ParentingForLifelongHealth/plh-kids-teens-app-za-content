@@ -1,0 +1,166 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_splash_slide",
+  "status": "released",
+  "rows": [
+    {
+      "name": "show_back",
+      "value": true,
+      "type": "set_variable",
+      "_nested_name": "show_back"
+    },
+    {
+      "type": "image",
+      "name": "image",
+      "_nested_name": "image"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "parameter_list": {
+        "style": "center"
+      },
+      "_nested_name": "text"
+    },
+    {
+      "type": "template",
+      "name": "footer",
+      "value": "onboarding_footer",
+      "condition": "!!@global.onboarding_footer_image_asset && !@global.onboarding_splash_manual_advance",
+      "rows": [],
+      "_nested_name": "footer",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!!@global.onboarding_footer_image_asset && !@global.onboarding_splash_manual_advance",
+            "matchedExpression": "!@global.onboarding_footer_image_asset",
+            "type": "global",
+            "fieldName": "onboarding_footer_image_asset"
+          },
+          {
+            "fullExpression": "!!@global.onboarding_footer_image_asset && !@global.onboarding_splash_manual_advance",
+            "matchedExpression": "!@global.onboarding_splash_manual_advance",
+            "type": "global",
+            "fieldName": "onboarding_splash_manual_advance"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@global.onboarding_footer_image_asset": [
+          "condition"
+        ],
+        "!@global.onboarding_splash_manual_advance": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "dg_footer",
+      "parameter_list": {
+        "sticky": "bottom"
+      },
+      "condition": "!!@global.onboarding_splash_manual_advance",
+      "style_list": [
+        "padding: 12px 24px"
+      ],
+      "rows": [
+        {
+          "type": "round_button",
+          "name": "button_back",
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "click | emit: uncompleted",
+              "_cleaned": "click | emit: uncompleted"
+            }
+          ],
+          "parameter_list": {
+            "icon_src": "arrow-back",
+            "variant": "no-background"
+          },
+          "condition": "@local.show_back",
+          "_nested_name": "dg_footer.button_back",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "@local.show_back",
+                "matchedExpression": "@local.show_back",
+                "type": "local",
+                "fieldName": "show_back"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.show_back": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_completed",
+          "value": "@global.continue",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "click | emit: completed",
+              "_cleaned": "click | emit: completed"
+            }
+          ],
+          "parameter_list": {
+            "style": "navigation"
+          },
+          "style_list": [
+            "flex: 1"
+          ],
+          "_nested_name": "dg_footer.button_completed",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.continue",
+                "matchedExpression": "@global.continue",
+                "type": "global",
+                "fieldName": "continue"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.continue": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "dg_footer",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!!@global.onboarding_splash_manual_advance",
+            "matchedExpression": "!@global.onboarding_splash_manual_advance",
+            "type": "global",
+            "fieldName": "onboarding_splash_manual_advance"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@global.onboarding_splash_manual_advance": [
+          "condition"
+        ]
+      }
+    }
+  ],
+  "_xlsxPath": "PLH onboarding.xlsx",
+  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR"
+}

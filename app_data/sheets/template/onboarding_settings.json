@@ -215,7 +215,7 @@
               "parameter_list": {
                 "style": "column"
               },
-              "hidden": "@local.completed_count != @item.completed_count",
+              "condition": "@item._index == @local.completed_count",
               "rows": [
                 {
                   "type": "template",
@@ -334,27 +334,27 @@
               ],
               "_nested_name": "loop_pages.await_data_loop_evaluation.condition",
               "_dynamicFields": {
-                "hidden": [
+                "condition": [
                   {
-                    "fullExpression": "@local.completed_count != @item.completed_count",
-                    "matchedExpression": "@local.completed_count",
-                    "type": "local",
-                    "fieldName": "completed_count"
+                    "fullExpression": "@item._index == @local.completed_count",
+                    "matchedExpression": "@item._index",
+                    "type": "item",
+                    "fieldName": "_index"
                   },
                   {
-                    "fullExpression": "@local.completed_count != @item.completed_count",
-                    "matchedExpression": "@item.completed_count",
-                    "type": "item",
+                    "fullExpression": "@item._index == @local.completed_count",
+                    "matchedExpression": "@local.completed_count",
+                    "type": "local",
                     "fieldName": "completed_count"
                   }
                 ]
               },
               "_dynamicDependencies": {
-                "@local.completed_count": [
-                  "hidden"
+                "@item._index": [
+                  "condition"
                 ],
-                "@item.completed_count": [
-                  "hidden"
+                "@local.completed_count": [
+                  "condition"
                 ]
               }
             }
