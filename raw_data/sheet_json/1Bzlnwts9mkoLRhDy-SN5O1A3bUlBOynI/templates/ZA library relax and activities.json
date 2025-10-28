@@ -1,0 +1,554 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "library_relax",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "library_my_relaxes",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "library_relaxes",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "library_activities",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "activity_button",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "learn_play",
+      "status": "draft"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "gen_learn_play",
+      "status": "draft",
+      "parameter_list": "input_data_list: learn_play;\noutput_flow_name: ltp_activity_{@gen.id};\noutput_flow_type: template;"
+    }
+  ],
+  "library_relax": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@data.library.relax.title"
+    },
+    {
+      "type": "button",
+      "name": "tile_1",
+      "value": "@global.my_relaxes",
+      "action_list": "click | go_to: library_my_relaxes",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "tile_2",
+      "value": "@global.all_relaxes",
+      "action_list": "click | go_to: library_relaxes",
+      "exclude_from_translation": true
+    }
+  ],
+  "library_my_relaxes": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.my_relaxes",
+      "parameter_list": "style: tiny;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "none_added",
+      "condition": "!(@field.relax_1_favourite || @field.relax_2_favourite || @field.relax_3_favourite || @field.relax_4_favourite || @field.relax_5_favourite || @field.relax_6_favourite || @field.relax_7_favourite || field.relax_8_favourite || @field.relax_9_favourite || @field.relax_10_favourite || @field.relax_11_favourite || @field.relax_12_favourite || @field.relax_14_favourite || @field.relax_15_favourite || @field.relax_16_favourite || field.relax_17_favourite || @field.relax_18_favourite || @field.relax_19_favourite || @field.relax_13_favourite || @field.relax_20_favourite || @field.relax_21_favourite || @field.relax_22_favourite || field.relax_23_favourite || @field.relax_24_favourite) ",
+      "parameter_list": "style:column"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "You have not added any relaxation activities to @global.my_relaxes yet. Why don't you choose some?"
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "@global.all_relaxes",
+      "action_list": "click | go_to:parent_centre_relaxes"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_items",
+      "name": "items",
+      "value": "@data.relax"
+    },
+    {
+      "type": "button",
+      "name": "button_@item.id",
+      "value": "@item.title",
+      "action_list": "click | set_field:this_workshop_together:false; click | go_to:activity_@item.id",
+      "hidden": "!@field.@item.favourite_field",
+      "condition": "@item.type != \"relax_active\""
+    },
+    {
+      "type": "button",
+      "name": "button_@item.id",
+      "value": "@item.title",
+      "action_list": "click | set_field:this_workshop_together:false; click | go_to:activity_@item.id",
+      "hidden": "!@field.@item.favourite_field",
+      "condition": "@item.type == \"relax_active\"",
+      "parameter_list": "style:navigation"
+    },
+    {
+      "type": "end_items"
+    }
+  ],
+  "library_relaxes": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.all_relaxes",
+      "parameter_list": "style: tiny;"
+    },
+    {
+      "type": "subtitle",
+      "name": "subtitle_passive_short",
+      "value": "@global.relax_passive_short"
+    },
+    {
+      "type": "begin_items",
+      "name": "items_passive_long",
+      "value": "@data.relax"
+    },
+    {
+      "type": "button",
+      "name": "button_@item.id",
+      "value": "@item.title",
+      "action_list": "click | set_field:this_workshop_together:false; click | go_to:activity_@item.id",
+      "condition": "@item.type == \"relax_passive_short\""
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "subtitle",
+      "name": "subtitle_passive_long",
+      "value": "@global.relax_passive_long"
+    },
+    {
+      "type": "begin_items",
+      "name": "items_passive_long",
+      "value": "@data.relax"
+    },
+    {
+      "type": "button",
+      "name": "button_@item.id",
+      "value": "@item.title",
+      "action_list": "click | set_field:this_workshop_together:false; click | go_to:activity_@item.id",
+      "condition": "@item.type == \"relax_passive_long\""
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "subtitle",
+      "name": "subtitle_active",
+      "value": "@global.relax_active"
+    },
+    {
+      "type": "begin_items",
+      "name": "items_active",
+      "value": "@data.relax"
+    },
+    {
+      "type": "button",
+      "name": "button_@item.id",
+      "value": "@item.title",
+      "action_list": "click | set_field:this_workshop_together:false; click | go_to:activity_@item.id",
+      "condition": "@item.type == \"relax_active\"",
+      "parameter_list": "style:navigation"
+    },
+    {
+      "type": "end_items"
+    }
+  ],
+  "library_activities": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.activities"
+    },
+    {
+      "name": "at_least_one_favourite",
+      "value": false
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.learn_play"
+    },
+    {
+      "name": "at_least_one_favourite",
+      "value": true,
+      "condition": "@fields.@item.favourite_field"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top"
+    },
+    {
+      "name": "now",
+      "value": "@calc(timestamp())"
+    },
+    {
+      "name": "click_history",
+      "value": "_click_history"
+    },
+    {
+      "name": "click_history_field_name",
+      "value": "random_activity@local.click_history"
+    },
+    {
+      "name": "click_history_value",
+      "value": "@fields.@local.click_history_field_name ;  @local.now",
+      "condition": "!!(@fields.@local.click_history_field_name)",
+      "comments": true
+    },
+    {
+      "name": "click_history_value",
+      "value": "@local.now",
+      "condition": "!(@fields.@local.click_history_field_name)"
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.learn_play",
+      "parameter_list": "shuffle;\nlimit: 1;"
+    },
+    {
+      "type": "button",
+      "name": "button_random",
+      "value": "Give me one idea",
+      "action_list": "click | go_to: ltp_activity_@item.id; \nclick | set_field: @local.click_history_field_name: @local.click_history_value; \nclick | emit: force_reload",
+      "parameter_list": "style: navigation"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "button",
+      "name": "button_favourites",
+      "value": "@global.my_activities",
+      "action_list": "click | go_to: parent_centre_my_ltp_activities",
+      "condition": "@local.at_least_one_favourite"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.activity_groups"
+    },
+    {
+      "name": "group_id",
+      "value": "@item.id"
+    },
+    {
+      "type": "title",
+      "name": "title_@item.id",
+      "value": "@item.title"
+    },
+    {
+      "type": "text",
+      "name": "text_@item.id",
+      "value": "@item.text"
+    },
+    {
+      "type": "begin_carousel",
+      "name": "carousel_@item.title",
+      "parameter_list": "centred_slides: false;\nspace_between: 0;"
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.learn_play"
+    },
+    {
+      "type": "begin_template",
+      "name": "activity_button_@item.id",
+      "value": "activity_button",
+      "condition": "@item.group == @local.group_id"
+    },
+    {
+      "name": "activity_id",
+      "value": "@item.id"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "end_carousel"
+    },
+    {
+      "type": "end_items"
+    }
+  ],
+  "activity_button": [
+    {
+      "name": "activity_id",
+      "value": "mystery_box"
+    },
+    {
+      "name": "activity_concat",
+      "value": "learn_play.@local.activity_id"
+    },
+    {
+      "name": "activity_data",
+      "value": "@data.@local.activity_concat"
+    },
+    {
+      "name": "now",
+      "value": "@calc(timestamp())"
+    },
+    {
+      "name": "click_history",
+      "value": "_click_history"
+    },
+    {
+      "name": "click_history_field_name",
+      "value": "ltp_activity_@local.activity_data.id@local.click_history"
+    },
+    {
+      "name": "click_history_value",
+      "value": "@fields.@local.click_history_field_name ;  @local.now",
+      "condition": "!!(@fields.@local.click_history_field_name)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "click_history_value",
+      "value": "@local.now",
+      "condition": "!(@fields.@local.click_history_field_name)"
+    },
+    {
+      "name": "toggle_history",
+      "value": "_favourite_history"
+    },
+    {
+      "name": "toggle_history_field_name",
+      "value": "ltp_activity_@local.activity_data.id@local.toggle_history"
+    },
+    {
+      "name": "toggle_history_value",
+      "value": "@fields.@local.toggle_history_field_name ;  @local.now",
+      "condition": "!!(@fields.@local.toggle_history_field_name)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "toggle_history_value",
+      "value": "@local.now",
+      "condition": "!(@fields.@local.toggle_history_field_name)"
+    },
+    {
+      "type": "begin_button",
+      "name": "button_@local.activity_data.id",
+      "value": "@local.activity_data.title",
+      "action_list": "click | go_to: ltp_activity_@local.activity_data.id;\nclick | set_field: @local.click_history_field_name: @local.click_history_value",
+      "parameter_list": "variant: card-portrait;\nimage_asset: @local.activity_data.icon_asset;"
+    },
+    {
+      "type": "toggle_bar",
+      "name": "toggle_bar_@local.activity_data.id",
+      "value": "@fields.@local.activity_data.favourite_field",
+      "action_list": "changed | set_field: @local.activity_data.favourite_field: this.value;\nchanged | set_field: @local.toggle_history_field_name: @local.toggle_history_value",
+      "parameter_list": "variant: icon; \nicon_true_asset: images/icons/heart_filled_red.png;\nicon_false_asset: images/icons/heart.png;"
+    },
+    {
+      "type": "end_button"
+    }
+  ],
+  "learn_play": [
+    {
+      "name": "activity_id",
+      "value": "mystery_box"
+    },
+    {
+      "name": "activity_concat",
+      "value": "learn_play.@local.activity_id"
+    },
+    {
+      "name": "activity_data",
+      "value": "@data.@local.activity_concat"
+    },
+    {
+      "name": "activity",
+      "value": "ltp_activity_@local.activity_data.id"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@local.activity_data.title"
+    },
+    {
+      "type": "image",
+      "name": "image_asset",
+      "value": "@local.activity_data.image_asset",
+      "condition": "!!(@local.activity_data.image_asset)",
+      "parameter_list": "style: rounded_corners;"
+    },
+    {
+      "type": "text",
+      "name": "intro_text",
+      "value": "@local.activity_data.intro_text"
+    },
+    {
+      "name": "resources_title",
+      "value": "What you need"
+    },
+    {
+      "name": "steps_title",
+      "value": "Steps"
+    },
+    {
+      "name": "tips_title",
+      "value": "Tips"
+    },
+    {
+      "name": "extension_title",
+      "value": "Try also"
+    },
+    {
+      "type": "begin_accordion"
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "resources",
+      "value": "@local.resources_title",
+      "condition": "!!(@local.activity_data.resources_text)"
+    },
+    {
+      "type": "text",
+      "name": "resources_text",
+      "value": "@local.activity_data.resources_text"
+    },
+    {
+      "type": "image",
+      "name": "resources_image_asset",
+      "value": "@local.activity_data.resources_image_asset",
+      "condition": "!!(@local.activity_data.resources_image_asset)"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "steps",
+      "value": "@local.steps_title",
+      "condition": "!!(@local.activity_data.steps_text)"
+    },
+    {
+      "type": "text",
+      "name": "steps_text",
+      "value": "@local.activity_data.steps_text"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "tips",
+      "value": "@local.tips_title",
+      "condition": "!!(@local.activity_data.tips_text)"
+    },
+    {
+      "type": "text",
+      "name": "tips_text",
+      "value": "@local.activity_data.tips_text"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "extension",
+      "value": "@local.extension_title",
+      "condition": "!!(@local.activity_data.extension_text)"
+    },
+    {
+      "type": "text",
+      "name": "extension_text",
+      "value": "@local.activity_data.extension_text"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "end_accordion"
+    },
+    {
+      "name": "toggle_bar_text",
+      "value": "Add this activity to @global.my_activities"
+    },
+    {
+      "name": "now",
+      "value": "@calc(timestamp())"
+    },
+    {
+      "name": "toggle_history",
+      "value": "_favourite_history"
+    },
+    {
+      "name": "toggle_history_field_name",
+      "value": "ltp_activity_@local.activity_data.id@local.toggle_history"
+    },
+    {
+      "name": "toggle_history_value",
+      "value": "@fields.@local.toggle_history_field_name ;  @local.now",
+      "condition": "!!(@fields.@local.toggle_history_field_name)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "toggle_history_value",
+      "value": "@local.now",
+      "condition": "!(@fields.@local.toggle_history_field_name)"
+    },
+    {
+      "type": "toggle_bar",
+      "name": "toggle_bar",
+      "value": "@fields.@local.activity_data.favourite_field",
+      "action_list": "changed | set_field: @local.activity_data.favourite_field: this.value;\nchanged | set_field: @local.toggle_history_field_name: @local.toggle_history_value",
+      "parameter_list": "show_icons: false; \nvariant: ios;\ntrue_text: @local.toggle_bar_text; \nfalse_text: @local.toggle_bar_text"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "Done",
+      "action_list": "click | emit: completed"
+    }
+  ],
+  "gen_learn_play": [
+    {
+      "type": "begin_template",
+      "name": "learn_play",
+      "value": "learn_play",
+      "action_list": "completed | emit: completed"
+    },
+    {
+      "name": "activity_id",
+      "value": "@gen.id"
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "data_pipe",
+      "flow_name": "prep_modules",
+      "status": "released"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "gen_prep_categories",
+      "status": "released",
+      "parameter_list": "input_data_list: modules;\noutput_flow_name: prep_{@gen.id}_categories;\noutput_flow_type: data_pipe;"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "gen_prep_articles",
+      "status": "released",
+      "parameter_list": "input_data_list: modules;\noutput_flow_name: prep_{@gen.id}_articles;\noutput_flow_type: data_pipe;"
+    }
+  ],
+  "prep_modules": [
+    {
+      "operation": "append_columns",
+      "args_list": "completed: FALSE;\ntask_child: {@row.id}_article_tasks;",
+      "input_source": "modules",
+      "output_target": "module_tasks"
+    }
+  ],
+  "gen_prep_categories": [
+    {
+      "operation": "append_columns",
+      "input_source": "common_categories",
+      "output_target": "{@gen.id}_category_tasks"
+    }
+  ],
+  "gen_prep_articles": [
+    {
+      "operation": "filter",
+      "args_list": "id == \"@gen.relax_id\"",
+      "input_source": "relax",
+      "comment": "Take relax article from separate data list"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": "category_id: relax;\nnested: FALSE;",
+      "output_target": "{@gen.id}_relax | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": "id == \"@gen.check_in_id\"",
+      "input_source": "check_in",
+      "comment": "Take check-in article from separate data list"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": "category_id: check_in;\nnested: FALSE;",
+      "output_target": "{@gen.id}_check_in | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": "!nested",
+      "input_source": "{@gen.id}_articles",
+      "output_target": "{@gen.id}_testing | local_only;"
+    },
+    {
+      "operation": "concat",
+      "args_list": "{@gen.id}_relax;\n{@gen.id}_check_in;\n{@gen.id}_testing;",
+      "input_source": false
+    },
+    {
+      "operation": "append_columns",
+      "args_list": "completed: FALSE",
+      "output_target": "{@gen.id}_article_tasks"
+    }
+  ],
+  "==sidekick==": [
+    {
+      "content_list_column_names": "flow_type",
+      "content_list_flow_types": "type",
+      "content_list_flow_subtypes": "subtype",
+      "content_list_statuses": "status",
+      "template_column_names": "type",
+      "template_row_types": "type",
+      "template_row_components": "accordion",
+      "data_list_column_names": "title::eng",
+      "global_column_names": "type",
+      "global_row_types": "declare_global_constant"
+    },
+    {
+      "content_list_column_names": "flow_name",
+      "content_list_flow_types": "template",
+      "content_list_flow_subtypes": "campaign_schedule",
+      "content_list_statuses": "released",
+      "template_column_names": "name",
+      "template_row_types": "set_field",
+      "template_row_components": "accordion_section",
+      "data_list_column_names": "text::eng",
+      "global_column_names": "name",
+      "global_row_types": "declare_field_default"
+    },
+    {
+      "content_list_column_names": "status",
+      "content_list_flow_types": "data_list",
+      "content_list_flow_subtypes": "campaign_rows",
+      "content_list_statuses": "draft",
+      "template_column_names": "value",
+      "template_row_types": "Set_global",
+      "template_row_components": "advanced_dashed_box",
+      "data_list_column_names": "illustration",
+      "global_column_names": "value"
+    },
+    {
+      "content_list_column_names": "flow_subtype",
+      "content_list_flow_types": "global",
+      "content_list_flow_subtypes": "app_config_language_list",
+      "template_column_names": "action_list",
+      "template_row_types": "begin_template",
+      "template_row_components": "animated_section",
+      "data_list_column_names": "template",
+      "global_column_names": "exclude_from_translation"
+    },
+    {
+      "content_list_column_names": "comments",
+      "content_list_flow_types": "tour",
+      "content_list_flow_subtypes": "comments",
+      "template_column_names": "hidden",
+      "template_row_types": "begin_nested_properties",
+      "template_row_components": "animated_section_group",
+      "data_list_column_names": "reference",
+      "global_column_names": "comments"
+    },
+    {
+      "content_list_column_names": "ID",
+      "content_list_flow_types": "data_pipe",
+      "content_list_flow_subtypes": "ID",
+      "template_column_names": "condition",
+      "template_row_types": "begin_items",
+      "template_row_components": "animated_slides",
+      "data_list_column_names": "reference_link_title",
+      "global_column_names": "ID"
+    },
+    {
+      "content_list_column_names": "attached_doc",
+      "content_list_flow_subtypes": "attached_single_doc",
+      "template_column_names": "parameter_list",
+      "template_row_types": "begin_display_group",
+      "template_row_components": "audio",
+      "data_list_column_names": "reference_link",
+      "global_column_names": "attached_doc"
+    },
+    {
+      "content_list_column_names": "attached_single_doc",
+      "template_column_names": "style_list",
+      "template_row_types": "begin_drawer",
+      "template_row_components": "button",
+      "data_list_column_names": "reference_link_title_2",
+      "global_column_names": "attached_single_doc"
+    },
+    {
+      "template_column_names": "exclude_from_translation",
+      "template_row_types": "end_template",
+      "template_row_components": "carousel",
+      "data_list_column_names": "refererence_link_2"
+    },
+    {
+      "template_column_names": "comments",
+      "template_row_types": "end_nested_properties",
+      "template_row_components": "checkbox",
+      "data_list_column_names": "ID"
+    },
+    {
+      "template_column_names": "ID",
+      "template_row_types": "end_items",
+      "template_row_components": "combo_box",
+      "data_list_column_names": "attached_doc"
+    },
+    {
+      "template_column_names": "attached_doc",
+      "template_row_types": "end_display_group",
+      "template_row_components": "dashed_box",
+      "data_list_column_names": "attached_single_doc"
+    },
+    {
+      "template_column_names": "attached_single_doc",
+      "template_row_types": "end_drawer",
+      "template_row_components": "debug_toggle"
+    },
+    {
+      "template_row_components": "display_group"
+    },
+    {
+      "template_row_components": "drawer"
+    },
+    {
+      "template_row_components": "form"
+    },
+    {
+      "template_row_components": "help_icon"
+    },
+    {
+      "template_row_components": "html"
+    },
+    {
+      "template_row_components": "icon_banner"
+    },
+    {
+      "template_row_components": "image"
+    },
+    {
+      "template_row_components": "latex"
+    },
+    {
+      "template_row_components": "lottie_animation"
+    },
+    {
+      "template_row_components": "nav_group"
+    },
+    {
+      "template_row_components": "nav_section"
+    },
+    {
+      "template_row_components": "navigation_bar"
+    },
+    {
+      "template_row_components": "number_selector"
+    },
+    {
+      "template_row_components": "parent_point_box"
+    },
+    {
+      "template_row_components": "parent_point_counter"
+    },
+    {
+      "template_row_components": "Points-item"
+    },
+    {
+      "template_row_components": "qr_code"
+    },
+    {
+      "template_row_components": "radio_group"
+    },
+    {
+      "template_row_components": "round_button"
+    },
+    {
+      "template_row_components": "round_button"
+    },
+    {
+      "template_row_components": "select_text"
+    },
+    {
+      "template_row_components": "simple_checkbox"
+    },
+    {
+      "template_row_components": "Slider"
+    },
+    {
+      "template_row_components": "slider"
+    },
+    {
+      "template_row_components": "square_button"
+    },
+    {
+      "template_row_components": "square_button"
+    },
+    {
+      "template_row_components": "subtitle"
+    },
+    {
+      "template_row_components": "task_card"
+    },
+    {
+      "template_row_components": "task_progress_bar"
+    },
+    {
+      "template_row_components": "text"
+    },
+    {
+      "template_row_components": "text_area"
+    },
+    {
+      "template_row_components": "text_box"
+    },
+    {
+      "template_row_components": "tile_component"
+    },
+    {
+      "template_row_components": "timer"
+    },
+    {
+      "template_row_components": "title"
+    },
+    {
+      "template_row_components": "toggle_bar"
+    },
+    {
+      "template_row_components": "video"
+    },
+    {
+      "template_row_components": "workshops_accordion"
+    }
+  ]
+}

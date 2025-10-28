@@ -1,0 +1,274 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "relax",
+      "status": "released"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "gen_relax",
+      "status": "released",
+      "parameter_list": "input_data_list: relax;\noutput_flow_name: article_@gen.id;\noutput_flow_type: template;"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "relax_text",
+      "status": "draft"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "gen_relax_text",
+      "status": "draft",
+      "parameter_list": "input_data_list: relax;\noutput_flow_name: text_@gen.id;\noutput_flow_type: template;"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "relax_card",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "relax_activities",
+      "status": "released"
+    }
+  ],
+  "relax": [
+    {
+      "name": "data_list_name",
+      "value": "relax",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id",
+      "value": "relax_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_name_id",
+      "value": "@local.data_list_name.@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_name_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "audio_title",
+      "value": "@local.row_data.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "audio_transcript",
+      "value": "@local.row_data.audio_transcript",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "lottie_asset",
+      "value": "lottie/bulging_circles.json",
+      "condition": "!@local.row_data.lottie_asset"
+    },
+    {
+      "name": "lottie_asset",
+      "value": "@local.row_data.lottie_asset",
+      "condition": "!!@local.row_data.lottie_asset"
+    },
+    {
+      "type": "lottie_animation",
+      "name": "lottie_display",
+      "value": "@local.lottie_asset",
+      "exclude_from_translation": true,
+      "condition": "@local.row_data.media_type == \"audio\""
+    },
+    {
+      "type": "text",
+      "name": "print_media_title",
+      "value": "@local.row_data.title",
+      "exclude_from_translation": true,
+      "parameter_list": "style: emphasised",
+      "condition": "!!@local.row_data.title"
+    },
+    {
+      "type": "audio",
+      "name": "audio",
+      "value": "@local.row_data.media_asset",
+      "exclude_from_translation": true,
+      "parameter_list": "transcript_text: @local.row_data.transcript",
+      "condition": "@local.row_data.media_type == \"audio\""
+    },
+    {
+      "type": "video",
+      "name": "video",
+      "value": "@local.row_data.media_asset",
+      "condition": "@local.row_data.media_type == \"video\""
+    },
+    {
+      "name": "show_nav_buttons",
+      "value": true
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons",
+      "value": "nav_buttons",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted;",
+      "condition": "@local.show_nav_buttons"
+    },
+    {
+      "name": "is_standalone_task",
+      "value": true,
+      "condition": "@fields._deployment_name == \"plh_kids_tz\""
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "gen_relax": [
+    {
+      "type": "begin_template",
+      "name": "relax",
+      "value": "relax",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted"
+    },
+    {
+      "name": "id",
+      "value": "@gen.id"
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "relax_text": [
+    {
+      "name": "data_list_name",
+      "value": "relax",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id",
+      "value": "relax_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_name_id",
+      "value": "@local.data_list_name.@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_name_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "transcript",
+      "value": "@local.row_data.transcript",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@local.transcript",
+      "exclude_from_translation": true
+    }
+  ],
+  "gen_relax_text": [
+    {
+      "type": "begin_template",
+      "name": "relax_text",
+      "value": "relax_text"
+    },
+    {
+      "name": "id",
+      "value": "@gen.id"
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "relax_card": [
+    {
+      "name": "data_list_name",
+      "value": "relax",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id",
+      "value": "relax_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_name_id",
+      "value": "@local.data_list_name.@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_name_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_title",
+      "value": "@local.row_data.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_icon",
+      "value": "images/icons/smile_eyes_down.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "target_template",
+      "value": "article_@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "task_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed_field",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "task_card",
+      "name": "task_card",
+      "action_list": "click | go_to: @local.target_template",
+      "exclude_from_translation": true,
+      "parameter_list": "task_id: @local.task_id;\ncompleted_field: @local.completed_field;\ntitle: @local.card_title;\nimage: @local.card_icon;\nstyle: button;\nin_progress_icon: images/icons/in_progress.svg;\ncompleted_icon: images/icons/tick.svg;"
+    }
+  ],
+  "relax_activities": [
+    {
+      "type": "begin_display_group",
+      "name": "heading"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@data.library.relax.title",
+      "parameter_list": "style: tiny;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.relax"
+    },
+    {
+      "type": "begin_template",
+      "name": "card_@item.id",
+      "value": "relax_card"
+    },
+    {
+      "name": "id",
+      "value": "@item.id"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_items"
+    }
+  ]
+}

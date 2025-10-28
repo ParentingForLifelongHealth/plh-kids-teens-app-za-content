@@ -1,0 +1,63 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "check_field_value",
+      "status": "released"
+    }
+  ],
+  "check_field_value": [
+    {
+      "type": "title",
+      "value": "Check the value of a field",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "Field name",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_box",
+      "name": "field_name",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "Value of the field @local.field_name: @fields.@local.field_name",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "field_as_local",
+      "value": "@fields.@local.field_name",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "Value of the field @local.field_name (after passing through a local variable): @local.field_as_local",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "value": "Change the value of a field",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "New field value",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_box",
+      "name": "field_value",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Update",
+      "action_list": "click | set_field: @local.field_name: @local.field_value",
+      "exclude_from_translation": true
+    }
+  ]
+}

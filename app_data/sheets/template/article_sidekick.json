@@ -91,8 +91,7 @@
             "nested",
             "@items[0].nested"
           ],
-          "_raw": "data_changed | set_local : nested: @items[0].nested",
-          "_cleaned": "data_changed | set_local : nested: @items[0].nested"
+          "_raw": "data_changed | set_local : nested: @items[0].nested"
         },
         {
           "trigger": "data_changed",
@@ -101,8 +100,7 @@
             "category_id",
             "@items[0].category_id"
           ],
-          "_raw": "data_changed | set_local : category_id: @items[0].category_id",
-          "_cleaned": "data_changed | set_local : category_id: @items[0].category_id"
+          "_raw": "data_changed | set_local : category_id: @items[0].category_id"
         }
       ],
       "condition": "!@local.nested",
@@ -193,8 +191,7 @@
             "title",
             "@items[0].title"
           ],
-          "_raw": "data_changed | set_local : title: @items[0].title",
-          "_cleaned": "data_changed | set_local : title: @items[0].title"
+          "_raw": "data_changed | set_local : title: @items[0].title"
         },
         {
           "trigger": "data_changed",
@@ -203,8 +200,7 @@
             "icon_asset",
             "@items[0].icon_asset"
           ],
-          "_raw": "data_changed | set_local : icon_asset: @items[0].icon_asset",
-          "_cleaned": "data_changed | set_local : icon_asset: @items[0].icon_asset"
+          "_raw": "data_changed | set_local : icon_asset: @items[0].icon_asset"
         }
       ],
       "condition": "!@local.nested",
@@ -273,8 +269,7 @@
           "args": [
             "completed"
           ],
-          "_raw": "completed | emit: completed",
-          "_cleaned": "completed | emit: completed"
+          "_raw": "completed | emit: completed"
         },
         {
           "trigger": "uncompleted",
@@ -282,8 +277,7 @@
           "args": [
             "uncompleted"
           ],
-          "_raw": "uncompleted | emit: uncompleted",
-          "_cleaned": "uncompleted | emit: uncompleted"
+          "_raw": "uncompleted | emit: uncompleted"
         }
       ],
       "condition": "!@local.nested",
@@ -551,8 +545,7 @@
           "args": [
             "completed"
           ],
-          "_raw": "completed | emit: completed",
-          "_cleaned": "completed | emit: completed"
+          "_raw": "completed | emit: completed"
         },
         {
           "trigger": "uncompleted",
@@ -560,8 +553,7 @@
           "args": [
             "uncompleted"
           ],
-          "_raw": "uncompleted | emit: uncompleted",
-          "_cleaned": "uncompleted | emit: uncompleted"
+          "_raw": "uncompleted | emit: uncompleted"
         }
       ],
       "condition": "!@local.nested",
@@ -586,5 +578,6 @@
     }
   ],
   "_xlsxPath": "templates/ZA articles.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+  "_remoteFolder": "1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+  "_remoteUrl": "https://docs.google.com/spreadsheets/d/1m0TIn3wJO2Y3W6dwWwh695e3q3lWTJe0y-PBHcWBpzc"
 }

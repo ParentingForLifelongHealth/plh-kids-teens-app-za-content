@@ -1,0 +1,1390 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "hp_review",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "hp_review_with_activity",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "hp_review_archived",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "hp_challenges",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "hp_challenges_archived",
+      "status": "draft"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "stack_hp_review_gen",
+      "status": "released",
+      "parameter_list": "input_data_list: hp_check_in;\noutput_flow_name: stack_hp_review_{@gen.id};\noutput_flow_type: template;"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "hp_challenges_gen",
+      "status": "draft",
+      "parameter_list": "input_data_list: hp_challenges;\noutput_flow_name: hp_challenges_{@gen.id};\noutput_flow_type: template;"
+    }
+  ],
+  "stack_hp_review_gen": [
+    {
+      "type": "begin_data_items",
+      "name": "check_if_already_unlocked_activity",
+      "value": "hp_check_in",
+      "parameter_list": "filter: @item.id == \"@gen.id\";\nlimit: 1;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "if_no",
+      "value": "hp_review_with_activity",
+      "action_list": "completed | set_data | _list_id: hp_check_in, _id: @gen.id, unlocked_activity: TRUE;\ncompleted | nav_stack: close_top; \ncompleted | pop_up: unlock_play | variant: plh_completion;\nuncompleted | nav_stack: close_top;",
+      "exclude_from_translation": true,
+      "condition": "!@item.unlocked_activity"
+    },
+    {
+      "type": "begin_template",
+      "name": "hp_review",
+      "value": "hp_review"
+    },
+    {
+      "name": "row_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completion_icon",
+      "value": "@global.first_completion_icon"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "if_yes",
+      "value": "hp_review",
+      "action_list": "completed | nav_stack: close_top; \nuncompleted | nav_stack: close_top;",
+      "exclude_from_translation": true,
+      "condition": "@item.unlocked_activity"
+    },
+    {
+      "name": "row_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completion_icon",
+      "value": "@global.subsequent_completion_icon"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ],
+  "hp_review_with_activity": [
+    {
+      "type": "begin_data_items",
+      "name": "pick_random_locked_activity",
+      "value": "@data.activity_tasks",
+      "parameter_list": "filter: @item.locked && (@fields.child_age === undefined || !@item.child_age_list || ([].concat(@item.child_age_list)).map(x => String(x)).includes(String(@fields.child_age)));\nshuffle;\nlimit: 1;",
+      "exclude_from_translation": true,
+      "comment": "filter: @item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age));\nshuffle;\nlimit: 1;"
+    },
+    {
+      "type": "begin_template",
+      "name": "hp_review",
+      "value": "hp_review",
+      "action_list": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false; \ncompleted | set_field: latest_unlocked_activity: @item.id;\ncompleted | emit: completed; \nuncompleted | emit: uncompleted;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ],
+  "hp_review_archived": [
+    {
+      "name": "row_id",
+      "value": "childdevelopment",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_first",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completion_icon",
+      "value": "trophy",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_1",
+      "condition": "@local.show_first",
+      "exclude_from_translation": true,
+      "parameter_list": "style: column"
+    },
+    {
+      "name": "data_list_row",
+      "value": "hp_check_in.@local.row_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_row",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_mood",
+      "value": "_hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done",
+      "value": "_hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_challenges",
+      "value": "_hp_review_challenges",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "tracker",
+      "value": "_tracker",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "final",
+      "value": "_final",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "yes",
+      "value": "Yes"
+    },
+    {
+      "name": "no",
+      "value": "No"
+    },
+    {
+      "name": "radio_group_done_tracker",
+      "value": "@local.row_id@local.hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "activity_title",
+      "value": "@local.row_data.activity_title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "intro_text",
+      "value": "@local.row_data.intro_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_done",
+      "value": "@local.row_data.text_goal",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "question_text_done",
+      "value": "@local.row_data.question_done",
+      "exclude_from_translation": true,
+      "parameter_list": "style:emphasised"
+    },
+    {
+      "name": "answer_list_done",
+      "value": "name: yes | text: @local.yes;\nname: no | text: @local.no",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "radio_group_done",
+      "action_list": "changed | set_field:@local.radio_group_done_tracker:@local.radio_group_done; ",
+      "exclude_from_translation": true,
+      "parameter_list": "answer_list: @local.answer_list_done; \nvariant: flex;\nstyle: secondary;\nitem_width: 96px;\ngrid_gap: 8px"
+    },
+    {
+      "type": "begin_template",
+      "name": "reply_no",
+      "value": "feedback",
+      "hidden": "@local.radio_group_done!=\"no\" "
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_no"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "reply_yes_dg",
+      "hidden": "@local.radio_group_done!=\"yes\"",
+      "parameter_list": "style:column"
+    },
+    {
+      "name": "radio_group_mood_tracker",
+      "value": "@local.row_id@local.hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list_mood",
+      "value": "name: happy | image: @local.row_data.happy_image_asset;\nname: ok | image: @local.row_data.ok_image_asset;\nname: sad | image: @local.row_data.sad_image_asset;"
+    },
+    {
+      "type": "text",
+      "name": "question_text_mood",
+      "value": "@local.row_data.question_how",
+      "parameter_list": "style:emphasised"
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "radio_group_mood",
+      "action_list": "changed | set_field:@local.radio_group_mood_tracker:@local.radio_group_mood; ",
+      "exclude_from_translation": true,
+      "parameter_list": "answer_list: @local.answer_list_mood;\nvariant: flex;\nstyle: secondary;\nitem_width: 96px;\ngrid_gap: 8px"
+    },
+    {
+      "type": "begin_template",
+      "name": "feedback_happy",
+      "value": "feedback",
+      "hidden": "@local.radio_group_mood!=\"happy\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_happy",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "feedback_okay",
+      "value": "feedback",
+      "hidden": "@local.radio_group_mood!=\"ok\" "
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_ok",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "feedback_sad",
+      "value": "feedback",
+      "hidden": "@local.radio_group_mood!=\"sad\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_sad",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons_end",
+      "value": "nav_buttons",
+      "action_list": "completed | emit:completed; \nuncompleted | emit:uncompleted;",
+      "condition": "@local.radio_group_done == \"yes\" && @local.radio_group_mood == \"happy\" ",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_previous",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "next_icon_src",
+      "value": "@local.completion_icon",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons_next",
+      "value": "nav_buttons",
+      "action_list": "completed | set_local: show_first: false;\nuncompleted | emit:uncompleted; ",
+      "condition": "!(@local.radio_group_done == \"yes\" && @local.radio_group_mood == \"happy\")",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_previous",
+      "value": false
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_2",
+      "condition": "!@local.show_first",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "begin_template",
+      "name": "hp_challenges",
+      "value": "hp_challenges",
+      "action_list": "completed | emit:completed; \nuncompleted | set_local: show_first: true"
+    },
+    {
+      "name": "row_id",
+      "value": "@local.row_id"
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "nav_buttons"
+    },
+    {
+      "name": "next_icon_src",
+      "value": "@local.completion_icon"
+    },
+    {
+      "type": "end_nested_properties"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "hp_review": [
+    {
+      "name": "data",
+      "value": "hp_check_in"
+    },
+    {
+      "name": "row_id",
+      "value": "selfcare",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_first",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completion_icon",
+      "value": "trophy",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_data",
+      "value": "@local.data",
+      "exclude_from_translation": true,
+      "parameter_list": "filter: @item.id == @local.row_id"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_1",
+      "condition": "@local.show_first",
+      "exclude_from_translation": true,
+      "parameter_list": "style: column"
+    },
+    {
+      "name": "data_list_row",
+      "value": "@local.data.@local.row_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_row",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_mood",
+      "value": "_hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done",
+      "value": "_hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_challenges",
+      "value": "_hp_review_challenges",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "tracker",
+      "value": "_tracker",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "final",
+      "value": "_final",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "yes",
+      "value": "@global.yes",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "no",
+      "value": "@global.no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "radio_group_done_tracker",
+      "value": "@local.row_id@local.hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "activity_title",
+      "value": "@local.row_data.activity_title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "intro_text",
+      "value": "@local.row_data.intro_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_done",
+      "value": "@local.row_data.text_goal",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "question_text_done",
+      "value": "@local.row_data.question_done",
+      "exclude_from_translation": true,
+      "parameter_list": "style:emphasised"
+    },
+    {
+      "name": "answer_list_done",
+      "value": "name: yes | text: @local.yes;\nname: no | text: @local.no",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "rg_done",
+      "value": "@item.done_response",
+      "action_list": "changed | set_item | done_response: this.value;\nchanged | set_field: @local.radio_group_done_tracker: this.value; ",
+      "parameter_list": "answer_list: @local.answer_list_done; \nvariant: flex;\nstyle: secondary;\nitem_width: 96px;\ngrid_gap: 8px"
+    },
+    {
+      "type": "begin_template",
+      "name": "reply_no",
+      "value": "feedback",
+      "hidden": "@item.done_response !=\"no\" "
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_no"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "reply_yes_dg",
+      "hidden": "@item.done_response !=\"yes\"",
+      "parameter_list": "style:column"
+    },
+    {
+      "name": "radio_group_mood_tracker",
+      "value": "@local.row_id@local.hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list_mood",
+      "value": "name: happy | image: @local.row_data.happy_image_asset;\nname: ok | image: @local.row_data.ok_image_asset;\nname: sad | image: @local.row_data.sad_image_asset;"
+    },
+    {
+      "type": "text",
+      "name": "question_text_mood",
+      "value": "@local.row_data.question_how",
+      "parameter_list": "style:emphasised"
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "rg_mood",
+      "value": "@item.mood_response",
+      "action_list": "changed | set_item | mood_response: this.value;\nchanged | set_field: @local.radio_group_mood_tracker: this.value;",
+      "exclude_from_translation": true,
+      "parameter_list": "answer_list: @local.answer_list_mood;\nvariant: flex;\nstyle: secondary;\nitem_width: 96px;\ngrid_gap: 8px"
+    },
+    {
+      "type": "begin_template",
+      "name": "feedback_happy",
+      "value": "feedback",
+      "hidden": "@item.mood_response !=\"happy\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_happy",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "feedback_okay",
+      "value": "feedback",
+      "hidden": "@item.mood_response !=\"ok\" "
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_ok",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "feedback_sad",
+      "value": "feedback",
+      "hidden": "@item.mood_response !=\"sad\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_sad",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons_end",
+      "value": "nav_buttons",
+      "action_list": "completed | emit:completed; \nuncompleted | emit:uncompleted;",
+      "condition": "@item.done_response == \"yes\" && @item.mood_response == \"happy\" ",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_previous",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "next_icon_src",
+      "value": "@local.completion_icon",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons_next",
+      "value": "nav_buttons",
+      "action_list": "completed | set_local: show_first: false;\nuncompleted | emit:uncompleted; ",
+      "condition": "!(@item.done_response == \"yes\" && @item.mood_response == \"happy\" )",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_previous",
+      "value": false
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_2",
+      "condition": "!@local.show_first",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "begin_template",
+      "name": "hp_challenges",
+      "value": "hp_challenges",
+      "action_list": "completed | emit:completed; \nuncompleted | set_local: show_first: true"
+    },
+    {
+      "name": "row_id",
+      "value": "@local.row_id"
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "nav_buttons"
+    },
+    {
+      "name": "next_icon_src",
+      "value": "@local.completion_icon"
+    },
+    {
+      "type": "end_nested_properties"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ],
+  "hp_challenges_archived": [
+    {
+      "name": "row_id",
+      "value": "consequences",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_row",
+      "value": "hp_challenges.@local.row_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_row",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done",
+      "value": "_hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_id_hp_done",
+      "value": "@local.row_id@local.hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done_field_value",
+      "value": "@fields.@local.row_id_hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_mood",
+      "value": "_hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_id_hp_mood",
+      "value": "@local.row_id@local.hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_challenge",
+      "value": "_hp_challenge",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_id_hp_challenge",
+      "value": "@local.row_id@local.hp_challenge"
+    },
+    {
+      "name": "top_text",
+      "value": "@local.row_data.top_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "question_text",
+      "value": "@local.row_data.question_text",
+      "parameter_list": "style:emphasised",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_1",
+      "value": "@calc((@local.row_data.challenge_1_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_1)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_1",
+      "condition": "!@local.condition_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_1",
+      "value": "@local.row_data.text_challenge_1",
+      "condition": "!!@local.condition_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_2",
+      "value": "@calc((@local.row_data.challenge_2_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_2)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_2",
+      "condition": "!@local.condition_2",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_2",
+      "value": "@local.row_data.text_challenge_2",
+      "condition": "!!@local.condition_2",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_3",
+      "value": "@calc((@local.row_data.challenge_3_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_3)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_3",
+      "condition": "!@local.condition_3",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_3",
+      "value": "@local.row_data.text_challenge_3",
+      "condition": "!!@local.condition_3",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_4",
+      "value": "@calc((@local.row_data.challenge_4_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_4)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_4",
+      "condition": "!@local.condition_4",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_4",
+      "value": "@local.row_data.text_challenge_4",
+      "condition": "!!@local.condition_4",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_5",
+      "value": "@calc((@local.row_data.challenge_5_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_5)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_5",
+      "condition": "!@local.condition_5",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_5",
+      "value": "@local.row_data.text_challenge_5",
+      "condition": "!!@local.condition_5",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_6",
+      "value": "@calc((@local.row_data.challenge_6_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_6)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_6",
+      "condition": "!@local.condition_6",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_6",
+      "value": "@local.row_data.text_challenge_6",
+      "condition": "!!@local.condition_6",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_7",
+      "value": "@calc((@local.row_data.challenge_7_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_7)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_7",
+      "condition": "!@local.condition_7",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_7",
+      "value": "@local.row_data.text_challenge_7",
+      "condition": "!!@local.condition_7",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list",
+      "value": "name:challenge_1 | text:@local.text_challenge_1; \nname:challenge_2 | text:@local.text_challenge_2;\nname:challenge_3 | text:@local.text_challenge_3;\nname:challenge_4 | text:@local.text_challenge_4;\nname:challenge_5 | text:@local.text_challenge_5;\nname:challenge_6 | text:@local.text_challenge_6;\nname:challenge_7 | text:@local.text_challenge_7;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "combo_box",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "placeholder",
+      "value": "@global.combo_box_placeholder",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "combo_box",
+      "action_list": "changed | set_field: @local.row_id_hp_challenge: @local.combo_box;",
+      "parameter_list": "text: @local.top_text;\nanswer_list:@local.answer_list;\nplaceholder: @local.placeholder;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_1",
+      "value": "feedback",
+      "condition": "@local.combo_box==\"challenge_1\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_1"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_2",
+      "value": "feedback",
+      "condition": "@local.combo_box==\"challenge_2\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_2"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_3",
+      "value": "feedback",
+      "condition": "@local.combo_box==\"challenge_3\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_3"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_4",
+      "value": "feedback",
+      "condition": "@local.combo_box==\"challenge_4\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_4"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_5",
+      "value": "feedback",
+      "condition": "@local.combo_box==\"challenge_5\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_5"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_6",
+      "value": "feedback",
+      "condition": "@local.combo_box==\"challenge_6\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_6"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_7",
+      "value": "feedback",
+      "condition": "@local.combo_box==\"challenge_7\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_7"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons",
+      "value": "nav_buttons",
+      "action_list": "completed | emit:completed; uncompleted | emit:uncompleted;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "hp_challenges": [
+    {
+      "name": "data",
+      "value": "hp_challenges"
+    },
+    {
+      "name": "row_id",
+      "value": "consequences",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_row",
+      "value": "@local.data.@local.row_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_row",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done",
+      "value": "_hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_id_hp_done",
+      "value": "@local.row_id@local.hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done_from_data"
+    },
+    {
+      "type": "data_items",
+      "name": "radio_to_local",
+      "value": "hp_check_in",
+      "action_list": "data_changed | set_local : hp_done_from_data : @items[0]?.done_response",
+      "parameter_list": "filter: @item.id == @local.row_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done_field_value",
+      "value": "no",
+      "condition": "!(@local.hp_done_from_data)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done_field_value",
+      "value": "@local.hp_done_from_data",
+      "condition": "!!(@local.hp_done_from_data)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_mood",
+      "value": "_hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_id_hp_mood",
+      "value": "@local.row_id@local.hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_challenge",
+      "value": "_hp_challenge",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_id_hp_challenge",
+      "value": "@local.row_id@local.hp_challenge"
+    },
+    {
+      "name": "top_text",
+      "value": "@local.row_data.top_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "question_text",
+      "value": "@local.row_data.question_text",
+      "parameter_list": "style:emphasised",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_1",
+      "value": "@calc((@local.row_data.challenge_1_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_1)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_1",
+      "condition": "!@local.condition_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_1",
+      "value": "@local.row_data.text_challenge_1",
+      "condition": "!!@local.condition_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_2",
+      "value": "@calc((@local.row_data.challenge_2_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_2)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_2",
+      "condition": "!@local.condition_2",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_2",
+      "value": "@local.row_data.text_challenge_2",
+      "condition": "!!@local.condition_2",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_3",
+      "value": "@calc((@local.row_data.challenge_3_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_3)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_3",
+      "condition": "!@local.condition_3",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_3",
+      "value": "@local.row_data.text_challenge_3",
+      "condition": "!!@local.condition_3",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_4",
+      "value": "@calc((@local.row_data.challenge_4_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_4)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_4",
+      "condition": "!@local.condition_4",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_4",
+      "value": "@local.row_data.text_challenge_4",
+      "condition": "!!@local.condition_4",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_5",
+      "value": "@calc((@local.row_data.challenge_5_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_5)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_5",
+      "condition": "!@local.condition_5",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_5",
+      "value": "@local.row_data.text_challenge_5",
+      "condition": "!!@local.condition_5",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_6",
+      "value": "@calc((@local.row_data.challenge_6_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_6)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_6",
+      "condition": "!@local.condition_6",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_6",
+      "value": "@local.row_data.text_challenge_6",
+      "condition": "!!@local.condition_6",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_7",
+      "value": "@calc((@local.row_data.challenge_7_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_7)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_7",
+      "condition": "!@local.condition_7",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_7",
+      "value": "@local.row_data.text_challenge_7",
+      "condition": "!!@local.condition_7",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list",
+      "value": "name:challenge_1 | text:@local.text_challenge_1; \nname:challenge_2 | text:@local.text_challenge_2;\nname:challenge_3 | text:@local.text_challenge_3;\nname:challenge_4 | text:@local.text_challenge_4;\nname:challenge_5 | text:@local.text_challenge_5;\nname:challenge_6 | text:@local.text_challenge_6;\nname:challenge_7 | text:@local.text_challenge_7;\nname:other_challenge | text: @global.challenge_not_here;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "combo_box",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "placeholder",
+      "value": "@global.combo_box_placeholder",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "combo_box",
+      "condition": false,
+      "parameter_list": "text: @local.top_text;\nanswer_list:@local.answer_list;\nplaceholder: @local.placeholder;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "response_column",
+      "value": "response",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "response_other_challenge_column",
+      "value": "response_other_challenge"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_select_combo",
+      "value": "@local.data",
+      "parameter_list": "filter: @item.id == @local.row_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "combo_box",
+      "value": "@item.@local.response_column",
+      "action_list": "changed | set_item | @local.response_column: this.value;",
+      "parameter_list": "input_allowed: false;\ntext: @local.top_text;\nanswer_list:@local.answer_list;\nplaceholder: @local.placeholder;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_1",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_1\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_1"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_2",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_2\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_2"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_3",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_3\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_3"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_4",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_4\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_4"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_5",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_5\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_5"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_6",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_6\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_6"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_7",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_7\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_7"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "other_challenge",
+      "value": "other_challenge",
+      "condition": "@item.@local.response_column==\"other_challenge\"",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "begin_template",
+      "name": "facilitator_bubble_other",
+      "value": "feedback"
+    },
+    {
+      "name": "bubble_text",
+      "value": "@global.other_challenge_prompt"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "text_box",
+      "name": "text_box",
+      "value": "@item.@local.response_other_challenge_column",
+      "action_list": "changed | set_item | @local.response_other_challenge_column: this.value;",
+      "parameter_list": "placeholder: @global.tap_and_type"
+    },
+    {
+      "type": "begin_template",
+      "name": "facilitator_bubble_text_input",
+      "value": "feedback",
+      "condition": "!!@item.@local.response_other_challenge_column"
+    },
+    {
+      "name": "bubble_text",
+      "value": "@global.other_challenge_reply"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons",
+      "value": "nav_buttons",
+      "action_list": "completed | emit:completed; uncompleted | emit:uncompleted;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "hp_challenges_gen": [
+    {
+      "type": "begin_template",
+      "name": "hp_challenges",
+      "value": "hp_challenges",
+      "action_list": "completed | emit:completed; uncompleted | emit:uncompleted"
+    },
+    {
+      "name": "row_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

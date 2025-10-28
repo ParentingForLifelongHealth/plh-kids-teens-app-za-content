@@ -42,9 +42,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "foreign_key == \"@gen.id\""
+        "!nested"
       ],
-      "input_source": "sub_items",
+      "input_source": "{@gen.id}_articles",
       "output_target": "{@gen.id}_testing | local_only;"
     },
     {
@@ -64,8 +64,9 @@
       "output_target": "{@gen.id}_article_tasks"
     }
   ],
-  "_xlsxPath": "templates/ZA module_data_pipes.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+  "_xlsxPath": "PLH modules_data_pipes.xlsx",
+  "_remoteFolder": "1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9",
+  "_remoteUrl": "https://docs.google.com/spreadsheets/d/19AalUbQp0r3QwEz82OPw-aq80SFtROYZBkhQ3Xp8rNs",
   "_output_flows": [
     {
       "flow_name": "prep_selfcare_articles",

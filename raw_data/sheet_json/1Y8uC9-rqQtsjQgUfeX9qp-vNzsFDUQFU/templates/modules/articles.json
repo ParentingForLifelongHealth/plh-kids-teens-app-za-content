@@ -1,0 +1,2894 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "article",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "question",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "section",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "extra_text",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "media_transcript",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "feedback",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "comic_bubble",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "pop_up_text",
+      "status": "released"
+    }
+  ],
+  "media_transcript": [
+    {
+      "name": "article_id",
+      "value": "intro_connect",
+      "comments": "intro_connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "comments": "connect_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "comments": "connect_articles.intro_connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "comments": "@data.connect_articles.intro_connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "media_transcript",
+      "value": "@local.article_data.media_transcript",
+      "exclude_from_translation": true
+    }
+  ],
+  "article": [
+    {
+      "name": "article_id",
+      "value": "explore_5",
+      "exclude_from_translation": true,
+      "comments": "intro_connect"
+    },
+    {
+      "name": "module_id",
+      "value": "feelings",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "facilitator_id",
+      "value": "facilitator",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true,
+      "comments": "connect_articles"
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "exclude_from_translation": true,
+      "comments": "connect_articles.intro_connect"
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "exclude_from_translation": true,
+      "comments": "@data.connect_articles.intro_connect"
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "perform_category_header_computations",
+      "value": true
+    },
+    {
+      "name": "show_header",
+      "value": "!@local.article_data.nested"
+    },
+    {
+      "name": "show_nav_buttons",
+      "value": "!@local.article_data.nested"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_category_header_computations",
+      "condition": "!!(@local.perform_category_header_computations)",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_id",
+      "value": "@local.article_data.category_id",
+      "exclude_from_translation": true,
+      "comments": "@data.connect_articles.intro_connect.category_id"
+    },
+    {
+      "name": "categories",
+      "value": "_category_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "c_data",
+      "value": "@local.module_id@local.categories",
+      "exclude_from_translation": true,
+      "comments": "connect_categories"
+    },
+    {
+      "name": "concat_category_id",
+      "value": "@local.c_data.@local.category_id",
+      "exclude_from_translation": true,
+      "comments": "@data.connect_articles.intro_connect.category_data.@data.connect_articles.intro_connect.category_id"
+    },
+    {
+      "name": "category_data",
+      "value": "@data.@local.concat_category_id",
+      "exclude_from_translation": true,
+      "comments": "@data.@data.connect_articles.intro_connect.category_data.@data.connect_articles.intro_connect.category_id"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_template",
+      "name": "header",
+      "value": "header",
+      "action_list": "completed | emit: completed; \nuncompleted | emit: uncompleted",
+      "condition": "@local.show_header",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "title",
+      "value": "@local.category_data.title",
+      "exclude_from_translation": true,
+      "comments": "Introduction"
+    },
+    {
+      "name": "icon_asset",
+      "value": "@local.category_data.icon_asset",
+      "exclude_from_translation": true,
+      "comments": "icon"
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@local.article_data.title",
+      "condition": "!!(@local.article_data.title)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "@local.article_data.text_1",
+      "condition": "!!(@local.article_data.text_1)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "text_1_facilitator",
+      "value": "feedback",
+      "condition": "!!(@local.article_data.text_1_facilitator)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.facilitator_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.article_data.text_1_facilitator",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "image_asset",
+      "value": "@local.article_data.image_asset",
+      "condition": "!(@local.article_data.image_text) && !!(@local.article_data.image_asset)",
+      "parameter_list": "style: rounded_corners;",
+      "exclude_from_translation": true,
+      "comments": "image"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_image_box",
+      "condition": "!!(@local.article_data.image_text)",
+      "parameter_list": "variant: box_white;\nstyle: column;",
+      "exclude_from_translation": true,
+      "comments": "create image box only if image has accompanying image_text"
+    },
+    {
+      "type": "image",
+      "name": "image_asset",
+      "value": "@local.article_data.image_asset",
+      "condition": "!!(@local.article_data.image_asset)",
+      "parameter_list": "style: rounded_corners;",
+      "exclude_from_translation": true,
+      "comments": "image"
+    },
+    {
+      "type": "text",
+      "name": "image_text",
+      "value": "@local.article_data.image_text",
+      "condition": "!!(@local.article_data.image_text)",
+      "parameter_list": "text_align: left;",
+      "exclude_from_translation": true,
+      "comments": "text"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "@local.article_data.text_2",
+      "condition": "!!(@local.article_data.text_2)",
+      "exclude_from_translation": true,
+      "comments": "text_2"
+    },
+    {
+      "type": "begin_template",
+      "name": "comic_bubble_1",
+      "value": "comic_bubble",
+      "condition": "!!(@local.article_data.character_1_text)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bubble_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "comic_bubble_2",
+      "value": "comic_bubble",
+      "condition": "!!(@local.article_data.character_2_text)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bubble_no",
+      "value": 2,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "comic_bubble_3",
+      "value": "comic_bubble",
+      "condition": "!!(@local.article_data.character_3_text)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bubble_no",
+      "value": 3,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "comic_bubble_4",
+      "value": "comic_bubble",
+      "condition": "!!(@local.article_data.character_4_text)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bubble_no",
+      "value": 4,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "media_title",
+      "value": "@local.article_data.media_title",
+      "condition": "!!(@local.article_data.media_title)",
+      "exclude_from_translation": true,
+      "comments": "media_title"
+    },
+    {
+      "type": "text",
+      "name": "print_media_title",
+      "value": "@local.media_title",
+      "condition": "!!(@local.article_data.media_title)",
+      "parameter_list": "style: emphasised",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "video",
+      "condition": "@local.article_data.media_type == \"video\"",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "video",
+      "name": "media_asset ",
+      "value": "@local.article_data.media_asset ",
+      "exclude_from_translation": true,
+      "comments": "video"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "audio",
+      "condition": "@local.article_data.media_type == \"audio\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "audio",
+      "name": "media_asset ",
+      "value": "@local.article_data.media_asset ",
+      "parameter_list": "transcript_text: @local.article_data.media_transcript",
+      "exclude_from_translation": true,
+      "comments": "audio"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube",
+      "value": "youtube_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "language",
+      "value": "@fields._app_language",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "default_language",
+      "value": "gb_en",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_column",
+      "value": "@local.youtube@local.language",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_concat",
+      "value": "article_data.@local.youtube_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_column_missing",
+      "value": "@local.youtube@local.default_language",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_concat_missing",
+      "value": "article_data.@local.youtube_column_missing",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "youtube_dg",
+      "condition": "@local.article_data.media_type == \"youtube\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "youtube",
+      "name": "youtube_lang",
+      "value": "@local.@local.youtube_concat",
+      "condition": "!!(@local.@local.youtube_concat)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "youtube",
+      "name": "youtube_lang_missing",
+      "value": "@local.@local.youtube_concat_missing",
+      "condition": "!(@local.@local.youtube_concat)",
+      "exclude_from_translation": true,
+      "comments": "Show English video when other language youtube link is not defined"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "question_1",
+      "value": "question",
+      "condition": "!!(@local.article_data.quiz_1_question)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.facilitator_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "question_2",
+      "value": "question",
+      "condition": "!!(@local.article_data.quiz_2_question)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.facilitator_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": 2,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "question_3",
+      "value": "question",
+      "condition": "!!(@local.article_data.quiz_3_question)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.facilitator_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": 3,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "section_1",
+      "value": "section",
+      "condition": "!!(@local.article_data.section_1_text) || !!(@local.article_data.section_1_image_asset)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "section_2",
+      "value": "section",
+      "condition": "!!(@local.article_data.section_2_text) || !!(@local.article_data.section_2_image_asset)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_no",
+      "value": 2,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "section_3",
+      "value": "section",
+      "condition": "!!(@local.article_data.section_3_text) || !!(@local.article_data.section_3_image_asset)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_no",
+      "value": 3,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "section_4",
+      "value": "section",
+      "condition": "!!(@local.article_data.section_4_text) || !!(@local.article_data.section_4_image_asset)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_no",
+      "value": 4,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "section_5",
+      "value": "section",
+      "condition": "!!(@local.article_data.section_5_text) || !!(@local.article_data.section_5_image_asset)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_no",
+      "value": 5,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons",
+      "value": "nav_buttons",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted;",
+      "condition": "@local.show_nav_buttons",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    }
+  ],
+  "question": [
+    {
+      "name": "in_library",
+      "value": false
+    },
+    {
+      "name": "character_id",
+      "value": "facilitator",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "practise_14",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "problemsolving_t",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question",
+      "value": "question",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_column",
+      "value": "quiz@local.join@local.question_no@local.join@local.question",
+      "comments": "quiz.1.question",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "response",
+      "value": "response",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "response_column",
+      "value": "quiz@local.join@local.question_no@local.join@local.response",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_quiz",
+      "value": "article_data.@local.question_column",
+      "comments": "article_data.quiz.1.question",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "question_text",
+      "value": "@local.@local.concat_quiz",
+      "comments": "@local.article_data.quiz.1.question",
+      "parameter_list": "style: emphasised",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "text ",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "image",
+      "value": "image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_1",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option",
+      "value": "option",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_1_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_1@local.join@local.text",
+      "comments": "quiz.1.option.1.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_1_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_1@local.join@local.image",
+      "comments": "quiz.1.option.1.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_1_text",
+      "value": "article_data.@local.option_column_1_text",
+      "comments": "article_data.quiz.1.option.1.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_1_image",
+      "value": "article_data.@local.option_column_1_image",
+      "comments": "article_data.quiz.1.option.1.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_1_text",
+      "value": "@local.@local.concat_option_1_text",
+      "comments": "@local.article_data.quiz.1.option.1.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_1_image",
+      "value": "@local.@local.concat_option_1_image",
+      "comments": "@local.article_data.quiz.1.option.1.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_2",
+      "value": 2,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_2_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_2@local.join@local.text",
+      "comments": "quiz.2.option.2.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_2_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_2@local.join@local.image",
+      "comments": "quiz.2.option.2.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_2_text",
+      "value": "article_data.@local.option_column_2_text",
+      "comments": "article_data.quiz.2.option.2.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_2_image",
+      "value": "article_data.@local.option_column_2_image",
+      "comments": "article_data.quiz.2.option.2.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_2_text",
+      "value": "@local.@local.concat_option_2_text",
+      "comments": "@local.article_data.quiz.2.option.2.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_2_image",
+      "value": "@local.@local.concat_option_2_image",
+      "comments": "@local.article_data.quiz.2.option.2.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_3",
+      "value": 3,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_3_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_3@local.join@local.text",
+      "comments": "quiz.3.option.3.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_3_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_3@local.join@local.image",
+      "comments": "quiz.3.option.3.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_3_text",
+      "value": "article_data.@local.option_column_3_text",
+      "comments": "article_data.quiz.3.option.3.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_3_image",
+      "value": "article_data.@local.option_column_3_image",
+      "comments": "article_data.quiz.3.option.3.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_3_text",
+      "value": "@local.@local.concat_option_3_text",
+      "comments": "@local.article_data.quiz.3.option.3.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_3_image",
+      "value": "@local.@local.concat_option_3_image",
+      "comments": "@local.article_data.quiz.3.option.3.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_4",
+      "value": 4,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_4_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_4@local.join@local.text",
+      "comments": "quiz.4.option.4.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_4_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_4@local.join@local.image",
+      "comments": "quiz.4.option.4.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_4_text",
+      "value": "article_data.@local.option_column_4_text",
+      "comments": "article_data.quiz.4.option.4.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_4_image",
+      "value": "article_data.@local.option_column_4_image",
+      "comments": "article_data.quiz.4.option.4.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_4_text",
+      "value": "@local.@local.concat_option_4_text",
+      "comments": "@local.article_data.quiz.4.option.4.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_4_image",
+      "value": "@local.@local.concat_option_4_image",
+      "comments": "@local.article_data.quiz.4.option.4.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_5",
+      "value": 5,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_5_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_5@local.join@local.text",
+      "comments": "quiz.5.option.5.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_5_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_5@local.join@local.image",
+      "comments": "quiz.5.option.5.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_5_text",
+      "value": "article_data.@local.option_column_5_text",
+      "comments": "article_data.quiz.5.option.5.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_5_image",
+      "value": "article_data.@local.option_column_5_image",
+      "comments": "article_data.quiz.5.option.5.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_5_text",
+      "value": "@local.@local.concat_option_5_text",
+      "comments": "@local.article_data.quiz.5.option.5.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_5_image",
+      "value": "@local.@local.concat_option_5_image",
+      "comments": "@local.article_data.quiz.5.option.5.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_6",
+      "value": 6,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_6_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_6@local.join@local.text",
+      "comments": "quiz.6.option.6.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_6_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_6@local.join@local.image",
+      "comments": "quiz.6.option.6.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_6_text",
+      "value": "article_data.@local.option_column_6_text",
+      "comments": "article_data.quiz.6.option.6.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_6_image",
+      "value": "article_data.@local.option_column_6_image",
+      "comments": "article_data.quiz.6.option.6.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_6_text",
+      "value": "@local.@local.concat_option_6_text",
+      "comments": "@local.article_data.quiz.6.option.6.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_6_image",
+      "value": "@local.@local.concat_option_6_image",
+      "comments": "@local.article_data.quiz.6.option.6.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list_1",
+      "value": "name:option_1 | text:@local.option_1_text; \nname:option_2 | text:@local.option_2_text;\nname:option_3 | text:@local.option_3_text;\nname:option_4 | text:@local.option_4_text;\nname:option_5 | text:@local.option_5_text;\nname:option_6 | text:@local.option_6_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list_2",
+      "value": "name:option_1 | text:@local.option_1_text | image: @local.option_1_image; \nname:option_2 | text:@local.option_2_text | image: @local.option_2_image;\nname:option_3 | text:@local.option_3_text | image: @local.option_3_image;\nname:option_4 | text:@local.option_4_text | image: @local.option_4_image;\nname:option_5 | text:@local.option_5_text | image: @local.option_5_image;\nname:option_6 | text:@local.option_6_text | image: @local.option_6_image",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "has_any_image",
+      "value": false
+    },
+    {
+      "name": "has_any_image",
+      "value": "!!@local.option_1_image || !!@local.option_2_image || !!@local.option_3_image || !!@local.option_4_image || !!@local.option_5_image || !!@local.option_6_image",
+      "comments": "true if it contains an image",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "selection_tool",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "placeholder",
+      "value": "@global.combo_box_placeholder",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_select_combo",
+      "value": "@local.data",
+      "parameter_list": "filter: @item.id == @local.article_id"
+    },
+    {
+      "type": "combo_box",
+      "name": "selection_tool",
+      "value": "@item.@local.response_column",
+      "action_list": "changed | set_item | @local.response_column: this.value",
+      "condition": "!@local.has_any_image",
+      "parameter_list": "input_allowed: false; answer_list: @local.answer_list_1;\nplaceholder: @local.placeholder;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "name": "radio_button_grid_item_width",
+      "value": "90px",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "radio_button_grid_width",
+      "value": "100%",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "radio_button_grid_gap",
+      "value": "16px",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_select_radio",
+      "value": "@local.data",
+      "parameter_list": "filter: @item.id == @local.article_id"
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "selection_tool",
+      "value": "@item.@local.response_column",
+      "action_list": "changed | set_item | @local.response_column: this.value",
+      "condition": "@local.has_any_image && @fields._deployment_name == \"plh_kids_tz\"",
+      "parameter_list": "answer_list: @local.answer_list_2;\nitem_width: @local.radio_button_grid_item_width;\ngrid_width: @local.radio_button_grid_width;\ngrid_gap: @local.radio_button_grid_gap",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "selection_tool",
+      "value": "@item.@local.response_column",
+      "action_list": "changed | set_item | @local.response_column: this.value",
+      "condition": "@local.has_any_image && @fields._deployment_name != \"plh_kids_tz\"",
+      "parameter_list": "answer_list: @local.answer_list_2;\nvariant: flex;\nstyle: secondary;\nitem_width: 96px;\ngrid_gap: 8px",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "feedback",
+      "value": "@local.data",
+      "parameter_list": "filter: @item.id == @local.article_id"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_feedback",
+      "condition": "!!@item.@local.response_column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_1",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_1\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "in_library",
+      "value": "@local.in_library"
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_2",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_2\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "in_library",
+      "value": "@local.in_library"
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 2,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_3",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_3\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "in_library",
+      "value": "@local.in_library"
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 3,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_4",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_4\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "in_library",
+      "value": "@local.in_library"
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 4,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_5",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_5\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "in_library",
+      "value": "@local.in_library"
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 5,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_6",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_6\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "in_library",
+      "value": "@local.in_library"
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 6,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    }
+  ],
+  "question_backup": [
+    {
+      "name": "character_id",
+      "value": "facilitator",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "practise_14",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "problemsolving_t",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question",
+      "value": "question",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_column",
+      "value": "quiz@local.join@local.question_no@local.join@local.question",
+      "comments": "quiz.1.question",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "response",
+      "value": "response",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "response_column",
+      "value": "quiz@local.join@local.question_no@local.join@local.response",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_quiz",
+      "value": "article_data.@local.question_column",
+      "comments": "article_data.quiz.1.question",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "question_text",
+      "value": "@local.@local.concat_quiz",
+      "comments": "@local.article_data.quiz.1.question",
+      "parameter_list": "style: emphasised",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "text ",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "image",
+      "value": "image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_1",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option",
+      "value": "option",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_1_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_1@local.join@local.text",
+      "comments": "quiz.1.option.1.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_1_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_1@local.join@local.image",
+      "comments": "quiz.1.option.1.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_1_text",
+      "value": "article_data.@local.option_column_1_text",
+      "comments": "article_data.quiz.1.option.1.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_1_image",
+      "value": "article_data.@local.option_column_1_image",
+      "comments": "article_data.quiz.1.option.1.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_1_text",
+      "value": "@local.@local.concat_option_1_text",
+      "comments": "@local.article_data.quiz.1.option.1.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_1_image",
+      "value": "@local.@local.concat_option_1_image",
+      "comments": "@local.article_data.quiz.1.option.1.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_2",
+      "value": 2,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_2_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_2@local.join@local.text",
+      "comments": "quiz.2.option.2.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_2_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_2@local.join@local.image",
+      "comments": "quiz.2.option.2.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_2_text",
+      "value": "article_data.@local.option_column_2_text",
+      "comments": "article_data.quiz.2.option.2.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_2_image",
+      "value": "article_data.@local.option_column_2_image",
+      "comments": "article_data.quiz.2.option.2.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_2_text",
+      "value": "@local.@local.concat_option_2_text",
+      "comments": "@local.article_data.quiz.2.option.2.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_2_image",
+      "value": "@local.@local.concat_option_2_image",
+      "comments": "@local.article_data.quiz.2.option.2.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_3",
+      "value": 3,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_3_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_3@local.join@local.text",
+      "comments": "quiz.3.option.3.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_3_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_3@local.join@local.image",
+      "comments": "quiz.3.option.3.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_3_text",
+      "value": "article_data.@local.option_column_3_text",
+      "comments": "article_data.quiz.3.option.3.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_3_image",
+      "value": "article_data.@local.option_column_3_image",
+      "comments": "article_data.quiz.3.option.3.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_3_text",
+      "value": "@local.@local.concat_option_3_text",
+      "comments": "@local.article_data.quiz.3.option.3.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_3_image",
+      "value": "@local.@local.concat_option_3_image",
+      "comments": "@local.article_data.quiz.3.option.3.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_4",
+      "value": 4,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_4_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_4@local.join@local.text",
+      "comments": "quiz.4.option.4.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_4_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_4@local.join@local.image",
+      "comments": "quiz.4.option.4.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_4_text",
+      "value": "article_data.@local.option_column_4_text",
+      "comments": "article_data.quiz.4.option.4.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_4_image",
+      "value": "article_data.@local.option_column_4_image",
+      "comments": "article_data.quiz.4.option.4.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_4_text",
+      "value": "@local.@local.concat_option_4_text",
+      "comments": "@local.article_data.quiz.4.option.4.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_4_image",
+      "value": "@local.@local.concat_option_4_image",
+      "comments": "@local.article_data.quiz.4.option.4.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_5",
+      "value": 5,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_5_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_5@local.join@local.text",
+      "comments": "quiz.5.option.5.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_5_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_5@local.join@local.image",
+      "comments": "quiz.5.option.5.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_5_text",
+      "value": "article_data.@local.option_column_5_text",
+      "comments": "article_data.quiz.5.option.5.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_5_image",
+      "value": "article_data.@local.option_column_5_image",
+      "comments": "article_data.quiz.5.option.5.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_5_text",
+      "value": "@local.@local.concat_option_5_text",
+      "comments": "@local.article_data.quiz.5.option.5.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_5_image",
+      "value": "@local.@local.concat_option_5_image",
+      "comments": "@local.article_data.quiz.5.option.5.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_no_6",
+      "value": 6,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_6_text",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_6@local.join@local.text",
+      "comments": "quiz.6.option.6.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_column_6_image",
+      "value": "quiz@local.join@local.question_no@local.join@local.option@local.join@local.option_no_6@local.join@local.image",
+      "comments": "quiz.6.option.6.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_6_text",
+      "value": "article_data.@local.option_column_6_text",
+      "comments": "article_data.quiz.6.option.6.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_option_6_image",
+      "value": "article_data.@local.option_column_6_image",
+      "comments": "article_data.quiz.6.option.6.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_6_text",
+      "value": "@local.@local.concat_option_6_text",
+      "comments": "@local.article_data.quiz.6.option.6.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "option_6_image",
+      "value": "@local.@local.concat_option_6_image",
+      "comments": "@local.article_data.quiz.6.option.6.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list_1",
+      "value": "name:option_1 | text:@local.option_1_text; \nname:option_2 | text:@local.option_2_text;\nname:option_3 | text:@local.option_3_text;\nname:option_4 | text:@local.option_4_text;\nname:option_5 | text:@local.option_5_text;\nname:option_6 | text:@local.option_6_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list_2",
+      "value": "name:option_1 | text:@local.option_1_text | image: @local.option_1_image; \nname:option_2 | text:@local.option_2_text | image: @local.option_2_image;\nname:option_3 | text:@local.option_3_text | image: @local.option_3_image;\nname:option_4 | text:@local.option_4_text | image: @local.option_4_image;\nname:option_5 | text:@local.option_5_text | image: @local.option_5_image;\nname:option_6 | text:@local.option_6_text | image: @local.option_6_image",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "has_any_image",
+      "value": false
+    },
+    {
+      "name": "has_any_image",
+      "value": "!!@local.option_1_image || !!@local.option_2_image || !!@local.option_3_image || !!@local.option_4_image || !!@local.option_5_image || !!@local.option_6_image",
+      "comments": "true if it contains an image",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "selection_tool",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "placeholder",
+      "value": "@global.combo_box_placeholder",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_select_combo",
+      "value": "@local.data",
+      "parameter_list": "filter: @item.id == @local.article_id"
+    },
+    {
+      "type": "combo_box",
+      "name": "selection_tool",
+      "value": "@item.@local.response_column",
+      "action_list": "changed | set_item | @local.response_column: this.value",
+      "condition": "!@local.has_any_image",
+      "parameter_list": "input_allowed: false; answer_list: @local.answer_list_1;\nplaceholder: @local.placeholder;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "name": "radio_button_grid_item_width",
+      "value": "90px",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "radio_button_grid_width",
+      "value": "100%",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "radio_button_grid_gap",
+      "value": "16px",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_select_radio",
+      "value": "@local.data",
+      "parameter_list": "filter: @item.id == @local.article_id"
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "selection_tool",
+      "value": "@item.@local.response_column",
+      "action_list": "changed | set_item | @local.response_column: this.value",
+      "condition": "@local.has_any_image && @fields._deployment_name == \"plh_kids_tz\"",
+      "parameter_list": "answer_list: @local.answer_list_2;\nitem_width: @local.radio_button_grid_item_width;\ngrid_width: @local.radio_button_grid_width;\ngrid_gap: @local.radio_button_grid_gap",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "selection_tool",
+      "value": "@item.@local.response_column",
+      "action_list": "changed | set_item | @local.response_column: this.value",
+      "condition": "@local.has_any_image && @fields._deployment_name != \"plh_kids_tz\"",
+      "parameter_list": "answer_list: @local.answer_list_2;\nvariant: flex;\nstyle: secondary;\nitem_width: 96px;\ngrid_gap: 8px",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "feedback",
+      "value": "@local.data",
+      "parameter_list": "filter: @item.id == @local.article_id"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_feedback",
+      "condition": "!!@item.@local.response_column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_1",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_1\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_2",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_2\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 2,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_3",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_3\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 3,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_4",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_4\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 4,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_5",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_5\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 5,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "option_6",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"option_6\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": "@local.question_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 6,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    }
+  ],
+  "feedback": [
+    {
+      "name": "in_library",
+      "value": false
+    },
+    {
+      "name": "bubble_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_module_related",
+      "parameter_list": "style: column",
+      "condition": "!@local.bubble_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "intro_connect_child",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id",
+      "value": "id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback",
+      "value": "feedback",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_column",
+      "value": "quiz@local.join@local.question_no@local.join@local.feedback@local.join@local.feedback_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_feedback",
+      "value": "article_data.@local.feedback_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.@local.concat_feedback",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nested_id_suffix",
+      "value": "feedback_@local.feedback_no@local.join@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nested_id_column",
+      "value": "quiz@local.join@local.question_no@local.join@local.nested_id_suffix",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_nested_id",
+      "value": "article_data.@local.nested_id_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nested_template",
+      "value": "article_@local.module_id@local.join@local.@local.concat_nested_id",
+      "condition": "!@local.in_library"
+    },
+    {
+      "name": "nested_template",
+      "value": "library_article_@local.@local.concat_nested_id",
+      "condition": "@local.in_library"
+    },
+    {
+      "type": "begin_template",
+      "name": "nested_article",
+      "value": "@local.nested_template",
+      "condition": "!!@local.@local.concat_nested_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "facilitator",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_character",
+      "value": "characters.@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_data",
+      "value": "@data.@local.concat_character",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_name",
+      "value": "@local.character_data.name",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_image_asset",
+      "value": "@local.character_data.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "right",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "left",
+      "condition": "@local.character_data.role != \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "primary",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "secondary",
+      "condition": "@local.character_data.role == \"child\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "gray",
+      "condition": "@local.character_data.role == \"facilitator\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_bubble",
+      "name": "text_bubble",
+      "value": "@local.bubble_text",
+      "parameter_list": "speaker_image_asset: @local.character_image_asset;\nspeaker_name: @local.character_name;\nspeaker_position: @local.speaker_position;\nvariant: @local.variant;",
+      "condition": "!@local.@local.concat_nested_id",
+      "exclude_from_translation": true
+    }
+  ],
+  "comic_bubble": [
+    {
+      "name": "article_id",
+      "value": "explore_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "selfcare",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bubble_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_column",
+      "value": "character_@local.bubble_no@local.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_text",
+      "value": "article_data.@local.text_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.@local.concat_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id",
+      "value": "_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id_column",
+      "value": "character_@local.bubble_no@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_id",
+      "value": "article_data.@local.id_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.@local.concat_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_character",
+      "value": "characters.@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_data",
+      "value": "@data.@local.concat_character",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_name",
+      "value": "@local.character_data.name",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_image_asset",
+      "value": "@local.character_data.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "right",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "left",
+      "condition": "@local.character_data.role != \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "primary",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "secondary",
+      "condition": "@local.character_data.role == \"child\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "gray",
+      "condition": "@local.character_data.role == \"facilitator\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_bubble",
+      "name": "text_bubble",
+      "value": "@local.bubble_text",
+      "parameter_list": "speaker_image_asset: @local.character_image_asset;\nspeaker_name: @local.character_name;\nspeaker_position: @local.speaker_position;\nvariant: @local.variant;",
+      "exclude_from_translation": true
+    }
+  ],
+  "section": [
+    {
+      "name": "article_id",
+      "value": "intro_connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section",
+      "value": "section",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "title",
+      "value": "title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_title_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_title",
+      "value": "article_data.@local.section_title_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_title",
+      "value": "@local.@local.concat_title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_text_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_text",
+      "value": "article_data.@local.section_text_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_text",
+      "value": "@local.@local.concat_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "button_text",
+      "value": "button_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_button_text_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.button_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_button_text",
+      "value": "article_data.@local.section_button_text_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_button_text",
+      "value": "@local.@local.concat_button_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "image_asset",
+      "value": "image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_image_asset_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_image_asset",
+      "value": "article_data.@local.section_image_asset_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_image_asset",
+      "value": "@local.@local.concat_image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "icon_asset",
+      "value": "icon_asset"
+    },
+    {
+      "name": "section_icon_asset_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.icon_asset"
+    },
+    {
+      "name": "concat_icon_asset",
+      "value": "article_data.@local.section_icon_asset_column"
+    },
+    {
+      "name": "section_icon_asset",
+      "value": "@local.@local.concat_icon_asset"
+    },
+    {
+      "name": "extra_text",
+      "value": "extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_extra_text_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_extra_text",
+      "value": "article_data.@local.section_extra_text_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_extra_text",
+      "value": "@local.@local.concat_extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_variant",
+      "value": "box_primary",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_variant",
+      "value": "@global.section_variant",
+      "condition": "!!(@global.section_variant)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg",
+      "parameter_list": "variant: @local.section_variant;\nstyle: column;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "parameter_list": "style: row",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "icon_asset",
+      "value": "@local.section_icon_asset",
+      "condition": "!!(@local.section_icon_asset)",
+      "style_list": "height: 48px;\nwidth: 48px;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "section_title",
+      "value": "@local.section_title",
+      "condition": "!!(@local.section_title)",
+      "style_list": "flex: 1",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "section_text",
+      "value": "@local.section_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "image_asset",
+      "value": "@local.section_image_asset",
+      "condition": "!!(@local.section_image_asset)",
+      "parameter_list": "style: rounded_corners;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "pop_up_text",
+      "value": "@local.section_extra_text",
+      "condition": "!!(@local.section_extra_text)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_accordion",
+      "name": "accordion",
+      "condition": "!!(@local.section_button_text)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "first",
+      "value": "@local.section_button_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "accordion_content",
+      "value": "@local.section_extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_accordion_section",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_accordion",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    }
+  ],
+  "extra_text": [
+    {
+      "name": "article_id",
+      "value": "intro_connect",
+      "comments": "intro_connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "comments": "connect_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "comments": "connect_articles.intro_connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "comments": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section",
+      "value": "section",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "extra_text",
+      "value": "extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.extra_text",
+      "comments": "section_1_extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_extra_text",
+      "value": "article_data.@local.section_column",
+      "comments": "article_data.section.1.extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_extra_text",
+      "value": "@local.@local.concat_extra_text",
+      "comments": "@local.article_data.section.1.extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@local.section_extra_text",
+      "exclude_from_translation": true
+    }
+  ],
+  "pop_up_text": [
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@fields.pop_up_text",
+      "exclude_from_translation": true
+    }
+  ]
+}

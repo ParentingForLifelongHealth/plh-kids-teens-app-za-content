@@ -1,0 +1,173 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "feedback_debug",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "feedback_default",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "feedback_text_select",
+      "status": "released"
+    }
+  ],
+  "feedback_debug": [
+    {
+      "type": "title",
+      "value": "Fields",
+      "exclude_from_translation": true,
+      "comments": "Globally available fields used by feedback system"
+    },
+    {
+      "type": "text",
+      "value": "_feedback_selected_text  : @fields._feedback_selected_text ",
+      "exclude_from_translation": true,
+      "comments": "Note, this will not show as updated in template without refresh, but will show in popup"
+    },
+    {
+      "type": "text",
+      "value": "_feedback_sidebar_open : @fields._feedback_sidebar_open",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "value": "Actions",
+      "exclude_from_translation": true,
+      "comments": "Available actions to use with feedback system"
+    },
+    {
+      "type": "button",
+      "value": "Sidebar Open",
+      "action_list": "click | feedback:open;\nclick | emit: force_reprocess;",
+      "condition": "!@fields._feedback_sidebar_open",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "value": "Sidebar Close",
+      "action_list": "click | feedback:close;\nclick | emit: force_reprocess;",
+      "condition": "@fields._feedback_sidebar_open",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "value": "Open Feedback Template",
+      "action_list": "click | feedback:template:feature_feedback_default",
+      "exclude_from_translation": true,
+      "comments": "pass name of form to open as second argument"
+    },
+    {
+      "type": "button",
+      "value": "Send Test Feedback",
+      "action_list": "click | feedback:send:test feedback",
+      "exclude_from_translation": true,
+      "comments": "sends specific feedback without template"
+    },
+    {
+      "type": "button",
+      "value": "Enable Feedback Mode",
+      "action_list": "click | feedback:enable",
+      "exclude_from_translation": true,
+      "comments": "Manual override of feedback mode (legacy, rarely used)"
+    },
+    {
+      "type": "button",
+      "value": "Disable Feedback Mode",
+      "action_list": "click | feedback:disable",
+      "exclude_from_translation": true,
+      "comments": "Manual override of feedback mode (sidebar will stay open but feedback disabled)"
+    },
+    {
+      "type": "button",
+      "value": "Submit Test Feedback",
+      "action_list": "click | feedback:submit:test feedback",
+      "exclude_from_translation": true
+    }
+  ],
+  "feedback_default": [
+    {
+      "type": "title",
+      "name": "title_1",
+      "value": "Feedback",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_area",
+      "name": "feedback",
+      "exclude_from_translation": true,
+      "parameter_list": "placeholder: Write feedback here"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_buttons",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_cancel",
+      "value": "Cancel",
+      "action_list": "click | feedback:cancel",
+      "exclude_from_translation": true,
+      "comments": "Cancel will automatically close"
+    },
+    {
+      "type": "button",
+      "name": "button_submit",
+      "value": "Submit",
+      "action_list": "click | feedback:submit:@local.feedback;",
+      "exclude_from_translation": true,
+      "comments": "Submit will record the feedback input to the database and close the popup"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "feedback_text_select": [
+    {
+      "type": "title",
+      "name": "title_1",
+      "value": "Suggest Change",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "selected_text",
+      "value": "@fields._feedback_selected_text",
+      "exclude_from_translation": true,
+      "comments": "This field is populated during feedback process"
+    },
+    {
+      "type": "text_area",
+      "name": "feedback",
+      "value": "@fields._feedback_selected_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_buttons",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_cancel",
+      "value": "Cancel",
+      "action_list": "click | feedback:cancel",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_submit",
+      "value": "Submit",
+      "action_list": "click | feedback:submit:@local.feedback;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

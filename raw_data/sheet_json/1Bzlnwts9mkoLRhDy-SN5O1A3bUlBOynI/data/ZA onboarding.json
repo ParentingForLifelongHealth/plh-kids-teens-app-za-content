@@ -1,0 +1,208 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "global",
+      "flow_subtype": "onboarding",
+      "flow_name": "onboarding_global_za",
+      "status": "released"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_subtype": "onboarding",
+      "flow_name": "onboarding_splash_slides",
+      "status": "released"
+    }
+  ],
+  "onboarding_global_za": [
+    {
+      "type": "declare_global_constant",
+      "name": "has_onboarding_language_select",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_onboarding_splash",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_onboarding_terms_login",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "login_is_mandatory",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_onboarding_settings",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_header_background_colour",
+      "value": "var(--ion-color-primary-800)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_header_image_asset",
+      "value": "images/logos/sino_white.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_footer_image_asset",
+      "value": "images/backgrounds/bottom_banner.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_completed_lottie_asset",
+      "value": "lottie/checkmark.json",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_intro_image_asset",
+      "value": "images/onboarding/facilitator_onboarding_icon.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_message_1",
+      "value": "**Hello! My name is @fields.facilitator_name. I’m so glad you’re here!**\n\nI’ll be helping you learn using @global.app_name! In the next few steps, I’ll ask you a few questions, so that I can make your learning experience just right for you!"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "question_user_name",
+      "value": "What is your name?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "placeholder_user_name",
+      "value": "Enter name"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "question_user_gender",
+      "value": "What is your gender?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "placeholder_user_gender",
+      "value": "Select gender"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "question_user_type",
+      "value": "What is your role?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "placeholder_user_type",
+      "value": "Select role"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_message_2",
+      "value": "**Let’s get started!**\n \nCan you tell me a little about yourself?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "question_child_age",
+      "value": "How old is your child?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "placeholder_child_age",
+      "value": "Enter age"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "child_age_input_restriction",
+      "value": "@global.app_name only supports parents of children between 2 and 17."
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_message_3",
+      "value": "**Thanks @fields.user_name.**\n\nCan you tell me more about your child?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "question_household_children",
+      "value": "How many children do you care for in your home?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "placeholder_household_children",
+      "value": "Enter number of children"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "household_children_input_restriction",
+      "value": "Please enter a number between 1 and 20."
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_message_3_multipe_child",
+      "value": "**Thanks @fields.user_name.**\n\nTo get started, let’s focus on the child you have the most challenges with so I can give you the right guidance for their age."
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "question_child_age_multipe_child",
+      "value": "How old is the child you will focus on in @global.app_name?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_selection_1",
+      "value": "Welcome to @global.app_name! To participate, you'll need a partner in parenting. There are 2 parenting experts to choose from:"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_selection_2",
+      "value": "Welcome to @global.app_name! We’re so happy you’re here! Let’s find the right guide to support you in your parenting. Who would you like to learn with?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_selection_3",
+      "value": "Hi, I am @fields.facilitator_name! I am a grandmother of three and a retired social worker. I love sharing tools for parenting with love and respect."
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_selection_4",
+      "value": "Hi, I am @fields.facilitator_name! I am a retired teacher and a grandfather of two. I guide parents with warmth, firmness, and care."
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "facilitator_selection_5",
+      "value": "Who would you like to be your guide?"
+    }
+  ],
+  "onboarding_splash_slides": [
+    {
+      "id": "slide_1",
+      "image_asset": "images/onboarding/frustrated.svg",
+      "text::eng": "Raising children isn't easy ",
+      "duration_sec": 4
+    },
+    {
+      "id": "slide_2",
+      "image_asset": "images/onboarding/loving_parent.svg",
+      "text::eng": "You are the best parent your child could have",
+      "duration_sec": 4
+    },
+    {
+      "id": "slide_3",
+      "image_asset": "images/onboarding/join_parents.svg",
+      "text::eng": "Join over 200 million parents who have used our resources",
+      "duration_sec": 4
+    }
+  ]
+}

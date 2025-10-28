@@ -1,0 +1,985 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "data_list",
+      "flow_subtype": "lifecycle_actions",
+      "flow_name": "launch_actions",
+      "status": "draft"
+    },
+    {
+      "flow_type": "global",
+      "flow_subtype": "onboarding",
+      "flow_name": "onboarding_global",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "onboarding_header",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "onboarding_footer",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "onboarding_language_select",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "onboarding_splash",
+      "status": "draft"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "onboarding_splash_slides",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "onboarding_terms_login",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "onboarding_settings",
+      "status": "draft"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "onboarding_settings_pages",
+      "status": "draft",
+      "data_list_name": "onboarding_settings_pages"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "onboarding_settings_page_1",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "account",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "delete_account_warning",
+      "status": "draft"
+    }
+  ],
+  "launch_actions": [
+    {
+      "lifecycle_event": "app_start",
+      "id": "update_complete",
+      "priority": 1,
+      "condition_list": "@fields._app_update_downloaded",
+      "action_list": "app_update: complete"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "language_select",
+      "priority": 2,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_language_select_completed && @global.has_onboarding_language_select",
+      "action_list": "pop_up: onboarding_language_select | fullscreen: true, showCloseButton: false;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "splash",
+      "priority": 3,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_splash_completed && @global.has_onboarding_splash",
+      "action_list": "pop_up: onboarding_splash | fullscreen: true, showCloseButton: false;\nset_field: onboarding_splash_completed: true;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "terms_login",
+      "priority": 4,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_terms_login_completed && @global.has_onboarding_terms_login",
+      "action_list": "pop_up: onboarding_terms_login | fullscreen: true, showCloseButton: false;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "settings",
+      "priority": 6,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_settings_completed && @global.has_onboarding_settings",
+      "action_list": "pop_up: onboarding_settings | fullscreen: true, showCloseButton: false;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "server_sync",
+      "priority": 7,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_completed",
+      "action_list": "emit: server_sync;\nset_field: onboarding_completed: true;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "update_prompt",
+      "priority": 8,
+      "action_list": "app_update: prompt"
+    }
+  ],
+  "onboarding_global": [
+    {
+      "type": "declare_global_constant",
+      "name": "has_onboarding_language_select",
+      "value": false
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_onboarding_splash",
+      "value": false
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_onboarding_terms_login",
+      "value": false
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "login_is_mandatory",
+      "value": false
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_onboarding_settings",
+      "value": false
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_header_background_colour",
+      "value": "var(--ion-color-primary-800)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_header_image_asset",
+      "value": "images/logos/plh_logomark.png",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_footer_image_asset"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_splash_skip",
+      "value": "Skip"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "welcome_message",
+      "value": "Welcome to \n@global.app_name!"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "login",
+      "value": "Sign in"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "login_optional_why",
+      "value": "Creating an account allows you to save your progress across devices. It is optional."
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "login_apple",
+      "value": "Continue with Apple"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "login_google",
+      "value": "Continue with Google"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "login_skip",
+      "value": "Continue without an account"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "agree_terms",
+      "value": "By continuing, you agree to our:"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "logout",
+      "value": "Sign out"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "logged_in_existing_user",
+      "value": "Welcome back, @fields._auth_user_given_name!"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "logged_in_existing",
+      "value": "Welcome back!"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "logged_in_new_user",
+      "value": "Welcome, @fields._auth_user_given_name!"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "logged_in_new",
+      "value": "Welcome!"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "continue",
+      "value": "Continue"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_completed_lottie_asset"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_completed_title",
+      "value": "You’re all set!"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "onboarding_completed_text",
+      "value": "Your profile is complete, and you’re ready to begin!"
+    }
+  ],
+  "onboarding_header": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "parameter_list": "sticky: top;",
+      "style_list": "background-color: @global.onboarding_header_background_colour;\nborder-bottom-left-radius: 36px;\nborder-bottom-right-radius: 36px;\nmargin-block: -24px;"
+    },
+    {
+      "type": "image",
+      "name": "logo",
+      "value": "@global.onboarding_header_image_asset",
+      "style_list": "height: 200px;\nmargin-block: 24px;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "text",
+      "name": "spacer",
+      "style_list": "margin-top: 36px"
+    }
+  ],
+  "onboarding_footer": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_bottom",
+      "parameter_list": "sticky: bottom;\nbackground_image_asset: @global.onboarding_footer_image_asset;\nbackground_image_position: bottom left;",
+      "style_list": "min-height: 100px;\nwidth: 100%;"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "onboarding_language_select": [
+    {
+      "type": "begin_template",
+      "name": "header",
+      "value": "onboarding_header"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "name": "language_select_options",
+      "value": "@data.language"
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "language_grid",
+      "action_list": "changed | emit: set_language: this.value;",
+      "parameter_list": "answer_list: @local.language_select_options; \nitem_width: 200px;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_centre",
+      "style_list": "justify-content: center;"
+    },
+    {
+      "type": "round_button",
+      "name": "button_completed",
+      "action_list": "click | set_field: onboarding_language_select_completed: true;\nclick | emit: completed;",
+      "parameter_list": "variant: module; \nicon_src: arrow-right;",
+      "style_list": "margin-top: 48px;\nposition: absolute;\ntop: 50%;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_template",
+      "name": "footer",
+      "value": "onboarding_footer",
+      "condition": "!!@global.onboarding_footer_image_asset"
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "onboarding_splash": [
+    {
+      "name": "skip_text",
+      "value": "@global.onboarding_splash_skip"
+    },
+    {
+      "name": "no_of_slides",
+      "value": 3
+    },
+    {
+      "type": "data_items",
+      "name": "find_no_of_slides",
+      "value": "@data.onboarding_splash_slides",
+      "action_list": "data_changed | set_local: no_of_slides: @items.length"
+    },
+    {
+      "type": "begin_animated_slides",
+      "action_list": "completed | emit:completed;\nuncompleted | emit:uncompleted",
+      "parameter_list": "skip_text: @local.skip_text; \nstyle: light"
+    },
+    {
+      "type": "begin_items",
+      "name": "loop_slides",
+      "value": "@data.onboarding_splash_slides"
+    },
+    {
+      "name": "progress_percent",
+      "value": "(@item._index + 1)/@local.no_of_slides * 100"
+    },
+    {
+      "type": "begin_animated_section",
+      "parameter_list": "duration: @item.duration_sec"
+    },
+    {
+      "type": "task_progress_bar",
+      "parameter_list": "progress_percent: @local.progress_percent",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "begin_display_group",
+      "parameter_list": "style: centre_image"
+    },
+    {
+      "type": "image",
+      "name": "image",
+      "value": "@item.image_asset"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@item.text",
+      "parameter_list": "style: large center"
+    },
+    {
+      "type": "begin_template",
+      "name": "footer",
+      "value": "onboarding_footer",
+      "condition": "!!@global.onboarding_footer_image_asset"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_animated_section"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "end_animated_slides"
+    }
+  ],
+  "onboarding_splash_slides": [],
+  "onboarding_terms_login": [
+    {
+      "name": "user_is_logged_in",
+      "value": "!!@fields._auth_user_id"
+    },
+    {
+      "name": "user_skipped_login",
+      "value": false
+    },
+    {
+      "type": "begin_template",
+      "name": "header",
+      "value": "onboarding_header",
+      "condition": "@global.login_is_mandatory || @local.user_is_logged_in || @local.user_skipped_login",
+      "comment": "Always show header when login is mandatory (more screen space), when login is optional only show after logging in or skipping."
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "before_login",
+      "condition": "!(@local.user_is_logged_in || @local.user_skipped_login)",
+      "parameter_list": "style: column;",
+      "style_list": "align-items: center"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.welcome_message",
+      "parameter_list": "variant: header",
+      "style_list": "margin-top: 24px"
+    },
+    {
+      "type": "text",
+      "name": "text_login",
+      "value": "@global.login",
+      "parameter_list": "text_align: center;\nstyle: emphasised"
+    },
+    {
+      "type": "text",
+      "name": "text_login_why",
+      "value": "@global.login_optional_why",
+      "condition": "!@global.login_is_mandatory",
+      "parameter_list": "text_align: center"
+    },
+    {
+      "type": "apple_sign_in_button",
+      "name": "button_apple_sign_in",
+      "value": "@global.login_apple",
+      "action_list": "click | emit: force_reprocess;",
+      "condition": "@fields._platform === \"ios\"",
+      "style_list": "max-width: max-content;"
+    },
+    {
+      "type": "google_sign_in_button",
+      "name": "button_google_sign_in",
+      "value": "@global.login_google",
+      "action_list": "click | emit: force_reprocess;",
+      "style_list": "max-width: max-content;"
+    },
+    {
+      "type": "button",
+      "name": "button_skip_sign_in",
+      "value": "@global.login_skip",
+      "action_list": "click | emit: completed;\nclick | set_field: onboarding_terms_login_completed: true;",
+      "condition": "!@global.login_is_mandatory",
+      "parameter_list": "variant: card;"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@global.agree_terms",
+      "parameter_list": "text_align: center"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_buttons_terms",
+      "parameter_list": "style: column;"
+    },
+    {
+      "type": "button",
+      "name": "button_terms",
+      "value": "<u>@global.terms_and_conditions</u>",
+      "action_list": "click | pop_up: app_menu_terms | fullscreen: true",
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "style_list": "margin-block: -12px",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_privacy",
+      "value": "<u>@global.privacy_policy</u>",
+      "action_list": "click | pop_up: app_menu_privacy_policy| fullscreen: true",
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "style_list": "margin-block: -12px",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "after_login",
+      "condition": "@local.user_is_logged_in",
+      "parameter_list": "style: column;",
+      "style_list": "align-items: center"
+    },
+    {
+      "type": "data_items",
+      "value": "_auth_profiles",
+      "action_list": "data_changed | set_field : no_previous_auth_id : @items.length === 0;"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "find_last_synced_id",
+      "value": "_auth_profiles",
+      "parameter_list": "sort: updatedAt;\nreverse;\nlimit: 1"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_welcome_existing",
+      "parameter_list": "style: column",
+      "style_list": "align-items: center"
+    },
+    {
+      "type": "image",
+      "name": "img_user",
+      "value": "@fields._auth_user_picture",
+      "condition": "!!@fields._auth_user_picture",
+      "parameter_list": "style: rounded_corners",
+      "style_list": "width: 96px;\nheight: 96px;"
+    },
+    {
+      "type": "title",
+      "name": "welcome_title",
+      "value": "@global.logged_in_existing_user",
+      "condition": "!!@fields._auth_user_given_name",
+      "parameter_list": "variant: header"
+    },
+    {
+      "type": "title",
+      "name": "welcome_title",
+      "value": "@global.logged_in_existing",
+      "condition": "!@fields._auth_user_given_name",
+      "parameter_list": "variant: header"
+    },
+    {
+      "type": "button",
+      "name": "button_import",
+      "value": "@global.continue",
+      "action_list": "click | user: import: @item.id;\nclick | set_field: onboarding_terms_login_completed: true;",
+      "parameter_list": "style:navigation;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_welcome_new",
+      "condition": "!!@fields.no_previous_auth_id",
+      "parameter_list": "style: column",
+      "style_list": "align-items: center"
+    },
+    {
+      "type": "image",
+      "name": "img_user",
+      "value": "@fields._auth_user_picture",
+      "condition": "!!@fields._auth_user_picture",
+      "parameter_list": "style: rounded_corners",
+      "style_list": "width: 96px;\nheight: 96px;"
+    },
+    {
+      "type": "title",
+      "name": "welcome_title",
+      "value": "@global.logged_in_new_user",
+      "condition": "!!@fields._auth_user_given_name",
+      "parameter_list": "variant: header"
+    },
+    {
+      "type": "title",
+      "name": "welcome_title",
+      "value": "@global.logged_in_new",
+      "condition": "!@fields._auth_user_given_name",
+      "parameter_list": "variant: header"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "action_list": "click | emit: completed;\nclick | set_field: onboarding_terms_login_completed: true;",
+      "parameter_list": "style:navigation;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_sign_out",
+      "value": "<u>@global.logout</u>",
+      "action_list": "click | reset_data;\nclick | reset_app;",
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "onboarding_settings": [
+    {
+      "name": "task_group",
+      "value": "onboarding_settings_pages"
+    },
+    {
+      "name": "page_count"
+    },
+    {
+      "type": "data_items",
+      "name": "compute_page_count",
+      "value": "@data.onboarding_settings_pages",
+      "action_list": "data_changed | set_local: page_count:  @items.length"
+    },
+    {
+      "name": "completed_count"
+    },
+    {
+      "type": "data_items",
+      "name": "compute_completed_count",
+      "value": "@data.onboarding_settings_pages",
+      "action_list": "data_changed | set_local: completed_count:  @items.length",
+      "parameter_list": "filter: @item.completed"
+    },
+    {
+      "type": "text",
+      "name": "debug_completed_count",
+      "value": "Completed count: @local.completed_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "hidden": "@local.completed_count == @local.page_count"
+    },
+    {
+      "type": "task_progress_bar",
+      "parameter_list": "task_group_data: @local.task_group",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_pages",
+      "value": "@data.onboarding_settings_pages"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "await_data_loop_evaluation",
+      "parameter_list": "style: column",
+      "condition": "@local.completed_count !== undefined"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "condition",
+      "parameter_list": "style: column",
+      "hidden": "@local.completed_count != @item.completed_count"
+    },
+    {
+      "type": "begin_template",
+      "name": "page",
+      "value": "onboarding_settings_@item.id",
+      "action_list": "completed | set_data |\n_list_id: onboarding_settings_pages,\n_id: @item.id,\ncompleted: true;\n\nuncompleted | set_data | \n_list_id: onboarding_settings_pages,\n_id: page_@local.completed_count,\ncompleted: false;"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "page_finished",
+      "parameter_list": "style: column",
+      "hidden": "@local.completed_count != @local.page_count",
+      "exclude_from_translation": "width: 100%"
+    },
+    {
+      "type": "lottie_animation",
+      "name": "lottie",
+      "value": "@global.onboarding_completed_lottie_asset",
+      "condition": "!!@global.onboarding_completed_lottie_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "finish_profile_title",
+      "value": "@global.onboarding_completed_title",
+      "parameter_list": "variant: header"
+    },
+    {
+      "type": "text",
+      "name": "finish_profile_text",
+      "value": "@global.onboarding_completed_text",
+      "parameter_list": "text_align: center"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_footer",
+      "parameter_list": "sticky: bottom;",
+      "style_list": "padding: 12px 24px;"
+    },
+    {
+      "type": "button",
+      "name": "button_completed_3",
+      "value": "@global.continue",
+      "action_list": "click | emit: completed;\nclick | set_field: onboarding_settings_completed: true;",
+      "parameter_list": "style: navigation;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "onboarding_settings_pages": [
+    {
+      "id": "page_1",
+      "completed": false,
+      "completed_count": 0
+    }
+  ],
+  "onboarding_settings_page_1": [
+    {
+      "type": "text",
+      "name": "question_user_type",
+      "value": "@global.question_user_type",
+      "parameter_list": "style: emphasised;"
+    },
+    {
+      "type": "combo_box",
+      "name": "user_type_select",
+      "parameter_list": "answer_list: @data.user_type;\nplaceholder: @global.placeholder_user_type;\nvariant: dropdown;",
+      "condition": "!!@fields.user_type",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "user_type_select",
+      "value": "@fields.user_type",
+      "parameter_list": "answer_list: @data.user_type;\nplaceholder: @global.placeholder_user_type;\nvariant: dropdown;",
+      "condition": "!@fields.user_type"
+    },
+    {
+      "name": "completed_enabled",
+      "value": "!!@local.user_type_select && !!@local.user_name_input && !!@local.user_gender_select",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_footer",
+      "parameter_list": "sticky: bottom;",
+      "style_list": "padding: 12px 24px;"
+    },
+    {
+      "type": "round_button",
+      "name": "button_back",
+      "action_list": "click | emit: uncompleted",
+      "parameter_list": "icon_src: arrow-back;\nvariant: no-background;"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "action_list": "click | set_field: user_type: @local.user_type_select;\nclick | set_field: user_name: @local.user_name_input;\nclick | set_field: user_gender: @local.user_gender_select;\nclick | emit: completed;",
+      "parameter_list": "style: navigation;\ndisabled: !@local.completed_enabled",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "account": [
+    {
+      "name": "is_user_signed_in",
+      "value": "!!@fields._auth_user_id"
+    },
+    {
+      "name": "just_logged_in",
+      "value": false
+    },
+    {
+      "name": "show_title",
+      "value": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.account",
+      "condition": "@local.show_title"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "login",
+      "condition": "!@local.is_user_signed_in",
+      "parameter_list": "style: column;"
+    },
+    {
+      "type": "text",
+      "name": "text_login",
+      "value": "@global.login_optional_why"
+    },
+    {
+      "type": "apple_sign_in_button",
+      "name": "button_apple_sign_in",
+      "value": "@global.login_apple",
+      "action_list": "click | emit: force_reprocess;\nclick | set_local: just_logged_in: true",
+      "condition": "@fields._platform === \"ios\""
+    },
+    {
+      "type": "google_sign_in_button",
+      "name": "button_google_sign_in",
+      "value": "@global.login_google",
+      "action_list": "click | emit: force_reprocess;\nclick | set_local: just_logged_in: true"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "logged_in",
+      "condition": "@local.is_user_signed_in",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_column",
+      "parameter_list": "variant: box_secondary; \nstyle: column"
+    },
+    {
+      "type": "image",
+      "name": "user_picture",
+      "value": "@fields._auth_user_picture",
+      "parameter_list": "style: rounded_corners",
+      "style_list": "width: 96px;\nheight: 96px;"
+    },
+    {
+      "type": "text",
+      "name": "user_name",
+      "value": "@fields._auth_user_name",
+      "parameter_list": "text_align: center"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_row"
+    },
+    {
+      "type": "button",
+      "name": "button_sign_out",
+      "value": "<u>@global.logout</u>",
+      "action_list": "click | emit: server_sync; \nclick | auth: sign_out;\nclick | emit: force_reprocess;",
+      "condition": "!@global.login_is_mandatory",
+      "exclude_from_translation": true,
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "button",
+      "name": "button_sign_out",
+      "value": "<u>@global.logout</u>",
+      "action_list": "click | emit: server_sync; \nclick | auth: sign_out;\nclick | reset_data;\nclick | reset_app;",
+      "condition": "@global.login_is_mandatory",
+      "exclude_from_translation": true,
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "button",
+      "name": "button_delete_account",
+      "value": "<u>@global.delete_account</u>",
+      "action_list": "click | pop_up: delete_account_warning",
+      "exclude_from_translation": true,
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "find_last_synced_id",
+      "value": "_auth_profiles",
+      "condition": "@local.just_logged_in && !@global.login_is_mandatory",
+      "parameter_list": "sort: updatedAt;\nreverse;\nlimit: 1"
+    },
+    {
+      "type": "text",
+      "name": "text_previous_login",
+      "value": "@global.previous_login",
+      "style_list": "margin-bottom: 12px"
+    },
+    {
+      "type": "button",
+      "name": "button_restore",
+      "value": "@global.restore_data",
+      "action_list": "click | user: import: @item.id;\nclick | emit: force_reprocess;",
+      "comments": "click | user: import: @item.id;\nclick | emit: force_restart"
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "delete_account_warning": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.delete_account_warning_title"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@global.delete_account_warning_text_login_mandatory",
+      "condition": "@global.login_is_mandatory"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@global.delete_account_warning_text_login_optional",
+      "condition": "!@global.login_is_mandatory"
+    },
+    {
+      "type": "begin_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_back",
+      "value": "@global.no",
+      "action_list": "click | emit: completed",
+      "exclude_from_translation": true,
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "button",
+      "name": "button_delete_account",
+      "value": "@global.yes",
+      "action_list": "click | auth: delete_account;\nclick | reset_data;\nclick | reset_app;",
+      "condition": "@global.login_is_mandatory",
+      "exclude_from_translation": true,
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "button",
+      "name": "button_delete_account",
+      "value": "@global.yes",
+      "action_list": "click | auth: delete_account;\nclick | emit: completed;",
+      "condition": "!@global.login_is_mandatory",
+      "exclude_from_translation": true,
+      "style_list": "flex: 2"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

@@ -118,8 +118,7 @@
           "args": [
             "uncompleted"
           ],
-          "_raw": "uncompleted | emit: uncompleted",
-          "_cleaned": "uncompleted | emit: uncompleted"
+          "_raw": "uncompleted | emit: uncompleted"
         }
       ],
       "exclude_from_translation": true,
@@ -429,7 +428,6 @@
                     "open"
                   ],
                   "_raw": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
-                  "_cleaned": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
                   "params": {
                     "template": "@local.article_prefix@item.id@local.article_suffix",
                     "header": false
@@ -454,26 +452,6 @@
                 "action_list": {
                   "0": {
                     "_raw": [
-                      {
-                        "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
-                        "matchedExpression": "@local.article_prefix",
-                        "type": "local",
-                        "fieldName": "article_prefix"
-                      },
-                      {
-                        "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
-                        "matchedExpression": "@item.id",
-                        "type": "item",
-                        "fieldName": "id"
-                      },
-                      {
-                        "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
-                        "matchedExpression": "@local.article_suffix",
-                        "type": "local",
-                        "fieldName": "article_suffix"
-                      }
-                    ],
-                    "_cleaned": [
                       {
                         "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
                         "matchedExpression": "@local.article_prefix",
@@ -548,18 +526,15 @@
                 "@item.id": [
                   "name",
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.template",
                   "_nested_name"
                 ],
                 "@local.article_prefix": [
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.template"
                 ],
                 "@local.article_suffix": [
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.template"
                 ],
                 "@item.title": [
@@ -624,5 +599,6 @@
     }
   ],
   "_xlsxPath": "templates/ZA library templates.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+  "_remoteFolder": "1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+  "_remoteUrl": "https://docs.google.com/spreadsheets/d/1V0sTlZuoXaBrG00l6BxTKLs0rEpYOZgVbwNLPin86qI"
 }

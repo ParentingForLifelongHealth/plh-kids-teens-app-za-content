@@ -1,0 +1,519 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "app_menu",
+      "status": "released"
+    },
+    {
+      "flow_type": "global",
+      "flow_name": "app_menu_globals",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "app_about",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "import_user_data",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "enter_dev_mode",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "exit_dev_mode",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "user_id",
+      "status": "released"
+    }
+  ],
+  "app_menu_globals": [
+    {
+      "type": "declare_field_default",
+      "name": "user_mode",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "splash_screens_completed",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "dev_mode_code",
+      "value": "app_dev",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "test_mode_code",
+      "value": "app_test",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "app_name",
+      "value": "[app name]",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "about_this_app",
+      "value": "About @global.app_name"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "language",
+      "value": "Language"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_multiple_languages",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_optional_login",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "user_id_text",
+      "value": "User ID"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "skip",
+      "value": "Skip"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "continue",
+      "value": "Continue"
+    }
+  ],
+  "app_menu": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_dev",
+      "parameter_list": "style: column",
+      "condition": "!@fields.user_mode"
+    },
+    {
+      "type": "debug_toggle",
+      "name": "debug_toggle"
+    },
+    {
+      "type": "button",
+      "name": "button_templates",
+      "value": "Templates",
+      "action_list": "click | go_to:/template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_dynamic_data",
+      "value": "Dynamic data",
+      "action_list": "click | go_to:/user",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_reset",
+      "value": "Reset app",
+      "action_list": "click | reset_app",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_open_feedback",
+      "value": "Open feedback",
+      "action_list": "click | feedback:open;\nclick | emit: force_reprocess;",
+      "condition": "!@fields._feedback_sidebar_open",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_close_feedback",
+      "value": "Close feedback",
+      "action_list": "click | feedback:close;\nclick | emit: force_reprocess;",
+      "condition": "@fields._feedback_sidebar_open",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_import_user",
+      "value": "Import user",
+      "action_list": "click | go_to: import_user_data"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_about",
+      "value": "@global.about_this_app",
+      "action_list": "click | go_to: app_about"
+    },
+    {
+      "type": "button",
+      "name": "button_terms",
+      "value": "@global.terms_and_conditions",
+      "action_list": "click | go_to: app_menu_terms"
+    },
+    {
+      "type": "button",
+      "name": "button_privacy",
+      "value": "@global.privacy_policy",
+      "action_list": "click | go_to: app_menu_privacy_policy"
+    },
+    {
+      "type": "button",
+      "name": "button_language",
+      "value": "@global.language",
+      "action_list": "click | go_to: language_select"
+    },
+    {
+      "type": "button",
+      "name": "button_user_id",
+      "value": "@global.user_id_text"
+    },
+    {
+      "type": "button",
+      "name": "button_dev_enter",
+      "value": "Developer mode",
+      "action_list": "click | go_to: enter_dev_mode",
+      "condition": "@fields.user_mode"
+    },
+    {
+      "type": "button",
+      "name": "button_dev_exit",
+      "value": "Exit developer mode",
+      "action_list": "click | go_to: exit_dev_mode",
+      "condition": "!@fields.user_mode"
+    }
+  ],
+  "app_about": [
+    {
+      "name": "show_title",
+      "value": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.about_this_app",
+      "condition": "!!(@local.show_title)"
+    },
+    {
+      "type": "begin_items",
+      "name": "items_1",
+      "value": "@data.about_this_app"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@item.text",
+      "condition": "@item.text"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "begin_items",
+      "name": "items_2",
+      "value": "@data.organisation_group"
+    },
+    {
+      "type": "text",
+      "name": "title_@item.id",
+      "value": "@item.name",
+      "parameter_list": "style: emphasised"
+    },
+    {
+      "name": "this_group",
+      "value": "@item.id"
+    },
+    {
+      "type": "begin_display_grid",
+      "name": "dgrid_@item.id",
+      "parameter_list": "item_width: 100px; grid_width: 80%; grid_gap: 70px; item_border: none"
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.organisation"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_@item.id",
+      "condition": "@local.this_group == @item.group",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "image",
+      "name": "image_asset",
+      "value": "@item.image_asset"
+    },
+    {
+      "type": "text",
+      "name": "name",
+      "value": "@item.name",
+      "condition": "!@item.image_asset",
+      "comments": "Show name only if no image is provided"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "end_display_grid"
+    },
+    {
+      "type": "end_items"
+    }
+  ],
+  "import_user_data": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Import user",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "user_id_name",
+      "value": "User ID",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_instruction",
+      "value": "Paste the @local.user_id_name to import their account data.",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_box",
+      "name": "user_id_input",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_import",
+      "value": "Import data",
+      "action_list": "click | user: import: @local.user_id_input;\nclick | emit: force_reprocess;",
+      "exclude_from_translation": true
+    }
+  ],
+  "enter_dev_mode": [
+    {
+      "name": "submit",
+      "value": "Submit"
+    },
+    {
+      "name": "text_box_placeholder",
+      "value": "Tap and type"
+    },
+    {
+      "name": "reply_entered",
+      "value": false
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Enter developer mode"
+    },
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "To launch the app in developer mode, enter your developer code in the box below and press @local.submit."
+    },
+    {
+      "type": "text_box",
+      "name": "text_box",
+      "exclude_from_translation": true,
+      "parameter_list": "placeholder:@local.text_box_placeholder"
+    },
+    {
+      "type": "button",
+      "name": "button_submit",
+      "value": "@local.submit",
+      "action_list": "click | set_local: reply_entered: true",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_reply_entered",
+      "condition": "@local.reply_entered"
+    },
+    {
+      "type": "text",
+      "name": "incorrect",
+      "value": "You have entered an incorrect code.",
+      "condition": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "correct",
+      "condition": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "This code is correct."
+    },
+    {
+      "type": "button",
+      "name": "button_enter_dev",
+      "value": "Enter developer mode",
+      "action_list": "click | set_field: user_mode: false;\nclick | emit:force_restart;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "exit_dev_mode": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Exit developer mode",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "Click the button below to go back to user mode.",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_incorrect_code",
+      "value": "Enter user mode",
+      "action_list": "click | set_field: user_mode:true;\nclick | emit:force_restart;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "leave_reply",
+      "hidden": "!@fields.user_mode",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "You have entered user mode.",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "user_id": [
+    {
+      "name": "show_title",
+      "value": true
+    },
+    {
+      "name": "user_id",
+      "value": "@calc(this.app_user_id)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "sync_latest",
+      "value": "@fields._server_sync_latest",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "sync_status",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "sync_button_clicked",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "copy",
+      "value": "Copy code"
+    },
+    {
+      "name": "copied",
+      "value": "Copied!"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.user_id_text",
+      "condition": "!!(@local.show_title)"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "has_ever_been_synced",
+      "condition": "@local.sync_latest",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "qr_code",
+      "name": "qr_code",
+      "value": "@local.user_id"
+    },
+    {
+      "type": "select_text",
+      "name": "user_code",
+      "value": "@local.user_id",
+      "parameter_list": "copy_text: @local.copy;\ncopied_text: @local.copied"
+    },
+    {
+      "type": "text",
+      "name": "last_sync_text",
+      "value": "Last sync at: @local.sync_latest"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "has_never_been_synced",
+      "condition": "!@local.sync_latest",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "text",
+      "name": "not_synced_text",
+      "value": "This device has never been synced. Sync to reveal your code."
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "sync_button",
+      "value": "Sync now",
+      "action_list": "click | set_local: sync_status: \"syncing...\";\nclick | set_local: sync_status: \"syncing...\";\nclick | emit: force_reprocess;\nclick | emit: server_sync;\nclick | set_local: sync_status: ;\nclick | set_local: sync_button_clicked: true;\nclick | emit: force_reprocess;",
+      "condition": "!@local.sync_status"
+    },
+    {
+      "type": "button",
+      "name": "sync_button_disabled",
+      "value": "Syncing...",
+      "condition": "@local.sync_status",
+      "parameter_list": "disabled:true"
+    }
+  ]
+}

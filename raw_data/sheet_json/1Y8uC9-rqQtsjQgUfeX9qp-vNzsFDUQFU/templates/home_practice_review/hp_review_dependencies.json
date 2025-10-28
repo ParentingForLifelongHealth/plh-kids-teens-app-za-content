@@ -1,0 +1,317 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "box_hp_review",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "workshop_activity",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "nav_buttons",
+      "status": "draft",
+      "comments": "flow name already taken"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "pair",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "box_duo",
+      "status": "draft"
+    }
+  ],
+  "box_hp_review": [
+    {
+      "name": "yes",
+      "value": "Yes"
+    },
+    {
+      "name": "no",
+      "value": "No"
+    },
+    {
+      "name": "radio_group_done_tracker",
+      "value": "radio_group_done_tracker",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list",
+      "value": "name: yes | text: @local.yes;\nname: no | text: @local.no",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_done",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "question_text_done",
+      "value": "question_text_done",
+      "exclude_from_translation": true,
+      "parameter_list": "style:emphasised"
+    },
+    {
+      "name": "radio_group_done_answered",
+      "value": false
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "radio_group_done",
+      "action_list": "changed | set_field:@local.radio_group_done_tracker:@local.radio_group_done; \nchanged | set_local : radio_group_done_answered: true",
+      "parameter_list": "answer_list: @local.answer_list; item_width: 50px"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "reply_no_dg",
+      "hidden": "@local.radio_group_done!=\"no\" ",
+      "parameter_list": "style:column"
+    },
+    {
+      "type": "text",
+      "name": "reply_no",
+      "value": "reply_no",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "reply_yes_dg",
+      "hidden": "@local.radio_group_done!=\"yes\"",
+      "parameter_list": "style:column"
+    },
+    {
+      "name": "radio_group_mood_tracker",
+      "value": "radio_group_mood_tracker",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list_mood",
+      "value": "name:happy | image:images/icons/faces/happy.svg | image_checked:images/icons/faces/happy.svg; \nname:ok | image:images/icons/faces/neutral.svg | image_checked:images/icons/faces/neutral.svg; \nname:sad | image:images/icons/faces/sad.svg |  image_checked:images/icons/faces/sad.svg"
+    },
+    {
+      "name": "options_per_row",
+      "value": 3,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "question_text_mood",
+      "value": "question_text_mood",
+      "parameter_list": "style:emphasised"
+    },
+    {
+      "name": "radio_group_mood_answered"
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "radio_group_mood",
+      "action_list": "changed | set_field:@local.radio_group_mood_tracker:@local.radio_group_mood; ",
+      "parameter_list": "answer_list: @local.answer_list_mood; item_width: 50px"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "reply_happy_dg",
+      "hidden": "@local.radio_group_mood!=\"happy\"",
+      "parameter_list": "style:column"
+    },
+    {
+      "type": "text",
+      "name": "reply_happy",
+      "value": "reply_happy",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "reply_ok_dg",
+      "hidden": "@local.radio_group_mood!=\"ok\" ",
+      "parameter_list": "style:column"
+    },
+    {
+      "type": "text",
+      "name": "reply_ok",
+      "value": "reply_ok",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "reply_sad_dg",
+      "hidden": "@local.radio_group_mood!=\"sad\"",
+      "parameter_list": "style:column"
+    },
+    {
+      "type": "text",
+      "name": "reply_sad",
+      "value": "reply_sad",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons",
+      "value": "nav_buttons",
+      "action_list": "completed | emit:completed; \nuncompleted | emit:uncompleted;"
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "workshop_activity": [
+    {
+      "name": "activity_title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "pop_up_template"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@local.activity_title"
+    },
+    {
+      "type": "begin_template",
+      "name": "content_box",
+      "action_list": "completed | emit:completed;\nuncompleted | emit: uncompleted;\ncompleted | pop_up: @local.pop_up_template"
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "nav_buttons": [
+    {
+      "name": "use_completed_chevron",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "use_uncompleted_chevron",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "display_back",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "buttons",
+      "parameter_list": "style: navigation"
+    },
+    {
+      "type": "round_button",
+      "name": "button_uncompleted_chevron",
+      "action_list": "click | emit:uncompleted",
+      "hidden": "(!@local.use_uncompleted_chevron) || (!@local.display_back)",
+      "parameter_list": "icon_src: chevron-back;\nstyle: navigation"
+    },
+    {
+      "type": "round_button",
+      "name": "button_uncompleted",
+      "action_list": "click | emit:uncompleted",
+      "hidden": "@local.use_uncompleted_chevron || (!@local.display_back)",
+      "parameter_list": "icon_src: caret-back;\nstyle:navigation"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.next_button",
+      "action_list": "click | emit:completed",
+      "hidden": "@local.use_completed_chevron",
+      "parameter_list": "style:navigation; text_align: center",
+      "style_list": "flex:1"
+    },
+    {
+      "type": "round_button",
+      "name": "button_completed_chevron",
+      "action_list": "click | emit:completed",
+      "hidden": "!@local.use_completed_chevron",
+      "parameter_list": "icon_src: chevron-forward;\nstyle: navigation"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "pair": [
+    {
+      "name": "show_animated_section_1",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_animated_section_2",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_animated_section",
+      "name": "animated_section_1",
+      "hidden": "!@local.show_animated_section_1"
+    },
+    {
+      "type": "begin_template",
+      "name": "box_1",
+      "action_list": "completed | set_local:show_animated_section_2:true; \ncompleted | set_local:show_animated_section_1:false; \nuncompleted | emit:uncompleted; "
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_animated_section"
+    },
+    {
+      "type": "begin_animated_section",
+      "name": "animated_section_2",
+      "hidden": "!@local.show_animated_section_2"
+    },
+    {
+      "type": "begin_template",
+      "name": "box_2",
+      "action_list": "completed | emit:completed; \nuncompleted | set_local:show_animated_section_2:false; \nuncompleted  | set_local:show_animated_section_1:true;"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_animated_section"
+    }
+  ],
+  "box_duo": [
+    {
+      "type": "begin_template",
+      "name": "box_1"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "box_2",
+      "action_list": "completed | emit:completed; uncompleted | emit:uncompleted"
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

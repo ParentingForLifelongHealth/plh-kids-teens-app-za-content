@@ -1,0 +1,142 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "module_list_teens_testing",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "module_list_kids_testing",
+      "status": "released"
+    }
+  ],
+  "module_list_teens_testing": [
+    {
+      "name": "current_module_id"
+    },
+    {
+      "name": "completed_count"
+    },
+    {
+      "type": "data_items",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : completed_count : @items.length",
+      "parameter_list": "filter: @item.completed;"
+    },
+    {
+      "type": "data_items",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : current_module_id : @items[0]?.id",
+      "parameter_list": "\nfilter: !@item.completed;\nlimit: 1;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_all_modules",
+      "parameter_list": "style: column",
+      "condition": "@local.completed_count !== undefined"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_modules",
+      "value": "@data.module_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "has_teen_tag",
+      "value": "@calc(@item.tag_list.includes(\"teen\"))"
+    },
+    {
+      "type": "begin_template",
+      "name": "module_@item.id",
+      "value": "module_list_item",
+      "condition": "@local.has_teen_tag",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "is_locked",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "module_list_kids_testing": [
+    {
+      "name": "current_module_id"
+    },
+    {
+      "name": "completed_count"
+    },
+    {
+      "type": "data_items",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : completed_count : @items.length",
+      "parameter_list": "filter: @item.completed;"
+    },
+    {
+      "type": "data_items",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : current_module_id : @items[0]?.id",
+      "parameter_list": "\nfilter: !@item.completed;\nlimit: 1;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_all_modules",
+      "parameter_list": "style: column",
+      "condition": "@local.completed_count !== undefined"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_modules",
+      "value": "@data.module_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "has_child_tag",
+      "value": "@calc(@item.tag_list.includes(\"child\"))"
+    },
+    {
+      "type": "begin_template",
+      "name": "module_@item.id",
+      "value": "module_list_item",
+      "condition": "@local.has_child_tag",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "is_locked",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

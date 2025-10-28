@@ -1,0 +1,1420 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "generator",
+      "flow_name": "gen_activities",
+      "status": "released",
+      "parameter_list": "input_data_list: activities;\noutput_flow_name: activity_{@gen.id};\noutput_flow_type: template;"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "activity_library",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "activity_library_archived",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "activity_library_testing",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "debug_activity_unlocking",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "activity",
+      "status": "released"
+    },
+    {
+      "flow_type": "data_pipe",
+      "flow_name": "prep_activities",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "unlock_play",
+      "status": "released"
+    }
+  ],
+  "gen_activities": [
+    {
+      "type": "begin_template",
+      "name": "activity",
+      "value": "activity",
+      "action_list": "completed | emit: completed; \nuncompleted | emit: uncompleted"
+    },
+    {
+      "name": "activity_id",
+      "value": "@gen.id"
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "activity_library": [
+    {
+      "name": "background_image_position",
+      "value": "right",
+      "condition": "@fields._app_language_direction != \"rtl\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "background_image_position",
+      "value": "left",
+      "condition": "@fields._app_language_direction == \"rtl\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_check_in_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "data_items",
+      "name": "count_hp_check_in",
+      "value": "@data.hp_check_in",
+      "action_list": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "data_items",
+      "name": "count_modules",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local: module_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "parameter_list": "sticky: top;\nstyle: background_solid;\nbackground_image_asset: images/backgrounds/library_top_right.png;\nbackground_image_position: top @local.background_image_position;\nvariant: inline_padding;",
+      "exclude_from_translation": true,
+      "style_list": "width: 100%;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_column",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.moments_of_play",
+      "exclude_from_translation": true,
+      "style_list": "margin-top: 72px;\nmargin-bottom: -12px",
+      "comment": "max-width: 40vw;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top_below_background",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_hp_check_in",
+      "value": "Total hp checkins not unlocked activity: @local.hp_check_in_not_unlocked_activity_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_hp_check_in",
+      "value": "Mark all hp checkins as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: hp_check_in,\nunlocked_activity: true",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_modules",
+      "value": "Total modules not unlocked activity: @local.module_not_unlocked_activity_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_modules",
+      "value": "Mark all modules as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: module_tasks,\nunlocked_activity: true",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "finished_all_content",
+      "value": "@local.hp_check_in_not_unlocked_activity_count + @local.module_not_unlocked_activity_count === 0",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_finished_all_content",
+      "value": "Finished all content? @local.finished_all_content",
+      "condition": false
+    },
+    {
+      "type": "begin_data_items",
+      "value": "@data.activity_tasks",
+      "parameter_list": "filter: @item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));\nlimit: 1",
+      "condition": "@local.finished_all_content",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "intro_text",
+      "value": "@global.well_done_finishing_module_hp",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_unlock_all",
+      "value": "@global.unlock_all_moments_of_play",
+      "action_list": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
+      "exclude_from_translation": true,
+      "comment": "Ideally this button would only unlock the items in the filtered list, but that requires resolution of issue https://github.com/IDEMSInternational/open-app-builder/issues/3082"
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "all",
+      "value": "@global.all_games",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "not_locked",
+      "value": "@global.unlocked",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "favourite",
+      "value": "@global.favourites",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "all_image_asset",
+      "value": "images/icons/diamond.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "not_locked_image_asset",
+      "value": "images/icons/trophy.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "favourite_image_asset",
+      "value": "images/icons/heart_filled.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "all_checked_image_asset",
+      "value": "images/icons/diamond_active.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "not_locked_checked_image_asset",
+      "value": "images/icons/trophy_active.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "favourite_checked_image_asset",
+      "value": "images/icons/heart_filled_active.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list",
+      "value": "name: all | text: @local.all | image: @local.all_image_asset |  image_checked: @local.all_checked_image_asset;\nname: not_locked | text: @local.not_locked | image: @local.not_locked_image_asset | image_checked: @local.not_locked_checked_image_asset;\nname: favourite | text: @local.favourite | image: @local.favourite_image_asset |  image_checked:  @local.favourite_checked_image_asset; ",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "filter",
+      "value": "all",
+      "parameter_list": "answer_list: @local.answer_list; \ngrid_width: 100%;\ngrid_gap: 16px;\nitem_width: 90px;\nvariant: circle-icon;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_grid",
+      "name": "display_grid",
+      "value": "dg_1",
+      "parameter_list": "item_width: 150px; item_border: none",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_activities",
+      "value": "@data.activity_tasks",
+      "parameter_list": "filter: !@item.child_age_list || @item.child_age_list.includes(@fields.child_age);\nsort: locked;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_title_translation_@item.id",
+      "value": "@item.title",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_child_age_list",
+      "value": "@item.child_age_list",
+      "condition": false
+    },
+    {
+      "type": "begin_button",
+      "name": "card_@item.id",
+      "value": "@item.title",
+      "action_list": "click | nav_stack: open | template: activity_@item.id, header: false;\nclick | set_item | accessed: true",
+      "parameter_list": "variant: card-portrait;\nimage_asset: @item.image_asset;\ndisabled: @item.locked;",
+      "hidden": "(@local.filter == \"favourite\" && !@item.favourite) || (@local.filter == \"not_locked\" && @item.locked)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "toggle_bar",
+      "name": "toggle_@item.id",
+      "value": "@item.favourite",
+      "action_list": "changed | set_item | favourite: !@item.favourite",
+      "parameter_list": "variant: icon; \nicon_true_asset: images/icons/heart_filled_red.png;\nicon_false_asset: images/icons/heart.png;",
+      "condition": "!@item.locked",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "image_locked_@item.id",
+      "value": "images/icons/locked.png",
+      "condition": "@item.locked",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_button",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_text_@item.id",
+      "value": "Toggle item locked status",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "toggle_bar",
+      "name": "debug_toggle_@item.id",
+      "value": "@item.locked",
+      "action_list": "changed | set_item | locked: !@item.locked",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_grid",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "activity_count",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_activities",
+      "value": "@data.activity_tasks",
+      "action_list": "data_changed | set_local: activity_count: @items.length;",
+      "parameter_list": "filter: !@item.child_age_list || @item.child_age_list.includes(@fields.child_age);",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_activities",
+      "value": "Total activities: @local.activity_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "unlocked_count",
+      "value": 0,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_unlocked",
+      "value": "@data.activity_tasks",
+      "action_list": "data_changed | set_local: unlocked_count: @items.length;",
+      "parameter_list": "filter: !@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age));",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_unlocked",
+      "value": "Total unlocked: @local.unlocked_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_all_locked",
+      "value": "@global.no_unlocked_yet",
+      "condition": "@local.unlocked_count === 0 && @local.filter != \"all\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "favourite_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_favourite",
+      "value": "@data.activity_tasks",
+      "action_list": "data_changed | set_local: favourite_count: @items.length;",
+      "parameter_list": "filter: @item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age));",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_favourite",
+      "value": "Total favourite: @local.favourite_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_no_favourites",
+      "value": "@global.no_favourites_yet",
+      "condition": "@local.favourite_count === 0 && @local.unlocked_count != 0 && @local.filter == \"favourite\"",
+      "exclude_from_translation": true
+    }
+  ],
+  "activity_library_archived": [
+    {
+      "name": "background_image_position",
+      "value": "right",
+      "condition": "@fields._app_language_direction != \"rtl\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "background_image_position",
+      "value": "left",
+      "condition": "@fields._app_language_direction == \"rtl\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_check_in_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "data_items",
+      "name": "count_hp_check_in",
+      "value": "@data.hp_check_in",
+      "action_list": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "data_items",
+      "name": "count_modules",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local: module_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "parameter_list": "sticky: top;\nstyle: background_solid;\nbackground_image_asset: images/backgrounds/library_top_right.png;\nbackground_image_position: top @local.background_image_position;\nvariant: inline_padding;",
+      "exclude_from_translation": true,
+      "style_list": "width: 100%;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_column",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.moments_of_play",
+      "exclude_from_translation": true,
+      "style_list": "margin-top: 72px;\nmargin-bottom: -12px",
+      "comment": "max-width: 40vw;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top_below_background",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_hp_check_in",
+      "value": "Total hp checkins not unlocked activity: @local.hp_check_in_not_unlocked_activity_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_hp_check_in",
+      "value": "Mark all hp checkins as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: hp_check_in,\nunlocked_activity: true",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_modules",
+      "value": "Total modules not unlocked activity: @local.module_not_unlocked_activity_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_modules",
+      "value": "Mark all modules as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: module_tasks,\nunlocked_activity: true",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "finished_all_content",
+      "value": "@local.hp_check_in_not_unlocked_activity_count + @local.module_not_unlocked_activity_count === 0",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_finished_all_content",
+      "value": "Finished all content? @local.finished_all_content",
+      "condition": false
+    },
+    {
+      "type": "begin_data_items",
+      "value": "@data.activity_tasks",
+      "parameter_list": "filter: @item.locked; limit: 1",
+      "condition": "@local.finished_all_content",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "intro_text",
+      "value": "@global.well_done_finishing_module_hp",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_unlock_all",
+      "value": "@global.unlock_all_moments_of_play",
+      "action_list": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "all",
+      "value": "@global.all_games",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "not_locked",
+      "value": "@global.unlocked",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "favourite",
+      "value": "@global.favourites",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "all_image_asset",
+      "value": "images/icons/diamond.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "not_locked_image_asset",
+      "value": "images/icons/trophy.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "favourite_image_asset",
+      "value": "images/icons/heart_filled.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "all_checked_image_asset",
+      "value": "images/icons/diamond_active.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "not_locked_checked_image_asset",
+      "value": "images/icons/trophy_active.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "favourite_checked_image_asset",
+      "value": "images/icons/heart_filled_active.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list",
+      "value": "name: all | text: @local.all | image: @local.all_image_asset |  image_checked: @local.all_checked_image_asset;\nname: not_locked | text: @local.not_locked | image: @local.not_locked_image_asset | image_checked: @local.not_locked_checked_image_asset;\nname: favourite | text: @local.favourite | image: @local.favourite_image_asset |  image_checked:  @local.favourite_checked_image_asset; ",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "filter",
+      "value": "all",
+      "parameter_list": "answer_list: @local.answer_list; \ngrid_width: 100%;\ngrid_gap: 16px;\nitem_width: 90px;\nvariant: circle-icon;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_grid",
+      "name": "display_grid",
+      "value": "dg_1",
+      "parameter_list": "item_width: 150px; item_border: none",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_activities",
+      "value": "@data.activity_tasks",
+      "parameter_list": "sort: locked;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_title_translation_@item.id",
+      "value": "@item.title",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_button",
+      "name": "card_@item.id",
+      "value": "@item.title",
+      "action_list": "click | nav_stack: open | template: activity_@item.id, header: false;\nclick | set_item | accessed: true",
+      "parameter_list": "variant: card-portrait;\nimage_asset: @item.image_asset;\ndisabled: @item.locked;",
+      "hidden": "(@local.filter == \"favourite\" && !@item.favourite) || (@local.filter == \"not_locked\" && @item.locked)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "toggle_bar",
+      "name": "toggle_@item.id",
+      "value": "@item.favourite",
+      "action_list": "changed | set_item | favourite: !@item.favourite",
+      "parameter_list": "variant: icon; \nicon_true_asset: images/icons/heart_filled_red.png;\nicon_false_asset: images/icons/heart.png;",
+      "condition": "!@item.locked",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "image_locked_@item.id",
+      "value": "images/icons/locked.png",
+      "condition": "@item.locked",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_button",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_text_@item.id",
+      "value": "Toggle item locked status",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "toggle_bar",
+      "name": "debug_toggle_@item.id",
+      "value": "@item.locked",
+      "action_list": "changed | set_item | locked: !@item.locked",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_grid",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "activity_count",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_activities",
+      "value": "@data.activity_tasks",
+      "action_list": "data_changed | set_local: activity_count: @items.length;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_activities",
+      "value": "Total activities: @local.activity_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "unlocked_count",
+      "value": 0,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_unlocked",
+      "value": "@data.activity_tasks",
+      "action_list": "data_changed | set_local: unlocked_count: @items.length;",
+      "parameter_list": "filter: !@item.locked",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_unlocked",
+      "value": "Total unlocked: @local.unlocked_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_all_locked",
+      "value": "@global.no_unlocked_yet",
+      "condition": "@local.unlocked_count === 0 && @local.filter != \"all\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "favourite_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_favourite",
+      "value": "@data.activity_tasks",
+      "action_list": "data_changed | set_local: favourite_count: @items.length;",
+      "parameter_list": "filter: @item.favourite",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_favourite",
+      "value": "Total favourite: @local.favourite_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_no_favourites",
+      "value": "@global.no_favourites_yet",
+      "condition": "@local.favourite_count === 0 && @local.unlocked_count != 0 && @local.filter == \"favourite\"",
+      "exclude_from_translation": true
+    }
+  ],
+  "activity_library_testing": [
+    {
+      "name": "hp_check_in_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "data_items",
+      "name": "count_hp_check_in",
+      "value": "@data.hp_check_in",
+      "action_list": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "data_items",
+      "name": "count_modules",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local: module_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "parameter_list": "sticky: top;\nstyle: background_solid;\nbackground_image_asset: images/backgrounds/library_top_right.png;\nbackground_image_position: top @local.background_image_position;\nvariant: inline_padding;",
+      "exclude_from_translation": true,
+      "style_list": "width: 100%;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_column",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.moments_of_play",
+      "exclude_from_translation": true,
+      "style_list": "margin-top: 72px;\nmargin-bottom: -12px",
+      "comment": "max-width: 40vw;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top_below_background",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_hp_check_in",
+      "value": "Total hp checkins not unlocked activity: @local.hp_check_in_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_hp_check_in",
+      "value": "Mark all hp checkins as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: hp_check_in,\nunlocked_activity: true",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_modules",
+      "value": "Total modules not unlocked activity: @local.module_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_modules",
+      "value": "Mark all modules as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: module_tasks,\nunlocked_activity: true",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "finished_all_content",
+      "value": "@local.hp_check_in_not_unlocked_activity_count + @local.module_not_unlocked_activity_count === 0",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_finished_all_content",
+      "value": "Finished all content? @local.finished_all_content"
+    },
+    {
+      "type": "begin_data_items",
+      "value": "@data.activity_tasks",
+      "parameter_list": "filter: @item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));\nlimit: 1",
+      "condition": "@local.finished_all_content",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "intro_text",
+      "value": "@global.well_done_finishing_module_hp",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_unlock_all",
+      "value": "@global.unlock_all_moments_of_play",
+      "action_list": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
+      "exclude_from_translation": true,
+      "comment": "Ideally this button would only unlock the items in the filtered list, but that requires resolution of issue https://github.com/IDEMSInternational/open-app-builder/issues/3082"
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "activity_count",
+      "value": 1
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_activities",
+      "value": "@data.activity_tasks",
+      "action_list": "data_changed | set_local: activity_count: @items.length;",
+      "parameter_list": "filter: !@item.child_age_list || @item.child_age_list.includes(@fields.child_age);",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_activities",
+      "value": "Total activities: @local.activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "unlocked_count",
+      "value": 0,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_unlocked",
+      "value": "@data.activity_tasks",
+      "action_list": "data_changed | set_local: unlocked_count: @items.length;",
+      "parameter_list": "filter: !@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age));",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_unlocked",
+      "value": "Total unlocked: @local.unlocked_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_all_locked",
+      "value": "@global.no_unlocked_yet",
+      "condition": "@local.unlocked_count === 0 && @local.filter != \"all\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "favourite_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_favourite",
+      "value": "@data.activity_tasks",
+      "action_list": "data_changed | set_local: favourite_count: @items.length;",
+      "parameter_list": "filter: @item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age));",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_favourite",
+      "value": "Total favourite: @local.favourite_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_no_favourites",
+      "value": "@global.no_favourites_yet",
+      "condition": "@local.favourite_count === 0 && @local.unlocked_count != 0 && @local.filter == \"favourite\"",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "pick_random_locked_activity",
+      "value": "@data.activity_tasks",
+      "parameter_list": "filter: @item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age));\nshuffle;\nlimit: 1;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "Activity ID: @item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "Child_age_list: @item.child_age_list",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "@item.child_age_list.includes(@fields.child_age)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Randomise",
+      "action_list": "click | emit: force_reload",
+      "exclude_from_translation": true
+    }
+  ],
+  "debug_activity_unlocking": [
+    {
+      "name": "hp_check_in_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_hp_check_in",
+      "value": "@data.hp_check_in",
+      "action_list": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_hp_check_in",
+      "value": "Total hp checkins not unlocked activity: @local.hp_check_in_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_hp_check_in",
+      "value": "Mark all hp checkins as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: hp_check_in,\nunlocked_activity: true",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_modules",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local: module_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_modules",
+      "value": "Total modules not unlocked activity: @local.module_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_modules",
+      "value": "Mark all hp checkins as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: module_tasks,\nunlocked_activity: true",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "finished_all_content",
+      "value": "@local.hp_check_in_not_unlocked_activity_count + @local.module_not_unlocked_activity_count === 0",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_finished_all_content",
+      "value": "Finished all content? @local.finished_all_content",
+      "exclude_from_translation": true
+    }
+  ],
+  "prep_activities": [
+    {
+      "operation": "append_columns",
+      "args_list": "accessed: FALSE;\nlocked: TRUE;\nfavourite: FALSE;",
+      "input_source": "activities",
+      "output_target": "activity_tasks"
+    }
+  ],
+  "activity": [
+    {
+      "name": "background_image_asset",
+      "value": "@global.activity_footer_image_asset"
+    },
+    {
+      "name": "activity_id",
+      "value": "categorise_organise",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_name",
+      "value": "activities",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "activity_concat",
+      "value": "@local.data_list_name.@local.activity_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "activity_row",
+      "value": "@data.@local.activity_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_header",
+      "parameter_list": "sticky: top; \nstyle: background_solid;",
+      "style_list": "align-items: center;\npadding-top: 12px;\npadding-inline-start: 24px;\npadding-inline-end: 12px;"
+    },
+    {
+      "name": "close_icon_asset",
+      "value": "close",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@local.activity_row.title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_activities",
+      "value": "@data.activity_tasks",
+      "parameter_list": "filter: @item.id == @local.activity_id;\nlimit: 1;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "toggle_bar",
+      "name": "toggle_@item.id",
+      "value": "@item.favourite",
+      "action_list": "changed | set_item | favourite: !@item.favourite",
+      "parameter_list": "variant: icon; \nicon_true_asset: images/icons/heart_filled_red.png;\nicon_false_asset: images/icons/heart.png;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "round_button",
+      "name": "close_button",
+      "action_list": "click | nav_stack: close_top;",
+      "parameter_list": "variant: no-background; \nicon_src: @local.close_icon_asset",
+      "exclude_from_translation": true,
+      "style_list": "margin-inline-start: auto"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "intro_text",
+      "value": "@local.activity_row.intro_text",
+      "condition": "!!@local.activity_row.intro_text"
+    },
+    {
+      "type": "video",
+      "name": "video",
+      "value": "@local.article_data.media_asset ",
+      "condition": "@local.activity_row.media_type == \"video\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "audio",
+      "name": "audio",
+      "value": "@local.article_data.media_asset ",
+      "condition": "@local.activity_row.media_type == \"audio\"",
+      "parameter_list": "transcript_text: @local.article_data.media_transcript",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube",
+      "value": "youtube_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "language",
+      "value": "@fields._app_language",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "default_language",
+      "value": "gb_en",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_column",
+      "value": "@local.youtube@local.language",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_concat",
+      "value": "activity_row.@local.youtube_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_column_missing",
+      "value": "@local.youtube@local.default_language",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_concat_missing",
+      "value": "activity_row.@local.youtube_column_missing",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "youtube_dg",
+      "condition": "@local.activity_row.media_type == \"youtube\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "youtube",
+      "name": "youtube_lang",
+      "value": "@local.@local.youtube_concat",
+      "condition": "!!(@local.@local.youtube_concat)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "youtube",
+      "name": "youtube_lang_missing",
+      "value": "@local.@local.youtube_concat_missing",
+      "condition": "!(@local.@local.youtube_concat)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "resources_title",
+      "value": "What you need"
+    },
+    {
+      "name": "steps_title",
+      "value": "Steps"
+    },
+    {
+      "name": "tips_title",
+      "value": "More tips"
+    },
+    {
+      "name": "extension_title",
+      "value": "Try also"
+    },
+    {
+      "type": "begin_accordion"
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "resources",
+      "value": "@local.resources_title",
+      "condition": "!!(@local.activity_row.resources_text)"
+    },
+    {
+      "type": "text",
+      "name": "resources_text",
+      "value": "@local.activity_row.resources_text"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "steps",
+      "value": "@local.steps_title",
+      "condition": "!!(@local.activity_row.steps_text)",
+      "parameter_list": "state: open;"
+    },
+    {
+      "type": "text",
+      "name": "steps_text",
+      "value": "@local.activity_row.steps_text"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "tips",
+      "value": "@local.tips_title",
+      "condition": "!!(@local.activity_row.tips_text)"
+    },
+    {
+      "type": "text",
+      "name": "tips_text",
+      "value": "@local.activity_row.tips_text"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "extension",
+      "value": "@local.extension_title",
+      "condition": "!!(@local.activity_row.extension_text)"
+    },
+    {
+      "type": "text",
+      "name": "extension_text",
+      "value": "@local.activity_row.extension_text"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "end_accordion"
+    },
+    {
+      "name": "source",
+      "value": "@global.source",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_source",
+      "value": "@local.source: @local.activity_row.attribution",
+      "condition": "!!(@local.activity_row.attribution)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_bottom",
+      "condition": false,
+      "parameter_list": "sticky: bottom;\nbackground_image_asset: @local.background_image_asset;\nbackground_image_position: bottom left;",
+      "exclude_from_translation": true,
+      "style_list": "min-height: 192px;\nwidth: 110%;"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "unlock_play": [
+    {
+      "name": "activity_id",
+      "value": "@fields.latest_unlocked_activity"
+    },
+    {
+      "name": "congratulation_text",
+      "value": "@global.a_new_moment_of_play_has_been_unlocked"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_bg",
+      "parameter_list": "background_image_asset: images/backgrounds/kites.svg",
+      "style_list": "width: 100%;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_column",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "lottie_animation",
+      "name": "lottie",
+      "value": "lottie/gift_box.json",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.hurrah",
+      "parameter_list": "text_align: center; style: alternative",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@local.congratulation_text",
+      "parameter_list": "text_align: center; style: alternative",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_id",
+      "value": "@local.activity_id",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "@global.open_your_moment_of_play",
+      "action_list": "click | emit: completed; \nclick | nav_stack: open | template: activity_@local.activity_id, header: false;\nclick | set_data | \n_list_id: activity_tasks,\n_id: @local.activity_id,\naccessed: true",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

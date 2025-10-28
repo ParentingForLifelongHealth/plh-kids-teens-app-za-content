@@ -1,0 +1,380 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "home_screen",
+      "status": "released",
+      "parameter_list": "app_config.LAYOUT.page_padding: 0 0;"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "footer",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "header",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "nav_buttons",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "hp_review_all",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "app_menu",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "countdown_days",
+      "status": "released"
+    }
+  ],
+  "home_screen": [
+    {
+      "name": "home_screen_logo",
+      "value": "images/logos/app_logo.png",
+      "condition": "!@global.home_screen_logo_asset"
+    },
+    {
+      "name": "home_screen_logo",
+      "value": "@global.home_screen_logo_asset",
+      "condition": "!!@global.home_screen_logo_asset"
+    },
+    {
+      "name": "home_screen_logo_height",
+      "value": "48px",
+      "condition": "!@global.home_screen_logo_height"
+    },
+    {
+      "name": "home_screen_logo_height",
+      "value": "@global.home_screen_logo_height",
+      "condition": "!!@global.home_screen_logo_height"
+    },
+    {
+      "name": "false_text",
+      "value": "@global.map",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "true_text",
+      "value": "@global.list",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "parameter_list": "sticky: top; \nstyle: background_solid;\nvariant: inline_padding;",
+      "exclude_from_translation": true,
+      "style_list": "justify-content: space-between;",
+      "comments": "padding: 0 24px;"
+    },
+    {
+      "type": "image",
+      "name": "image",
+      "value": "@local.home_screen_logo",
+      "exclude_from_translation": true,
+      "style_list": "height: @local.home_screen_logo_height;"
+    },
+    {
+      "type": "toggle_bar",
+      "name": "display_modules_as_list",
+      "value": "@fields.display_modules_as_list",
+      "action_list": "changed | set_field: display_modules_as_list: @local.display_modules_as_list",
+      "parameter_list": "show_icons: false; \nvariant: ios;\nfalse_text: @local.false_text; \ntrue_text: @local.true_text;\nposition: right",
+      "exclude_from_translation": true,
+      "comments": "margin: 0 24px;"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "margin",
+      "style_list": "margin-top: -24px"
+    },
+    {
+      "type": "begin_template",
+      "name": "module_path",
+      "value": "module_path",
+      "condition": "!@fields.display_modules_as_list",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "module_list",
+      "value": "module_list",
+      "condition": "@fields.display_modules_as_list",
+      "exclude_from_translation": true,
+      "style_list": "padding: 0 24px;"
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    }
+  ],
+  "footer": [
+    {
+      "name": "home",
+      "value": "@global.home"
+    },
+    {
+      "name": "settings",
+      "value": "@global.settings"
+    },
+    {
+      "name": "library",
+      "value": "@global.library"
+    },
+    {
+      "name": "button_list",
+      "value": "name: home_button | label: @local.home | icon: images/icons/home.svg | active_icon: images/icons/home_active.svg | target_template: home_screen;\nname: library_button | label: @local.library | icon: images/icons/local_library.svg | active_icon: images/icons/local_library_active.svg | target_template: activity_library;\nname: settings_button | label: @local.settings | icon: images/icons/settings.svg | active_icon: images/icons/settings_active.svg | target_template: settings;"
+    },
+    {
+      "type": "plh_bottom_nav",
+      "parameter_list": "button_list: @local.button_list"
+    }
+  ],
+  "header": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_header",
+      "parameter_list": "sticky: top; \nstyle: background_solid;",
+      "style_list": "align-items: center;\npadding-top: 12px;\npadding-inline-start: 24px;\npadding-inline-end: 12px;"
+    },
+    {
+      "name": "close_icon_asset",
+      "value": "close",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "icon_asset",
+      "style_list": "width: 46px"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "style_list": "flex: 1;\nmargin-inline-start: 12px;"
+    },
+    {
+      "type": "round_button",
+      "name": "close_button",
+      "action_list": "click | nav_stack: close_top;",
+      "parameter_list": "variant: no-background; \nicon_src: @local.close_icon_asset"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "nav_buttons": [
+    {
+      "name": "show_previous",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_next",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "previous_icon_src",
+      "value": "arrow-back",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "next_icon_src",
+      "value": "arrow-forward",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "buttons",
+      "parameter_list": "style: navigation"
+    },
+    {
+      "type": "round_button",
+      "name": "button_previous",
+      "action_list": "click | emit:uncompleted",
+      "parameter_list": "icon_src: @local.previous_icon_src;\nvariant: module; ",
+      "condition": "!!@local.show_previous"
+    },
+    {
+      "type": "text",
+      "name": "spacer",
+      "style_list": "flex: 1",
+      "condition": "!@local.show_previous"
+    },
+    {
+      "type": "round_button",
+      "name": "button_next",
+      "action_list": "click | emit:completed",
+      "parameter_list": "icon_src: @local.next_icon_src;\nvariant: module; ",
+      "condition": "!!@local.show_next"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "hp_review_all": [
+    {
+      "name": "hp_review",
+      "value": "_hp_review"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "heading"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Home Practice Review"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_items",
+      "name": "all_hp",
+      "value": "@data.modules"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_@item.id",
+      "parameter_list": "style:column"
+    },
+    {
+      "type": "button",
+      "name": "button_@item.id",
+      "value": "@item.title",
+      "action_list": "click | nav_stack: open | template: stack_ hp_review_@item.id",
+      "exclude_from_translation": true,
+      "parameter_list": "style: card"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_items"
+    }
+  ],
+  "app_menu": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_dev",
+      "parameter_list": "style: column",
+      "condition": "!@fields.user_mode"
+    },
+    {
+      "type": "debug_toggle",
+      "name": "debug_toggle"
+    },
+    {
+      "type": "button",
+      "name": "button_delay_days",
+      "value": "Change countdown days",
+      "action_list": "click | go_to: countdown_days"
+    },
+    {
+      "type": "button",
+      "name": "button_templates",
+      "value": "Templates",
+      "action_list": "click | go_to:/template"
+    },
+    {
+      "type": "button",
+      "name": "button_dynamic_data",
+      "value": "Dynamic data",
+      "action_list": "click | go_to:/user"
+    },
+    {
+      "type": "button",
+      "name": "button_reset",
+      "value": "Reset app",
+      "action_list": "click | reset_app"
+    },
+    {
+      "type": "button",
+      "name": "button_open_feedback",
+      "value": "Open feedback",
+      "action_list": "click | feedback:open;\nclick | emit: force_reprocess;",
+      "condition": "!@fields._feedback_sidebar_open"
+    },
+    {
+      "type": "button",
+      "name": "button_close_feedback",
+      "value": "Close feedback",
+      "action_list": "click | feedback:close;\nclick | emit: force_reprocess;",
+      "condition": "@fields._feedback_sidebar_open"
+    },
+    {
+      "type": "button",
+      "name": "button_import_user",
+      "value": "Import user",
+      "action_list": "click | go_to: import_user_data"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_dev_enter",
+      "value": "Developer mode",
+      "action_list": "click | go_to: enter_dev_mode",
+      "condition": "@fields.user_mode"
+    },
+    {
+      "type": "button",
+      "name": "button_dev_exit",
+      "value": "Exit developer mode",
+      "action_list": "click | go_to: exit_dev_mode",
+      "condition": "!@fields.user_mode"
+    }
+  ],
+  "countdown_days": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Change countdown days"
+    },
+    {
+      "name": "countdown_days",
+      "value": "@fields.countdown_days"
+    },
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "Countdown days: @local.countdown_days"
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "Choose a number of days to count down"
+    },
+    {
+      "type": "number_selector",
+      "name": "countdown_days",
+      "value": "@fields.countdown_days",
+      "parameter_list": "max_value: 14"
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Save",
+      "action_list": "click | set_field: countdown_days: @local.countdown_days;\nclick | emit: completed"
+    }
+  ]
+}

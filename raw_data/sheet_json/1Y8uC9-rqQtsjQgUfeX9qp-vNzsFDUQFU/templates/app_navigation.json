@@ -1,0 +1,200 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "home_screen",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "relax_animation",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "library",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "header",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "footer",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "nav_buttons",
+      "status": "released"
+    }
+  ],
+  "home_screen": [
+    {
+      "type": "begin_template",
+      "name": "module_path",
+      "value": "module_path",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "modules_data_list_name",
+      "value": "modules",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    }
+  ],
+  "relax_animation": [
+    {
+      "type": "lottie_animation",
+      "name": "lottie_circles",
+      "value": "lottie/bulging_circles.json"
+    }
+  ],
+  "library": [
+    {
+      "type": "begin_display_group",
+      "name": "heading"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.library",
+      "parameter_list": "style: tiny;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.library"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_@item.id",
+      "condition": "@item.show",
+      "parameter_list": "style:column"
+    },
+    {
+      "type": "button",
+      "name": "button_@item.id",
+      "value": "@item.title",
+      "action_list": "click | go_to: @item.template",
+      "exclude_from_translation": true,
+      "parameter_list": "style: card"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_items"
+    }
+  ],
+  "header": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_header",
+      "condition": "@fields._deployment_name != \"plh_kids_kw\"",
+      "style_list": "align-items: center"
+    },
+    {
+      "type": "image",
+      "name": "icon_asset",
+      "style_list": "width: 46px"
+    },
+    {
+      "type": "title",
+      "name": "title"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_header",
+      "parameter_list": "sticky: top; \nstyle: background_solid;",
+      "condition": "@fields._deployment_name == \"plh_kids_kw\"",
+      "style_list": "align-items: center;\npadding-top: 12px;\npadding-inline-start: 24px;\npadding-inline-end: 12px;"
+    },
+    {
+      "name": "close_icon_asset",
+      "value": "close",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "icon_asset",
+      "style_list": "width: 46px"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "style_list": "flex: 1;\nmargin-inline-start: 12px;"
+    },
+    {
+      "type": "round_button",
+      "name": "close_button",
+      "action_list": "click | nav_stack: close_top;",
+      "parameter_list": "variant: no-background; \nicon_src: @local.close_icon_asset"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "footer": [
+    {
+      "name": "button_list",
+      "value": "image: images/logos/plh_white.png | target_template: home_screen;\nimage: images/icons/book_outline_white.svg | target_template: picture_books;\nimage: images/icons/star_outline_white.svg | target_template: relax_activities;"
+    },
+    {
+      "type": "navigation_bar",
+      "parameter_list": "button_list: @local.button_list"
+    }
+  ],
+  "nav_buttons": [
+    {
+      "name": "use_completed_chevron",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "use_uncompleted_chevron",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "display_uncompleted",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "buttons",
+      "parameter_list": "style:navigation"
+    },
+    {
+      "type": "button",
+      "name": "button_uncompleted",
+      "value": "Previous",
+      "action_list": "click | emit:uncompleted",
+      "parameter_list": "style:navigation",
+      "style_list": "flex: 1",
+      "hidden": "!@local.display_uncompleted"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "Next",
+      "action_list": "click | emit:completed",
+      "parameter_list": "style:navigation",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "home_screen",
+      "status": "released",
+      "parameter_list": "app_config.LAYOUT.page_padding: 0 0;"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "footer",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "home_screen_header",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "header_testing",
+      "status": "released"
+    }
+  ],
+  "home_screen": [
+    {
+      "name": "home_screen_logo",
+      "value": "images/logos/app_logo.png",
+      "condition": "!@global.home_screen_logo_asset"
+    },
+    {
+      "name": "home_screen_logo",
+      "value": "@global.home_screen_logo_asset",
+      "condition": "!!@global.home_screen_logo_asset"
+    },
+    {
+      "name": "home_screen_logo_height",
+      "value": "48px",
+      "condition": "!@global.home_screen_logo_height"
+    },
+    {
+      "name": "home_screen_logo_height",
+      "value": "@global.home_screen_logo_height",
+      "condition": "!!@global.home_screen_logo_height"
+    },
+    {
+      "name": "false_text",
+      "value": "@global.map",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "true_text",
+      "value": "@global.list",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "now",
+      "value": "@calc(timestamp())"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_sticky_top",
+      "parameter_list": "sticky: top; \nstyle: column;",
+      "exclude_from_translation": true,
+      "style_list": "background-color: white;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_row",
+      "exclude_from_translation": true,
+      "style_list": "justify-content: space-between"
+    },
+    {
+      "type": "image",
+      "name": "image",
+      "value": "@local.home_screen_logo",
+      "exclude_from_translation": true,
+      "style_list": "height: @local.home_screen_logo_height;\nmargin-top: 8px;\nmargin-bottom: -8px;\nmargin-inline-start: 24px;",
+      "comment": "Need to make up for 1em extra margin added on the component below this. \n\nHacky workaround to have margin-bottom: -1em + 8px = -8px"
+    },
+    {
+      "type": "toggle_bar",
+      "name": "display_modules_as_list",
+      "value": "@fields.display_modules_as_list",
+      "action_list": "changed | set_field: display_modules_as_list: @local.display_modules_as_list",
+      "parameter_list": "show_icons: false; \nvariant: ios;\nfalse_text: @local.false_text; \ntrue_text: @local.true_text;\nposition: right",
+      "exclude_from_translation": true,
+      "hidden": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "name": "has_been_clicked_previously",
+      "value": "!!@fields.homescreen_quickstart_click_history"
+    },
+    {
+      "name": "updated_value",
+      "value": "@fields.homescreen_quickstart_click_history;  @local.now"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_blue",
+      "style_list": "background-color: var(--ion-color-primary-500);\nbackground-image: linear-gradient(to right, var(--ion-color-primary-700), var(--ion-color-primary-400));"
+    },
+    {
+      "type": "begin_template",
+      "name": "home_screen_header",
+      "value": "home_screen_header",
+      "action_list": "completed | set_item | homescreen_quickstart_click_history: @local.now",
+      "condition": "!@local.has_been_clicked_previously",
+      "exclude_from_translation": true,
+      "style_list": "margin-top: -1em"
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "home_screen_header",
+      "value": "home_screen_header",
+      "action_list": "completed | set_item | homescreen_quickstart_click_history: @local.updated_value",
+      "condition": "@local.has_been_clicked_previously",
+      "exclude_from_translation": true,
+      "style_list": "margin-top: -1em"
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "module_path",
+      "value": "module_path",
+      "condition": "!@fields.display_modules_as_list",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "module_list",
+      "value": "module_list",
+      "condition": "@fields.display_modules_as_list",
+      "exclude_from_translation": true,
+      "style_list": "padding: 24px 24px 0px 24px;\nmargin-top: -1em"
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    }
+  ],
+  "footer": [
+    {
+      "name": "home",
+      "value": "@global.home"
+    },
+    {
+      "name": "settings",
+      "value": "@global.settings"
+    },
+    {
+      "name": "rewards",
+      "value": "@global.rewards"
+    },
+    {
+      "name": "library",
+      "value": "@global.library"
+    },
+    {
+      "name": "button_list",
+      "value": "name: home_button | label: @local.home | icon: images/icons/home.svg | active_icon: images/icons/home_active.svg | target_template: home_screen;\nname: rewards_button | label: @local.rewards | icon: images/icons/trophy_footer.svg | active_icon: images/icons/trophy_footer_active.svg | target_template: activity_library;\nname: library_button | label: @local.library | icon: images/icons/local_library.svg | active_icon: images/icons/local_library_active.svg | target_template: library;\nname: settings_button | label: @local.settings | icon: images/icons/settings.svg | active_icon: images/icons/settings_active.svg | target_template: settings;"
+    },
+    {
+      "type": "plh_bottom_nav",
+      "parameter_list": "button_list: @local.button_list;\nvariant: pill;"
+    }
+  ],
+  "home_screen_header": [
+    {
+      "name": "countdown_days",
+      "value": "@fields.countdown_days"
+    },
+    {
+      "name": "hp_completed_ids"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_2",
+      "value": "@data.hp_check_in",
+      "action_list": "data_changed | set_local : hp_completed_ids : @items.map(item => item.id)",
+      "parameter_list": "filter: @item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "name": "hp_unlocked_ids"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_1",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : hp_unlocked_ids : @items.map(item => item.id)",
+      "parameter_list": "filter: @item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "text",
+      "name": "debug_1",
+      "value": "@local.hp_unlocked_ids",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_2",
+      "value": "@local.hp_completed_ids",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_id",
+      "value": "@calc((@local.hp_unlocked_ids || []).find(x => !(@local.hp_completed_ids || []).includes(x)))",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_3",
+      "value": "HP id: @local.hp_id",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_review_template",
+      "value": "stack_hp_review_@local.hp_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_check_in_row",
+      "value": "hp_check_in.@local.hp_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_check_in_data",
+      "value": "@data.@local.hp_check_in_row",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_check_in_notification_text",
+      "value": "@local.hp_check_in_data.notification_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_row",
+      "condition": "!!@local.hp_id",
+      "style_list": "padding-inline: 12px"
+    },
+    {
+      "type": "text",
+      "name": "button_text",
+      "value": "**@local.hp_check_in_notification_text**",
+      "exclude_from_translation": true,
+      "style_list": "flex: 1; \ncolor: white; "
+    },
+    {
+      "type": "round_button",
+      "name": "round_button",
+      "value": "@local.button_text",
+      "action_list": "click | emit: completed;\nclick | nav_stack: open | template: @local.hp_review_template;",
+      "parameter_list": "icon_src: images/icons/expand_circle_right_blue.svg;\nvariant: no-background;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_start",
+      "value": "@local.button_text",
+      "action_list": "click | emit: completed;\nclick | nav_stack: open | template: @local.hp_review_template;",
+      "parameter_list": "style: information; \ntext_align: center",
+      "condition": false,
+      "exclude_from_translation": true
+    }
+  ],
+  "header_testing": [
+    {
+      "name": "countdown_days",
+      "value": "@fields.countdown_days",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_completed_ids",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_2",
+      "value": "@data.hp_check_in",
+      "action_list": "data_changed | set_local : hp_completed_ids : @items.map(item => item.id)",
+      "parameter_list": "filter: @item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "name": "hp_unlocked_ids"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_1",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : hp_unlocked_ids : @items.map(item => item.id)",
+      "parameter_list": "filter: @item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "text",
+      "name": "debug_1",
+      "value": "@local.hp_unlocked_ids",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_2",
+      "value": "@local.hp_completed_ids",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "find_hp_id",
+      "value": "@calc((@local.hp_unlocked_ids || []).find(x => !(@local.hp_completed_ids || []).includes(x)))",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_3",
+      "value": "HP id: @local.find_hp_id",
+      "exclude_from_translation": true
+    }
+  ]
+}

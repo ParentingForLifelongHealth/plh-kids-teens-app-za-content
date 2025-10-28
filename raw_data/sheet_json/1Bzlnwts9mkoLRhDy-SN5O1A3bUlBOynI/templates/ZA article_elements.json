@@ -1,0 +1,390 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "intro_element",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "related_element",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "message_element",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "resource_element",
+      "status": "draft"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "section_element",
+      "status": "released"
+    }
+  ],
+  "section_element": [
+    {
+      "name": "title",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_accordion",
+      "name": "accordion",
+      "condition": "!!(@local.title)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "first",
+      "value": "@local.title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "accordion_content",
+      "value": "@local.text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_accordion_section",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_accordion",
+      "exclude_from_translation": true
+    }
+  ],
+  "intro_element": [
+    {
+      "name": "text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "image",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_2"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_box",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@local.text",
+      "condition": "@local.text && @local.text !== \"\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "image",
+      "value": "@local.image",
+      "condition": "@local.image && @local.image !== \"\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "@local.text_2",
+      "condition": "@local.text_2 && @local.text_2 !== \"\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "related_element": [
+    {
+      "name": "article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_data_list_name",
+      "value": "article_data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_template_prefix",
+      "value": "article",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_concat",
+      "value": "@local.related_article_data_list_name.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_data",
+      "value": "@data.@local.related_article_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "value": "@local.related_article_data.title",
+      "action_list": "click | go_to: library_article_@local.article_id",
+      "exclude_from_translation": true
+    }
+  ],
+  "message_element": [
+    {
+      "name": "title",
+      "exclude_from_translation": true,
+      "comments": "need to sort disclaimer"
+    },
+    {
+      "name": "has_disclaimer",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_guidance",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "asset",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_box",
+      "style_list": "background-color: var(--ion-color-gray-100);\npadding: 12px;",
+      "parameter_list": "style: column;",
+      "exclude_from_translation": true,
+      "comments": "should be grey"
+    },
+    {
+      "type": "text",
+      "name": "message_title",
+      "value": "@local.title",
+      "parameter_list": "style: emphasised",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "parameter_list": "style: column;\nvariant: box_white;",
+      "exclude_from_translation": true,
+      "comments": "should be new message style (box_white variant on grey background)"
+    },
+    {
+      "type": "image",
+      "name": "message_image",
+      "value": "@local.asset",
+      "condition": "@local.asset !== \"\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "message_text",
+      "value": "@local.message_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_bottom",
+      "parameter_list": "style: column;\n"
+    },
+    {
+      "type": "text",
+      "name": "message_guidance",
+      "value": "@local.message_guidance",
+      "parameter_list": "flex: 1;\nstyle: contextual;",
+      "comments": "needs to be bullet point"
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Share",
+      "action_list": "click | share | text: @local.message_text     \n",
+      "condition": "@local.asset == \"\"",
+      "parameter_list": "icon_secondary_asset: images/icons/share.svg;",
+      "comments": "icon: images/icons/share.svg;\nicon_position: right;"
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Share",
+      "action_list": "click | share |\ntext: @local.message_text,\nfile: @local.asset",
+      "condition": "@local.asset !== \"\"",
+      "parameter_list": "icon_secondary_asset: images/icons/share.svg;",
+      "comments": "icon: images/icons/share.svg;\nicon_position: right;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "resource_element": [
+    {
+      "name": "resource_type",
+      "value": "pdf",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "resource_id",
+      "value": "onboard_guide_study",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "@local.resource_type",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "@local.resource_id",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "condition": "@local.resource_type == \"pdf\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "value": "pdf_data",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "condition": "@item.id == @local.resource_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "round_button",
+      "name": "main_view",
+      "action_list": "click | go_to: pdf_@local.resource_id",
+      "parameter_list": "variant: no-background; \nicon_src: images/icons/docs.svg;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "@item.title",
+      "style_list": "flex: 1;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "round_button",
+      "name": "view",
+      "action_list": "click | go_to: pdf_@local.resource_id",
+      "parameter_list": "variant: no-background; \nicon_src: images/icons/visibility.svg;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "round_button",
+      "name": "download",
+      "action_list": "click | save_to_device: @item.pdf_asset",
+      "parameter_list": "variant: no-background; \nicon_src: images/icons/download.svg;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "condition": "@local.resource_type == \"media\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "value": "media_data",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "condition": "@item.id == @local.resource_id",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "video",
+      "name": "video",
+      "value": "@item.media_asset",
+      "condition": "@item.type == \"video\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "audio",
+      "name": "audio",
+      "value": "@item.media_asset",
+      "condition": "@item.type == \"audio\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "style_list": "flex: 1;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "round_button",
+      "name": "download",
+      "action_list": "click | save_to_device: @item.media_asset",
+      "style_list": "margin-top:-15px",
+      "parameter_list": "variant: dark_orange;\nicon_src: images/icons/download_white.svg;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    }
+  ]
+}

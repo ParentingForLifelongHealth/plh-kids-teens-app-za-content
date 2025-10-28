@@ -1,0 +1,918 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "global",
+      "flow_name": "deployment_global_za",
+      "status": "released",
+      "override_target": "deployment_global",
+      "override_condition": "@fields._deployment_name == \"plh_kids_teens_za\""
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "language",
+      "status": "released",
+      "data_list_name": "language",
+      "flow_subtype": "app_config_language_list"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "about_this_app",
+      "status": "released",
+      "data_list_name": "about_this_app"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "organisation_group",
+      "status": "released",
+      "data_list_name": "organisation_group"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "organisation",
+      "status": "released",
+      "data_list_name": "organisation"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "privacy_policy",
+      "status": "released",
+      "data_list_name": "privacy_policy",
+      "flow_subtype": "legal_terms"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "terms_and_conditions",
+      "status": "released",
+      "data_list_name": "terms_and_conditions",
+      "flow_subtype": "legal_terms"
+    },
+    {
+      "flow_type": "global",
+      "flow_name": "misc_global",
+      "status": "released"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "user_type",
+      "status": "released",
+      "data_list_name": "user_type"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "user_gender",
+      "status": "released",
+      "data_list_name": "user_gender"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "child_age",
+      "status": "released",
+      "data_list_name": "child_age"
+    }
+  ],
+  "deployment_global_za": [
+    {
+      "type": "declare_global_constant",
+      "name": "app_name",
+      "value": "SinovuyoApp"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "app_name_full",
+      "value": "SinovuyoApp"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "home_screen_logo_asset",
+      "value": "images/logos/sino_horizontal.svg"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "home_screen_logo_height",
+      "value": "48px"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "hp_locked_image_asset",
+      "value": "images/homescreen/check_in/traditional_rondavel_closed.svg"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "hp_unlocked_image_asset",
+      "value": "images/homescreen/check_in/traditional_rondavel_open.svg"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "activity_footer_image_asset",
+      "value": "images/backgrounds/mountains_trees.svg"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "deployment_terms_field",
+      "value": "terms_v20241205_accepted",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "deployment_terms_text",
+      "value": "5 December 2024"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_multiple_content_packages",
+      "value": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_multiple_languages",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_optional_login",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "combo_box_placeholder",
+      "value": "Tap and choose"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "section_variant",
+      "value": "box_primary",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "first_completion_icon",
+      "value": "trophy",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "subsequent_completion_icon",
+      "value": "checkmark",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "test_mode_code",
+      "value": "ParentAppTest",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "countdown_days",
+      "value": "@calc(@fields.user_type === \"facilitator\" ? 0 : 7)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "display_modules_as_list",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "facilitator_id",
+      "value": "facilitator",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "facilitator_name",
+      "value": "@data.characters.facilitator.name",
+      "exclude_from_translation": true
+    }
+  ],
+  "language": [
+    {
+      "id": "za_en",
+      "country_code": "za",
+      "country_label": "South Africa",
+      "language_code": "en",
+      "language_label": "English",
+      "name": "@row.id",
+      "text": "@row.language_label",
+      "comments": "Country code given by alpha-2\nhttps://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes\nLanguage code given by shortest iso code\nhttps://en.wikipedia.org/wiki/List_of_ISO_639-1_codes\nShould confirm best name for country in local language, e.g.\nhttps://www.worldatlas.com/articles/names-of-countries-in-their-own-languages.html\nFlag icons added app assets, downloaded from\nhttps://flagicons.lipis.dev/"
+    },
+    {
+      "id": "za_xh",
+      "country_code": "za",
+      "country_label": "uMzantsi Afrika",
+      "language_code": "xh",
+      "language_label": "isiXhosa",
+      "name": "@row.id",
+      "text": "@row.language_label"
+    }
+  ],
+  "about_this_app": [
+    {
+      "id": "text_1",
+      "text::eng": "@global.app_name is an app designed by IDEMS International and Parenting for Lifelong Health to support parents and caregivers of children 2 to 9 years of age. Illustrations are original works by Orli Setton for Parenting for Lifelong Health. All content herein is shared under a Creative Commons BY-SA International 4.0 license. It was developed in collaboration with key partners:"
+    }
+  ],
+  "organisation_group": [
+    {
+      "id": "partners",
+      "name::eng": "Partners"
+    },
+    {
+      "id": "funders",
+      "name::eng": "Donors"
+    }
+  ],
+  "organisation": [
+    {
+      "id": "organisation_1",
+      "name": "PLH",
+      "image_asset": "images/logos/PLH.png",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_2",
+      "name": "IDEMS",
+      "image_asset": "images/logos/IDEMS.png",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_3",
+      "name": "University of Oxford",
+      "image_asset": "images/logos/Oxford.png",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_4",
+      "name": "University of Cape Town",
+      "image_asset": "images/logos/UCT.png",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_5",
+      "name": "NIMR",
+      "image_asset": "images/logos/NIMR.png",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_6",
+      "name": "Clowns Without Borders",
+      "image_asset": "images/logos/CWBSA.png",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_7",
+      "name": "UNICEF",
+      "image_asset": "images/logos/UNICEF.png",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_8",
+      "name": "WHO",
+      "image_asset": "images/logos/WHO.jpeg",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_9",
+      "name": "Global Initiative to Support Parents",
+      "image_asset": "images/logos/GISP.png",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_10",
+      "name": "Vodacom Tanzania",
+      "image_asset": "images/logos/Vodacom.png",
+      "group": "partners"
+    },
+    {
+      "id": "organisation_11",
+      "name": "UK Research and Innovation Global Challenges Research Fund",
+      "image_asset": "images/logos/donors/UKRI.png",
+      "group": "funders"
+    },
+    {
+      "id": "organisation_12",
+      "name": "Oak Foundation",
+      "image_asset": "images/logos/donors/OAK.png",
+      "group": "funders"
+    },
+    {
+      "id": "organisation_13",
+      "name": "LEGO Foundation",
+      "image_asset": "images/logos/donors/LEGO.png",
+      "group": "funders"
+    },
+    {
+      "id": "organisation_14",
+      "name": "Wellspring Philanthropic Fund",
+      "image_asset": "images/logos/donors/Wellspring.jpeg",
+      "group": "funders"
+    },
+    {
+      "id": "organisation_15",
+      "name": "European Research Council",
+      "image_asset": "images/logos/donors/ERC.png",
+      "group": "funders"
+    },
+    {
+      "id": "organisation_16",
+      "name": "World Childhood Foundation",
+      "image_asset": "images/logos/donors/WCF.jpg",
+      "group": "funders"
+    },
+    {
+      "id": "organisation_17",
+      "name": "Nuffield College Oxford",
+      "image_asset": "images/logos/donors/Nuffield_college.png",
+      "group": "funders"
+    },
+    {
+      "id": "organisation_18",
+      "name": "The Agency Fund",
+      "image_asset": "images/logos/donors/Agency_fund.png",
+      "group": "funders"
+    },
+    {
+      "id": "organisation_19",
+      "name": "The Human Safety Net Foundation",
+      "image_asset": "images/logos/donors/Human_safety_net.png",
+      "group": "funders"
+    }
+  ],
+  "privacy_policy": [
+    {
+      "id": "section_0",
+      "title::eng": "@global.privacy_policy",
+      "text::eng": "Your data is important to us. This @global.privacy_policy sets out our policies for the collection, use, and disclosure of personal data in the use of @global.app_name_full.\n\nPlease read this @global.privacy_policy carefully. By downloading or using the app, you confirm to be informed concerning the collection and use of personal data in relation to this policy. We will not use or share your personal data with anyone except as described in this @global.privacy_policy.\n\nThe terms used in this @global.privacy_policy have the same meanings as in our @global.terms_and_conditions, which are accessible within the app, unless otherwise defined in this @global.privacy_policy.",
+      "attached_single_doc": "https://docs.google.com/document/d/1VNT_TugNowCkKZBXBu9xdNOvcWdh_weRqbmbFb59fUY"
+    },
+    {
+      "id": "section_1",
+      "title::eng": "Data Controller",
+      "text::eng": "The data controller responsible for processing your information is \nParenting for Lifelong Health, \nBarnett House, 32 Wellington Square, Oxford, OX1 2ER, United Kingdom"
+    },
+    {
+      "id": "section_2",
+      "title::eng": "What personal data does the app collect about you and how do we use it?\n",
+      "text::eng": "For the purpose of this @global.privacy_policy, 'personal data' means any information that enables us to identify an individual, directly or indirectly. We collect data as follows:\n- Personal details (name; surname, gender, nationality, current country of residence);\n- Contact data (phone number);\n- Log data (IP address, device name, operating system version, configuration of the App when utilising our App, the time, date and your intentions within the App - which include but are not limited to any App buttons clicked or pages visited.)\nWe also collect information about the number and age of your children that, however, is not personal data.\n\nAll data collected is linked to your unique @global.app_name identification number. The ParentApp identification number produced within the app may also be used to link with any out-of-app surveys you may consent to as part of a @global.app_name_full research trial. If you are participating in a facilitated programme, your ParentApp identification number and app engagement data may also be shared with programme facilitators through an API for follow-up and support but will not be accompanied with personally identifiable information. \n\n\n1. **Categories of personal data processed**:\n-   Personal data\n-   Contact data\n-   Log data\n-   or any further personal data necessary to assert or defend one's rights in civil, administrative or criminal proceedings\n\n2. **Purposes of processing**:\n-   Providing the service (to provide parenting support including by communicating with you when you contact us)\n-   Protecting our rights and interests in case of litigation\n-   Feedback processing – you may provide us with feedback on the App. We always anonymise your personal information when sharing and publishing your feedback.\n\n3. **Legal Basis**:\n-   Performance of a contract \n-   Legitimate interests to protect our rights and interests\n\n4. **Data retention period**:\n-   We will retain your personal information for as long as you continue to use the App and for the period strictly necessary to achieve the relevant purposes. In any case, we will not process your data over 4 years after your last use of the App.\n-   We will retain your personal information for as long as for the period strictly necessary to achieve the relevant purposes."
+    },
+    {
+      "id": "section_3",
+      "title::eng": "Information Sharing and Third Party Service Providers and Websites",
+      "text::eng": "Your personal data may be shared with third parties such as researchers and partners involved in the improvement or implementation of the app including those outside your country. Prior to the disclosure of information with research partners we will make them anonymous by extracting data and removing any personally identifiable information. In reading this @global.privacy_policy, you acknowledge that we will use your anonymised data in published research.\n\nWe may transfer your personal data outside your country, for example, to administer cloud services. We will ensure that any country, company or person that we pass your personal information, will treat your information with the same level of protection as we are obliged to and we will rely on Standard Contractual Clauses.\n\nThe app is supported by duly authorized third parties that may collect your personal data in order to provide their services. We do so for the following reasons:\n-   To provide the app on our behalf;\n-   To perform app-related services; or\n-   To assist us in analysing how our app is used.\n\nLinks to the privacy policies of third-party service providers used by the app:\n-   [Apple Media Services](https://www.apple.com/legal/internet-services/itunes/)\n-   [Google Play Services](https://www.google.com/policies/privacy/)\n-   [Google Analytics for Firebase](https://firebase.google.com/policies/analytics)\n-   [Sentry](https://sentry.io/privacy/)\n-   [Matomo](https://matomo.org/privacy-policy/)\n-   [GlitchTip](https://glitchtip.com/legal/privacy)\n\nThis app may contain links to other sites that are not covered by this @global.privacy_policy. If you click on a third-party link, you will be directed to that site. This @global.privacy_policy applies only to the processing of your personal data by this app. It does not address, and we are not responsible for, the privacy, information, or other practices of any third parties, including any third party operating any site or service to which this app links to."
+    },
+    {
+      "id": "section_4",
+      "title::eng": "How long do we keep your data?\n",
+      "text::eng": "We will retain your personal information for as long as you continue to use the app and keep the app installed on your phone as long as we need it to fulfill our purposes, including any relating to app services as well as legal, accounting, or reporting requirements. In any case, we will not process your data over 4 years after your last use of the app."
+    },
+    {
+      "id": "section_5",
+      "title::eng": "How do we keep your data secure?",
+      "text::eng": "We value your trust in providing us your personal information, thus we are striving to use commercially acceptable means of protecting it. We reserve the right to the storage of your data on third party servers or databases outside of the listed @global.app_name_full team (refer to the section on Third Party Service Providers and Websites) that provide security measures compliant with applicable privacy laws and regulations.\n"
+    },
+    {
+      "id": "section_6",
+      "title::eng": "Children’s Privacy",
+      "text::eng": "If you are under the age of 18 you are not allowed to use this app. We do not knowingly collect personally identifiable information from individuals under 18. If we become aware that a user under 18 has submitted personal data without verifiable parental consent, we will delete such information as quickly as possible."
+    },
+    {
+      "id": "section_7",
+      "title::eng": "Your data protection rights",
+      "text::eng": "Under data protection law, you have rights including:\n\nYour right of access - You have the right to ask us for copies of your personal information.\n\nYour right to rectification - You have the right to ask us to rectify personal information you think is inaccurate. You also have the right to ask us to complete information you think is incomplete.\n\nYour right to erasure - You have the right to ask us to erase your personal information in certain circumstances.\n\nYour right to withdraw consent for data processing at any time - You can choose to halt the processing of your data if consent was the legal basis for handling your information.\n\nYour right to restriction of processing - You have the right to ask us to restrict the processing of your personal information in certain circumstances.\n\nYour right to object to processing - You have the right to object to the processing of your personal information in certain circumstances.\n\nYour right to data portability - You have the right to ask that we transfer the personal information you gave us to another organisation, or to you, in certain circumstances.\n\nYou are not required to pay any charge for exercising your rights. Depending on the circumstances and the nature of your request it may not be possible for us to do what you have asked, for example, where there is a statutory or contractual requirement for us to process your data and it would not be possible to fulfil our legal obligations if we were to stop. Further information on your rights is available from the [Information Commissioner's Office (ICO)](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/)."
+    },
+    {
+      "id": "section_8",
+      "title::eng": "Removing the App",
+      "text::eng": "We are sorry if you find our app no longer useful. Should you decide to remove our app, we may still retain some of your data (although anonymised) to troubleshoot, aid in investigations, comply with legal requirements or to add to our existing research data sets."
+    },
+    {
+      "id": "section_9",
+      "title::eng": "Changes to the @global.privacy_policy ",
+      "text::eng": "We may update our @global.privacy_policy from time to time. We will notify you in advance if any substantial changes will occur. \nPlease review this page periodically for any updates.\n"
+    },
+    {
+      "id": "section_10",
+      "title::eng": "Contact Us",
+      "text::eng": "These @global.terms_and_conditions are an agreement between you and Parenting for Lifelong Health  (“PLH”) which furthermore sets out the rules for your use of @global.app_name_full (or “App”).\n\n@global.app_name_full is a free app version of the Parenting for Lifelong Health for Young Children programme and designed for parents and caregivers of children aged 2 to 17 years.\n\n@global.app_name_full is brought to you by the collaboration of partners including PLH, University of Oxford, IDEMS International, INNODEMS as well as the University of Cape Town and Stellenbosch University (“@global.app_name_full team”).\n\nPlease read these @global.terms_and_conditions carefully. By downloading or using the app, you agree that you have read, understood, and accepted the @global.terms_and_conditions contained below.\n\nYour privacy is important to us – please also read our @global.privacy_policy, which will detail how we collect, store and use the information that you provide to us. By using @global.app_name_full you are confirming to us that you reviewed  our @global.privacy_policy, as set out separately.\n"
+    }
+  ],
+  "terms_and_conditions": [
+    {
+      "id": "section_0",
+      "title::eng": "User Agreement",
+      "text::eng": "These @global.terms_and_conditions are an agreement between you and Parenting for Lifelong Health  (“PLH”) which furthermore sets out the rules for your use of @global.app_name_full (or “App”).\n\n@global.app_name_full is a free app version of the Parenting for Lifelong Health for Young Children programme and designed for parents and caregivers of children aged 2 to 17 years.\n\n@global.app_name_full is brought to you by the collaboration of partners including PLH, University of Oxford, IDEMS International, INNODEMS as well as the University of Cape Town and Stellenbosch University (“@global.app_name_full team”).\n\nPlease read these @global.terms_and_conditions carefully. By downloading or using the app, you agree that you have read, understood, and accepted the @global.terms_and_conditions   contained below.\n\nYour privacy is important to us – please also read our @global.privacy_policy, which will detail how we collect, store and use the information that you provide to us. By using @global.app_name_full you are confirming to us that you reviewed  our @global.privacy_policy, as set out separately.\n",
+      "attached_single_doc": "https://docs.google.com/document/d/1MRD-fBCTg8XnpnzQFacbwIduivjVMmaKvrLDlpQi2Ew"
+    },
+    {
+      "id": "section_1",
+      "title::eng": "Rules of Usage\n",
+      "text::eng": "@global.app_name_full is open-source, which means that its codebase can be found on GitHub for the wider software developer community. However, it's against the terms of use to alter the existing application or its materials, or to replicate any trademarks from the @global.app_name_full team. While the app is open-source, unauthorised translations or versions that do not credit the @global.app_name_full team are not permitted. Unauthorised access to confidential user data is forbidden. It's not acceptable to provide false information about yourself when using the app, make unfounded claims of affiliation, or inaccurately report the app's behaviour. Ensure that your usage of the app adheres to all local rules and laws. Adults only can use the app. If you are a minor in your country of residence you may not access and use the app.\n"
+    },
+    {
+      "id": "section_2",
+      "title::eng": "Content Changes\n",
+      "text::eng": "The @global.app_name_full is committed to ensuring that the app is as useful and user friendly as possible. For that reason, we reserve the right to make changes to the app which will be delivered through updates. At present the app is free of charge and our intention is for it to stay that way.\n\nIn the future it is possible that some services may be offered that would incur a cost. We will never charge you for the app or its services without clearly making known to you first any access charges applicable.\n"
+    },
+    {
+      "id": "section_3",
+      "title::eng": "Intellectual property\n",
+      "text::eng": "The app’s source code is made available under the GNU General Public License v3.0 (GPL-3.0), while the content is licensed under Creative Commons Attribution (CC BY). The app itself, the trademarks, copyright, database rights and other intellectual property rights related to it, belong to or are licensed to the various applicable collaborators of the @global.app_name_full team (noting that code is covered under GPL 3 and content by CC BY license). The use of names and emblems/logos of collaborating institutions are the exclusive property of those institutions and are protected under international and national laws. Unauthorised use is prohibited. Logos may not be copied or reproduced in any way without the prior written permission of said institution.\n"
+    },
+    {
+      "id": "section_4",
+      "title::eng": "Submissions",
+      "text::eng": "Your feedback on the app is appreciated. So that we can improve, any comments are not considered confidential and will become available for further lawful use without additional approval or compensation. We shall therefore own exclusive rights and believe any feedback that you have made is original by you.\n"
+    },
+    {
+      "id": "section_5",
+      "title::eng": "Security",
+      "text::eng": "Our app stores and processes personal data that you have provided to us, in order to offer our services. It is your responsibility to keep your phone and access to the app secure. Removal of software restrictions and limitations imposed by the official operating system of your device is therefore not recommended. Doing so could make your phone vulnerable to malware, viruses, malicious programs as well as compromise your phone’s security features and could mean that the app will not work properly or at all.\nAll data collected by PLH is stored securely using encryption protocols, including encryption at rest and in transit, and is accessible only to authorized personnel.\nTo see how we handle your personal information, please see our @global.privacy_policy. \n"
+    },
+    {
+      "id": "section_6",
+      "title::eng": "External links and resources",
+      "text::eng": "The app uses third party services that declare their own @global.terms_and_conditions and may link to other websites and resources that are not under the PLH’s control.\n\nLinks to @global.terms_and_conditions of third party service providers used by the app include:\n\n-   [Apple Store Services](https://www.apple.com/legal/internet-services/itunes/)\n-   [Google Play Services](https://policies.google.com/terms)\n-   [Google Analytics for Firebase](https://firebase.google.com/terms/analytics)\n-   [Sentry](https://sentry.io/terms/)\n-   [Matomo](https://matomo.org/matomo-cloud-terms-of-service/)\n-   [GlitchTip](https://glitchtip.com/legal/tos)\n\nThe inclusion of such links does not imply an endorsement or approval by PLH and/or its partners of any website, product, or service. Similarly, PLH and the @global.app_name_full team affiliated developers and collaborators do not assume any responsibility or liability in respect of such websites, product, or service, including, for example, responsibility or liability for the accuracy or reliability of any information, data, opinions, advice or statements made on those web sites."
+    },
+    {
+      "id": "section_7",
+      "title::eng": "Disclaimer",
+      "text::eng": "Please be aware that, except in cases of wilful misconduct, gross negligence, breach of obligations arising from public policy or liability that cannot be limited under the applicable law, the @global.app_name_full team exclude responsibility for the following:\n\n1. Certain functions of the app will require the app to have an active internet connection. The @global.app_name_full team cannot take responsibility for the app not working at full functionality if you do not have access to Wi-Fi, or you do not have any of your data allowance left.\n\n2. Using the app outside of an area with Wi-Fi, will mean that your terms of agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third party charges. In using the app, you accept responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you are using the app, please be aware that we assume that you have received permission from the bill payer for using the app.\n\n3. Although we endeavour to ensure that the app is updated and its content accurate, we do rely on third parties to provide information to us so that we can make it available to you. We do not regularly review all of the external sites and cannot guarantee that they are always accurate or reliable.\n\n4. The @global.app_name_full team accepts no liability for any damage or loss, direct or indirect, you experience as a result of using the app, or arising from any reliance you may place on advice or information provided from the app. You should always exercise your own discretion and judgment appropriate to your own circumstances in relation to any advice or information provided from the app.\n\n5. We are devoid of any responsibility for any instances of software bugs, viruses or other malicious material transmitted by a third party through our site.\n\n6. Updates to the app occur regularly in order to improve performance and content, to adapt to new technologies, to prevent abuse or harm, to address legal, regulatory, safety, or security issues or for any other further need. The app is available on Android and Apple -- the requirements for this system (and for any additional systems we decide to extend the availability of the app to) may change. It is your responsibility to download app updates to keep using the app. The @global.app_name_full team does not promise that it will always update the app so that it is relevant to you and/or works with the operating system version that you have installed on your device. However, you agree to always accept updates to the application when offered to you.\n\n7. The app site might not be available at all times for reasons of maintenance or trouble with associated software or hardware. We are not liable for any loss you may incur should the site not be accessible or is withdrawn. Equally, we have the right and choice to terminate your access and use of the app (including availability of captured data) at any time. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.\n\n8. You agree to indemnify, at your own expense, PLH, its officials, employees, consultants and agents, against any claims, including your costs and expenses, by any third party, resulting from your use of the app.\n\n9. Companies or products associated with the app should not be interpreted as endorsement by the app or the @global.app_name_full team or demonstrate an intention to infringe proprietary rights."
+    },
+    {
+      "id": "section_8",
+      "title::eng": "Changes to the @global.terms_and_conditions  \n",
+      "text::eng": "We may update our @global.terms_and_conditions from time to time and we will inform you in advance of material amendments.  Your continued use of the app suggests you agree to subsequent revisions of the @global.terms_and_conditions. Please review this page periodically for any updates.\n"
+    },
+    {
+      "id": "section_9",
+      "title::eng": "Applicable Law and Jurisdiction ",
+      "text::eng": "Unless differently provided by applicable mandatory local laws, these @global.terms_and_conditions are governed by the laws of the United Kingdom, and the London courts will have exclusive jurisdiction over any possible disputes related to these @global.terms_and_conditions  .\n"
+    },
+    {
+      "id": "section_10",
+      "title::eng": "Contact Us",
+      "text::eng": "These @global.terms_and_conditions are an agreement between you and Parenting for Lifelong Health  (“PLH”) which furthermore sets out the rules for your use of @global.app_name_full (or “App”).\n\n@global.app_name_full is a free app version of the Parenting for Lifelong Health for Young Children programme and designed for parents and caregivers of children aged 2 to 17 years.\n\n@global.app_name_full is brought to you by the collaboration of partners including PLH, University of Oxford, IDEMS International, INNODEMS as well as the University of Cape Town and Stellenbosch University (“@global.app_name_full team”).\n\nPlease read these @global.terms_and_conditions carefully. By downloading or using the app, you agree that you have read, understood, and accepted the @global.terms_and_conditions contained below.\n\nYour privacy is important to us – please also read our @global.privacy_policy, which will detail how we collect, store and use the information that you provide to us. By using @global.app_name_full you are confirming to us that you reviewed  our @global.privacy_policy, as set out separately.\n"
+    }
+  ],
+  "misc_global": [
+    {
+      "type": "declare_global_constant",
+      "name": "list",
+      "value": "List"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "map",
+      "value": "Map"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "module",
+      "value": "Module"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "start_here",
+      "value": "Start here"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "home",
+      "value": "Home"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "library",
+      "value": "Library"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "rewards",
+      "value": "Play"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "settings",
+      "value": "Settings"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "completed",
+      "value": "Completed"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "check_in",
+      "value": "Check-in"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "lets_begin",
+      "value": "Let’s Begin"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "continue",
+      "value": "Continue"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "restart",
+      "value": "Restart"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "in_1_day",
+      "value": "In 1 day"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "in_2_days",
+      "value": "In 2 days"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "in_3_days",
+      "value": "In 3 days"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "in_4_days",
+      "value": "In 4 days"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "in_5_days",
+      "value": "In 5 days"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "in_6_days",
+      "value": "In 6 days"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "in_7_days",
+      "value": "In 7 days"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "learn_more",
+      "value": "Learn More"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "select_a_response",
+      "value": "Select a response"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "congratulations",
+      "value": "Congratulations"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "hurrah",
+      "value": "Hooray"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "a_new_moment_of_play_has_been_unlocked",
+      "value": "A new moment of play has been unlocked"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "open_your_moment_of_play",
+      "value": "Open your moment of play"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "open",
+      "value": "Open"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "well_done_for_finishing_this_module",
+      "value": "Well done for finishing this module"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "well_done_for_finishing_this_check_in",
+      "value": "Well done for finishing this check-in"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "unlock_your_moment_of_play",
+      "value": "Unlock your moment of play"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "well_done_finishing_module_hp",
+      "value": "Well done for finishing all modules and home activities!"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "unlock_all_moments_of_play",
+      "value": "Unlock all moments of play"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "moments_of_play",
+      "value": "Moments of Play"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "complete_your_modules_and_home_activities_to_unlock_new_moments_of_play",
+      "value": "Complete your modules and home activities to unlock new moments of play."
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "filter",
+      "value": "Filter"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "all_games",
+      "value": "All Games"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "unlocked",
+      "value": "Unlocked"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "favourites",
+      "value": "Favourites"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "no_favourites_yet",
+      "value": "Nothing here yet!\nMark games as favourites by tapping the ❤️ icon to quickly find what you enjoy most."
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "no_unlocked_yet",
+      "value": "Unlock your moments of play by completing a module or logging an activity!"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "by_age",
+      "value": "By age"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "for_2-3",
+      "value": "For 2-3"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "for_4-5",
+      "value": "For 4-5"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "for_6-7",
+      "value": "For 6-7"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "for_7-8",
+      "value": "For 7-8"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "for_8-9",
+      "value": "For 8-9"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "source",
+      "value": "Source"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "close",
+      "value": "Close"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "profile",
+      "value": "Profile"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "switch_language",
+      "value": "Switch Language"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "your_parentapp_code",
+      "value": "Your ParentApp Code"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "account",
+      "value": "Account"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "general",
+      "value": "General"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "feedback",
+      "value": "Feedback"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "about_dayem",
+      "value": "About @global.app_name"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "developer_mode",
+      "value": "Developer Mode"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "version",
+      "value": "Version"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "submit",
+      "value": "Submit"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "save",
+      "value": "Save"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "language",
+      "value": "Language"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "type_here",
+      "value": "Type here"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "app_feedback",
+      "value": "App feedback"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "challenge_not_here",
+      "value": "My challenge is not listed here"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "other_challenge_prompt",
+      "value": "Sorry we missed this! Do you want to share it with us?"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "other_challenge_reply",
+      "value": "Thank you for sharing your challenge! We will use this feedback to make @global.app_name better."
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "tap_and_type",
+      "value": "Tap and type"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "module_completion_encouragement",
+      "value": "Nice work! Complete the open lessons to unlock more."
+    }
+  ],
+  "user_type": [
+    {
+      "id": "parent",
+      "name": "parent",
+      "text::eng": "Parent or caregiver"
+    },
+    {
+      "id": "facilitator",
+      "name": "facilitator",
+      "text::eng": "Facilitator"
+    },
+    {
+      "id": "tester",
+      "name": "tester",
+      "text::eng": "System tester"
+    },
+    {
+      "id": "other",
+      "name": "other",
+      "text::eng": "None of the above"
+    }
+  ],
+  "user_gender": [
+    {
+      "id": "man",
+      "name": "man",
+      "text::eng": "Man"
+    },
+    {
+      "id": "woman",
+      "name": "woman",
+      "text::eng": "Woman"
+    },
+    {
+      "id": "opt_out",
+      "name": "opt_out",
+      "text::eng": "Prefer not to say"
+    }
+  ],
+  "child_age": [
+    {
+      "id": "age_2",
+      "name": 2,
+      "text": 2
+    },
+    {
+      "id": "age_3",
+      "name": 3,
+      "text": 3
+    },
+    {
+      "id": "age_4",
+      "name": 4,
+      "text": 4
+    },
+    {
+      "id": "age_5",
+      "name": 5,
+      "text": 5
+    },
+    {
+      "id": "age_6",
+      "name": 6,
+      "text": 6
+    },
+    {
+      "id": "age_7",
+      "name": 7,
+      "text": 7
+    },
+    {
+      "id": "age_8",
+      "name": 8,
+      "text": 8
+    },
+    {
+      "id": "age_9",
+      "name": 9,
+      "text": 9
+    },
+    {
+      "id": "age_10",
+      "name": 10,
+      "text": 10
+    },
+    {
+      "id": "age_11",
+      "name": 11,
+      "text": 11
+    },
+    {
+      "id": "age_12",
+      "name": 12,
+      "text": 12
+    },
+    {
+      "id": "age_13",
+      "name": 13,
+      "text": 13
+    },
+    {
+      "id": "age_14",
+      "name": 14,
+      "text": 14
+    },
+    {
+      "id": "age_15",
+      "name": 15,
+      "text": 15
+    },
+    {
+      "id": "age_16",
+      "name": 16,
+      "text": 16
+    },
+    {
+      "id": "age_17",
+      "name": 17,
+      "text": 17
+    }
+  ]
+}

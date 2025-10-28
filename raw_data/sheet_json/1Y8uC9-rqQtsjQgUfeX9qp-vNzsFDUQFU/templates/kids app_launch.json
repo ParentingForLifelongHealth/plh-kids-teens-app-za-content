@@ -1,0 +1,211 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "data_list",
+      "flow_subtype": "lifecycle_actions",
+      "flow_name": "launch_actions",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "user_data",
+      "status": "released"
+    },
+    {
+      "flow_type": "global",
+      "flow_name": "user_data_global",
+      "status": "released"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "user_gender",
+      "status": "released",
+      "data_list_name": "user_gender"
+    },
+    {
+      "flow_type": "data_list",
+      "flow_name": "user_type",
+      "status": "released",
+      "data_list_name": "user_type"
+    }
+  ],
+  "launch_actions": [
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_update_complete",
+      "priority": 1,
+      "condition_list": "@fields._app_update_downloaded",
+      "action_list": "app_update: complete"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_language_select",
+      "priority": 2,
+      "condition_list": "!@fields.language_selected && @global.has_multiple_languages && @fields.user_mode",
+      "action_list": "pop_up: language_select | fullscreen: true, showCloseButton: false"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_accept_terms",
+      "priority": 3,
+      "condition_list": "!@fields.@global.deployment_terms_field && @fields.user_mode",
+      "action_list": "pop_up: accept_terms | fullscreen: true, showCloseButton: false"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_login",
+      "priority": 4,
+      "condition_list": "!@fields.login_passed && @global.has_optional_login && @fields.user_mode",
+      "action_list": "pop_up: login | fullscreen: true, showCloseButton: false"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_user_data",
+      "priority": 5,
+      "condition_list": "!@fields.user_data_completed && @fields.user_mode",
+      "action_list": "pop_up: user_data | fullscreen: true, showCloseButton: false"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_splash_screens_completed",
+      "priority": 6,
+      "condition_list": "!@fields.splash_screens_completed  && @fields.user_mode",
+      "action_list": "set_field: splash_screens_completed: true"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "app_start_update_prompt",
+      "priority": 7,
+      "action_list": "app_update: prompt"
+    }
+  ],
+  "user_data": [
+    {
+      "name": "show_title",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.user_data_title",
+      "condition": "!!(@local.show_title)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "user_gender_select_question",
+      "value": "@global.user_gender_select_question",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "user_gender_select_options",
+      "value": "@data.user_gender",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "user_gender_select",
+      "value": "@fields.user_gender",
+      "parameter_list": "answer_list: @local.user_gender_select_options",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "user_type_select_question",
+      "value": "@global.user_type_select_question",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "user_type_select_options",
+      "value": "@data.user_type",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "user_type_select",
+      "value": "@fields.user_type",
+      "parameter_list": "answer_list: @local.user_type_select_options",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed_enabled",
+      "value": "!!@local.user_gender_select && !!@local.user_type_select",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "action_list": "click | set_field: user_gender: @local.user_gender_select;\nclick | set_field: user_type: @local.user_type_select;\nclick | set_field: countdown_days: 0;\nclick | set_field: user_data_completed: true;\nclick | emit: server_sync;\nclick | emit: completed",
+      "condition": "@local.user_type_select == \"facilitator\"",
+      "parameter_list": "style: navigation;\ndisabled: !@local.completed_enabled",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "action_list": "click | set_field: user_gender: @local.user_gender_select;\nclick | set_field: user_type: @local.user_type_select;\nclick | set_field: countdown_days: 7;\nclick | set_field: user_data_completed: true;\nclick | emit: server_sync;\nclick | emit: completed",
+      "condition": "@local.user_type_select != \"facilitator\"",
+      "parameter_list": "style: navigation;\ndisabled: !@local.completed_enabled",
+      "exclude_from_translation": true
+    }
+  ],
+  "user_data_global": [
+    {
+      "type": "declare_global_constant",
+      "name": "user_data_title",
+      "value": "Welcome to @global.app_name"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "user_gender_select_question",
+      "value": "Please select your gender"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "user_type_select_question",
+      "value": "I am a..."
+    }
+  ],
+  "user_gender": [
+    {
+      "id": "woman",
+      "name": "woman",
+      "text::eng": "Woman"
+    },
+    {
+      "id": "man",
+      "name": "man",
+      "text::eng": "Man"
+    },
+    {
+      "id": "opt_out",
+      "name": "opt_out",
+      "text::eng": "Prefer not to say"
+    }
+  ],
+  "user_type": [
+    {
+      "id": "caregiver",
+      "name": "caregiver",
+      "text::eng": "Parent or caregiver"
+    },
+    {
+      "id": "facilitator",
+      "name": "facilitator",
+      "text::eng": "Facilitator"
+    },
+    {
+      "id": "tester",
+      "name": "tester",
+      "text::eng": "System tester"
+    },
+    {
+      "id": "other",
+      "name": "other",
+      "text::eng": "None of the above"
+    }
+  ]
+}

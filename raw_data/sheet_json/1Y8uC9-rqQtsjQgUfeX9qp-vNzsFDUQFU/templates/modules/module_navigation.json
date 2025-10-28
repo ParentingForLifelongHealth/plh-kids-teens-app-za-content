@@ -1,0 +1,730 @@
+{
+  "==content_list==": [
+    {
+      "flow_type": "template",
+      "flow_name": "module_path",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "module_card",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "category_card",
+      "status": "released"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "module_overview",
+      "status": "released"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "gen_module_overview",
+      "status": "released",
+      "parameter_list": "input_data_list: modules;\noutput_flow_name: module_overview_@gen.id;\noutput_flow_type: template;"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "module",
+      "status": "released"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "gen_module",
+      "status": "released",
+      "parameter_list": "input_data_list: modules;\noutput_flow_name: module_@gen.id;\noutput_flow_type: template;"
+    },
+    {
+      "flow_type": "template",
+      "flow_name": "module_start_at_id",
+      "status": "released"
+    },
+    {
+      "flow_type": "generator",
+      "flow_name": "gen_module_start_at_uncompleted",
+      "status": "released",
+      "parameter_list": "input_data_list: modules;\noutput_flow_name: module_{@gen.id}_start_at_uncompleted;\noutput_flow_type: template;"
+    }
+  ],
+  "module_path": [
+    {
+      "name": "modules_data_list_name",
+      "value": "module_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_all_modules",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_progress_path",
+      "parameter_list": "variant: basic;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.@local.modules_data_list_name",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "module_card_@item.id",
+      "value": "module_card",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_progress_path"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ],
+  "module_card": [
+    {
+      "name": "card_variant",
+      "value": "circle",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "task_group_data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed",
+      "value": "_completed",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "ww_id",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_data",
+      "value": "@data.@local.ww_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_title",
+      "value": "@local.module_data.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_image",
+      "value": "@local.module_data.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "click_template",
+      "value": "module_landing_@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "in_progress_icon",
+      "value": "images/icons/in_progress.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed_icon",
+      "value": "images/icons/tick_white.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "progress_units_name",
+      "value": "sections",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "locked",
+      "value": false
+    },
+    {
+      "name": "locked_image_asset",
+      "value": "images/icons/locked.png"
+    },
+    {
+      "type": "task_card",
+      "name": "task_card",
+      "action_list": "click | go_to: @local.click_template;",
+      "parameter_list": "variant: @local.card_variant;\ntask_group_id: @local.module_id;\ntask_group_data: @local.task_group_data;\ntitle: @local.card_title;\nimage: @local.card_image;\nin_progress_icon: @local.in_progress_icon;\ncompleted_icon: @local.completed_icon;\nprogress_units_name: @local.progress_units_name;        \nlocked: @local.locked;\nlocked_image_asset: @local.locked_image_asset;",
+      "exclude_from_translation": true
+    }
+  ],
+  "category_card": [
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "categories",
+      "value": "_category_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_data",
+      "value": "@local.module_id@local.categories",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_id",
+      "value": "learn",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_concat",
+      "value": "@local.category_data.@local.category_id",
+      "condition": "@local.category_data && @local.category_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_row",
+      "value": "@data.@local.category_concat",
+      "condition": "@local.category_data && @local.category_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_title",
+      "value": "@local.category_row.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_icon",
+      "value": "@local.category_row.icon_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "start_at",
+      "value": "_start_at_"
+    },
+    {
+      "name": "target_template",
+      "value": "module_@local.module_id@local.start_at@local.category_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "use_pop_up",
+      "value": true
+    },
+    {
+      "type": "task_card",
+      "name": "task_card_@local.category_id",
+      "action_list": "click | go_to: @local.target_template",
+      "parameter_list": "title: @local.card_title;\nimage: @local.card_icon;\nvariant: button;",
+      "condition": "!@local.use_pop_up",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "task_card",
+      "name": "task_card_@local.category_id",
+      "action_list": "click | pop_up: @local.target_template | fullscreen: true, showCloseButton: false;",
+      "parameter_list": "title: @local.card_title;\nimage: @local.card_icon;\nvariant: button;",
+      "condition": "@local.use_pop_up",
+      "exclude_from_translation": true
+    }
+  ],
+  "module_overview": [
+    {
+      "type": "update_action_list",
+      "name": "custom_actions_1",
+      "action_list": "nav_resume | emit: force_reload",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "categories",
+      "value": "_category_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_data",
+      "value": "@local.module_id@local.categories",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks"
+    },
+    {
+      "name": "article_data",
+      "value": "@local.module_id@local.articles"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "top",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@local.module_row.title",
+      "style_list": "flex: 1;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "image",
+      "value": "@local.module_row.image_asset",
+      "style_list": "flex: 1;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@local.module_row.description",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_items",
+      "name": "category_loop",
+      "value": "@data.@local.category_data",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "card_@item.id",
+      "value": "category_card",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_id",
+      "value": "@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_items"
+    }
+  ],
+  "gen_module_overview": [
+    {
+      "type": "begin_template",
+      "name": "module_overview",
+      "value": "module_overview",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted"
+    },
+    {
+      "name": "module_id",
+      "value": "@gen.id"
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "module": [
+    {
+      "name": "active_index",
+      "value": 0,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_active_index",
+      "value": "Local active index: @local.active_index",
+      "exclude_from_translation": true,
+      "condition": false
+    },
+    {
+      "name": "template_name",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data_list_name",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data",
+      "value": "@data.@local.articles_data_list_name",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_progress_bar",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_progress_bar",
+      "parameter_list": "sticky: top; \nstyle: background_solid;\nvariant: inline_padding;",
+      "exclude_from_translation": true,
+      "condition": "!!@local.show_progress_bar",
+      "style_list": "padding-inline-start: 24px;"
+    },
+    {
+      "type": "task_progress_bar",
+      "name": "task_progress_bar",
+      "parameter_list": "task_group_data: @local.articles_data_list_name;",
+      "exclude_from_translation": true,
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "round_button",
+      "name": "close_button",
+      "action_list": "click | emit: uncompleted",
+      "parameter_list": "icon_src: close;\nvariant: no-background;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "enable_dynamic_data_actions",
+      "value": "@local.articles_data_list_name",
+      "parameter_list": "filter: !@item.nested",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_loop",
+      "value": "@item.id at index @item._index",
+      "condition": false
+    },
+    {
+      "type": "begin_display_group",
+      "name": "only_for_active_index",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true,
+      "condition": "@item._index == @local.active_index"
+    },
+    {
+      "name": "template_name",
+      "value": "@local.module_id@local.join@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_temp_prefix",
+      "value": "Template name: @local.template_name",
+      "exclude_from_translation": true,
+      "condition": false
+    },
+    {
+      "type": "begin_display_group",
+      "name": "cond_multi_art",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "article_first",
+      "value": "article_@local.template_name",
+      "action_list": "completed | set_item | completed: true;\ncompleted | set_item | last_completed_ts: @calc(now());\ncompleted | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id;\ncompleted | set_local: active_index: @item._index  + 1;\nuncompleted | emit: uncompleted;",
+      "exclude_from_translation": true,
+      "condition": "@item._first"
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "article"
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "nav_buttons",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_previous",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_nested_properties"
+    },
+    {
+      "type": "end_nested_properties"
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "article_middle",
+      "value": "article_@local.template_name",
+      "action_list": "completed | set_item | completed: true;\ncompleted | set_item | last_completed_ts: @calc(now());\ncompleted | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id;\ncompleted | set_local: active_index: @item._index  + 1;\nuncompleted | set_local: active_index: @item._index  - 1;",
+      "exclude_from_translation": true,
+      "condition": "!@item._last && !@item._first",
+      "comment": "Use different conditions to allow for conditional nav buttons and triggered actions depending on whether first, last or intermediate template.\n\nThis could be simplified once proposed data_action triggers implemented"
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "article_last",
+      "value": "article_@local.template_name",
+      "action_list": "completed | set_item | completed: true;\ncompleted | set_item | last_completed_ts: @calc(now());\ncompleted | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id;\ncompleted | set_data | _list_id: module_tasks, _id: @local.module_id, completed_ts: @calc(now());\ncompleted | emit: completed;\ncompleted | emit: server_sync;\nuncompleted | set_local: active_index: @item._index  - 1;",
+      "exclude_from_translation": true,
+      "condition": "@item._last"
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "article",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "nav_buttons",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "next_icon_src",
+      "value": "@global.first_completion_icon",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_nested_properties",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_nested_properties",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    }
+  ],
+  "gen_module": [
+    {
+      "type": "begin_template",
+      "name": "module",
+      "value": "module",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted"
+    },
+    {
+      "name": "module_id",
+      "value": "@gen.id"
+    },
+    {
+      "type": "end_template"
+    }
+  ],
+  "module_start_at_id": [
+    {
+      "name": "module_id",
+      "value": "instructions",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "explore_1"
+    },
+    {
+      "type": "begin_items",
+      "name": "find_active_index",
+      "value": "@data.@local.articles_data"
+    },
+    {
+      "type": "begin_template",
+      "name": "module",
+      "value": "module",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted",
+      "condition": "@item.id == @local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "active_index",
+      "value": "@item._index",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_items"
+    }
+  ],
+  "gen_module_start_at_uncompleted": [
+    {
+      "name": "module_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "find_first_uncompleted_article",
+      "value": "@local.articles_data",
+      "parameter_list": "filter: !@item.completed; \nlimit: 1",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "module_start_at_id",
+      "value": "module_start_at_id",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    }
+  ]
+}

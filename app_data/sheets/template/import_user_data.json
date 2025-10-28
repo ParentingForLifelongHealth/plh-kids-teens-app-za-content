@@ -73,8 +73,7 @@
             "import",
             "@local.user_id_input"
           ],
-          "_raw": "click | user: import: @local.user_id_input",
-          "_cleaned": "click | user: import: @local.user_id_input"
+          "_raw": "click | user: import: @local.user_id_input"
         },
         {
           "trigger": "click",
@@ -82,8 +81,7 @@
           "args": [
             "force_reprocess"
           ],
-          "_raw": "click | emit: force_reprocess",
-          "_cleaned": "click | emit: force_reprocess"
+          "_raw": "click | emit: force_reprocess"
         }
       ],
       "exclude_from_translation": true,
@@ -108,14 +106,6 @@
                 "type": "local",
                 "fieldName": "user_id_input"
               }
-            ],
-            "_cleaned": [
-              {
-                "fullExpression": "click | user: import: @local.user_id_input",
-                "matchedExpression": "@local.user_id_input",
-                "type": "local",
-                "fieldName": "user_id_input"
-              }
             ]
           }
         }
@@ -123,12 +113,12 @@
       "_dynamicDependencies": {
         "@local.user_id_input": [
           "action_list.0.args.1",
-          "action_list.0._raw",
-          "action_list.0._cleaned"
+          "action_list.0._raw"
         ]
       }
     }
   ],
   "_xlsxPath": "app_menu.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/19wSspWYMbRc75een-kS0q0aq24--75u8"
+  "_remoteFolder": "19wSspWYMbRc75een-kS0q0aq24--75u8",
+  "_remoteUrl": "https://docs.google.com/spreadsheets/d/1SqgpcbW5RNRKq6NIKZre5Pc406U4z3VJHcfSNUBmTTs"
 }

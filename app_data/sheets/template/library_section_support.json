@@ -184,8 +184,7 @@
           "args": [
             "uncompleted"
           ],
-          "_raw": "uncompleted | emit: uncompleted",
-          "_cleaned": "uncompleted | emit: uncompleted"
+          "_raw": "uncompleted | emit: uncompleted"
         }
       ],
       "rows": [
@@ -448,8 +447,7 @@
               "args": [
                 "@local.article_prefix@item.id"
               ],
-              "_raw": "click | go_to: @local.article_prefix@item.id",
-              "_cleaned": "click | go_to: @local.article_prefix@item.id"
+              "_raw": "click | go_to: @local.article_prefix@item.id"
             }
           ],
           "parameter_list": {
@@ -505,20 +503,6 @@
                     "type": "item",
                     "fieldName": "id"
                   }
-                ],
-                "_cleaned": [
-                  {
-                    "fullExpression": "click | go_to: @local.article_prefix@item.id",
-                    "matchedExpression": "@local.article_prefix",
-                    "type": "local",
-                    "fieldName": "article_prefix"
-                  },
-                  {
-                    "fullExpression": "click | go_to: @local.article_prefix@item.id",
-                    "matchedExpression": "@item.id",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
                 ]
               }
             },
@@ -550,7 +534,6 @@
               "name",
               "action_list.0.args.0",
               "action_list.0._raw",
-              "action_list.0._cleaned",
               "_nested_name"
             ],
             "@item.title": [
@@ -558,8 +541,7 @@
             ],
             "@local.article_prefix": [
               "action_list.0.args.0",
-              "action_list.0._raw",
-              "action_list.0._cleaned"
+              "action_list.0._raw"
             ],
             "!@local.use_stack": [
               "condition"
@@ -603,5 +585,6 @@
     }
   ],
   "_xlsxPath": "templates/ZA library templates.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI"
+  "_remoteFolder": "1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI",
+  "_remoteUrl": "https://docs.google.com/spreadsheets/d/1V0sTlZuoXaBrG00l6BxTKLs0rEpYOZgVbwNLPin86qI"
 }

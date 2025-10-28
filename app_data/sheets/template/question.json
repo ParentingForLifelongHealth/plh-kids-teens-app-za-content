@@ -2458,7 +2458,6 @@
               "action_id": "set_item",
               "args": [],
               "_raw": "changed | set_item | @local.response_column: this.value",
-              "_cleaned": "changed | set_item | @local.response_column: this.value",
               "params": {
                 "@local.response_column": "this.value"
               }
@@ -2484,14 +2483,6 @@
             "action_list": {
               "0": {
                 "_raw": [
-                  {
-                    "fullExpression": "changed | set_item | @local.response_column: this.value",
-                    "matchedExpression": "@local.response_column",
-                    "type": "local",
-                    "fieldName": "response_column"
-                  }
-                ],
-                "_cleaned": [
                   {
                     "fullExpression": "changed | set_item | @local.response_column: this.value",
                     "matchedExpression": "@local.response_column",
@@ -2531,8 +2522,7 @@
           "_dynamicDependencies": {
             "@local.response_column": [
               "value",
-              "action_list.0._raw",
-              "action_list.0._cleaned"
+              "action_list.0._raw"
             ],
             "!@local.has_any_image": [
               "condition"
@@ -2636,7 +2626,6 @@
               "action_id": "set_item",
               "args": [],
               "_raw": "changed | set_item | @local.response_column: this.value",
-              "_cleaned": "changed | set_item | @local.response_column: this.value",
               "params": {
                 "@local.response_column": "this.value"
               }
@@ -2663,14 +2652,6 @@
             "action_list": {
               "0": {
                 "_raw": [
-                  {
-                    "fullExpression": "changed | set_item | @local.response_column: this.value",
-                    "matchedExpression": "@local.response_column",
-                    "type": "local",
-                    "fieldName": "response_column"
-                  }
-                ],
-                "_cleaned": [
                   {
                     "fullExpression": "changed | set_item | @local.response_column: this.value",
                     "matchedExpression": "@local.response_column",
@@ -2732,8 +2713,7 @@
           "_dynamicDependencies": {
             "@local.response_column": [
               "value",
-              "action_list.0._raw",
-              "action_list.0._cleaned"
+              "action_list.0._raw"
             ],
             "@local.has_any_image": [
               "condition"
@@ -2768,7 +2748,6 @@
               "action_id": "set_item",
               "args": [],
               "_raw": "changed | set_item | @local.response_column: this.value",
-              "_cleaned": "changed | set_item | @local.response_column: this.value",
               "params": {
                 "@local.response_column": "this.value"
               }
@@ -2796,14 +2775,6 @@
             "action_list": {
               "0": {
                 "_raw": [
-                  {
-                    "fullExpression": "changed | set_item | @local.response_column: this.value",
-                    "matchedExpression": "@local.response_column",
-                    "type": "local",
-                    "fieldName": "response_column"
-                  }
-                ],
-                "_cleaned": [
                   {
                     "fullExpression": "changed | set_item | @local.response_column: this.value",
                     "matchedExpression": "@local.response_column",
@@ -2841,8 +2812,7 @@
           "_dynamicDependencies": {
             "@local.response_column": [
               "value",
-              "action_list.0._raw",
-              "action_list.0._cleaned"
+              "action_list.0._raw"
             ],
             "@local.has_any_image": [
               "condition"
@@ -4055,5 +4025,6 @@
     }
   ],
   "_xlsxPath": "templates/modules/articles.xlsx",
-  "_sheetsFolderUrl": "https://drive.google.com/drive/u/0/folders/1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU"
+  "_remoteFolder": "1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU",
+  "_remoteUrl": "https://docs.google.com/spreadsheets/d/1gfiZARKRfqyvaRg8AP20bi2D4K8NrCxmnW-3cMNhX2I"
 }
