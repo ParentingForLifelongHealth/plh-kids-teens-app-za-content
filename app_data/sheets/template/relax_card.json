@@ -164,8 +164,7 @@
           "args": [
             "@local.target_template"
           ],
-          "_raw": "click | go_to: @local.target_template",
-          "_cleaned": "click | go_to: @local.target_template"
+          "_raw": "click | go_to: @local.target_template"
         }
       ],
       "exclude_from_translation": true,
@@ -193,14 +192,6 @@
               ]
             },
             "_raw": [
-              {
-                "fullExpression": "click | go_to: @local.target_template",
-                "matchedExpression": "@local.target_template",
-                "type": "local",
-                "fieldName": "target_template"
-              }
-            ],
-            "_cleaned": [
               {
                 "fullExpression": "click | go_to: @local.target_template",
                 "matchedExpression": "@local.target_template",
@@ -248,8 +239,7 @@
       "_dynamicDependencies": {
         "@local.target_template": [
           "action_list.0.args.0",
-          "action_list.0._raw",
-          "action_list.0._cleaned"
+          "action_list.0._raw"
         ],
         "@local.task_id": [
           "parameter_list.task_id"

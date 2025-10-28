@@ -76,8 +76,7 @@
             "hp_check_in_not_unlocked_activity_count",
             "@items.length"
           ],
-          "_raw": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length",
-          "_cleaned": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length"
+          "_raw": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length"
         }
       ],
       "parameter_list": {
@@ -162,8 +161,7 @@
             "module_not_unlocked_activity_count",
             "@items.length"
           ],
-          "_raw": "data_changed | set_local: module_not_unlocked_activity_count: @items.length",
-          "_cleaned": "data_changed | set_local: module_not_unlocked_activity_count: @items.length"
+          "_raw": "data_changed | set_local: module_not_unlocked_activity_count: @items.length"
         }
       ],
       "parameter_list": {
@@ -325,7 +323,6 @@
                       "action_id": "set_data",
                       "args": [],
                       "_raw": "click | set_data | \n\n_list_id: hp_check_in,\nunlocked_activity: true",
-                      "_cleaned": "click | set_data | \n\n_list_id: hp_check_in,\nunlocked_activity: true",
                       "params": {
                         "_list_id": "hp_check_in",
                         "unlocked_activity": true
@@ -375,7 +372,6 @@
                       "action_id": "set_data",
                       "args": [],
                       "_raw": "click | set_data | \n\n_list_id: module_tasks,\nunlocked_activity: true",
-                      "_cleaned": "click | set_data | \n\n_list_id: module_tasks,\nunlocked_activity: true",
                       "params": {
                         "_list_id": "module_tasks",
                         "unlocked_activity": true
@@ -493,7 +489,6 @@
                           "action_id": "set_data",
                           "args": [],
                           "_raw": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
-                          "_cleaned": "click | set_data | \n\n_list_id: activity_tasks,\nlocked: false",
                           "params": {
                             "_list_id": "activity_tasks",
                             "locked": false
@@ -1023,7 +1018,6 @@
                     "open"
                   ],
                   "_raw": "click | nav_stack: open | template: activity_@item.id, header: false",
-                  "_cleaned": "click | nav_stack: open | template: activity_@item.id, header: false",
                   "params": {
                     "template": "activity_@item.id",
                     "header": false
@@ -1034,7 +1028,6 @@
                   "action_id": "set_item",
                   "args": [],
                   "_raw": "click | set_item | accessed: true",
-                  "_cleaned": "click | set_item | accessed: true",
                   "params": {
                     "accessed": true
                   }
@@ -1061,7 +1054,6 @@
                       "action_id": "set_item",
                       "args": [],
                       "_raw": "changed | set_item | favourite: !@item.favourite",
-                      "_cleaned": "changed | set_item | favourite: !@item.favourite",
                       "params": {
                         "favourite": "!@item.favourite"
                       }
@@ -1095,14 +1087,6 @@
                     "action_list": {
                       "0": {
                         "_raw": [
-                          {
-                            "fullExpression": "changed | set_item | favourite: !@item.favourite",
-                            "matchedExpression": "!@item.favourite",
-                            "type": "item",
-                            "fieldName": "favourite"
-                          }
-                        ],
-                        "_cleaned": [
                           {
                             "fullExpression": "changed | set_item | favourite: !@item.favourite",
                             "matchedExpression": "!@item.favourite",
@@ -1155,7 +1139,6 @@
                     ],
                     "!@item.favourite": [
                       "action_list.0._raw",
-                      "action_list.0._cleaned",
                       "action_list.0.params.favourite"
                     ],
                     "!@item.locked": [
@@ -1250,14 +1233,6 @@
                         "fieldName": "id"
                       }
                     ],
-                    "_cleaned": [
-                      {
-                        "fullExpression": "click | nav_stack: open | template: activity_@item.id, header: false",
-                        "matchedExpression": "@item.id",
-                        "type": "item",
-                        "fieldName": "id"
-                      }
-                    ],
                     "params": {
                       "template": [
                         {
@@ -1327,7 +1302,6 @@
                 "@item.id": [
                   "name",
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.template",
                   "_nested_name"
                 ],
@@ -1398,7 +1372,6 @@
                   "action_id": "set_item",
                   "args": [],
                   "_raw": "changed | set_item | locked: !@item.locked",
-                  "_cleaned": "changed | set_item | locked: !@item.locked",
                   "params": {
                     "locked": "!@item.locked"
                   }
@@ -1427,14 +1400,6 @@
                 "action_list": {
                   "0": {
                     "_raw": [
-                      {
-                        "fullExpression": "changed | set_item | locked: !@item.locked",
-                        "matchedExpression": "!@item.locked",
-                        "type": "item",
-                        "fieldName": "locked"
-                      }
-                    ],
-                    "_cleaned": [
                       {
                         "fullExpression": "changed | set_item | locked: !@item.locked",
                         "matchedExpression": "!@item.locked",
@@ -1473,7 +1438,6 @@
                 ],
                 "!@item.locked": [
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.locked"
                 ]
               }
@@ -1549,8 +1513,7 @@
             "activity_count",
             "@items.length"
           ],
-          "_raw": "data_changed | set_local: activity_count: @items.length",
-          "_cleaned": "data_changed | set_local: activity_count: @items.length"
+          "_raw": "data_changed | set_local: activity_count: @items.length"
         }
       ],
       "parameter_list": {
@@ -1651,8 +1614,7 @@
             "unlocked_count",
             "@items.length"
           ],
-          "_raw": "data_changed | set_local: unlocked_count: @items.length",
-          "_cleaned": "data_changed | set_local: unlocked_count: @items.length"
+          "_raw": "data_changed | set_local: unlocked_count: @items.length"
         }
       ],
       "parameter_list": {
@@ -1807,8 +1769,7 @@
             "favourite_count",
             "@items.length"
           ],
-          "_raw": "data_changed | set_local: favourite_count: @items.length",
-          "_cleaned": "data_changed | set_local: favourite_count: @items.length"
+          "_raw": "data_changed | set_local: favourite_count: @items.length"
         }
       ],
       "parameter_list": {

@@ -161,8 +161,7 @@
             "@local.field_name",
             "@local.field_value"
           ],
-          "_raw": "click | set_field: @local.field_name: @local.field_value",
-          "_cleaned": "click | set_field: @local.field_name: @local.field_value"
+          "_raw": "click | set_field: @local.field_name: @local.field_value"
         }
       ],
       "exclude_from_translation": true,
@@ -201,20 +200,6 @@
                 "type": "local",
                 "fieldName": "field_value"
               }
-            ],
-            "_cleaned": [
-              {
-                "fullExpression": "click | set_field: @local.field_name: @local.field_value",
-                "matchedExpression": "@local.field_name",
-                "type": "local",
-                "fieldName": "field_name"
-              },
-              {
-                "fullExpression": "click | set_field: @local.field_name: @local.field_value",
-                "matchedExpression": "@local.field_value",
-                "type": "local",
-                "fieldName": "field_value"
-              }
             ]
           }
         }
@@ -222,13 +207,11 @@
       "_dynamicDependencies": {
         "@local.field_name": [
           "action_list.0.args.0",
-          "action_list.0._raw",
-          "action_list.0._cleaned"
+          "action_list.0._raw"
         ],
         "@local.field_value": [
           "action_list.0.args.1",
-          "action_list.0._raw",
-          "action_list.0._cleaned"
+          "action_list.0._raw"
         ]
       }
     }

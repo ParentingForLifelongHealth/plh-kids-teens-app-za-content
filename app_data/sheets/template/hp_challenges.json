@@ -145,8 +145,7 @@
             "hp_done_from_data",
             "@items[0]?.done_response"
           ],
-          "_raw": "data_changed | set_local : hp_done_from_data : @items[0]?.done_response",
-          "_cleaned": "data_changed | set_local : hp_done_from_data : @items[0]?.done_response"
+          "_raw": "data_changed | set_local : hp_done_from_data : @items[0]?.done_response"
         }
       ],
       "parameter_list": {
@@ -1453,7 +1452,6 @@
               "action_id": "set_item",
               "args": [],
               "_raw": "changed | set_item | @local.response_column: this.value",
-              "_cleaned": "changed | set_item | @local.response_column: this.value",
               "params": {
                 "@local.response_column": "this.value"
               }
@@ -1479,14 +1477,6 @@
             "action_list": {
               "0": {
                 "_raw": [
-                  {
-                    "fullExpression": "changed | set_item | @local.response_column: this.value",
-                    "matchedExpression": "@local.response_column",
-                    "type": "local",
-                    "fieldName": "response_column"
-                  }
-                ],
-                "_cleaned": [
                   {
                     "fullExpression": "changed | set_item | @local.response_column: this.value",
                     "matchedExpression": "@local.response_column",
@@ -1526,8 +1516,7 @@
           "_dynamicDependencies": {
             "@local.response_column": [
               "value",
-              "action_list.0._raw",
-              "action_list.0._cleaned"
+              "action_list.0._raw"
             ],
             "@local.top_text": [
               "parameter_list.text"
@@ -1930,7 +1919,6 @@
                   "action_id": "set_item",
                   "args": [],
                   "_raw": "changed | set_item | @local.response_other_challenge_column: this.value",
-                  "_cleaned": "changed | set_item | @local.response_other_challenge_column: this.value",
                   "params": {
                     "@local.response_other_challenge_column": "this.value"
                   }
@@ -1958,14 +1946,6 @@
                         "type": "local",
                         "fieldName": "response_other_challenge_column"
                       }
-                    ],
-                    "_cleaned": [
-                      {
-                        "fullExpression": "changed | set_item | @local.response_other_challenge_column: this.value",
-                        "matchedExpression": "@local.response_other_challenge_column",
-                        "type": "local",
-                        "fieldName": "response_other_challenge_column"
-                      }
                     ]
                   }
                 },
@@ -1983,8 +1963,7 @@
               "_dynamicDependencies": {
                 "@local.response_other_challenge_column": [
                   "value",
-                  "action_list.0._raw",
-                  "action_list.0._cleaned"
+                  "action_list.0._raw"
                 ],
                 "@global.tap_and_type": [
                   "parameter_list.placeholder"
@@ -2108,8 +2087,7 @@
           "args": [
             "completed"
           ],
-          "_raw": "completed | emit:completed",
-          "_cleaned": "completed | emit:completed"
+          "_raw": "completed | emit:completed"
         },
         {
           "trigger": "uncompleted",
@@ -2117,8 +2095,7 @@
           "args": [
             "uncompleted"
           ],
-          "_raw": "uncompleted | emit:uncompleted",
-          "_cleaned": "uncompleted | emit:uncompleted"
+          "_raw": "uncompleted | emit:uncompleted"
         }
       ],
       "exclude_from_translation": true,

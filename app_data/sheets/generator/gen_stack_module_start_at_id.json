@@ -30,7 +30,6 @@
               "action_id": "set_item",
               "args": [],
               "_raw": "completed | set_item | locked: false",
-              "_cleaned": "completed | set_item | locked: false",
               "params": {
                 "locked": false
               }
@@ -40,7 +39,6 @@
               "action_id": "set_data",
               "args": [],
               "_raw": "completed | set_data | _list_id: module_tasks, _id: @gen.id, unlocked_activity: TRUE",
-              "_cleaned": "completed | set_data | _list_id: module_tasks, _id: @gen.id, unlocked_activity: TRUE",
               "params": {
                 "_list_id": "module_tasks",
                 "_id": "@gen.id",
@@ -54,8 +52,7 @@
                 "latest_unlocked_activity",
                 "@item.id"
               ],
-              "_raw": "completed | set_field: latest_unlocked_activity: @item.id",
-              "_cleaned": "completed | set_field: latest_unlocked_activity: @item.id"
+              "_raw": "completed | set_field: latest_unlocked_activity: @item.id"
             },
             {
               "trigger": "completed",
@@ -63,8 +60,7 @@
               "args": [
                 "close_top"
               ],
-              "_raw": "completed | nav_stack: close_top",
-              "_cleaned": "completed | nav_stack: close_top"
+              "_raw": "completed | nav_stack: close_top"
             },
             {
               "trigger": "completed",
@@ -73,7 +69,6 @@
                 "unlock_play"
               ],
               "_raw": "completed | pop_up: unlock_play | variant: plh_completion",
-              "_cleaned": "completed | pop_up: unlock_play | variant: plh_completion",
               "params": {
                 "variant": "plh_completion"
               }
@@ -84,8 +79,7 @@
               "args": [
                 "close_top"
               ],
-              "_raw": "uncompleted | nav_stack: close_top",
-              "_cleaned": "uncompleted | nav_stack: close_top"
+              "_raw": "uncompleted | nav_stack: close_top"
             }
           ],
           "exclude_from_translation": true,

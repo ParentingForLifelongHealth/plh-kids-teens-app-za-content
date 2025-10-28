@@ -278,8 +278,7 @@
             "user_gender",
             "@local.user_gender_select"
           ],
-          "_raw": "click | set_field: user_gender: @local.user_gender_select",
-          "_cleaned": "click | set_field: user_gender: @local.user_gender_select"
+          "_raw": "click | set_field: user_gender: @local.user_gender_select"
         },
         {
           "trigger": "click",
@@ -288,8 +287,7 @@
             "user_type",
             "@local.user_type_select"
           ],
-          "_raw": "click | set_field: user_type: @local.user_type_select",
-          "_cleaned": "click | set_field: user_type: @local.user_type_select"
+          "_raw": "click | set_field: user_type: @local.user_type_select"
         },
         {
           "trigger": "click",
@@ -298,8 +296,7 @@
             "countdown_days",
             "0"
           ],
-          "_raw": "click | set_field: countdown_days: 0",
-          "_cleaned": "click | set_field: countdown_days: 0"
+          "_raw": "click | set_field: countdown_days: 0"
         },
         {
           "trigger": "click",
@@ -308,8 +305,7 @@
             "user_data_completed",
             true
           ],
-          "_raw": "click | set_field: user_data_completed: true",
-          "_cleaned": "click | set_field: user_data_completed: true"
+          "_raw": "click | set_field: user_data_completed: true"
         },
         {
           "trigger": "click",
@@ -317,8 +313,7 @@
           "args": [
             "server_sync"
           ],
-          "_raw": "click | emit: server_sync",
-          "_cleaned": "click | emit: server_sync"
+          "_raw": "click | emit: server_sync"
         },
         {
           "trigger": "click",
@@ -326,8 +321,7 @@
           "args": [
             "completed"
           ],
-          "_raw": "click | emit: completed",
-          "_cleaned": "click | emit: completed"
+          "_raw": "click | emit: completed"
         }
       ],
       "condition": "@local.user_type_select == \"facilitator\"",
@@ -365,14 +359,6 @@
                 "type": "local",
                 "fieldName": "user_gender_select"
               }
-            ],
-            "_cleaned": [
-              {
-                "fullExpression": "click | set_field: user_gender: @local.user_gender_select",
-                "matchedExpression": "@local.user_gender_select",
-                "type": "local",
-                "fieldName": "user_gender_select"
-              }
             ]
           },
           "1": {
@@ -387,14 +373,6 @@
               ]
             },
             "_raw": [
-              {
-                "fullExpression": "click | set_field: user_type: @local.user_type_select",
-                "matchedExpression": "@local.user_type_select",
-                "type": "local",
-                "fieldName": "user_type_select"
-              }
-            ],
-            "_cleaned": [
               {
                 "fullExpression": "click | set_field: user_type: @local.user_type_select",
                 "matchedExpression": "@local.user_type_select",
@@ -429,13 +407,11 @@
         ],
         "@local.user_gender_select": [
           "action_list.0.args.1",
-          "action_list.0._raw",
-          "action_list.0._cleaned"
+          "action_list.0._raw"
         ],
         "@local.user_type_select": [
           "action_list.1.args.1",
           "action_list.1._raw",
-          "action_list.1._cleaned",
           "condition"
         ],
         "!@local.completed_enabled": [
@@ -458,8 +434,7 @@
             "user_gender",
             "@local.user_gender_select"
           ],
-          "_raw": "click | set_field: user_gender: @local.user_gender_select",
-          "_cleaned": "click | set_field: user_gender: @local.user_gender_select"
+          "_raw": "click | set_field: user_gender: @local.user_gender_select"
         },
         {
           "trigger": "click",
@@ -468,8 +443,7 @@
             "user_type",
             "@local.user_type_select"
           ],
-          "_raw": "click | set_field: user_type: @local.user_type_select",
-          "_cleaned": "click | set_field: user_type: @local.user_type_select"
+          "_raw": "click | set_field: user_type: @local.user_type_select"
         },
         {
           "trigger": "click",
@@ -478,8 +452,7 @@
             "countdown_days",
             "7"
           ],
-          "_raw": "click | set_field: countdown_days: 7",
-          "_cleaned": "click | set_field: countdown_days: 7"
+          "_raw": "click | set_field: countdown_days: 7"
         },
         {
           "trigger": "click",
@@ -488,8 +461,7 @@
             "user_data_completed",
             true
           ],
-          "_raw": "click | set_field: user_data_completed: true",
-          "_cleaned": "click | set_field: user_data_completed: true"
+          "_raw": "click | set_field: user_data_completed: true"
         },
         {
           "trigger": "click",
@@ -497,8 +469,7 @@
           "args": [
             "server_sync"
           ],
-          "_raw": "click | emit: server_sync",
-          "_cleaned": "click | emit: server_sync"
+          "_raw": "click | emit: server_sync"
         },
         {
           "trigger": "click",
@@ -506,8 +477,7 @@
           "args": [
             "completed"
           ],
-          "_raw": "click | emit: completed",
-          "_cleaned": "click | emit: completed"
+          "_raw": "click | emit: completed"
         }
       ],
       "condition": "@local.user_type_select != \"facilitator\"",
@@ -545,14 +515,6 @@
                 "type": "local",
                 "fieldName": "user_gender_select"
               }
-            ],
-            "_cleaned": [
-              {
-                "fullExpression": "click | set_field: user_gender: @local.user_gender_select",
-                "matchedExpression": "@local.user_gender_select",
-                "type": "local",
-                "fieldName": "user_gender_select"
-              }
             ]
           },
           "1": {
@@ -567,14 +529,6 @@
               ]
             },
             "_raw": [
-              {
-                "fullExpression": "click | set_field: user_type: @local.user_type_select",
-                "matchedExpression": "@local.user_type_select",
-                "type": "local",
-                "fieldName": "user_type_select"
-              }
-            ],
-            "_cleaned": [
               {
                 "fullExpression": "click | set_field: user_type: @local.user_type_select",
                 "matchedExpression": "@local.user_type_select",
@@ -609,13 +563,11 @@
         ],
         "@local.user_gender_select": [
           "action_list.0.args.1",
-          "action_list.0._raw",
-          "action_list.0._cleaned"
+          "action_list.0._raw"
         ],
         "@local.user_type_select": [
           "action_list.1.args.1",
           "action_list.1._raw",
-          "action_list.1._cleaned",
           "condition"
         ],
         "!@local.completed_enabled": [
