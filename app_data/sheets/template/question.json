@@ -11,13 +11,28 @@
     },
     {
       "name": "character_id",
-      "value": "facilitator",
+      "value": "@fields.facilitator_id",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true,
       "type": "set_variable",
-      "_nested_name": "character_id"
+      "_nested_name": "character_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.facilitator_id",
+            "matchedExpression": "@fields.facilitator_id",
+            "type": "fields",
+            "fieldName": "facilitator_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.facilitator_id": [
+          "value"
+        ]
+      }
     },
     {
       "name": "article_id",

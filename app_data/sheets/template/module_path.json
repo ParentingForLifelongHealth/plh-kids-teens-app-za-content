@@ -371,7 +371,7 @@
                     "is_locked": "TRUE",
                     "highlighted": "@local.is_highlighted"
                   },
-                  "condition": "!(@item.id == @local.current_module_id || @item.completed)",
+                  "condition": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
                   "exclude_from_translation": true,
                   "_nested_name": "dg_all_modules.progress_path_1.task_cards.locked_@item.id",
                   "_dynamicFields": {
@@ -433,22 +433,28 @@
                     },
                     "condition": [
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
                         "matchedExpression": "@item.id",
                         "type": "item",
                         "fieldName": "id"
                       },
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
                         "matchedExpression": "@local.current_module_id",
                         "type": "local",
                         "fieldName": "current_module_id"
                       },
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
                         "matchedExpression": "@item.completed",
                         "type": "item",
                         "fieldName": "completed"
+                      },
+                      {
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                        "matchedExpression": "@item.tag_list.includes",
+                        "type": "item",
+                        "fieldName": "tag_list"
                       }
                     ],
                     "_nested_name": [
@@ -480,6 +486,9 @@
                     ],
                     "@item.completed": [
                       "condition"
+                    ],
+                    "@item.tag_list.includes": [
+                      "condition"
                     ]
                   }
                 },
@@ -504,7 +513,7 @@
                     "is_locked": "FALSE",
                     "highlighted": "@local.is_highlighted"
                   },
-                  "condition": "@item.id == @local.current_module_id || @item.completed",
+                  "condition": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
                   "exclude_from_translation": true,
                   "_nested_name": "dg_all_modules.progress_path_1.task_cards.unlocked_@item.id",
                   "_dynamicFields": {
@@ -566,22 +575,28 @@
                     },
                     "condition": [
                       {
-                        "fullExpression": "@item.id == @local.current_module_id || @item.completed",
+                        "fullExpression": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
                         "matchedExpression": "@item.id",
                         "type": "item",
                         "fieldName": "id"
                       },
                       {
-                        "fullExpression": "@item.id == @local.current_module_id || @item.completed",
+                        "fullExpression": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
                         "matchedExpression": "@local.current_module_id",
                         "type": "local",
                         "fieldName": "current_module_id"
                       },
                       {
-                        "fullExpression": "@item.id == @local.current_module_id || @item.completed",
+                        "fullExpression": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
                         "matchedExpression": "@item.completed",
                         "type": "item",
                         "fieldName": "completed"
+                      },
+                      {
+                        "fullExpression": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
+                        "matchedExpression": "@item.tag_list.includes",
+                        "type": "item",
+                        "fieldName": "tag_list"
                       }
                     ],
                     "_nested_name": [
@@ -612,6 +627,9 @@
                       "condition"
                     ],
                     "@item.completed": [
+                      "condition"
+                    ],
+                    "@item.tag_list.includes": [
                       "condition"
                     ]
                   }

@@ -122,6 +122,7 @@
               "_translations": {
                 "value": {}
               },
+              "exclude_from_translation": true,
               "type": "set_variable",
               "_nested_name": "dg_all_modules.loop_modules.index_modulo_3",
               "_dynamicFields": {
@@ -145,6 +146,110 @@
                   "value"
                 ],
                 "@calc(@item._index % 3)": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "name": "debug_1",
+              "value": "@item.tag_list",
+              "_translations": {
+                "value": {}
+              },
+              "condition": false,
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "dg_all_modules.loop_modules.debug_1",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@item.tag_list",
+                    "matchedExpression": "@item.tag_list",
+                    "type": "item",
+                    "fieldName": "tag_list"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.tag_list": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "debug_2",
+              "value": "Tag list: @local.debug_1",
+              "_translations": {
+                "value": {}
+              },
+              "condition": false,
+              "exclude_from_translation": true,
+              "_nested_name": "dg_all_modules.loop_modules.debug_2",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "Tag list: @local.debug_1",
+                    "matchedExpression": "@local.debug_1",
+                    "type": "local",
+                    "fieldName": "debug_1"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.debug_1": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "name": "debug_3",
+              "value": "@item.tag_list.includes(\"teen\")",
+              "_translations": {
+                "value": {}
+              },
+              "condition": false,
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "dg_all_modules.loop_modules.debug_3",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@item.tag_list.includes(\"teen\")",
+                    "matchedExpression": "@item.tag_list.includes",
+                    "type": "item",
+                    "fieldName": "tag_list"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.tag_list.includes": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "debug_4",
+              "value": "Includes teen: @local.debug_3",
+              "_translations": {
+                "value": {}
+              },
+              "condition": false,
+              "exclude_from_translation": true,
+              "_nested_name": "dg_all_modules.loop_modules.debug_4",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "Includes teen: @local.debug_3",
+                    "matchedExpression": "@local.debug_3",
+                    "type": "local",
+                    "fieldName": "debug_3"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.debug_3": [
                   "value"
                 ]
               }
@@ -228,7 +333,7 @@
                 },
                 {
                   "name": "is_locked",
-                  "value": "!(@item.id == @local.current_module_id || @item.completed)",
+                  "value": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
                   "_translations": {
                     "value": {}
                   },
@@ -238,22 +343,28 @@
                   "_dynamicFields": {
                     "value": [
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
                         "matchedExpression": "@item.id",
                         "type": "item",
                         "fieldName": "id"
                       },
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
                         "matchedExpression": "@local.current_module_id",
                         "type": "local",
                         "fieldName": "current_module_id"
                       },
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed)",
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
                         "matchedExpression": "@item.completed",
                         "type": "item",
                         "fieldName": "completed"
+                      },
+                      {
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                        "matchedExpression": "@item.tag_list.includes",
+                        "type": "item",
+                        "fieldName": "tag_list"
                       }
                     ],
                     "_nested_name": [
@@ -273,6 +384,9 @@
                       "value"
                     ],
                     "@item.completed": [
+                      "value"
+                    ],
+                    "@item.tag_list.includes": [
                       "value"
                     ],
                     "@item.id.is_locked": [
