@@ -24,7 +24,6 @@
               "action_id": "set_data",
               "args": [],
               "_raw": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false",
-              "_cleaned": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false",
               "params": {
                 "_list_id": "activity_tasks",
                 "_id": "@item.id",
@@ -38,8 +37,7 @@
                 "latest_unlocked_activity",
                 "@item.id"
               ],
-              "_raw": "completed | set_field: latest_unlocked_activity: @item.id",
-              "_cleaned": "completed | set_field: latest_unlocked_activity: @item.id"
+              "_raw": "completed | set_field: latest_unlocked_activity: @item.id"
             },
             {
               "trigger": "completed",
@@ -47,8 +45,7 @@
               "args": [
                 "completed"
               ],
-              "_raw": "completed | emit: completed",
-              "_cleaned": "completed | emit: completed"
+              "_raw": "completed | emit: completed"
             },
             {
               "trigger": "uncompleted",
@@ -56,8 +53,7 @@
               "args": [
                 "uncompleted"
               ],
-              "_raw": "uncompleted | emit: uncompleted",
-              "_cleaned": "uncompleted | emit: uncompleted"
+              "_raw": "uncompleted | emit: uncompleted"
             }
           ],
           "exclude_from_translation": true,
@@ -67,14 +63,6 @@
             "action_list": {
               "0": {
                 "_raw": [
-                  {
-                    "fullExpression": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false",
-                    "matchedExpression": "@item.id",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
-                ],
-                "_cleaned": [
                   {
                     "fullExpression": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false",
                     "matchedExpression": "@item.id",
@@ -111,14 +99,6 @@
                     "type": "item",
                     "fieldName": "id"
                   }
-                ],
-                "_cleaned": [
-                  {
-                    "fullExpression": "completed | set_field: latest_unlocked_activity: @item.id",
-                    "matchedExpression": "@item.id",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
                 ]
               }
             }
@@ -126,11 +106,9 @@
           "_dynamicDependencies": {
             "@item.id": [
               "action_list.0._raw",
-              "action_list.0._cleaned",
               "action_list.0.params._id",
               "action_list.1.args.1",
-              "action_list.1._raw",
-              "action_list.1._cleaned"
+              "action_list.1._raw"
             ]
           }
         }

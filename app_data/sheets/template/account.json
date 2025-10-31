@@ -133,8 +133,7 @@
               "args": [
                 "force_reprocess"
               ],
-              "_raw": "click | emit: force_reprocess",
-              "_cleaned": "click | emit: force_reprocess"
+              "_raw": "click | emit: force_reprocess"
             },
             {
               "trigger": "click",
@@ -143,8 +142,7 @@
                 "just_logged_in",
                 true
               ],
-              "_raw": "click | set_local: just_logged_in: true",
-              "_cleaned": "click | set_local: just_logged_in: true"
+              "_raw": "click | set_local: just_logged_in: true"
             }
           ],
           "condition": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
@@ -206,8 +204,7 @@
               "args": [
                 "force_reprocess"
               ],
-              "_raw": "click | emit: force_reprocess",
-              "_cleaned": "click | emit: force_reprocess"
+              "_raw": "click | emit: force_reprocess"
             },
             {
               "trigger": "click",
@@ -216,8 +213,7 @@
                 "just_logged_in",
                 true
               ],
-              "_raw": "click | set_local: just_logged_in: true",
-              "_cleaned": "click | set_local: just_logged_in: true"
+              "_raw": "click | set_local: just_logged_in: true"
             }
           ],
           "_nested_name": "login.button_google_sign_in",
@@ -413,8 +409,7 @@
                   "args": [
                     "server_sync"
                   ],
-                  "_raw": "click | emit: server_sync",
-                  "_cleaned": "click | emit: server_sync"
+                  "_raw": "click | emit: server_sync"
                 },
                 {
                   "trigger": "click",
@@ -422,8 +417,7 @@
                   "args": [
                     "sign_out"
                   ],
-                  "_raw": "click | auth: sign_out",
-                  "_cleaned": "click | auth: sign_out"
+                  "_raw": "click | auth: sign_out"
                 },
                 {
                   "trigger": "click",
@@ -431,8 +425,7 @@
                   "args": [
                     "force_reprocess"
                   ],
-                  "_raw": "click | emit: force_reprocess",
-                  "_cleaned": "click | emit: force_reprocess"
+                  "_raw": "click | emit: force_reprocess"
                 }
               ],
               "condition": "!@global.login_is_mandatory",
@@ -486,8 +479,7 @@
                   "args": [
                     "server_sync"
                   ],
-                  "_raw": "click | emit: server_sync",
-                  "_cleaned": "click | emit: server_sync"
+                  "_raw": "click | emit: server_sync"
                 },
                 {
                   "trigger": "click",
@@ -495,22 +487,19 @@
                   "args": [
                     "sign_out"
                   ],
-                  "_raw": "click | auth: sign_out",
-                  "_cleaned": "click | auth: sign_out"
+                  "_raw": "click | auth: sign_out"
                 },
                 {
                   "trigger": "click",
                   "action_id": "reset_data",
                   "args": [],
-                  "_raw": "click | reset_data",
-                  "_cleaned": "click | reset_data"
+                  "_raw": "click | reset_data"
                 },
                 {
                   "trigger": "click",
                   "action_id": "reset_app",
                   "args": [],
-                  "_raw": "click | reset_app",
-                  "_cleaned": "click | reset_app"
+                  "_raw": "click | reset_app"
                 }
               ],
               "condition": "@global.login_is_mandatory",
@@ -564,8 +553,7 @@
                   "args": [
                     "delete_account_warning"
                   ],
-                  "_raw": "click | pop_up: delete_account_warning",
-                  "_cleaned": "click | pop_up: delete_account_warning"
+                  "_raw": "click | pop_up: delete_account_warning"
                 }
               ],
               "exclude_from_translation": true,
@@ -649,8 +637,7 @@
                     "import",
                     "@item.id"
                   ],
-                  "_raw": "click | user: import: @item.id",
-                  "_cleaned": "click | user: import: @item.id"
+                  "_raw": "click | user: import: @item.id"
                 },
                 {
                   "trigger": "click",
@@ -658,8 +645,7 @@
                   "args": [
                     "force_reprocess"
                   ],
-                  "_raw": "click | emit: force_reprocess",
-                  "_cleaned": "click | emit: force_reprocess"
+                  "_raw": "click | emit: force_reprocess"
                 }
               ],
               "_nested_name": "logged_in.find_last_synced_id.button_restore",
@@ -691,14 +677,6 @@
                         "type": "item",
                         "fieldName": "id"
                       }
-                    ],
-                    "_cleaned": [
-                      {
-                        "fullExpression": "click | user: import: @item.id",
-                        "matchedExpression": "@item.id",
-                        "type": "item",
-                        "fieldName": "id"
-                      }
                     ]
                   }
                 }
@@ -709,8 +687,7 @@
                 ],
                 "@item.id": [
                   "action_list.0.args.1",
-                  "action_list.0._raw",
-                  "action_list.0._cleaned"
+                  "action_list.0._raw"
                 ]
               }
             }

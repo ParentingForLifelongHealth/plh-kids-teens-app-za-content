@@ -20,8 +20,7 @@
           "args": [
             "force_reload"
           ],
-          "_raw": "nav_resume | emit: force_reload",
-          "_cleaned": "nav_resume | emit: force_reload"
+          "_raw": "nav_resume | emit: force_reload"
         }
       ],
       "condition": false,
@@ -223,8 +222,7 @@
             "hp_review_count",
             "@items.length"
           ],
-          "_raw": "data_changed | set_local : hp_review_count : @items.length",
-          "_cleaned": "data_changed | set_local : hp_review_count : @items.length"
+          "_raw": "data_changed | set_local : hp_review_count : @items.length"
         }
       ],
       "parameter_list": {
@@ -763,7 +761,6 @@
                         "open"
                       ],
                       "_raw": "click | nav_stack: open | template: @local.hp_review",
-                      "_cleaned": "click | nav_stack: open | template: @local.hp_review",
                       "params": {
                         "template": "@local.hp_review"
                       }
@@ -785,14 +782,6 @@
                     "action_list": {
                       "0": {
                         "_raw": [
-                          {
-                            "fullExpression": "click | nav_stack: open | template: @local.hp_review",
-                            "matchedExpression": "@local.hp_review",
-                            "type": "local",
-                            "fieldName": "hp_review"
-                          }
-                        ],
-                        "_cleaned": [
                           {
                             "fullExpression": "click | nav_stack: open | template: @local.hp_review",
                             "matchedExpression": "@local.hp_review",
@@ -882,7 +871,6 @@
                   "_dynamicDependencies": {
                     "@local.hp_review": [
                       "action_list.0._raw",
-                      "action_list.0._cleaned",
                       "action_list.0.params.template"
                     ],
                     "@global.check_in": [
@@ -1086,7 +1074,6 @@
                     "open"
                   ],
                   "_raw": "click | nav_stack: open | template: @local.module_start_at_beginning, header: false",
-                  "_cleaned": "click | nav_stack: open | template: @local.module_start_at_beginning, header: false",
                   "params": {
                     "template": "@local.module_start_at_beginning",
                     "header": false
@@ -1108,14 +1095,6 @@
                 "action_list": {
                   "0": {
                     "_raw": [
-                      {
-                        "fullExpression": "click | nav_stack: open | template: @local.module_start_at_beginning, header: false",
-                        "matchedExpression": "@local.module_start_at_beginning",
-                        "type": "local",
-                        "fieldName": "module_start_at_beginning"
-                      }
-                    ],
-                    "_cleaned": [
                       {
                         "fullExpression": "click | nav_stack: open | template: @local.module_start_at_beginning, header: false",
                         "matchedExpression": "@local.module_start_at_beginning",
@@ -1150,7 +1129,6 @@
                 ],
                 "@local.module_start_at_beginning": [
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.template"
                 ],
                 "@item.completed": [

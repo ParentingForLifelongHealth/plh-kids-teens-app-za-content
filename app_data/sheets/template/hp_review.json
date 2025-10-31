@@ -414,7 +414,6 @@
                   "action_id": "set_item",
                   "args": [],
                   "_raw": "changed | set_item | done_response: this.value",
-                  "_cleaned": "changed | set_item | done_response: this.value",
                   "params": {
                     "done_response": "this.value"
                   }
@@ -426,8 +425,7 @@
                     "@local.radio_group_done_tracker",
                     "this.value"
                   ],
-                  "_raw": "changed | set_field: @local.radio_group_done_tracker: this.value",
-                  "_cleaned": "changed | set_field: @local.radio_group_done_tracker: this.value"
+                  "_raw": "changed | set_field: @local.radio_group_done_tracker: this.value"
                 }
               ],
               "parameter_list": {
@@ -466,14 +464,6 @@
                         "type": "local",
                         "fieldName": "radio_group_done_tracker"
                       }
-                    ],
-                    "_cleaned": [
-                      {
-                        "fullExpression": "changed | set_field: @local.radio_group_done_tracker: this.value",
-                        "matchedExpression": "@local.radio_group_done_tracker",
-                        "type": "local",
-                        "fieldName": "radio_group_done_tracker"
-                      }
                     ]
                   }
                 },
@@ -494,8 +484,7 @@
                 ],
                 "@local.radio_group_done_tracker": [
                   "action_list.1.args.0",
-                  "action_list.1._raw",
-                  "action_list.1._cleaned"
+                  "action_list.1._raw"
                 ],
                 "@local.answer_list_done": [
                   "parameter_list.answer_list"
@@ -696,7 +685,6 @@
                       "action_id": "set_item",
                       "args": [],
                       "_raw": "changed | set_item | mood_response: this.value",
-                      "_cleaned": "changed | set_item | mood_response: this.value",
                       "params": {
                         "mood_response": "this.value"
                       }
@@ -708,8 +696,7 @@
                         "@local.radio_group_mood_tracker",
                         "this.value"
                       ],
-                      "_raw": "changed | set_field: @local.radio_group_mood_tracker: this.value",
-                      "_cleaned": "changed | set_field: @local.radio_group_mood_tracker: this.value"
+                      "_raw": "changed | set_field: @local.radio_group_mood_tracker: this.value"
                     }
                   ],
                   "exclude_from_translation": true,
@@ -749,14 +736,6 @@
                             "type": "local",
                             "fieldName": "radio_group_mood_tracker"
                           }
-                        ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "changed | set_field: @local.radio_group_mood_tracker: this.value",
-                            "matchedExpression": "@local.radio_group_mood_tracker",
-                            "type": "local",
-                            "fieldName": "radio_group_mood_tracker"
-                          }
                         ]
                       }
                     },
@@ -777,8 +756,7 @@
                     ],
                     "@local.radio_group_mood_tracker": [
                       "action_list.1.args.0",
-                      "action_list.1._raw",
-                      "action_list.1._cleaned"
+                      "action_list.1._raw"
                     ],
                     "@local.answer_list_mood": [
                       "parameter_list.answer_list"
@@ -961,8 +939,7 @@
                   "args": [
                     "completed"
                   ],
-                  "_raw": "completed | emit:completed",
-                  "_cleaned": "completed | emit:completed"
+                  "_raw": "completed | emit:completed"
                 },
                 {
                   "trigger": "uncompleted",
@@ -970,8 +947,7 @@
                   "args": [
                     "uncompleted"
                   ],
-                  "_raw": "uncompleted | emit:uncompleted",
-                  "_cleaned": "uncompleted | emit:uncompleted"
+                  "_raw": "uncompleted | emit:uncompleted"
                 }
               ],
               "condition": "@item.done_response == \"yes\" && @item.mood_response == \"happy\"",
@@ -1048,8 +1024,7 @@
                     "show_first",
                     false
                   ],
-                  "_raw": "completed | set_local: show_first: false",
-                  "_cleaned": "completed | set_local: show_first: false"
+                  "_raw": "completed | set_local: show_first: false"
                 },
                 {
                   "trigger": "uncompleted",
@@ -1057,8 +1032,7 @@
                   "args": [
                     "uncompleted"
                   ],
-                  "_raw": "uncompleted | emit:uncompleted",
-                  "_cleaned": "uncompleted | emit:uncompleted"
+                  "_raw": "uncompleted | emit:uncompleted"
                 }
               ],
               "condition": "!(@item.done_response == \"yes\" && @item.mood_response == \"happy\" )",
@@ -1134,8 +1108,7 @@
                   "args": [
                     "completed"
                   ],
-                  "_raw": "completed | emit:completed",
-                  "_cleaned": "completed | emit:completed"
+                  "_raw": "completed | emit:completed"
                 },
                 {
                   "trigger": "uncompleted",
@@ -1144,8 +1117,7 @@
                     "show_first",
                     true
                   ],
-                  "_raw": "uncompleted | set_local: show_first: true",
-                  "_cleaned": "uncompleted | set_local: show_first: true"
+                  "_raw": "uncompleted | set_local: show_first: true"
                 }
               ],
               "rows": [

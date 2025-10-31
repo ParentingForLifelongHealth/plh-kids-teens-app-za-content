@@ -199,8 +199,7 @@
               "args": [
                 "uncompleted"
               ],
-              "_raw": "click | emit: uncompleted",
-              "_cleaned": "click | emit: uncompleted"
+              "_raw": "click | emit: uncompleted"
             }
           ],
           "parameter_list": {
@@ -367,7 +366,6 @@
                       "action_id": "set_item",
                       "args": [],
                       "_raw": "completed | set_item | completed: true",
-                      "_cleaned": "completed | set_item | completed: true",
                       "params": {
                         "completed": true
                       }
@@ -377,7 +375,6 @@
                       "action_id": "set_item",
                       "args": [],
                       "_raw": "completed | set_item | last_completed_ts: @calc(now())",
-                      "_cleaned": "completed | set_item | last_completed_ts: @calc(now())",
                       "params": {
                         "last_completed_ts": "@calc(now())"
                       }
@@ -389,7 +386,6 @@
                         "evaluate"
                       ],
                       "_raw": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
-                      "_cleaned": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
                       "params": {
                         "data_list_name": "module_tasks",
                         "row_id": "@local.module_id"
@@ -402,8 +398,7 @@
                         "active_index",
                         "@item._index  + 1"
                       ],
-                      "_raw": "completed | set_local: active_index: @item._index  + 1",
-                      "_cleaned": "completed | set_local: active_index: @item._index  + 1"
+                      "_raw": "completed | set_local: active_index: @item._index  + 1"
                     },
                     {
                       "trigger": "uncompleted",
@@ -411,8 +406,7 @@
                       "args": [
                         "uncompleted"
                       ],
-                      "_raw": "uncompleted | emit: uncompleted",
-                      "_cleaned": "uncompleted | emit: uncompleted"
+                      "_raw": "uncompleted | emit: uncompleted"
                     }
                   ],
                   "exclude_from_translation": true,
@@ -461,14 +455,6 @@
                             "fieldName": "now()"
                           }
                         ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "completed | set_item | last_completed_ts: @calc(now())",
-                            "matchedExpression": "@calc(now())",
-                            "type": "calc",
-                            "fieldName": "now()"
-                          }
-                        ],
                         "params": {
                           "last_completed_ts": [
                             {
@@ -482,14 +468,6 @@
                       },
                       "2": {
                         "_raw": [
-                          {
-                            "fullExpression": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
-                            "matchedExpression": "@local.module_id",
-                            "type": "local",
-                            "fieldName": "module_id"
-                          }
-                        ],
-                        "_cleaned": [
                           {
                             "fullExpression": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
                             "matchedExpression": "@local.module_id",
@@ -526,14 +504,6 @@
                             "type": "item",
                             "fieldName": "_index"
                           }
-                        ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "completed | set_local: active_index: @item._index  + 1",
-                            "matchedExpression": "@item._index",
-                            "type": "item",
-                            "fieldName": "_index"
-                          }
                         ]
                       }
                     },
@@ -552,18 +522,15 @@
                     ],
                     "@calc(now())": [
                       "action_list.1._raw",
-                      "action_list.1._cleaned",
                       "action_list.1.params.last_completed_ts"
                     ],
                     "@local.module_id": [
                       "action_list.2._raw",
-                      "action_list.2._cleaned",
                       "action_list.2.params.row_id"
                     ],
                     "@item._index": [
                       "action_list.3.args.1",
-                      "action_list.3._raw",
-                      "action_list.3._cleaned"
+                      "action_list.3._raw"
                     ],
                     "@item._first": [
                       "condition"
@@ -580,7 +547,6 @@
                       "action_id": "set_item",
                       "args": [],
                       "_raw": "completed | set_item | completed: true",
-                      "_cleaned": "completed | set_item | completed: true",
                       "params": {
                         "completed": true
                       }
@@ -590,7 +556,6 @@
                       "action_id": "set_item",
                       "args": [],
                       "_raw": "completed | set_item | last_completed_ts: @calc(now())",
-                      "_cleaned": "completed | set_item | last_completed_ts: @calc(now())",
                       "params": {
                         "last_completed_ts": "@calc(now())"
                       }
@@ -602,7 +567,6 @@
                         "evaluate"
                       ],
                       "_raw": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
-                      "_cleaned": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
                       "params": {
                         "data_list_name": "module_tasks",
                         "row_id": "@local.module_id"
@@ -615,8 +579,7 @@
                         "active_index",
                         "@item._index  + 1"
                       ],
-                      "_raw": "completed | set_local: active_index: @item._index  + 1",
-                      "_cleaned": "completed | set_local: active_index: @item._index  + 1"
+                      "_raw": "completed | set_local: active_index: @item._index  + 1"
                     },
                     {
                       "trigger": "uncompleted",
@@ -625,8 +588,7 @@
                         "active_index",
                         "@item._index  - 1"
                       ],
-                      "_raw": "uncompleted | set_local: active_index: @item._index  - 1",
-                      "_cleaned": "uncompleted | set_local: active_index: @item._index  - 1"
+                      "_raw": "uncompleted | set_local: active_index: @item._index  - 1"
                     }
                   ],
                   "exclude_from_translation": true,
@@ -652,14 +614,6 @@
                             "fieldName": "now()"
                           }
                         ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "completed | set_item | last_completed_ts: @calc(now())",
-                            "matchedExpression": "@calc(now())",
-                            "type": "calc",
-                            "fieldName": "now()"
-                          }
-                        ],
                         "params": {
                           "last_completed_ts": [
                             {
@@ -673,14 +627,6 @@
                       },
                       "2": {
                         "_raw": [
-                          {
-                            "fullExpression": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
-                            "matchedExpression": "@local.module_id",
-                            "type": "local",
-                            "fieldName": "module_id"
-                          }
-                        ],
-                        "_cleaned": [
                           {
                             "fullExpression": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
                             "matchedExpression": "@local.module_id",
@@ -717,14 +663,6 @@
                             "type": "item",
                             "fieldName": "_index"
                           }
-                        ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "completed | set_local: active_index: @item._index  + 1",
-                            "matchedExpression": "@item._index",
-                            "type": "item",
-                            "fieldName": "_index"
-                          }
                         ]
                       },
                       "4": {
@@ -739,14 +677,6 @@
                           ]
                         },
                         "_raw": [
-                          {
-                            "fullExpression": "uncompleted | set_local: active_index: @item._index  - 1",
-                            "matchedExpression": "@item._index",
-                            "type": "item",
-                            "fieldName": "_index"
-                          }
-                        ],
-                        "_cleaned": [
                           {
                             "fullExpression": "uncompleted | set_local: active_index: @item._index  - 1",
                             "matchedExpression": "@item._index",
@@ -777,21 +707,17 @@
                     ],
                     "@calc(now())": [
                       "action_list.1._raw",
-                      "action_list.1._cleaned",
                       "action_list.1.params.last_completed_ts"
                     ],
                     "@local.module_id": [
                       "action_list.2._raw",
-                      "action_list.2._cleaned",
                       "action_list.2.params.row_id"
                     ],
                     "@item._index": [
                       "action_list.3.args.1",
                       "action_list.3._raw",
-                      "action_list.3._cleaned",
                       "action_list.4.args.1",
-                      "action_list.4._raw",
-                      "action_list.4._cleaned"
+                      "action_list.4._raw"
                     ],
                     "!@item._last": [
                       "condition"
@@ -811,7 +737,6 @@
                       "action_id": "set_item",
                       "args": [],
                       "_raw": "completed | set_item | completed: true",
-                      "_cleaned": "completed | set_item | completed: true",
                       "params": {
                         "completed": true
                       }
@@ -821,7 +746,6 @@
                       "action_id": "set_item",
                       "args": [],
                       "_raw": "completed | set_item | last_completed_ts: @calc(now())",
-                      "_cleaned": "completed | set_item | last_completed_ts: @calc(now())",
                       "params": {
                         "last_completed_ts": "@calc(now())"
                       }
@@ -833,7 +757,6 @@
                         "evaluate"
                       ],
                       "_raw": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
-                      "_cleaned": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
                       "params": {
                         "data_list_name": "module_tasks",
                         "row_id": "@local.module_id"
@@ -844,7 +767,6 @@
                       "action_id": "set_data",
                       "args": [],
                       "_raw": "completed | set_data | _list_id: module_tasks, _id: @local.module_id, completed_ts: @calc(now())",
-                      "_cleaned": "completed | set_data | _list_id: module_tasks, _id: @local.module_id, completed_ts: @calc(now())",
                       "params": {
                         "_list_id": "module_tasks",
                         "_id": "@local.module_id",
@@ -857,8 +779,7 @@
                       "args": [
                         "completed"
                       ],
-                      "_raw": "completed | emit: completed",
-                      "_cleaned": "completed | emit: completed"
+                      "_raw": "completed | emit: completed"
                     },
                     {
                       "trigger": "completed",
@@ -866,8 +787,7 @@
                       "args": [
                         "server_sync"
                       ],
-                      "_raw": "completed | emit: server_sync",
-                      "_cleaned": "completed | emit: server_sync"
+                      "_raw": "completed | emit: server_sync"
                     },
                     {
                       "trigger": "uncompleted",
@@ -876,8 +796,7 @@
                         "active_index",
                         "@item._index  - 1"
                       ],
-                      "_raw": "uncompleted | set_local: active_index: @item._index  - 1",
-                      "_cleaned": "uncompleted | set_local: active_index: @item._index  - 1"
+                      "_raw": "uncompleted | set_local: active_index: @item._index  - 1"
                     }
                   ],
                   "exclude_from_translation": true,
@@ -945,14 +864,6 @@
                             "fieldName": "now()"
                           }
                         ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "completed | set_item | last_completed_ts: @calc(now())",
-                            "matchedExpression": "@calc(now())",
-                            "type": "calc",
-                            "fieldName": "now()"
-                          }
-                        ],
                         "params": {
                           "last_completed_ts": [
                             {
@@ -973,14 +884,6 @@
                             "fieldName": "module_id"
                           }
                         ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "completed | task: evaluate | data_list_name: module_tasks, row_id: @local.module_id",
-                            "matchedExpression": "@local.module_id",
-                            "type": "local",
-                            "fieldName": "module_id"
-                          }
-                        ],
                         "params": {
                           "row_id": [
                             {
@@ -994,20 +897,6 @@
                       },
                       "3": {
                         "_raw": [
-                          {
-                            "fullExpression": "completed | set_data | _list_id: module_tasks, _id: @local.module_id, completed_ts: @calc(now())",
-                            "matchedExpression": "@local.module_id",
-                            "type": "local",
-                            "fieldName": "module_id"
-                          },
-                          {
-                            "fullExpression": "completed | set_data | _list_id: module_tasks, _id: @local.module_id, completed_ts: @calc(now())",
-                            "matchedExpression": "@calc(now())",
-                            "type": "calc",
-                            "fieldName": "now()"
-                          }
-                        ],
-                        "_cleaned": [
                           {
                             "fullExpression": "completed | set_data | _list_id: module_tasks, _id: @local.module_id, completed_ts: @calc(now())",
                             "matchedExpression": "@local.module_id",
@@ -1058,14 +947,6 @@
                             "type": "item",
                             "fieldName": "_index"
                           }
-                        ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "uncompleted | set_local: active_index: @item._index  - 1",
-                            "matchedExpression": "@item._index",
-                            "type": "item",
-                            "fieldName": "_index"
-                          }
                         ]
                       }
                     },
@@ -1084,24 +965,19 @@
                     ],
                     "@calc(now())": [
                       "action_list.1._raw",
-                      "action_list.1._cleaned",
                       "action_list.1.params.last_completed_ts",
                       "action_list.3._raw",
-                      "action_list.3._cleaned",
                       "action_list.3.params.completed_ts"
                     ],
                     "@local.module_id": [
                       "action_list.2._raw",
-                      "action_list.2._cleaned",
                       "action_list.2.params.row_id",
                       "action_list.3._raw",
-                      "action_list.3._cleaned",
                       "action_list.3.params._id"
                     ],
                     "@item._index": [
                       "action_list.6.args.1",
-                      "action_list.6._raw",
-                      "action_list.6._cleaned"
+                      "action_list.6._raw"
                     ],
                     "@item._last": [
                       "condition"

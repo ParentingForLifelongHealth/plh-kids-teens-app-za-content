@@ -178,7 +178,6 @@
                   "action_id": "set_item",
                   "args": [],
                   "_raw": "changed | set_item | favourite: !@item.favourite",
-                  "_cleaned": "changed | set_item | favourite: !@item.favourite",
                   "params": {
                     "favourite": "!@item.favourite"
                   }
@@ -218,14 +217,6 @@
                         "fieldName": "favourite"
                       }
                     ],
-                    "_cleaned": [
-                      {
-                        "fullExpression": "changed | set_item | favourite: !@item.favourite",
-                        "matchedExpression": "!@item.favourite",
-                        "type": "item",
-                        "fieldName": "favourite"
-                      }
-                    ],
                     "params": {
                       "favourite": [
                         {
@@ -257,7 +248,6 @@
                 ],
                 "!@item.favourite": [
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.favourite"
                 ]
               }
@@ -312,8 +302,7 @@
               "args": [
                 "close_top"
               ],
-              "_raw": "click | nav_stack: close_top",
-              "_cleaned": "click | nav_stack: close_top"
+              "_raw": "click | nav_stack: close_top"
             }
           ],
           "parameter_list": {
