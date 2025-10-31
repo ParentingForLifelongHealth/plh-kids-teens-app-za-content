@@ -73,8 +73,7 @@
             "import",
             "@local.user_id_input"
           ],
-          "_raw": "click | user: import: @local.user_id_input",
-          "_cleaned": "click | user: import: @local.user_id_input"
+          "_raw": "click | user: import: @local.user_id_input"
         },
         {
           "trigger": "click",
@@ -82,8 +81,7 @@
           "args": [
             "force_reprocess"
           ],
-          "_raw": "click | emit: force_reprocess",
-          "_cleaned": "click | emit: force_reprocess"
+          "_raw": "click | emit: force_reprocess"
         }
       ],
       "exclude_from_translation": true,
@@ -108,14 +106,6 @@
                 "type": "local",
                 "fieldName": "user_id_input"
               }
-            ],
-            "_cleaned": [
-              {
-                "fullExpression": "click | user: import: @local.user_id_input",
-                "matchedExpression": "@local.user_id_input",
-                "type": "local",
-                "fieldName": "user_id_input"
-              }
             ]
           }
         }
@@ -123,8 +113,7 @@
       "_dynamicDependencies": {
         "@local.user_id_input": [
           "action_list.0.args.1",
-          "action_list.0._raw",
-          "action_list.0._cleaned"
+          "action_list.0._raw"
         ]
       }
     }

@@ -69,8 +69,7 @@
                 "current_start_article_id",
                 "@item.id"
               ],
-              "_raw": "click | set_field: current_start_article_id: @item.id",
-              "_cleaned": "click | set_field: current_start_article_id: @item.id"
+              "_raw": "click | set_field: current_start_article_id: @item.id"
             },
             {
               "trigger": "click",
@@ -79,7 +78,6 @@
                 "open"
               ],
               "_raw": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
-              "_cleaned": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
               "params": {
                 "template": "@local.module_start_at_id",
                 "header": false
@@ -90,7 +88,6 @@
               "action_id": "set_data",
               "args": [],
               "_raw": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
-              "_cleaned": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
               "params": {
                 "_list_id": "module_tasks",
                 "_id": "@local.module_id",
@@ -129,26 +126,10 @@
                     "type": "item",
                     "fieldName": "id"
                   }
-                ],
-                "_cleaned": [
-                  {
-                    "fullExpression": "click | set_field: current_start_article_id: @item.id",
-                    "matchedExpression": "@item.id",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
                 ]
               },
               "1": {
                 "_raw": [
-                  {
-                    "fullExpression": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
-                    "matchedExpression": "@local.module_start_at_id",
-                    "type": "local",
-                    "fieldName": "module_start_at_id"
-                  }
-                ],
-                "_cleaned": [
                   {
                     "fullExpression": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
                     "matchedExpression": "@local.module_start_at_id",
@@ -169,20 +150,6 @@
               },
               "2": {
                 "_raw": [
-                  {
-                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
-                    "matchedExpression": "@local.module_id",
-                    "type": "local",
-                    "fieldName": "module_id"
-                  },
-                  {
-                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
-                    "matchedExpression": "@calc(now())",
-                    "type": "calc",
-                    "fieldName": "now()"
-                  }
-                ],
-                "_cleaned": [
                   {
                     "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now())",
                     "matchedExpression": "@local.module_id",
@@ -231,22 +198,18 @@
             ],
             "@item.id": [
               "action_list.0.args.1",
-              "action_list.0._raw",
-              "action_list.0._cleaned"
+              "action_list.0._raw"
             ],
             "@local.module_start_at_id": [
               "action_list.1._raw",
-              "action_list.1._cleaned",
               "action_list.1.params.template"
             ],
             "@local.module_id": [
               "action_list.2._raw",
-              "action_list.2._cleaned",
               "action_list.2.params._id"
             ],
             "@calc(now())": [
               "action_list.2._raw",
-              "action_list.2._cleaned",
               "action_list.2.params.started_ts"
             ],
             "@item.row_index": [
@@ -269,8 +232,7 @@
                 "current_start_article_id",
                 "@item.id"
               ],
-              "_raw": "click | set_field: current_start_article_id: @item.id",
-              "_cleaned": "click | set_field: current_start_article_id: @item.id"
+              "_raw": "click | set_field: current_start_article_id: @item.id"
             },
             {
               "trigger": "click",
@@ -279,7 +241,6 @@
                 "open"
               ],
               "_raw": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
-              "_cleaned": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
               "params": {
                 "template": "@local.module_start_at_id",
                 "header": false
@@ -317,26 +278,10 @@
                     "type": "item",
                     "fieldName": "id"
                   }
-                ],
-                "_cleaned": [
-                  {
-                    "fullExpression": "click | set_field: current_start_article_id: @item.id",
-                    "matchedExpression": "@item.id",
-                    "type": "item",
-                    "fieldName": "id"
-                  }
                 ]
               },
               "1": {
                 "_raw": [
-                  {
-                    "fullExpression": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
-                    "matchedExpression": "@local.module_start_at_id",
-                    "type": "local",
-                    "fieldName": "module_start_at_id"
-                  }
-                ],
-                "_cleaned": [
                   {
                     "fullExpression": "click | nav_stack: open | template: @local.module_start_at_id, header: false",
                     "matchedExpression": "@local.module_start_at_id",
@@ -371,12 +316,10 @@
             ],
             "@item.id": [
               "action_list.0.args.1",
-              "action_list.0._raw",
-              "action_list.0._cleaned"
+              "action_list.0._raw"
             ],
             "@local.module_start_at_id": [
               "action_list.1._raw",
-              "action_list.1._cleaned",
               "action_list.1.params.template"
             ],
             "@item.row_index": [

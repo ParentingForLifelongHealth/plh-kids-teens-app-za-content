@@ -34,8 +34,7 @@
             "page_count",
             "@items.length"
           ],
-          "_raw": "data_changed | set_local: page_count: @items.length",
-          "_cleaned": "data_changed | set_local: page_count: @items.length"
+          "_raw": "data_changed | set_local: page_count: @items.length"
         }
       ],
       "exclude_from_translation": true,
@@ -77,8 +76,7 @@
             "completed_count",
             "@items.length"
           ],
-          "_raw": "data_changed | set_local: completed_count:  @items.length",
-          "_cleaned": "data_changed | set_local: completed_count:  @items.length"
+          "_raw": "data_changed | set_local: completed_count:  @items.length"
         }
       ],
       "parameter_list": {
@@ -191,8 +189,7 @@
                 "onboarding_splash_completed",
                 true
               ],
-              "_raw": "click | set_field: onboarding_splash_completed: true",
-              "_cleaned": "click | set_field: onboarding_splash_completed: true"
+              "_raw": "click | set_field: onboarding_splash_completed: true"
             },
             {
               "trigger": "click",
@@ -200,8 +197,7 @@
               "args": [
                 "completed"
               ],
-              "_raw": "click | emit: completed",
-              "_cleaned": "click | emit: completed"
+              "_raw": "click | emit: completed"
             }
           ],
           "parameter_list": {
@@ -287,7 +283,6 @@
                       "action_id": "set_data",
                       "args": [],
                       "_raw": "completed | set_data |\n_list_id: onboarding_splash_slides,\n_id: @item.id,\ncompleted: true",
-                      "_cleaned": "completed | set_data |\n_list_id: onboarding_splash_slides,\n_id: @item.id,\ncompleted: true",
                       "params": {
                         "_list_id": "onboarding_splash_slides",
                         "_id": "@item.id",
@@ -299,7 +294,6 @@
                       "action_id": "set_data",
                       "args": [],
                       "_raw": "uncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false",
-                      "_cleaned": "uncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false",
                       "params": {
                         "_list_id": "onboarding_splash_slides",
                         "_id": "slide_@local.completed_count",
@@ -398,14 +392,6 @@
                             "fieldName": "id"
                           }
                         ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "completed | set_data |\n_list_id: onboarding_splash_slides,\n_id: @item.id,\ncompleted: true",
-                            "matchedExpression": "@item.id",
-                            "type": "item",
-                            "fieldName": "id"
-                          }
-                        ],
                         "params": {
                           "_id": [
                             {
@@ -419,14 +405,6 @@
                       },
                       "1": {
                         "_raw": [
-                          {
-                            "fullExpression": "uncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false",
-                            "matchedExpression": "@local.completed_count",
-                            "type": "local",
-                            "fieldName": "completed_count"
-                          }
-                        ],
-                        "_cleaned": [
                           {
                             "fullExpression": "uncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false",
                             "matchedExpression": "@local.completed_count",
@@ -458,12 +436,10 @@
                   "_dynamicDependencies": {
                     "@item.id": [
                       "action_list.0._raw",
-                      "action_list.0._cleaned",
                       "action_list.0.params._id"
                     ],
                     "@local.completed_count": [
                       "action_list.1._raw",
-                      "action_list.1._cleaned",
                       "action_list.1.params._id"
                     ],
                     "!@item._last": [
@@ -481,7 +457,6 @@
                       "action_id": "set_data",
                       "args": [],
                       "_raw": "completed | set_data |\n_list_id: onboarding_splash_slides,\n_id: @item.id,\ncompleted: true",
-                      "_cleaned": "completed | set_data |\n_list_id: onboarding_splash_slides,\n_id: @item.id,\ncompleted: true",
                       "params": {
                         "_list_id": "onboarding_splash_slides",
                         "_id": "@item.id",
@@ -493,7 +468,6 @@
                       "action_id": "set_data",
                       "args": [],
                       "_raw": "uncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false",
-                      "_cleaned": "uncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false",
                       "params": {
                         "_list_id": "onboarding_splash_slides",
                         "_id": "slide_@local.completed_count",
@@ -507,8 +481,7 @@
                         "onboarding_splash_completed",
                         true
                       ],
-                      "_raw": "completed | set_field: onboarding_splash_completed: true",
-                      "_cleaned": "completed | set_field: onboarding_splash_completed: true"
+                      "_raw": "completed | set_field: onboarding_splash_completed: true"
                     },
                     {
                       "trigger": "completed",
@@ -516,8 +489,7 @@
                       "args": [
                         "completed"
                       ],
-                      "_raw": "completed | emit: completed",
-                      "_cleaned": "completed | emit: completed"
+                      "_raw": "completed | emit: completed"
                     }
                   ],
                   "parameter_list": {
@@ -587,14 +559,6 @@
                             "fieldName": "id"
                           }
                         ],
-                        "_cleaned": [
-                          {
-                            "fullExpression": "completed | set_data |\n_list_id: onboarding_splash_slides,\n_id: @item.id,\ncompleted: true",
-                            "matchedExpression": "@item.id",
-                            "type": "item",
-                            "fieldName": "id"
-                          }
-                        ],
                         "params": {
                           "_id": [
                             {
@@ -608,14 +572,6 @@
                       },
                       "1": {
                         "_raw": [
-                          {
-                            "fullExpression": "uncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false",
-                            "matchedExpression": "@local.completed_count",
-                            "type": "local",
-                            "fieldName": "completed_count"
-                          }
-                        ],
-                        "_cleaned": [
                           {
                             "fullExpression": "uncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false",
                             "matchedExpression": "@local.completed_count",
@@ -647,12 +603,10 @@
                   "_dynamicDependencies": {
                     "@item.id": [
                       "action_list.0._raw",
-                      "action_list.0._cleaned",
                       "action_list.0.params._id"
                     ],
                     "@local.completed_count": [
                       "action_list.1._raw",
-                      "action_list.1._cleaned",
                       "action_list.1.params._id"
                     ],
                     "@item._last": [

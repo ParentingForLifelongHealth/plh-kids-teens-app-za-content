@@ -178,8 +178,7 @@
                   "args": [
                     "completed"
                   ],
-                  "_raw": "click | emit: completed",
-                  "_cleaned": "click | emit: completed"
+                  "_raw": "click | emit: completed"
                 },
                 {
                   "trigger": "click",
@@ -188,7 +187,6 @@
                     "open"
                   ],
                   "_raw": "click | nav_stack: open | template: activity_@local.activity_id, header: false",
-                  "_cleaned": "click | nav_stack: open | template: activity_@local.activity_id, header: false",
                   "params": {
                     "template": "activity_@local.activity_id",
                     "header": false
@@ -199,7 +197,6 @@
                   "action_id": "set_data",
                   "args": [],
                   "_raw": "click | set_data | \n_list_id: activity_tasks,\n_id: @local.activity_id,\naccessed: true",
-                  "_cleaned": "click | set_data | \n_list_id: activity_tasks,\n_id: @local.activity_id,\naccessed: true",
                   "params": {
                     "_list_id": "activity_tasks",
                     "_id": "@local.activity_id",
@@ -228,14 +225,6 @@
                         "fieldName": "activity_id"
                       }
                     ],
-                    "_cleaned": [
-                      {
-                        "fullExpression": "click | nav_stack: open | template: activity_@local.activity_id, header: false",
-                        "matchedExpression": "@local.activity_id",
-                        "type": "local",
-                        "fieldName": "activity_id"
-                      }
-                    ],
                     "params": {
                       "template": [
                         {
@@ -249,14 +238,6 @@
                   },
                   "2": {
                     "_raw": [
-                      {
-                        "fullExpression": "click | set_data | \n_list_id: activity_tasks,\n_id: @local.activity_id,\naccessed: true",
-                        "matchedExpression": "@local.activity_id",
-                        "type": "local",
-                        "fieldName": "activity_id"
-                      }
-                    ],
-                    "_cleaned": [
                       {
                         "fullExpression": "click | set_data | \n_list_id: activity_tasks,\n_id: @local.activity_id,\naccessed: true",
                         "matchedExpression": "@local.activity_id",
@@ -283,10 +264,8 @@
                 ],
                 "@local.activity_id": [
                   "action_list.1._raw",
-                  "action_list.1._cleaned",
                   "action_list.1.params.template",
                   "action_list.2._raw",
-                  "action_list.2._cleaned",
                   "action_list.2.params._id"
                 ]
               }

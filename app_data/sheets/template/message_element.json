@@ -194,7 +194,6 @@
                   "action_id": "share",
                   "args": [],
                   "_raw": "click | share | text: @local.message_text",
-                  "_cleaned": "click | share | text: @local.message_text",
                   "params": {
                     "text": "@local.message_text"
                   }
@@ -209,14 +208,6 @@
                 "action_list": {
                   "0": {
                     "_raw": [
-                      {
-                        "fullExpression": "click | share | text: @local.message_text",
-                        "matchedExpression": "@local.message_text",
-                        "type": "local",
-                        "fieldName": "message_text"
-                      }
-                    ],
-                    "_cleaned": [
                       {
                         "fullExpression": "click | share | text: @local.message_text",
                         "matchedExpression": "@local.message_text",
@@ -248,7 +239,6 @@
               "_dynamicDependencies": {
                 "@local.message_text": [
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.text"
                 ],
                 "@local.asset": [
@@ -269,7 +259,6 @@
                   "action_id": "share",
                   "args": [],
                   "_raw": "click | share |\ntext: @local.message_text,\nfile: @local.asset",
-                  "_cleaned": "click | share |\ntext: @local.message_text,\nfile: @local.asset",
                   "params": {
                     "text": "@local.message_text",
                     "file": "@local.asset"
@@ -285,20 +274,6 @@
                 "action_list": {
                   "0": {
                     "_raw": [
-                      {
-                        "fullExpression": "click | share |\ntext: @local.message_text,\nfile: @local.asset",
-                        "matchedExpression": "@local.message_text",
-                        "type": "local",
-                        "fieldName": "message_text"
-                      },
-                      {
-                        "fullExpression": "click | share |\ntext: @local.message_text,\nfile: @local.asset",
-                        "matchedExpression": "@local.asset",
-                        "type": "local",
-                        "fieldName": "asset"
-                      }
-                    ],
-                    "_cleaned": [
                       {
                         "fullExpression": "click | share |\ntext: @local.message_text,\nfile: @local.asset",
                         "matchedExpression": "@local.message_text",
@@ -344,12 +319,10 @@
               "_dynamicDependencies": {
                 "@local.message_text": [
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.text"
                 ],
                 "@local.asset": [
                   "action_list.0._raw",
-                  "action_list.0._cleaned",
                   "action_list.0.params.file",
                   "condition"
                 ]

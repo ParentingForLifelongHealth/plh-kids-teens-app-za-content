@@ -63,7 +63,6 @@
             "app_menu_terms"
           ],
           "_raw": "click | pop_up: app_menu_terms | fullscreen: true",
-          "_cleaned": "click | pop_up: app_menu_terms | fullscreen: true",
           "params": {
             "fullscreen": true
           }
@@ -101,7 +100,6 @@
             "app_menu_privacy_policy"
           ],
           "_raw": "click | pop_up: app_menu_privacy_policy | fullscreen: true",
-          "_cleaned": "click | pop_up: app_menu_privacy_policy | fullscreen: true",
           "params": {
             "fullscreen": true
           }
@@ -183,8 +181,7 @@
           "args": [
             "accept_terms_warning"
           ],
-          "_raw": "click | pop_up: accept_terms_warning",
-          "_cleaned": "click | pop_up: accept_terms_warning"
+          "_raw": "click | pop_up: accept_terms_warning"
         }
       ],
       "parameter_list": {
@@ -224,8 +221,7 @@
           "args": [
             "completed"
           ],
-          "_raw": "click | emit: completed",
-          "_cleaned": "click | emit: completed"
+          "_raw": "click | emit: completed"
         },
         {
           "trigger": "click",
@@ -234,8 +230,7 @@
             "@global.deployment_terms_field",
             true
           ],
-          "_raw": "click | set_field: @global.deployment_terms_field: true",
-          "_cleaned": "click | set_field: @global.deployment_terms_field: true"
+          "_raw": "click | set_field: @global.deployment_terms_field: true"
         }
       ],
       "parameter_list": {
@@ -263,14 +258,6 @@
                 "type": "global",
                 "fieldName": "deployment_terms_field"
               }
-            ],
-            "_cleaned": [
-              {
-                "fullExpression": "click | set_field: @global.deployment_terms_field: true",
-                "matchedExpression": "@global.deployment_terms_field",
-                "type": "global",
-                "fieldName": "deployment_terms_field"
-              }
             ]
           }
         },
@@ -286,8 +273,7 @@
       "_dynamicDependencies": {
         "@global.deployment_terms_field": [
           "action_list.1.args.0",
-          "action_list.1._raw",
-          "action_list.1._cleaned"
+          "action_list.1._raw"
         ],
         "@local.checkbox": [
           "condition"
