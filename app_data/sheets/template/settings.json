@@ -684,8 +684,8 @@
     },
     {
       "type": "title",
-      "name": "feedback",
-      "value": "@global.feedback",
+      "name": "version",
+      "value": "@global.version",
       "_translations": {
         "value": {}
       },
@@ -693,19 +693,19 @@
         "variant": "section_banner"
       },
       "exclude_from_translation": true,
-      "_nested_name": "feedback",
+      "_nested_name": "version",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@global.feedback",
-            "matchedExpression": "@global.feedback",
+            "fullExpression": "@global.version",
+            "matchedExpression": "@global.version",
             "type": "global",
-            "fieldName": "feedback"
+            "fieldName": "version"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@global.feedback": [
+        "@global.version": [
           "value"
         ]
       }
