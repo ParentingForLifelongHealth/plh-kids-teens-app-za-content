@@ -4,20 +4,20 @@ const config = extendDeploymentConfig({ name: "plh_kids_teens_za", parent: "plh_
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.6.32",
+  content_tag_latest: "1.6.33",
 };
 
-config.google_drive.sheets_folder_ids = [
-  "19wSspWYMbRc75een-kS0q0aq24--75u8", // library_app_menu
-  "1UXVz71HniwdtklFnGUEBzzj8ZHI9oQVo", // library_field_values
-  "1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU", // kids_global
-  "1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9", // kids_teens_global
-  "1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR", // library PLH onboarding
-  "1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI" // kids_teens_za
+config.google_drive.sheets_folders = [
+  { id: "19wSspWYMbRc75een-kS0q0aq24--75u8", name: "library_app_menu" },
+  { id: "1UXVz71HniwdtklFnGUEBzzj8ZHI9oQVo", name: "library_field_values" },
+  { id: "1Y8uC9-rqQtsjQgUfeX9qp-vNzsFDUQFU", name: "kids_global" },
+  { id: "1GnKk8luhnYcWobeeEfbR23ZSoZakcNF9", name: "kids_teens_global" },
+  { id: "1XBq4iGIZHEwzwPk3xbHDAm9WCesjR7kR", name: "library PLH onboarding" },
+  { id: "1Bzlnwts9mkoLRhDy-SN5O1A3bUlBOynI", name: "kids_teens_za" },
 ];
-config.google_drive.assets_folder_ids = [
-  "1abaL1QGd33NqqLoKuo2t9fVWKmh5ouM9", // kids_teens_global
-  "1T93qsaSBbYa-lCF6ChPkfoX85PLugJCZ" // kids_teens_za
+
+config.google_drive.assets_folders = [
+  {id: "1T93qsaSBbYa-lCF6ChPkfoX85PLugJCZ", name: "kids_teens_za"},
 ];
 
 config.android = {

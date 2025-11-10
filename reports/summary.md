@@ -83,8 +83,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 85843 KB | 85.8 MB |
-| unused | 15686 KB | 15.7 MB |
+| total | 85844 KB | 85.8 MB |
+| unused | 15685 KB | 15.7 MB |
 </details>
 
 <details open>
@@ -139,7 +139,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/homescreen/svp_t.svg | 25.4 |
 | images/icons/book_outline_blue.svg | 0.7 |
 | images/icons/book_outline_white.svg | 0.7 |
-| images/icons/cancel.svg | 1.7 |
 | images/icons/expand_circle_right.png | 0.9 |
 | images/icons/faces/angry.svg | 1.1 |
 | images/icons/faces/confused.svg | 1.8 |
@@ -336,7 +335,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
