@@ -4,18 +4,9 @@
   "flow_type": "template",
   "rows": [
     {
-      "name": "article_suffix",
-      "value": "_tips_1",
-      "_translations": {
-        "value": {}
-      },
-      "type": "set_variable",
-      "_nested_name": "article_suffix"
-    },
-    {
       "type": "template",
-      "name": "article",
-      "value": "article_problemsolving_t@local.article_suffix",
+      "name": "library_essential_tool",
+      "value": "library_essential_tool",
       "action_list": [
         {
           "trigger": "completed",
@@ -36,35 +27,16 @@
       ],
       "rows": [
         {
-          "type": "nested_properties",
-          "name": "article",
-          "rows": [
-            {
-              "name": "show_nav_buttons",
-              "value": false,
-              "type": "set_variable",
-              "_nested_name": "article.article.show_nav_buttons"
-            }
-          ],
-          "_nested_name": "article.article"
+          "name": "module_id",
+          "value": "problemsolving_t",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "library_essential_tool.module_id"
         }
       ],
-      "_nested_name": "article",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "article_problemsolving_t@local.article_suffix",
-            "matchedExpression": "@local.article_suffix",
-            "type": "local",
-            "fieldName": "article_suffix"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.article_suffix": [
-          "value"
-        ]
-      }
+      "_nested_name": "library_essential_tool"
     }
   ]
 }
