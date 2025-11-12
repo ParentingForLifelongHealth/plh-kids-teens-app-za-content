@@ -9,16 +9,29 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "module_id"
     },
     {
+      "name": "join",
+      "value": "_",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "join"
+    },
+    {
       "name": "this_module_subitem_list",
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "this_module_subitem_list"
     },
     {
       "name": "all_modules_tips_list",
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "all_modules_tips_list"
     },
@@ -143,6 +156,7 @@
         "value": {}
       },
       "exclude_from_translation": true,
+      "condition": false,
       "_nested_name": "debug_1",
       "_dynamicFields": {
         "value": [
@@ -168,6 +182,7 @@
         "value": {}
       },
       "exclude_from_translation": true,
+      "condition": false,
       "_nested_name": "debug_2",
       "_dynamicFields": {
         "value": [
@@ -236,6 +251,7 @@
         "value": {}
       },
       "exclude_from_translation": true,
+      "condition": false,
       "_nested_name": "debug_3",
       "_dynamicFields": {
         "value": [
@@ -254,33 +270,9 @@
       }
     },
     {
-      "name": "article_suffix",
-      "value": "_@local.this_module_tips",
-      "_translations": {
-        "value": {}
-      },
-      "type": "set_variable",
-      "_nested_name": "article_suffix",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "_@local.this_module_tips",
-            "matchedExpression": "@local.this_module_tips",
-            "type": "local",
-            "fieldName": "this_module_tips"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.this_module_tips": [
-          "value"
-        ]
-      }
-    },
-    {
       "type": "template",
       "name": "article",
-      "value": "article_@local.module_id@local.article_suffix",
+      "value": "article_@local.module_id@local.join@local.this_module_tips",
       "action_list": [
         {
           "trigger": "completed",
@@ -299,35 +291,51 @@
           "_raw": "uncompleted | emit: uncompleted"
         }
       ],
+      "exclude_from_translation": true,
+      "condition": "!!@local.this_module_tips",
       "rows": [
         {
           "type": "nested_properties",
-          "name": "article",
+          "name": "article_sidekick",
           "rows": [
             {
               "name": "show_nav_buttons",
               "value": false,
               "type": "set_variable",
-              "_nested_name": "article.article.show_nav_buttons"
+              "_nested_name": "article.article_sidekick.show_nav_buttons"
             }
           ],
-          "_nested_name": "article.article"
+          "_nested_name": "article.article_sidekick"
         }
       ],
       "_nested_name": "article",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "article_@local.module_id@local.article_suffix",
+            "fullExpression": "article_@local.module_id@local.join@local.this_module_tips",
             "matchedExpression": "@local.module_id",
             "type": "local",
             "fieldName": "module_id"
           },
           {
-            "fullExpression": "article_@local.module_id@local.article_suffix",
-            "matchedExpression": "@local.article_suffix",
+            "fullExpression": "article_@local.module_id@local.join@local.this_module_tips",
+            "matchedExpression": "@local.join",
             "type": "local",
-            "fieldName": "article_suffix"
+            "fieldName": "join"
+          },
+          {
+            "fullExpression": "article_@local.module_id@local.join@local.this_module_tips",
+            "matchedExpression": "@local.this_module_tips",
+            "type": "local",
+            "fieldName": "this_module_tips"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@local.this_module_tips",
+            "matchedExpression": "!@local.this_module_tips",
+            "type": "local",
+            "fieldName": "this_module_tips"
           }
         ]
       },
@@ -335,8 +343,14 @@
         "@local.module_id": [
           "value"
         ],
-        "@local.article_suffix": [
+        "@local.join": [
           "value"
+        ],
+        "@local.this_module_tips": [
+          "value"
+        ],
+        "!@local.this_module_tips": [
+          "condition"
         ]
       }
     }
