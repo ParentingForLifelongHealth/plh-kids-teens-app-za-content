@@ -66,6 +66,30 @@
       "_nested_name": "nested"
     },
     {
+      "name": "show_nav_buttons",
+      "value": "!@local.nested",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "show_nav_buttons",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "!@local.nested",
+            "matchedExpression": "!@local.nested",
+            "type": "local",
+            "fieldName": "nested"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.nested": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "text",
       "value": "cat: @local.category_id",
       "_translations": {
@@ -74,8 +98,8 @@
         }
       },
       "condition": false,
-      "name": "text_7",
-      "_nested_name": "text_7",
+      "name": "text_8",
+      "_nested_name": "text_8",
       "_dynamicFields": {
         "value": [
           {
@@ -122,8 +146,8 @@
       "parameter_list": {
         "filter": "@item.foreign_key == @local.article_id"
       },
-      "name": "data_items_8",
-      "_nested_name": "data_items_8",
+      "name": "data_items_9",
+      "_nested_name": "data_items_9",
       "_dynamicFields": {
         "value": [
           {
@@ -222,8 +246,8 @@
       "parameter_list": {
         "filter": "@item.id == @local.category_id"
       },
-      "name": "data_items_12",
-      "_nested_name": "data_items_12",
+      "name": "data_items_13",
+      "_nested_name": "data_items_13",
       "_dynamicFields": {
         "value": [
           {
@@ -571,22 +595,22 @@
           "_raw": "uncompleted | emit: uncompleted"
         }
       ],
-      "condition": "!@local.nested",
+      "condition": "@local.show_nav_buttons",
       "exclude_from_translation": true,
       "rows": [],
       "_nested_name": "nav_buttons",
       "_dynamicFields": {
         "condition": [
           {
-            "fullExpression": "!@local.nested",
-            "matchedExpression": "!@local.nested",
+            "fullExpression": "@local.show_nav_buttons",
+            "matchedExpression": "@local.show_nav_buttons",
             "type": "local",
-            "fieldName": "nested"
+            "fieldName": "show_nav_buttons"
           }
         ]
       },
       "_dynamicDependencies": {
-        "!@local.nested": [
+        "@local.show_nav_buttons": [
           "condition"
         ]
       }
