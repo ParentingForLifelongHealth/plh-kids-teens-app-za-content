@@ -32,7 +32,7 @@
 | round_button | 11 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2485 |
+| set_variable | 2486 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 4 |
@@ -84,7 +84,7 @@
 | assets | KB | MB |
 | --- | --- | --- |
 | total | 85843 KB | 85.8 MB |
-| unused | 15685 KB | 15.7 MB |
+| unused | 15684 KB | 15.7 MB |
 </details>
 
 <details open>
@@ -110,7 +110,7 @@ Assets that appear in app-data but do not have references within sheets
 | audio/teen/topic_intros/learn_intro_t.mp3 | 592.2 |
 | audio/teen/topic_intros/srh_intro_t.mp3 | 369.2 |
 | audio/teen/topic_intros/svp_intro_t.mp3 | 603.8 |
-| contents.json | 6.1 |
+| contents.json | 5.9 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
