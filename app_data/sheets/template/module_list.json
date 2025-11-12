@@ -36,7 +36,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+        "filter": "!@item.completed_ts && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
         "sort": "number",
         "limit": "1"
       },
@@ -54,25 +54,25 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
-              "matchedExpression": "!@item.completed",
+              "fullExpression": "!@item.completed_ts && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.completed_ts",
               "type": "item",
-              "fieldName": "completed"
+              "fieldName": "completed_ts"
             },
             {
-              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "fullExpression": "!@item.completed_ts && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "!@item.tag_list",
               "type": "item",
               "fieldName": "tag_list"
             },
             {
-              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "fullExpression": "!@item.completed_ts && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@item.tag_list.includes",
               "type": "item",
               "fieldName": "tag_list"
             },
             {
-              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "fullExpression": "!@item.completed_ts && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@fields.child_age_tag",
               "type": "fields",
               "fieldName": "child_age_tag"
@@ -84,7 +84,7 @@
         "@data.module_tasks": [
           "value"
         ],
-        "!@item.completed": [
+        "!@item.completed_ts": [
           "parameter_list.filter"
         ],
         "!@item.tag_list": [
@@ -297,7 +297,7 @@
                 },
                 {
                   "name": "is_completed",
-                  "value": "@item.completed",
+                  "value": "!!@item.completed_ts",
                   "_translations": {
                     "value": {}
                   },
@@ -306,10 +306,10 @@
                   "_dynamicFields": {
                     "value": [
                       {
-                        "fullExpression": "@item.completed",
-                        "matchedExpression": "@item.completed",
+                        "fullExpression": "!!@item.completed_ts",
+                        "matchedExpression": "!@item.completed_ts",
                         "type": "item",
-                        "fieldName": "completed"
+                        "fieldName": "completed_ts"
                       }
                     ],
                     "_nested_name": [
@@ -322,7 +322,7 @@
                     ]
                   },
                   "_dynamicDependencies": {
-                    "@item.completed": [
+                    "!@item.completed_ts": [
                       "value"
                     ],
                     "@item.id.is_completed": [
@@ -332,7 +332,7 @@
                 },
                 {
                   "name": "is_locked",
-                  "value": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                  "value": "!(@item.id == @local.current_module_id || !!@item.completed_ts || @item.tag_list.includes(\"teen\"))",
                   "_translations": {
                     "value": {}
                   },
@@ -342,25 +342,25 @@
                   "_dynamicFields": {
                     "value": [
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                        "fullExpression": "!(@item.id == @local.current_module_id || !!@item.completed_ts || @item.tag_list.includes(\"teen\"))",
                         "matchedExpression": "@item.id",
                         "type": "item",
                         "fieldName": "id"
                       },
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                        "fullExpression": "!(@item.id == @local.current_module_id || !!@item.completed_ts || @item.tag_list.includes(\"teen\"))",
                         "matchedExpression": "@local.current_module_id",
                         "type": "local",
                         "fieldName": "current_module_id"
                       },
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
-                        "matchedExpression": "@item.completed",
+                        "fullExpression": "!(@item.id == @local.current_module_id || !!@item.completed_ts || @item.tag_list.includes(\"teen\"))",
+                        "matchedExpression": "!@item.completed_ts",
                         "type": "item",
-                        "fieldName": "completed"
+                        "fieldName": "completed_ts"
                       },
                       {
-                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                        "fullExpression": "!(@item.id == @local.current_module_id || !!@item.completed_ts || @item.tag_list.includes(\"teen\"))",
                         "matchedExpression": "@item.tag_list.includes",
                         "type": "item",
                         "fieldName": "tag_list"
@@ -382,7 +382,7 @@
                     "@local.current_module_id": [
                       "value"
                     ],
-                    "@item.completed": [
+                    "!@item.completed_ts": [
                       "value"
                     ],
                     "@item.tag_list.includes": [

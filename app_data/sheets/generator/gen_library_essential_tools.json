@@ -10,13 +10,9 @@
   },
   "rows": [
     {
-      "name": "article_suffix",
-      "value": "_tips_1"
-    },
-    {
       "type": "template",
-      "name": "article",
-      "value": "article_@gen.id@local.article_suffix",
+      "name": "library_essential_tool",
+      "value": "library_essential_tool",
       "action_list": [
         {
           "trigger": "completed",
@@ -37,14 +33,8 @@
       ],
       "rows": [
         {
-          "type": "nested_properties",
-          "name": "article",
-          "rows": [
-            {
-              "name": "show_nav_buttons",
-              "value": false
-            }
-          ]
+          "name": "module_id",
+          "value": "@gen.id"
         }
       ]
     }

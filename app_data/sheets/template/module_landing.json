@@ -957,7 +957,7 @@
               "parameter_list": {
                 "style": "column"
               },
-              "condition": "!@item.completed",
+              "condition": "!@item.completed_ts",
               "exclude_from_translation": true,
               "rows": [
                 {
@@ -1046,15 +1046,15 @@
               "_dynamicFields": {
                 "condition": [
                   {
-                    "fullExpression": "!@item.completed",
-                    "matchedExpression": "!@item.completed",
+                    "fullExpression": "!@item.completed_ts",
+                    "matchedExpression": "!@item.completed_ts",
                     "type": "item",
-                    "fieldName": "completed"
+                    "fieldName": "completed_ts"
                   }
                 ]
               },
               "_dynamicDependencies": {
-                "!@item.completed": [
+                "!@item.completed_ts": [
                   "condition"
                 ]
               }
@@ -1080,7 +1080,7 @@
                   }
                 }
               ],
-              "condition": "@item.completed",
+              "condition": "!!@item.completed_ts",
               "exclude_from_translation": true,
               "_nested_name": "dg_bottom.loop_outer.button_restart",
               "_dynamicFields": {
@@ -1116,10 +1116,10 @@
                 },
                 "condition": [
                   {
-                    "fullExpression": "@item.completed",
-                    "matchedExpression": "@item.completed",
+                    "fullExpression": "!!@item.completed_ts",
+                    "matchedExpression": "!@item.completed_ts",
                     "type": "item",
-                    "fieldName": "completed"
+                    "fieldName": "completed_ts"
                   }
                 ]
               },
@@ -1131,7 +1131,7 @@
                   "action_list.0._raw",
                   "action_list.0.params.template"
                 ],
-                "@item.completed": [
+                "!@item.completed_ts": [
                   "condition"
                 ]
               }
