@@ -1,0 +1,253 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_landing",
+  "status": "released",
+  "parameter_list": {
+    "app_config": {
+      "LAYOUT": {
+        "page_padding": "0 0"
+      }
+    }
+  },
+  "rows": [
+    {
+      "type": "update_action_list",
+      "name": "custom_actions_1",
+      "action_list": "nav_resume | emit: force_reload",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "selfcare",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "categories",
+      "value": "_category_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_data",
+      "value": "@local.module_id@local.categories",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bg_illustration",
+      "value": "images/backgrounds/progress_arc.png",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "plh_module_details_header",
+      "name": "plh_module_details_header",
+      "value": "@local.module_row.title",
+      "parameter_list": "background_image_asset: @local.bg_illustration;\nmodule_image_asset: @local.module_row.image_asset;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_review_count"
+    },
+    {
+      "type": "data_items",
+      "name": "hp_review_exists",
+      "value": "hp_check_in",
+      "action_list": "data_changed | set_local : hp_review_count : @items.length",
+      "parameter_list": "filter: @item.id == @local.module_id"
+    },
+    {
+      "type": "text",
+      "name": "debug_hp_review_count",
+      "value": "hp_review_count: @local.hp_review_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_bottom",
+      "parameter_list": "variant: inline_padding; style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_wheel_and_hp",
+      "style_list": "justify-content: space-evenly;\nalign-items: flex-end;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data_list_name",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "wheel_title",
+      "value": "@global.completed",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "task_progress_bar",
+      "name": "task_progress_bar",
+      "parameter_list": "task_group_data: @local.articles_data_list_name;\nfilter: !@task_item.nested;\nvariant: wheel;\nwheel_title: @local.wheel_title;",
+      "style_list": "max-width: max-content;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "postcompose",
+      "value": "_start_at_uncompleted",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_start_at_uncompleted",
+      "value": "stack_module_@local.module_id@local.postcompose",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "start_at_id",
+      "value": "_start_at_id"
+    },
+    {
+      "name": "module_start_at_id",
+      "value": "stack_module_@local.module_id@local.start_at_id"
+    },
+    {
+      "name": "module_start_at_beginning",
+      "value": "stack_module_@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_review",
+      "value": "stack_hp_review_@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "locked_icon_asset",
+      "value": "images/icons/locked.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "locked_image_asset",
+      "value": "@global.hp_locked_image_asset"
+    },
+    {
+      "name": "unlocked_icon_asset",
+      "value": "images/icons/notification_bell.png",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "unlocked_image_asset",
+      "value": "@global.hp_unlocked_image_asset"
+    },
+    {
+      "name": "countdown_text_list",
+      "value": "@global.in_1_day; @global.in_2_days; @global.in_3_days; @global.in_4_days; @global.in_5_days; @global.in_6_days; @global.in_7_days",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "check_in",
+      "value": "module_tasks",
+      "parameter_list": "filter: @item.id == @local.module_id",
+      "condition": "!!@local.hp_review_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_ts",
+      "value": "Completed timestamp: @item.completed_ts",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "plh_activity_check_in",
+      "name": "button_hp_review",
+      "action_list": "click | nav_stack: open | template: @local.hp_review",
+      "parameter_list": "title: @global.check_in;\nlocked_icon_asset: @local.locked_icon_asset;\nlocked_image_asset: @local.locked_image_asset;\nunlocked_icon_asset: @local.unlocked_icon_asset;\nunlocked_image_asset: @local.unlocked_image_asset;\ncountdown_days: @fields.countdown_days;\ncountdown_start_date: @item.completed_ts;\ncountdown_text_list: @local.countdown_text_list",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_outer",
+      "value": "module_tasks",
+      "parameter_list": "filter: @item.id == @local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_module_not_completed",
+      "parameter_list": "style: column",
+      "condition": "!@item.completed_ts",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "loop_inner",
+      "value": "module_landing_sub",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_start_at_id",
+      "value": "@local.module_start_at_id"
+    },
+    {
+      "name": "articles_data_list_name",
+      "value": "@local.articles_data_list_name"
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id"
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_restart",
+      "value": "@global.restart",
+      "action_list": "click | nav_stack: open | template: @local.module_start_at_beginning, header: false;",
+      "condition": "!!@item.completed_ts",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "flow_type": "template",
+  "flow_name": "article_sidekick",
+  "status": "released",
+  "rows": [
+    {
+      "name": "article_id",
+      "value": "explore_5",
+      "exclude_from_translation": true,
+      "comments": "intro_connect"
+    },
+    {
+      "name": "module_id",
+      "value": "feelings",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "facilitator_id",
+      "value": "@fields.facilitator_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_id",
+      "value": "explore_5",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nested",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_nav_buttons",
+      "value": "!@local.nested"
+    },
+    {
+      "type": "text",
+      "value": "cat: @local.category_id",
+      "condition": false
+    },
+    {
+      "type": "data_items",
+      "value": "@data.page_details",
+      "action_list": "data_changed | set_local : nested: @items[0].nested;\ndata_changed | set_local : category_id: @items[0].category_id;",
+      "condition": "!@local.nested",
+      "parameter_list": "filter: @item.foreign_key == @local.article_id"
+    },
+    {
+      "name": "categories",
+      "value": "_category_tasks"
+    },
+    {
+      "name": "title"
+    },
+    {
+      "name": "icon_asset"
+    },
+    {
+      "type": "data_items",
+      "value": "@data.common_categories",
+      "action_list": "data_changed | set_local : title: @items[0].title;\ndata_changed | set_local : icon_asset: @items[0].icon_asset;",
+      "condition": "!@local.nested",
+      "parameter_list": "filter: @item.id == @local.category_id"
+    },
+    {
+      "type": "begin_template",
+      "name": "header",
+      "value": "header",
+      "action_list": "completed | emit: completed; \nuncompleted | emit: uncompleted",
+      "condition": "!@local.nested",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "icon_asset",
+      "value": "@local.icon_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "title",
+      "value": "@local.title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "intro_loop",
+      "value": "intro_loop",
+      "style_list": "margin-top: 0;"
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "comic_loop",
+      "value": "comic_loop",
+      "style_list": "margin-top: 0;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "media_loop",
+      "value": "media_loop",
+      "style_list": "margin-top: 0;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "quiz_loop",
+      "value": "quiz_loop",
+      "style_list": "margin-top: 0;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "section_loop",
+      "value": "section_loop",
+      "style_list": "margin-top: 0;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons",
+      "value": "nav_buttons",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted;",
+      "condition": "@local.show_nav_buttons",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    }
+  ]
+}

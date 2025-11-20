@@ -1,0 +1,126 @@
+{
+  "flow_type": "global",
+  "flow_name": "deployment_global_za",
+  "status": "released",
+  "override_target": "deployment_global",
+  "override_condition": "@fields._deployment_name == \"plh_kids_teens_za\"",
+  "rows": [
+    {
+      "type": "declare_global_constant",
+      "name": "app_name",
+      "value": "SinovuyoApp",
+      "comments": "comment"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "app_name_full",
+      "value": "SinovuyoApp"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "home_screen_logo_asset",
+      "value": "images/logos/sino_horizontal.svg"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "home_screen_logo_height",
+      "value": "48px"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "hp_locked_image_asset",
+      "value": "images/homescreen/check_in/traditional_rondavel_closed.svg"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "hp_unlocked_image_asset",
+      "value": "images/homescreen/check_in/traditional_rondavel_open.svg"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "activity_footer_image_asset",
+      "value": "images/backgrounds/mountains_trees.svg"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "deployment_terms_field",
+      "value": "terms_v20241205_accepted",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "deployment_terms_text",
+      "value": "5 December 2024"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_multiple_content_packages",
+      "value": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_multiple_languages",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "has_optional_login",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "combo_box_placeholder",
+      "value": "Tap and choose"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "section_variant",
+      "value": "box_primary",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "first_completion_icon",
+      "value": "trophy",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "subsequent_completion_icon",
+      "value": "checkmark",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "test_mode_code",
+      "value": "ParentAppTest",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "countdown_days",
+      "value": "@calc(@fields.user_type === \"facilitator\" ? 0 : 7)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "display_modules_as_list",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "facilitator_id",
+      "value": "facilitator",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "declare_field_default",
+      "name": "facilitator_name",
+      "value": "@data.characters.facilitator.name",
+      "exclude_from_translation": true
+    }
+  ]
+}

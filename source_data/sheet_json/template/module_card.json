@@ -1,0 +1,92 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_card",
+  "status": "released",
+  "rows": [
+    {
+      "name": "card_variant",
+      "value": "circle",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "task_group_data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed",
+      "value": "_completed",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "ww_id",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_data",
+      "value": "@data.@local.ww_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_title",
+      "value": "@local.module_data.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_image",
+      "value": "@local.module_data.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "click_template",
+      "value": "module_landing_@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "in_progress_icon",
+      "value": "images/icons/in_progress.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed_icon",
+      "value": "images/icons/tick_white.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "progress_units_name",
+      "value": "sections",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "locked",
+      "value": false
+    },
+    {
+      "name": "locked_image_asset",
+      "value": "images/icons/locked.png"
+    },
+    {
+      "type": "task_card",
+      "name": "task_card",
+      "action_list": "click | go_to: @local.click_template;",
+      "parameter_list": "variant: @local.card_variant;\ntask_group_id: @local.module_id;\ntask_group_data: @local.task_group_data;\ntitle: @local.card_title;\nimage: @local.card_image;\nin_progress_icon: @local.in_progress_icon;\ncompleted_icon: @local.completed_icon;\nprogress_units_name: @local.progress_units_name;        \nlocked: @local.locked;\nlocked_image_asset: @local.locked_image_asset;",
+      "exclude_from_translation": true
+    }
+  ]
+}

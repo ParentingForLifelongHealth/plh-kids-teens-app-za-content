@@ -1,0 +1,65 @@
+{
+  "flow_type": "generator",
+  "flow_name": "gen_stack_module",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "stack_module_@gen.id",
+    "output_flow_type": "template"
+  },
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "module",
+      "value": "module",
+      "action_list": "completed | nav_stack: close_top; \nuncompleted | nav_stack: close_top;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_progress_bar",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "article_last",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "article",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "nav_buttons",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "next_icon_src",
+      "value": "@global.subsequent_completion_icon",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_nested_properties",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_nested_properties",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_nested_properties",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    }
+  ]
+}

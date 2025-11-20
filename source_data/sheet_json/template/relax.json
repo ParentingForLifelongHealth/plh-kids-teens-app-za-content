@@ -1,0 +1,95 @@
+{
+  "flow_type": "template",
+  "flow_name": "relax",
+  "status": "released",
+  "rows": [
+    {
+      "name": "data_list_name",
+      "value": "relax",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id",
+      "value": "relax_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_name_id",
+      "value": "@local.data_list_name.@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_name_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "audio_title",
+      "value": "@local.row_data.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "audio_transcript",
+      "value": "@local.row_data.audio_transcript",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "lottie_asset",
+      "value": "lottie/bulging_circles.json",
+      "condition": "!@local.row_data.lottie_asset"
+    },
+    {
+      "name": "lottie_asset",
+      "value": "@local.row_data.lottie_asset",
+      "condition": "!!@local.row_data.lottie_asset"
+    },
+    {
+      "type": "lottie_animation",
+      "name": "lottie_display",
+      "value": "@local.lottie_asset",
+      "exclude_from_translation": true,
+      "condition": "@local.row_data.media_type == \"audio\""
+    },
+    {
+      "type": "text",
+      "name": "print_media_title",
+      "value": "@local.row_data.title",
+      "exclude_from_translation": true,
+      "parameter_list": "style: emphasised",
+      "condition": "!!@local.row_data.title"
+    },
+    {
+      "type": "audio",
+      "name": "audio",
+      "value": "@local.row_data.media_asset",
+      "exclude_from_translation": true,
+      "parameter_list": "transcript_text: @local.row_data.transcript",
+      "condition": "@local.row_data.media_type == \"audio\""
+    },
+    {
+      "type": "video",
+      "name": "video",
+      "value": "@local.row_data.media_asset",
+      "condition": "@local.row_data.media_type == \"video\""
+    },
+    {
+      "name": "show_nav_buttons",
+      "value": true
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons",
+      "value": "nav_buttons",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted;",
+      "condition": "@local.show_nav_buttons"
+    },
+    {
+      "name": "is_standalone_task",
+      "value": true,
+      "condition": "@fields._deployment_name == \"plh_kids_tz\""
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

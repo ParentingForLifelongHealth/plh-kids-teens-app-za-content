@@ -1,0 +1,31 @@
+{
+  "flow_type": "template",
+  "flow_name": "footer",
+  "status": "released",
+  "rows": [
+    {
+      "name": "home",
+      "value": "@global.home"
+    },
+    {
+      "name": "settings",
+      "value": "@global.settings"
+    },
+    {
+      "name": "rewards",
+      "value": "@global.rewards"
+    },
+    {
+      "name": "library",
+      "value": "@global.library"
+    },
+    {
+      "name": "button_list",
+      "value": "name: home_button | label: @local.home | icon: images/icons/home.svg | active_icon: images/icons/home_active.svg | target_template: home_screen;\nname: rewards_button | label: @local.rewards | icon: images/icons/trophy_footer.svg | active_icon: images/icons/trophy_footer_active.svg | target_template: activity_library;\nname: library_button | label: @local.library | icon: images/icons/local_library.svg | active_icon: images/icons/local_library_active.svg | target_template: library;\nname: settings_button | label: @local.settings | icon: images/icons/settings.svg | active_icon: images/icons/settings_active.svg | target_template: settings;"
+    },
+    {
+      "type": "plh_bottom_nav",
+      "parameter_list": "button_list: @local.button_list;\nvariant: pill;"
+    }
+  ]
+}

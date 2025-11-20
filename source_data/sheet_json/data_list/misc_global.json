@@ -1,0 +1,27 @@
+{
+  "flow_type": "data_list",
+  "flow_name": "misc_global",
+  "status": "released",
+  "rows": [
+    {
+      "type": "declare_global_constant",
+      "name": "yes",
+      "value": "Yes"
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "no",
+      "value": "No"
+    },
+    {
+      "type": "declare_field_default",
+      "name": "facilitator_id",
+      "value": "facilitator"
+    },
+    {
+      "type": "declare_field_default",
+      "name": "facilitator_name",
+      "value": "@data.characters.facilitator.name"
+    }
+  ]
+}

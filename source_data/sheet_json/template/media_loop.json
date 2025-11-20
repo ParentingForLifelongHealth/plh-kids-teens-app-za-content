@@ -1,0 +1,141 @@
+{
+  "flow_type": "template",
+  "flow_name": "media_loop",
+  "status": "released",
+  "rows": [
+    {
+      "name": "article_id",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_media",
+      "value": "@data.media",
+      "parameter_list": "filter: @item.foreign_key == @local.article_id"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "media_element",
+      "value": "media_element",
+      "parameter_list": "style: column"
+    },
+    {
+      "name": "media_title",
+      "value": "@item.media_title",
+      "condition": "!!(@item.media_title)",
+      "exclude_from_translation": true,
+      "comments": "media_title"
+    },
+    {
+      "type": "text",
+      "name": "print_media_title",
+      "value": "@local.media_title",
+      "condition": "!!(@item.media_title)",
+      "parameter_list": "style: emphasised",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "video",
+      "condition": "@item.media_type == \"video\"",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "video",
+      "name": "media_asset",
+      "value": "@item.media_asset",
+      "exclude_from_translation": true,
+      "comments": "video"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "audio",
+      "condition": "@item.media_type == \"audio\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "audio",
+      "name": "media_asset",
+      "value": "@item.media_asset",
+      "parameter_list": "transcript_text: @item.media_transcript",
+      "exclude_from_translation": true,
+      "comments": "audio"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube",
+      "value": "youtube_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "language",
+      "value": "@fields._app_language",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "default_language",
+      "value": "gb_en",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_column",
+      "value": "@local.youtube@local.language",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_concat",
+      "value": "item.@local.youtube_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_column_missing",
+      "value": "@local.youtube@local.default_language",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "youtube_concat_missing",
+      "value": "item.@local.youtube_column_missing",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "youtube_dg",
+      "condition": "@item.media_type == \"youtube\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "youtube",
+      "name": "youtube_lang",
+      "value": "@local.@local.youtube_concat",
+      "condition": "!!(@local.@local.youtube_concat)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "youtube",
+      "name": "youtube_lang_missing",
+      "value": "@local.@local.youtube_concat_missing",
+      "condition": "!(@local.@local.youtube_concat)",
+      "exclude_from_translation": true,
+      "comments": "Show English video when other language youtube link is not defined"
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "flow_type": "template",
+  "flow_name": "section",
+  "status": "released",
+  "rows": [
+    {
+      "name": "article_id",
+      "value": "intro_connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section",
+      "value": "section",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "title",
+      "value": "title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_title_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_title",
+      "value": "article_data.@local.section_title_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_title",
+      "value": "@local.@local.concat_title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_text_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_text",
+      "value": "article_data.@local.section_text_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_text",
+      "value": "@local.@local.concat_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "button_text",
+      "value": "button_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_button_text_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.button_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_button_text",
+      "value": "article_data.@local.section_button_text_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_button_text",
+      "value": "@local.@local.concat_button_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "image_asset",
+      "value": "image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_image_asset_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_image_asset",
+      "value": "article_data.@local.section_image_asset_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_image_asset",
+      "value": "@local.@local.concat_image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "icon_asset",
+      "value": "icon_asset"
+    },
+    {
+      "name": "section_icon_asset_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.icon_asset"
+    },
+    {
+      "name": "concat_icon_asset",
+      "value": "article_data.@local.section_icon_asset_column"
+    },
+    {
+      "name": "section_icon_asset",
+      "value": "@local.@local.concat_icon_asset"
+    },
+    {
+      "name": "extra_text",
+      "value": "extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_extra_text_column",
+      "value": "@local.section@local.join@local.section_no@local.join@local.extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_extra_text",
+      "value": "article_data.@local.section_extra_text_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_extra_text",
+      "value": "@local.@local.concat_extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_variant",
+      "value": "box_primary",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_variant",
+      "value": "@global.section_variant",
+      "condition": "!!(@global.section_variant)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg",
+      "parameter_list": "variant: @local.section_variant;\nstyle: column;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "parameter_list": "style: row",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "icon_asset",
+      "value": "@local.section_icon_asset",
+      "condition": "!!(@local.section_icon_asset)",
+      "style_list": "height: 48px;\nwidth: 48px;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "section_title",
+      "value": "@local.section_title",
+      "condition": "!!(@local.section_title)",
+      "style_list": "flex: 1",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "section_text",
+      "value": "@local.section_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "image_asset",
+      "value": "@local.section_image_asset",
+      "condition": "!!(@local.section_image_asset)",
+      "parameter_list": "style: rounded_corners;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "pop_up_text",
+      "value": "@local.section_extra_text",
+      "condition": "!!(@local.section_extra_text)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_accordion",
+      "name": "accordion",
+      "condition": "!!(@local.section_button_text)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "first",
+      "value": "@local.section_button_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "accordion_content",
+      "value": "@local.section_extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_accordion_section",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_accordion",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    }
+  ]
+}

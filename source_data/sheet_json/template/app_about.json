@@ -1,0 +1,85 @@
+{
+  "flow_type": "template",
+  "flow_name": "app_about",
+  "status": "released",
+  "rows": [
+    {
+      "name": "show_title",
+      "value": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.about_this_app",
+      "condition": "!!(@local.show_title)"
+    },
+    {
+      "type": "begin_items",
+      "name": "items_1",
+      "value": "@data.about_this_app"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@item.text",
+      "condition": "@item.text"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "begin_items",
+      "name": "items_2",
+      "value": "@data.organisation_group"
+    },
+    {
+      "type": "text",
+      "name": "title_@item.id",
+      "value": "@item.name",
+      "parameter_list": "style: emphasised"
+    },
+    {
+      "name": "this_group",
+      "value": "@item.id"
+    },
+    {
+      "type": "begin_display_grid",
+      "name": "dgrid_@item.id",
+      "parameter_list": "item_width: 140px; grid_width: 100%; grid_gap: 12px; item_border: none"
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.organisation"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_@item.id",
+      "condition": "@local.this_group == @item.group",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "image",
+      "name": "image_asset",
+      "value": "@item.image_asset"
+    },
+    {
+      "type": "text",
+      "name": "name",
+      "value": "@item.name",
+      "condition": "!@item.image_asset",
+      "comments": "Show name only if no image is provided"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "end_display_grid"
+    },
+    {
+      "type": "end_items"
+    }
+  ]
+}

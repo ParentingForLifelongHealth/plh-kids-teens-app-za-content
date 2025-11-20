@@ -1,0 +1,78 @@
+{
+  "flow_type": "template",
+  "flow_name": "user_data",
+  "status": "released",
+  "rows": [
+    {
+      "name": "show_title",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.user_data_title",
+      "condition": "!!(@local.show_title)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "user_gender_select_question",
+      "value": "@global.user_gender_select_question",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "user_gender_select_options",
+      "value": "@data.user_gender",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "user_gender_select",
+      "value": "@fields.user_gender",
+      "parameter_list": "answer_list: @local.user_gender_select_options",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "user_type_select_question",
+      "value": "@global.user_type_select_question",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "user_type_select_options",
+      "value": "@data.user_type",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "user_type_select",
+      "value": "@fields.user_type",
+      "parameter_list": "answer_list: @local.user_type_select_options",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed_enabled",
+      "value": "!!@local.user_gender_select && !!@local.user_type_select",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "action_list": "click | set_field: user_gender: @local.user_gender_select;\nclick | set_field: user_type: @local.user_type_select;\nclick | set_field: countdown_days: 0;\nclick | set_field: user_data_completed: true;\nclick | emit: server_sync;\nclick | emit: completed",
+      "condition": "@local.user_type_select == \"facilitator\"",
+      "parameter_list": "style: navigation;\ndisabled: !@local.completed_enabled",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "action_list": "click | set_field: user_gender: @local.user_gender_select;\nclick | set_field: user_type: @local.user_type_select;\nclick | set_field: countdown_days: 7;\nclick | set_field: user_data_completed: true;\nclick | emit: server_sync;\nclick | emit: completed",
+      "condition": "@local.user_type_select != \"facilitator\"",
+      "parameter_list": "style: navigation;\ndisabled: !@local.completed_enabled",
+      "exclude_from_translation": true
+    }
+  ]
+}

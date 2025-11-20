@@ -1,0 +1,106 @@
+{
+  "flow_type": "template",
+  "flow_name": "section_loop",
+  "status": "released",
+  "rows": [
+    {
+      "name": "article_id",
+      "value": "onlinesafety_t16",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_intros",
+      "value": "@data.sections",
+      "parameter_list": "filter: @item.foreign_key == @local.article_id"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg",
+      "parameter_list": "variant: @global.section_variant;\nstyle: column;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "parameter_list": "style: row"
+    },
+    {
+      "type": "image",
+      "name": "icon_asset",
+      "value": "@item.icon_asset",
+      "condition": "!!(@item.icon_asset)",
+      "style_list": "height: 48px;\nwidth: 48px;"
+    },
+    {
+      "type": "title",
+      "name": "section_title",
+      "value": "@item.title",
+      "condition": "!!(@item.title)",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "text",
+      "name": "section_text",
+      "value": "@item.text"
+    },
+    {
+      "type": "image",
+      "name": "image_asset",
+      "value": "@item.image_asset",
+      "condition": "!!(@item.image_asset)",
+      "style_list": "style: rounded_corners;"
+    },
+    {
+      "type": "begin_accordion",
+      "name": "accordion",
+      "condition": false
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "first",
+      "value": "@item.button_text",
+      "condition": "!!(@item.button_text)",
+      "comments": "This doesn't show its translation"
+    },
+    {
+      "type": "text",
+      "name": "accordion_content",
+      "value": "@item.extra_text",
+      "condition": "!!(@item.extra_text)",
+      "comments": "This doesn't show its translation"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "end_accordion"
+    },
+    {
+      "type": "begin_template",
+      "name": "translated_accordion",
+      "value": "translated_accordion",
+      "condition": "!!(@item.button_text)",
+      "comments": "This does show its translation"
+    },
+    {
+      "name": "button_text",
+      "value": "@item.button_text"
+    },
+    {
+      "name": "extra_text",
+      "value": "@item.extra_text"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ]
+}

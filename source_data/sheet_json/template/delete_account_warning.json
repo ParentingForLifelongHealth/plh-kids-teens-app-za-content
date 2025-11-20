@@ -1,0 +1,39 @@
+{
+  "flow_type": "template",
+  "flow_name": "delete_account_warning",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.delete_account_warning_title"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@global.delete_account_warning_text"
+    },
+    {
+      "type": "begin_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_back",
+      "value": "@global.no",
+      "action_list": "click | emit: completed",
+      "exclude_from_translation": true,
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "button",
+      "name": "button_delete_account",
+      "value": "@global.yes",
+      "action_list": "click | auth: delete_account;\nclick | reset_data;\nclick | reset_app;",
+      "exclude_from_translation": true,
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

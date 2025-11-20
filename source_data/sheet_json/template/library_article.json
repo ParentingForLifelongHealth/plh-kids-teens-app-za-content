@@ -1,0 +1,446 @@
+{
+  "flow_type": "template",
+  "flow_name": "library_article",
+  "status": "released",
+  "rows": [
+    {
+      "name": "facilitator_id",
+      "value": "@fields.facilitator_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "essential_tools_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "library_article",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_header",
+      "value": "!@local.article_data.nested",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "header",
+      "value": "section_header",
+      "action_list": "uncompleted | emit: uncompleted;",
+      "condition": "@local.show_header",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "title",
+      "value": "@local.article_data.title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "intro_element",
+      "value": "intro_element",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "@local.article_data.introduction",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "image",
+      "value": "@local.article_data.introduction_image",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_2",
+      "value": "@local.article_data.introduction_2",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_resources",
+      "style_list": "justify-content: space-evenly",
+      "parameter_list": "style:column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "number",
+      "value": "{  \"1\": {\"id\": \"1\"}, \"2\": {\"id\": \"2\"}, \"3\": {\"id\": \"3\"}, \"4\": {\"id\": \"4\"},\"5\": {\"id\": \"5\"}}",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "number_json",
+      "value": "@calc(JSON.parse(@local.number))",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_items",
+      "value": "@local.number_json",
+      "condition": "@item.id =<4",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "resource_id_no",
+      "value": "resource_id_@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "resource_data_no",
+      "value": "resource_data_@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_resource_id",
+      "value": "@local.concat_article_id.@local.resource_id_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_resource_data",
+      "value": "@local.concat_article_id.@local.resource_data_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "resource_id",
+      "value": "@data.@local.concat_resource_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "resource_data",
+      "value": "@data.@local.concat_resource_data",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "resource_element",
+      "value": "resource_element",
+      "condition": "@data.@local.concat_resource_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "resource_type",
+      "value": "@local.resource_data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "resource_id",
+      "value": "@local.resource_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "question_1",
+      "value": "question",
+      "condition": "!!(@local.article_data.quiz_1_question)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "in_library",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@local.facilitator_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "sections_title",
+      "value": "@local.article_data.sections_title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_items",
+      "value": "@local.number_json",
+      "condition": "@item.id =<5",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_text_no",
+      "value": "section_text_@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "section_title_no",
+      "value": "section_title_@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_section_text",
+      "value": "@local.concat_article_id.@local.section_text_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_section_title",
+      "value": "@local.concat_article_id.@local.section_title_no",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "section_element",
+      "value": "section_element",
+      "condition": "@data.@local.concat_section_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "title",
+      "value": "@data.@local.concat_section_title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "@data.@local.concat_section_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_items",
+      "value": "@local.number_json",
+      "condition": "@item.id =<5",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_title_no",
+      "value": "message_title_@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_text_no",
+      "value": "message_text_@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_guidance_no",
+      "value": "message_guidance_@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_asset_no",
+      "value": "message_asset_@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_message_title",
+      "value": "@local.concat_article_id.@local.message_title_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_message_text",
+      "value": "@local.concat_article_id.@local.message_text_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_message_guidance",
+      "value": "@local.concat_article_id.@local.message_guidance_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_message_asset",
+      "value": "@local.concat_article_id.@local.message_asset_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_title",
+      "value": "@data.@local.concat_message_title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_text",
+      "value": "@data.@local.concat_message_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_guidance",
+      "value": "@data.@local.concat_message_guidance",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_asset",
+      "value": "@data.@local.concat_message_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "message_element",
+      "value": "message_element",
+      "condition": "@local.message_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "title",
+      "value": "@local.message_title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "has_disclaimer",
+      "value": true,
+      "condition": "@item.id == 1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_text",
+      "value": "@local.message_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_guidance",
+      "value": "@local.message_guidance",
+      "condition": "@local.message_guidance",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "asset",
+      "value": "@local.message_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "related_articles_title",
+      "value": "@local.article_data.related_articles_title",
+      "condition": "!!(@local.article_data.related_articles_title)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_items",
+      "value": "@local.number_json",
+      "condition": "@item.id =<4",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_id_column",
+      "value": "related_article_id_@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_related_article_id_column",
+      "value": "@local.data.@local.article_id.@local.related_article_id_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_id",
+      "value": "@data.@local.concat_related_article_id_column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "related_element",
+      "value": "related_element",
+      "condition": "@local.related_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@local.related_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_items",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "task_list_title",
+      "value": "@local.article_data.task_list_title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_drawer",
+      "condition": "@local.article_data.task_list_text",
+      "parameter_list": "style:column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_drawer",
+      "name": "drawer",
+      "value": "@local.task_list_title",
+      "parameter_list": "style: secondary",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "task_list_text",
+      "value": "@local.article_data.task_list_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_drawer"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

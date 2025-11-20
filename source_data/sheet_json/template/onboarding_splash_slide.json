@@ -1,0 +1,54 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_splash_slide",
+  "status": "released",
+  "rows": [
+    {
+      "name": "show_back",
+      "value": true
+    },
+    {
+      "type": "image",
+      "name": "image"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "parameter_list": "style: center"
+    },
+    {
+      "type": "begin_template",
+      "name": "footer",
+      "value": "onboarding_footer",
+      "condition": "!!@global.onboarding_footer_image_asset && !@global.onboarding_splash_manual_advance"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_footer",
+      "parameter_list": "sticky: bottom;",
+      "condition": "!!@global.onboarding_splash_manual_advance",
+      "style_list": "padding: 12px 24px;"
+    },
+    {
+      "type": "round_button",
+      "name": "button_back",
+      "action_list": "click | emit: uncompleted",
+      "parameter_list": "icon_src: arrow-back;\nvariant: no-background;",
+      "condition": "@local.show_back"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "action_list": "click | emit: completed;",
+      "parameter_list": "style: navigation;",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

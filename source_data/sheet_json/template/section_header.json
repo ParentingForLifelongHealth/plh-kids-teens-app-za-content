@@ -1,0 +1,53 @@
+{
+  "flow_type": "template",
+  "flow_name": "section_header",
+  "status": "released",
+  "rows": [
+    {
+      "name": "section_id"
+    },
+    {
+      "name": "section_data",
+      "value": "library_section"
+    },
+    {
+      "name": "concat_app_section_id",
+      "value": "@local.section_data.@local.section_id",
+      "condition": "!!@local.section_id"
+    },
+    {
+      "name": "app_section_data",
+      "value": "@data.@local.concat_app_section_id",
+      "condition": "!!@local.section_id"
+    },
+    {
+      "name": "show_back",
+      "value": true
+    },
+    {
+      "name": "title",
+      "value": "@local.app_section_data.title"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_header"
+    },
+    {
+      "type": "round_button",
+      "name": "back",
+      "action_list": "click | emit: uncompleted",
+      "parameter_list": "icon_src: chevron-back;\nvariant: navigation",
+      "condition": "@local.show_back"
+    },
+    {
+      "type": "title",
+      "name": "print_title",
+      "value": "@local.title",
+      "style_list": "flex:1",
+      "condition": "!!@local.title"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

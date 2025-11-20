@@ -1,0 +1,37 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_language_select",
+  "status": "released",
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "settings_header",
+      "value": "settings_header",
+      "action_list": "uncompleted | emit: uncompleted; "
+    },
+    {
+      "name": "title",
+      "value": "@global.language"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "language_select",
+      "value": "language_select",
+      "action_list": "uncompleted | emit: uncompleted; completed | emit: completed"
+    },
+    {
+      "name": "show_title",
+      "value": false
+    },
+    {
+      "name": "button_completed",
+      "value": "@global.save"
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

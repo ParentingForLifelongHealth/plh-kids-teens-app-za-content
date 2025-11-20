@@ -1,0 +1,400 @@
+{
+  "flow_type": "template",
+  "flow_name": "hp_challenges",
+  "status": "released",
+  "rows": [
+    {
+      "name": "data",
+      "value": "hp_challenges"
+    },
+    {
+      "name": "row_id",
+      "value": "consequences",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_row",
+      "value": "@local.data.@local.row_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_row",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done",
+      "value": "_hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_id_hp_done",
+      "value": "@local.row_id@local.hp_done",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done_from_data"
+    },
+    {
+      "type": "data_items",
+      "name": "radio_to_local",
+      "value": "hp_check_in",
+      "action_list": "data_changed | set_local : hp_done_from_data : @items[0]?.done_response",
+      "parameter_list": "filter: @item.id == @local.row_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done_field_value",
+      "value": "no",
+      "condition": "!(@local.hp_done_from_data)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_done_field_value",
+      "value": "@local.hp_done_from_data",
+      "condition": "!!(@local.hp_done_from_data)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_mood",
+      "value": "_hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_id_hp_mood",
+      "value": "@local.row_id@local.hp_mood",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_challenge",
+      "value": "_hp_challenge",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_id_hp_challenge",
+      "value": "@local.row_id@local.hp_challenge"
+    },
+    {
+      "name": "top_text",
+      "value": "@local.row_data.top_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "question_text",
+      "value": "@local.row_data.question_text",
+      "parameter_list": "style:emphasised",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_1",
+      "value": "@calc((@local.row_data.challenge_1_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_1)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_1",
+      "condition": "!@local.condition_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_1",
+      "value": "@local.row_data.text_challenge_1",
+      "condition": "!!@local.condition_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_2",
+      "value": "@calc((@local.row_data.challenge_2_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_2)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_2",
+      "condition": "!@local.condition_2",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_2",
+      "value": "@local.row_data.text_challenge_2",
+      "condition": "!!@local.condition_2",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_3",
+      "value": "@calc((@local.row_data.challenge_3_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_3)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_3",
+      "condition": "!@local.condition_3",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_3",
+      "value": "@local.row_data.text_challenge_3",
+      "condition": "!!@local.condition_3",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_4",
+      "value": "@calc((@local.row_data.challenge_4_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_4)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_4",
+      "condition": "!@local.condition_4",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_4",
+      "value": "@local.row_data.text_challenge_4",
+      "condition": "!!@local.condition_4",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_5",
+      "value": "@calc((@local.row_data.challenge_5_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_5)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_5",
+      "condition": "!@local.condition_5",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_5",
+      "value": "@local.row_data.text_challenge_5",
+      "condition": "!!@local.condition_5",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_6",
+      "value": "@calc((@local.row_data.challenge_6_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_6)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_6",
+      "condition": "!@local.condition_6",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_6",
+      "value": "@local.row_data.text_challenge_6",
+      "condition": "!!@local.condition_6",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "condition_7",
+      "value": "@calc((@local.row_data.challenge_7_tag_list).includes(@local.hp_done_field_value))",
+      "condition": "!!(@local.row_data.text_challenge_7)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_7",
+      "condition": "!@local.condition_7",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_challenge_7",
+      "value": "@local.row_data.text_challenge_7",
+      "condition": "!!@local.condition_7",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "answer_list",
+      "value": "name:challenge_1 | text:@local.text_challenge_1; \nname:challenge_2 | text:@local.text_challenge_2;\nname:challenge_3 | text:@local.text_challenge_3;\nname:challenge_4 | text:@local.text_challenge_4;\nname:challenge_5 | text:@local.text_challenge_5;\nname:challenge_6 | text:@local.text_challenge_6;\nname:challenge_7 | text:@local.text_challenge_7;\nname:other_challenge | text: @global.challenge_not_here;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "combo_box",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "placeholder",
+      "value": "@global.combo_box_placeholder",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "combo_box",
+      "condition": false,
+      "parameter_list": "text: @local.top_text;\nanswer_list:@local.answer_list;\nplaceholder: @local.placeholder;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "response_column",
+      "value": "response",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "response_other_challenge_column",
+      "value": "response_other_challenge"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_select_combo",
+      "value": "@local.data",
+      "parameter_list": "filter: @item.id == @local.row_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "combo_box",
+      "name": "combo_box",
+      "value": "@item.@local.response_column",
+      "action_list": "changed | set_item | @local.response_column: this.value;",
+      "parameter_list": "input_allowed: false;\ntext: @local.top_text;\nanswer_list:@local.answer_list;\nplaceholder: @local.placeholder;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_1",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_1\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_1"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_2",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_2\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_2"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_3",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_3\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_3"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_4",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_4\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_4"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_5",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_5\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_5"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_6",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_6\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_6"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "challenge_7",
+      "value": "feedback",
+      "condition": "@item.@local.response_column==\"challenge_7\""
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.row_data.reply_challenge_7"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "other_challenge",
+      "value": "other_challenge",
+      "condition": "@item.@local.response_column==\"other_challenge\"",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "begin_template",
+      "name": "facilitator_bubble_other",
+      "value": "feedback"
+    },
+    {
+      "name": "bubble_text",
+      "value": "@global.other_challenge_prompt"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "text_box",
+      "name": "text_box",
+      "value": "@item.@local.response_other_challenge_column",
+      "action_list": "changed | set_item | @local.response_other_challenge_column: this.value;",
+      "parameter_list": "placeholder: @global.tap_and_type"
+    },
+    {
+      "type": "begin_template",
+      "name": "facilitator_bubble_text_input",
+      "value": "feedback",
+      "condition": "!!@item.@local.response_other_challenge_column"
+    },
+    {
+      "name": "bubble_text",
+      "value": "@global.other_challenge_reply"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "begin_template",
+      "name": "nav_buttons",
+      "value": "nav_buttons",
+      "action_list": "completed | emit:completed; uncompleted | emit:uncompleted;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

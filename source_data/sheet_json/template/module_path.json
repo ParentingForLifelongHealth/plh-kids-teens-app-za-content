@@ -1,0 +1,107 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_path",
+  "status": "released",
+  "rows": [
+    {
+      "name": "background_image_asset",
+      "value": "images/backgrounds/map_view_bg.jpg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "current_module_id"
+    },
+    {
+      "name": "completed_count"
+    },
+    {
+      "type": "data_items",
+      "name": "compute_completed_length",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : completed_count : @items.length",
+      "parameter_list": "filter: @item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));"
+    },
+    {
+      "type": "data_items",
+      "name": "compute_current_module_id",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : current_module_id : @items[0]?.id",
+      "parameter_list": "filter: !@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));\nsort: number;\nlimit: 1;"
+    },
+    {
+      "type": "text",
+      "name": "debug_current_module",
+      "value": "Current Module: @local.current_module_id",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_all_modules",
+      "parameter_list": "style: column;",
+      "condition": "@local.completed_count !== undefined",
+      "exclude_from_translation": true,
+      "style_list": "background-image: url(\"assets/app_data/assets/images/background_pattern_blue.svg\");\nbackground-repeat: repeat;\nbackground-position: top center;\nbackground-size: 670px;",
+      "comments": "This should be in the parameter list:\nbackground_image_asset: images/background_pattern_blue.svg;\n\nMoved here as couldn't get the image to not resize as it is in a wrapper below where css gets populated"
+    },
+    {
+      "type": "begin_progress_path",
+      "parameter_list": "variant: curved;\nvertical_spacing: 10;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "is_highlighted",
+      "value": false
+    },
+    {
+      "type": "begin_data_items",
+      "name": "task_cards",
+      "value": "@data.module_tasks",
+      "parameter_list": "filter: !@item.tag_list || @item.tag_list.includes(@fields.child_age_tag);\nsort: number;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed_midnight",
+      "value": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "days_since_completed",
+      "value": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "is_highlighted",
+      "value": "@local.days_since_completed >= +@fields.countdown_days",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "plh_module_list_item",
+      "name": "locked_@item.id",
+      "action_list": "click | go_to: module_landing_@item.id",
+      "parameter_list": "variant: circle;\nmodule_image_asset: @item.image_asset;\nlocked_image_asset: images/icons/locked.png;\nis_locked: TRUE;\nhighlighted: @local.is_highlighted;",
+      "condition": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "plh_module_list_item",
+      "name": "unlocked_@item.id",
+      "action_list": "click | go_to: module_landing_@item.id",
+      "parameter_list": "variant: circle;\nmodule_image_asset: @item.image_asset;\nlocked_image_asset: images/icons/locked.png;\nis_locked: FALSE;\nhighlighted: @local.is_highlighted;",
+      "condition": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_progress_path",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    }
+  ]
+}

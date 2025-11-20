@@ -1,0 +1,103 @@
+{
+  "flow_type": "template",
+  "flow_name": "message_element",
+  "status": "released",
+  "rows": [
+    {
+      "name": "title",
+      "exclude_from_translation": true,
+      "comments": "need to sort disclaimer"
+    },
+    {
+      "name": "has_disclaimer",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "message_guidance",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "asset",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_box",
+      "style_list": "background-color: var(--ion-color-gray-100);\npadding: 12px;",
+      "parameter_list": "style: column;",
+      "exclude_from_translation": true,
+      "comments": "should be grey"
+    },
+    {
+      "type": "text",
+      "name": "message_title",
+      "value": "@local.title",
+      "parameter_list": "style: emphasised",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "parameter_list": "style: column;\nvariant: box_white;",
+      "exclude_from_translation": true,
+      "comments": "should be new message style (box_white variant on grey background)"
+    },
+    {
+      "type": "image",
+      "name": "message_image",
+      "value": "@local.asset",
+      "condition": "@local.asset !== \"\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "message_text",
+      "value": "@local.message_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_bottom",
+      "parameter_list": "style: column;\n"
+    },
+    {
+      "type": "text",
+      "name": "message_guidance",
+      "value": "@local.message_guidance",
+      "parameter_list": "flex: 1;\nstyle: contextual;",
+      "comments": "needs to be bullet point"
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Share",
+      "action_list": "click | share | text: @local.message_text     \n",
+      "condition": "@local.asset == \"\"",
+      "parameter_list": "icon_secondary_asset: images/icons/share.svg;",
+      "comments": "icon: images/icons/share.svg;\nicon_position: right;"
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Share",
+      "action_list": "click | share |\ntext: @local.message_text,\nfile: @local.asset",
+      "condition": "@local.asset !== \"\"",
+      "parameter_list": "icon_secondary_asset: images/icons/share.svg;",
+      "comments": "icon: images/icons/share.svg;\nicon_position: right;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

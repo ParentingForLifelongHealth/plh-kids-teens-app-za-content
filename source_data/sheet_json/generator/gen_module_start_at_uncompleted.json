@@ -1,0 +1,68 @@
+{
+  "flow_type": "generator",
+  "flow_name": "gen_module_start_at_uncompleted",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "module_{@gen.id}_start_at_uncompleted",
+    "output_flow_type": "template"
+  },
+  "rows": [
+    {
+      "name": "module_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "find_first_uncompleted_article",
+      "value": "@local.articles_data",
+      "parameter_list": "filter: !@item.completed; \nlimit: 1",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "module_start_at_id",
+      "value": "module_start_at_id",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    }
+  ]
+}

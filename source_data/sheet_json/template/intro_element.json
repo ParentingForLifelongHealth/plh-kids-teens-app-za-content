@@ -1,0 +1,48 @@
+{
+  "flow_type": "template",
+  "flow_name": "intro_element",
+  "status": "released",
+  "rows": [
+    {
+      "name": "text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "image",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text_2"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_box",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@local.text",
+      "condition": "@local.text && @local.text !== \"\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "image",
+      "value": "@local.image",
+      "condition": "@local.image && @local.image !== \"\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "@local.text_2",
+      "condition": "@local.text_2 && @local.text_2 !== \"\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

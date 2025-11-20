@@ -1,0 +1,38 @@
+{
+  "flow_type": "template",
+  "flow_name": "countdown_days",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Change countdown days"
+    },
+    {
+      "name": "countdown_days",
+      "value": "@fields.countdown_days"
+    },
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "Countdown days: @local.countdown_days"
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "Choose a number of days to count down"
+    },
+    {
+      "type": "number_selector",
+      "name": "countdown_days",
+      "value": "@fields.countdown_days",
+      "parameter_list": "max_value: 14"
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "Save",
+      "action_list": "click | set_field: countdown_days: @local.countdown_days;\nclick | emit: completed"
+    }
+  ]
+}

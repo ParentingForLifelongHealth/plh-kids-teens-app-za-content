@@ -1,0 +1,63 @@
+{
+  "flow_type": "template",
+  "flow_name": "library",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.library"
+    },
+    {
+      "type": "begin_data_items",
+      "value": "@data.library_section"
+    },
+    {
+      "type": "begin_task_card",
+      "name": "card_@item.id",
+      "action_list": "click | go_to: library_section_@item.id",
+      "condition": "@item.id != \"tips\""
+    },
+    {
+      "type": "image",
+      "name": "image_@item.id",
+      "value": "@item.image",
+      "style_list": "flex: 1; "
+    },
+    {
+      "type": "text",
+      "name": "text_@item.id",
+      "value": "@item.title",
+      "parameter_list": "style: emphasised",
+      "style_list": "flex: 3"
+    },
+    {
+      "type": "end_task_card"
+    },
+    {
+      "type": "begin_task_card",
+      "name": "card_@item.id",
+      "action_list": "click | go_to: library_article_@item.id",
+      "condition": "@item.id == \"tips\""
+    },
+    {
+      "type": "image",
+      "name": "image_@item.id",
+      "value": "@item.image",
+      "style_list": "flex: 1; "
+    },
+    {
+      "type": "text",
+      "name": "text_@item.id",
+      "value": "@item.title",
+      "parameter_list": "style: emphasised",
+      "style_list": "flex: 3"
+    },
+    {
+      "type": "end_task_card"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ]
+}

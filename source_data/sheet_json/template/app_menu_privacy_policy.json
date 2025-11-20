@@ -1,0 +1,39 @@
+{
+  "flow_type": "template",
+  "flow_subtype": "legal_terms",
+  "flow_name": "app_menu_privacy_policy",
+  "status": "released",
+  "rows": [
+    {
+      "name": "show_title",
+      "value": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.privacy_policy",
+      "condition": "!!(@local.show_title)"
+    },
+    {
+      "type": "begin_items",
+      "name": "items",
+      "value": "@data.privacy_policy"
+    },
+    {
+      "type": "text",
+      "name": "title_@item.id",
+      "value": "@item.title",
+      "condition": "@item.title",
+      "parameter_list": "style: emphasised"
+    },
+    {
+      "type": "text",
+      "name": "text_@item.id",
+      "value": "@item.text",
+      "condition": "@item.text"
+    },
+    {
+      "type": "end_items"
+    }
+  ]
+}

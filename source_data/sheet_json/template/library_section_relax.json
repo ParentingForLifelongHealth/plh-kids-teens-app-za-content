@@ -1,0 +1,104 @@
+{
+  "flow_type": "template",
+  "flow_name": "library_section_relax",
+  "status": "released",
+  "rows": [
+    {
+      "name": "library_id",
+      "value": "relax",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "library_id_concat",
+      "value": "library_section.@local.library_id"
+    },
+    {
+      "name": "library_row",
+      "value": "@data.@local.library_id_concat"
+    },
+    {
+      "name": "display_title",
+      "value": "@local.library_row.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data_list_name",
+      "value": "library_relax",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data",
+      "value": "@data.@local.articles_data_list_name",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "introduction",
+      "value": "@local.library_row.introduction",
+      "exclude_from_translation": true,
+      "condition": "!!@local.library_row.introduction"
+    },
+    {
+      "name": "article_prefix",
+      "value": "library_article_"
+    },
+    {
+      "type": "begin_template",
+      "name": "header",
+      "value": "section_header",
+      "action_list": "uncompleted | emit: uncompleted; "
+    },
+    {
+      "name": "title",
+      "value": "@local.display_title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@local.introduction",
+      "condition": "!!@local.introduction"
+    },
+    {
+      "type": "begin_items",
+      "name": "loop",
+      "value": "@local.articles_data",
+      "parameter_list": "filter: !@item.nested"
+    },
+    {
+      "name": "packages",
+      "value": "ALL",
+      "exclude_from_translation": true,
+      "condition": "!@item.tag_list || !@global.has_multiple_content_packages"
+    },
+    {
+      "name": "condition_package",
+      "value": true,
+      "condition": "!@item.tag_list || !@global.has_multiple_content_packages",
+      "comment": "Content without a tag is assumed to apply to all tags"
+    },
+    {
+      "name": "packages",
+      "value": "@item.tag_list",
+      "condition": "!!@item.tag_list && @global.has_multiple_content_packages"
+    },
+    {
+      "name": "condition_package",
+      "value": "@calc(@local.packages.includes(@fields.current_package))",
+      "condition": "!!@item.tag_list && @global.has_multiple_content_packages"
+    },
+    {
+      "type": "button",
+      "name": "button_@item.id",
+      "value": "@item.title",
+      "action_list": "click | nav_stack: open | template: @local.article_prefix@item.id, header: false;",
+      "parameter_list": "variant: faq;",
+      "condition": " @local.condition_package"
+    },
+    {
+      "type": "end_items"
+    }
+  ]
+}

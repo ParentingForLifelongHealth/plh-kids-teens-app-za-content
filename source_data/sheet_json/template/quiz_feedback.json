@@ -1,0 +1,101 @@
+{
+  "flow_type": "template",
+  "flow_name": "quiz_feedback",
+  "status": "released",
+  "rows": [
+    {
+      "name": "in_library",
+      "value": false
+    },
+    {
+      "name": "feedback",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nested_prefix",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nested_template",
+      "value": "@local.nested_prefix@local.feedback_id"
+    },
+    {
+      "type": "begin_template",
+      "name": "nested_article",
+      "value": "@local.nested_template",
+      "condition": "!!@local.feedback_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@fields.facilitator_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_character",
+      "value": "characters.@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_data",
+      "value": "@data.@local.concat_character",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_name",
+      "value": "@local.character_data.name",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_image_asset",
+      "value": "@local.character_data.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "right",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "left",
+      "condition": "@local.character_data.role != \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "primary",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "secondary",
+      "condition": "@local.character_data.role == \"child\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "gray",
+      "condition": "@local.character_data.role == \"facilitator\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_bubble",
+      "name": "text_bubble",
+      "value": "@local.feedback",
+      "parameter_list": "speaker_image_asset: @local.character_image_asset;\nspeaker_name: @local.character_name;\nspeaker_position: @local.speaker_position;\nvariant: @local.variant;",
+      "condition": "!@local.feedback_id",
+      "exclude_from_translation": true
+    }
+  ]
+}

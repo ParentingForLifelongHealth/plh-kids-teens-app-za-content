@@ -1,0 +1,39 @@
+{
+  "flow_type": "template",
+  "flow_name": "library_tools",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@data.library.tools.title"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "tool_tiles",
+      "parameter_list": "style:two_columns;"
+    },
+    {
+      "type": "begin_items",
+      "value": "@data.modules"
+    },
+    {
+      "type": "begin_template",
+      "name": "tool_tile_@item.id",
+      "value": "tool_tile"
+    },
+    {
+      "name": "module_id",
+      "value": "@item.id"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

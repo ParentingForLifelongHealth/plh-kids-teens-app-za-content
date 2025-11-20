@@ -1,0 +1,34 @@
+{
+  "flow_type": "generator",
+  "flow_name": "nested_gen",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "page_details",
+    "output_flow_name": "nested_{@gen.nested}",
+    "output_flow_type": "template"
+  },
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "article_sidekick",
+      "value": "article_sidekick",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted",
+      "condition": "@gen.nested"
+    },
+    {
+      "name": "nested",
+      "value": true
+    },
+    {
+      "name": "article_id",
+      "value": "@gen.foreign_key",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id"
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

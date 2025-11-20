@@ -1,0 +1,55 @@
+{
+  "flow_type": "template",
+  "flow_name": "nav_buttons",
+  "status": "released",
+  "rows": [
+    {
+      "name": "show_previous",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_next",
+      "value": true,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "previous_icon_src",
+      "value": "arrow-back",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "next_icon_src",
+      "value": "arrow-forward",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "buttons",
+      "parameter_list": "style: navigation"
+    },
+    {
+      "type": "round_button",
+      "name": "button_previous",
+      "action_list": "click | emit:uncompleted",
+      "parameter_list": "icon_src: @local.previous_icon_src;\nvariant: module; ",
+      "condition": "!!@local.show_previous"
+    },
+    {
+      "type": "text",
+      "name": "spacer",
+      "style_list": "flex: 1",
+      "condition": "!@local.show_previous"
+    },
+    {
+      "type": "round_button",
+      "name": "button_next",
+      "action_list": "click | emit:completed",
+      "parameter_list": "icon_src: @local.next_icon_src;\nvariant: module; ",
+      "condition": "!!@local.show_next"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

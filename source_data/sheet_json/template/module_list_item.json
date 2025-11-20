@@ -1,0 +1,86 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_list_item",
+  "status": "released",
+  "rows": [
+    {
+      "name": "module_id",
+      "value": "praise",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_data_list_name",
+      "value": "modules",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "@local.module_data_list_name.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_image_asset",
+      "value": "@local.module_row.bottom_aligned_image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nav_image_asset",
+      "value": "images/icons/expand_circle_right.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "locked_image_asset",
+      "value": "images/icons/lock.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "is_locked",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_title",
+      "value": "@local.module_row.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "target_template",
+      "value": "module_landing_@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed_image_asset",
+      "value": "images/icons/verified.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "is_completed",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "is_highlighted",
+      "value": true,
+      "exclude_from_translation": true,
+      "comment": "!@local.is_locked && !@local.is_completed"
+    },
+    {
+      "name": "background",
+      "value": "var(--plh-module-list-item-background-1)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "plh_module_list_item",
+      "name": "plh_module_list_item",
+      "value": "@local.module_title",
+      "action_list": "click | go_to: @local.target_template",
+      "parameter_list": "module_image_asset: @local.module_image_asset;\nnav_image_asset: @local.nav_image_asset;\nlocked_image_asset: @local.locked_image_asset;\ncompleted_image_asset: @local.completed_image_asset;\ncompleted: @local.is_completed;\nis_locked: @local.is_locked;\nhighlighted: @local.is_highlighted;\nbackground: @local.background;",
+      "exclude_from_translation": true
+    }
+  ]
+}

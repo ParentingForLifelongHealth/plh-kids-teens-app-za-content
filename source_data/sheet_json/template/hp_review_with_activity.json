@@ -1,0 +1,28 @@
+{
+  "flow_type": "template",
+  "flow_name": "hp_review_with_activity",
+  "status": "released",
+  "rows": [
+    {
+      "type": "begin_data_items",
+      "name": "pick_random_locked_activity",
+      "value": "@data.activity_tasks",
+      "parameter_list": "filter: @item.locked && (@fields.child_age === undefined || !@item.child_age_list || ([].concat(@item.child_age_list)).map(x => String(x)).includes(String(@fields.child_age)));\nshuffle;\nlimit: 1;",
+      "exclude_from_translation": true,
+      "comment": "filter: @item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age));\nshuffle;\nlimit: 1;"
+    },
+    {
+      "type": "begin_template",
+      "name": "hp_review",
+      "value": "hp_review",
+      "action_list": "completed | set_data | _list_id: activity_tasks, _id: @item.id, locked: false; \ncompleted | set_field: latest_unlocked_activity: @item.id;\ncompleted | emit: completed; \nuncompleted | emit: uncompleted;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ]
+}

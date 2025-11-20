@@ -1,0 +1,30 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_landing_consequences_t",
+  "status": "released",
+  "parameter_list": {
+    "app_config": {
+      "LAYOUT": {
+        "page_padding": "0 0"
+      }
+    }
+  },
+  "comment": "consequences_t",
+  "comment_2": 29,
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "module_landing",
+      "value": "module_landing",
+      "action_list": "completed | emit: completed; \nuncompleted | emit: uncompleted"
+    },
+    {
+      "name": "module_id",
+      "value": "consequences_t",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

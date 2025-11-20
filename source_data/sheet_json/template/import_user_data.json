@@ -1,0 +1,36 @@
+{
+  "flow_type": "template",
+  "flow_name": "import_user_data",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Import user",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "user_id_name",
+      "value": "User ID",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_instruction",
+      "value": "Paste the @local.user_id_name to import their account data.",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_box",
+      "name": "user_id_input",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_import",
+      "value": "Import data",
+      "action_list": "click | user: import: @local.user_id_input;\nclick | emit: force_reprocess;",
+      "exclude_from_translation": true
+    }
+  ]
+}

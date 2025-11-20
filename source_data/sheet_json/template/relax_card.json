@@ -1,0 +1,57 @@
+{
+  "flow_type": "template",
+  "flow_name": "relax_card",
+  "status": "released",
+  "rows": [
+    {
+      "name": "data_list_name",
+      "value": "relax",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id",
+      "value": "relax_1",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data_list_name_id",
+      "value": "@local.data_list_name.@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "row_data",
+      "value": "@data.@local.data_list_name_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_title",
+      "value": "@local.row_data.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_icon",
+      "value": "images/icons/smile_eyes_down.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "target_template",
+      "value": "article_@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "task_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed_field",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "task_card",
+      "name": "task_card",
+      "action_list": "click | go_to: @local.target_template",
+      "exclude_from_translation": true,
+      "parameter_list": "task_id: @local.task_id;\ncompleted_field: @local.completed_field;\ntitle: @local.card_title;\nimage: @local.card_icon;\nstyle: button;\nin_progress_icon: images/icons/in_progress.svg;\ncompleted_icon: images/icons/tick.svg;"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_start_at_id",
+  "status": "released",
+  "rows": [
+    {
+      "name": "module_id",
+      "value": "instructions",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles_data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "explore_1"
+    },
+    {
+      "type": "begin_items",
+      "name": "find_active_index",
+      "value": "@data.@local.articles_data"
+    },
+    {
+      "type": "begin_template",
+      "name": "module",
+      "value": "module",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted",
+      "condition": "@item.id == @local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "active_index",
+      "value": "@item._index",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_items"
+    }
+  ]
+}

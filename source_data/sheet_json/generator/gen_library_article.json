@@ -1,0 +1,28 @@
+{
+  "flow_type": "generator",
+  "flow_name": "gen_library_article",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "library_article",
+    "output_flow_name": "library_article_{@gen.id}",
+    "output_flow_type": "template"
+  },
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "library_article",
+      "value": "library_article",
+      "action_list": "uncompleted | emit: uncompleted",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    }
+  ]
+}

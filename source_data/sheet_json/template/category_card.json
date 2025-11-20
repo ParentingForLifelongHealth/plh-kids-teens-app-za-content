@@ -1,0 +1,93 @@
+{
+  "flow_type": "template",
+  "flow_name": "category_card",
+  "status": "released",
+  "rows": [
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_concat",
+      "value": "modules.@local.module_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_row",
+      "value": "@data.@local.module_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "categories",
+      "value": "_category_tasks",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_data",
+      "value": "@local.module_id@local.categories",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_id",
+      "value": "learn",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_concat",
+      "value": "@local.category_data.@local.category_id",
+      "condition": "@local.category_data && @local.category_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "category_row",
+      "value": "@data.@local.category_concat",
+      "condition": "@local.category_data && @local.category_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_title",
+      "value": "@local.category_row.title",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "card_icon",
+      "value": "@local.category_row.icon_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "start_at",
+      "value": "_start_at_"
+    },
+    {
+      "name": "target_template",
+      "value": "module_@local.module_id@local.start_at@local.category_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "use_pop_up",
+      "value": true
+    },
+    {
+      "type": "task_card",
+      "name": "task_card_@local.category_id",
+      "action_list": "click | go_to: @local.target_template",
+      "parameter_list": "title: @local.card_title;\nimage: @local.card_icon;\nvariant: button;",
+      "condition": "!@local.use_pop_up",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "task_card",
+      "name": "task_card_@local.category_id",
+      "action_list": "click | pop_up: @local.target_template | fullscreen: true, showCloseButton: false;",
+      "parameter_list": "title: @local.card_title;\nimage: @local.card_icon;\nvariant: button;",
+      "condition": "@local.use_pop_up",
+      "exclude_from_translation": true
+    }
+  ]
+}

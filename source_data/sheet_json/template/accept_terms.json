@@ -1,0 +1,70 @@
+{
+  "flow_type": "template",
+  "flow_subtype": "legal_terms",
+  "flow_name": "accept_terms",
+  "status": "released",
+  "rows": [
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "By providing your consent below you acknowledge reading and accepting the @global.terms_and_conditions and @global.privacy_policy. The most important commitments are:\n1. This is, and will always be, a fully free app.\n2. Your data will never be sold. We are not for profit.\n3. By using the app you are helping to make the app better for you and others.\n4. Your anonymised data may be used for research purposes by our @global.app_name team."
+    },
+    {
+      "type": "button",
+      "name": "button_1",
+      "value": "@global.terms_and_conditions",
+      "action_list": "click | pop_up: app_menu_terms | fullscreen: true"
+    },
+    {
+      "type": "button",
+      "name": "button_2",
+      "value": "@global.privacy_policy",
+      "action_list": "click | pop_up: app_menu_privacy_policy | fullscreen: true"
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "These policies are still under construction. We value advice and input to improve them."
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_checkbox"
+    },
+    {
+      "type": "simple_checkbox",
+      "name": "checkbox",
+      "parameter_list": "align: left"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "I consent to the commitments stated above.",
+      "parameter_list": "style: emphasised",
+      "style_list": "flex:1"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "Continue",
+      "action_list": "click | pop_up: accept_terms_warning",
+      "parameter_list": "style:navigation;",
+      "condition": "!@local.checkbox"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "Continue",
+      "action_list": "click | emit: completed;\nclick | set_field: @global.deployment_terms_field: true;",
+      "parameter_list": "style:navigation;",
+      "condition": "@local.checkbox"
+    },
+    {
+      "type": "text",
+      "name": "spacer",
+      "value": "Last updated: @global.deployment_terms_text"
+    }
+  ]
+}

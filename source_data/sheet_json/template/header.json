@@ -1,0 +1,37 @@
+{
+  "flow_type": "template",
+  "flow_name": "header",
+  "status": "released",
+  "rows": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_header",
+      "parameter_list": "sticky: top; \nstyle: background_solid;",
+      "style_list": "align-items: center;\npadding-top: 12px;\npadding-inline-start: 24px;\npadding-inline-end: 12px;"
+    },
+    {
+      "name": "close_icon_asset",
+      "value": "close",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "image",
+      "name": "icon_asset",
+      "style_list": "width: 46px"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "style_list": "flex: 1;\nmargin-inline-start: 12px;"
+    },
+    {
+      "type": "round_button",
+      "name": "close_button",
+      "action_list": "click | nav_stack: close_top;",
+      "parameter_list": "variant: no-background; \nicon_src: @local.close_icon_asset"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

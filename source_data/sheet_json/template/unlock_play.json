@@ -1,0 +1,68 @@
+{
+  "flow_type": "template",
+  "flow_name": "unlock_play",
+  "status": "released",
+  "rows": [
+    {
+      "name": "activity_id",
+      "value": "@fields.latest_unlocked_activity"
+    },
+    {
+      "name": "congratulation_text",
+      "value": "@global.a_new_moment_of_play_has_been_unlocked"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_bg",
+      "parameter_list": "background_image_asset: images/backgrounds/kites.svg",
+      "style_list": "width: 100%;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_column",
+      "parameter_list": "style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "lottie_animation",
+      "name": "lottie",
+      "value": "lottie/gift_box.json",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.hurrah",
+      "parameter_list": "text_align: center; style: alternative",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@local.congratulation_text",
+      "parameter_list": "text_align: center; style: alternative",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_id",
+      "value": "@local.activity_id",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "value": "@global.open_your_moment_of_play",
+      "action_list": "click | emit: completed; \nclick | nav_stack: open | template: activity_@local.activity_id, header: false;\nclick | set_data | \n_list_id: activity_tasks,\n_id: @local.activity_id,\naccessed: true",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

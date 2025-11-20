@@ -1,0 +1,151 @@
+{
+  "flow_type": "template",
+  "flow_name": "account",
+  "status": "released",
+  "rows": [
+    {
+      "name": "is_user_signed_in",
+      "value": "!!@fields._auth_user_id"
+    },
+    {
+      "name": "just_logged_in",
+      "value": false
+    },
+    {
+      "name": "show_title",
+      "value": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.account",
+      "condition": "@local.show_title"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "login",
+      "condition": "!@local.is_user_signed_in",
+      "parameter_list": "style: column;"
+    },
+    {
+      "type": "text",
+      "name": "text_login",
+      "value": "@global.login_optional_why",
+      "condition": "!@global.login_is_mandatory"
+    },
+    {
+      "type": "apple_sign_in_button",
+      "name": "button_apple_sign_in",
+      "value": "@global.login_apple",
+      "action_list": "click | emit: force_reprocess;\nclick | set_local: just_logged_in: true",
+      "condition": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\""
+    },
+    {
+      "type": "google_sign_in_button",
+      "name": "button_google_sign_in",
+      "value": "@global.login_google",
+      "action_list": "click | emit: force_reprocess;\nclick | set_local: just_logged_in: true"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "logged_in",
+      "condition": "@local.is_user_signed_in",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_column",
+      "parameter_list": "variant: box_secondary; \nstyle: column"
+    },
+    {
+      "type": "image",
+      "name": "user_picture",
+      "value": "@fields._auth_user_picture",
+      "condition": "!!@fields._auth_user_picture",
+      "parameter_list": "style: rounded_corners",
+      "style_list": "width: 96px;\nheight: 96px;"
+    },
+    {
+      "type": "text",
+      "name": "user_name",
+      "value": "@fields._auth_user_name",
+      "condition": "!!@fields._auth_user_name",
+      "parameter_list": "text_align: center"
+    },
+    {
+      "type": "text",
+      "name": "name_missing",
+      "value": "@global.logged_in",
+      "condition": "!@fields._auth_user_name",
+      "parameter_list": "text_align:center"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_row"
+    },
+    {
+      "type": "button",
+      "name": "button_sign_out",
+      "value": "<u>@global.logout</u>",
+      "action_list": "click | emit: server_sync; \nclick | auth: sign_out;\nclick | emit: force_reprocess;",
+      "condition": "!@global.login_is_mandatory",
+      "exclude_from_translation": true,
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "button",
+      "name": "button_sign_out",
+      "value": "<u>@global.logout</u>",
+      "action_list": "click | emit: server_sync; \nclick | auth: sign_out;\nclick | reset_data;\nclick | reset_app;",
+      "condition": "@global.login_is_mandatory",
+      "exclude_from_translation": true,
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "button",
+      "name": "button_delete_account",
+      "value": "<u>@global.delete_account</u>",
+      "action_list": "click | pop_up: delete_account_warning",
+      "exclude_from_translation": true,
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "style_list": "flex: 1"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "find_last_synced_id",
+      "value": "_auth_profiles",
+      "condition": "@local.just_logged_in && !@global.login_is_mandatory",
+      "parameter_list": "sort: updatedAt;\nreverse;\nlimit: 1"
+    },
+    {
+      "type": "text",
+      "name": "text_previous_login",
+      "value": "@global.previous_login",
+      "style_list": "margin-bottom: 12px"
+    },
+    {
+      "type": "button",
+      "name": "button_restore",
+      "value": "@global.restore_data",
+      "action_list": "click | user: import: @item.id;\nclick | emit: force_reprocess;",
+      "comments": "click | user: import: @item.id;\nclick | emit: force_restart"
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

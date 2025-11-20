@@ -1,0 +1,92 @@
+{
+  "flow_type": "template",
+  "flow_name": "comic_loop",
+  "status": "released",
+  "rows": [
+    {
+      "name": "article_id",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_comics",
+      "value": "@data.comics",
+      "parameter_list": "filter: @item.foreign_key == @local.article_id"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "comic_element",
+      "value": "comic_element"
+    },
+    {
+      "name": "character_id",
+      "value": "@item.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_character",
+      "value": "characters.@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_data",
+      "value": "@data.@local.concat_character",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_name",
+      "value": "@local.character_data.name",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_image_asset",
+      "value": "@local.character_data.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "right",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "left",
+      "condition": "@local.character_data.role != \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "primary",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "secondary",
+      "condition": "@local.character_data.role == \"child\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "gray",
+      "condition": "@local.character_data.role != \"caregiver\" && @local.character_data.role != \"child\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_bubble",
+      "name": "text_bubble",
+      "value": "@item.character_text",
+      "condition": "!!@item.character_text",
+      "parameter_list": "speaker_image_asset: @local.character_image_asset;\nspeaker_name: @local.character_name;\nspeaker_position: @local.speaker_position;\nvariant: @local.variant;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ]
+}

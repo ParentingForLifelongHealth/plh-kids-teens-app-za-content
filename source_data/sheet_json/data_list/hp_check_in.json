@@ -1,0 +1,282 @@
+{
+  "flow_type": "data_list",
+  "flow_name": "hp_check_in",
+  "status": "released",
+  "data_list_name": "hp_check_in",
+  "flow_subtype": "hp_review",
+  "rows": [
+    {
+      "id": "@default",
+      "notification_text::eng": "Let’s check in on your home activity!",
+      "activity_title::eng": "Let’s check in on your home activity!",
+      "question_done::eng": "Did you have a chance to try this?",
+      "reply_no::eng": "That is okay, do not be too hard on yourself. We encourage you to try and do it when you can.",
+      "question_how::eng": "How did it go?",
+      "happy_image_asset": "images/faces/happy.svg",
+      "ok_image_asset": "images/faces/neutral.svg",
+      "sad_image_asset": "images/faces/sad.svg",
+      "outro_text::eng": "Well done for exploring solutions to your challenges. Go try these solutions out. Your relationship with your child will get stronger and stronger!",
+      "attached_single_doc": "https://docs.google.com/document/d/1eJNU-MCk21ZCkoYR5uw2-mlEPSTmne6CqvHiydw2Rac"
+    },
+    {
+      "id": "oneononetime",
+      "notification_text::eng": "How did one-on-one time go?",
+      "tag_list": "child",
+      "tag": "child",
+      "text_goal::eng": "Your home activity was to spend 5 minutes of one-on-one time with your child.",
+      "reply_happy::eng": "That’s wonderful! Well done for spending time together. It lays the foundation for a great relationship with your child!",
+      "reply_ok::eng": "Sometimes it will be easy and fun to spend time with your child and sometimes it will be difficult. Spending time together will definitely improve your relationship!",
+      "reply_sad::eng": "Sorry to hear that it was difficult for you to spend time with your child. We all have challenges sometimes. Just be patient with yourself and your child – things will get better. Well done for trying!"
+    },
+    {
+      "id": "oneononetime_t",
+      "notification_text::eng": "How did one-on-one time go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to spend one-on-one time with your teen.",
+      "reply_happy::eng": "That’s wonderful! Well done for spending time together. It lays the foundation for a great relationship with your teen!",
+      "reply_ok::eng": "Sometimes it will be easy and fun to spend time with your teens and sometimes it will be more challenging. Spending time together will definitely improve your relationship!",
+      "reply_sad::eng": "Sorry to hear that it was difficult for you to spend time with your teen. We all have challenges sometimes. Just be patient with yourself and your teen – things will get better. Well done for trying!"
+    },
+    {
+      "id": "feelings",
+      "notification_text::eng": "How did talking about feelings go?",
+      "tag_list": "child",
+      "tag": "child",
+      "text_goal::eng": "Your home activity was to take a moment each day to talk with your child about feelings. ",
+      "reply_happy::eng": "That’s wonderful! Well done for talking with your child about their feelings. It lays the foundation for a great relationship with your child!",
+      "reply_ok::eng": "Talking about feelings can be both easy and tough at times. The effort you put in to discuss them will surely help strengthen your bond!",
+      "reply_sad::eng": "Sorry to hear it was challenging to talk about feelings. It’s normal to face difficulties sometimes. Keep being patient with yourself and your child – it will get easier. Good job for making the effort!"
+    },
+    {
+      "id": "praise",
+      "notification_text::eng": "How did praising your child go?",
+      "tag_list": "child",
+      "tag": "child",
+      "text_goal::eng": "Your home activity was to praise your child for 2 things every day. ",
+      "reply_no::eng": "It can sometimes be hard to remember to praise our children. \n\nNext time you spend one-on-one time with your child, try and think of one thing you can praise them for. You can even say, “Thank you for spending time with me!”",
+      "reply_happy::eng": "Great to hear it went well! Keep up the praise – you will see your child do more and more of the behaviour you like to see!",
+      "reply_ok::eng": "It sometimes takes a bit of time to adjust to praising, but it makes a big difference – you will see.",
+      "reply_sad::eng": "Sorry that you struggled with this. Starting with praise can take some practice, but you will see the positive results soon!",
+      "outro_text::eng": "You deserve some praise, too. Thank you again for using @global.app_name. It shows you really care!"
+    },
+    {
+      "id": "praise_t",
+      "notification_text::eng": "How did praising your teen go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to praise your teen once a day.",
+      "reply_no::eng": "It can sometimes be hard to remember to praise our teens. Next time you spend one-on-one time with your teen, try and think of one thing you can praise them for. You can even say, “Thank you for spending time with me!”",
+      "reply_happy::eng": "Great to hear it went well! Keep up the praise – you will see your teen do more and more of the behaviour you like to see!",
+      "reply_ok::eng": "It sometimes takes a bit of time to adjust to praising, but it makes a big difference – you will see.",
+      "sad_image_asset": "images/icons/faces/sad.svg",
+      "reply_sad::eng": "Sorry that you struggled with this. Starting with praise can take some practice, but you will see the positive results soon!",
+      "outro_text::eng": "You deserve some praise, too. Thank you again for using @global.app_name. It shows you really care!"
+    },
+    {
+      "id": "instructions",
+      "notification_text::eng": "How did giving clear instructions go?",
+      "tag_list": "child",
+      "tag": "child",
+      "text_goal::eng": "Your home activity was to give your child specific, realistic, and positive instructions. ",
+      "reply_happy::eng": "Great to hear it went well. You are a star!",
+      "reply_ok::eng": "Sorry to hear it was difficult for you. Well done for trying!",
+      "reply_sad::eng": "Giving instructions in a new way takes some practice. Keep trying, you will soon see the difference it makes!",
+      "outro_text::eng": "Thank you for sharing! Well done for trying to give your child positive instructions and for building a positive relationship with your child. \n\nYour child deserves praise and YOU do as well!"
+    },
+    {
+      "id": "rulesroutines",
+      "notification_text::eng": "How did making a rule and routine go?",
+      "tag_list": "child",
+      "tag": "child",
+      "text_goal::eng": "Your goal was to make ONE rule and ONE routine with your child.",
+      "reply_happy::eng": "Great to hear it went well! Consistent rules help make our child feel secure and keep them safe!",
+      "reply_ok::eng": "It can be hard to create your first rule together, but you will see the benefits of involving your family. Keep trying!",
+      "reply_sad::eng": "Sorry that this has been difficult. Creating rules together requires some practice but it is worth it!",
+      "outro_text::eng": "Well done for this! It is not easy, and children will not keep to the rules all the time, but making a few key rules together is a great start. Praise yourself for trying this – we are proud of you!"
+    },
+    {
+      "id": "consequences",
+      "notification_text::eng": "How did talking about consequences go?",
+      "tag_list": "child",
+      "tag": "child",
+      "text_goal::eng": "Your home activity was to discuss one household rule that your child finds hard to follow and agree on a fair consequence together. ",
+      "reply_happy::eng": "Great to hear it went well! Getting consequences right helps children behave better and makes family life calmer.",
+      "reply_ok::eng": "Staying calm and consistent can be hard, but you are doing so well. You can do this!",
+      "reply_sad::eng": "Sorry to hear that this was difficult for you. Setting consequences together will make your child want to follow the rules more often!"
+    },
+    {
+      "id": "problemsolving",
+      "notification_text::eng": "How did solving a problem together go?",
+      "tag_list": "child",
+      "tag": "child",
+      "text_goal::eng": "Your goal was to to identify a problem your child may have and practise the four steps of problem-solving together: \nKnow It, Solve It, Try It, Reflect.",
+      "reply_happy::eng": "Great to hear it went well! When your child learns how to solve problems, they can use that skill their whole life. What a gift to give them!",
+      "reply_ok::eng": "Solving problems together takes some practice. The more often you involve your child when you are both calm, the better it will go. Well done for trying!",
+      "reply_sad::eng": "Sorry to hear that this was hard. Sometimes we just have to keep trying. Find a time when you and your child are calm and try again to talk through a problem using the four steps of problem-solving. Together, you can do so much!"
+    },
+    {
+      "id": "problemsolving_t",
+      "notification_text::eng": "How did solving a problem together go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to try and resolve a problem together with your teen using the four steps of problem-solving: Know It, Solve It, Try It, Test It. ",
+      "reply_happy::eng": "Great to hear it went well! When your teen learns how to solve problems, they can use that skill their whole life. What a gift!",
+      "reply_ok::eng": "Solving problems together takes some practice. The more often you involve your teen when you are both calm, the better it will go. Well done for trying!",
+      "reply_sad::eng": "Sorry that this was hard. Sometimes we just have to keep trying. Find a time when you and your teen are calm and try again to talk through a problem using the four steps of problem-solving. Together, you can do so much!"
+    },
+    {
+      "id": "selfcare",
+      "notification_text::eng": "How did taking care of yourself go?",
+      "tag_list": "child",
+      "tag": "child",
+      "text_goal::eng": "Your home activity was to pause, praise your efforts and reward yourself.",
+      "reply_happy::eng": "Great to hear you took time for yourself! Taking care of yourself helps you be the best parent you can be.",
+      "reply_ok::eng": "Taking time for yourself can be challenging, but you’re doing great. Keep it up — you deserve it!",
+      "reply_sad::eng": "Sorry to hear that it was difficult to prioritise yourself. Remember, taking care of yourself is essential and will help you take care of others even better!"
+    },
+    {
+      "id": "selfcare_t",
+      "notification_text::eng": "How did taking care of yourself go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your home activity was to relax, recognise your efforts, and reward yourself. ",
+      "reply_happy::eng": "Great to hear you took time for yourself! Taking care of yourself helps you be the best parent you can be.",
+      "reply_ok::eng": "Taking time for yourself can be challenging, but you’re doing great. Keep it up — you deserve it!",
+      "reply_sad::eng": "Sorry to hear that it was difficult to prioritise yourself. Remember, taking care of yourself is essential and will help you take care of others even better!"
+    },
+    {
+      "id": "developmentplay",
+      "notification_text::eng": "How did playing with your child go?",
+      "tag_list": "child",
+      "tag": "child",
+      "text_goal::eng": "Your home activity was to play with your child. ",
+      "reply_happy::eng": "That is great to hear! Spending time with your child is a great way to build a good relationship with them!",
+      "reply_ok::eng": "Every time you play with your child, you’re building something special, even if it doesn’t always go perfectly. Well done for staying committed!",
+      "reply_sad::eng": "Sorry to hear that it was hard. Sometimes it takes a few tries to find the right way. Keep trying, and remember that playtime is a valuable way to connect with your child. You’re doing your best, and that’s what matters!"
+    },
+    {
+      "id": "instructions_t",
+      "notification_text::eng": "How did giving clear instructions go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your home practice was to give your teen positive instructions.",
+      "reply_happy::eng": "Great to hear it went well. You are a star!\n",
+      "reply_ok::eng": "Sorry to hear it was difficult for you. Well done for trying!\n",
+      "reply_sad::eng": "Giving instructions in a new way takes some practice. Keep trying, you will soon see the difference it makes!"
+    },
+    {
+      "id": "stress_t",
+      "notification_text::eng": "How did keeping calm under stress go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "This week, your goal was to respond calmly and talk to your teen about how you both felt in a stressful situation.\n\nYour other goal was to pick a Safety Word together. ",
+      "reply_happy::eng": "Wonderful! You deserve all the happy times!",
+      "reply_ok::eng": "Sorry that this was difficult for you. You are a star for trying!",
+      "reply_sad::eng": "Life can be so stressful. Every small step counts. Keep up the good work!"
+    },
+    {
+      "id": "rules_t",
+      "notification_text::eng": "How did setting a rule go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to set one rule together with your teen.",
+      "reply_happy::eng": "Great to hear it went well! Consistent rules help make our teens feel secure and keep them safe!",
+      "reply_ok::eng": "It can be hard to create your first rule together, but you will see the benefits of involving your family. Keep trying!",
+      "reply_sad::eng": "Sorry that this has been difficult. Creating rules together requires some practice but it is worth it!",
+      "outro_text::eng": "Well done for this! It is not easy, and teenagers will not keep to the rules all the time, but making a few key rules together is a great start. Praise yourself for trying this – we are proud of you!\n"
+    },
+    {
+      "id": "consequences_t",
+      "notification_text::eng": "How did introducing a positive consequence go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to introduce one POSITIVE consequence (for your teen taking good actions) and one NEGATIVE consequence (for your teen breaking a household rule).",
+      "reply_happy::eng": "Great to hear it went well! Getting consequences right helps teens behave better and makes family life calmer.",
+      "reply_ok::eng": "Staying calm and consistent can be hard, but you are doing so well. You can do this!",
+      "reply_sad::eng": "Sorry that this was difficult for you. Setting consequences together will make your teen want to follow the rules more often!"
+    },
+    {
+      "id": "safety_t",
+      "notification_text::eng": "How did making safety maps go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to make two maps with your teen of safe and unsafe places – both in your community and online.",
+      "reply_happy::eng": "Great to hear it went well! Talking about risks and support options prevents problems and really helps to keep your teen safe.",
+      "reply_ok::eng": "Even if it did not go so well yet, you will get there! Mapping risks and support systems together will help your family. Well done for trying.",
+      "reply_sad::eng": "Sorry that this was hard. Mapping risks and places to get support can be challenging and emotional. It really does help to keep your teen safe!"
+    },
+    {
+      "id": "crisis_t",
+      "notification_text::eng": "How did talking about a crisis plan go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to discuss a possible crisis situation with your teen and make a plan for how you could respond together.",
+      "reply_happy::eng": "Great to hear it went well!",
+      "reply_ok::eng": "It can be hard to think and talk about a crisis happening in your family. By trying you are already on the right path. Keep up the good work!",
+      "reply_sad::eng": "Sorry it didn’t go so well. This can be tough. Try sitting down with your teen again — and think about whether someone they trust could join the conversation to help."
+    },
+    {
+      "id": "money_t",
+      "notification_text::eng": "How did making a family budget go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to make a family budget.",
+      "reply_happy::eng": "Great to hear it went well. Talking about your finances together really makes your family stronger!",
+      "reply_ok::eng": "It is never easy to talk about money. Well done on starting the conversation and teaching your teen about this.",
+      "reply_sad::eng": "Sorry to hear it was difficult for you. Well done for trying. Helping your teen understand money better will benefit them so much in life!",
+      "outro_text::eng": "Thank you for sharing your experiences! Well done for thinking about how you can budget and save with your family. This will really help you to work towards your family goals.\n\nTogether you can achieve so many good things!"
+    },
+    {
+      "id": "srh_t",
+      "notification_text::eng": "How did reading the stories and talking about body changes go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to look at the stories in this module together with your teen and use them to start a conversation about body changes and relationships.",
+      "reply_happy::eng": "Well done for trying it out – you took a very important step to help your teen!",
+      "reply_ok::eng": "Talking about these sensitive topics can be uncomfortable for both you and your teen. The more you try, the better it will get. It is worth every bit of your effort!",
+      "reply_sad::eng": "It can be hard to talk to your teen about these things. That is okay. Well done for trying, you will get another opportunity again soon!",
+      "outro_text::eng": "It can be hard to find resources! Go to your nearest clinic or another support service and ask what resources they may have available."
+    },
+    {
+      "id": "stayingsafe_t",
+      "notification_text::eng": "How did talking about staying safe with your teen go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to discuss the Staying Safe module with your teen.",
+      "reply_happy::eng": "Well done for involving your teen! Discussing these difficult topics can help keep your teen safe when it matters most.",
+      "reply_ok::eng": "Talking about potentially dangerous situations with your teen can be challenging, but just know that you started an important conversation! Keep up the good work.",
+      "reply_sad::eng": "Discussing potential dangers and how to respond can be a trigger for any parent and teen. The fact that you tried already makes a big difference and really shows you care."
+    },
+    {
+      "id": "grief_t",
+      "notification_text::eng": "How did sharing feelings of grief with your teen go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "This week, your goal was to share with your teen how you feel, and ask them to also name their feelings.\n",
+      "reply_happy::eng": "Well done! Sharing feelings will help your family to support each other and get through this difficult time together.",
+      "reply_ok::eng": "Talking about feelings can be challenging at first. Try again another time. It will help you and your family.",
+      "reply_sad::eng": "Losing someone impacts everyone differently. Be kind to yourself and take some time to notice and share how you feel when you are ready. You will see it will help you and your family."
+    },
+    {
+      "id": "learn_t",
+      "notification_text::eng": "How did trying a fun activity with your teen go?",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to try a fun activity with your teen.",
+      "reply_happy::eng": "Great to hear it went well! Spending fun, relaxed time with your teen helps them learn important life skills  —  and it strengthens your bond.",
+      "reply_ok::eng": "You're doing well! Even small moments of fun and conversation can help your teen feel valued and motivated. Keep it up!",
+      "reply_sad::eng": "Taking time for yourself can be challenging, but you’re doing great. Keep it up — you deserve it!"
+    },
+    {
+      "id": "onlinesafety_t",
+      "notification_text::eng": "How did making an Online Family Agreement with your teen go? ",
+      "tag_list": "teen",
+      "tag": "teen",
+      "text_goal::eng": "Your goal was to make an Online Family Agreement with your teen.",
+      "reply_happy::eng": "Great to hear it went well! Creating an Online Family Agreement together can help your teen feel trusted and supported.",
+      "reply_ok::eng": "Talking about these sensitive topics can be uncomfortable for both you and your teen. The more you try, the better it will get. It is worth every bit of your effort!",
+      "reply_sad::eng": "Sorry it was difficult this time. Talking about online behaviour can be tricky, especially when teens value their privacy. Try again another day when you’re both calm."
+    }
+  ]
+}

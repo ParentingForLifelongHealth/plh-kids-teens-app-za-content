@@ -1,0 +1,34 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_language_select",
+  "status": "released",
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "header",
+      "value": "onboarding_header"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "name": "language_select_options",
+      "value": "@data.language"
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "language_grid",
+      "action_list": "changed | emit: set_language: this.value;\nchanged | emit: completed;\nchanged | set_field: onboarding_language_select_completed: true;",
+      "parameter_list": "answer_list: @local.language_select_options; \nitem_width: 200px;"
+    },
+    {
+      "type": "begin_template",
+      "name": "footer",
+      "value": "onboarding_footer",
+      "condition": "!!@global.onboarding_footer_image_asset"
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

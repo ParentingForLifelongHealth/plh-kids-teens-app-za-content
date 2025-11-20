@@ -1,0 +1,41 @@
+{
+  "flow_type": "generator",
+  "flow_name": "module_relax_gen",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "article_{@gen.id}_{@gen.relax_id}",
+    "output_flow_type": "template"
+  },
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "header",
+      "value": "header"
+    },
+    {
+      "name": "title",
+      "value": "@data.common_categories.relax.title"
+    },
+    {
+      "name": "icon_asset",
+      "value": "@data.common_categories.relax.icon_asset"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "article",
+      "value": "relax",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted"
+    },
+    {
+      "name": "id",
+      "value": "@gen.relax_id"
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

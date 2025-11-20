@@ -1,0 +1,41 @@
+{
+  "flow_type": "template",
+  "flow_name": "exit_dev_mode",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Exit developer mode",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "Click the button below to go back to user mode.",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_incorrect_code",
+      "value": "Enter user mode",
+      "action_list": "click | set_field: user_mode:true;\nclick | emit:force_restart;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "leave_reply",
+      "hidden": "!@fields.user_mode",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "You have entered user mode.",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

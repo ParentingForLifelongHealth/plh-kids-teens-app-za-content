@@ -1,0 +1,118 @@
+{
+  "flow_type": "template",
+  "flow_name": "home_screen_header",
+  "status": "released",
+  "rows": [
+    {
+      "name": "countdown_days",
+      "value": "@fields.countdown_days"
+    },
+    {
+      "name": "hp_uncompleted_ids"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_2",
+      "value": "@data.hp_check_in",
+      "action_list": "data_changed | set_local : hp_uncompleted_ids : @items.map(item => item.id)",
+      "parameter_list": "filter: !@item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "name": "hp_unlocked_ids"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_1",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : hp_unlocked_ids : @items.map(item => item.id)",
+      "parameter_list": "filter: !!@item.completed_ts && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));\nsort: completed_ts;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "text",
+      "name": "debug_1",
+      "value": "@local.hp_unlocked_ids",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_2",
+      "value": "@local.hp_uncompleted_ids",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_id",
+      "value": "@calc((@local.hp_unlocked_ids || []).find(x => (@local.hp_uncompleted_ids || []).includes(x)))",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_3",
+      "value": "HP id: @local.hp_id",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_review_template",
+      "value": "stack_hp_review_@local.hp_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_check_in_row",
+      "value": "hp_check_in.@local.hp_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_check_in_data",
+      "value": "@data.@local.hp_check_in_row",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_check_in_notification_text",
+      "value": "@local.hp_check_in_data.notification_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_row",
+      "condition": "!!@local.hp_id",
+      "style_list": "padding-inline: 12px"
+    },
+    {
+      "type": "text",
+      "name": "button_text",
+      "value": "**@local.hp_check_in_notification_text**",
+      "exclude_from_translation": true,
+      "style_list": "flex: 1; \ncolor: white; "
+    },
+    {
+      "type": "round_button",
+      "name": "round_button",
+      "value": "@local.button_text",
+      "action_list": "click | emit: completed;\nclick | nav_stack: open | template: @local.hp_review_template;",
+      "parameter_list": "icon_src: images/icons/expand_circle_right_blue.svg;\nvariant: no-background;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_start",
+      "value": "@local.button_text",
+      "action_list": "click | emit: completed;\nclick | nav_stack: open | template: @local.hp_review_template;",
+      "parameter_list": "style: information; \ntext_align: center",
+      "condition": false,
+      "exclude_from_translation": true
+    }
+  ]
+}

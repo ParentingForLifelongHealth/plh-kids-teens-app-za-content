@@ -1,0 +1,39 @@
+{
+  "flow_type": "template",
+  "flow_subtype": "legal_terms",
+  "flow_name": "app_menu_terms",
+  "status": "released",
+  "rows": [
+    {
+      "name": "show_title",
+      "value": true
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.terms_and_conditions",
+      "condition": "!!(@local.show_title)"
+    },
+    {
+      "type": "begin_items",
+      "name": "items",
+      "value": "@data.terms_and_conditions"
+    },
+    {
+      "type": "text",
+      "name": "title_@item.id",
+      "value": "@item.title",
+      "condition": "@item.title",
+      "parameter_list": "style: emphasised"
+    },
+    {
+      "type": "text",
+      "name": "text_@item.id",
+      "value": "@item.text",
+      "condition": "@item.text"
+    },
+    {
+      "type": "end_items"
+    }
+  ]
+}

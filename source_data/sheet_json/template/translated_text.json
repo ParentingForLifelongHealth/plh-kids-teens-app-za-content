@@ -1,0 +1,19 @@
+{
+  "flow_type": "template",
+  "flow_name": "translated_text",
+  "status": "released",
+  "rows": [
+    {
+      "name": "text",
+      "value": "TEST",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "print_text",
+      "value": "@local.text",
+      "condition": "!!(@local.text)",
+      "exclude_from_translation": true
+    }
+  ]
+}

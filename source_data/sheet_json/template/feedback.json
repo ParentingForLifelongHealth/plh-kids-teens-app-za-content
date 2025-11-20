@@ -1,0 +1,195 @@
+{
+  "flow_type": "template",
+  "flow_name": "feedback",
+  "status": "released",
+  "rows": [
+    {
+      "name": "in_library",
+      "value": false
+    },
+    {
+      "name": "bubble_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_module_related",
+      "parameter_list": "style: column",
+      "condition": "!@local.bubble_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "intro_connect_child",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "connect",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "question_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_no",
+      "value": 1,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "articles",
+      "value": "_articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "@local.module_id@local.articles",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_article_id",
+      "value": "@local.data.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_data",
+      "value": "@data.@local.concat_article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "id",
+      "value": "id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback",
+      "value": "feedback",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "feedback_column",
+      "value": "quiz@local.join@local.question_no@local.join@local.feedback@local.join@local.feedback_no",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_feedback",
+      "value": "article_data.@local.feedback_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "bubble_text",
+      "value": "@local.@local.concat_feedback",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nested_id_suffix",
+      "value": "feedback_@local.feedback_no@local.join@local.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nested_id_column",
+      "value": "quiz@local.join@local.question_no@local.join@local.nested_id_suffix",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_nested_id",
+      "value": "article_data.@local.nested_id_column",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "nested_template",
+      "value": "article_@local.module_id@local.join@local.@local.concat_nested_id",
+      "condition": "!@local.in_library"
+    },
+    {
+      "name": "nested_template",
+      "value": "library_article_@local.@local.concat_nested_id",
+      "condition": "@local.in_library"
+    },
+    {
+      "type": "begin_template",
+      "name": "nested_article",
+      "value": "@local.nested_template",
+      "condition": "!!@local.@local.concat_nested_id",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_id",
+      "value": "@fields.facilitator_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "concat_character",
+      "value": "characters.@local.character_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_data",
+      "value": "@data.@local.concat_character",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_name",
+      "value": "@local.character_data.name",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "character_image_asset",
+      "value": "@local.character_data.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "right",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "speaker_position",
+      "value": "left",
+      "condition": "@local.character_data.role != \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "primary",
+      "condition": "@local.character_data.role == \"caregiver\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "secondary",
+      "condition": "@local.character_data.role == \"child\"",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "variant",
+      "value": "gray",
+      "condition": "@local.character_data.role == \"facilitator\"",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text_bubble",
+      "name": "text_bubble",
+      "value": "@local.bubble_text",
+      "parameter_list": "speaker_image_asset: @local.character_image_asset;\nspeaker_name: @local.character_name;\nspeaker_position: @local.speaker_position;\nvariant: @local.variant;",
+      "condition": "!@local.@local.concat_nested_id",
+      "exclude_from_translation": true
+    }
+  ]
+}

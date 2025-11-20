@@ -1,0 +1,76 @@
+{
+  "flow_type": "template",
+  "flow_name": "debug_activity_unlocking",
+  "status": "released",
+  "rows": [
+    {
+      "name": "hp_check_in_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_hp_check_in",
+      "value": "@data.hp_check_in",
+      "action_list": "data_changed | set_local: hp_check_in_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_hp_check_in",
+      "value": "Total hp checkins not unlocked activity: @local.hp_check_in_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_hp_check_in",
+      "value": "Mark all hp checkins as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: hp_check_in,\nunlocked_activity: true",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "count_modules",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local: module_not_unlocked_activity_count: @items.length;",
+      "parameter_list": "filter: !@item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_modules",
+      "value": "Total modules not unlocked activity: @local.module_not_unlocked_activity_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_modules",
+      "value": "Mark all hp checkins as unlocked activity",
+      "action_list": "click | set_data | \n\n_list_id: module_tasks,\nunlocked_activity: true",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "finished_all_content",
+      "value": "@local.hp_check_in_not_unlocked_activity_count + @local.module_not_unlocked_activity_count === 0",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_finished_all_content",
+      "value": "Finished all content? @local.finished_all_content",
+      "exclude_from_translation": true
+    }
+  ]
+}

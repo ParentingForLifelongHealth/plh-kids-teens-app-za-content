@@ -1,0 +1,76 @@
+{
+  "flow_type": "template",
+  "flow_name": "enter_dev_mode",
+  "status": "released",
+  "rows": [
+    {
+      "name": "submit",
+      "value": "Submit"
+    },
+    {
+      "name": "text_box_placeholder",
+      "value": "Tap and type"
+    },
+    {
+      "name": "reply_entered",
+      "value": false
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "Enter developer mode"
+    },
+    {
+      "type": "text",
+      "name": "text_1",
+      "value": "To launch the app in developer mode, enter your developer code in the box below and press @local.submit."
+    },
+    {
+      "type": "text_box",
+      "name": "text_box",
+      "exclude_from_translation": true,
+      "parameter_list": "placeholder:@local.text_box_placeholder"
+    },
+    {
+      "type": "button",
+      "name": "button_submit",
+      "value": "@local.submit",
+      "action_list": "click | set_local: reply_entered: true",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_reply_entered",
+      "condition": "@local.reply_entered"
+    },
+    {
+      "type": "text",
+      "name": "incorrect",
+      "value": "You have entered an incorrect code.",
+      "condition": "!(@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code)"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "correct",
+      "condition": "@local.text_box == @global.dev_mode_code || @local.text_box == @global.test_mode_code",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "text",
+      "name": "text_2",
+      "value": "This code is correct."
+    },
+    {
+      "type": "button",
+      "name": "button_enter_dev",
+      "value": "Enter developer mode",
+      "action_list": "click | set_field: user_mode: false;\nclick | emit:force_restart;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

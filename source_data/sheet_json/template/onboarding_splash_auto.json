@@ -1,0 +1,52 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_splash_auto",
+  "status": "released",
+  "rows": [
+    {
+      "name": "skip_text",
+      "value": "@global.onboarding_splash_skip"
+    },
+    {
+      "type": "begin_animated_slides",
+      "action_list": "completed | emit:completed;\nuncompleted | emit:uncompleted",
+      "parameter_list": "skip_text: @local.skip_text; \nstyle: light"
+    },
+    {
+      "type": "begin_items",
+      "name": "loop_slides",
+      "value": "@data.onboarding_splash_slides"
+    },
+    {
+      "type": "begin_animated_section",
+      "parameter_list": "duration: @item.duration_sec"
+    },
+    {
+      "type": "begin_template",
+      "name": "onboarding_splash_slide",
+      "value": "onboarding_splash_slide",
+      "condition": "!!@global.onboarding_footer_image_asset"
+    },
+    {
+      "name": "image",
+      "value": "@item.image_asset"
+    },
+    {
+      "name": "text",
+      "value": "@item.text",
+      "parameter_list": "style: center"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_animated_section"
+    },
+    {
+      "type": "end_items"
+    },
+    {
+      "type": "end_animated_slides"
+    }
+  ]
+}

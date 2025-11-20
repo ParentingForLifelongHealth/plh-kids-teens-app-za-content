@@ -1,0 +1,70 @@
+{
+  "flow_type": "generator",
+  "flow_name": "stack_hp_review_gen",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "hp_check_in",
+    "output_flow_name": "stack_hp_review_{@gen.id}",
+    "output_flow_type": "template"
+  },
+  "rows": [
+    {
+      "type": "begin_data_items",
+      "name": "check_if_already_unlocked_activity",
+      "value": "hp_check_in",
+      "parameter_list": "filter: @item.id == \"@gen.id\";\nlimit: 1;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "if_no",
+      "value": "hp_review_with_activity",
+      "action_list": "completed | set_data | _list_id: hp_check_in, _id: @gen.id, unlocked_activity: TRUE;\ncompleted | nav_stack: close_top; \ncompleted | pop_up: unlock_play | variant: plh_completion;\nuncompleted | nav_stack: close_top;",
+      "exclude_from_translation": true,
+      "condition": "!@item.unlocked_activity"
+    },
+    {
+      "type": "begin_template",
+      "name": "hp_review",
+      "value": "hp_review"
+    },
+    {
+      "name": "row_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completion_icon",
+      "value": "@global.first_completion_icon"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "if_yes",
+      "value": "hp_review",
+      "action_list": "completed | nav_stack: close_top; \nuncompleted | nav_stack: close_top;",
+      "exclude_from_translation": true,
+      "condition": "@item.unlocked_activity"
+    },
+    {
+      "name": "row_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completion_icon",
+      "value": "@global.subsequent_completion_icon"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_header",
+  "status": "released",
+  "rows": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "parameter_list": "sticky: top;",
+      "style_list": "background-color: @global.onboarding_header_background_colour;\nborder-bottom-left-radius: 36px;\nborder-bottom-right-radius: 36px;\nmargin-block: -24px;"
+    },
+    {
+      "type": "image",
+      "name": "logo",
+      "value": "@global.onboarding_header_image_asset",
+      "style_list": "height: @global.onboarding_header_image_height;\nmargin-top: 48px;\nmargin-bottom: 24px;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "text",
+      "name": "spacer",
+      "style_list": "margin-top: 24px"
+    }
+  ]
+}

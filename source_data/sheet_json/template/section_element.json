@@ -1,0 +1,43 @@
+{
+  "flow_type": "template",
+  "flow_name": "section_element",
+  "status": "released",
+  "rows": [
+    {
+      "name": "title",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "test",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_accordion",
+      "name": "accordion",
+      "condition": "!!(@local.title)",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "first",
+      "value": "@local.title",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "accordion_content",
+      "value": "@local.text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_accordion_section",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_accordion",
+      "exclude_from_translation": true
+    }
+  ]
+}

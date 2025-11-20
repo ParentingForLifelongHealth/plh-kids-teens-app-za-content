@@ -1,0 +1,63 @@
+{
+  "flow_type": "data_list",
+  "flow_subtype": "lifecycle_actions",
+  "flow_name": "launch_actions",
+  "status": "released",
+  "rows": [
+    {
+      "lifecycle_event": "app_start",
+      "id": "update_complete",
+      "priority": 1,
+      "condition_list": "@fields._app_update_downloaded",
+      "action_list": "app_update: complete"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "language_select",
+      "priority": 2,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_language_select_completed && @global.has_onboarding_language_select",
+      "action_list": "pop_up: onboarding_language_select | fullscreen: true, showCloseButton: false;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "splash_auto_advance",
+      "priority": 3,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_splash_completed && @global.has_onboarding_splash && !@global.onboarding_splash_manual_advance",
+      "action_list": "pop_up: onboarding_splash_auto | fullscreen: true, showCloseButton: false;\nset_field: onboarding_splash_completed: true;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "splash_manual_advance",
+      "priority": 3.1,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_splash_completed && @global.has_onboarding_splash && @global.onboarding_splash_manual_advance",
+      "action_list": "pop_up: onboarding_splash_manual | fullscreen: true, showCloseButton: false"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "terms_login",
+      "priority": 4,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_terms_login_completed && @global.has_onboarding_terms_login",
+      "action_list": "pop_up: onboarding_terms_login | fullscreen: true, showCloseButton: false;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "settings",
+      "priority": 6,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_settings_completed && @global.has_onboarding_settings",
+      "action_list": "pop_up: onboarding_settings | fullscreen: true, showCloseButton: false;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "server_sync",
+      "priority": 7,
+      "condition_list": "@fields.user_mode && !@fields.onboarding_completed",
+      "action_list": "emit: server_sync;\nset_field: onboarding_completed: true;"
+    },
+    {
+      "lifecycle_event": "app_start",
+      "id": "update_prompt",
+      "priority": 8,
+      "action_list": "app_update: prompt"
+    }
+  ]
+}

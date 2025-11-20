@@ -1,0 +1,28 @@
+{
+  "flow_type": "data_list",
+  "flow_name": "language",
+  "status": "released",
+  "data_list_name": "language",
+  "flow_subtype": "app_config_language_list",
+  "rows": [
+    {
+      "id": "za_en",
+      "country_code": "za",
+      "country_label": "South Africa",
+      "language_code": "en",
+      "language_label": "English",
+      "name": "@row.id",
+      "text": "@row.language_label",
+      "comments": "Country code given by alpha-2\nhttps://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes\nLanguage code given by shortest iso code\nhttps://en.wikipedia.org/wiki/List_of_ISO_639-1_codes\nShould confirm best name for country in local language, e.g.\nhttps://www.worldatlas.com/articles/names-of-countries-in-their-own-languages.html\nFlag icons added app assets, downloaded from\nhttps://flagicons.lipis.dev/"
+    },
+    {
+      "id": "za_xh",
+      "country_code": "za",
+      "country_label": "uMzantsi Afrika",
+      "language_code": "xh",
+      "language_label": "isiXhosa",
+      "name": "@row.id",
+      "text": "@row.language_label"
+    }
+  ]
+}

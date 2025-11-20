@@ -1,0 +1,50 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_landing_sub",
+  "status": "released",
+  "rows": [
+    {
+      "name": "module_start_at_id"
+    },
+    {
+      "name": "articles_data_list_name"
+    },
+    {
+      "name": "module_id"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_inner",
+      "value": "@local.articles_data_list_name",
+      "parameter_list": "filter: !@item.completed; \nlimit: 1",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "first_uncompleted_article_id",
+      "value": "@item.id",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_start",
+      "value": "@global.lets_begin",
+      "action_list": "click | set_field: current_start_article_id: @item.id;\nclick | nav_stack: open | template: @local.module_start_at_id, header: false;\nclick | set_data | _list_id: module_tasks, _id: @local.module_id, started_ts: @calc(now());",
+      "condition": "@item.row_index == 0",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_continue",
+      "value": "@global.continue",
+      "action_list": "click | set_field: current_start_article_id: @item.id;\nclick | nav_stack: open | template: @local.module_start_at_id, header: false;",
+      "condition": "@item.row_index != 0",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "flow_type": "template",
+  "flow_name": "app_launch_calculations",
+  "status": "released",
+  "process_on_start": 1,
+  "rows": [
+    {
+      "name": "now",
+      "value": "@calc(timestamp())",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "is_first_launch",
+      "condition": "!(@fields.first_launch_content_version)"
+    },
+    {
+      "type": "set_field",
+      "name": "first_launch_ts",
+      "value": "@local.now"
+    },
+    {
+      "type": "set_field",
+      "name": "first_launch_app_version",
+      "value": "@fields._app_version"
+    },
+    {
+      "type": "set_field",
+      "name": "first_launch_content_version",
+      "value": "@fields._content_version",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "name": "app_launches_including_last",
+      "value": "@local.now",
+      "condition": "!(@fields.app_launch_history)"
+    },
+    {
+      "name": "app_launches_including_last",
+      "value": "@fields.app_launch_history; @local.now",
+      "condition": "!!(@fields.app_launch_history)"
+    },
+    {
+      "type": "set_field",
+      "name": "app_launch_history",
+      "value": "@local.app_launches_including_last"
+    }
+  ]
+}

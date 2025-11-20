@@ -1,0 +1,25 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_header",
+  "status": "released",
+  "rows": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_row"
+    },
+    {
+      "type": "round_button",
+      "name": "back",
+      "action_list": "click | emit: uncompleted",
+      "parameter_list": "icon_src: chevron-back;\nvariant: navigation"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.profile"
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

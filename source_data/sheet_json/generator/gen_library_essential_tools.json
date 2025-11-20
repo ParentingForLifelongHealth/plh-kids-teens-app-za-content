@@ -1,0 +1,25 @@
+{
+  "flow_type": "generator",
+  "flow_name": "gen_library_essential_tools",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "library_article_{@gen.id}_tips_1",
+    "output_flow_type": "template"
+  },
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "library_essential_tool",
+      "value": "library_essential_tool",
+      "action_list": "completed | nav_stack: close_top; \nuncompleted | nav_stack: close_top;"
+    },
+    {
+      "name": "module_id",
+      "value": "@gen.id"
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

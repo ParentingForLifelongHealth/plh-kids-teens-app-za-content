@@ -1,0 +1,217 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_terms_login",
+  "status": "released",
+  "rows": [
+    {
+      "name": "user_is_logged_in",
+      "value": "!!@fields._auth_user_id"
+    },
+    {
+      "name": "user_skipped_login",
+      "value": false
+    },
+    {
+      "type": "begin_template",
+      "name": "header",
+      "value": "onboarding_header",
+      "condition": "@global.login_is_mandatory || @local.user_is_logged_in || @local.user_skipped_login",
+      "comment": "Always show header when login is mandatory (more screen space), when login is optional only show after logging in or skipping."
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "before_login",
+      "condition": "!(@local.user_is_logged_in || @local.user_skipped_login)",
+      "parameter_list": "style: column;",
+      "style_list": "align-items: center"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.welcome_message",
+      "parameter_list": "variant: header",
+      "style_list": "margin-top: 24px"
+    },
+    {
+      "type": "text",
+      "name": "text_login",
+      "value": "@global.welcome_message_subtext",
+      "parameter_list": "text_align: center;\nstyle: emphasised"
+    },
+    {
+      "type": "text",
+      "name": "text_login_why",
+      "value": "@global.login_optional_why",
+      "condition": "!@global.login_is_mandatory",
+      "parameter_list": "text_align: center"
+    },
+    {
+      "type": "apple_sign_in_button",
+      "name": "button_apple_sign_in",
+      "value": "@global.login_apple",
+      "action_list": "click | emit: force_reprocess;",
+      "condition": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
+      "comment": "max-width: max-content;"
+    },
+    {
+      "type": "google_sign_in_button",
+      "name": "button_google_sign_in",
+      "value": "@global.login_google",
+      "action_list": "click | emit: force_reprocess;",
+      "comment": "max-width: max-content;"
+    },
+    {
+      "type": "button",
+      "name": "button_skip_sign_in",
+      "value": "@global.login_skip",
+      "action_list": "click | emit: completed;\nclick | set_field: onboarding_terms_login_completed: true;",
+      "condition": "!@global.login_is_mandatory",
+      "parameter_list": "style: navigation flexible short"
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@global.agree_terms",
+      "parameter_list": "text_align: center"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_buttons_terms",
+      "parameter_list": "style: column;"
+    },
+    {
+      "type": "button",
+      "name": "button_terms",
+      "value": "<u>@global.terms_and_conditions</u>",
+      "action_list": "click | pop_up: app_menu_terms | fullscreen: true",
+      "parameter_list": "variant: card;\nstyle: no-background short;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_privacy",
+      "value": "<u>@global.privacy_policy</u>",
+      "action_list": "click | pop_up: app_menu_privacy_policy | fullscreen: true",
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "after_login",
+      "condition": "@local.user_is_logged_in",
+      "parameter_list": "style: column;",
+      "style_list": "align-items: center"
+    },
+    {
+      "type": "data_items",
+      "value": "_auth_profiles",
+      "action_list": "data_changed | set_field : no_previous_auth_id : @items.length === 0;"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "find_last_synced_id",
+      "value": "_auth_profiles",
+      "parameter_list": "sort: updatedAt;\nreverse;\nlimit: 1"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_welcome_existing",
+      "parameter_list": "style: column",
+      "style_list": "align-items: center"
+    },
+    {
+      "type": "image",
+      "name": "img_user",
+      "value": "@fields._auth_user_picture",
+      "condition": "!!@fields._auth_user_picture",
+      "parameter_list": "style: rounded_corners",
+      "style_list": "width: 96px;\nheight: 96px;"
+    },
+    {
+      "type": "title",
+      "name": "welcome_title",
+      "value": "@global.logged_in_existing_user",
+      "condition": "!!@fields._auth_user_given_name",
+      "parameter_list": "variant: header"
+    },
+    {
+      "type": "title",
+      "name": "welcome_title",
+      "value": "@global.logged_in_existing",
+      "condition": "!@fields._auth_user_given_name",
+      "parameter_list": "variant: header"
+    },
+    {
+      "type": "button",
+      "name": "button_import",
+      "value": "@global.continue",
+      "action_list": "click | user: import: @item.id;\nclick | set_field: onboarding_terms_login_completed: true;",
+      "parameter_list": "style:navigation;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_welcome_new",
+      "condition": "!!@fields.no_previous_auth_id",
+      "parameter_list": "style: column",
+      "style_list": "align-items: center"
+    },
+    {
+      "type": "image",
+      "name": "img_user",
+      "value": "@fields._auth_user_picture",
+      "condition": "!!@fields._auth_user_picture",
+      "parameter_list": "style: rounded_corners",
+      "style_list": "width: 96px;\nheight: 96px;"
+    },
+    {
+      "type": "title",
+      "name": "welcome_title",
+      "value": "@global.logged_in_new_user",
+      "condition": "!!@fields._auth_user_given_name",
+      "parameter_list": "variant: header"
+    },
+    {
+      "type": "title",
+      "name": "welcome_title",
+      "value": "@global.logged_in_new",
+      "condition": "!@fields._auth_user_given_name",
+      "parameter_list": "variant: header"
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "action_list": "click | emit: completed;\nclick | set_field: onboarding_terms_login_completed: true;",
+      "parameter_list": "style:navigation;"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_sign_out",
+      "value": "<u>@global.logout</u>",
+      "action_list": "click | reset_data;\nclick | reset_app;",
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}

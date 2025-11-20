@@ -1,0 +1,78 @@
+{
+  "flow_type": "template",
+  "flow_name": "app_menu",
+  "status": "released",
+  "rows": [
+    {
+      "type": "begin_display_group",
+      "name": "dg_dev",
+      "parameter_list": "style: column",
+      "condition": "!@fields.user_mode"
+    },
+    {
+      "type": "debug_toggle",
+      "name": "debug_toggle"
+    },
+    {
+      "type": "button",
+      "name": "button_delay_days",
+      "value": "Change countdown days",
+      "action_list": "click | go_to: countdown_days"
+    },
+    {
+      "type": "button",
+      "name": "button_templates",
+      "value": "Templates",
+      "action_list": "click | go_to:/template"
+    },
+    {
+      "type": "button",
+      "name": "button_dynamic_data",
+      "value": "Dynamic data",
+      "action_list": "click | go_to:/user"
+    },
+    {
+      "type": "button",
+      "name": "button_reset",
+      "value": "Reset app",
+      "action_list": "click | reset_app"
+    },
+    {
+      "type": "button",
+      "name": "button_open_feedback",
+      "value": "Open feedback",
+      "action_list": "click | feedback:open;\nclick | emit: force_reprocess;",
+      "condition": "!@fields._feedback_sidebar_open"
+    },
+    {
+      "type": "button",
+      "name": "button_close_feedback",
+      "value": "Close feedback",
+      "action_list": "click | feedback:close;\nclick | emit: force_reprocess;",
+      "condition": "@fields._feedback_sidebar_open"
+    },
+    {
+      "type": "button",
+      "name": "button_import_user",
+      "value": "Import user",
+      "action_list": "click | go_to: import_user_data"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "button_dev_enter",
+      "value": "Developer mode",
+      "action_list": "click | go_to: enter_dev_mode",
+      "condition": "@fields.user_mode"
+    },
+    {
+      "type": "button",
+      "name": "button_dev_exit",
+      "value": "Exit developer mode",
+      "action_list": "click | go_to: exit_dev_mode",
+      "condition": "!@fields.user_mode"
+    }
+  ]
+}

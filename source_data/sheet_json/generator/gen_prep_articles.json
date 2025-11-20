@@ -1,0 +1,50 @@
+{
+  "flow_type": "generator",
+  "flow_name": "gen_prep_articles",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "prep_{@gen.id}_articles",
+    "output_flow_type": "data_pipe"
+  },
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": "id == \"@gen.relax_id\"",
+      "input_source": "relax",
+      "comment": "Take relax article from separate data list"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": "category_id: relax;\nnested: FALSE;",
+      "output_target": "{@gen.id}_relax | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": "id == \"@gen.check_in_id\"",
+      "input_source": "check_in",
+      "comment": "Take check-in article from separate data list"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": "category_id: check_in;\nnested: FALSE;",
+      "output_target": "{@gen.id}_check_in | local_only;"
+    },
+    {
+      "operation": "filter",
+      "args_list": "foreign_key == \"@gen.id\"",
+      "input_source": "sub_items",
+      "output_target": "{@gen.id}_testing | local_only;"
+    },
+    {
+      "operation": "concat",
+      "args_list": "{@gen.id}_relax;\n{@gen.id}_check_in;\n{@gen.id}_testing;",
+      "input_source": false
+    },
+    {
+      "operation": "append_columns",
+      "args_list": "completed: FALSE",
+      "output_target": "{@gen.id}_article_tasks"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "flow_type": "template",
+  "flow_name": "translated_accordion",
+  "status": "released",
+  "rows": [
+    {
+      "name": "button_text",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "extra_text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_accordion",
+      "name": "accordion"
+    },
+    {
+      "type": "begin_accordion_section",
+      "name": "first",
+      "value": "@local.button_text",
+      "comments": "This doesn't show its translation"
+    },
+    {
+      "type": "text",
+      "name": "accordion_content",
+      "value": "@local.extra_text",
+      "condition": "!!(@local.extra_text)",
+      "comments": "This doesn't show its translation"
+    },
+    {
+      "type": "end_accordion_section"
+    },
+    {
+      "type": "end_accordion"
+    }
+  ]
+}

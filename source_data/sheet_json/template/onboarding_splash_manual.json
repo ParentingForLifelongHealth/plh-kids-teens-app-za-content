@@ -1,0 +1,142 @@
+{
+  "flow_type": "template",
+  "flow_name": "onboarding_splash_manual",
+  "status": "released",
+  "rows": [
+    {
+      "name": "task_group",
+      "value": "onboarding_splash_slides",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "page_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "data_items",
+      "name": "compute_page_count",
+      "value": "@data.onboarding_splash_slides",
+      "action_list": "data_changed | set_local: page_count: @items.length",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "completed_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "data_items",
+      "name": "compute_completed_count",
+      "value": "@data.onboarding_splash_slides",
+      "action_list": "data_changed | set_local: completed_count:  @items.length",
+      "parameter_list": "filter: @item.completed",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_completed_count",
+      "value": "Completed count: @local.completed_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_top",
+      "hidden": "@local.completed_count == @local.page_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "task_progress_bar",
+      "parameter_list": "task_group_data: @local.task_group",
+      "style_list": "flex: 1",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "skip_button",
+      "value": "@global.onboarding_splash_skip",
+      "action_list": "click | set_field: onboarding_splash_completed: true;\nclick | emit: completed",
+      "parameter_list": "variant: card;\nstyle: no-background;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_pages",
+      "value": "@data.onboarding_splash_slides",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "await_data_loop_evaluation",
+      "parameter_list": "style: column",
+      "condition": "@local.completed_count !== undefined",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "condition",
+      "parameter_list": "style: column",
+      "condition": "@item._index == @local.completed_count",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "page",
+      "value": "onboarding_splash_slide",
+      "action_list": "completed | set_data |\n_list_id: onboarding_splash_slides,\n_id: @item.id,\ncompleted: true;\n\nuncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false;",
+      "condition": "!@item._last",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "show_back",
+      "value": "@item._index > 0",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "image",
+      "value": "@item.image_asset",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "text",
+      "value": "@item.text",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "page_last",
+      "value": "onboarding_splash_slide",
+      "action_list": "completed | set_data |\n_list_id: onboarding_splash_slides,\n_id: @item.id,\ncompleted: true;\n\nuncompleted | set_data | \n_list_id: onboarding_splash_slides,\n_id: slide_@local.completed_count,\ncompleted: false;\n\ncompleted | set_field: onboarding_splash_completed: true;\ncompleted | emit: completed",
+      "parameter_list": "style: column",
+      "condition": "@item._last",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "image",
+      "value": "@item.image_asset"
+    },
+    {
+      "name": "text",
+      "value": "@item.text"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "end_data_items"
+    }
+  ]
+}

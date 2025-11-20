@@ -1,0 +1,97 @@
+{
+  "flow_type": "template",
+  "flow_name": "user_id",
+  "status": "released",
+  "rows": [
+    {
+      "name": "show_title",
+      "value": true
+    },
+    {
+      "name": "user_id",
+      "value": "@calc(this.app_user_id)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "sync_latest",
+      "value": "@fields._server_sync_latest",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "sync_status",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "sync_button_clicked",
+      "value": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "copy",
+      "value": "Copy code"
+    },
+    {
+      "name": "copied",
+      "value": "Copied!"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.user_id_text",
+      "condition": "!!(@local.show_title)"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "has_ever_been_synced",
+      "condition": "@local.sync_latest",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "qr_code",
+      "name": "qr_code",
+      "value": "@local.user_id"
+    },
+    {
+      "type": "select_text",
+      "name": "user_code",
+      "value": "@local.user_id",
+      "parameter_list": "copy_text: @local.copy;\ncopied_text: @local.copied"
+    },
+    {
+      "type": "text",
+      "name": "last_sync_text",
+      "value": "Last sync at: @local.sync_latest"
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "has_never_been_synced",
+      "condition": "!@local.sync_latest",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "text",
+      "name": "not_synced_text",
+      "value": "This device has never been synced. Sync to reveal your code."
+    },
+    {
+      "type": "end_display_group"
+    },
+    {
+      "type": "button",
+      "name": "sync_button",
+      "value": "Sync now",
+      "action_list": "click | set_local: sync_status: \"syncing...\";\nclick | set_local: sync_status: \"syncing...\";\nclick | emit: force_reprocess;\nclick | emit: server_sync;\nclick | set_local: sync_status: ;\nclick | set_local: sync_button_clicked: true;\nclick | emit: force_reprocess;",
+      "condition": "!@local.sync_status"
+    },
+    {
+      "type": "button",
+      "name": "sync_button_disabled",
+      "value": "Syncing...",
+      "condition": "@local.sync_status",
+      "parameter_list": "disabled:true"
+    }
+  ]
+}

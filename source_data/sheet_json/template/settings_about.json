@@ -1,0 +1,33 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_about",
+  "status": "released",
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "settings_header",
+      "value": "settings_header",
+      "action_list": "uncompleted | emit: uncompleted; "
+    },
+    {
+      "name": "title",
+      "value": "@global.about_this_app"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "app_about",
+      "value": "app_about",
+      "action_list": "uncompleted | emit: uncompleted; completed | emit: completed"
+    },
+    {
+      "name": "show_title",
+      "value": false
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

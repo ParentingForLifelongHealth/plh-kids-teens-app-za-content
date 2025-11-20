@@ -1,0 +1,63 @@
+{
+  "flow_type": "generator",
+  "flow_name": "check_in_article_generator",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "modules",
+    "output_flow_name": "article_{@gen.id}_@gen.check_in_id",
+    "output_flow_type": "template"
+  },
+  "rows": [
+    {
+      "type": "begin_template",
+      "name": "article",
+      "value": "article",
+      "action_list": "completed | emit: completed; uncompleted | emit: uncompleted",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "data",
+      "value": "check_in",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@gen.check_in_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "perform_category_header_computations",
+      "value": false
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "header"
+    },
+    {
+      "name": "title",
+      "value": "Check-in"
+    },
+    {
+      "name": "icon_asset",
+      "value": "images/icons/smile_eyes_up.svg"
+    },
+    {
+      "type": "end_nested_properties"
+    },
+    {
+      "type": "begin_nested_properties",
+      "name": "question_1"
+    },
+    {
+      "name": "radio_button_grid_width",
+      "value": "100%",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_nested_properties"
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_login",
+  "status": "released",
+  "rows": [
+    {
+      "name": "is_user_signed_in",
+      "value": "!!@fields._auth_user_id"
+    },
+    {
+      "name": "just_logged_in",
+      "value": false
+    },
+    {
+      "type": "begin_template",
+      "name": "settings_header",
+      "value": "settings_header",
+      "action_list": "uncompleted | emit: uncompleted; "
+    },
+    {
+      "name": "title",
+      "value": "@global.account"
+    },
+    {
+      "type": "end_template"
+    },
+    {
+      "type": "begin_template",
+      "name": "account",
+      "value": "account"
+    },
+    {
+      "name": "show_title",
+      "value": false
+    },
+    {
+      "type": "end_template"
+    }
+  ]
+}

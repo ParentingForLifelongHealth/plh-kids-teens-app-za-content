@@ -1,0 +1,162 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings",
+  "status": "released",
+  "parameter_list": {
+    "app_config": {
+      "LAYOUT": {
+        "page_padding": "24px 0"
+      }
+    }
+  },
+  "rows": [
+    {
+      "name": "next_icon_asset",
+      "value": "chevron-forward",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "profile_icon",
+      "value": "images/icons/profile_card.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "language_icon",
+      "value": "images/icons/world.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "user_id_icon",
+      "value": "images/icons/key.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "about_icon",
+      "value": "images/icons/magnify_glass.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "terms_icon",
+      "value": "images/icons/feather.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "privacy_icon",
+      "value": "images/icons/document.svg",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "settings",
+      "value": "@global.settings",
+      "parameter_list": "variant: page_banner",
+      "style_list": "padding-inline: 24px;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "account",
+      "value": "@global.account",
+      "parameter_list": "variant: section_banner",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_account",
+      "parameter_list": "variant: inline_padding; style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_login",
+      "value": "@global.account",
+      "parameter_list": "variant: card;\nicon: @local.user_id_icon;\nicon_secondary_asset: @local.next_icon_asset;\nstyle: no-background;\ntext_align: left;",
+      "action_list": "click | pop_up: settings_login | fullscreen: true, showCloseButton: false;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_profile",
+      "value": "@global.profile",
+      "parameter_list": "variant: card;\nicon: @local.profile_icon;\nicon_secondary_asset: @local.next_icon_asset;\nstyle: no-background;\ntext_align: left;",
+      "action_list": "click | pop_up: settings_profile | fullscreen: true, showCloseButton: false;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_language",
+      "value": "@global.language",
+      "parameter_list": "variant: card;\nicon: @local.language_icon;\nicon_secondary_asset: @local.next_icon_asset;\nstyle: no-background;\ntext_align: left;",
+      "action_list": "click | pop_up: settings_language_select | fullscreen: true, showCloseButton: false;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_user_id",
+      "value": "@global.user_id_text",
+      "parameter_list": "variant: card;\nicon: @local.user_id_icon;\nicon_secondary_asset: @local.next_icon_asset;\nstyle: no-background;\ntext_align: left;",
+      "action_list": "click | pop_up: settings_user_id | fullscreen: true, showCloseButton: false;",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "general",
+      "value": "@global.general",
+      "parameter_list": "variant: section_banner",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_general",
+      "parameter_list": "variant: inline_padding; style: column",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_about",
+      "value": "@global.about_this_app",
+      "parameter_list": "variant: card;\nicon: @local.about_icon;\nicon_secondary_asset: @local.next_icon_asset;\nstyle: no-background;\ntext_align: left;",
+      "action_list": "click | pop_up: settings_about | fullscreen: true, showCloseButton: false;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_terms",
+      "value": "@global.terms_and_conditions",
+      "parameter_list": "variant: card;\nicon: @local.terms_icon;\nicon_secondary_asset: @local.next_icon_asset;\nstyle: no-background;\ntext_align: left;",
+      "action_list": "click | pop_up: settings_terms | fullscreen: true, showCloseButton: false;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "name": "button_privacy",
+      "value": "@global.privacy_policy",
+      "parameter_list": "variant: card;\nicon: @local.privacy_icon;\nicon_secondary_asset: @local.next_icon_asset;\nstyle: no-background;\ntext_align: left;",
+      "action_list": "click | pop_up: settings_privacy_policy | fullscreen: true, showCloseButton: false;",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "title",
+      "name": "version",
+      "value": "@global.version",
+      "parameter_list": "variant: section_banner",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "text",
+      "value": "@fields._content_version (@fields._app_version)",
+      "style_list": "padding-inline: 12px;",
+      "exclude_from_translation": true
+    }
+  ]
+}

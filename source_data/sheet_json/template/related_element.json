@@ -1,0 +1,40 @@
+{
+  "flow_type": "template",
+  "flow_name": "related_element",
+  "status": "released",
+  "rows": [
+    {
+      "name": "article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_data_list_name",
+      "value": "article_data",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_template_prefix",
+      "value": "article",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_concat",
+      "value": "@local.related_article_data_list_name.@local.article_id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "related_article_data",
+      "value": "@data.@local.related_article_concat",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "button",
+      "value": "@local.related_article_data.title",
+      "action_list": "click | go_to: library_article_@local.article_id",
+      "exclude_from_translation": true
+    }
+  ]
+}

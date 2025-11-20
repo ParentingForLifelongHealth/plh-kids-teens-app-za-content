@@ -1,0 +1,64 @@
+{
+  "flow_type": "template",
+  "flow_name": "header_testing",
+  "status": "released",
+  "rows": [
+    {
+      "name": "countdown_days",
+      "value": "@fields.countdown_days",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "hp_completed_ids",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_2",
+      "value": "@data.hp_check_in",
+      "action_list": "data_changed | set_local : hp_completed_ids : @items.map(item => item.id)",
+      "parameter_list": "filter: @item.unlocked_activity",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "name": "hp_unlocked_ids"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_1",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : hp_unlocked_ids : @items.map(item => item.id)",
+      "parameter_list": "filter: @item.completed && window.date_fns.differenceInDays(new Date(),new Date(new Date(@item.completed_ts).setHours(0,0,0,0))) >= @local.countdown_days && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items"
+    },
+    {
+      "type": "text",
+      "name": "debug_1",
+      "value": "@local.hp_unlocked_ids",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_2",
+      "value": "@local.hp_completed_ids",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "find_hp_id",
+      "value": "@calc((@local.hp_unlocked_ids || []).find(x => !(@local.hp_completed_ids || []).includes(x)))",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_3",
+      "value": "HP id: @local.find_hp_id",
+      "exclude_from_translation": true
+    }
+  ]
+}

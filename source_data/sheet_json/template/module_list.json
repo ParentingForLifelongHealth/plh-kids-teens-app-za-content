@@ -1,0 +1,98 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_list",
+  "status": "released",
+  "rows": [
+    {
+      "name": "background_list",
+      "value": "var(--plh-module-list-item-background-1);\nvar(--plh-module-list-item-background-2);\nvar(--plh-module-list-item-background-3);"
+    },
+    {
+      "name": "current_module_id"
+    },
+    {
+      "type": "data_items",
+      "value": "@data.module_tasks",
+      "action_list": "data_changed | set_local : current_module_id : @items[0]?.id",
+      "parameter_list": "filter: !@item.completed_ts && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag));\nsort: number;\nlimit: 1;"
+    },
+    {
+      "type": "begin_display_group",
+      "name": "dg_all_modules",
+      "parameter_list": "style: column"
+    },
+    {
+      "type": "begin_data_items",
+      "name": "loop_modules",
+      "value": "@data.module_tasks",
+      "parameter_list": "filter: !@item.tag_list || @item.tag_list.includes(@fields.child_age_tag);\nsort: number;",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "index_modulo_3",
+      "value": "@calc(@item._index % 3)",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "debug_1",
+      "value": "@item.tag_list",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_2",
+      "value": "Tag list: @local.debug_1",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "name": "debug_3",
+      "value": "@item.tag_list.includes(\"teen\")",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "name": "debug_4",
+      "value": "Includes teen: @local.debug_3",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
+      "type": "begin_template",
+      "name": "module_@item.id",
+      "value": "module_list_item",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "is_completed",
+      "value": "!!@item.completed_ts"
+    },
+    {
+      "name": "is_locked",
+      "value": "!(@item.id == @local.current_module_id || !!@item.completed_ts || @item.tag_list.includes(\"teen\"))",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "background",
+      "value": "@calc(@local.background_list.at(@local.index_modulo_3))"
+    },
+    {
+      "type": "end_template",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_data_items",
+      "exclude_from_translation": true
+    },
+    {
+      "type": "end_display_group"
+    }
+  ]
+}
