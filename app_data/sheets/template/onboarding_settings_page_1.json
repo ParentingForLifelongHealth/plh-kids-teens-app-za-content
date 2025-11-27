@@ -24,27 +24,71 @@
       "_nested_name": "variant"
     },
     {
+      "type": "text",
+      "name": "text_intro",
+      "value": "@global.facilitator_selection_intro",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "text_intro",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.facilitator_selection_intro",
+            "matchedExpression": "@global.facilitator_selection_intro",
+            "type": "global",
+            "fieldName": "facilitator_selection_intro"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.facilitator_selection_intro": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "text_bubble",
       "name": "text_bubble",
-      "value": "@global.facilitator_message_1",
+      "value": "@global.facilitator_female_intro",
       "_translations": {
         "value": {}
       },
       "parameter_list": {
+        "speaker_image_asset": "@data.characters.facilitator_female.image_asset",
+        "speaker_name": "@data.characters.facilitator_female.name",
         "speaker_position": "@local.speaker_position",
         "variant": "@local.variant"
       },
+      "exclude_from_translation": true,
       "_nested_name": "text_bubble",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@global.facilitator_message_1",
-            "matchedExpression": "@global.facilitator_message_1",
+            "fullExpression": "@global.facilitator_female_intro",
+            "matchedExpression": "@global.facilitator_female_intro",
             "type": "global",
-            "fieldName": "facilitator_message_1"
+            "fieldName": "facilitator_female_intro"
           }
         ],
         "parameter_list": {
+          "speaker_image_asset": [
+            {
+              "fullExpression": "@data.characters.facilitator_female.image_asset",
+              "matchedExpression": "@data.characters.facilitator_female.image_asset",
+              "type": "data",
+              "fieldName": "characters"
+            }
+          ],
+          "speaker_name": [
+            {
+              "fullExpression": "@data.characters.facilitator_female.name",
+              "matchedExpression": "@data.characters.facilitator_female.name",
+              "type": "data",
+              "fieldName": "characters"
+            }
+          ],
           "speaker_position": [
             {
               "fullExpression": "@local.speaker_position",
@@ -64,8 +108,14 @@
         }
       },
       "_dynamicDependencies": {
-        "@global.facilitator_message_1": [
+        "@global.facilitator_female_intro": [
           "value"
+        ],
+        "@data.characters.facilitator_female.image_asset": [
+          "parameter_list.speaker_image_asset"
+        ],
+        "@data.characters.facilitator_female.name": [
+          "parameter_list.speaker_name"
         ],
         "@local.speaker_position": [
           "parameter_list.speaker_position"
@@ -76,25 +126,234 @@
       }
     },
     {
-      "type": "image",
-      "name": "image",
-      "value": "@global.facilitator_intro_image_asset",
+      "type": "text_bubble",
+      "name": "text_bubble",
+      "value": "@global.facilitator_male_intro",
       "_translations": {
         "value": {}
       },
-      "_nested_name": "image",
+      "parameter_list": {
+        "speaker_image_asset": "@data.characters.facilitator_male.image_asset",
+        "speaker_name": "@data.characters.facilitator_male.name",
+        "speaker_position": "@local.speaker_position",
+        "variant": "@local.variant"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "text_bubble",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@global.facilitator_intro_image_asset",
-            "matchedExpression": "@global.facilitator_intro_image_asset",
+            "fullExpression": "@global.facilitator_male_intro",
+            "matchedExpression": "@global.facilitator_male_intro",
             "type": "global",
-            "fieldName": "facilitator_intro_image_asset"
+            "fieldName": "facilitator_male_intro"
+          }
+        ],
+        "parameter_list": {
+          "speaker_image_asset": [
+            {
+              "fullExpression": "@data.characters.facilitator_male.image_asset",
+              "matchedExpression": "@data.characters.facilitator_male.image_asset",
+              "type": "data",
+              "fieldName": "characters"
+            }
+          ],
+          "speaker_name": [
+            {
+              "fullExpression": "@data.characters.facilitator_male.name",
+              "matchedExpression": "@data.characters.facilitator_male.name",
+              "type": "data",
+              "fieldName": "characters"
+            }
+          ],
+          "speaker_position": [
+            {
+              "fullExpression": "@local.speaker_position",
+              "matchedExpression": "@local.speaker_position",
+              "type": "local",
+              "fieldName": "speaker_position"
+            }
+          ],
+          "variant": [
+            {
+              "fullExpression": "@local.variant",
+              "matchedExpression": "@local.variant",
+              "type": "local",
+              "fieldName": "variant"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@global.facilitator_male_intro": [
+          "value"
+        ],
+        "@data.characters.facilitator_male.image_asset": [
+          "parameter_list.speaker_image_asset"
+        ],
+        "@data.characters.facilitator_male.name": [
+          "parameter_list.speaker_name"
+        ],
+        "@local.speaker_position": [
+          "parameter_list.speaker_position"
+        ],
+        "@local.variant": [
+          "parameter_list.variant"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text_question",
+      "value": "@global.facilitator_selection_question",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "style": "emphasised"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "text_question",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.facilitator_selection_question",
+            "matchedExpression": "@global.facilitator_selection_question",
+            "type": "global",
+            "fieldName": "facilitator_selection_question"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@global.facilitator_intro_image_asset": [
+        "@global.facilitator_selection_question": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "facilitator_id",
+      "parameter_list": {
+        "answer_list": "@data.facilitators",
+        "item_width": "100px",
+        "style": "secondary"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "facilitator_id",
+      "_dynamicFields": {
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@data.facilitators",
+              "matchedExpression": "@data.facilitators",
+              "type": "data",
+              "fieldName": "facilitators"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.facilitators": [
+          "parameter_list.answer_list"
+        ]
+      }
+    },
+    {
+      "name": "facilitator_data",
+      "value": "characters.@local.facilitator_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "facilitator_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "characters.@local.facilitator_id",
+            "matchedExpression": "@local.facilitator_id",
+            "type": "local",
+            "fieldName": "facilitator_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.facilitator_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "facilitator_row",
+      "value": "@data.@local.facilitator_data",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "facilitator_row",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.facilitator_data",
+            "matchedExpression": "@local.facilitator_data",
+            "type": "local",
+            "fieldName": "facilitator_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.facilitator_data": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "facilitator_name",
+      "value": "@local.facilitator_row.name",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "facilitator_name",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.facilitator_row.name",
+            "matchedExpression": "@local.facilitator_row.name",
+            "type": "local",
+            "fieldName": "facilitator_row"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.facilitator_row.name": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "completed_enabled",
+      "value": "!!@local.facilitator_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "completed_enabled",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "!!@local.facilitator_id",
+            "matchedExpression": "!@local.facilitator_id",
+            "type": "local",
+            "fieldName": "facilitator_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.facilitator_id": [
           "value"
         ]
       }
@@ -108,6 +367,7 @@
       "style_list": [
         "padding: 12px 24px"
       ],
+      "exclude_from_translation": true,
       "rows": [
         {
           "type": "button",
@@ -124,14 +384,34 @@
                 "completed"
               ],
               "_raw": "click | emit: completed"
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "facilitator_id",
+                "@local.facilitator_id"
+              ],
+              "_raw": "click | set_field: facilitator_id: @local.facilitator_id"
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "facilitator_name",
+                "@local.facilitator_name"
+              ],
+              "_raw": "click | set_field: facilitator_name: @local.facilitator_name"
             }
           ],
           "parameter_list": {
-            "style": "navigation"
+            "style": "navigation",
+            "disabled": "!@local.completed_enabled"
           },
           "style_list": [
             "flex: 1"
           ],
+          "exclude_from_translation": true,
           "_nested_name": "dg_footer.button_completed_2",
           "_dynamicFields": {
             "value": [
@@ -141,11 +421,74 @@
                 "type": "global",
                 "fieldName": "continue"
               }
-            ]
+            ],
+            "action_list": {
+              "1": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.facilitator_id",
+                      "matchedExpression": "@local.facilitator_id",
+                      "type": "local",
+                      "fieldName": "facilitator_id"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: facilitator_id: @local.facilitator_id",
+                    "matchedExpression": "@local.facilitator_id",
+                    "type": "local",
+                    "fieldName": "facilitator_id"
+                  }
+                ]
+              },
+              "2": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.facilitator_name",
+                      "matchedExpression": "@local.facilitator_name",
+                      "type": "local",
+                      "fieldName": "facilitator_name"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: facilitator_name: @local.facilitator_name",
+                    "matchedExpression": "@local.facilitator_name",
+                    "type": "local",
+                    "fieldName": "facilitator_name"
+                  }
+                ]
+              }
+            },
+            "parameter_list": {
+              "disabled": [
+                {
+                  "fullExpression": "!@local.completed_enabled",
+                  "matchedExpression": "!@local.completed_enabled",
+                  "type": "local",
+                  "fieldName": "completed_enabled"
+                }
+              ]
+            }
           },
           "_dynamicDependencies": {
             "@global.continue": [
               "value"
+            ],
+            "@local.facilitator_id": [
+              "action_list.1.args.1",
+              "action_list.1._raw"
+            ],
+            "@local.facilitator_name": [
+              "action_list.2.args.1",
+              "action_list.2._raw"
+            ],
+            "!@local.completed_enabled": [
+              "parameter_list.disabled"
             ]
           }
         }
