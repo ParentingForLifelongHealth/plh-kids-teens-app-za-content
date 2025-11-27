@@ -182,9 +182,9 @@
           "type": "display_grid",
           "name": "dgrid_@item.id",
           "parameter_list": {
-            "item_width": "100px",
-            "grid_width": "80%",
-            "grid_gap": "70px",
+            "item_width": "140px",
+            "grid_width": "100%",
+            "grid_gap": "12px",
             "item_border": "none"
           },
           "rows": [
@@ -428,6 +428,42 @@
       "_dynamicDependencies": {
         "@data.organisation_group": [
           "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": "@global.donors_text",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!@global.donors_text",
+      "name": "text_8",
+      "_nested_name": "text_8",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.donors_text",
+            "matchedExpression": "@global.donors_text",
+            "type": "global",
+            "fieldName": "donors_text"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@global.donors_text",
+            "matchedExpression": "!@global.donors_text",
+            "type": "global",
+            "fieldName": "donors_text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.donors_text": [
+          "value"
+        ],
+        "!@global.donors_text": [
+          "condition"
         ]
       }
     }

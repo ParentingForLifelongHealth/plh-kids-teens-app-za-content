@@ -1,0 +1,36 @@
+{
+  "flow_type": "data_pipe",
+  "flow_name": "facilitators_pipe",
+  "status": "released",
+  "rows": [
+    {
+      "operation": "filter",
+      "args_list": [
+        "role == \"facilitator\""
+      ],
+      "input_source": "characters"
+    },
+    {
+      "operation": "map",
+      "args_list": [
+        "id: @row.id",
+        "text: @row.name",
+        "name: @row.id",
+        "image: @row.image_asset"
+      ],
+      "output_target": "facilitators"
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_za",
+    "path": "data/ZA characters.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1mT10hYXoME2F7stCbobAWgNPLXM_0u-_SCUzI8Kyo1A"
+  },
+  "_output_flows": [
+    {
+      "flow_name": "facilitators",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    }
+  ]
+}

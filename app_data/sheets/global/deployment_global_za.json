@@ -161,7 +161,7 @@
     {
       "type": "declare_field_default",
       "name": "facilitator_id",
-      "value": "facilitator",
+      "value": "facilitator_female",
       "_translations": {
         "value": {}
       },
@@ -170,11 +170,19 @@
     {
       "type": "declare_field_default",
       "name": "facilitator_name",
-      "value": "@data.characters.facilitator.name",
+      "value": "@data.characters.facilitator_female.name",
       "_translations": {
         "value": {}
       },
       "exclude_from_translation": true
+    },
+    {
+      "type": "declare_global_constant",
+      "name": "donors_text",
+      "value": "We are also grateful for support from a family foundation that wishes to remain anonymous",
+      "_translations": {
+        "value": {}
+      }
     }
   ],
   "_source": {
