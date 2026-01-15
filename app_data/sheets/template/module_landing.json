@@ -721,7 +721,6 @@
               "parameter_list": {
                 "filter": "@item.id == @local.module_id"
               },
-              "condition": "!!@local.hp_review_count",
               "exclude_from_translation": true,
               "rows": [
                 {
@@ -776,6 +775,7 @@
                     "countdown_start_date": "@item.completed_ts",
                     "countdown_text_list": "@local.countdown_text_list"
                   },
+                  "condition": "!!@local.hp_review_count",
                   "exclude_from_translation": true,
                   "_nested_name": "dg_bottom.dg_wheel_and_hp.check_in.button_hp_review",
                   "_dynamicFields": {
@@ -866,7 +866,15 @@
                           "fieldName": "countdown_text_list"
                         }
                       ]
-                    }
+                    },
+                    "condition": [
+                      {
+                        "fullExpression": "!!@local.hp_review_count",
+                        "matchedExpression": "!@local.hp_review_count",
+                        "type": "local",
+                        "fieldName": "hp_review_count"
+                      }
+                    ]
                   },
                   "_dynamicDependencies": {
                     "@local.hp_review": [
@@ -896,6 +904,9 @@
                     ],
                     "@local.countdown_text_list": [
                       "parameter_list.countdown_text_list"
+                    ],
+                    "!@local.hp_review_count": [
+                      "condition"
                     ]
                   }
                 }
@@ -917,15 +928,7 @@
                       "fieldName": "module_id"
                     }
                   ]
-                },
-                "condition": [
-                  {
-                    "fullExpression": "!!@local.hp_review_count",
-                    "matchedExpression": "!@local.hp_review_count",
-                    "type": "local",
-                    "fieldName": "hp_review_count"
-                  }
-                ]
+                }
               },
               "_dynamicDependencies": {
                 "@item.id": [
@@ -933,9 +936,6 @@
                 ],
                 "@local.module_id": [
                   "parameter_list.filter"
-                ],
-                "!@local.hp_review_count": [
-                  "condition"
                 ]
               }
             }

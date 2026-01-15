@@ -1,12 +1,12 @@
 {
-  "flow_name": "prep_onlinesafety_t_articles",
+  "flow_name": "prep_grief_t_articles",
   "flow_subtype": "generated",
   "flow_type": "data_pipe",
   "rows": [
     {
       "operation": "filter",
       "args_list": [
-        "id == \"relax_12\""
+        "id == \"relax_22\""
       ],
       "input_source": "relax"
     },
@@ -16,12 +16,12 @@
         "category_id: relax",
         "nested: FALSE"
       ],
-      "output_target": "onlinesafety_t_relax | local_only;"
+      "output_target": "grief_t_relax | local_only;"
     },
     {
       "operation": "filter",
       "args_list": [
-        "id == \"check_in_11\""
+        "id == \"check_in_14\""
       ],
       "input_source": "check_in"
     },
@@ -31,22 +31,22 @@
         "category_id: check_in",
         "nested: FALSE"
       ],
-      "output_target": "onlinesafety_t_check_in | local_only;"
+      "output_target": "grief_t_check_in | local_only;"
     },
     {
       "operation": "filter",
       "args_list": [
-        "foreign_key == \"onlinesafety_t\""
+        "foreign_key == \"grief_t\""
       ],
       "input_source": "sub_items",
-      "output_target": "onlinesafety_t_testing | local_only;"
+      "output_target": "grief_t_testing | local_only;"
     },
     {
       "operation": "concat",
       "args_list": [
-        "onlinesafety_t_relax",
-        "onlinesafety_t_check_in",
-        "onlinesafety_t_testing"
+        "grief_t_relax",
+        "grief_t_check_in",
+        "grief_t_testing"
       ],
       "input_source": false
     },
@@ -55,12 +55,12 @@
       "args_list": [
         "completed: FALSE"
       ],
-      "output_target": "onlinesafety_t_article_tasks"
+      "output_target": "grief_t_article_tasks"
     }
   ],
   "_output_flows": [
     {
-      "flow_name": "onlinesafety_t_article_tasks",
+      "flow_name": "grief_t_article_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
     }
