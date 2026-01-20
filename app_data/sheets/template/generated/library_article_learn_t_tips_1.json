@@ -1,0 +1,42 @@
+{
+  "flow_name": "library_article_learn_t_tips_1",
+  "flow_subtype": "generated",
+  "flow_type": "template",
+  "rows": [
+    {
+      "type": "template",
+      "name": "library_essential_tool",
+      "value": "library_essential_tool",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "nav_stack",
+          "args": [
+            "close_top"
+          ],
+          "_raw": "completed | nav_stack: close_top"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "nav_stack",
+          "args": [
+            "close_top"
+          ],
+          "_raw": "uncompleted | nav_stack: close_top"
+        }
+      ],
+      "rows": [
+        {
+          "name": "module_id",
+          "value": "learn_t",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "library_essential_tool.module_id"
+        }
+      ],
+      "_nested_name": "library_essential_tool"
+    }
+  ]
+}

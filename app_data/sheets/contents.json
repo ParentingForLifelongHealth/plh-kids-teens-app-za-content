@@ -284,6 +284,24 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
+    "learn_t_article_tasks": {
+      "flow_name": "learn_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "nested": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "learn_t_category_tasks": {
+      "flow_name": "learn_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
     "library_relax": {
       "flow_name": "library_relax",
       "flow_subtype": "generated",
@@ -352,6 +370,19 @@
       "flow_name": "oneononetime_t_category_tasks",
       "flow_subtype": "generated",
       "flow_type": "data_list"
+    },
+    "onlinesafety_t_article_tasks": {
+      "flow_name": "onlinesafety_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "nested": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        }
+      }
     },
     "onlinesafety_t_category_tasks": {
       "flow_name": "onlinesafety_t_category_tasks",
@@ -520,6 +551,24 @@
       "flow_subtype": "generated",
       "flow_type": "data_list"
     },
+    "srh_t_article_tasks": {
+      "flow_name": "srh_t_article_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list",
+      "_metadata": {
+        "nested": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "srh_t_category_tasks": {
+      "flow_name": "srh_t_category_tasks",
+      "flow_subtype": "generated",
+      "flow_type": "data_list"
+    },
     "stayingsafe_t_article_tasks": {
       "flow_name": "stayingsafe_t_article_tasks",
       "flow_subtype": "generated",
@@ -683,8 +732,8 @@
       "flow_subtype": "modules",
       "_source": {
         "name": "kids_teens_za",
-        "path": "data/ZA modules.xlsx",
-        "url": "https://docs.google.com/spreadsheets/d/1FIE6VWmOvAAI2Y2nk_mga1sOx5-W9ABug2WJLgoqago"
+        "path": "data/ZA modules sidekick.xlsx",
+        "url": "https://docs.google.com/spreadsheets/d/1pl75hk-zfJVDY22auU2Kf9l0dPe8KsGnXCSSQCU1LQU"
       }
     },
     "modules": {
@@ -1072,6 +1121,30 @@
         }
       ]
     },
+    "prep_learn_t_articles": {
+      "flow_name": "prep_learn_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "learn_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_learn_t_categories": {
+      "flow_name": "prep_learn_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "learn_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
     "prep_money_t_articles": {
       "flow_name": "prep_money_t_articles",
       "flow_subtype": "generated",
@@ -1139,6 +1212,18 @@
       "_output_flows": [
         {
           "flow_name": "oneononetime_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_onlinesafety_t_articles": {
+      "flow_name": "prep_onlinesafety_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "onlinesafety_t_article_tasks",
           "flow_subtype": "generated",
           "flow_type": "data_list"
         }
@@ -1367,6 +1452,30 @@
       "_output_flows": [
         {
           "flow_name": "selfcare_t_category_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_srh_t_articles": {
+      "flow_name": "prep_srh_t_articles",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "srh_t_article_tasks",
+          "flow_subtype": "generated",
+          "flow_type": "data_list"
+        }
+      ]
+    },
+    "prep_srh_t_categories": {
+      "flow_name": "prep_srh_t_categories",
+      "flow_subtype": "generated",
+      "flow_type": "data_pipe",
+      "_output_flows": [
+        {
+          "flow_name": "srh_t_category_tasks",
           "flow_subtype": "generated",
           "flow_type": "data_list"
         }
@@ -3040,156 +3149,6 @@
           "flow_type": "template"
         },
         {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t0",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t1",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t2",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t2",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t3",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t0",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t4",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t1",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t2",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t5",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t3",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t6",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t4",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t7",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t5",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t6",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t8",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t7",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t8",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t9",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_selfcare_t_selfcare_t9",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t10",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t11",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t12",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t13",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t14",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t15",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t16",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t17",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
-          "flow_name": "article_onlinesafety_t_onlinesafety_t18",
-          "flow_subtype": "generated",
-          "flow_type": "template"
-        },
-        {
           "flow_name": "article_stayingsafe_t_stayingsafe_t0",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -3316,6 +3275,356 @@
         },
         {
           "flow_name": "article_grief_t_grief_t15",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t0",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t14",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t15",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t16",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t17",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t18",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t19",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t20",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t21",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t22",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t23",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t24",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t25",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t26",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t27",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t28",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t29",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t30",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t31",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t32",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t33",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t34",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t35",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t36",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t37",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t38",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_srh_t39",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t0",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_selfcare_t_selfcare_t9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t0",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t6",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t7",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t8",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t9",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t10",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t11",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t13",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t14",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t15",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t16",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t17",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t18",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_onlinesafety_t_onlinesafety_t19",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -3453,6 +3762,16 @@
         },
         {
           "flow_name": "article_grief_t_check_in_14",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_check_in_12",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_learn_t_check_in_15",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -3941,6 +4260,16 @@
           "flow_name": "library_article_grief_t_tips_1",
           "flow_subtype": "generated",
           "flow_type": "template"
+        },
+        {
+          "flow_name": "library_article_srh_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "library_article_learn_t_tips_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
         }
       ]
     },
@@ -4125,6 +4454,16 @@
           "flow_name": "module_grief_t",
           "flow_subtype": "generated",
           "flow_type": "template"
+        },
+        {
+          "flow_name": "module_srh_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_learn_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
         }
       ]
     },
@@ -4260,6 +4599,16 @@
         },
         {
           "flow_name": "module_overview_grief_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_srh_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_overview_learn_t",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -4399,6 +4748,16 @@
           "flow_name": "module_grief_t_start_at_uncompleted",
           "flow_subtype": "generated",
           "flow_type": "template"
+        },
+        {
+          "flow_name": "module_srh_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "module_learn_t_start_at_uncompleted",
+          "flow_subtype": "generated",
+          "flow_type": "template"
         }
       ]
     },
@@ -4536,6 +4895,16 @@
           "flow_name": "prep_grief_t_articles",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_srh_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_learn_t_articles",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
         }
       ]
     },
@@ -4671,6 +5040,16 @@
         },
         {
           "flow_name": "prep_grief_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_srh_t_categories",
+          "flow_subtype": "generated",
+          "flow_type": "data_pipe"
+        },
+        {
+          "flow_name": "prep_learn_t_categories",
           "flow_subtype": "generated",
           "flow_type": "data_pipe"
         }
@@ -4947,6 +5326,16 @@
           "flow_name": "stack_module_grief_t",
           "flow_subtype": "generated",
           "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_srh_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_learn_t",
+          "flow_subtype": "generated",
+          "flow_type": "template"
         }
       ]
     },
@@ -5084,6 +5473,16 @@
           "flow_name": "stack_module_grief_t_start_at_id",
           "flow_subtype": "generated",
           "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_srh_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "stack_module_learn_t_start_at_id",
+          "flow_subtype": "generated",
+          "flow_type": "template"
         }
       ]
     },
@@ -5219,6 +5618,16 @@
         },
         {
           "flow_name": "article_grief_t_relax_22",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_srh_t_relax_15",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_learn_t_relax_20",
           "flow_subtype": "generated",
           "flow_type": "template"
         }
@@ -7020,6 +7429,206 @@
           "flow_type": "template"
         },
         {
+          "flow_name": "nested_explore_13_nested_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_13_nested_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_13_nested_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_13_nested_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_14_nested_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_14_nested_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_14_nested_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_14_nested_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_15_nested_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_15_nested_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_15_nested_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_15_nested_4",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_15_nested_5",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_16_nested_1",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_16_nested_2",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_explore_16_nested_3",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "nested_@gen.nested",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
           "flow_name": "nested_@gen.nested",
           "flow_subtype": "generated",
           "flow_type": "template"
@@ -8559,6 +9168,16 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_learn_t_check_in_15": {
+      "flow_name": "article_learn_t_check_in_15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_learn_t_relax_20": {
+      "flow_name": "article_learn_t_relax_20",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_money_t_check_in_6": {
       "flow_name": "article_money_t_check_in_6",
       "flow_subtype": "generated",
@@ -8846,6 +9465,11 @@
     },
     "article_onlinesafety_t_onlinesafety_t18": {
       "flow_name": "article_onlinesafety_t_onlinesafety_t18",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_onlinesafety_t_onlinesafety_t19": {
+      "flow_name": "article_onlinesafety_t_onlinesafety_t19",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -9869,6 +10493,216 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "article_srh_t_check_in_12": {
+      "flow_name": "article_srh_t_check_in_12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_relax_15": {
+      "flow_name": "article_srh_t_relax_15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t0": {
+      "flow_name": "article_srh_t_srh_t0",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t1": {
+      "flow_name": "article_srh_t_srh_t1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t10": {
+      "flow_name": "article_srh_t_srh_t10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t11": {
+      "flow_name": "article_srh_t_srh_t11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t12": {
+      "flow_name": "article_srh_t_srh_t12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t13": {
+      "flow_name": "article_srh_t_srh_t13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t14": {
+      "flow_name": "article_srh_t_srh_t14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t15": {
+      "flow_name": "article_srh_t_srh_t15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t16": {
+      "flow_name": "article_srh_t_srh_t16",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t17": {
+      "flow_name": "article_srh_t_srh_t17",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t18": {
+      "flow_name": "article_srh_t_srh_t18",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t19": {
+      "flow_name": "article_srh_t_srh_t19",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t2": {
+      "flow_name": "article_srh_t_srh_t2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t20": {
+      "flow_name": "article_srh_t_srh_t20",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t21": {
+      "flow_name": "article_srh_t_srh_t21",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t22": {
+      "flow_name": "article_srh_t_srh_t22",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t23": {
+      "flow_name": "article_srh_t_srh_t23",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t24": {
+      "flow_name": "article_srh_t_srh_t24",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t25": {
+      "flow_name": "article_srh_t_srh_t25",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t26": {
+      "flow_name": "article_srh_t_srh_t26",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t27": {
+      "flow_name": "article_srh_t_srh_t27",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t28": {
+      "flow_name": "article_srh_t_srh_t28",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t29": {
+      "flow_name": "article_srh_t_srh_t29",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t3": {
+      "flow_name": "article_srh_t_srh_t3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t30": {
+      "flow_name": "article_srh_t_srh_t30",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t31": {
+      "flow_name": "article_srh_t_srh_t31",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t32": {
+      "flow_name": "article_srh_t_srh_t32",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t33": {
+      "flow_name": "article_srh_t_srh_t33",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t34": {
+      "flow_name": "article_srh_t_srh_t34",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t35": {
+      "flow_name": "article_srh_t_srh_t35",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t36": {
+      "flow_name": "article_srh_t_srh_t36",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t37": {
+      "flow_name": "article_srh_t_srh_t37",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t38": {
+      "flow_name": "article_srh_t_srh_t38",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t39": {
+      "flow_name": "article_srh_t_srh_t39",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t4": {
+      "flow_name": "article_srh_t_srh_t4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t5": {
+      "flow_name": "article_srh_t_srh_t5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t6": {
+      "flow_name": "article_srh_t_srh_t6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t7": {
+      "flow_name": "article_srh_t_srh_t7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t8": {
+      "flow_name": "article_srh_t_srh_t8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_srh_t_srh_t9": {
+      "flow_name": "article_srh_t_srh_t9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "article_stayingsafe_t_check_in_13": {
       "flow_name": "article_stayingsafe_t_check_in_13",
       "flow_subtype": "generated",
@@ -10059,6 +10893,11 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "library_article_learn_t_tips_1": {
+      "flow_name": "library_article_learn_t_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "library_article_money_t_tips_1": {
       "flow_name": "library_article_money_t_tips_1",
       "flow_subtype": "generated",
@@ -10151,6 +10990,11 @@
     },
     "library_article_selfcare_tips_1": {
       "flow_name": "library_article_selfcare_tips_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "library_article_srh_t_tips_1": {
+      "flow_name": "library_article_srh_t_tips_1",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -10309,6 +11153,16 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_learn_t": {
+      "flow_name": "module_learn_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_learn_t_start_at_uncompleted": {
+      "flow_name": "module_learn_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_money_t": {
       "flow_name": "module_money_t",
       "flow_subtype": "generated",
@@ -10394,6 +11248,11 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "module_overview_learn_t": {
+      "flow_name": "module_overview_learn_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "module_overview_money_t": {
       "flow_name": "module_overview_money_t",
       "flow_subtype": "generated",
@@ -10456,6 +11315,11 @@
     },
     "module_overview_selfcare_t": {
       "flow_name": "module_overview_selfcare_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_overview_srh_t": {
+      "flow_name": "module_overview_srh_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -10556,6 +11420,16 @@
     },
     "module_selfcare_t_start_at_uncompleted": {
       "flow_name": "module_selfcare_t_start_at_uncompleted",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_srh_t": {
+      "flow_name": "module_srh_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "module_srh_t_start_at_uncompleted": {
+      "flow_name": "module_srh_t_start_at_uncompleted",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -10661,6 +11535,31 @@
     },
     "nested_explore_15_nested_3": {
       "flow_name": "nested_explore_15_nested_3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "nested_explore_15_nested_4": {
+      "flow_name": "nested_explore_15_nested_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "nested_explore_15_nested_5": {
+      "flow_name": "nested_explore_15_nested_5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "nested_explore_16_nested_1": {
+      "flow_name": "nested_explore_16_nested_1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "nested_explore_16_nested_2": {
+      "flow_name": "nested_explore_16_nested_2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "nested_explore_16_nested_3": {
+      "flow_name": "nested_explore_16_nested_3",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
@@ -10914,6 +11813,16 @@
       "flow_subtype": "generated",
       "flow_type": "template"
     },
+    "stack_module_learn_t": {
+      "flow_name": "stack_module_learn_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_learn_t_start_at_id": {
+      "flow_name": "stack_module_learn_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
     "stack_module_money_t": {
       "flow_name": "stack_module_money_t",
       "flow_subtype": "generated",
@@ -11041,6 +11950,16 @@
     },
     "stack_module_selfcare_t_start_at_id": {
       "flow_name": "stack_module_selfcare_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_srh_t": {
+      "flow_name": "stack_module_srh_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "stack_module_srh_t_start_at_id": {
+      "flow_name": "stack_module_srh_t_start_at_id",
       "flow_subtype": "generated",
       "flow_type": "template"
     },
