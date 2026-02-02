@@ -32,11 +32,11 @@
 | round_button | 12 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2742 |
+| set_variable | 2728 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 4 |
-| template | 976 |
+| template | 969 |
 | text | 162 |
 | text_area | 2 |
 | text_box | 12 |
@@ -56,13 +56,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 3 |
-| emit: completed | 706 |
+| emit: completed | 699 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 716 |
+| emit: uncompleted | 709 |
 | feedback | 13 |
 | go_to | 16 |
 | nav_stack | 281 |
@@ -543,7 +543,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/homescreen/stress_t.svg | 16.9 | 2 |
 | images/homescreen/svp_t.svg | 25.4 | 2 |
 | images/icons/balance_blue.png | 4.7 | 1 |
-| images/icons/brain_blue.png | 5.2 | 7 |
+| images/icons/brain_blue.png | 5.2 | 6 |
 | images/icons/clock_blue.png | 4.5 | 5 |
 | images/icons/diamond.png | 1.8 | 2 |
 | images/icons/diamond_active.png | 1.7 | 2 |
@@ -551,7 +551,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/document.svg | 7.3 | 1 |
 | images/icons/expand_circle_right.svg | 0.5 | 1 |
 | images/icons/expand_circle_right_blue.svg | 2.1 | 1 |
-| images/icons/eye_blue.png | 4.2 | 10 |
+| images/icons/eye_blue.png | 4.2 | 9 |
 | images/icons/faces/happy_face_new.svg | 1.4 | 42 |
 | images/icons/faces/ok_face_new.svg | 0.5 | 42 |
 | images/icons/faces/sad.svg | 0.6 | 1 |
@@ -586,11 +586,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/repeat_blue.png | 5.4 | 1 |
 | images/icons/settings.svg | 2.4 | 1 |
 | images/icons/settings_active.svg | 2.4 | 1 |
-| images/icons/single_speech_blue.png | 3.3 | 11 |
+| images/icons/single_speech_blue.png | 3.3 | 10 |
 | images/icons/smile_eyes_down.svg | 0.9 | 30 |
 | images/icons/smile_eyes_up.svg | 1 | 81 |
 | images/icons/speech_bubble_blue.png | 4.2 | 8 |
-| images/icons/star_filled_blue.png | 5.1 | 22 |
+| images/icons/star_filled_blue.png | 5.1 | 21 |
 | images/icons/star_outline_blue.svg | 1 | 28 |
 | images/icons/tablet_blue.png | 2.8 | 1 |
 | images/icons/thought_bubble.svg | 2.1 | 27 |
@@ -882,6 +882,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
 | template |  | 124 |
-| template | generated | 760 |
+| template | generated | 753 |
 | template | legal_terms | 4 |
 </details>
