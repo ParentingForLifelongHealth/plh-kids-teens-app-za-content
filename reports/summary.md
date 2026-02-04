@@ -342,7 +342,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/testimonials/caregiver/caregiver_test_grief_t.mp3 | 306.5 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_instruct_t.mp3 | 281.3 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_learn_t.mp3 | 209.4 | 1 |
-| audio/teen/testimonials/caregiver/caregiver_test_money_t.mp3 | 243.5 | 2 |
+| audio/teen/testimonials/caregiver/caregiver_test_money_t.mp3 | 243.5 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_onlinesafety_t.mp3 | 371.8 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_praise_t.mp3 | 232.3 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_rules_t.mp3 | 379.2 | 1 |
@@ -374,7 +374,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/topic_intros/grief_intro_t.mp3 | 690.8 | 1 |
 | audio/teen/topic_intros/instruct_intro_t.mp3 | 231 | 1 |
 | audio/teen/topic_intros/learn_intro_t.mp3 | 592.2 | 1 |
-| audio/teen/topic_intros/money_intro_t.mp3 | 348.8 | 2 |
+| audio/teen/topic_intros/money_intro_t.mp3 | 348.8 | 1 |
 | audio/teen/topic_intros/onlinesafety_intro_t.mp3 | 318.9 | 1 |
 | audio/teen/topic_intros/praise_intro_t.mp3 | 532.2 | 1 |
 | audio/teen/topic_intros/rules_intro_t.mp3 | 292.9 | 1 |
@@ -691,9 +691,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/learn/learn_support_t_2.svg | 69.4 | 1 |
 | images/teen_modules/learn/learn_support_t_3.svg | 46 | 1 |
 | images/teen_modules/learn/learn_support_t_4.svg | 42.9 | 1 |
-| images/teen_modules/money/money1_t_1.svg | 38.9 | 2 |
-| images/teen_modules/money/money1_t_2.svg | 44.9 | 2 |
-| images/teen_modules/money/money2_t_1.svg | 702.9 | 2 |
+| images/teen_modules/money/money1_t_1.svg | 38.9 | 1 |
+| images/teen_modules/money/money1_t_2.svg | 44.9 | 1 |
+| images/teen_modules/money/money2_t_1.svg | 702.9 | 1 |
 | images/teen_modules/money/money2_t_2.svg | 61.8 | 1 |
 | images/teen_modules/money/money2_t_3.svg | 717.1 | 1 |
 | images/teen_modules/money/money2_t_4.svg | 721.6 | 1 |
