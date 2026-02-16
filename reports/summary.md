@@ -83,8 +83,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 83095 KB | 83.1 MB |
-| unused | 85979 KB | 86 MB |
+| total | 80426 KB | 80.4 MB |
+| unused | 86232 KB | 86.2 MB |
 </details>
 
 <details open>
@@ -118,7 +118,10 @@ Assets that appear in app-data but do not have references within sheets
 | audio/solve_audio_1.mp3 | 609 |
 | audio/solve_audio_2.mp3 | 468.1 |
 | audio/teen/testimonials/caregiver/caregiver_test_svp_t.mp3 | 174.8 |
+| audio/teen/testimonials/teen/Archive - may not be needed/teen_test_onlinesafety_t.mp3 | 210.8 |
 | audio/teen/testimonials/teen/Archive - may not be needed/teen_test_rules_t.mp3 | 447.1 |
+| audio/teen/testimonials/teen/Archive - may not be needed/teen_test_stress_t.mp3 | 267.8 |
+| audio/teen/topic_intros/Unused audios - intros English/svp_intro_t.mp3 | 603.8 |
 | audio/teen/topic_intros/self_care_intro_t.mp3 | 407.6 |
 | contents.json | 16.8 |
 | images/activities/act_animal_infant.svg | 111.5 |
@@ -261,13 +264,11 @@ Assets that appear in app-data but do not have references within sheets
 | images/teen_modules/safe/safe2_t_1.svg | 36.4 |
 | images/teen_modules/safe/safe2_t_2.svg | 35.7 |
 | images/teen_modules/safe/safe_learn_t_4.svg | 926.4 |
-| images/teen_modules/self_care/self_care2_t_1.png | 592.1 |
-| images/teen_modules/self_care/self_care2_t_2.png | 590.2 |
-| images/teen_modules/self_care/self_care2_t_3.png | 597.5 |
-| images/teen_modules/srh/srh_learn_sex_talk_when_t_3.svg | 203.3 |
+| images/teen_modules/self_care/self_care1_t_2.svg | 34.7 |
+| images/teen_modules/srh/Unsused Assets_SRH/srh_learn_sex_talk_when_t_3.svg | 203.3 |
+| images/teen_modules/srh/Unsused Assets_SRH/srh_learn_sex_talk_who_t_3.svg | 105 |
+| images/teen_modules/srh/srh_learn_sex_talk_when_t_3.png | 924 |
 | images/teen_modules/stress/stress3_t_6.svg | 74.5 |
-| images/teen_modules/svp/svp_controlling_boyfriend_t.svg | 63.4 |
-| images/teen_modules/svp/svp_nude_pic_t.svg | 49.6 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
 | video/plh_video/lets_slow_down.srt | 1.7 |
@@ -295,7 +296,6 @@ Assets that have references within sheets but do not appear in app-data
 | images/backgrounds/map_view_bg.jpg | 1 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
-| images/teen_modules/svp/svp_nude_pic_t.png | 1 |
 </details>
 
 <details >
@@ -343,14 +343,14 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/testimonials/teen/teen_test_instruct_t.mp3 | 397.7 | 1 |
 | audio/teen/testimonials/teen/teen_test_learn_t.mp3 | 330.1 | 1 |
 | audio/teen/testimonials/teen/teen_test_money_t.mp3 | 282.3 | 1 |
-| audio/teen/testimonials/teen/teen_test_onlinesafety_t.mp3 | 210.8 | 1 |
+| audio/teen/testimonials/teen/teen_test_onlinesafety_t.mp3 | 589.2 | 1 |
 | audio/teen/testimonials/teen/teen_test_praise_t.mp3 | 148 | 1 |
 | audio/teen/testimonials/teen/teen_test_rules_t.mp3 | 111.2 | 1 |
 | audio/teen/testimonials/teen/teen_test_safe_t.mp3 | 136.9 | 2 |
 | audio/teen/testimonials/teen/teen_test_self_care_t.mp3 | 312 | 1 |
 | audio/teen/testimonials/teen/teen_test_solve_t.mp3 | 264.6 | 1 |
 | audio/teen/testimonials/teen/teen_test_srh_t.mp3 | 263.5 | 1 |
-| audio/teen/testimonials/teen/teen_test_stress_t.mp3 | 267.8 | 1 |
+| audio/teen/testimonials/teen/teen_test_stress_t.mp3 | 769.3 | 1 |
 | audio/teen/testimonials/teen/teen_test_svp_t.mp3 | 202.9 | 1 |
 | audio/teen/topic_intros/1on1_intro_t.mp3 | 206 | 1 |
 | audio/teen/topic_intros/celebrate_intro_t.mp3 | 665.6 | 1 |
@@ -367,7 +367,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/topic_intros/solve_intro_t.mp3 | 508 | 1 |
 | audio/teen/topic_intros/srh_intro_t.mp3 | 369.2 | 1 |
 | audio/teen/topic_intros/stress_intro_t.mp3 | 370.3 | 1 |
-| audio/teen/topic_intros/svp_intro_t.mp3 | 603.8 | 1 |
+| audio/teen/topic_intros/svp_intro_t.mp3 | 438.6 | 1 |
 | audio/teen/topic_intros/workshops_reflection_t.mp3 | 258.6 | 1 |
 | audio/yc/1on1_audio_1.mp3 | 267.1 | 1 |
 | audio/yc/1on1_audio_2.mp3 | 401.8 | 1 |
@@ -686,10 +686,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/money/money3_t_4.svg | 58.2 | 1 |
 | images/teen_modules/money/money3_t_5.svg | 54 | 1 |
 | images/teen_modules/money/money4_t_1.svg | 47.1 | 1 |
-| images/teen_modules/one_on_one/1on1_1_t.png | 593.1 | 1 |
-| images/teen_modules/one_on_one/1on1_2_t.png | 504.4 | 1 |
-| images/teen_modules/one_on_one/1on1_3_t.png | 579.4 | 1 |
-| images/teen_modules/one_on_one/1on1_4_t.png | 604.6 | 1 |
+| images/teen_modules/one_on_one/1on1_1_t.svg | 79.3 | 1 |
+| images/teen_modules/one_on_one/1on1_2_t.svg | 72.5 | 1 |
+| images/teen_modules/one_on_one/1on1_3_t.svg | 73.9 | 1 |
+| images/teen_modules/one_on_one/1on1_4_t.svg | 73.8 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety1_t_1.svg | 287 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety2_t_1.svg | 45.1 | 2 |
 | images/teen_modules/onlinesafety/onlinesafety2_t_2.svg | 47 | 1 |
@@ -697,9 +697,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/onlinesafety/onlinesafety2_t_4.svg | 46.1 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety3_t_1.svg | 58.3 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety3_t_2.svg | 133.6 | 1 |
-| images/teen_modules/onlinesafety/onlinesafety3_t_3.svg | 1244.3 | 1 |
+| images/teen_modules/onlinesafety/onlinesafety3_t_3.svg | 954.8 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety3_t_4.svg | 86.5 | 1 |
 | images/teen_modules/onlinesafety/onlinesafety3_t_5.svg | 52.7 | 1 |
+| images/teen_modules/onlinesafety/onlinesafety4_t_1.svg | 23.9 | 1 |
 | images/teen_modules/praise/praise1_t_1.svg | 164.8 | 1 |
 | images/teen_modules/praise/praise1_t_2.svg | 44.8 | 1 |
 | images/teen_modules/rules/rules1_t_1.svg | 42.3 | 1 |
@@ -717,9 +718,14 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/safe/safe_learn_t_1.svg | 1365.4 | 1 |
 | images/teen_modules/safe/safe_learn_t_2.svg | 1560.3 | 1 |
 | images/teen_modules/safe/safe_learn_t_3.svg | 1991.8 | 1 |
-| images/teen_modules/self_care/self_care1_t_1.svg | 34.7 | 1 |
-| images/teen_modules/self_care/self_care1_t_2.svg | 27.9 | 1 |
-| images/teen_modules/self_care/self_care2_t_4.png | 478.8 | 1 |
+| images/teen_modules/safe/warning_catcalling_t.svg | 96.8 | 1 |
+| images/teen_modules/safe/warning_nude_pic_t.svg | 96 | 1 |
+| images/teen_modules/safe/warning_private_tutoring_t.svg | 58.6 | 1 |
+| images/teen_modules/safe/warning_pushy_boyfriend_t.svg | 40.8 | 1 |
+| images/teen_modules/safe/warning_pushy_friend_t.svg | 77 | 1 |
+| images/teen_modules/safe/warning_rejected_ride_t.svg | 103.3 | 1 |
+| images/teen_modules/self_care/self_care1_t_1.svg | 44.3 | 2 |
+| images/teen_modules/self_care/self_care1_t_3.svg | 27.9 | 1 |
 | images/teen_modules/solve/solve1_t_1.svg | 182.1 | 1 |
 | images/teen_modules/solve/solve1_t_2.svg | 203.2 | 1 |
 | images/teen_modules/solve/solve1_t_3.svg | 45.8 | 1 |
@@ -750,11 +756,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/srh/srh_learn_sex_talk_safe_t_5.svg | 76.4 | 1 |
 | images/teen_modules/srh/srh_learn_sex_talk_when_t_1.svg | 58.6 | 1 |
 | images/teen_modules/srh/srh_learn_sex_talk_when_t_2.svg | 95.4 | 1 |
-| images/teen_modules/srh/srh_learn_sex_talk_when_t_3.png | 924 | 1 |
+| images/teen_modules/srh/srh_learn_sex_talk_when_t_3.svg | 166.3 | 1 |
 | images/teen_modules/srh/srh_learn_sex_talk_when_t_4.svg | 52.8 | 1 |
 | images/teen_modules/srh/srh_learn_sex_talk_who_t_1.svg | 27.1 | 1 |
 | images/teen_modules/srh/srh_learn_sex_talk_who_t_2.svg | 69.1 | 1 |
-| images/teen_modules/srh/srh_learn_sex_talk_who_t_3.svg | 105 | 2 |
+| images/teen_modules/srh/srh_learn_sex_talk_who_t_3.svg | 99.7 | 2 |
 | images/teen_modules/stress/stress1_t_1.svg | 74.9 | 1 |
 | images/teen_modules/stress/stress1_t_2.svg | 94 | 1 |
 | images/teen_modules/stress/stress1_t_3.svg | 68 | 1 |
@@ -769,11 +775,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/stress/stress3_t_3.svg | 63.3 | 1 |
 | images/teen_modules/stress/stress3_t_4.svg | 86.8 | 1 |
 | images/teen_modules/stress/stress3_t_5.svg | 103.7 | 1 |
-| images/teen_modules/svp/svp_catcalling_t.svg | 96.8 | 1 |
-| images/teen_modules/svp/svp_private_tutoring_t.svg | 58.6 | 1 |
-| images/teen_modules/svp/svp_pushy_boyfriend_t.svg | 40.8 | 1 |
-| images/teen_modules/svp/svp_pushy_friend_t.svg | 77 | 1 |
-| images/teen_modules/svp/svp_rejected_ride_t.svg | 103.3 | 1 |
 | images/teen_modules/svp/svp_usebody_t_1.gif | 1111.6 | 1 |
 | images/teen_modules/svp/svp_usebody_t_2.gif | 2008.5 | 1 |
 | images/teen_modules/svp/svp_usebody_t_3.gif | 844.1 | 1 |
@@ -837,7 +838,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/relax/looping_rings.json | 10.4 | 7 |
 | lottie/relax/soothing_waves.json | 7.6 | 13 |
 | lottie/relax/square_flow.json | 5.9 | 22 |
-| video/plh_video/lets_slow_down.mp4 | 13482.2 | 15 |
+| video/plh_video/lets_slow_down.mp4 | 13482.2 | 16 |
 </details>
 
 <details >
