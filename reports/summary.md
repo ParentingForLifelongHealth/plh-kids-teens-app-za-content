@@ -83,7 +83,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 80893 KB | 80.9 MB |
+| total | 80891 KB | 80.9 MB |
 | unused | 87150 KB | 87.1 MB |
 </details>
 
@@ -397,7 +397,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 118.7 | 4 |
+| images/activities/circle_dance.svg | 117.2 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
