@@ -1,0 +1,420 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_group",
+  "status": "released",
+  "rows": [
+    {
+      "name": "course",
+      "type": "set_variable",
+      "_nested_name": "course"
+    },
+    {
+      "name": "course_title",
+      "type": "set_variable",
+      "_nested_name": "course_title"
+    },
+    {
+      "name": "show_completed",
+      "value": false,
+      "type": "set_variable",
+      "_nested_name": "show_completed"
+    },
+    {
+      "name": "all_locked",
+      "value": false,
+      "type": "set_variable",
+      "_nested_name": "all_locked"
+    },
+    {
+      "name": "next_to_complete",
+      "value": 999999,
+      "type": "set_variable",
+      "_nested_name": "next_to_complete"
+    },
+    {
+      "name": "course_locked",
+      "value": false,
+      "type": "set_variable",
+      "_nested_name": "course_locked"
+    },
+    {
+      "name": "course_image",
+      "value": "default",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "course_image"
+    },
+    {
+      "name": "opacity",
+      "value": 1,
+      "type": "set_variable",
+      "_nested_name": "opacity"
+    },
+    {
+      "type": "text",
+      "value": "next to complete: @local.next_to_complete",
+      "_translations": {
+        "value": {}
+      },
+      "condition": false,
+      "name": "text_10",
+      "_nested_name": "text_10",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "next to complete: @local.next_to_complete",
+            "matchedExpression": "@local.next_to_complete",
+            "type": "local",
+            "fieldName": "next_to_complete"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.next_to_complete": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": "image: @local.course_image",
+      "_translations": {
+        "value": {}
+      },
+      "condition": false,
+      "name": "text_11",
+      "_nested_name": "text_11",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "image: @local.course_image",
+            "matchedExpression": "@local.course_image",
+            "type": "local",
+            "fieldName": "course_image"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.course_image": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "plh_course_accordion",
+      "value": "@local.course_title",
+      "parameter_list": {
+        "locked": "@local.course_locked",
+        "image_asset": "@local.course_image"
+      },
+      "style_list": [
+        "opacity: @local.opacity"
+      ],
+      "rows": [
+        {
+          "type": "data_items",
+          "name": "loop_modules",
+          "value": "@data.module_tasks",
+          "parameter_list": {
+            "filter": "(@item.tag_course == @local.course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+            "sort": "number"
+          },
+          "rows": [
+            {
+              "name": "target_template",
+              "value": "module_landing_@item.id",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "plh_course_accordion_12.loop_modules.target_template",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "module_landing_@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.id": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "name": "highlight",
+              "value": "@item.id == @local.next_to_complete",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "plh_course_accordion_12.loop_modules.highlight",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@item.id == @local.next_to_complete",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  },
+                  {
+                    "fullExpression": "@item.id == @local.next_to_complete",
+                    "matchedExpression": "@local.next_to_complete",
+                    "type": "local",
+                    "fieldName": "next_to_complete"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.id": [
+                  "value"
+                ],
+                "@local.next_to_complete": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "plh_course_sub_item",
+              "name": "plh_module_list_item",
+              "value": "@item.title",
+              "_translations": {
+                "value": {}
+              },
+              "action_list": [
+                {
+                  "trigger": "click",
+                  "action_id": "go_to",
+                  "args": [
+                    "@local.target_template"
+                  ],
+                  "_raw": "click | go_to: @local.target_template"
+                }
+              ],
+              "parameter_list": {
+                "highlighted": "@item.id == @local.next_to_complete",
+                "locked": "@local.all_locked",
+                "completed": "@item.completed"
+              },
+              "_nested_name": "plh_course_accordion_12.loop_modules.plh_module_list_item",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@item.title",
+                    "matchedExpression": "@item.title",
+                    "type": "item",
+                    "fieldName": "title"
+                  }
+                ],
+                "action_list": {
+                  "0": {
+                    "args": {
+                      "0": [
+                        {
+                          "fullExpression": "@local.target_template",
+                          "matchedExpression": "@local.target_template",
+                          "type": "local",
+                          "fieldName": "target_template"
+                        }
+                      ]
+                    },
+                    "_raw": [
+                      {
+                        "fullExpression": "click | go_to: @local.target_template",
+                        "matchedExpression": "@local.target_template",
+                        "type": "local",
+                        "fieldName": "target_template"
+                      }
+                    ]
+                  }
+                },
+                "parameter_list": {
+                  "highlighted": [
+                    {
+                      "fullExpression": "@item.id == @local.next_to_complete",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    },
+                    {
+                      "fullExpression": "@item.id == @local.next_to_complete",
+                      "matchedExpression": "@local.next_to_complete",
+                      "type": "local",
+                      "fieldName": "next_to_complete"
+                    }
+                  ],
+                  "locked": [
+                    {
+                      "fullExpression": "@local.all_locked",
+                      "matchedExpression": "@local.all_locked",
+                      "type": "local",
+                      "fieldName": "all_locked"
+                    }
+                  ],
+                  "completed": [
+                    {
+                      "fullExpression": "@item.completed",
+                      "matchedExpression": "@item.completed",
+                      "type": "item",
+                      "fieldName": "completed"
+                    }
+                  ]
+                }
+              },
+              "_dynamicDependencies": {
+                "@item.title": [
+                  "value"
+                ],
+                "@local.target_template": [
+                  "action_list.0.args.0",
+                  "action_list.0._raw"
+                ],
+                "@item.id": [
+                  "parameter_list.highlighted"
+                ],
+                "@local.next_to_complete": [
+                  "parameter_list.highlighted"
+                ],
+                "@local.all_locked": [
+                  "parameter_list.locked"
+                ],
+                "@item.completed": [
+                  "parameter_list.completed"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "plh_course_accordion_12.loop_modules",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@data.module_tasks",
+                "matchedExpression": "@data.module_tasks",
+                "type": "data",
+                "fieldName": "module_tasks"
+              }
+            ],
+            "parameter_list": {
+              "filter": [
+                {
+                  "fullExpression": "(@item.tag_course == @local.course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "@item.tag_course",
+                  "type": "item",
+                  "fieldName": "tag_course"
+                },
+                {
+                  "fullExpression": "(@item.tag_course == @local.course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "@local.course",
+                  "type": "local",
+                  "fieldName": "course"
+                },
+                {
+                  "fullExpression": "(@item.tag_course == @local.course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "!@item.tag_list",
+                  "type": "item",
+                  "fieldName": "tag_list"
+                },
+                {
+                  "fullExpression": "(@item.tag_course == @local.course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "@item.tag_list.includes",
+                  "type": "item",
+                  "fieldName": "tag_list"
+                },
+                {
+                  "fullExpression": "(@item.tag_course == @local.course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "@fields.child_age_tag",
+                  "type": "fields",
+                  "fieldName": "child_age_tag"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@data.module_tasks": [
+              "value"
+            ],
+            "@item.tag_course": [
+              "parameter_list.filter"
+            ],
+            "@local.course": [
+              "parameter_list.filter"
+            ],
+            "!@item.tag_list": [
+              "parameter_list.filter"
+            ],
+            "@item.tag_list.includes": [
+              "parameter_list.filter"
+            ],
+            "@fields.child_age_tag": [
+              "parameter_list.filter"
+            ]
+          }
+        }
+      ],
+      "name": "plh_course_accordion_12",
+      "_nested_name": "plh_course_accordion_12",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.course_title",
+            "matchedExpression": "@local.course_title",
+            "type": "local",
+            "fieldName": "course_title"
+          }
+        ],
+        "parameter_list": {
+          "locked": [
+            {
+              "fullExpression": "@local.course_locked",
+              "matchedExpression": "@local.course_locked",
+              "type": "local",
+              "fieldName": "course_locked"
+            }
+          ],
+          "image_asset": [
+            {
+              "fullExpression": "@local.course_image",
+              "matchedExpression": "@local.course_image",
+              "type": "local",
+              "fieldName": "course_image"
+            }
+          ]
+        },
+        "style_list": {
+          "0": [
+            {
+              "fullExpression": "opacity: @local.opacity",
+              "matchedExpression": "@local.opacity",
+              "type": "local",
+              "fieldName": "opacity"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.course_title": [
+          "value"
+        ],
+        "@local.course_locked": [
+          "parameter_list.locked"
+        ],
+        "@local.course_image": [
+          "parameter_list.image_asset"
+        ],
+        "@local.opacity": [
+          "style_list.0"
+        ]
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_za",
+    "path": "templates/ZA app_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1dpTYJMY2c8CWJ8yiGTR1vSX1LryPSpsxQSPbUjRi0fg"
+  }
+}

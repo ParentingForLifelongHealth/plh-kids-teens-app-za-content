@@ -799,9 +799,15 @@
                   "rows": [
                     {
                       "type": "nested_properties",
-                      "name": "article",
+                      "name": "article_sidekick",
                       "exclude_from_translation": true,
                       "rows": [
+                        {
+                          "name": "last_article",
+                          "value": true,
+                          "type": "set_variable",
+                          "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article_sidekick.last_article"
+                        },
                         {
                           "type": "nested_properties",
                           "name": "nav_buttons",
@@ -815,7 +821,7 @@
                               },
                               "exclude_from_translation": true,
                               "type": "set_variable",
-                              "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article.nav_buttons.next_icon_src",
+                              "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article_sidekick.nav_buttons.next_icon_src",
                               "_dynamicFields": {
                                 "value": [
                                   {
@@ -833,10 +839,10 @@
                               }
                             }
                           ],
-                          "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article.nav_buttons"
+                          "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article_sidekick.nav_buttons"
                         }
                       ],
-                      "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article"
+                      "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article_sidekick"
                     }
                   ],
                   "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last",
@@ -1042,8 +1048,8 @@
     }
   ],
   "_source": {
-    "name": "kids_global",
-    "path": "templates/modules/module_navigation.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1MeuVFYp7ovMCABdgC5c1mExgDK8Xop13fzzBNR5EAPo"
+    "name": "kids_teens_za",
+    "path": "templates/ZA app_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1dpTYJMY2c8CWJ8yiGTR1vSX1LryPSpsxQSPbUjRi0fg"
   }
 }
