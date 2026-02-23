@@ -4,6 +4,13 @@
   "status": "released",
   "rows": [
     {
+      "name": "last_article",
+      "value": false,
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "last_article"
+    },
+    {
       "name": "article_id",
       "value": "explore_5",
       "_translations": {
@@ -98,8 +105,8 @@
         }
       },
       "condition": false,
-      "name": "text_8",
-      "_nested_name": "text_8",
+      "name": "text_9",
+      "_nested_name": "text_9",
       "_dynamicFields": {
         "value": [
           {
@@ -146,8 +153,8 @@
       "parameter_list": {
         "filter": "@item.foreign_key == @local.article_id"
       },
-      "name": "data_items_9",
-      "_nested_name": "data_items_9",
+      "name": "data_items_10",
+      "_nested_name": "data_items_10",
       "_dynamicFields": {
         "value": [
           {
@@ -246,8 +253,8 @@
       "parameter_list": {
         "filter": "@item.id == @local.category_id"
       },
-      "name": "data_items_13",
-      "_nested_name": "data_items_13",
+      "name": "data_items_14",
+      "_nested_name": "data_items_14",
       "_dynamicFields": {
         "value": [
           {
@@ -595,22 +602,513 @@
           "_raw": "uncompleted | emit: uncompleted"
         }
       ],
-      "condition": "@local.show_nav_buttons",
+      "condition": false,
+      "exclude_from_translation": true,
+      "rows": [],
+      "_nested_name": "nav_buttons"
+    },
+    {
+      "name": "still_to_do",
+      "value": 10,
+      "type": "set_variable",
+      "_nested_name": "still_to_do"
+    },
+    {
+      "name": "module_course",
+      "type": "set_variable",
+      "_nested_name": "module_course"
+    },
+    {
+      "type": "display_group",
+      "condition": "!!@local.last_article",
+      "rows": [
+        {
+          "type": "data_items",
+          "value": "@data.modules",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "data_changed",
+              "action_id": "set_local",
+              "args": [
+                "module_course",
+                "@items[0].tag_course"
+              ],
+              "_raw": "data_changed | set_local : module_course: @items[0].tag_course"
+            }
+          ],
+          "parameter_list": {
+            "filter": "(@item.id == @local.module_id)"
+          },
+          "name": "data_items_3",
+          "_nested_name": "display_group_29.data_items_3",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@data.modules",
+                "matchedExpression": "@data.modules",
+                "type": "data",
+                "fieldName": "modules"
+              }
+            ],
+            "parameter_list": {
+              "filter": [
+                {
+                  "fullExpression": "(@item.id == @local.module_id)",
+                  "matchedExpression": "@item.id",
+                  "type": "item",
+                  "fieldName": "id"
+                },
+                {
+                  "fullExpression": "(@item.id == @local.module_id)",
+                  "matchedExpression": "@local.module_id",
+                  "type": "local",
+                  "fieldName": "module_id"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@data.modules": [
+              "value"
+            ],
+            "@item.id": [
+              "parameter_list.filter"
+            ],
+            "@local.module_id": [
+              "parameter_list.filter"
+            ]
+          }
+        },
+        {
+          "type": "data_items",
+          "value": "@data.module_tasks",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "data_changed",
+              "action_id": "set_local",
+              "args": [
+                "still_to_do",
+                "@items.length"
+              ],
+              "_raw": "data_changed | set_local : still_to_do: @items.length"
+            }
+          ],
+          "parameter_list": {
+            "filter": "!@item.completed_ts && (@item.tag_course == @local.module_course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
+          },
+          "name": "data_items_4",
+          "_nested_name": "display_group_29.data_items_4",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@data.module_tasks",
+                "matchedExpression": "@data.module_tasks",
+                "type": "data",
+                "fieldName": "module_tasks"
+              }
+            ],
+            "parameter_list": {
+              "filter": [
+                {
+                  "fullExpression": "!@item.completed_ts && (@item.tag_course == @local.module_course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "!@item.completed_ts",
+                  "type": "item",
+                  "fieldName": "completed_ts"
+                },
+                {
+                  "fullExpression": "!@item.completed_ts && (@item.tag_course == @local.module_course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "@item.tag_course",
+                  "type": "item",
+                  "fieldName": "tag_course"
+                },
+                {
+                  "fullExpression": "!@item.completed_ts && (@item.tag_course == @local.module_course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "@local.module_course",
+                  "type": "local",
+                  "fieldName": "module_course"
+                },
+                {
+                  "fullExpression": "!@item.completed_ts && (@item.tag_course == @local.module_course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "!@item.tag_list",
+                  "type": "item",
+                  "fieldName": "tag_list"
+                },
+                {
+                  "fullExpression": "!@item.completed_ts && (@item.tag_course == @local.module_course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "@item.tag_list.includes",
+                  "type": "item",
+                  "fieldName": "tag_list"
+                },
+                {
+                  "fullExpression": "!@item.completed_ts && (@item.tag_course == @local.module_course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+                  "matchedExpression": "@fields.child_age_tag",
+                  "type": "fields",
+                  "fieldName": "child_age_tag"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@data.module_tasks": [
+              "value"
+            ],
+            "!@item.completed_ts": [
+              "parameter_list.filter"
+            ],
+            "@item.tag_course": [
+              "parameter_list.filter"
+            ],
+            "@local.module_course": [
+              "parameter_list.filter"
+            ],
+            "!@item.tag_list": [
+              "parameter_list.filter"
+            ],
+            "@item.tag_list.includes": [
+              "parameter_list.filter"
+            ],
+            "@fields.child_age_tag": [
+              "parameter_list.filter"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": "still: @local.still_to_do",
+          "_translations": {
+            "value": {}
+          },
+          "condition": false,
+          "name": "text_5",
+          "_nested_name": "display_group_29.text_5",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "still: @local.still_to_do",
+                "matchedExpression": "@local.still_to_do",
+                "type": "local",
+                "fieldName": "still_to_do"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.still_to_do": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": "course: @local.module_course",
+          "_translations": {
+            "value": {}
+          },
+          "condition": false,
+          "name": "text_6",
+          "_nested_name": "display_group_29.text_6",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "course: @local.module_course",
+                "matchedExpression": "@local.module_course",
+                "type": "local",
+                "fieldName": "module_course"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.module_course": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": "module id : @local.module_id",
+          "_translations": {
+            "value": {}
+          },
+          "condition": false,
+          "name": "text_7",
+          "_nested_name": "display_group_29.text_7",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "module id : @local.module_id",
+                "matchedExpression": "@local.module_id",
+                "type": "local",
+                "fieldName": "module_id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.module_id": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "template",
+          "name": "nav_buttons",
+          "value": "nav_buttons",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "completed | set_data |\n_list_id: courses,\n_id: @local.module_course,\ncompleted: true,\ncompleted_ts: @calc(now())",
+              "params": {
+                "_list_id": "courses",
+                "_id": "@local.module_course",
+                "completed": true,
+                "completed_ts": "@calc(now())"
+              }
+            },
+            {
+              "trigger": "completed",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "completed | emit: completed"
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "uncompleted | emit: uncompleted"
+            }
+          ],
+          "condition": "@local.still_to_do < 2",
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "next_icon_src",
+              "value": "@global.first_completion_icon",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "display_group_29.nav_buttons.next_icon_src",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.first_completion_icon",
+                    "matchedExpression": "@global.first_completion_icon",
+                    "type": "global",
+                    "fieldName": "first_completion_icon"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.first_completion_icon": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "display_group_29.nav_buttons",
+          "_dynamicFields": {
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_data |\n_list_id: courses,\n_id: @local.module_course,\ncompleted: true,\ncompleted_ts: @calc(now())",
+                    "matchedExpression": "@local.module_course",
+                    "type": "local",
+                    "fieldName": "module_course"
+                  },
+                  {
+                    "fullExpression": "completed | set_data |\n_list_id: courses,\n_id: @local.module_course,\ncompleted: true,\ncompleted_ts: @calc(now())",
+                    "matchedExpression": "@calc(now())",
+                    "type": "calc",
+                    "fieldName": "now()"
+                  }
+                ],
+                "params": {
+                  "_id": [
+                    {
+                      "fullExpression": "@local.module_course",
+                      "matchedExpression": "@local.module_course",
+                      "type": "local",
+                      "fieldName": "module_course"
+                    }
+                  ],
+                  "completed_ts": [
+                    {
+                      "fullExpression": "@calc(now())",
+                      "matchedExpression": "@calc(now())",
+                      "type": "calc",
+                      "fieldName": "now()"
+                    }
+                  ]
+                }
+              }
+            },
+            "condition": [
+              {
+                "fullExpression": "@local.still_to_do < 2",
+                "matchedExpression": "@local.still_to_do",
+                "type": "local",
+                "fieldName": "still_to_do"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.module_course": [
+              "action_list.0._raw",
+              "action_list.0.params._id"
+            ],
+            "@calc(now())": [
+              "action_list.0._raw",
+              "action_list.0.params.completed_ts"
+            ],
+            "@local.still_to_do": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "template",
+          "name": "nav_buttons",
+          "value": "nav_buttons",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "completed | emit: completed"
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "uncompleted | emit: uncompleted"
+            }
+          ],
+          "condition": "@local.still_to_do > 1",
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "next_icon_src",
+              "value": "@global.first_completion_icon",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "display_group_29.nav_buttons.next_icon_src",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.first_completion_icon",
+                    "matchedExpression": "@global.first_completion_icon",
+                    "type": "global",
+                    "fieldName": "first_completion_icon"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.first_completion_icon": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "display_group_29.nav_buttons",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "@local.still_to_do > 1",
+                "matchedExpression": "@local.still_to_do",
+                "type": "local",
+                "fieldName": "still_to_do"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.still_to_do": [
+              "condition"
+            ]
+          }
+        }
+      ],
+      "name": "display_group_29",
+      "_nested_name": "display_group_29",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!!@local.last_article",
+            "matchedExpression": "!@local.last_article",
+            "type": "local",
+            "fieldName": "last_article"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.last_article": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "template",
+      "name": "nav_buttons",
+      "value": "nav_buttons",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "condition": "@local.show_nav_buttons && !@local.last_article",
       "exclude_from_translation": true,
       "rows": [],
       "_nested_name": "nav_buttons",
       "_dynamicFields": {
         "condition": [
           {
-            "fullExpression": "@local.show_nav_buttons",
+            "fullExpression": "@local.show_nav_buttons && !@local.last_article",
             "matchedExpression": "@local.show_nav_buttons",
             "type": "local",
             "fieldName": "show_nav_buttons"
+          },
+          {
+            "fullExpression": "@local.show_nav_buttons && !@local.last_article",
+            "matchedExpression": "!@local.last_article",
+            "type": "local",
+            "fieldName": "last_article"
           }
         ]
       },
       "_dynamicDependencies": {
         "@local.show_nav_buttons": [
+          "condition"
+        ],
+        "!@local.last_article": [
           "condition"
         ]
       }
