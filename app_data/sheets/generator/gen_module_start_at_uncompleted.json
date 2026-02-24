@@ -35,52 +35,49 @@
       "exclude_from_translation": true
     },
     {
-      "type": "data_items",
       "name": "find_first_uncompleted_article",
       "value": "@local.articles_data",
       "parameter_list": [
         "filter: !@item.completed",
         "limit: 1"
       ],
-      "exclude_from_translation": true,
-      "rows": [
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_start_at_id",
+      "value": "module_start_at_id",
+      "action_list": [
         {
-          "type": "template",
-          "name": "module_start_at_id",
-          "value": "module_start_at_id",
-          "action_list": [
-            {
-              "trigger": "completed",
-              "action_id": "emit",
-              "args": [
-                "completed"
-              ],
-              "_raw": "completed | emit: completed"
-            },
-            {
-              "trigger": "uncompleted",
-              "action_id": "emit",
-              "args": [
-                "uncompleted"
-              ],
-              "_raw": "uncompleted | emit: uncompleted"
-            }
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
           ],
-          "exclude_from_translation": true,
-          "rows": [
-            {
-              "name": "module_id",
-              "value": "@gen.id",
-              "exclude_from_translation": true
-            },
-            {
-              "name": "article_id",
-              "value": "@item.id",
-              "exclude_from_translation": true
-            }
-          ]
+          "_raw": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted"
         }
-      ]
+      ],
+      "exclude_from_translation": true
+    },
+    {
+      "name": "module_id",
+      "value": "@gen.id",
+      "exclude_from_translation": true
+    },
+    {
+      "name": "article_id",
+      "value": "@item.id",
+      "exclude_from_translation": true
+    },
+    {
+      "exclude_from_translation": true
     }
   ],
   "_source": {

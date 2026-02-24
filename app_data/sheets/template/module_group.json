@@ -106,7 +106,7 @@
       "type": "plh_course_accordion",
       "value": "@local.course_title",
       "parameter_list": {
-        "locked": "@local.course_locked",
+        "locked": "@local.all_locked",
         "image_asset": "@local.course_image"
       },
       "style_list": [
@@ -370,10 +370,10 @@
         "parameter_list": {
           "locked": [
             {
-              "fullExpression": "@local.course_locked",
-              "matchedExpression": "@local.course_locked",
+              "fullExpression": "@local.all_locked",
+              "matchedExpression": "@local.all_locked",
               "type": "local",
-              "fieldName": "course_locked"
+              "fieldName": "all_locked"
             }
           ],
           "image_asset": [
@@ -400,7 +400,7 @@
         "@local.course_title": [
           "value"
         ],
-        "@local.course_locked": [
+        "@local.all_locked": [
           "parameter_list.locked"
         ],
         "@local.course_image": [

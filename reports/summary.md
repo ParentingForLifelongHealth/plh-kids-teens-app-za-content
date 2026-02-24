@@ -11,7 +11,7 @@
 | audio | 4 |
 | button | 87 |
 | combo_box | 10 |
-| data_items | 155 |
+| data_items | 129 |
 | debug_toggle | 1 |
 | display_grid | 4 |
 | display_group | 107 |
@@ -34,11 +34,11 @@
 | round_button | 11 |
 | select_text | 1 |
 | set_field | 4 |
-| set_variable | 2766 |
+| set_variable | 2854 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 4 |
-| template | 976 |
+| template | 954 |
 | text | 171 |
 | text_area | 2 |
 | text_box | 12 |
@@ -58,13 +58,13 @@
 | --- | --- |
 | app_update | 1 |
 | auth | 3 |
-| emit: completed | 700 |
+| emit: completed | 704 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 712 |
+| emit: uncompleted | 716 |
 | feedback | 13 |
 | go_to | 18 |
 | nav_stack | 280 |
@@ -647,7 +647,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/solve/solve1_t_8.svg | 35.8 | 1 |
 | images/teen_modules/solve/solve2_t_1.svg | 31.5 | 1 |
 | images/teen_modules/solve/solve2_t_2.svg | 31.9 | 1 |
-| images/teen_modules/solve/solve2_t_3.svg | 31.3 | 1 |
+| images/teen_modules/solve/solve2_t_3.svg | 31.3 | 3 |
 | images/teen_modules/srh/srh1_t_1.svg | 32.5 | 1 |
 | images/teen_modules/srh/srh1_t_2.svg | 36.9 | 1 |
 | images/teen_modules/srh/srh1_t_3.svg | 30.6 | 1 |
@@ -749,7 +749,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/relax/looping_rings.json | 10.4 | 7 |
 | lottie/relax/soothing_waves.json | 7.6 | 13 |
 | lottie/relax/square_flow.json | 5.9 | 23 |
-| video/plh_video/lets_slow_down.mp4 | 13482.2 | 17 |
+| video/plh_video/lets_slow_down.mp4 | 13482.2 | 16 |
 </details>
 
 <details >
@@ -776,6 +776,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
 | template |  | 126 |
-| template | generated | 753 |
+| template | generated | 757 |
 | template | legal_terms | 4 |
 </details>
