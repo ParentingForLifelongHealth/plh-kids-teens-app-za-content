@@ -107,7 +107,8 @@
       "value": "@local.course_title",
       "parameter_list": {
         "locked": "@local.all_locked",
-        "image_asset": "@local.course_image"
+        "image_asset": "@local.course_image",
+        "sub_items_name": "@global.sub_items_name"
       },
       "style_list": [
         "opacity: @local.opacity"
@@ -199,7 +200,9 @@
               "parameter_list": {
                 "highlighted": "@item.id == @local.next_to_complete",
                 "locked": "@local.all_locked",
-                "completed": "@item.completed"
+                "completed": "@item.completed",
+                "completed_text": "@global.completed_text",
+                "locked_text": "@global.locked_text"
               },
               "_nested_name": "plh_course_accordion_12.loop_modules.plh_module_list_item",
               "_dynamicFields": {
@@ -263,6 +266,22 @@
                       "type": "item",
                       "fieldName": "completed"
                     }
+                  ],
+                  "completed_text": [
+                    {
+                      "fullExpression": "@global.completed_text",
+                      "matchedExpression": "@global.completed_text",
+                      "type": "global",
+                      "fieldName": "completed_text"
+                    }
+                  ],
+                  "locked_text": [
+                    {
+                      "fullExpression": "@global.locked_text",
+                      "matchedExpression": "@global.locked_text",
+                      "type": "global",
+                      "fieldName": "locked_text"
+                    }
                   ]
                 }
               },
@@ -285,6 +304,12 @@
                 ],
                 "@item.completed": [
                   "parameter_list.completed"
+                ],
+                "@global.completed_text": [
+                  "parameter_list.completed_text"
+                ],
+                "@global.locked_text": [
+                  "parameter_list.locked_text"
                 ]
               }
             }
@@ -383,6 +408,14 @@
               "type": "local",
               "fieldName": "course_image"
             }
+          ],
+          "sub_items_name": [
+            {
+              "fullExpression": "@global.sub_items_name",
+              "matchedExpression": "@global.sub_items_name",
+              "type": "global",
+              "fieldName": "sub_items_name"
+            }
           ]
         },
         "style_list": {
@@ -405,6 +438,9 @@
         ],
         "@local.course_image": [
           "parameter_list.image_asset"
+        ],
+        "@global.sub_items_name": [
+          "parameter_list.sub_items_name"
         ],
         "@local.opacity": [
           "style_list.0"
