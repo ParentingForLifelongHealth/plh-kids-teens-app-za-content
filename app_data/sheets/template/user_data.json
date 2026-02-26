@@ -230,8 +230,225 @@
       }
     },
     {
+      "type": "text",
+      "name": "research_id_question",
+      "value": "@global.research_id_question",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "research_id_question",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.research_id_question",
+            "matchedExpression": "@global.research_id_question",
+            "type": "global",
+            "fieldName": "research_id_question"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.research_id_question": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text_box",
+      "name": "research_id_input",
+      "value": "@fields.research_id",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "placeholder": "@global.research_id_placeholder"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "research_id_input",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.research_id",
+            "matchedExpression": "@fields.research_id",
+            "type": "fields",
+            "fieldName": "research_id"
+          }
+        ],
+        "parameter_list": {
+          "placeholder": [
+            {
+              "fullExpression": "@global.research_id_placeholder",
+              "matchedExpression": "@global.research_id_placeholder",
+              "type": "global",
+              "fieldName": "research_id_placeholder"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@fields.research_id": [
+          "value"
+        ],
+        "@global.research_id_placeholder": [
+          "parameter_list.placeholder"
+        ]
+      }
+    },
+    {
+      "name": "research_found_id",
+      "value": 0,
+      "type": "set_variable",
+      "_nested_name": "research_found_id"
+    },
+    {
+      "type": "data_items",
+      "value": "@data.research_ids",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "research_found_id",
+            "@items.length"
+          ],
+          "_raw": "data_changed | set_local : research_found_id: @items.length"
+        }
+      ],
+      "parameter_list": {
+        "filter": "@item.valid_id == @local.research_id_input",
+        "limit": "1"
+      },
+      "name": "data_items_13",
+      "_nested_name": "data_items_13",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.research_ids",
+            "matchedExpression": "@data.research_ids",
+            "type": "data",
+            "fieldName": "research_ids"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.valid_id == @local.research_id_input",
+              "matchedExpression": "@item.valid_id",
+              "type": "item",
+              "fieldName": "valid_id"
+            },
+            {
+              "fullExpression": "@item.valid_id == @local.research_id_input",
+              "matchedExpression": "@local.research_id_input",
+              "type": "local",
+              "fieldName": "research_id_input"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.research_ids": [
+          "value"
+        ],
+        "@item.valid_id": [
+          "parameter_list.filter"
+        ],
+        "@local.research_id_input": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "name": "valid_research_id",
+      "value": "(@local.research_found_id > 0) || (@local.research_id_input== '') || (!@local.research_id_input)",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "valid_research_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "(@local.research_found_id > 0) || (@local.research_id_input== '') || (!@local.research_id_input)",
+            "matchedExpression": "@local.research_found_id",
+            "type": "local",
+            "fieldName": "research_found_id"
+          },
+          {
+            "fullExpression": "(@local.research_found_id > 0) || (@local.research_id_input== '') || (!@local.research_id_input)",
+            "matchedExpression": "@local.research_id_input",
+            "type": "local",
+            "fieldName": "research_id_input"
+          },
+          {
+            "fullExpression": "(@local.research_found_id > 0) || (@local.research_id_input== '') || (!@local.research_id_input)",
+            "matchedExpression": "!@local.research_id_input",
+            "type": "local",
+            "fieldName": "research_id_input"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.research_found_id": [
+          "value"
+        ],
+        "@local.research_id_input": [
+          "value"
+        ],
+        "!@local.research_id_input": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "warning_research_id",
+      "value": "@global.research_id_invalid",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!@local.valid_research_id",
+      "exclude_from_translation": true,
+      "style_list": [
+        "color: #FF0000",
+        "font-size: 14px"
+      ],
+      "_nested_name": "warning_research_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.research_id_invalid",
+            "matchedExpression": "@global.research_id_invalid",
+            "type": "global",
+            "fieldName": "research_id_invalid"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!@local.valid_research_id",
+            "matchedExpression": "!@local.valid_research_id",
+            "type": "local",
+            "fieldName": "valid_research_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.research_id_invalid": [
+          "value"
+        ],
+        "!@local.valid_research_id": [
+          "condition"
+        ]
+      }
+    },
+    {
       "name": "completed_enabled",
-      "value": "!!@local.user_gender_select && !!@local.user_type_select",
+      "value": "!!@local.user_gender_select && !!@local.user_type_select && !!@local.valid_research_id",
       "_translations": {
         "value": {}
       },
@@ -241,16 +458,22 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "!!@local.user_gender_select && !!@local.user_type_select",
+            "fullExpression": "!!@local.user_gender_select && !!@local.user_type_select && !!@local.valid_research_id",
             "matchedExpression": "!@local.user_gender_select",
             "type": "local",
             "fieldName": "user_gender_select"
           },
           {
-            "fullExpression": "!!@local.user_gender_select && !!@local.user_type_select",
+            "fullExpression": "!!@local.user_gender_select && !!@local.user_type_select && !!@local.valid_research_id",
             "matchedExpression": "!@local.user_type_select",
             "type": "local",
             "fieldName": "user_type_select"
+          },
+          {
+            "fullExpression": "!!@local.user_gender_select && !!@local.user_type_select && !!@local.valid_research_id",
+            "matchedExpression": "!@local.valid_research_id",
+            "type": "local",
+            "fieldName": "valid_research_id"
           }
         ]
       },
@@ -259,6 +482,9 @@
           "value"
         ],
         "!@local.user_type_select": [
+          "value"
+        ],
+        "!@local.valid_research_id": [
           "value"
         ]
       }
@@ -288,6 +514,26 @@
             "@local.user_type_select"
           ],
           "_raw": "click | set_field: user_type: @local.user_type_select"
+        },
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "research_id",
+            "@local.research_id_input"
+          ],
+          "_raw": "click | set_field: research_id: @local.research_id_input"
+        },
+        {
+          "trigger": "click",
+          "action_id": "add_data",
+          "args": [],
+          "_raw": "click | add_data | \n_list_id: research_id_log,\nresearch_id: @local.research_id_input,\ntimestamp: @calc(now())",
+          "params": {
+            "_list_id": "research_id_log",
+            "research_id": "@local.research_id_input",
+            "timestamp": "@calc(now())"
+          }
         },
         {
           "trigger": "click",
@@ -380,6 +626,60 @@
                 "fieldName": "user_type_select"
               }
             ]
+          },
+          "2": {
+            "args": {
+              "1": [
+                {
+                  "fullExpression": "@local.research_id_input",
+                  "matchedExpression": "@local.research_id_input",
+                  "type": "local",
+                  "fieldName": "research_id_input"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: research_id: @local.research_id_input",
+                "matchedExpression": "@local.research_id_input",
+                "type": "local",
+                "fieldName": "research_id_input"
+              }
+            ]
+          },
+          "3": {
+            "_raw": [
+              {
+                "fullExpression": "click | add_data | \n_list_id: research_id_log,\nresearch_id: @local.research_id_input,\ntimestamp: @calc(now())",
+                "matchedExpression": "@local.research_id_input",
+                "type": "local",
+                "fieldName": "research_id_input"
+              },
+              {
+                "fullExpression": "click | add_data | \n_list_id: research_id_log,\nresearch_id: @local.research_id_input,\ntimestamp: @calc(now())",
+                "matchedExpression": "@calc(now())",
+                "type": "calc",
+                "fieldName": "now()"
+              }
+            ],
+            "params": {
+              "research_id": [
+                {
+                  "fullExpression": "@local.research_id_input",
+                  "matchedExpression": "@local.research_id_input",
+                  "type": "local",
+                  "fieldName": "research_id_input"
+                }
+              ],
+              "timestamp": [
+                {
+                  "fullExpression": "@calc(now())",
+                  "matchedExpression": "@calc(now())",
+                  "type": "calc",
+                  "fieldName": "now()"
+                }
+              ]
+            }
           }
         },
         "condition": [
@@ -414,6 +714,16 @@
           "action_list.1._raw",
           "condition"
         ],
+        "@local.research_id_input": [
+          "action_list.2.args.1",
+          "action_list.2._raw",
+          "action_list.3._raw",
+          "action_list.3.params.research_id"
+        ],
+        "@calc(now())": [
+          "action_list.3._raw",
+          "action_list.3.params.timestamp"
+        ],
         "!@local.completed_enabled": [
           "parameter_list.disabled"
         ]
@@ -444,6 +754,26 @@
             "@local.user_type_select"
           ],
           "_raw": "click | set_field: user_type: @local.user_type_select"
+        },
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "research_id",
+            "@local.research_id_input"
+          ],
+          "_raw": "click | set_field: research_id: @local.research_id_input"
+        },
+        {
+          "trigger": "click",
+          "action_id": "add_data",
+          "args": [],
+          "_raw": "click | add_data | \n_list_id: research_id_log,\nresearch_id: @local.research_id_input,\ntimestamp: @calc(now())",
+          "params": {
+            "_list_id": "research_id_log",
+            "research_id": "@local.research_id_input",
+            "timestamp": "@calc(now())"
+          }
         },
         {
           "trigger": "click",
@@ -536,6 +866,60 @@
                 "fieldName": "user_type_select"
               }
             ]
+          },
+          "2": {
+            "args": {
+              "1": [
+                {
+                  "fullExpression": "@local.research_id_input",
+                  "matchedExpression": "@local.research_id_input",
+                  "type": "local",
+                  "fieldName": "research_id_input"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: research_id: @local.research_id_input",
+                "matchedExpression": "@local.research_id_input",
+                "type": "local",
+                "fieldName": "research_id_input"
+              }
+            ]
+          },
+          "3": {
+            "_raw": [
+              {
+                "fullExpression": "click | add_data | \n_list_id: research_id_log,\nresearch_id: @local.research_id_input,\ntimestamp: @calc(now())",
+                "matchedExpression": "@local.research_id_input",
+                "type": "local",
+                "fieldName": "research_id_input"
+              },
+              {
+                "fullExpression": "click | add_data | \n_list_id: research_id_log,\nresearch_id: @local.research_id_input,\ntimestamp: @calc(now())",
+                "matchedExpression": "@calc(now())",
+                "type": "calc",
+                "fieldName": "now()"
+              }
+            ],
+            "params": {
+              "research_id": [
+                {
+                  "fullExpression": "@local.research_id_input",
+                  "matchedExpression": "@local.research_id_input",
+                  "type": "local",
+                  "fieldName": "research_id_input"
+                }
+              ],
+              "timestamp": [
+                {
+                  "fullExpression": "@calc(now())",
+                  "matchedExpression": "@calc(now())",
+                  "type": "calc",
+                  "fieldName": "now()"
+                }
+              ]
+            }
           }
         },
         "condition": [
@@ -570,6 +954,16 @@
           "action_list.1._raw",
           "condition"
         ],
+        "@local.research_id_input": [
+          "action_list.2.args.1",
+          "action_list.2._raw",
+          "action_list.3._raw",
+          "action_list.3.params.research_id"
+        ],
+        "@calc(now())": [
+          "action_list.3._raw",
+          "action_list.3.params.timestamp"
+        ],
         "!@local.completed_enabled": [
           "parameter_list.disabled"
         ]
@@ -577,8 +971,8 @@
     }
   ],
   "_source": {
-    "name": "kids_global",
-    "path": "templates/kids app_launch.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1c9jlsy-uXdX9nxrhjXO4tXPvRfQPTjI89yZS6pf87Dc"
+    "name": "kids_teens_za",
+    "path": "templates/ZA settings.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1xC2nf1cfsUHMmxCJak5gNMMcCqRh66-7-RXKDdlCUhY"
   }
 }

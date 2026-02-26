@@ -25,11 +25,64 @@
       "_nested_name": "template"
     },
     {
-      "type": "button",
-      "value": "@local.title",
+      "name": "action_text",
+      "type": "set_variable",
+      "_nested_name": "action_text"
+    },
+    {
+      "name": "badge_text",
+      "type": "set_variable",
+      "_nested_name": "badge_text"
+    },
+    {
+      "name": "module_id",
+      "type": "set_variable",
+      "_nested_name": "module_id"
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
       "_translations": {
         "value": {}
       },
+      "type": "set_variable",
+      "_nested_name": "articles"
+    },
+    {
+      "name": "articles_data_list_name",
+      "value": "@local.module_id@local.articles",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "articles_data_list_name",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.module_id",
+            "type": "local",
+            "fieldName": "module_id"
+          },
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.articles",
+            "type": "local",
+            "fieldName": "articles"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.module_id": [
+          "value"
+        ],
+        "@local.articles": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
       "action_list": [
         {
           "trigger": "click",
@@ -48,9 +101,132 @@
         "icon": "images/icons/expand_circle_right_blue.svg",
         "icon_align": "right"
       },
+      "condition": false,
+      "name": "button_11",
+      "_nested_name": "button_11",
+      "_dynamicFields": {
+        "action_list": {
+          "0": {
+            "_raw": [
+              {
+                "fullExpression": "click | nav_stack: open | template: @local.template",
+                "matchedExpression": "@local.template",
+                "type": "local",
+                "fieldName": "template"
+              }
+            ],
+            "params": {
+              "template": [
+                {
+                  "fullExpression": "@local.template",
+                  "matchedExpression": "@local.template",
+                  "type": "local",
+                  "fieldName": "template"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.template": [
+          "action_list.0._raw",
+          "action_list.0.params.template"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "value": "@local.title",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "@local.template"
+          ],
+          "_raw": "click | go_to: @local.template"
+        }
+      ],
+      "parameter_list": {
+        "variant": "card",
+        "icon": "images/icons/expand_circle_right_blue.svg",
+        "icon_align": "right"
+      },
+      "condition": false,
+      "name": "button_12",
+      "_nested_name": "button_12",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.title",
+            "matchedExpression": "@local.title",
+            "type": "local",
+            "fieldName": "title"
+          }
+        ],
+        "action_list": {
+          "0": {
+            "args": {
+              "0": [
+                {
+                  "fullExpression": "@local.template",
+                  "matchedExpression": "@local.template",
+                  "type": "local",
+                  "fieldName": "template"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | go_to: @local.template",
+                "matchedExpression": "@local.template",
+                "type": "local",
+                "fieldName": "template"
+              }
+            ]
+          }
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.title": [
+          "value"
+        ],
+        "@local.template": [
+          "action_list.0.args.0",
+          "action_list.0._raw"
+        ]
+      }
+    },
+    {
+      "type": "plh_lesson_cta",
+      "value": "@local.title",
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "nav_stack",
+          "args": [
+            "open"
+          ],
+          "_raw": "click | nav_stack: open | template: @local.template",
+          "params": {
+            "template": "@local.template"
+          }
+        }
+      ],
+      "parameter_list": {
+        "subtitle": "@local.subtitle",
+        "cta_text": "@local.action_text",
+        "badge_text": "@local.badge_text",
+        "background_image_asset": "images/backgrounds/lesson-cta-bg.svg"
+      },
       "condition": "!!@local.pop_up",
-      "name": "button_6",
-      "_nested_name": "button_6",
+      "rows": [],
+      "name": "plh_lesson_cta_13",
+      "_nested_name": "plh_lesson_cta_13",
       "_dynamicFields": {
         "value": [
           {
@@ -82,6 +258,32 @@
             }
           }
         },
+        "parameter_list": {
+          "subtitle": [
+            {
+              "fullExpression": "@local.subtitle",
+              "matchedExpression": "@local.subtitle",
+              "type": "local",
+              "fieldName": "subtitle"
+            }
+          ],
+          "cta_text": [
+            {
+              "fullExpression": "@local.action_text",
+              "matchedExpression": "@local.action_text",
+              "type": "local",
+              "fieldName": "action_text"
+            }
+          ],
+          "badge_text": [
+            {
+              "fullExpression": "@local.badge_text",
+              "matchedExpression": "@local.badge_text",
+              "type": "local",
+              "fieldName": "badge_text"
+            }
+          ]
+        },
         "condition": [
           {
             "fullExpression": "!!@local.pop_up",
@@ -99,17 +301,23 @@
           "action_list.0._raw",
           "action_list.0.params.template"
         ],
+        "@local.subtitle": [
+          "parameter_list.subtitle"
+        ],
+        "@local.action_text": [
+          "parameter_list.cta_text"
+        ],
+        "@local.badge_text": [
+          "parameter_list.badge_text"
+        ],
         "!@local.pop_up": [
           "condition"
         ]
       }
     },
     {
-      "type": "button",
+      "type": "plh_lesson_cta",
       "value": "@local.title",
-      "_translations": {
-        "value": {}
-      },
       "action_list": [
         {
           "trigger": "click",
@@ -121,13 +329,42 @@
         }
       ],
       "parameter_list": {
-        "variant": "card",
-        "icon": "images/icons/expand_circle_right_blue.svg",
-        "icon_align": "right"
+        "subtitle": "@local.subtitle",
+        "cta_text": "@local.action_text",
+        "badge_text": "@local.badge_text",
+        "background_image_asset": "images/backgrounds/lesson-cta-bg.svg"
       },
       "condition": "!@local.pop_up",
-      "name": "button_7",
-      "_nested_name": "button_7",
+      "rows": [
+        {
+          "type": "task_progress_bar",
+          "parameter_list": {
+            "task_group_data": "@local.articles_data_list_name",
+            "filter": "!@task_item.nested"
+          },
+          "name": "task_progress_bar_1",
+          "_nested_name": "plh_lesson_cta_15.task_progress_bar_1",
+          "_dynamicFields": {
+            "parameter_list": {
+              "task_group_data": [
+                {
+                  "fullExpression": "@local.articles_data_list_name",
+                  "matchedExpression": "@local.articles_data_list_name",
+                  "type": "local",
+                  "fieldName": "articles_data_list_name"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@local.articles_data_list_name": [
+              "parameter_list.task_group_data"
+            ]
+          }
+        }
+      ],
+      "name": "plh_lesson_cta_15",
+      "_nested_name": "plh_lesson_cta_15",
       "_dynamicFields": {
         "value": [
           {
@@ -159,6 +396,32 @@
             ]
           }
         },
+        "parameter_list": {
+          "subtitle": [
+            {
+              "fullExpression": "@local.subtitle",
+              "matchedExpression": "@local.subtitle",
+              "type": "local",
+              "fieldName": "subtitle"
+            }
+          ],
+          "cta_text": [
+            {
+              "fullExpression": "@local.action_text",
+              "matchedExpression": "@local.action_text",
+              "type": "local",
+              "fieldName": "action_text"
+            }
+          ],
+          "badge_text": [
+            {
+              "fullExpression": "@local.badge_text",
+              "matchedExpression": "@local.badge_text",
+              "type": "local",
+              "fieldName": "badge_text"
+            }
+          ]
+        },
         "condition": [
           {
             "fullExpression": "!@local.pop_up",
@@ -175,6 +438,15 @@
         "@local.template": [
           "action_list.0.args.0",
           "action_list.0._raw"
+        ],
+        "@local.subtitle": [
+          "parameter_list.subtitle"
+        ],
+        "@local.action_text": [
+          "parameter_list.cta_text"
+        ],
+        "@local.badge_text": [
+          "parameter_list.badge_text"
         ],
         "!@local.pop_up": [
           "condition"

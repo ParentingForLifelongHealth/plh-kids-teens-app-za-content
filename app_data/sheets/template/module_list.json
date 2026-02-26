@@ -1257,22 +1257,22 @@
               }
             },
             {
-              "name": "opacity",
-              "value": 0.6,
+              "name": "completed_course",
+              "value": true,
               "type": "set_variable",
-              "_nested_name": "completed_courses.module_group_@item.id.opacity",
+              "_nested_name": "completed_courses.module_group_@item.id.completed_course",
               "_dynamicFields": {
                 "_nested_name": [
                   {
-                    "fullExpression": "completed_courses.module_group_@item.id.opacity",
-                    "matchedExpression": "@item.id.opacity",
+                    "fullExpression": "completed_courses.module_group_@item.id.completed_course",
+                    "matchedExpression": "@item.id.completed_course",
                     "type": "item",
                     "fieldName": "id"
                   }
                 ]
               },
               "_dynamicDependencies": {
-                "@item.id.opacity": [
+                "@item.id.completed_course": [
                   "_nested_name"
                 ]
               }
