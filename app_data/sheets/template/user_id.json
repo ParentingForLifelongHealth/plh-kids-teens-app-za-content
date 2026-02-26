@@ -101,7 +101,7 @@
       "_translations": {
         "value": {}
       },
-      "condition": "!!(@local.show_title)",
+      "condition": false,
       "_nested_name": "title",
       "_dynamicFields": {
         "value": [
@@ -111,22 +111,11 @@
             "type": "global",
             "fieldName": "user_id_text"
           }
-        ],
-        "condition": [
-          {
-            "fullExpression": "!!(@local.show_title)",
-            "matchedExpression": "@local.show_title",
-            "type": "local",
-            "fieldName": "show_title"
-          }
         ]
       },
       "_dynamicDependencies": {
         "@global.user_id_text": [
           "value"
-        ],
-        "@local.show_title": [
-          "condition"
         ]
       }
     },
@@ -138,82 +127,6 @@
         "style": "column"
       },
       "rows": [
-        {
-          "type": "qr_code",
-          "name": "qr_code",
-          "value": "@local.user_id",
-          "_translations": {
-            "value": {}
-          },
-          "_nested_name": "has_ever_been_synced.qr_code",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@local.user_id",
-                "matchedExpression": "@local.user_id",
-                "type": "local",
-                "fieldName": "user_id"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.user_id": [
-              "value"
-            ]
-          }
-        },
-        {
-          "type": "select_text",
-          "name": "user_code",
-          "value": "@local.user_id",
-          "_translations": {
-            "value": {}
-          },
-          "parameter_list": {
-            "copy_text": "@local.copy",
-            "copied_text": "@local.copied"
-          },
-          "_nested_name": "has_ever_been_synced.user_code",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@local.user_id",
-                "matchedExpression": "@local.user_id",
-                "type": "local",
-                "fieldName": "user_id"
-              }
-            ],
-            "parameter_list": {
-              "copy_text": [
-                {
-                  "fullExpression": "@local.copy",
-                  "matchedExpression": "@local.copy",
-                  "type": "local",
-                  "fieldName": "copy"
-                }
-              ],
-              "copied_text": [
-                {
-                  "fullExpression": "@local.copied",
-                  "matchedExpression": "@local.copied",
-                  "type": "local",
-                  "fieldName": "copied"
-                }
-              ]
-            }
-          },
-          "_dynamicDependencies": {
-            "@local.user_id": [
-              "value"
-            ],
-            "@local.copy": [
-              "parameter_list.copy_text"
-            ],
-            "@local.copied": [
-              "parameter_list.copied_text"
-            ]
-          }
-        },
         {
           "type": "text",
           "name": "last_sync_text",
@@ -269,11 +182,9 @@
         {
           "type": "text",
           "name": "not_synced_text",
-          "value": "This device has never been synced. Sync to reveal your code.",
+          "value": "This device has never been synced.",
           "_translations": {
-            "value": {
-              "za_xh": true
-            }
+            "value": {}
           },
           "_nested_name": "has_never_been_synced.not_synced_text"
         }
@@ -416,8 +327,8 @@
     }
   ],
   "_source": {
-    "name": "library_app_menu",
-    "path": "app_menu.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1SqgpcbW5RNRKq6NIKZre5Pc406U4z3VJHcfSNUBmTTs"
+    "name": "kids_teens_za",
+    "path": "templates/ZA settings.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1xC2nf1cfsUHMmxCJak5gNMMcCqRh66-7-RXKDdlCUhY"
   }
 }

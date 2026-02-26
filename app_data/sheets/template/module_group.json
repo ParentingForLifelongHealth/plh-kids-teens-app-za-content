@@ -5,35 +5,41 @@
   "rows": [
     {
       "name": "course",
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "course"
     },
     {
       "name": "course_title",
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "course_title"
     },
     {
       "name": "show_completed",
       "value": false,
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "show_completed"
     },
     {
       "name": "all_locked",
       "value": false,
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "all_locked"
     },
     {
       "name": "next_to_complete",
       "value": 999999,
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "next_to_complete"
     },
     {
       "name": "course_locked",
       "value": false,
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "course_locked"
     },
@@ -45,14 +51,40 @@
           "za_xh": true
         }
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "course_image"
     },
     {
-      "name": "opacity",
-      "value": 1,
+      "name": "completed_course",
+      "value": false,
+      "exclude_from_translation": true,
       "type": "set_variable",
-      "_nested_name": "opacity"
+      "_nested_name": "completed_course"
+    },
+    {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_10",
+      "_nested_name": "set_variable_10"
+    },
+    {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_11",
+      "_nested_name": "set_variable_11"
+    },
+    {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_12",
+      "_nested_name": "set_variable_12"
+    },
+    {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_13",
+      "_nested_name": "set_variable_13"
     },
     {
       "type": "text",
@@ -63,8 +95,9 @@
         }
       },
       "condition": false,
-      "name": "text_10",
-      "_nested_name": "text_10",
+      "exclude_from_translation": true,
+      "name": "text_14",
+      "_nested_name": "text_14",
       "_dynamicFields": {
         "value": [
           {
@@ -90,8 +123,9 @@
         }
       },
       "condition": false,
-      "name": "text_11",
-      "_nested_name": "text_11",
+      "exclude_from_translation": true,
+      "name": "text_15",
+      "_nested_name": "text_15",
       "_dynamicFields": {
         "value": [
           {
@@ -109,17 +143,66 @@
       }
     },
     {
+      "type": "text",
+      "value": "completed_course:  @local.completed_course",
+      "_translations": {
+        "value": {}
+      },
+      "condition": false,
+      "exclude_from_translation": true,
+      "name": "text_16",
+      "_nested_name": "text_16",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "completed_course:  @local.completed_course",
+            "matchedExpression": "@local.completed_course",
+            "type": "local",
+            "fieldName": "completed_course"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.completed_course": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "plh_course_accordion",
       "value": "@local.course_title",
       "parameter_list": {
         "locked": "@local.all_locked",
         "image_asset": "@local.course_image",
-        "sub_items_name": "@global.sub_items_name"
+        "sub_items_name": "@global.sub_items_name",
+        "completed": "@local.completed_course"
       },
-      "style_list": [
-        "opacity: @local.opacity"
-      ],
+      "exclude_from_translation": true,
       "rows": [
+        {
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "name": "set_variable_1",
+          "_nested_name": "plh_course_accordion_17.set_variable_1"
+        },
+        {
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "name": "set_variable_2",
+          "_nested_name": "plh_course_accordion_17.set_variable_2"
+        },
+        {
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "name": "set_variable_3",
+          "_nested_name": "plh_course_accordion_17.set_variable_3"
+        },
+        {
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "name": "set_variable_4",
+          "_nested_name": "plh_course_accordion_17.set_variable_4"
+        },
         {
           "type": "data_items",
           "name": "loop_modules",
@@ -128,6 +211,7 @@
             "filter": "(@item.tag_course == @local.course) && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
             "sort": "number"
           },
+          "exclude_from_translation": true,
           "rows": [
             {
               "name": "target_template",
@@ -135,8 +219,9 @@
               "_translations": {
                 "value": {}
               },
+              "exclude_from_translation": true,
               "type": "set_variable",
-              "_nested_name": "plh_course_accordion_12.loop_modules.target_template",
+              "_nested_name": "plh_course_accordion_17.loop_modules.target_template",
               "_dynamicFields": {
                 "value": [
                   {
@@ -161,8 +246,9 @@
                   "za_xh": true
                 }
               },
+              "exclude_from_translation": true,
               "type": "set_variable",
-              "_nested_name": "plh_course_accordion_12.loop_modules.highlight",
+              "_nested_name": "plh_course_accordion_17.loop_modules.highlight",
               "_dynamicFields": {
                 "value": [
                   {
@@ -212,7 +298,8 @@
                 "completed_text": "@global.completed_text",
                 "locked_text": "@global.locked_text"
               },
-              "_nested_name": "plh_course_accordion_12.loop_modules.plh_module_list_item",
+              "exclude_from_translation": true,
+              "_nested_name": "plh_course_accordion_17.loop_modules.plh_module_list_item",
               "_dynamicFields": {
                 "value": [
                   {
@@ -322,7 +409,7 @@
               }
             }
           ],
-          "_nested_name": "plh_course_accordion_12.loop_modules",
+          "_nested_name": "plh_course_accordion_17.loop_modules",
           "_dynamicFields": {
             "value": [
               {
@@ -389,8 +476,8 @@
           }
         }
       ],
-      "name": "plh_course_accordion_12",
-      "_nested_name": "plh_course_accordion_12",
+      "name": "plh_course_accordion_17",
+      "_nested_name": "plh_course_accordion_17",
       "_dynamicFields": {
         "value": [
           {
@@ -424,15 +511,13 @@
               "type": "global",
               "fieldName": "sub_items_name"
             }
-          ]
-        },
-        "style_list": {
-          "0": [
+          ],
+          "completed": [
             {
-              "fullExpression": "opacity: @local.opacity",
-              "matchedExpression": "@local.opacity",
+              "fullExpression": "@local.completed_course",
+              "matchedExpression": "@local.completed_course",
               "type": "local",
-              "fieldName": "opacity"
+              "fieldName": "completed_course"
             }
           ]
         }
@@ -450,8 +535,8 @@
         "@global.sub_items_name": [
           "parameter_list.sub_items_name"
         ],
-        "@local.opacity": [
-          "style_list.0"
+        "@local.completed_course": [
+          "parameter_list.completed"
         ]
       }
     }
