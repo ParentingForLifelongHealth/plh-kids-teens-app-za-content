@@ -129,7 +129,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "@item.core && !@item.completed"
+        "filter": "@item.core && !@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
       },
       "name": "data_items_7",
       "_nested_name": "data_items_7",
@@ -145,16 +145,34 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "@item.core && !@item.completed",
+              "fullExpression": "@item.core && !@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@item.core",
               "type": "item",
               "fieldName": "core"
             },
             {
-              "fullExpression": "@item.core && !@item.completed",
+              "fullExpression": "@item.core && !@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "!@item.completed",
               "type": "item",
               "fieldName": "completed"
+            },
+            {
+              "fullExpression": "@item.core && !@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.tag_list",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.core && !@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@item.tag_list.includes",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.core && !@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@fields.child_age_tag",
+              "type": "fields",
+              "fieldName": "child_age_tag"
             }
           ]
         }
@@ -167,6 +185,15 @@
           "parameter_list.filter"
         ],
         "!@item.completed": [
+          "parameter_list.filter"
+        ],
+        "!@item.tag_list": [
+          "parameter_list.filter"
+        ],
+        "@item.tag_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age_tag": [
           "parameter_list.filter"
         ]
       }
@@ -189,7 +216,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "@item.completed"
+        "filter": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
       },
       "condition": false,
       "name": "data_items_8",
@@ -206,10 +233,28 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "@item.completed",
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@item.completed",
               "type": "item",
               "fieldName": "completed"
+            },
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.tag_list",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@item.tag_list.includes",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@fields.child_age_tag",
+              "type": "fields",
+              "fieldName": "child_age_tag"
             }
           ]
         }
@@ -219,6 +264,15 @@
           "value"
         ],
         "@item.completed": [
+          "parameter_list.filter"
+        ],
+        "!@item.tag_list": [
+          "parameter_list.filter"
+        ],
+        "@item.tag_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age_tag": [
           "parameter_list.filter"
         ]
       }
