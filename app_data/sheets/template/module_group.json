@@ -142,7 +142,8 @@
         "locked": "@local.all_locked",
         "image_asset": "@local.course_image",
         "sub_items_name": "@global.sub_items_name",
-        "completed": "@local.completed_course"
+        "completed": "@local.completed_course",
+        "open": "(@fields.last_opened == @local.course)"
       },
       "exclude_from_translation": true,
       "rows": [
@@ -220,6 +221,15 @@
                     "@local.target_template"
                   ],
                   "_raw": "click | go_to: @local.target_template"
+                },
+                {
+                  "trigger": "click",
+                  "action_id": "set_field",
+                  "args": [
+                    "last_opened",
+                    "@local.course"
+                  ],
+                  "_raw": "click | set_field: last_opened : @local.course"
                 }
               ],
               "parameter_list": {
@@ -258,6 +268,26 @@
                         "matchedExpression": "@local.target_template",
                         "type": "local",
                         "fieldName": "target_template"
+                      }
+                    ]
+                  },
+                  "1": {
+                    "args": {
+                      "1": [
+                        {
+                          "fullExpression": "@local.course",
+                          "matchedExpression": "@local.course",
+                          "type": "local",
+                          "fieldName": "course"
+                        }
+                      ]
+                    },
+                    "_raw": [
+                      {
+                        "fullExpression": "click | set_field: last_opened : @local.course",
+                        "matchedExpression": "@local.course",
+                        "type": "local",
+                        "fieldName": "course"
                       }
                     ]
                   }
@@ -312,6 +342,10 @@
                 "@local.target_template": [
                   "action_list.0.args.0",
                   "action_list.0._raw"
+                ],
+                "@local.course": [
+                  "action_list.1.args.1",
+                  "action_list.1._raw"
                 ],
                 "!@item.started_ts": [
                   "parameter_list.highlighted"
@@ -441,6 +475,20 @@
               "type": "local",
               "fieldName": "completed_course"
             }
+          ],
+          "open": [
+            {
+              "fullExpression": "(@fields.last_opened == @local.course)",
+              "matchedExpression": "@fields.last_opened",
+              "type": "fields",
+              "fieldName": "last_opened"
+            },
+            {
+              "fullExpression": "(@fields.last_opened == @local.course)",
+              "matchedExpression": "@local.course",
+              "type": "local",
+              "fieldName": "course"
+            }
           ]
         }
       },
@@ -459,6 +507,12 @@
         ],
         "@local.completed_course": [
           "parameter_list.completed"
+        ],
+        "@fields.last_opened": [
+          "parameter_list.open"
+        ],
+        "@local.course": [
+          "parameter_list.open"
         ]
       }
     }
