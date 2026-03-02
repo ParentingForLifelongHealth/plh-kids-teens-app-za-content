@@ -237,6 +237,10 @@
           "_translations": {
             "value": {}
           },
+          "condition": "!!@global.unlock_course_title",
+          "style_list": [
+            "margin-top: -8px"
+          ],
           "name": "title_1",
           "_nested_name": "core_title.title_1",
           "_dynamicFields": {
@@ -247,11 +251,22 @@
                 "type": "global",
                 "fieldName": "unlock_course_title"
               }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@global.unlock_course_title",
+                "matchedExpression": "!@global.unlock_course_title",
+                "type": "global",
+                "fieldName": "unlock_course_title"
+              }
             ]
           },
           "_dynamicDependencies": {
             "@global.unlock_course_title": [
               "value"
+            ],
+            "!@global.unlock_course_title": [
+              "condition"
             ]
           }
         },
@@ -261,6 +276,11 @@
           "_translations": {
             "value": {}
           },
+          "condition": "!!@global.unlock_course_text",
+          "style_list": [
+            "margin-top: -6px",
+            "margin-bottom: -8px"
+          ],
           "name": "text_2",
           "_nested_name": "core_title.text_2",
           "_dynamicFields": {
@@ -271,11 +291,22 @@
                 "type": "global",
                 "fieldName": "unlock_course_text"
               }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@global.unlock_course_text",
+                "matchedExpression": "!@global.unlock_course_text",
+                "type": "global",
+                "fieldName": "unlock_course_text"
+              }
             ]
           },
           "_dynamicDependencies": {
             "@global.unlock_course_text": [
               "value"
+            ],
+            "!@global.unlock_course_text": [
+              "condition"
             ]
           }
         }
@@ -311,6 +342,10 @@
           "_translations": {
             "value": {}
           },
+          "condition": "!!@global.all_unlock_course_title",
+          "style_list": [
+            "margin-top: -8px"
+          ],
           "name": "title_1",
           "_nested_name": "unlocked_title.title_1",
           "_dynamicFields": {
@@ -321,11 +356,22 @@
                 "type": "global",
                 "fieldName": "all_unlock_course_title"
               }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@global.all_unlock_course_title",
+                "matchedExpression": "!@global.all_unlock_course_title",
+                "type": "global",
+                "fieldName": "all_unlock_course_title"
+              }
             ]
           },
           "_dynamicDependencies": {
             "@global.all_unlock_course_title": [
               "value"
+            ],
+            "!@global.all_unlock_course_title": [
+              "condition"
             ]
           }
         },
@@ -335,6 +381,11 @@
           "_translations": {
             "value": {}
           },
+          "condition": "!!@global.all_unlock_course_text",
+          "style_list": [
+            "margin-top: -6px",
+            "margin-bottom: -8px"
+          ],
           "name": "text_2",
           "_nested_name": "unlocked_title.text_2",
           "_dynamicFields": {
@@ -345,11 +396,22 @@
                 "type": "global",
                 "fieldName": "all_unlock_course_text"
               }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@global.all_unlock_course_text",
+                "matchedExpression": "!@global.all_unlock_course_text",
+                "type": "global",
+                "fieldName": "all_unlock_course_text"
+              }
             ]
           },
           "_dynamicDependencies": {
             "@global.all_unlock_course_text": [
               "value"
+            ],
+            "!@global.all_unlock_course_text": [
+              "condition"
             ]
           }
         }
@@ -591,6 +653,10 @@
           "_translations": {
             "value": {}
           },
+          "condition": "!!@global.lock_course_title",
+          "style_list": [
+            "margin-top: -8px"
+          ],
           "name": "title_1",
           "_nested_name": "upcoming_title.title_1",
           "_dynamicFields": {
@@ -601,11 +667,22 @@
                 "type": "global",
                 "fieldName": "lock_course_title"
               }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@global.lock_course_title",
+                "matchedExpression": "!@global.lock_course_title",
+                "type": "global",
+                "fieldName": "lock_course_title"
+              }
             ]
           },
           "_dynamicDependencies": {
             "@global.lock_course_title": [
               "value"
+            ],
+            "!@global.lock_course_title": [
+              "condition"
             ]
           }
         },
@@ -615,6 +692,11 @@
           "_translations": {
             "value": {}
           },
+          "condition": "!!@global.lock_course_text",
+          "style_list": [
+            "margin-top: -6px",
+            "margin-bottom: -8px"
+          ],
           "name": "text_2",
           "_nested_name": "upcoming_title.text_2",
           "_dynamicFields": {
@@ -625,11 +707,22 @@
                 "type": "global",
                 "fieldName": "lock_course_text"
               }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@global.lock_course_text",
+                "matchedExpression": "!@global.lock_course_text",
+                "type": "global",
+                "fieldName": "lock_course_text"
+              }
             ]
           },
           "_dynamicDependencies": {
             "@global.lock_course_text": [
               "value"
+            ],
+            "!@global.lock_course_text": [
+              "condition"
             ]
           }
         }
@@ -1042,6 +1135,7 @@
       "parameter_list": {
         "filter": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
       },
+      "condition": false,
       "exclude_from_translation": true,
       "rows": [
         {

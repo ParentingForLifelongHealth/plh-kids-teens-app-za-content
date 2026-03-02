@@ -429,6 +429,151 @@
           "value"
         ]
       }
+    },
+    {
+      "type": "task_card",
+      "name": "card_@item.id",
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "activity_library"
+          ],
+          "_raw": "click | go_to: activity_library"
+        }
+      ],
+      "rows": [
+        {
+          "type": "image",
+          "name": "image_@item.id",
+          "value": "images/icons/trophy_footer.svg",
+          "_translations": {
+            "value": {}
+          },
+          "style_list": [
+            "flex: 1"
+          ],
+          "_nested_name": "card_@item.id.image_@item.id",
+          "_dynamicFields": {
+            "name": [
+              {
+                "fullExpression": "image_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "card_@item.id.image_@item.id",
+                "matchedExpression": "@item.id.image_",
+                "type": "item",
+                "fieldName": "id"
+              },
+              {
+                "fullExpression": "card_@item.id.image_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "name",
+              "_nested_name"
+            ],
+            "@item.id.image_": [
+              "_nested_name"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "name": "text_@item.id",
+          "value": "@global.rewards",
+          "_translations": {
+            "value": {}
+          },
+          "parameter_list": {
+            "style": "emphasised"
+          },
+          "style_list": [
+            "flex: 3"
+          ],
+          "_nested_name": "card_@item.id.text_@item.id",
+          "_dynamicFields": {
+            "name": [
+              {
+                "fullExpression": "text_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "value": [
+              {
+                "fullExpression": "@global.rewards",
+                "matchedExpression": "@global.rewards",
+                "type": "global",
+                "fieldName": "rewards"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "card_@item.id.text_@item.id",
+                "matchedExpression": "@item.id.text_",
+                "type": "item",
+                "fieldName": "id"
+              },
+              {
+                "fullExpression": "card_@item.id.text_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "name",
+              "_nested_name"
+            ],
+            "@global.rewards": [
+              "value"
+            ],
+            "@item.id.text_": [
+              "_nested_name"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "card_@item.id",
+      "_dynamicFields": {
+        "name": [
+          {
+            "fullExpression": "card_@item.id",
+            "matchedExpression": "@item.id",
+            "type": "item",
+            "fieldName": "id"
+          }
+        ],
+        "_nested_name": [
+          {
+            "fullExpression": "card_@item.id",
+            "matchedExpression": "@item.id",
+            "type": "item",
+            "fieldName": "id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@item.id": [
+          "name",
+          "_nested_name"
+        ]
+      }
     }
   ],
   "_source": {

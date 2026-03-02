@@ -14,10 +14,10 @@
 | data_items | 133 |
 | debug_toggle | 1 |
 | display_grid | 4 |
-| display_group | 107 |
+| display_group | 108 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
-| image | 24 |
+| image | 26 |
 | items | 17 |
 | lottie_animation | 4 |
 | nested_properties | 162 |
@@ -33,17 +33,17 @@
 | radio_button_grid | 11 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 2901 |
+| set_variable | 2900 |
 | simple_checkbox | 1 |
-| task_card | 6 |
+| task_card | 7 |
 | task_progress_bar | 5 |
 | template | 958 |
-| text | 173 |
+| text | 176 |
 | text_area | 2 |
 | text_box | 13 |
 | text_bubble | 9 |
 | tile_component | 1 |
-| title | 51 |
+| title | 52 |
 | toggle_bar | 5 |
 | update_action_list | 2 |
 | video | 4 |
@@ -66,7 +66,7 @@
 | emit: set_language | 2 |
 | emit: uncompleted | 720 |
 | feedback | 13 |
-| go_to | 19 |
+| go_to | 20 |
 | nav_stack | 281 |
 | pop_up | 65 |
 | reset_app | 4 |
@@ -85,8 +85,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 80933 KB | 80.9 MB |
-| unused | 8738 KB | 8.7 MB |
+| total | 80998 KB | 81 MB |
+| unused | 8742 KB | 8.7 MB |
 </details>
 
 <details open>
@@ -145,6 +145,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/play_white.svg | 0.5 |
 | images/icons/spark.png | 1.6 |
 | images/icons/star_outline_white.svg | 1 |
+| images/icons/trophy_footer_active.svg | 3.9 |
 | images/logos/donors/ERC.png | 321.9 |
 | images/logos/donors/Wellspring.jpeg | 106.5 |
 | images/logos/favicon.png | 149.9 |
@@ -303,7 +304,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 118.7 | 4 |
+| images/activities/circle_dance.svg | 117.2 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -437,6 +438,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/homescreen/svp_t.svg | 25.4 | 2 |
 | images/icons/balance_blue.png | 4.7 | 1 |
 | images/icons/brain_blue.png | 5.2 | 6 |
+| images/icons/celebration.svg | 70.4 | 1 |
 | images/icons/clock_blue.png | 4.5 | 5 |
 | images/icons/diamond.png | 1.8 | 2 |
 | images/icons/diamond_active.png | 1.7 | 2 |
@@ -493,7 +495,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/trophy_active.png | 1.7 | 2 |
 | images/icons/trophy_blue.png | 5.1 | 9 |
 | images/icons/trophy_footer.svg | 3.9 | 1 |
-| images/icons/trophy_footer_active.svg | 3.9 | 1 |
 | images/icons/verified.svg | 0.5 | 1 |
 | images/icons/world.svg | 6.2 | 1 |
 | images/logos/CWBSA.png | 84.4 | 1 |
