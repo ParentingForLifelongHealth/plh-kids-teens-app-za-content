@@ -296,75 +296,8 @@
       }
     },
     {
-      "name": "research_found_id",
-      "value": 0,
-      "type": "set_variable",
-      "_nested_name": "research_found_id"
-    },
-    {
-      "type": "data_items",
-      "value": "@data.research_ids",
-      "_translations": {
-        "value": {}
-      },
-      "action_list": [
-        {
-          "trigger": "data_changed",
-          "action_id": "set_local",
-          "args": [
-            "research_found_id",
-            "@items.length"
-          ],
-          "_raw": "data_changed | set_local : research_found_id: @items.length"
-        }
-      ],
-      "parameter_list": {
-        "filter": "@item.valid_id == @local.research_id_input",
-        "limit": "1"
-      },
-      "name": "data_items_13",
-      "_nested_name": "data_items_13",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@data.research_ids",
-            "matchedExpression": "@data.research_ids",
-            "type": "data",
-            "fieldName": "research_ids"
-          }
-        ],
-        "parameter_list": {
-          "filter": [
-            {
-              "fullExpression": "@item.valid_id == @local.research_id_input",
-              "matchedExpression": "@item.valid_id",
-              "type": "item",
-              "fieldName": "valid_id"
-            },
-            {
-              "fullExpression": "@item.valid_id == @local.research_id_input",
-              "matchedExpression": "@local.research_id_input",
-              "type": "local",
-              "fieldName": "research_id_input"
-            }
-          ]
-        }
-      },
-      "_dynamicDependencies": {
-        "@data.research_ids": [
-          "value"
-        ],
-        "@item.valid_id": [
-          "parameter_list.filter"
-        ],
-        "@local.research_id_input": [
-          "parameter_list.filter"
-        ]
-      }
-    },
-    {
       "name": "valid_research_id",
-      "value": "(@local.research_found_id > 0) || (@local.research_id_input== '') || (!@local.research_id_input)",
+      "value": "@calc(/^CG(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$/i.test(@local.research_id_input)) || (@local.research_id_input== '') || (!@local.research_id_input)",
       "_translations": {
         "value": {}
       },
@@ -374,33 +307,40 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "(@local.research_found_id > 0) || (@local.research_id_input== '') || (!@local.research_id_input)",
-            "matchedExpression": "@local.research_found_id",
-            "type": "local",
-            "fieldName": "research_found_id"
-          },
-          {
-            "fullExpression": "(@local.research_found_id > 0) || (@local.research_id_input== '') || (!@local.research_id_input)",
+            "fullExpression": "@calc(/^CG(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$/i.test(@local.research_id_input)) || (@local.research_id_input== '') || (!@local.research_id_input)",
             "matchedExpression": "@local.research_id_input",
             "type": "local",
             "fieldName": "research_id_input"
           },
           {
-            "fullExpression": "(@local.research_found_id > 0) || (@local.research_id_input== '') || (!@local.research_id_input)",
+            "fullExpression": "@calc(/^CG(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$/i.test(@local.research_id_input)) || (@local.research_id_input== '') || (!@local.research_id_input)",
+            "matchedExpression": "@local.research_id_input",
+            "type": "local",
+            "fieldName": "research_id_input"
+          },
+          {
+            "fullExpression": "@calc(/^CG(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$/i.test(@local.research_id_input)) || (@local.research_id_input== '') || (!@local.research_id_input)",
             "matchedExpression": "!@local.research_id_input",
             "type": "local",
             "fieldName": "research_id_input"
+          },
+          {
+            "fullExpression": "@calc(/^CG(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$/i.test(@local.research_id_input)) || (@local.research_id_input== '') || (!@local.research_id_input)",
+            "matchedExpression": "@calc(/^CG(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$/i.test(@local.research_id_input)) || (@local.research_id_input== '') || (!@local.research_id_input)",
+            "type": "calc",
+            "fieldName": "/^CG(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$/i.test(@local.research_id_input)) || (@local.research_id_input== '') || (!@local.research_id_input"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@local.research_found_id": [
-          "value"
-        ],
         "@local.research_id_input": [
+          "value",
           "value"
         ],
         "!@local.research_id_input": [
+          "value"
+        ],
+        "@calc(/^CG(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$/i.test(@local.research_id_input)) || (@local.research_id_input== '') || (!@local.research_id_input)": [
           "value"
         ]
       }

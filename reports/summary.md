@@ -11,7 +11,7 @@
 | audio | 4 |
 | button | 87 |
 | combo_box | 10 |
-| data_items | 134 |
+| data_items | 133 |
 | debug_toggle | 1 |
 | display_grid | 4 |
 | display_group | 107 |
@@ -33,7 +33,7 @@
 | radio_button_grid | 11 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 2902 |
+| set_variable | 2901 |
 | simple_checkbox | 1 |
 | task_card | 6 |
 | task_progress_bar | 5 |
@@ -74,7 +74,7 @@
 | set_data | 74 |
 | set_field | 63 |
 | set_item | 51 |
-| set_local | 70 |
+| set_local | 69 |
 | share | 2 |
 | task | 2 |
 | user | 3 |
@@ -85,7 +85,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 80931 KB | 80.9 MB |
+| total | 80933 KB | 80.9 MB |
 | unused | 8738 KB | 8.7 MB |
 </details>
 
@@ -303,7 +303,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -400,7 +400,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/homescreen/listview/consequences.svg | 37.5 | 2 |
 | images/homescreen/listview/crisis_t.svg | 44 | 3 |
 | images/homescreen/listview/developmentplay.svg | 65.4 | 3 |
-| images/homescreen/listview/feelings.svg | 53.4 | 3 |
+| images/homescreen/listview/feelings.svg | 53.4 | 2 |
 | images/homescreen/listview/grief_t.svg | 26.8 | 2 |
 | images/homescreen/listview/instruct_t.svg | 37.9 | 3 |
 | images/homescreen/listview/instructions.svg | 31.7 | 2 |
@@ -409,7 +409,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/homescreen/listview/one_on_one_t.svg | 39.8 | 2 |
 | images/homescreen/listview/one_on_one_time.svg | 43.7 | 2 |
 | images/homescreen/listview/onlinesafety_t.svg | 30.6 | 2 |
-| images/homescreen/listview/praise.svg | 72.2 | 2 |
+| images/homescreen/listview/praise.svg | 72.2 | 3 |
 | images/homescreen/listview/praise_t.svg | 33.7 | 3 |
 | images/homescreen/listview/problemsolving.svg | 28.6 | 2 |
 | images/homescreen/listview/rules_t.svg | 35.8 | 2 |
@@ -753,7 +753,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | type | subtype | total |
 | --- | --- | --- |
-| data_list |  | 18 |
+| data_list |  | 17 |
 | data_list | activities | 2 |
 | data_list | app_config_language_list | 1 |
 | data_list | check_in | 1 |
