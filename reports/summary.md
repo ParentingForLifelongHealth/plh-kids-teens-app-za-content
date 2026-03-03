@@ -305,7 +305,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -461,14 +461,14 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/heart_filled_red.png | 1.4 | 3 |
 | images/icons/home.svg | 0.4 | 1 |
 | images/icons/home_active.svg | 0.4 | 1 |
-| images/icons/home_white.svg | 1.1 | 1 |
+| images/icons/home_white.svg | 0.7 | 1 |
 | images/icons/hourglass_blue.png | 4.3 | 1 |
 | images/icons/in_progress.svg | 1.1 | 2 |
 | images/icons/key.svg | 5.5 | 1 |
 | images/icons/lightbulb_blue.png | 3.6 | 2 |
 | images/icons/local_library.svg | 1.6 | 1 |
 | images/icons/local_library_active.svg | 1.6 | 1 |
-| images/icons/local_library_white.svg | 2.1 | 1 |
+| images/icons/local_library_white.svg | 1.9 | 1 |
 | images/icons/lock.svg | 0.5 | 1 |
 | images/icons/locked.png | 0.7 | 6 |
 | images/icons/magnify_glass.svg | 1.9 | 1 |
@@ -484,7 +484,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/repeat_blue.png | 5.4 | 1 |
 | images/icons/settings.svg | 2.4 | 1 |
 | images/icons/settings_active.svg | 2.4 | 1 |
-| images/icons/settings_white.svg | 2.8 | 1 |
+| images/icons/settings_white.svg | 2.4 | 1 |
 | images/icons/single_speech_blue.png | 3.3 | 10 |
 | images/icons/smile_eyes_down.svg | 0.9 | 30 |
 | images/icons/smile_eyes_up.svg | 1 | 81 |
