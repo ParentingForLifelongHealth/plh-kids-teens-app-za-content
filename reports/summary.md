@@ -85,8 +85,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 81002 KB | 81 MB |
-| unused | 8746 KB | 8.7 MB |
+| total | 76017 KB | 76 MB |
+| unused | 6748 KB | 6.7 MB |
 </details>
 
 <details open>
@@ -101,10 +101,6 @@ Assets that appear in app-data but do not have references within sheets
 | android/icon.png | 215.3 |
 | android/splash.png | 195.7 |
 | audio/teen/testimonials/caregiver/caregiver_test_svp_t.mp3 | 174.8 |
-| audio/teen/testimonials/teen/Archive - may not be needed/teen_test_onlinesafety_t.mp3 | 210.8 |
-| audio/teen/testimonials/teen/Archive - may not be needed/teen_test_rules_t.mp3 | 447.1 |
-| audio/teen/testimonials/teen/Archive - may not be needed/teen_test_stress_t.mp3 | 267.8 |
-| audio/teen/topic_intros/self_care_intro_t.mp3 | 407.6 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
@@ -147,7 +143,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/star_outline_white.svg | 1 |
 | images/icons/trophy_footer.svg | 3.9 |
 | images/icons/trophy_footer_active.svg | 3.9 |
-| images/logos/donors/ERC.png | 321.9 |
 | images/logos/donors/Wellspring.jpeg | 106.5 |
 | images/logos/favicon.png | 149.9 |
 | images/logos/plh_white.png | 12.8 |
@@ -177,9 +172,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/teen_modules/safe/safe2_t_1.svg | 36.4 |
 | images/teen_modules/safe/safe2_t_2.svg | 35.7 |
 | images/teen_modules/safe/safe_learn_t_4.svg | 926.4 |
-| images/teen_modules/self_care/self_care1_t_2.svg | 34.7 |
-| images/teen_modules/srh/Unsused Assets_SRH/srh_learn_sex_talk_when_t_3.svg | 203.3 |
-| images/teen_modules/srh/Unsused Assets_SRH/srh_learn_sex_talk_who_t_3.svg | 105 |
 | images/teen_modules/srh/srh_learn_sex_talk_when_t_3.png | 924 |
 | images/teen_modules/stress/stress3_t_6.svg | 74.5 |
 | lottie/bulging_circles.txt | 0.2 |
@@ -195,14 +187,24 @@ Assets that have references within sheets but do not appear in app-data
 
 | path | count |
 | --- | --- |
+| audio/relax/relax_10.mp3 | 1 |
 | audio/relax/relax_11.mp3 | 1 |
+| audio/relax/relax_12.mp3 | 1 |
+| audio/relax/relax_13.mp3 | 1 |
+| audio/relax/relax_14.mp3 | 1 |
+| audio/relax/relax_15.mp3 | 1 |
+| audio/relax/relax_16.mp3 | 1 |
 | audio/relax/relax_17.mp3 | 1 |
 | audio/relax/relax_18.mp3 | 1 |
+| audio/relax/relax_19.mp3 | 1 |
+| audio/relax/relax_20.mp3 | 1 |
 | audio/relax/relax_21.mp3 | 1 |
 | audio/relax/relax_22.mp3 | 1 |
 | audio/relax/relax_23.mp3 | 1 |
 | audio/relax/relax_24.mp3 | 1 |
 | audio/relax/relax_6.mp3 | 1 |
+| audio/relax/relax_7.mp3 | 1 |
+| audio/relax/relax_8.mp3 | 1 |
 | images/backgrounds/map_view_bg.jpg | 1 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
@@ -215,22 +217,12 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | path | size_kb | count |
 | --- | --- | --- |
-| audio/relax/relax_1.mp3 | 265.1 | 6 |
-| audio/relax/relax_10.mp3 | 404.9 | 2 |
-| audio/relax/relax_12.mp3 | 539.7 | 3 |
-| audio/relax/relax_13.mp3 | 398.4 | 1 |
-| audio/relax/relax_14.mp3 | 256.9 | 2 |
-| audio/relax/relax_15.mp3 | 125 | 2 |
-| audio/relax/relax_16.mp3 | 150.9 | 1 |
-| audio/relax/relax_19.mp3 | 454 | 2 |
-| audio/relax/relax_2.mp3 | 404.4 | 6 |
-| audio/relax/relax_20.mp3 | 539.8 | 2 |
-| audio/relax/relax_3.mp3 | 235.1 | 6 |
-| audio/relax/relax_4.mp3 | 514.5 | 3 |
-| audio/relax/relax_5.mp3 | 195.7 | 4 |
-| audio/relax/relax_7.mp3 | 285.3 | 2 |
-| audio/relax/relax_8.mp3 | 302 | 2 |
-| audio/relax/relax_9.mp3 | 576.6 | 4 |
+| audio/relax/relax_1.mp3 | 265.1 | 7 |
+| audio/relax/relax_2.mp3 | 404.4 | 8 |
+| audio/relax/relax_3.mp3 | 235.1 | 8 |
+| audio/relax/relax_4.mp3 | 514.5 | 6 |
+| audio/relax/relax_5.mp3 | 195.7 | 7 |
+| audio/relax/relax_9.mp3 | 576.6 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_1on1_t.mp3 | 258.8 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_consequence_t.mp3 | 377.3 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_crisis_t.mp3 | 250.3 | 1 |
@@ -636,7 +628,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/safe/warning_pushy_boyfriend_t.svg | 40.8 | 1 |
 | images/teen_modules/safe/warning_pushy_friend_t.svg | 77 | 1 |
 | images/teen_modules/safe/warning_rejected_ride_t.svg | 103.3 | 1 |
-| images/teen_modules/self_care/self_care1_t_1.svg | 44.3 | 2 |
+| images/teen_modules/self_care/self_care1_t_1.svg | 44.3 | 1 |
+| images/teen_modules/self_care/self_care1_t_2.svg | 34.7 | 1 |
 | images/teen_modules/self_care/self_care1_t_3.svg | 27.9 | 1 |
 | images/teen_modules/solve/solve1_t_1.svg | 182.1 | 1 |
 | images/teen_modules/solve/solve1_t_2.svg | 203.2 | 1 |
@@ -687,9 +680,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/stress/stress3_t_3.svg | 63.3 | 1 |
 | images/teen_modules/stress/stress3_t_4.svg | 86.8 | 1 |
 | images/teen_modules/stress/stress3_t_5.svg | 103.7 | 1 |
-| images/teen_modules/svp/svp_usebody_t_1.gif | 1111.6 | 1 |
-| images/teen_modules/svp/svp_usebody_t_2.gif | 2008.5 | 1 |
-| images/teen_modules/svp/svp_usebody_t_3.gif | 844.1 | 1 |
+| images/teen_modules/svp/svp_usebody_t_1.gif | 855.1 | 1 |
+| images/teen_modules/svp/svp_usebody_t_2.gif | 909.9 | 1 |
+| images/teen_modules/svp/svp_usebody_t_3.gif | 636.3 | 1 |
 | images/teen_modules/svp/svp_usevoice_t.svg | 35.5 | 1 |
 | images/yc_modules/1on1/one_on_one_yc_1.svg | 56.4 | 1 |
 | images/yc_modules/1on1/one_on_one_yc_2.svg | 58.3 | 1 |
@@ -745,11 +738,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/checkmark.json | 23.6 | 1 |
 | lottie/gift_box.json | 674.5 | 1 |
-| lottie/relax/blue_dots.json | 14.7 | 6 |
-| lottie/relax/heart.json | 46.7 | 7 |
-| lottie/relax/looping_rings.json | 10.4 | 7 |
-| lottie/relax/soothing_waves.json | 7.6 | 13 |
-| lottie/relax/square_flow.json | 5.9 | 23 |
+| lottie/relax/blue_dots.json | 14.7 | 4 |
+| lottie/relax/heart.json | 46.7 | 10 |
+| lottie/relax/looping_rings.json | 10.4 | 9 |
+| lottie/relax/soothing_waves.json | 7.6 | 12 |
+| lottie/relax/square_flow.json | 5.9 | 21 |
 | video/plh_video/lets_slow_down.mp4 | 13482.2 | 16 |
 </details>
 
