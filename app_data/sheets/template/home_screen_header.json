@@ -1203,15 +1203,6 @@
                 "@items[0]?.started_ts"
               ],
               "_raw": "data_changed | set_local : started_date : @items[0]?.started_ts"
-            },
-            {
-              "trigger": "data_changed",
-              "action_id": "set_local",
-              "args": [
-                "stop_flick",
-                "@items.length"
-              ],
-              "_raw": "data_changed | set_local : stop_flick : @items.length"
             }
           ],
           "parameter_list": {
@@ -1527,6 +1518,15 @@
                 "@items[0]?.tag_course"
               ],
               "_raw": "data_changed | set_local : first_course_id : @items[0]?.tag_course"
+            },
+            {
+              "trigger": "data_changed",
+              "action_id": "set_local",
+              "args": [
+                "stop_flick",
+                "@items.length"
+              ],
+              "_raw": "data_changed | set_local : stop_flick : @items.length"
             }
           ],
           "parameter_list": {
@@ -1711,6 +1711,30 @@
               },
               "_dynamicDependencies": {
                 "@local.module_title": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "name": "course_id",
+              "value": "@local.course_id",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "display_group_19.header_button.course_id",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@local.course_id",
+                    "matchedExpression": "@local.course_id",
+                    "type": "local",
+                    "fieldName": "course_id"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.course_id": [
                   "value"
                 ]
               }

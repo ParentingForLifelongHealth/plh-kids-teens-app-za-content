@@ -82,6 +82,11 @@
       }
     },
     {
+      "name": "course_id",
+      "type": "set_variable",
+      "_nested_name": "course_id"
+    },
+    {
       "type": "button",
       "action_list": [
         {
@@ -102,8 +107,8 @@
         "icon_align": "right"
       },
       "condition": false,
-      "name": "button_11",
-      "_nested_name": "button_11",
+      "name": "button_12",
+      "_nested_name": "button_12",
       "_dynamicFields": {
         "action_list": {
           "0": {
@@ -157,8 +162,8 @@
         "icon_align": "right"
       },
       "condition": false,
-      "name": "button_12",
-      "_nested_name": "button_12",
+      "name": "button_13",
+      "_nested_name": "button_13",
       "_dynamicFields": {
         "value": [
           {
@@ -225,8 +230,8 @@
       },
       "condition": "!!@local.pop_up",
       "rows": [],
-      "name": "plh_lesson_cta_13",
-      "_nested_name": "plh_lesson_cta_13",
+      "name": "plh_lesson_cta_14",
+      "_nested_name": "plh_lesson_cta_14",
       "_dynamicFields": {
         "value": [
           {
@@ -317,6 +322,7 @@
     },
     {
       "type": "plh_lesson_cta",
+      "name": "module_button",
       "value": "@local.title",
       "action_list": [
         {
@@ -326,6 +332,15 @@
             "@local.template"
           ],
           "_raw": "click | go_to: @local.template"
+        },
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "last_opened",
+            "@local.course_id"
+          ],
+          "_raw": "click | set_field: last_opened : @local.course_id"
         }
       ],
       "parameter_list": {
@@ -343,7 +358,7 @@
             "filter": "!@task_item.nested"
           },
           "name": "task_progress_bar_1",
-          "_nested_name": "plh_lesson_cta_15.task_progress_bar_1",
+          "_nested_name": "module_button.task_progress_bar_1",
           "_dynamicFields": {
             "parameter_list": {
               "task_group_data": [
@@ -363,8 +378,7 @@
           }
         }
       ],
-      "name": "plh_lesson_cta_15",
-      "_nested_name": "plh_lesson_cta_15",
+      "_nested_name": "module_button",
       "_dynamicFields": {
         "value": [
           {
@@ -392,6 +406,26 @@
                 "matchedExpression": "@local.template",
                 "type": "local",
                 "fieldName": "template"
+              }
+            ]
+          },
+          "1": {
+            "args": {
+              "1": [
+                {
+                  "fullExpression": "@local.course_id",
+                  "matchedExpression": "@local.course_id",
+                  "type": "local",
+                  "fieldName": "course_id"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: last_opened : @local.course_id",
+                "matchedExpression": "@local.course_id",
+                "type": "local",
+                "fieldName": "course_id"
               }
             ]
           }
@@ -438,6 +472,10 @@
         "@local.template": [
           "action_list.0.args.0",
           "action_list.0._raw"
+        ],
+        "@local.course_id": [
+          "action_list.1.args.1",
+          "action_list.1._raw"
         ],
         "@local.subtitle": [
           "parameter_list.subtitle"
