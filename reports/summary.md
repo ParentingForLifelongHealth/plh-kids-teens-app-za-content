@@ -85,8 +85,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 76016 KB | 76 MB |
-| unused | 6748 KB | 6.7 MB |
+| total | 76057 KB | 76.1 MB |
+| unused | 6601 KB | 6.6 MB |
 </details>
 
 <details open>
@@ -110,7 +110,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/activities/idea_box.svg | 27.7 |
 | images/activities/lap_bounce.svg | 192.1 |
 | images/activities/long_term_goal.svg | 59.8 |
-| images/activities/memory_game.svg | 40 |
 | images/activities/mystery_box.svg | 58.4 |
 | images/activities/story_cuddles.svg | 34.6 |
 | images/activities/tummy_time_safari.svg | 106.2 |
@@ -143,7 +142,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/star_outline_white.svg | 1 |
 | images/icons/trophy_footer.svg | 3.9 |
 | images/icons/trophy_footer_active.svg | 3.9 |
-| images/logos/donors/Wellspring.jpeg | 106.5 |
 | images/logos/favicon.png | 149.9 |
 | images/logos/plh_white.png | 12.8 |
 | images/logos/sino_mark.svg | 461.7 |
@@ -192,7 +190,7 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_12.mp3 | 1 |
 | audio/relax/relax_13.mp3 | 1 |
 | audio/relax/relax_14.mp3 | 1 |
-| audio/relax/relax_15.mp3 | 1 |
+| audio/relax/relax_15.mp3 | 2 |
 | audio/relax/relax_16.mp3 | 1 |
 | audio/relax/relax_17.mp3 | 1 |
 | audio/relax/relax_18.mp3 | 1 |
@@ -217,11 +215,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | path | size_kb | count |
 | --- | --- | --- |
-| audio/relax/relax_1.mp3 | 265.1 | 7 |
+| audio/relax/relax_1.mp3 | 265.1 | 6 |
 | audio/relax/relax_2.mp3 | 404.4 | 8 |
-| audio/relax/relax_3.mp3 | 235.1 | 8 |
+| audio/relax/relax_3.mp3 | 235.1 | 9 |
 | audio/relax/relax_4.mp3 | 514.5 | 6 |
-| audio/relax/relax_5.mp3 | 195.7 | 7 |
+| audio/relax/relax_5.mp3 | 195.7 | 6 |
 | audio/relax/relax_9.mp3 | 576.6 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_1on1_t.mp3 | 258.8 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_consequence_t.mp3 | 377.3 | 1 |
@@ -297,7 +295,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -309,6 +307,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/garden.svg | 109.9 | 2 |
 | images/activities/guess_emotion.svg | 71.4 | 2 |
 | images/activities/make_story_child.svg | 66.1 | 2 |
+| images/activities/memory_game.svg | 40 | 2 |
 | images/activities/mystery_bag.svg | 7.5 | 2 |
 | images/activities/play_with_clothes.svg | 102.7 | 2 |
 | images/activities/reflect_positive.svg | 38.2 | 2 |
@@ -318,7 +317,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/shadow_play.svg | 5.6 | 2 |
 | images/activities/short_term_goal.svg | 41.9 | 4 |
 | images/activities/song.svg | 2.7 | 8 |
-| images/activities/spy_colours.svg | 65.9 | 4 |
+| images/activities/spy_colours.svg | 65.9 | 2 |
 | images/activities/take_a_pause.svg | 44.8 | 2 |
 | images/activities/talk_6.svg | 37.5 | 4 |
 | images/activities/tell_stories.svg | 40.9 | 2 |
@@ -738,11 +737,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/checkmark.json | 23.6 | 1 |
 | lottie/gift_box.json | 674.5 | 1 |
-| lottie/relax/blue_dots.json | 14.7 | 4 |
-| lottie/relax/heart.json | 46.7 | 10 |
-| lottie/relax/looping_rings.json | 10.4 | 9 |
+| lottie/relax/blue_dots.json | 14.7 | 10 |
+| lottie/relax/heart.json | 46.7 | 11 |
+| lottie/relax/looping_rings.json | 10.4 | 13 |
 | lottie/relax/soothing_waves.json | 7.6 | 12 |
-| lottie/relax/square_flow.json | 5.9 | 21 |
+| lottie/relax/square_flow.json | 5.9 | 10 |
 | video/plh_video/lets_slow_down.mp4 | 13482.2 | 16 |
 </details>
 
