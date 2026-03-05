@@ -11,7 +11,7 @@
 | audio | 4 |
 | button | 87 |
 | combo_box | 10 |
-| data_items | 133 |
+| data_items | 135 |
 | debug_toggle | 1 |
 | display_grid | 4 |
 | display_group | 108 |
@@ -33,12 +33,12 @@
 | radio_button_grid | 11 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 2906 |
+| set_variable | 2918 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 5 |
 | template | 959 |
-| text | 176 |
+| text | 182 |
 | text_area | 2 |
 | text_box | 13 |
 | text_bubble | 9 |
@@ -74,7 +74,7 @@
 | set_data | 74 |
 | set_field | 65 |
 | set_item | 51 |
-| set_local | 70 |
+| set_local | 76 |
 | share | 2 |
 | task | 2 |
 | user | 3 |
@@ -85,7 +85,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 62547 KB | 62.5 MB |
+| total | 62546 KB | 62.5 MB |
 | unused | 16034 KB | 16 MB |
 </details>
 
@@ -275,7 +275,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 118.7 | 4 |
+| images/activities/circle_dance.svg | 117.2 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
