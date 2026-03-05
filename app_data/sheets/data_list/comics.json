@@ -1413,10 +1413,10 @@
       }
     },
     {
-      "id": "praise_t0",
-      "foreign_key": "praise_t4",
-      "character_id": "f1_mother",
-      "character_text": "Thank you for doing your schoolwork, @data.characters.f1_daughter_13.name, and thank you for helping your sister, @data.characters.f1_daughter_16.name. I'm so proud of you!",
+      "id": "srh_t0",
+      "foreign_key": "srh_t3",
+      "character_id": "f2_grandmother",
+      "character_text": "Where are you going looking like that?",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1424,15 +1424,127 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "Thank you for doing your schoolwork, @data.characters.f1_daughter_13.name, and thank you for helping your sister, @data.characters.f1_daughter_16.name. I'm so proud of you!"
+          "eng": "Where are you going looking like that?"
         }
       }
     },
     {
-      "id": "learn_t0",
-      "foreign_key": "learn_t2",
+      "id": "srh_t1",
+      "foreign_key": "srh_t3",
+      "character_id": "f2_daughter_19",
+      "character_text": "I am going out with some of my friends.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I am going out with some of my friends."
+        }
+      }
+    },
+    {
+      "id": "srh_t2",
+      "foreign_key": "srh_t4",
+      "character_id": "f2_grandmother",
+      "character_text": "What is that @data.characters.f2_daughter_19.name? Condoms? Why are you carrying those in your bag? Where did you get them?!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "What is that @data.characters.f2_daughter_19.name? Condoms? Why are you carrying those in your bag? Where did you get them?!"
+        }
+      }
+    },
+    {
+      "id": "srh_t3",
+      "foreign_key": "srh_t4",
+      "character_id": "f2_daughter_19",
+      "character_text": "I got it from one of the girls at school today. We were talking about safe sex and she said she uses birth control so that she does not get pregnant.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I got it from one of the girls at school today. We were talking about safe sex and she said she uses birth control so that she does not get pregnant."
+        }
+      }
+    },
+    {
+      "id": "srh_t4",
+      "foreign_key": "srh_t5",
+      "character_id": "f2_grandmother",
+      "character_text": "What is this talk of sex in my house! You are too young…",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "What is this talk of sex in my house! You are too young…"
+        }
+      }
+    },
+    {
+      "id": "srh_t5",
+      "foreign_key": "srh_t5",
+      "character_id": "f2_daughter_19",
+      "character_text": "But @data.characters.f2_grandmother.role_name, it’s not like that…!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "But @data.characters.f2_grandmother.role_name, it’s not like that…!"
+        }
+      }
+    },
+    {
+      "id": "srh_t6",
+      "foreign_key": "srh_t6",
+      "character_id": "f2_grandmother",
+      "character_text": "No, no, no, @data.characters.f2_daughter_19.name! I will not have this discussion with you. Is that what you do at school? Talking about things not suited for your age instead of focusing on school? You won’t go out with those friends of yours anymore. You want to bring shame in this home. Stupid girl!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "No, no, no, @data.characters.f2_daughter_19.name! I will not have this discussion with you. Is that what you do at school? Talking about things not suited for your age instead of focusing on school? You won’t go out with those friends of yours anymore. You want to bring shame in this home. Stupid girl!"
+        }
+      }
+    },
+    {
+      "id": "srh_t7",
+      "foreign_key": "srh_t6",
+      "character_id": "f2_daughter_19",
+      "character_text": "No @data.characters.f2_grandmother.role_name, please don’t hit me, it is not what you think",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "No @data.characters.f2_grandmother.role_name, please don’t hit me, it is not what you think"
+        }
+      }
+    },
+    {
+      "id": "srh_t8",
+      "foreign_key": "srh_t8",
       "character_id": "f1_daughter_16",
-      "character_text": "(🤔_thinking_) It has been such a hard day at school… I can’t wait for @data.characters.f1_mother.role_name to come home so I can tell her about it.",
+      "character_text": "Mother, can I talk to you about something?",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1440,15 +1552,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "(🤔_thinking_) It has been such a hard day at school… I can’t wait for @data.characters.f1_mother.role_name to come home so I can tell her about it."
+          "eng": "Mother, can I talk to you about something?"
         }
       }
     },
     {
-      "id": "learn_t1",
-      "foreign_key": "learn_t3",
+      "id": "srh_t9",
+      "foreign_key": "srh_t8",
       "character_id": "f1_mother",
-      "character_text": "(🤔_thinking_) I am so exhausted.",
+      "character_text": "(_calmly_) Sure, my darling. What is the matter?",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1456,31 +1568,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "(🤔_thinking_) I am so exhausted."
+          "eng": "(_calmly_) Sure, my darling. What is the matter?"
         }
       }
     },
     {
-      "id": "learn_t2",
-      "foreign_key": "learn_t4",
-      "character_id": "f1_mother",
-      "character_text": "@data.characters.f1_daughter_16.name, why did you not cook dinner yet?! Why do I always have to do everything myself?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "@data.characters.f1_daughter_16.name, why did you not cook dinner yet?! Why do I always have to do everything myself?"
-        }
-      }
-    },
-    {
-      "id": "learn_t3",
-      "foreign_key": "learn_t5",
+      "id": "srh_t10",
+      "foreign_key": "srh_t9",
       "character_id": "f1_daughter_16",
-      "character_text": "Get out of my way!",
+      "character_text": "@data.characters.boyfriend_1.name wants us to study together tomorrow. I really like him but I am not sure what to do.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1488,31 +1584,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "Get out of my way!"
+          "eng": "@data.characters.boyfriend_1.name wants us to study together tomorrow. I really like him but I am not sure what to do."
         }
       }
     },
     {
-      "id": "learn_t4",
-      "foreign_key": "learn_t7",
-      "character_id": "f1_daughter_16",
-      "character_text": "(🤔_thinking_) It has been such a hard day at school… I can’t wait for @data.characters.f1_mother.role_name to come home so I can tell her about it.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "(🤔_thinking_) It has been such a hard day at school… I can’t wait for @data.characters.f1_mother.role_name to come home so I can tell her about it."
-        }
-      }
-    },
-    {
-      "id": "learn_t5",
-      "foreign_key": "learn_t8",
+      "id": "srh_t11",
+      "foreign_key": "srh_t9",
       "character_id": "f1_mother",
-      "character_text": "(🤔_thinking_) I am so exhausted.",
+      "character_text": "(🤔_thinking to herself_) How has my daughter grown up so fast? What now? Take a deep breath…",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1520,15 +1600,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "(🤔_thinking_) I am so exhausted."
+          "eng": "(🤔_thinking to herself_) How has my daughter grown up so fast? What now? Take a deep breath…"
         }
       }
     },
     {
-      "id": "learn_t6",
-      "foreign_key": "learn_t9",
+      "id": "srh_t12",
+      "foreign_key": "srh_t10",
       "character_id": "f1_mother",
-      "character_text": "Hi everyone, I'm feeling exhausted and grateful to be home. @data.characters.f1_daughter_16.name, thank you for looking after your sister and washing the school clothes. I am going to wash my hands, and then we can cook together and you can tell me about your day.",
+      "character_text": "(_calmly_) Thank you for sharing this with me, @data.characters.f1_daughter_16.name. I know that you like @data.characters.boyfriend_1.name a lot, he is a charming boy and he does great at school, but you are only 16 and he is 18.\n\nI feel worried that it is not safe for you to be alone with him. He might pressure you into doing something that you are not prepared to do.\n\nI don’t want to tell you who you can see but we need to have some rules about how you spend time together.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1536,47 +1616,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "Hi everyone, I'm feeling exhausted and grateful to be home. @data.characters.f1_daughter_16.name, thank you for looking after your sister and washing the school clothes. I am going to wash my hands, and then we can cook together and you can tell me about your day."
+          "eng": "(_calmly_) Thank you for sharing this with me, @data.characters.f1_daughter_16.name. I know that you like @data.characters.boyfriend_1.name a lot, he is a charming boy and he does great at school, but you are only 16 and he is 18.\n\nI feel worried that it is not safe for you to be alone with him. He might pressure you into doing something that you are not prepared to do.\n\nI don’t want to tell you who you can see but we need to have some rules about how you spend time together."
         }
       }
     },
     {
-      "id": "learn_t7",
-      "foreign_key": "learn_t9",
-      "character_id": "f1_daughter_16",
-      "character_text": "Thank you, @data.characters.f1_mother.role_name, you can call me when you are ready.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Thank you, @data.characters.f1_mother.role_name, you can call me when you are ready."
-        }
-      }
-    },
-    {
-      "id": "learn_t8",
-      "foreign_key": "learn_t10",
-      "character_id": "f1_daughter_16",
-      "character_text": "I am glad we have this time together. I actually wanted to tell you about a problem I had at school today.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I am glad we have this time together. I actually wanted to tell you about a problem I had at school today."
-        }
-      }
-    },
-    {
-      "id": "learn_t9",
-      "foreign_key": "learn_t10",
+      "id": "srh_t13",
+      "foreign_key": "srh_t11",
       "character_id": "f1_mother",
-      "character_text": "Thank you for telling me. I am sure we can come up with a solution together.",
+      "character_text": "What do you think would be a fair rule about how you spend time together?",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1584,15 +1632,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "Thank you for telling me. I am sure we can come up with a solution together."
+          "eng": "What do you think would be a fair rule about how you spend time together?"
         }
       }
     },
     {
-      "id": "consequences_t0",
-      "foreign_key": "consequences_t2",
-      "character_id": "f1_father",
-      "character_text": "@data.characters.f1_son_18.name! What time is this? You are late!",
+      "id": "srh_t14",
+      "foreign_key": "srh_t11",
+      "character_id": "f1_daughter_16",
+      "character_text": "How about, we can spend time together if there is an adult with us?",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1600,15 +1648,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "@data.characters.f1_son_18.name! What time is this? You are late!"
+          "eng": "How about, we can spend time together if there is an adult with us?"
         }
       }
     },
     {
-      "id": "consequences_t1",
-      "foreign_key": "consequences_t3",
-      "character_id": "f1_son_18",
-      "character_text": "Sorry @data.characters.f1_father.role_name – you can go back to sleep.",
+      "id": "srh_t15",
+      "foreign_key": "srh_t12",
+      "character_id": "f1_mother",
+      "character_text": "That would be fine as long as his parents also know. I will chat with his mother when I see her later today. And after you get back, we can talk about how it went.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1616,15 +1664,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "Sorry @data.characters.f1_father.role_name – you can go back to sleep."
+          "eng": "That would be fine as long as his parents also know. I will chat with his mother when I see her later today. And after you get back, we can talk about how it went."
         }
       }
     },
     {
-      "id": "consequences_t2",
-      "foreign_key": "consequences_t3",
-      "character_id": "f1_father",
-      "character_text": "It is WAY past the time you were supposed to be home!",
+      "id": "srh_t16",
+      "foreign_key": "srh_t12",
+      "character_id": "f1_daughter_16",
+      "character_text": "_(hugs @data.characters.f1_mother.name)_ Okay. Thank you for coming up with a plan together.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -1632,695 +1680,7 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "It is WAY past the time you were supposed to be home!"
-        }
-      }
-    },
-    {
-      "id": "consequences_t3",
-      "foreign_key": "consequences_t4",
-      "character_id": "f1_son_18",
-      "character_text": "I can explain, @data.characters.f1_father.role_name, I can.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I can explain, @data.characters.f1_father.role_name, I can."
-        }
-      }
-    },
-    {
-      "id": "consequences_t4",
-      "foreign_key": "consequences_t4",
-      "character_id": "f1_father",
-      "character_text": "@data.characters.f1_son_18.name, you broke our rule! I should take away that phone of yours and give you a hiding!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "@data.characters.f1_son_18.name, you broke our rule! I should take away that phone of yours and give you a hiding!"
-        }
-      }
-    },
-    {
-      "id": "consequences_t5",
-      "foreign_key": "consequences_t5",
-      "character_id": "f1_son_18",
-      "character_text": "That’s unfair! You never listen to me!! I hate you!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "That’s unfair! You never listen to me!! I hate you!"
-        }
-      }
-    },
-    {
-      "id": "consequences_t6",
-      "foreign_key": "consequences_t8",
-      "character_id": "f1_father",
-      "character_text": "I am concerned that you are often still coming home late, @data.characters.f1_son_18.name. What can we do to help you remember to come home in time?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I am concerned that you are often still coming home late, @data.characters.f1_son_18.name. What can we do to help you remember to come home in time?"
-        }
-      }
-    },
-    {
-      "id": "consequences_t7",
-      "foreign_key": "consequences_t8",
-      "character_id": "f1_son_18",
-      "character_text": "If I come home in time, maybe I can stay up 30 minutes later than usual?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "If I come home in time, maybe I can stay up 30 minutes later than usual?"
-        }
-      }
-    },
-    {
-      "id": "consequences_t8",
-      "foreign_key": "consequences_t9",
-      "character_id": "f1_father",
-      "character_text": "That is a good idea! And what should we do if you don’t follow the rule?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "That is a good idea! And what should we do if you don’t follow the rule?"
-        }
-      }
-    },
-    {
-      "id": "consequences_t9",
-      "foreign_key": "consequences_t9",
-      "character_id": "f1_son_18",
-      "character_text": "(mumbles) Mgmluuhm...",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "(mumbles) Mgmluuhm..."
-        }
-      }
-    },
-    {
-      "id": "consequences_t10",
-      "foreign_key": "consequences_t10",
-      "character_id": "f1_father",
-      "character_text": "Oh come on, I know you have some ideas.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Oh come on, I know you have some ideas."
-        }
-      }
-    },
-    {
-      "id": "consequences_t11",
-      "foreign_key": "consequences_t10",
-      "character_id": "f1_son_18",
-      "character_text": "Okay…. What about, I have to do my homework?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Okay…. What about, I have to do my homework?"
-        }
-      }
-    },
-    {
-      "id": "consequences_t12",
-      "foreign_key": "consequences_t11",
-      "character_id": "f1_father",
-      "character_text": "You have to do your homework anyway. If you forget the rule, is it fair that you will not be able to see your friends the next day?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "You have to do your homework anyway. If you forget the rule, is it fair that you will not be able to see your friends the next day?"
-        }
-      }
-    },
-    {
-      "id": "consequences_t13",
-      "foreign_key": "consequences_t11",
-      "character_id": "f1_son_18",
-      "character_text": "Okay, @data.characters.f1_father.role_name.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Okay, @data.characters.f1_father.role_name."
-        }
-      }
-    },
-    {
-      "id": "consequences_t14",
-      "foreign_key": "consequences_t12",
-      "character_id": "f1_father",
-      "character_text": "@data.characters.f1_son_18.name! What time is it! It is late!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "@data.characters.f1_son_18.name! What time is it! It is late!"
-        }
-      }
-    },
-    {
-      "id": "consequences_t15",
-      "foreign_key": "consequences_t13",
-      "character_id": "f1_son_18",
-      "character_text": "Sorry @data.characters.f1_father.role_name – you can go back to sleep.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Sorry @data.characters.f1_father.role_name – you can go back to sleep."
-        }
-      }
-    },
-    {
-      "id": "consequences_t16",
-      "foreign_key": "consequences_t13",
-      "character_id": "f1_father",
-      "character_text": "It is WAY past the time you were supposed to be home!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "It is WAY past the time you were supposed to be home!"
-        }
-      }
-    },
-    {
-      "id": "consequences_t17",
-      "foreign_key": "consequences_t14",
-      "character_id": "f1_son_18",
-      "character_text": "I can explain, @data.characters.f1_father.role_name, I can.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I can explain, @data.characters.f1_father.role_name, I can."
-        }
-      }
-    },
-    {
-      "id": "consequences_t18",
-      "foreign_key": "consequences_t14",
-      "character_id": "f1_father",
-      "character_text": "@data.characters.f1_son_18.name, it is the middle of the night and you came home later than we agreed. Whatever the reason is, you must understand that this is not acceptable. Your @data.characters.f1_mother.role_name and I felt really worried.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "@data.characters.f1_son_18.name, it is the middle of the night and you came home later than we agreed. Whatever the reason is, you must understand that this is not acceptable. Your @data.characters.f1_mother.role_name and I felt really worried."
-        }
-      }
-    },
-    {
-      "id": "consequences_t19",
-      "foreign_key": "consequences_t15",
-      "character_id": "f1_son_18",
-      "character_text": "My friends wanted me to stay longer. They were calling me a baby for having to go home already.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "My friends wanted me to stay longer. They were calling me a baby for having to go home already."
-        }
-      }
-    },
-    {
-      "id": "consequences_t20",
-      "foreign_key": "consequences_t15",
-      "character_id": "f1_father",
-      "character_text": "I know it can be hard to say no to your friends. Let’s talk more about this in the morning when we have had some rest.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I know it can be hard to say no to your friends. Let’s talk more about this in the morning when we have had some rest."
-        }
-      }
-    },
-    {
-      "id": "consequences_t21",
-      "foreign_key": "consequences_t16",
-      "character_id": "f1_son_18",
-      "character_text": "I am sorry I worried you and @data.characters.f1_mother.role_name.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I am sorry I worried you and @data.characters.f1_mother.role_name."
-        }
-      }
-    },
-    {
-      "id": "consequences_t22",
-      "foreign_key": "consequences_t16",
-      "character_id": "f1_father",
-      "character_text": "Thank you. Now go to bed, but just to be clear, as you came home later than we agreed, you will not be allowed to see your friends tomorrow.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Thank you. Now go to bed, but just to be clear, as you came home later than we agreed, you will not be allowed to see your friends tomorrow."
-        }
-      }
-    },
-    {
-      "id": "grief_t0",
-      "foreign_key": "grief_t3",
-      "character_id": "f4_daughter_13",
-      "character_text": "I miss @data.characters.f1_mother.role_name so much...",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I miss @data.characters.f1_mother.role_name so much..."
-        }
-      }
-    },
-    {
-      "id": "grief_t1",
-      "foreign_key": "grief_t4",
-      "character_id": "f4_father",
-      "character_text": "@data.characters.f4_daughter_13.name, you need to stop crying. It has been months already! This crying will not bring your @data.characters.f1_mother.role_name back and you are doing worse and worse in school!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "@data.characters.f4_daughter_13.name, you need to stop crying. It has been months already! This crying will not bring your @data.characters.f1_mother.role_name back and you are doing worse and worse in school!"
-        }
-      }
-    },
-    {
-      "id": "grief_t2",
-      "foreign_key": "grief_t4",
-      "character_id": "f4_daughter_13",
-      "character_text": "You just don't understand how I feel! You never listen!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "You just don't understand how I feel! You never listen!"
-        }
-      }
-    },
-    {
-      "id": "grief_t3",
-      "foreign_key": "grief_t5",
-      "character_id": "f4_father",
-      "character_text": "Stop being so dramatic! Your behaviour is unacceptable!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Stop being so dramatic! Your behaviour is unacceptable!"
-        }
-      }
-    },
-    {
-      "id": "grief_t4",
-      "foreign_key": "grief_t7",
-      "character_id": "f4_father",
-      "character_text": "I know you are sad, @data.characters.f4_daughter_13.name. I also miss @data.characters.f1_mother.role_name. What do you think we can do to help you feel better?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I know you are sad, @data.characters.f4_daughter_13.name. I also miss @data.characters.f1_mother.role_name. What do you think we can do to help you feel better?"
-        }
-      }
-    },
-    {
-      "id": "grief_t5",
-      "foreign_key": "grief_t7",
-      "character_id": "f4_daughter_13",
-      "character_text": "Maybe we can visit @data.characters.f4_aunt.name, so we can share stories about @data.characters.f1_mother.role_name?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Maybe we can visit @data.characters.f4_aunt.name, so we can share stories about @data.characters.f1_mother.role_name?"
-        }
-      }
-    },
-    {
-      "id": "grief_t6",
-      "foreign_key": "grief_t8",
-      "character_id": "f4_father",
-      "character_text": "I like that idea, let’s go see her on Saturday. Do you already want to tell me more about how you feel now?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I like that idea, let’s go see her on Saturday. Do you already want to tell me more about how you feel now?"
-        }
-      }
-    },
-    {
-      "id": "grief_t7",
-      "foreign_key": "grief_t9",
-      "character_id": "f4_daughter_13",
-      "character_text": "I honestly feel angry that she left us. Is it okay to say that?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I honestly feel angry that she left us. Is it okay to say that?"
-        }
-      }
-    },
-    {
-      "id": "grief_t8",
-      "foreign_key": "grief_t10",
-      "character_id": "f4_father",
-      "character_text": "Yes, it is normal to feel angry. We all have different feelings at different times, and that is okay. It is good to talk about this together, thank you for sharing with me.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Yes, it is normal to feel angry. We all have different feelings at different times, and that is okay. It is good to talk about this together, thank you for sharing with me."
-        }
-      }
-    },
-    {
-      "id": "stress_t0",
-      "foreign_key": "stress_t3",
-      "character_id": "f1_son_18",
-      "character_text": "Can I have money to buy some airtime?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Can I have money to buy some airtime?"
-        }
-      }
-    },
-    {
-      "id": "stress_t1",
-      "foreign_key": "stress_t3",
-      "character_id": "f1_father",
-      "character_text": "Leave me alone and mind your own business!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Leave me alone and mind your own business!"
-        }
-      }
-    },
-    {
-      "id": "stress_t2",
-      "foreign_key": "stress_t4",
-      "character_id": "f1_son_18",
-      "character_text": "What did I do? You never listen!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "What did I do? You never listen!"
-        }
-      }
-    },
-    {
-      "id": "stress_t3",
-      "foreign_key": "stress_t4",
-      "character_id": "f1_father",
-      "character_text": "I said leave me alone or you will get a beating!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I said leave me alone or you will get a beating!"
-        }
-      }
-    },
-    {
-      "id": "stress_t4",
-      "foreign_key": "stress_t5",
-      "character_id": "f1_daughter_13",
-      "character_text": "Look! I have made a house!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Look! I have made a house!"
-        }
-      }
-    },
-    {
-      "id": "stress_t5",
-      "foreign_key": "stress_t6",
-      "character_id": "f1_son_18",
-      "character_text": "Who cares about your stupid house!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Who cares about your stupid house!"
-        }
-      }
-    },
-    {
-      "id": "stress_t6",
-      "foreign_key": "stress_t8",
-      "character_id": "f1_son_18",
-      "character_text": "Can I have money to buy some airtime?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Can I have money to buy some airtime?"
-        }
-      }
-    },
-    {
-      "id": "stress_t7",
-      "foreign_key": "stress_t8",
-      "character_id": "f1_father",
-      "character_text": "*(taking a breath)* I’m sorry son. I had a difficult day today. The boss fired me.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "*(taking a breath)* I’m sorry son. I had a difficult day today. The boss fired me."
-        }
-      }
-    },
-    {
-      "id": "stress_t8",
-      "foreign_key": "stress_t9",
-      "character_id": "f1_son_18",
-      "character_text": "Oh no! I need a new school uniform.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Oh no! I need a new school uniform."
-        }
-      }
-    },
-    {
-      "id": "stress_t9",
-      "foreign_key": "stress_t9",
-      "character_id": "f1_father",
-      "character_text": "I’ll try, son, and your @data.characters.f1_mother.role_name's job will help us get by while I look for another job.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I’ll try, son, and your @data.characters.f1_mother.role_name's job will help us get by while I look for another job."
-        }
-      }
-    },
-    {
-      "id": "stress_t10",
-      "foreign_key": "stress_t10",
-      "character_id": "f1_son_18",
-      "character_text": "Should I also help you look for work, @data.characters.f1_father.role_name?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Should I also help you look for work, @data.characters.f1_father.role_name?"
-        }
-      }
-    },
-    {
-      "id": "stress_t11",
-      "foreign_key": "stress_t10",
-      "character_id": "f1_father",
-      "character_text": "No it’s okay, @data.characters.f1_son_18.name. I appreciate your offer. The most important thing is that you work hard at school. Thanks for listening to me.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "No it’s okay, @data.characters.f1_son_18.name. I appreciate your offer. The most important thing is that you work hard at school. Thanks for listening to me."
-        }
-      }
-    },
-    {
-      "id": "stress_t12",
-      "foreign_key": "stress_t11",
-      "character_id": "f1_father",
-      "character_text": "Let’s play some soccer together. It will help me get this stress off my mind for a bit.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Let’s play some soccer together. It will help me get this stress off my mind for a bit."
-        }
-      }
-    },
-    {
-      "id": "stress_t13",
-      "foreign_key": "stress_t11",
-      "character_id": "f1_son_18",
-      "character_text": "Okay, @data.characters.f1_father.role_name!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Okay, @data.characters.f1_father.role_name!"
+          "eng": "_(hugs @data.characters.f1_mother.name)_ Okay. Thank you for coming up with a plan together."
         }
       }
     },
@@ -2629,234 +1989,10 @@
       }
     },
     {
-      "id": "crisis_t0",
-      "foreign_key": "crisis_t3",
-      "character_id": "f2_grandmother",
-      "character_text": "Shame my dear, you look really upset, do you want to tell me what happened?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Shame my dear, you look really upset, do you want to tell me what happened?"
-        }
-      }
-    },
-    {
-      "id": "crisis_t1",
-      "foreign_key": "crisis_t4",
-      "character_id": "f2_daughter_19",
-      "character_text": "It’s that man, he… he… he touched me.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "It’s that man, he… he… he touched me."
-        }
-      }
-    },
-    {
-      "id": "crisis_t2",
-      "foreign_key": "crisis_t4",
-      "character_id": "f2_grandmother",
-      "character_text": "(🤔_thinking_) Take a deep breath... What does my child need? She needs me to be calm and listen.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "(🤔_thinking_) Take a deep breath... What does my child need? She needs me to be calm and listen."
-        }
-      }
-    },
-    {
-      "id": "crisis_t3",
-      "foreign_key": "crisis_t4",
-      "character_id": "f2_grandmother",
-      "character_text": "Come and sit down next to me. Take your time, I am listening.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Come and sit down next to me. Take your time, I am listening."
-        }
-      }
-    },
-    {
-      "id": "crisis_t4",
-      "foreign_key": "crisis_t5",
-      "character_id": "f2_daughter_19",
-      "character_text": "It is true, he… he… made me do it! He made me have sex with him! I did not want to, I swear, and I even said NO, but he told me I would be in trouble.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "It is true, he… he… made me do it! He made me have sex with him! I did not want to, I swear, and I even said NO, but he told me I would be in trouble."
-        }
-      }
-    },
-    {
-      "id": "crisis_t5",
-      "foreign_key": "crisis_t5",
-      "character_id": "f2_grandmother",
-      "character_text": "Thank you for sharing this with me. You are not in trouble. This is not your fault.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Thank you for sharing this with me. You are not in trouble. This is not your fault."
-        }
-      }
-    },
-    {
-      "id": "crisis_t6",
-      "foreign_key": "crisis_t6",
-      "character_id": "f2_daughter_19",
-      "character_text": "Yesterday when you went to see your friend. He just came and that’s when it happened.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Yesterday when you went to see your friend. He just came and that’s when it happened."
-        }
-      }
-    },
-    {
-      "id": "crisis_t7",
-      "foreign_key": "crisis_t6",
-      "character_id": "f2_grandmother",
-      "character_text": "It is okay, I believe you my child. This is a big thing and we will find a way to get the help we need. Where could we go for help?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "It is okay, I believe you my child. This is a big thing and we will find a way to get the help we need. Where could we go for help?"
-        }
-      }
-    },
-    {
-      "id": "crisis_t8",
-      "foreign_key": "crisis_t6",
-      "character_id": "f2_daughter_19",
-      "character_text": "My school?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "My school?"
-        }
-      }
-    },
-    {
-      "id": "crisis_t9",
-      "foreign_key": "crisis_t7",
-      "character_id": "f2_grandmother",
-      "character_text": "Ah I know, let’s go to the clinic. They will know what we can do to help you. Does that sound okay to you?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Ah I know, let’s go to the clinic. They will know what we can do to help you. Does that sound okay to you?"
-        }
-      }
-    },
-    {
-      "id": "crisis_t10",
-      "foreign_key": "crisis_t7",
-      "character_id": "f2_daughter_19",
-      "character_text": "Yes… Okay… But will you come with me?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Yes… Okay… But will you come with me?"
-        }
-      }
-    },
-    {
-      "id": "crisis_t11",
-      "foreign_key": "crisis_t8",
-      "character_id": "f2_grandmother",
-      "character_text": "Of course I will. And @data.characters.f2_daughter_19.name? Remember this is not your fault. I love you. You are a good person. We will get through this.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Of course I will. And @data.characters.f2_daughter_19.name? Remember this is not your fault. I love you. You are a good person. We will get through this."
-        }
-      }
-    },
-    {
-      "id": "crisis_t12",
-      "foreign_key": "crisis_t12",
-      "character_id": "f2_son_15",
-      "character_text": "I have never done this before. And now they will expel me.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I have never done this before. And now they will expel me."
-        }
-      }
-    },
-    {
-      "id": "crisis_t13",
-      "foreign_key": "crisis_t13",
-      "character_id": "f1_daughter_16",
-      "character_text": "Father, I am so ashamed. I do not know what to do.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Father, I am so ashamed. I do not know what to do."
-        }
-      }
-    },
-    {
-      "id": "crisis_t14",
-      "foreign_key": "crisis_t14",
+      "id": "stress_t0",
+      "foreign_key": "stress_t3",
       "character_id": "f1_son_18",
-      "character_text": "I do not want to have a baby.",
+      "character_text": "Can I have money to buy some airtime?",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -2864,15 +2000,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "I do not want to have a baby."
+          "eng": "Can I have money to buy some airtime?"
         }
       }
     },
     {
-      "id": "crisis_t15",
-      "foreign_key": "crisis_t15",
-      "character_id": "friend_female_1",
-      "character_text": "The test said I have HIV. I am scared I am going to die.",
+      "id": "stress_t1",
+      "foreign_key": "stress_t3",
+      "character_id": "f1_father",
+      "character_text": "Leave me alone and mind your own business!",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -2880,15 +2016,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "The test said I have HIV. I am scared I am going to die."
+          "eng": "Leave me alone and mind your own business!"
         }
       }
     },
     {
-      "id": "crisis_t16",
-      "foreign_key": "crisis_t16",
-      "character_id": "f2_daughter_19",
-      "character_text": "I didn't really want to. Now I will get pregnant or be ill. @data.characters.f2_grandmother.role_name, I am so scared...",
+      "id": "stress_t2",
+      "foreign_key": "stress_t4",
+      "character_id": "f1_son_18",
+      "character_text": "What did I do? You never listen!",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -2896,15 +2032,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "I didn't really want to. Now I will get pregnant or be ill. @data.characters.f2_grandmother.role_name, I am so scared..."
+          "eng": "What did I do? You never listen!"
         }
       }
     },
     {
-      "id": "money_t0",
-      "foreign_key": "money_t2",
-      "character_id": "f2_grandmother",
-      "character_text": "I have been taking care of my grandchildren, @data.characters.f2_daughter_19.name and @data.characters.f2_son_15.name, since their parents died when they were young. We often struggle with money, as I only receive a small grant.",
+      "id": "stress_t3",
+      "foreign_key": "stress_t4",
+      "character_id": "f1_father",
+      "character_text": "I said leave me alone or you will get a beating!",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -2912,15 +2048,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "I have been taking care of my grandchildren, @data.characters.f2_daughter_19.name and @data.characters.f2_son_15.name, since their parents died when they were young. We often struggle with money, as I only receive a small grant."
+          "eng": "I said leave me alone or you will get a beating!"
         }
       }
     },
     {
-      "id": "money_t1",
-      "foreign_key": "money_t3",
-      "character_id": "f2_grandmother",
-      "character_text": "I am so stressed. I don’t have any money left. And now I am fighting with my teens over things they want – again.",
+      "id": "stress_t4",
+      "foreign_key": "stress_t5",
+      "character_id": "f1_daughter_13",
+      "character_text": "Look! I have made a house!",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -2928,15 +2064,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "I am so stressed. I don’t have any money left. And now I am fighting with my teens over things they want – again."
+          "eng": "Look! I have made a house!"
         }
       }
     },
     {
-      "id": "money_t2",
-      "foreign_key": "money_t9",
-      "character_id": "f2_grandmother",
-      "character_text": "I want the best future for my grandchildren, but I do not know where to get the money. Loan sharks are dangerous and paying them back is so expensive.\n\nI should save, but that feels impossible!",
+      "id": "stress_t5",
+      "foreign_key": "stress_t6",
+      "character_id": "f1_son_18",
+      "character_text": "Who cares about your stupid house!",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -2944,15 +2080,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "I want the best future for my grandchildren, but I do not know where to get the money. Loan sharks are dangerous and paying them back is so expensive.\n\nI should save, but that feels impossible!"
+          "eng": "Who cares about your stupid house!"
         }
       }
     },
     {
-      "id": "money_t3",
-      "foreign_key": "money_t10",
-      "character_id": "f2_grandmother",
-      "character_text": "My goal is to make sure my grandson can go to high school and my granddaughter can reach her dream of university. How can I save a lot of money with the little money I have?",
+      "id": "stress_t6",
+      "foreign_key": "stress_t8",
+      "character_id": "f1_son_18",
+      "character_text": "Can I have money to buy some airtime?",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -2960,15 +2096,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "My goal is to make sure my grandson can go to high school and my granddaughter can reach her dream of university. How can I save a lot of money with the little money I have?"
+          "eng": "Can I have money to buy some airtime?"
         }
       }
     },
     {
-      "id": "money_t4",
-      "foreign_key": "money_t11",
-      "character_id": "f2_grandmother",
-      "character_text": "I know – let’s start with a plan! First, let me make a budget – a plan for how I can save my money. Then I will save just a little bit of money at a time – I will even join a stokvel.",
+      "id": "stress_t7",
+      "foreign_key": "stress_t8",
+      "character_id": "f1_father",
+      "character_text": "*(taking a breath)* I’m sorry son. I had a difficult day today. The boss fired me.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -2976,15 +2112,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "I know – let’s start with a plan! First, let me make a budget – a plan for how I can save my money. Then I will save just a little bit of money at a time – I will even join a stokvel."
+          "eng": "*(taking a breath)* I’m sorry son. I had a difficult day today. The boss fired me."
         }
       }
     },
     {
-      "id": "money_t5",
-      "foreign_key": "money_t12",
-      "character_id": "f2_grandmother",
-      "character_text": "I should also speak with my grandchildren to choose things that we can spend just a little bit less on each week. They will help me think of things we want but do not need.",
+      "id": "stress_t8",
+      "foreign_key": "stress_t9",
+      "character_id": "f1_son_18",
+      "character_text": "Oh no! I need a new school uniform.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -2992,15 +2128,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "I should also speak with my grandchildren to choose things that we can spend just a little bit less on each week. They will help me think of things we want but do not need."
+          "eng": "Oh no! I need a new school uniform."
         }
       }
     },
     {
-      "id": "money_t6",
-      "foreign_key": "money_t13",
-      "character_id": "f2_grandmother",
-      "character_text": "Look, we reached our dreams! I did not borrow any money from friends or loan sharks. By saving a tiny bit each week, I managed to pay for @data.characters.f2_son_15.name’s high school and save some money for @data.characters.f2_daughter_19.name’s university. I am so proud of this.",
+      "id": "stress_t9",
+      "foreign_key": "stress_t9",
+      "character_id": "f1_father",
+      "character_text": "I’ll try, son, and your @data.characters.f1_mother.role_name's job will help us get by while I look for another job.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -3008,15 +2144,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "Look, we reached our dreams! I did not borrow any money from friends or loan sharks. By saving a tiny bit each week, I managed to pay for @data.characters.f2_son_15.name’s high school and save some money for @data.characters.f2_daughter_19.name’s university. I am so proud of this."
+          "eng": "I’ll try, son, and your @data.characters.f1_mother.role_name's job will help us get by while I look for another job."
         }
       }
     },
     {
-      "id": "money_t7",
-      "foreign_key": "money_t14",
-      "character_id": "f2_grandmother",
-      "character_text": "One night there was a horrible storm that broke my roof. Everything was flooded. I suddenly had to find money to fix the roof. I just felt defeated.",
+      "id": "stress_t10",
+      "foreign_key": "stress_t10",
+      "character_id": "f1_son_18",
+      "character_text": "Should I also help you look for work, @data.characters.f1_father.role_name?",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -3024,7 +2160,55 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "One night there was a horrible storm that broke my roof. Everything was flooded. I suddenly had to find money to fix the roof. I just felt defeated."
+          "eng": "Should I also help you look for work, @data.characters.f1_father.role_name?"
+        }
+      }
+    },
+    {
+      "id": "stress_t11",
+      "foreign_key": "stress_t10",
+      "character_id": "f1_father",
+      "character_text": "No it’s okay, @data.characters.f1_son_18.name. I appreciate your offer. The most important thing is that you work hard at school. Thanks for listening to me.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "No it’s okay, @data.characters.f1_son_18.name. I appreciate your offer. The most important thing is that you work hard at school. Thanks for listening to me."
+        }
+      }
+    },
+    {
+      "id": "stress_t12",
+      "foreign_key": "stress_t11",
+      "character_id": "f1_father",
+      "character_text": "Let’s play some soccer together. It will help me get this stress off my mind for a bit.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Let’s play some soccer together. It will help me get this stress off my mind for a bit."
+        }
+      }
+    },
+    {
+      "id": "stress_t13",
+      "foreign_key": "stress_t11",
+      "character_id": "f1_son_18",
+      "character_text": "Okay, @data.characters.f1_father.role_name!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Okay, @data.characters.f1_father.role_name!"
         }
       }
     },
@@ -3343,566 +2527,6 @@
     {
       "id": "rules_t21",
       "foreign_key": "rules_t16"
-    },
-    {
-      "id": "instructions_t0",
-      "foreign_key": "instructions_t6",
-      "character_id": "f2_grandmother",
-      "character_text": "Don’t make such a mess while I am cleaning the house. You are in the way!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Don’t make such a mess while I am cleaning the house. You are in the way!"
-        }
-      }
-    },
-    {
-      "id": "instructions_t1",
-      "foreign_key": "instructions_t7",
-      "character_id": "f2_daughter_19",
-      "character_text": "But I need to practise for the school competition. You never let me do anything.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "But I need to practise for the school competition. You never let me do anything."
-        }
-      }
-    },
-    {
-      "id": "instructions_t2",
-      "foreign_key": "instructions_t7",
-      "character_id": "f2_grandmother",
-      "character_text": "Don't you talk back to me!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Don't you talk back to me!"
-        }
-      }
-    },
-    {
-      "id": "instructions_t3",
-      "foreign_key": "instructions_t8",
-      "character_id": "f2_daughter_19",
-      "character_text": "Arrg!! Why am I being yelled at all the time????",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Arrg!! Why am I being yelled at all the time????"
-        }
-      }
-    },
-    {
-      "id": "instructions_t4",
-      "foreign_key": "instructions_t8",
-      "character_id": "f2_grandmother",
-      "character_text": "(🤔_thinking_) That child is always making trouble.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "(🤔_thinking_) That child is always making trouble."
-        }
-      }
-    },
-    {
-      "id": "instructions_t5",
-      "foreign_key": "instructions_t10",
-      "character_id": "f2_grandmother",
-      "character_text": "@data.characters.f2_daughter_19.name, it is nice to see you practise dance moves with your friend. Please take it outside so I can finish cleaning the house. Afterwards, you can show me your dance.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "@data.characters.f2_daughter_19.name, it is nice to see you practise dance moves with your friend. Please take it outside so I can finish cleaning the house. Afterwards, you can show me your dance."
-        }
-      }
-    },
-    {
-      "id": "instructions_t6",
-      "foreign_key": "instructions_t11",
-      "character_id": "f2_daughter_19",
-      "character_text": "Okay, @data.characters.f2_grandmother.role_name!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Okay, @data.characters.f2_grandmother.role_name!"
-        }
-      }
-    },
-    {
-      "id": "instructions_t7",
-      "foreign_key": "instructions_t12",
-      "character_id": "f2_grandmother",
-      "character_text": "Thank you for practising outside while I finished cleaning, @data.characters.f2_daughter_19.name. Now I have some time to watch your dance.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Thank you for practising outside while I finished cleaning, @data.characters.f2_daughter_19.name. Now I have some time to watch your dance."
-        }
-      }
-    },
-    {
-      "id": "instructions_t8",
-      "foreign_key": "instructions_t13",
-      "character_id": "f2_grandmother",
-      "character_text": "Wow, @data.characters.f2_daughter_19.name! You have such good dance moves!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Wow, @data.characters.f2_daughter_19.name! You have such good dance moves!"
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t0",
-      "foreign_key": "onlinesafety_t3"
-    },
-    {
-      "id": "onlinesafety_t1",
-      "foreign_key": "onlinesafety_t3"
-    },
-    {
-      "id": "onlinesafety_t2",
-      "foreign_key": "onlinesafety_t4",
-      "character_id": "f1_mother",
-      "character_text": "That looks fun! What are you watching?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "That looks fun! What are you watching?"
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t3",
-      "foreign_key": "onlinesafety_t4",
-      "character_id": "f1_son_14",
-      "character_text": "This guy on Instagram gets a million likes on every post! My friends and I make our own videos too.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "This guy on Instagram gets a million likes on every post! My friends and I make our own videos too."
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t4",
-      "foreign_key": "onlinesafety_t5",
-      "character_id": "f1_mother",
-      "character_text": "That’s exciting! What do you like about making videos yourself?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "That’s exciting! What do you like about making videos yourself?"
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t5",
-      "foreign_key": "onlinesafety_t5",
-      "character_id": "f1_son_14",
-      "character_text": "It’s fun to create them with my friends. And people comment on them a lot. I already have 600 followers!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "It’s fun to create them with my friends. And people comment on them a lot. I already have 600 followers!"
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t6",
-      "foreign_key": "onlinesafety_t6",
-      "character_id": "f1_mother",
-      "character_text": "Wow, that must feel great. It’s exciting when other people like what we do. At the same time, it is important to make sure Instagram is fun and safe for you. Do you have any ideas of how we could do that?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Wow, that must feel great. It’s exciting when other people like what we do. At the same time, it is important to make sure Instagram is fun and safe for you. Do you have any ideas of how we could do that?"
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t7",
-      "foreign_key": "onlinesafety_t6",
-      "character_id": "f1_son_14",
-      "character_text": "Sometimes I get mean comments, or DMs from people I don’t even know. Maybe I should block them?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Sometimes I get mean comments, or DMs from people I don’t even know. Maybe I should block them?"
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t8",
-      "foreign_key": "onlinesafety_t7",
-      "character_id": "f1_mother",
-      "character_text": "Yes, that’s a really good idea. Do you know how to block people? We can look it up together if you like? I am sure there are other steps too, like making your account private or limiting who can comment.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Yes, that’s a really good idea. Do you know how to block people? We can look it up together if you like? I am sure there are other steps too, like making your account private or limiting who can comment."
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t9",
-      "foreign_key": "onlinesafety_t7",
-      "character_id": "f1_son_14",
-      "character_text": "Yes, let’s look it up together, thank you @data.characters.f1_mother.role_name.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Yes, let’s look it up together, thank you @data.characters.f1_mother.role_name."
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t10",
-      "foreign_key": "onlinesafety_t7",
-      "character_id": "f1_mother",
-      "character_text": "I am glad we can talk about this, @data.characters.f1_son_14.name. If something ever feels wrong, remember you can always come to me. We will figure it out together, and you can keep enjoying Instagram safely.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I am glad we can talk about this, @data.characters.f1_son_14.name. If something ever feels wrong, remember you can always come to me. We will figure it out together, and you can keep enjoying Instagram safely."
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t11",
-      "foreign_key": "onlinesafety_t8"
-    },
-    {
-      "id": "onlinesafety_t12",
-      "foreign_key": "onlinesafety_t9",
-      "character_id": "f4_father",
-      "character_text": "(_thinking_) I am so worried about Lerato. She has been acting differently lately. She seems quiet and keeps to herself.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "(_thinking_) I am so worried about Lerato. She has been acting differently lately. She seems quiet and keeps to herself."
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t13",
-      "foreign_key": "onlinesafety_t9"
-    },
-    {
-      "id": "onlinesafety_t14",
-      "foreign_key": "onlinesafety_t9"
-    },
-    {
-      "id": "onlinesafety_t15",
-      "foreign_key": "onlinesafety_t10",
-      "character_id": "f3_daughter_12",
-      "character_text": "Mother, guess what happened at school. My classmate @data.characters.friend_female_5.name shared a sexy picture of herself with her boyfriend to prove that she loves him, and his friends told him to post it online. Now it is everywhere.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Mother, guess what happened at school. My classmate @data.characters.friend_female_5.name shared a sexy picture of herself with her boyfriend to prove that she loves him, and his friends told him to post it online. Now it is everywhere."
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t16",
-      "foreign_key": "onlinesafety_t11",
-      "character_id": "phone_icon",
-      "character_text": "Send me another picture or I’ll share the last one with your family and friends…",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Send me another picture or I’ll share the last one with your family and friends…"
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t17",
-      "foreign_key": "onlinesafety_t11",
-      "character_id": "f1_son_18",
-      "character_text": "(_thinking_): What if my friends and family see those other pictures I sent… I don’t know what to do! Maybe I should talk to my father.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "(_thinking_): What if my friends and family see those other pictures I sent… I don’t know what to do! Maybe I should talk to my father."
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t18",
-      "foreign_key": "onlinesafety_t12",
-      "character_id": "f1_mother",
-      "character_text": "Why is your grandson showing my daughter those pictures at school!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Why is your grandson showing my daughter those pictures at school!"
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t19",
-      "foreign_key": "onlinesafety_t12"
-    },
-    {
-      "id": "onlinesafety_t20",
-      "foreign_key": "onlinesafety_t12"
-    },
-    {
-      "id": "onlinesafety_t21",
-      "foreign_key": "onlinesafety_t13",
-      "character_id": "phone_icon",
-      "character_text": "I saw your profile. We are at the same school! Let’s chat privately — maybe we can plan how to meet in person. I’ll send you data.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I saw your profile. We are at the same school! Let’s chat privately — maybe we can plan how to meet in person. I’ll send you data."
-        }
-      }
-    },
-    {
-      "id": "onlinesafety_t22",
-      "foreign_key": "onlinesafety_t13"
-    },
-    {
-      "id": "oneononetime_t0",
-      "foreign_key": "oneononetime_t2",
-      "character_id": "f3_uncle",
-      "character_text": "Hi @data.characters.f3_daughter_12.name! I have 5 minutes of one-on-one time before I leave for work. What would you like to do together?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Hi @data.characters.f3_daughter_12.name! I have 5 minutes of one-on-one time before I leave for work. What would you like to do together?"
-        }
-      }
-    },
-    {
-      "id": "oneononetime_t1",
-      "foreign_key": "oneononetime_t2",
-      "character_id": "f3_daughter_12",
-      "character_text": "I was about to do my Geography project. We have to find the capital cities of all the East African countries. Can you help me with that?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I was about to do my Geography project. We have to find the capital cities of all the East African countries. Can you help me with that?"
-        }
-      }
-    },
-    {
-      "id": "oneononetime_t2",
-      "foreign_key": "oneononetime_t2",
-      "character_id": "f3_uncle",
-      "character_text": "Of course! How can I help?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Of course! How can I help?"
-        }
-      }
-    },
-    {
-      "id": "oneononetime_t3",
-      "foreign_key": "oneononetime_t3",
-      "character_id": "f3_daughter_12",
-      "character_text": "Great! I can remember the countries, and you could write them down? Then we can look up the capitals on your phone.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Great! I can remember the countries, and you could write them down? Then we can look up the capitals on your phone."
-        }
-      }
-    },
-    {
-      "id": "oneononetime_t4",
-      "foreign_key": "oneononetime_t3",
-      "character_id": "f3_uncle",
-      "character_text": "Very good. Let’s do that.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Very good. Let’s do that."
-        }
-      }
-    },
-    {
-      "id": "oneononetime_t5",
-      "foreign_key": "oneononetime_t4",
-      "character_id": "f3_uncle",
-      "character_text": "Wow, you remembered all the countries! And you were so clever to find the capital cities using the phone.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Wow, you remembered all the countries! And you were so clever to find the capital cities using the phone."
-        }
-      }
-    },
-    {
-      "id": "oneononetime_t6",
-      "foreign_key": "oneononetime_t4",
-      "character_id": "f3_daughter_12",
-      "character_text": "Thank you, uncle. Can I go on TikTok now?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Thank you, uncle. Can I go on TikTok now?"
-        }
-      }
-    },
-    {
-      "id": "oneononetime_t7",
-      "foreign_key": "oneononetime_t5",
-      "character_id": "f3_uncle",
-      "character_text": "You can have 30 minutes on TikTok after you finish your homework. \nI would also love to try TikTok. Can you help me set up an account tomorrow?",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "You can have 30 minutes on TikTok after you finish your homework. \nI would also love to try TikTok. Can you help me set up an account tomorrow?"
-        }
-      }
-    },
-    {
-      "id": "oneononetime_t8",
-      "foreign_key": "oneononetime_t5",
-      "character_id": "f3_daughter_12",
-      "character_text": "Yes, of course! Then I can show you that cool video I told you about yesterday.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "Yes, of course! Then I can show you that cool video I told you about yesterday."
-        }
-      }
     },
     {
       "id": "problemsolving_t0",
@@ -4369,10 +2993,298 @@
       }
     },
     {
-      "id": "srh_t0",
-      "foreign_key": "srh_t3",
+      "id": "praise_t0",
+      "foreign_key": "praise_t4",
+      "character_id": "f1_mother",
+      "character_text": "Thank you for doing your schoolwork, @data.characters.f1_daughter_13.name, and thank you for helping your sister, @data.characters.f1_daughter_16.name. I'm so proud of you!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Thank you for doing your schoolwork, @data.characters.f1_daughter_13.name, and thank you for helping your sister, @data.characters.f1_daughter_16.name. I'm so proud of you!"
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t0",
+      "foreign_key": "onlinesafety_t3"
+    },
+    {
+      "id": "onlinesafety_t1",
+      "foreign_key": "onlinesafety_t3"
+    },
+    {
+      "id": "onlinesafety_t2",
+      "foreign_key": "onlinesafety_t4",
+      "character_id": "f1_mother",
+      "character_text": "That looks fun! What are you watching?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "That looks fun! What are you watching?"
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t3",
+      "foreign_key": "onlinesafety_t4",
+      "character_id": "f1_son_14",
+      "character_text": "This guy on Instagram gets a million likes on every post! My friends and I make our own videos too.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "This guy on Instagram gets a million likes on every post! My friends and I make our own videos too."
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t4",
+      "foreign_key": "onlinesafety_t5",
+      "character_id": "f1_mother",
+      "character_text": "That’s exciting! What do you like about making videos yourself?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "That’s exciting! What do you like about making videos yourself?"
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t5",
+      "foreign_key": "onlinesafety_t5",
+      "character_id": "f1_son_14",
+      "character_text": "It’s fun to create them with my friends. And people comment on them a lot. I already have 600 followers!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "It’s fun to create them with my friends. And people comment on them a lot. I already have 600 followers!"
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t6",
+      "foreign_key": "onlinesafety_t6",
+      "character_id": "f1_mother",
+      "character_text": "Wow, that must feel great. It’s exciting when other people like what we do. At the same time, it is important to make sure Instagram is fun and safe for you. Do you have any ideas of how we could do that?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Wow, that must feel great. It’s exciting when other people like what we do. At the same time, it is important to make sure Instagram is fun and safe for you. Do you have any ideas of how we could do that?"
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t7",
+      "foreign_key": "onlinesafety_t6",
+      "character_id": "f1_son_14",
+      "character_text": "Sometimes I get mean comments, or DMs from people I don’t even know. Maybe I should block them?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Sometimes I get mean comments, or DMs from people I don’t even know. Maybe I should block them?"
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t8",
+      "foreign_key": "onlinesafety_t7",
+      "character_id": "f1_mother",
+      "character_text": "Yes, that’s a really good idea. Do you know how to block people? We can look it up together if you like? I am sure there are other steps too, like making your account private or limiting who can comment.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Yes, that’s a really good idea. Do you know how to block people? We can look it up together if you like? I am sure there are other steps too, like making your account private or limiting who can comment."
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t9",
+      "foreign_key": "onlinesafety_t7",
+      "character_id": "f1_son_14",
+      "character_text": "Yes, let’s look it up together, thank you @data.characters.f1_mother.role_name.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Yes, let’s look it up together, thank you @data.characters.f1_mother.role_name."
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t10",
+      "foreign_key": "onlinesafety_t7",
+      "character_id": "f1_mother",
+      "character_text": "I am glad we can talk about this, @data.characters.f1_son_14.name. If something ever feels wrong, remember you can always come to me. We will figure it out together, and you can keep enjoying Instagram safely.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I am glad we can talk about this, @data.characters.f1_son_14.name. If something ever feels wrong, remember you can always come to me. We will figure it out together, and you can keep enjoying Instagram safely."
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t11",
+      "foreign_key": "onlinesafety_t8"
+    },
+    {
+      "id": "onlinesafety_t12",
+      "foreign_key": "onlinesafety_t9",
+      "character_id": "f4_father",
+      "character_text": "(_thinking_) I am so worried about Lerato. She has been acting differently lately. She seems quiet and keeps to herself.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "(_thinking_) I am so worried about Lerato. She has been acting differently lately. She seems quiet and keeps to herself."
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t13",
+      "foreign_key": "onlinesafety_t9"
+    },
+    {
+      "id": "onlinesafety_t14",
+      "foreign_key": "onlinesafety_t9"
+    },
+    {
+      "id": "onlinesafety_t15",
+      "foreign_key": "onlinesafety_t10",
+      "character_id": "f3_daughter_12",
+      "character_text": "Mother, guess what happened at school. My classmate @data.characters.friend_female_5.name shared a sexy picture of herself with her boyfriend to prove that she loves him, and his friends told him to post it online. Now it is everywhere.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Mother, guess what happened at school. My classmate @data.characters.friend_female_5.name shared a sexy picture of herself with her boyfriend to prove that she loves him, and his friends told him to post it online. Now it is everywhere."
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t16",
+      "foreign_key": "onlinesafety_t11",
+      "character_id": "phone_icon",
+      "character_text": "Send me another picture or I’ll share the last one with your family and friends…",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Send me another picture or I’ll share the last one with your family and friends…"
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t17",
+      "foreign_key": "onlinesafety_t11",
+      "character_id": "f1_son_18",
+      "character_text": "(_thinking_): What if my friends and family see those other pictures I sent… I don’t know what to do! Maybe I should talk to my father.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "(_thinking_): What if my friends and family see those other pictures I sent… I don’t know what to do! Maybe I should talk to my father."
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t18",
+      "foreign_key": "onlinesafety_t12",
+      "character_id": "f1_mother",
+      "character_text": "Why is your grandson showing my daughter those pictures at school!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Why is your grandson showing my daughter those pictures at school!"
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t19",
+      "foreign_key": "onlinesafety_t12"
+    },
+    {
+      "id": "onlinesafety_t20",
+      "foreign_key": "onlinesafety_t12"
+    },
+    {
+      "id": "onlinesafety_t21",
+      "foreign_key": "onlinesafety_t13",
+      "character_id": "phone_icon",
+      "character_text": "I saw your profile. We are at the same school! Let’s chat privately — maybe we can plan how to meet in person. I’ll send you data.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I saw your profile. We are at the same school! Let’s chat privately — maybe we can plan how to meet in person. I’ll send you data."
+        }
+      }
+    },
+    {
+      "id": "onlinesafety_t22",
+      "foreign_key": "onlinesafety_t13"
+    },
+    {
+      "id": "money_t0",
+      "foreign_key": "money_t2",
       "character_id": "f2_grandmother",
-      "character_text": "Where are you going looking like that?",
+      "character_text": "I have been taking care of my grandchildren, @data.characters.f2_daughter_19.name and @data.characters.f2_son_15.name, since their parents died when they were young. We often struggle with money, as I only receive a small grant.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4380,31 +3292,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "Where are you going looking like that?"
+          "eng": "I have been taking care of my grandchildren, @data.characters.f2_daughter_19.name and @data.characters.f2_son_15.name, since their parents died when they were young. We often struggle with money, as I only receive a small grant."
         }
       }
     },
     {
-      "id": "srh_t1",
-      "foreign_key": "srh_t3",
-      "character_id": "f2_daughter_19",
-      "character_text": "I am going out with some of my friends.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I am going out with some of my friends."
-        }
-      }
-    },
-    {
-      "id": "srh_t2",
-      "foreign_key": "srh_t4",
+      "id": "money_t1",
+      "foreign_key": "money_t3",
       "character_id": "f2_grandmother",
-      "character_text": "What is that @data.characters.f2_daughter_19.name? Condoms? Why are you carrying those in your bag? Where did you get them?!",
+      "character_text": "I am so stressed. I don’t have any money left. And now I am fighting with my teens over things they want – again.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4412,31 +3308,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "What is that @data.characters.f2_daughter_19.name? Condoms? Why are you carrying those in your bag? Where did you get them?!"
+          "eng": "I am so stressed. I don’t have any money left. And now I am fighting with my teens over things they want – again."
         }
       }
     },
     {
-      "id": "srh_t3",
-      "foreign_key": "srh_t4",
-      "character_id": "f2_daughter_19",
-      "character_text": "I got it from one of the girls at school today. We were talking about safe sex and she said she uses birth control so that she does not get pregnant.",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "I got it from one of the girls at school today. We were talking about safe sex and she said she uses birth control so that she does not get pregnant."
-        }
-      }
-    },
-    {
-      "id": "srh_t4",
-      "foreign_key": "srh_t5",
+      "id": "money_t2",
+      "foreign_key": "money_t9",
       "character_id": "f2_grandmother",
-      "character_text": "What is this talk of sex in my house! You are too young…",
+      "character_text": "I want the best future for my grandchildren, but I do not know where to get the money. Loan sharks are dangerous and paying them back is so expensive.\n\nI should save, but that feels impossible!",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4444,31 +3324,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "What is this talk of sex in my house! You are too young…"
+          "eng": "I want the best future for my grandchildren, but I do not know where to get the money. Loan sharks are dangerous and paying them back is so expensive.\n\nI should save, but that feels impossible!"
         }
       }
     },
     {
-      "id": "srh_t5",
-      "foreign_key": "srh_t5",
-      "character_id": "f2_daughter_19",
-      "character_text": "But @data.characters.f2_grandmother.role_name, it’s not like that…!",
-      "_translations": {
-        "character_text": {
-          "za_xh": true
-        }
-      },
-      "_translatedFields": {
-        "character_text": {
-          "eng": "But @data.characters.f2_grandmother.role_name, it’s not like that…!"
-        }
-      }
-    },
-    {
-      "id": "srh_t6",
-      "foreign_key": "srh_t6",
+      "id": "money_t3",
+      "foreign_key": "money_t10",
       "character_id": "f2_grandmother",
-      "character_text": "No, no, no, @data.characters.f2_daughter_19.name! I will not have this discussion with you. Is that what you do at school? Talking about things not suited for your age instead of focusing on school? You won’t go out with those friends of yours anymore. You want to bring shame in this home. Stupid girl!",
+      "character_text": "My goal is to make sure my grandson can go to high school and my granddaughter can reach her dream of university. How can I save a lot of money with the little money I have?",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4476,15 +3340,255 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "No, no, no, @data.characters.f2_daughter_19.name! I will not have this discussion with you. Is that what you do at school? Talking about things not suited for your age instead of focusing on school? You won’t go out with those friends of yours anymore. You want to bring shame in this home. Stupid girl!"
+          "eng": "My goal is to make sure my grandson can go to high school and my granddaughter can reach her dream of university. How can I save a lot of money with the little money I have?"
         }
       }
     },
     {
-      "id": "srh_t7",
-      "foreign_key": "srh_t6",
+      "id": "money_t4",
+      "foreign_key": "money_t11",
+      "character_id": "f2_grandmother",
+      "character_text": "I know – let’s start with a plan! First, let me make a budget – a plan for how I can save my money. Then I will save just a little bit of money at a time – I will even join a stokvel.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I know – let’s start with a plan! First, let me make a budget – a plan for how I can save my money. Then I will save just a little bit of money at a time – I will even join a stokvel."
+        }
+      }
+    },
+    {
+      "id": "money_t5",
+      "foreign_key": "money_t12",
+      "character_id": "f2_grandmother",
+      "character_text": "I should also speak with my grandchildren to choose things that we can spend just a little bit less on each week. They will help me think of things we want but do not need.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I should also speak with my grandchildren to choose things that we can spend just a little bit less on each week. They will help me think of things we want but do not need."
+        }
+      }
+    },
+    {
+      "id": "money_t6",
+      "foreign_key": "money_t13",
+      "character_id": "f2_grandmother",
+      "character_text": "Look, we reached our dreams! I did not borrow any money from friends or loan sharks. By saving a tiny bit each week, I managed to pay for @data.characters.f2_son_15.name’s high school and save some money for @data.characters.f2_daughter_19.name’s university. I am so proud of this.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Look, we reached our dreams! I did not borrow any money from friends or loan sharks. By saving a tiny bit each week, I managed to pay for @data.characters.f2_son_15.name’s high school and save some money for @data.characters.f2_daughter_19.name’s university. I am so proud of this."
+        }
+      }
+    },
+    {
+      "id": "money_t7",
+      "foreign_key": "money_t14",
+      "character_id": "f2_grandmother",
+      "character_text": "One night there was a horrible storm that broke my roof. Everything was flooded. I suddenly had to find money to fix the roof. I just felt defeated.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "One night there was a horrible storm that broke my roof. Everything was flooded. I suddenly had to find money to fix the roof. I just felt defeated."
+        }
+      }
+    },
+    {
+      "id": "learn_t0",
+      "foreign_key": "learn_t2",
+      "character_id": "f1_daughter_16",
+      "character_text": "(🤔_thinking_) It has been such a hard day at school… I can’t wait for @data.characters.f1_mother.role_name to come home so I can tell her about it.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "(🤔_thinking_) It has been such a hard day at school… I can’t wait for @data.characters.f1_mother.role_name to come home so I can tell her about it."
+        }
+      }
+    },
+    {
+      "id": "learn_t1",
+      "foreign_key": "learn_t3",
+      "character_id": "f1_mother",
+      "character_text": "(🤔_thinking_) I am so exhausted.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "(🤔_thinking_) I am so exhausted."
+        }
+      }
+    },
+    {
+      "id": "learn_t2",
+      "foreign_key": "learn_t4",
+      "character_id": "f1_mother",
+      "character_text": "@data.characters.f1_daughter_16.name, why did you not cook dinner yet?! Why do I always have to do everything myself?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "@data.characters.f1_daughter_16.name, why did you not cook dinner yet?! Why do I always have to do everything myself?"
+        }
+      }
+    },
+    {
+      "id": "learn_t3",
+      "foreign_key": "learn_t5",
+      "character_id": "f1_daughter_16",
+      "character_text": "Get out of my way!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Get out of my way!"
+        }
+      }
+    },
+    {
+      "id": "learn_t4",
+      "foreign_key": "learn_t7",
+      "character_id": "f1_daughter_16",
+      "character_text": "(🤔_thinking_) It has been such a hard day at school… I can’t wait for @data.characters.f1_mother.role_name to come home so I can tell her about it.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "(🤔_thinking_) It has been such a hard day at school… I can’t wait for @data.characters.f1_mother.role_name to come home so I can tell her about it."
+        }
+      }
+    },
+    {
+      "id": "learn_t5",
+      "foreign_key": "learn_t8",
+      "character_id": "f1_mother",
+      "character_text": "(🤔_thinking_) I am so exhausted.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "(🤔_thinking_) I am so exhausted."
+        }
+      }
+    },
+    {
+      "id": "learn_t6",
+      "foreign_key": "learn_t9",
+      "character_id": "f1_mother",
+      "character_text": "Hi everyone, I'm feeling exhausted and grateful to be home. @data.characters.f1_daughter_16.name, thank you for looking after your sister and washing the school clothes. I am going to wash my hands, and then we can cook together and you can tell me about your day.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Hi everyone, I'm feeling exhausted and grateful to be home. @data.characters.f1_daughter_16.name, thank you for looking after your sister and washing the school clothes. I am going to wash my hands, and then we can cook together and you can tell me about your day."
+        }
+      }
+    },
+    {
+      "id": "learn_t7",
+      "foreign_key": "learn_t9",
+      "character_id": "f1_daughter_16",
+      "character_text": "Thank you, @data.characters.f1_mother.role_name, you can call me when you are ready.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Thank you, @data.characters.f1_mother.role_name, you can call me when you are ready."
+        }
+      }
+    },
+    {
+      "id": "learn_t8",
+      "foreign_key": "learn_t10",
+      "character_id": "f1_daughter_16",
+      "character_text": "I am glad we have this time together. I actually wanted to tell you about a problem I had at school today.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I am glad we have this time together. I actually wanted to tell you about a problem I had at school today."
+        }
+      }
+    },
+    {
+      "id": "learn_t9",
+      "foreign_key": "learn_t10",
+      "character_id": "f1_mother",
+      "character_text": "Thank you for telling me. I am sure we can come up with a solution together.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Thank you for telling me. I am sure we can come up with a solution together."
+        }
+      }
+    },
+    {
+      "id": "instructions_t0",
+      "foreign_key": "instructions_t6",
+      "character_id": "f2_grandmother",
+      "character_text": "Don’t make such a mess while I am cleaning the house. You are in the way!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Don’t make such a mess while I am cleaning the house. You are in the way!"
+        }
+      }
+    },
+    {
+      "id": "instructions_t1",
+      "foreign_key": "instructions_t7",
       "character_id": "f2_daughter_19",
-      "character_text": "No @data.characters.f2_grandmother.role_name, please don’t hit me, it is not what you think",
+      "character_text": "But I need to practise for the school competition. You never let me do anything.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4492,15 +3596,479 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "No @data.characters.f2_grandmother.role_name, please don’t hit me, it is not what you think"
+          "eng": "But I need to practise for the school competition. You never let me do anything."
         }
       }
     },
     {
-      "id": "srh_t8",
-      "foreign_key": "srh_t8",
+      "id": "instructions_t2",
+      "foreign_key": "instructions_t7",
+      "character_id": "f2_grandmother",
+      "character_text": "Don't you talk back to me!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Don't you talk back to me!"
+        }
+      }
+    },
+    {
+      "id": "instructions_t3",
+      "foreign_key": "instructions_t8",
+      "character_id": "f2_daughter_19",
+      "character_text": "Arrg!! Why am I being yelled at all the time????",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Arrg!! Why am I being yelled at all the time????"
+        }
+      }
+    },
+    {
+      "id": "instructions_t4",
+      "foreign_key": "instructions_t8",
+      "character_id": "f2_grandmother",
+      "character_text": "(🤔_thinking_) That child is always making trouble.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "(🤔_thinking_) That child is always making trouble."
+        }
+      }
+    },
+    {
+      "id": "instructions_t5",
+      "foreign_key": "instructions_t10",
+      "character_id": "f2_grandmother",
+      "character_text": "@data.characters.f2_daughter_19.name, it is nice to see you practise dance moves with your friend. Please take it outside so I can finish cleaning the house. Afterwards, you can show me your dance.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "@data.characters.f2_daughter_19.name, it is nice to see you practise dance moves with your friend. Please take it outside so I can finish cleaning the house. Afterwards, you can show me your dance."
+        }
+      }
+    },
+    {
+      "id": "instructions_t6",
+      "foreign_key": "instructions_t11",
+      "character_id": "f2_daughter_19",
+      "character_text": "Okay, @data.characters.f2_grandmother.role_name!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Okay, @data.characters.f2_grandmother.role_name!"
+        }
+      }
+    },
+    {
+      "id": "instructions_t7",
+      "foreign_key": "instructions_t12",
+      "character_id": "f2_grandmother",
+      "character_text": "Thank you for practising outside while I finished cleaning, @data.characters.f2_daughter_19.name. Now I have some time to watch your dance.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Thank you for practising outside while I finished cleaning, @data.characters.f2_daughter_19.name. Now I have some time to watch your dance."
+        }
+      }
+    },
+    {
+      "id": "instructions_t8",
+      "foreign_key": "instructions_t13",
+      "character_id": "f2_grandmother",
+      "character_text": "Wow, @data.characters.f2_daughter_19.name! You have such good dance moves!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Wow, @data.characters.f2_daughter_19.name! You have such good dance moves!"
+        }
+      }
+    },
+    {
+      "id": "grief_t0",
+      "foreign_key": "grief_t3",
+      "character_id": "f4_daughter_13",
+      "character_text": "I miss @data.characters.f1_mother.role_name so much...",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I miss @data.characters.f1_mother.role_name so much..."
+        }
+      }
+    },
+    {
+      "id": "grief_t1",
+      "foreign_key": "grief_t4",
+      "character_id": "f4_father",
+      "character_text": "@data.characters.f4_daughter_13.name, you need to stop crying. It has been months already! This crying will not bring your @data.characters.f1_mother.role_name back and you are doing worse and worse in school!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "@data.characters.f4_daughter_13.name, you need to stop crying. It has been months already! This crying will not bring your @data.characters.f1_mother.role_name back and you are doing worse and worse in school!"
+        }
+      }
+    },
+    {
+      "id": "grief_t2",
+      "foreign_key": "grief_t4",
+      "character_id": "f4_daughter_13",
+      "character_text": "You just don't understand how I feel! You never listen!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "You just don't understand how I feel! You never listen!"
+        }
+      }
+    },
+    {
+      "id": "grief_t3",
+      "foreign_key": "grief_t5",
+      "character_id": "f4_father",
+      "character_text": "Stop being so dramatic! Your behaviour is unacceptable!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Stop being so dramatic! Your behaviour is unacceptable!"
+        }
+      }
+    },
+    {
+      "id": "grief_t4",
+      "foreign_key": "grief_t7",
+      "character_id": "f4_father",
+      "character_text": "I know you are sad, @data.characters.f4_daughter_13.name. I also miss @data.characters.f1_mother.role_name. What do you think we can do to help you feel better?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I know you are sad, @data.characters.f4_daughter_13.name. I also miss @data.characters.f1_mother.role_name. What do you think we can do to help you feel better?"
+        }
+      }
+    },
+    {
+      "id": "grief_t5",
+      "foreign_key": "grief_t7",
+      "character_id": "f4_daughter_13",
+      "character_text": "Maybe we can visit @data.characters.f4_aunt.name, so we can share stories about @data.characters.f1_mother.role_name?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Maybe we can visit @data.characters.f4_aunt.name, so we can share stories about @data.characters.f1_mother.role_name?"
+        }
+      }
+    },
+    {
+      "id": "grief_t6",
+      "foreign_key": "grief_t8",
+      "character_id": "f4_father",
+      "character_text": "I like that idea, let’s go see her on Saturday. Do you already want to tell me more about how you feel now?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I like that idea, let’s go see her on Saturday. Do you already want to tell me more about how you feel now?"
+        }
+      }
+    },
+    {
+      "id": "grief_t7",
+      "foreign_key": "grief_t9",
+      "character_id": "f4_daughter_13",
+      "character_text": "I honestly feel angry that she left us. Is it okay to say that?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I honestly feel angry that she left us. Is it okay to say that?"
+        }
+      }
+    },
+    {
+      "id": "grief_t8",
+      "foreign_key": "grief_t10",
+      "character_id": "f4_father",
+      "character_text": "Yes, it is normal to feel angry. We all have different feelings at different times, and that is okay. It is good to talk about this together, thank you for sharing with me.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Yes, it is normal to feel angry. We all have different feelings at different times, and that is okay. It is good to talk about this together, thank you for sharing with me."
+        }
+      }
+    },
+    {
+      "id": "crisis_t0",
+      "foreign_key": "crisis_t3",
+      "character_id": "f2_grandmother",
+      "character_text": "Shame my dear, you look really upset, do you want to tell me what happened?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Shame my dear, you look really upset, do you want to tell me what happened?"
+        }
+      }
+    },
+    {
+      "id": "crisis_t1",
+      "foreign_key": "crisis_t4",
+      "character_id": "f2_daughter_19",
+      "character_text": "It’s that man, he… he… he touched me.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "It’s that man, he… he… he touched me."
+        }
+      }
+    },
+    {
+      "id": "crisis_t2",
+      "foreign_key": "crisis_t4",
+      "character_id": "f2_grandmother",
+      "character_text": "(🤔_thinking_) Take a deep breath... What does my child need? She needs me to be calm and listen.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "(🤔_thinking_) Take a deep breath... What does my child need? She needs me to be calm and listen."
+        }
+      }
+    },
+    {
+      "id": "crisis_t3",
+      "foreign_key": "crisis_t4",
+      "character_id": "f2_grandmother",
+      "character_text": "Come and sit down next to me. Take your time, I am listening.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Come and sit down next to me. Take your time, I am listening."
+        }
+      }
+    },
+    {
+      "id": "crisis_t4",
+      "foreign_key": "crisis_t5",
+      "character_id": "f2_daughter_19",
+      "character_text": "It is true, he… he… made me do it! He made me have sex with him! I did not want to, I swear, and I even said NO, but he told me I would be in trouble.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "It is true, he… he… made me do it! He made me have sex with him! I did not want to, I swear, and I even said NO, but he told me I would be in trouble."
+        }
+      }
+    },
+    {
+      "id": "crisis_t5",
+      "foreign_key": "crisis_t5",
+      "character_id": "f2_grandmother",
+      "character_text": "Thank you for sharing this with me. You are not in trouble. This is not your fault.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Thank you for sharing this with me. You are not in trouble. This is not your fault."
+        }
+      }
+    },
+    {
+      "id": "crisis_t6",
+      "foreign_key": "crisis_t6",
+      "character_id": "f2_daughter_19",
+      "character_text": "Yesterday when you went to see your friend. He just came and that’s when it happened.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Yesterday when you went to see your friend. He just came and that’s when it happened."
+        }
+      }
+    },
+    {
+      "id": "crisis_t7",
+      "foreign_key": "crisis_t6",
+      "character_id": "f2_grandmother",
+      "character_text": "It is okay, I believe you my child. This is a big thing and we will find a way to get the help we need. Where could we go for help?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "It is okay, I believe you my child. This is a big thing and we will find a way to get the help we need. Where could we go for help?"
+        }
+      }
+    },
+    {
+      "id": "crisis_t8",
+      "foreign_key": "crisis_t6",
+      "character_id": "f2_daughter_19",
+      "character_text": "My school?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "My school?"
+        }
+      }
+    },
+    {
+      "id": "crisis_t9",
+      "foreign_key": "crisis_t7",
+      "character_id": "f2_grandmother",
+      "character_text": "Ah I know, let’s go to the clinic. They will know what we can do to help you. Does that sound okay to you?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Ah I know, let’s go to the clinic. They will know what we can do to help you. Does that sound okay to you?"
+        }
+      }
+    },
+    {
+      "id": "crisis_t10",
+      "foreign_key": "crisis_t7",
+      "character_id": "f2_daughter_19",
+      "character_text": "Yes… Okay… But will you come with me?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Yes… Okay… But will you come with me?"
+        }
+      }
+    },
+    {
+      "id": "crisis_t11",
+      "foreign_key": "crisis_t8",
+      "character_id": "f2_grandmother",
+      "character_text": "Of course I will. And @data.characters.f2_daughter_19.name? Remember this is not your fault. I love you. You are a good person. We will get through this.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Of course I will. And @data.characters.f2_daughter_19.name? Remember this is not your fault. I love you. You are a good person. We will get through this."
+        }
+      }
+    },
+    {
+      "id": "crisis_t12",
+      "foreign_key": "crisis_t12",
+      "character_id": "f2_son_15",
+      "character_text": "I have never done this before. And now they will expel me.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I have never done this before. And now they will expel me."
+        }
+      }
+    },
+    {
+      "id": "crisis_t13",
+      "foreign_key": "crisis_t13",
       "character_id": "f1_daughter_16",
-      "character_text": "Mother, can I talk to you about something?",
+      "character_text": "Father, I am so ashamed. I do not know what to do.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4508,15 +4076,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "Mother, can I talk to you about something?"
+          "eng": "Father, I am so ashamed. I do not know what to do."
         }
       }
     },
     {
-      "id": "srh_t9",
-      "foreign_key": "srh_t8",
-      "character_id": "f1_mother",
-      "character_text": "(_calmly_) Sure, my darling. What is the matter?",
+      "id": "crisis_t14",
+      "foreign_key": "crisis_t14",
+      "character_id": "f1_son_18",
+      "character_text": "I do not want to have a baby.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4524,15 +4092,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "(_calmly_) Sure, my darling. What is the matter?"
+          "eng": "I do not want to have a baby."
         }
       }
     },
     {
-      "id": "srh_t10",
-      "foreign_key": "srh_t9",
-      "character_id": "f1_daughter_16",
-      "character_text": "@data.characters.boyfriend_1.name wants us to study together tomorrow. I really like him but I am not sure what to do.",
+      "id": "crisis_t15",
+      "foreign_key": "crisis_t15",
+      "character_id": "friend_female_1",
+      "character_text": "The test said I have HIV. I am scared I am going to die.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4540,15 +4108,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "@data.characters.boyfriend_1.name wants us to study together tomorrow. I really like him but I am not sure what to do."
+          "eng": "The test said I have HIV. I am scared I am going to die."
         }
       }
     },
     {
-      "id": "srh_t11",
-      "foreign_key": "srh_t9",
-      "character_id": "f1_mother",
-      "character_text": "(🤔_thinking to herself_) How has my daughter grown up so fast? What now? Take a deep breath…",
+      "id": "crisis_t16",
+      "foreign_key": "crisis_t16",
+      "character_id": "f2_daughter_19",
+      "character_text": "I didn't really want to. Now I will get pregnant or be ill. @data.characters.f2_grandmother.role_name, I am so scared...",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4556,15 +4124,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "(🤔_thinking to herself_) How has my daughter grown up so fast? What now? Take a deep breath…"
+          "eng": "I didn't really want to. Now I will get pregnant or be ill. @data.characters.f2_grandmother.role_name, I am so scared..."
         }
       }
     },
     {
-      "id": "srh_t12",
-      "foreign_key": "srh_t10",
-      "character_id": "f1_mother",
-      "character_text": "(_calmly_) Thank you for sharing this with me, @data.characters.f1_daughter_16.name. I know that you like @data.characters.boyfriend_1.name a lot, he is a charming boy and he does great at school, but you are only 16 and he is 18.\n\nI feel worried that it is not safe for you to be alone with him. He might pressure you into doing something that you are not prepared to do.\n\nI don’t want to tell you who you can see but we need to have some rules about how you spend time together.",
+      "id": "consequences_t0",
+      "foreign_key": "consequences_t2",
+      "character_id": "f1_father",
+      "character_text": "@data.characters.f1_son_18.name! What time is this? You are late!",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4572,15 +4140,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "(_calmly_) Thank you for sharing this with me, @data.characters.f1_daughter_16.name. I know that you like @data.characters.boyfriend_1.name a lot, he is a charming boy and he does great at school, but you are only 16 and he is 18.\n\nI feel worried that it is not safe for you to be alone with him. He might pressure you into doing something that you are not prepared to do.\n\nI don’t want to tell you who you can see but we need to have some rules about how you spend time together."
+          "eng": "@data.characters.f1_son_18.name! What time is this? You are late!"
         }
       }
     },
     {
-      "id": "srh_t13",
-      "foreign_key": "srh_t11",
-      "character_id": "f1_mother",
-      "character_text": "What do you think would be a fair rule about how you spend time together?",
+      "id": "consequences_t1",
+      "foreign_key": "consequences_t3",
+      "character_id": "f1_son_18",
+      "character_text": "Sorry @data.characters.f1_father.role_name – you can go back to sleep.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4588,15 +4156,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "What do you think would be a fair rule about how you spend time together?"
+          "eng": "Sorry @data.characters.f1_father.role_name – you can go back to sleep."
         }
       }
     },
     {
-      "id": "srh_t14",
-      "foreign_key": "srh_t11",
-      "character_id": "f1_daughter_16",
-      "character_text": "How about, we can spend time together if there is an adult with us?",
+      "id": "consequences_t2",
+      "foreign_key": "consequences_t3",
+      "character_id": "f1_father",
+      "character_text": "It is WAY past the time you were supposed to be home!",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4604,15 +4172,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "How about, we can spend time together if there is an adult with us?"
+          "eng": "It is WAY past the time you were supposed to be home!"
         }
       }
     },
     {
-      "id": "srh_t15",
-      "foreign_key": "srh_t12",
-      "character_id": "f1_mother",
-      "character_text": "That would be fine as long as his parents also know. I will chat with his mother when I see her later today. And after you get back, we can talk about how it went.",
+      "id": "consequences_t3",
+      "foreign_key": "consequences_t4",
+      "character_id": "f1_son_18",
+      "character_text": "I can explain, @data.characters.f1_father.role_name, I can.",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4620,15 +4188,15 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "That would be fine as long as his parents also know. I will chat with his mother when I see her later today. And after you get back, we can talk about how it went."
+          "eng": "I can explain, @data.characters.f1_father.role_name, I can."
         }
       }
     },
     {
-      "id": "srh_t16",
-      "foreign_key": "srh_t12",
-      "character_id": "f1_daughter_16",
-      "character_text": "_(hugs @data.characters.f1_mother.name)_ Okay. Thank you for coming up with a plan together.",
+      "id": "consequences_t4",
+      "foreign_key": "consequences_t4",
+      "character_id": "f1_father",
+      "character_text": "@data.characters.f1_son_18.name, you broke our rule! I should take away that phone of yours and give you a hiding!",
       "_translations": {
         "character_text": {
           "za_xh": true
@@ -4636,7 +4204,439 @@
       },
       "_translatedFields": {
         "character_text": {
-          "eng": "_(hugs @data.characters.f1_mother.name)_ Okay. Thank you for coming up with a plan together."
+          "eng": "@data.characters.f1_son_18.name, you broke our rule! I should take away that phone of yours and give you a hiding!"
+        }
+      }
+    },
+    {
+      "id": "consequences_t5",
+      "foreign_key": "consequences_t5",
+      "character_id": "f1_son_18",
+      "character_text": "That’s unfair! You never listen to me!! I hate you!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "That’s unfair! You never listen to me!! I hate you!"
+        }
+      }
+    },
+    {
+      "id": "consequences_t6",
+      "foreign_key": "consequences_t8",
+      "character_id": "f1_father",
+      "character_text": "I am concerned that you are often still coming home late, @data.characters.f1_son_18.name. What can we do to help you remember to come home in time?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I am concerned that you are often still coming home late, @data.characters.f1_son_18.name. What can we do to help you remember to come home in time?"
+        }
+      }
+    },
+    {
+      "id": "consequences_t7",
+      "foreign_key": "consequences_t8",
+      "character_id": "f1_son_18",
+      "character_text": "If I come home in time, maybe I can stay up 30 minutes later than usual?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "If I come home in time, maybe I can stay up 30 minutes later than usual?"
+        }
+      }
+    },
+    {
+      "id": "consequences_t8",
+      "foreign_key": "consequences_t9",
+      "character_id": "f1_father",
+      "character_text": "That is a good idea! And what should we do if you don’t follow the rule?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "That is a good idea! And what should we do if you don’t follow the rule?"
+        }
+      }
+    },
+    {
+      "id": "consequences_t9",
+      "foreign_key": "consequences_t9",
+      "character_id": "f1_son_18",
+      "character_text": "(mumbles) Mgmluuhm...",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "(mumbles) Mgmluuhm..."
+        }
+      }
+    },
+    {
+      "id": "consequences_t10",
+      "foreign_key": "consequences_t10",
+      "character_id": "f1_father",
+      "character_text": "Oh come on, I know you have some ideas.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Oh come on, I know you have some ideas."
+        }
+      }
+    },
+    {
+      "id": "consequences_t11",
+      "foreign_key": "consequences_t10",
+      "character_id": "f1_son_18",
+      "character_text": "Okay…. What about, I have to do my homework?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Okay…. What about, I have to do my homework?"
+        }
+      }
+    },
+    {
+      "id": "consequences_t12",
+      "foreign_key": "consequences_t11",
+      "character_id": "f1_father",
+      "character_text": "You have to do your homework anyway. If you forget the rule, is it fair that you will not be able to see your friends the next day?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "You have to do your homework anyway. If you forget the rule, is it fair that you will not be able to see your friends the next day?"
+        }
+      }
+    },
+    {
+      "id": "consequences_t13",
+      "foreign_key": "consequences_t11",
+      "character_id": "f1_son_18",
+      "character_text": "Okay, @data.characters.f1_father.role_name.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Okay, @data.characters.f1_father.role_name."
+        }
+      }
+    },
+    {
+      "id": "consequences_t14",
+      "foreign_key": "consequences_t12",
+      "character_id": "f1_father",
+      "character_text": "@data.characters.f1_son_18.name! What time is it! It is late!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "@data.characters.f1_son_18.name! What time is it! It is late!"
+        }
+      }
+    },
+    {
+      "id": "consequences_t15",
+      "foreign_key": "consequences_t13",
+      "character_id": "f1_son_18",
+      "character_text": "Sorry @data.characters.f1_father.role_name – you can go back to sleep.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Sorry @data.characters.f1_father.role_name – you can go back to sleep."
+        }
+      }
+    },
+    {
+      "id": "consequences_t16",
+      "foreign_key": "consequences_t13",
+      "character_id": "f1_father",
+      "character_text": "It is WAY past the time you were supposed to be home!",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "It is WAY past the time you were supposed to be home!"
+        }
+      }
+    },
+    {
+      "id": "consequences_t17",
+      "foreign_key": "consequences_t14",
+      "character_id": "f1_son_18",
+      "character_text": "I can explain, @data.characters.f1_father.role_name, I can.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I can explain, @data.characters.f1_father.role_name, I can."
+        }
+      }
+    },
+    {
+      "id": "consequences_t18",
+      "foreign_key": "consequences_t14",
+      "character_id": "f1_father",
+      "character_text": "@data.characters.f1_son_18.name, it is the middle of the night and you came home later than we agreed. Whatever the reason is, you must understand that this is not acceptable. Your @data.characters.f1_mother.role_name and I felt really worried.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "@data.characters.f1_son_18.name, it is the middle of the night and you came home later than we agreed. Whatever the reason is, you must understand that this is not acceptable. Your @data.characters.f1_mother.role_name and I felt really worried."
+        }
+      }
+    },
+    {
+      "id": "consequences_t19",
+      "foreign_key": "consequences_t15",
+      "character_id": "f1_son_18",
+      "character_text": "My friends wanted me to stay longer. They were calling me a baby for having to go home already.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "My friends wanted me to stay longer. They were calling me a baby for having to go home already."
+        }
+      }
+    },
+    {
+      "id": "consequences_t20",
+      "foreign_key": "consequences_t15",
+      "character_id": "f1_father",
+      "character_text": "I know it can be hard to say no to your friends. Let’s talk more about this in the morning when we have had some rest.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I know it can be hard to say no to your friends. Let’s talk more about this in the morning when we have had some rest."
+        }
+      }
+    },
+    {
+      "id": "consequences_t21",
+      "foreign_key": "consequences_t16",
+      "character_id": "f1_son_18",
+      "character_text": "I am sorry I worried you and @data.characters.f1_mother.role_name.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I am sorry I worried you and @data.characters.f1_mother.role_name."
+        }
+      }
+    },
+    {
+      "id": "consequences_t22",
+      "foreign_key": "consequences_t16",
+      "character_id": "f1_father",
+      "character_text": "Thank you. Now go to bed, but just to be clear, as you came home later than we agreed, you will not be allowed to see your friends tomorrow.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Thank you. Now go to bed, but just to be clear, as you came home later than we agreed, you will not be allowed to see your friends tomorrow."
+        }
+      }
+    },
+    {
+      "id": "oneononetime_t0",
+      "foreign_key": "oneononetime_t2",
+      "character_id": "f3_uncle",
+      "character_text": "Hi @data.characters.f3_daughter_12.name! I have 5 minutes of one-on-one time before I leave for work. What would you like to do together?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Hi @data.characters.f3_daughter_12.name! I have 5 minutes of one-on-one time before I leave for work. What would you like to do together?"
+        }
+      }
+    },
+    {
+      "id": "oneononetime_t1",
+      "foreign_key": "oneononetime_t2",
+      "character_id": "f3_daughter_12",
+      "character_text": "I was about to do my Geography project. We have to find the capital cities of all the East African countries. Can you help me with that?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "I was about to do my Geography project. We have to find the capital cities of all the East African countries. Can you help me with that?"
+        }
+      }
+    },
+    {
+      "id": "oneononetime_t2",
+      "foreign_key": "oneononetime_t2",
+      "character_id": "f3_uncle",
+      "character_text": "Of course! How can I help?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Of course! How can I help?"
+        }
+      }
+    },
+    {
+      "id": "oneononetime_t3",
+      "foreign_key": "oneononetime_t3",
+      "character_id": "f3_daughter_12",
+      "character_text": "Great! I can remember the countries, and you could write them down? Then we can look up the capitals on your phone.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Great! I can remember the countries, and you could write them down? Then we can look up the capitals on your phone."
+        }
+      }
+    },
+    {
+      "id": "oneononetime_t4",
+      "foreign_key": "oneononetime_t3",
+      "character_id": "f3_uncle",
+      "character_text": "Very good. Let’s do that.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Very good. Let’s do that."
+        }
+      }
+    },
+    {
+      "id": "oneononetime_t5",
+      "foreign_key": "oneononetime_t4",
+      "character_id": "f3_uncle",
+      "character_text": "Wow, you remembered all the countries! And you were so clever to find the capital cities using the phone.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Wow, you remembered all the countries! And you were so clever to find the capital cities using the phone."
+        }
+      }
+    },
+    {
+      "id": "oneononetime_t6",
+      "foreign_key": "oneononetime_t4",
+      "character_id": "f3_daughter_12",
+      "character_text": "Thank you, uncle. Can I go on TikTok now?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Thank you, uncle. Can I go on TikTok now?"
+        }
+      }
+    },
+    {
+      "id": "oneononetime_t7",
+      "foreign_key": "oneononetime_t5",
+      "character_id": "f3_uncle",
+      "character_text": "You can have 30 minutes on TikTok after you finish your homework. \nI would also love to try TikTok. Can you help me set up an account tomorrow?",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "You can have 30 minutes on TikTok after you finish your homework. \nI would also love to try TikTok. Can you help me set up an account tomorrow?"
+        }
+      }
+    },
+    {
+      "id": "oneononetime_t8",
+      "foreign_key": "oneononetime_t5",
+      "character_id": "f3_daughter_12",
+      "character_text": "Yes, of course! Then I can show you that cool video I told you about yesterday.",
+      "_translations": {
+        "character_text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "character_text": {
+          "eng": "Yes, of course! Then I can show you that cool video I told you about yesterday."
         }
       }
     }
