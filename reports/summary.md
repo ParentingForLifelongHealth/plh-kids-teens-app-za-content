@@ -85,8 +85,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 76057 KB | 76.1 MB |
-| unused | 6601 KB | 6.6 MB |
+| total | 75639 KB | 75.6 MB |
+| unused | 2582 KB | 2.6 MB |
 </details>
 
 <details open>
@@ -100,7 +100,6 @@ Assets that appear in app-data but do not have references within sheets
 | android/icon-foreground.png | 193.7 |
 | android/icon.png | 215.3 |
 | android/splash.png | 195.7 |
-| audio/teen/testimonials/caregiver/caregiver_test_svp_t.mp3 | 174.8 |
 | images/activities/act_animal_infant.svg | 111.5 |
 | images/activities/animal_sounds.svg | 84.2 |
 | images/activities/chores.svg | 110.2 |
@@ -145,33 +144,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/logos/favicon.png | 149.9 |
 | images/logos/plh_white.png | 12.8 |
 | images/logos/sino_mark.svg | 461.7 |
-| images/teen_modules/consequence/consequence1_t_5.svg | 53.6 |
-| images/teen_modules/consequence/consequence2_t_1.svg | 53.5 |
-| images/teen_modules/crisis/crisis2_t_1.svg | 47.8 |
-| images/teen_modules/crisis/crisis2_t_2.svg | 57.9 |
-| images/teen_modules/crisis/crisis2_t_3.svg | 60.2 |
-| images/teen_modules/crisis/crisis2_t_4.svg | 58.7 |
-| images/teen_modules/crisis/crisis2_t_5.svg | 42.5 |
-| images/teen_modules/grief/grief_conflict_t_1.svg | 28.3 |
-| images/teen_modules/grief/grief_conflict_t_2.svg | 59.8 |
-| images/teen_modules/grief/grief_conflict_t_3.svg | 32.7 |
-| images/teen_modules/grief/grief_support_t_1.svg | 33 |
-| images/teen_modules/grief/grief_support_t_2.svg | 29.8 |
-| images/teen_modules/grief/grief_support_t_3.svg | 32.2 |
-| images/teen_modules/grief/grief_support_t_4.svg | 32.7 |
-| images/teen_modules/instruct/instruct3_t_3.svg | 53.3 |
-| images/teen_modules/rules/srh_learn_sex_talk_who_t_4.png | 783.1 |
-| images/teen_modules/safe/safe1_t_1.svg | 45.8 |
-| images/teen_modules/safe/safe1_t_2.svg | 108.8 |
-| images/teen_modules/safe/safe1_t_3.svg | 110.4 |
-| images/teen_modules/safe/safe1_t_4.svg | 73.1 |
-| images/teen_modules/safe/safe1_t_5.svg | 73 |
-| images/teen_modules/safe/safe1_t_6.svg | 39.9 |
-| images/teen_modules/safe/safe2_t_1.svg | 36.4 |
-| images/teen_modules/safe/safe2_t_2.svg | 35.7 |
-| images/teen_modules/safe/safe_learn_t_4.svg | 926.4 |
-| images/teen_modules/srh/srh_learn_sex_talk_when_t_3.png | 924 |
-| images/teen_modules/stress/stress3_t_6.svg | 74.5 |
+| images/teen_modules/instruct/instruct3_t_3.svg | 62.7 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
 | video/plh_video/lets_slow_down.srt | 1.7 |
@@ -190,7 +163,7 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_12.mp3 | 1 |
 | audio/relax/relax_13.mp3 | 1 |
 | audio/relax/relax_14.mp3 | 1 |
-| audio/relax/relax_15.mp3 | 2 |
+| audio/relax/relax_15.mp3 | 1 |
 | audio/relax/relax_16.mp3 | 1 |
 | audio/relax/relax_17.mp3 | 1 |
 | audio/relax/relax_18.mp3 | 1 |
@@ -206,6 +179,12 @@ Assets that have references within sheets but do not appear in app-data
 | images/backgrounds/map_view_bg.jpg | 1 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
+| images/teen_modules/instruct/instruct3_t_5.svg | 1 |
+| images/teen_modules/stress/stress3_t_1.svg | 1 |
+| images/teen_modules/stress/stress3_t_2.svg | 1 |
+| images/teen_modules/stress/stress3_t_3.svg | 1 |
+| images/teen_modules/stress/stress3_t_4.svg | 1 |
+| images/teen_modules/stress/stress3_t_5.svg | 1 |
 </details>
 
 <details >
@@ -215,11 +194,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | path | size_kb | count |
 | --- | --- | --- |
-| audio/relax/relax_1.mp3 | 265.1 | 6 |
+| audio/relax/relax_1.mp3 | 265.1 | 7 |
 | audio/relax/relax_2.mp3 | 404.4 | 8 |
-| audio/relax/relax_3.mp3 | 235.1 | 9 |
+| audio/relax/relax_3.mp3 | 235.1 | 8 |
 | audio/relax/relax_4.mp3 | 514.5 | 6 |
-| audio/relax/relax_5.mp3 | 195.7 | 6 |
+| audio/relax/relax_5.mp3 | 195.7 | 7 |
 | audio/relax/relax_9.mp3 | 576.6 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_1on1_t.mp3 | 258.8 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_consequence_t.mp3 | 377.3 | 1 |
@@ -295,7 +274,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 118.7 | 4 |
+| images/activities/circle_dance.svg | 117.2 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -392,8 +371,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/homescreen/listview/consequence_t.svg | 29.3 | 2 |
 | images/homescreen/listview/consequences.svg | 37.5 | 2 |
 | images/homescreen/listview/crisis_t.svg | 44 | 3 |
-| images/homescreen/listview/developmentplay.svg | 65.4 | 3 |
-| images/homescreen/listview/feelings.svg | 53.4 | 2 |
+| images/homescreen/listview/developmentplay.svg | 65.4 | 2 |
+| images/homescreen/listview/feelings.svg | 53.4 | 3 |
 | images/homescreen/listview/grief_t.svg | 26.8 | 2 |
 | images/homescreen/listview/instruct_t.svg | 37.9 | 3 |
 | images/homescreen/listview/instructions.svg | 31.7 | 2 |
@@ -567,8 +546,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/instruct/instruct2_t_3.svg | 66.3 | 1 |
 | images/teen_modules/instruct/instruct3_t_1.svg | 64.6 | 1 |
 | images/teen_modules/instruct/instruct3_t_2.svg | 57 | 1 |
-| images/teen_modules/instruct/instruct3_t_4.svg | 62.7 | 1 |
-| images/teen_modules/instruct/instruct3_t_5.svg | 70.6 | 1 |
+| images/teen_modules/instruct/instruct3_t_4.svg | 70.6 | 1 |
 | images/teen_modules/learn/learn_conflict_t_1.svg | 51.8 | 1 |
 | images/teen_modules/learn/learn_conflict_t_2.svg | 69.4 | 1 |
 | images/teen_modules/learn/learn_conflict_t_3.svg | 47.4 | 1 |
@@ -674,11 +652,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/stress/stress2_t_2.svg | 72.1 | 1 |
 | images/teen_modules/stress/stress2_t_3.svg | 74.3 | 1 |
 | images/teen_modules/stress/stress2_t_4.svg | 64.4 | 1 |
-| images/teen_modules/stress/stress3_t_1.svg | 59.4 | 1 |
-| images/teen_modules/stress/stress3_t_2.svg | 40.6 | 1 |
-| images/teen_modules/stress/stress3_t_3.svg | 63.3 | 1 |
-| images/teen_modules/stress/stress3_t_4.svg | 86.8 | 1 |
-| images/teen_modules/stress/stress3_t_5.svg | 103.7 | 1 |
 | images/teen_modules/svp/svp_usebody_t_1.gif | 855.1 | 1 |
 | images/teen_modules/svp/svp_usebody_t_2.gif | 909.9 | 1 |
 | images/teen_modules/svp/svp_usebody_t_3.gif | 636.3 | 1 |
@@ -739,9 +712,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/gift_box.json | 674.5 | 1 |
 | lottie/relax/blue_dots.json | 14.7 | 10 |
 | lottie/relax/heart.json | 46.7 | 11 |
-| lottie/relax/looping_rings.json | 10.4 | 13 |
+| lottie/relax/looping_rings.json | 10.4 | 12 |
 | lottie/relax/soothing_waves.json | 7.6 | 12 |
-| lottie/relax/square_flow.json | 5.9 | 10 |
+| lottie/relax/square_flow.json | 5.9 | 11 |
 | video/plh_video/lets_slow_down.mp4 | 13482.2 | 16 |
 </details>
 
