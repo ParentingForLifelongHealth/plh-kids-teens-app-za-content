@@ -302,7 +302,7 @@
             },
             {
               "name": "youtube_concat",
-              "value": "item.@local.youtube_column",
+              "value": "@local.youtube_column",
               "_translations": {
                 "value": {}
               },
@@ -312,7 +312,7 @@
               "_dynamicFields": {
                 "value": [
                   {
-                    "fullExpression": "item.@local.youtube_column",
+                    "fullExpression": "@local.youtube_column",
                     "matchedExpression": "@local.youtube_column",
                     "type": "local",
                     "fieldName": "youtube_column"
@@ -361,7 +361,7 @@
             },
             {
               "name": "youtube_concat_missing",
-              "value": "item.@local.youtube_column_missing",
+              "value": "@local.youtube_column_missing",
               "_translations": {
                 "value": {}
               },
@@ -371,7 +371,7 @@
               "_dynamicFields": {
                 "value": [
                   {
-                    "fullExpression": "item.@local.youtube_column_missing",
+                    "fullExpression": "@local.youtube_column_missing",
                     "matchedExpression": "@local.youtube_column_missing",
                     "type": "local",
                     "fieldName": "youtube_column_missing"
@@ -392,26 +392,42 @@
               "rows": [
                 {
                   "type": "youtube",
-                  "name": "youtube_lang",
-                  "value": "@local.@local.youtube_concat",
+                  "name": "youtube_default",
+                  "value": "@item.youtube_gb_en",
                   "_translations": {
                     "value": {}
                   },
-                  "condition": "!!(@local.@local.youtube_concat)",
+                  "_nested_name": "loop_media.media_element.youtube_dg.youtube_default",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@item.youtube_gb_en",
+                        "matchedExpression": "@item.youtube_gb_en",
+                        "type": "item",
+                        "fieldName": "youtube_gb_en"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@item.youtube_gb_en": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "type": "youtube",
+                  "name": "youtube_lang",
+                  "value": "@item.@local.youtube_concat",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "condition": false,
                   "exclude_from_translation": true,
                   "_nested_name": "loop_media.media_element.youtube_dg.youtube_lang",
                   "_dynamicFields": {
                     "value": [
                       {
-                        "fullExpression": "@local.@local.youtube_concat",
-                        "matchedExpression": "@local.youtube_concat",
-                        "type": "local",
-                        "fieldName": "youtube_concat"
-                      }
-                    ],
-                    "condition": [
-                      {
-                        "fullExpression": "!!(@local.@local.youtube_concat)",
+                        "fullExpression": "@item.@local.youtube_concat",
                         "matchedExpression": "@local.youtube_concat",
                         "type": "local",
                         "fieldName": "youtube_concat"
@@ -420,45 +436,33 @@
                   },
                   "_dynamicDependencies": {
                     "@local.youtube_concat": [
-                      "value",
-                      "condition"
+                      "value"
                     ]
                   }
                 },
                 {
                   "type": "youtube",
                   "name": "youtube_lang_missing",
-                  "value": "@local.@local.youtube_concat_missing",
+                  "value": "@item.@local.youtube_concat_missing",
                   "_translations": {
                     "value": {}
                   },
-                  "condition": "!(@local.@local.youtube_concat)",
+                  "condition": false,
                   "exclude_from_translation": true,
                   "_nested_name": "loop_media.media_element.youtube_dg.youtube_lang_missing",
                   "_dynamicFields": {
                     "value": [
                       {
-                        "fullExpression": "@local.@local.youtube_concat_missing",
+                        "fullExpression": "@item.@local.youtube_concat_missing",
                         "matchedExpression": "@local.youtube_concat_missing",
                         "type": "local",
                         "fieldName": "youtube_concat_missing"
-                      }
-                    ],
-                    "condition": [
-                      {
-                        "fullExpression": "!(@local.@local.youtube_concat)",
-                        "matchedExpression": "@local.youtube_concat",
-                        "type": "local",
-                        "fieldName": "youtube_concat"
                       }
                     ]
                   },
                   "_dynamicDependencies": {
                     "@local.youtube_concat_missing": [
                       "value"
-                    ],
-                    "@local.youtube_concat": [
-                      "condition"
                     ]
                   }
                 }
