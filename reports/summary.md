@@ -86,7 +86,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 62547 KB | 62.5 MB |
+| total | 62550 KB | 62.5 MB |
 | unused | 16034 KB | 16 MB |
 </details>
 
@@ -134,11 +134,12 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/faces/tired.svg | 2.4 |
 | images/icons/feather.svg | 3.5 |
 | images/icons/fire.png | 0.9 |
+| images/icons/heart-outline.svg | 0.4 |
 | images/icons/heart.svg | 0.6 |
-| images/icons/heart_filled.svg | 1.4 |
 | images/icons/in_progress_white.svg | 1.1 |
 | images/icons/key.svg | 5.5 |
 | images/icons/magnify_glass.svg | 1.9 |
+| images/icons/notification_bell.png | 0.9 |
 | images/icons/parent_child.svg | 2 |
 | images/icons/pause_white.svg | 0.7 |
 | images/icons/play.svg | 0.5 |
@@ -185,6 +186,7 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_7.mp3 | 2 |
 | audio/relax/relax_8.mp3 | 2 |
 | images/backgrounds/map_view_bg.jpg | 1 |
+| images/icons/lock-closed-outline.png | 1 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
 </details>
@@ -413,8 +415,9 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/brain_blue.png | 5.2 | 6 |
 | images/icons/celebration.svg | 70.4 | 1 |
 | images/icons/clock_blue.png | 4.5 | 5 |
-| images/icons/diamond.png | 1.8 | 2 |
-| images/icons/diamond_active.png | 1.7 | 2 |
+| images/icons/diamond-outline.svg | 0.6 | 2 |
+| images/icons/diamond.png | 1.8 | 1 |
+| images/icons/diamond_active.png | 1.7 | 1 |
 | images/icons/diamond_blue.png | 4.7 | 2 |
 | images/icons/document-lock-outline.svg | 0.7 | 1 |
 | images/icons/document-text-outline.svg | 0.5 | 1 |
@@ -427,11 +430,13 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/faces/sad_face_new.svg | 1.5 | 52 |
 | images/icons/football_blue.png | 5.1 | 1 |
 | images/icons/globe-outline.svg | 0.8 | 1 |
-| images/icons/heart.png | 1.3 | 3 |
-| images/icons/heart_filled.png | 1.4 | 2 |
-| images/icons/heart_filled_active.png | 1.5 | 2 |
+| images/icons/heart.png | 1.3 | 2 |
+| images/icons/heart_filled.png | 1.4 | 1 |
+| images/icons/heart_filled.svg | 1.4 | 1 |
+| images/icons/heart_filled_active.png | 1.5 | 1 |
 | images/icons/heart_filled_blue.png | 4.9 | 14 |
-| images/icons/heart_filled_red.png | 1.4 | 3 |
+| images/icons/heart_filled_red.png | 1.4 | 2 |
+| images/icons/heart_filled_red.svg | 0.4 | 1 |
 | images/icons/home.svg | 0.4 | 1 |
 | images/icons/home_active.svg | 0.4 | 1 |
 | images/icons/home_white.svg | 0.7 | 1 |
@@ -442,11 +447,12 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/local_library.svg | 1.6 | 1 |
 | images/icons/local_library_active.svg | 1.6 | 1 |
 | images/icons/local_library_white.svg | 1.9 | 1 |
+| images/icons/lock-closed-outline.svg | 0.4 | 1 |
+| images/icons/lock-open-outline.svg | 0.4 | 3 |
 | images/icons/lock.svg | 0.5 | 1 |
-| images/icons/locked.png | 0.7 | 6 |
+| images/icons/locked.png | 0.7 | 4 |
 | images/icons/log-in-outline.svg | 0.5 | 1 |
 | images/icons/magnifying_glass.svg | 0.9 | 27 |
-| images/icons/notification_bell.png | 0.9 | 1 |
 | images/icons/parent_child_heart.svg | 3 | 27 |
 | images/icons/pause.svg | 0.7 | 27 |
 | images/icons/pencil.svg | 1.1 | 27 |
@@ -468,8 +474,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/thought_bubble.svg | 2.1 | 27 |
 | images/icons/tick.svg | 0.3 | 1 |
 | images/icons/tick_white.svg | 0.3 | 1 |
-| images/icons/trophy.png | 1.6 | 2 |
-| images/icons/trophy_active.png | 1.7 | 2 |
+| images/icons/trophy.png | 1.6 | 1 |
+| images/icons/trophy_active.png | 1.7 | 1 |
 | images/icons/trophy_blue.png | 5.1 | 9 |
 | images/icons/trophy_large.svg | 2.2 | 1 |
 | images/icons/verified.svg | 0.5 | 1 |
