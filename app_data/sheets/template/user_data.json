@@ -508,6 +508,15 @@
             "completed"
           ],
           "_raw": "click | emit: completed"
+        },
+        {
+          "trigger": "click",
+          "action_id": "toast",
+          "args": [],
+          "_raw": "click | toast | message: @global.account_save_toast",
+          "params": {
+            "message": "@global.account_save_toast"
+          }
         }
       ],
       "condition": "@local.user_type_select == \"facilitator\"",
@@ -620,6 +629,26 @@
                 }
               ]
             }
+          },
+          "8": {
+            "_raw": [
+              {
+                "fullExpression": "click | toast | message: @global.account_save_toast",
+                "matchedExpression": "@global.account_save_toast",
+                "type": "global",
+                "fieldName": "account_save_toast"
+              }
+            ],
+            "params": {
+              "message": [
+                {
+                  "fullExpression": "@global.account_save_toast",
+                  "matchedExpression": "@global.account_save_toast",
+                  "type": "global",
+                  "fieldName": "account_save_toast"
+                }
+              ]
+            }
           }
         },
         "condition": [
@@ -663,6 +692,10 @@
         "@calc(now())": [
           "action_list.3._raw",
           "action_list.3.params.timestamp"
+        ],
+        "@global.account_save_toast": [
+          "action_list.8._raw",
+          "action_list.8.params.message"
         ],
         "!@local.completed_enabled": [
           "parameter_list.disabled"
@@ -748,6 +781,15 @@
             "completed"
           ],
           "_raw": "click | emit: completed"
+        },
+        {
+          "trigger": "click",
+          "action_id": "toast",
+          "args": [],
+          "_raw": "click | toast | message: @global.account_save_toast",
+          "params": {
+            "message": "@global.account_save_toast"
+          }
         }
       ],
       "condition": "@local.user_type_select != \"facilitator\"",
@@ -860,6 +902,26 @@
                 }
               ]
             }
+          },
+          "8": {
+            "_raw": [
+              {
+                "fullExpression": "click | toast | message: @global.account_save_toast",
+                "matchedExpression": "@global.account_save_toast",
+                "type": "global",
+                "fieldName": "account_save_toast"
+              }
+            ],
+            "params": {
+              "message": [
+                {
+                  "fullExpression": "@global.account_save_toast",
+                  "matchedExpression": "@global.account_save_toast",
+                  "type": "global",
+                  "fieldName": "account_save_toast"
+                }
+              ]
+            }
           }
         },
         "condition": [
@@ -903,6 +965,10 @@
         "@calc(now())": [
           "action_list.3._raw",
           "action_list.3.params.timestamp"
+        ],
+        "@global.account_save_toast": [
+          "action_list.8._raw",
+          "action_list.8.params.message"
         ],
         "!@local.completed_enabled": [
           "parameter_list.disabled"
