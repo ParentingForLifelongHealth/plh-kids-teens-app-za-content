@@ -1061,7 +1061,8 @@
                   ],
                   "parameter_list": {
                     "variant": "icon",
-                    "icon_true_asset": "images/icons/heart_filled_red.png\nicon_false_asset"
+                    "icon_true_asset": "images/icons/heart_filled_red.png",
+                    "icon_false_asset": "images/icons/heart-outline.png"
                   },
                   "condition": "!@item.locked",
                   "exclude_from_translation": true,
@@ -1157,6 +1158,10 @@
                   },
                   "condition": "@item.locked",
                   "exclude_from_translation": true,
+                  "style_list": [
+                    "height: 48px",
+                    "width: 48px"
+                  ],
                   "_nested_name": "display_grid.loop_activities.card_@item.id.image_locked_@item.id",
                   "_dynamicFields": {
                     "name": [
