@@ -221,11 +221,10 @@
     {
       "type": "plh_bottom_nav",
       "parameter_list": {
-        "button_list": "@local.button_list",
-        "variant": "inverted"
+        "button_list": "@local.button_list_blue"
       },
       "style_list": [
-        "background-color: var(--ion-color-primary)"
+        "background-color: var(--ion-color-primary-50)"
       ],
       "name": "plh_bottom_nav_7",
       "_nested_name": "plh_bottom_nav_7",
@@ -233,16 +232,16 @@
         "parameter_list": {
           "button_list": [
             {
-              "fullExpression": "@local.button_list",
-              "matchedExpression": "@local.button_list",
+              "fullExpression": "@local.button_list_blue",
+              "matchedExpression": "@local.button_list_blue",
               "type": "local",
-              "fieldName": "button_list"
+              "fieldName": "button_list_blue"
             }
           ]
         }
       },
       "_dynamicDependencies": {
-        "@local.button_list": [
+        "@local.button_list_blue": [
           "parameter_list.button_list"
         ]
       }
