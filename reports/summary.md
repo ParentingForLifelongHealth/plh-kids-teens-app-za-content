@@ -86,8 +86,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 62551 KB | 62.6 MB |
-| unused | 16034 KB | 16 MB |
+| total | 62295 KB | 62.3 MB |
+| unused | 2549 KB | 2.5 MB |
 </details>
 
 <details open>
@@ -155,9 +155,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/logos/sino_mark.svg | 461.7 |
 | lottie/bulging_circles.txt | 0.2 |
 | lottie/cascading_stars.json | 140.5 |
-| video/plh_video/lets_slow_down.mp4 | 13482.2 |
-| video/plh_video/lets_slow_down.srt | 1.7 |
-| video/plh_video/lets_slow_down.vtt | 1.8 |
 </details>
 
 <details open>
@@ -167,7 +164,7 @@ Assets that have references within sheets but do not appear in app-data
 
 | path | count |
 | --- | --- |
-| audio/relax/relax_10.mp3 | 1 |
+| audio/relax/relax_10.mp3 | 2 |
 | audio/relax/relax_11.mp3 | 1 |
 | audio/relax/relax_12.mp3 | 1 |
 | audio/relax/relax_13.mp3 | 1 |
@@ -188,6 +185,7 @@ Assets that have references within sheets but do not appear in app-data
 | images/backgrounds/map_view_bg.jpg | 1 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
+| images/logos/sino_white.svg | 1 |
 </details>
 
 <details >
@@ -198,7 +196,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | path | size_kb | count |
 | --- | --- | --- |
 | audio/relax/relax_1.mp3 | 265.1 | 7 |
-| audio/relax/relax_2.mp3 | 404.4 | 8 |
+| audio/relax/relax_2.mp3 | 404.4 | 7 |
 | audio/relax/relax_3.mp3 | 235.1 | 8 |
 | audio/relax/relax_4.mp3 | 514.5 | 6 |
 | audio/relax/relax_5.mp3 | 195.7 | 7 |
@@ -503,7 +501,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/logos/donors/WCF.jpg | 90.5 | 1 |
 | images/logos/plh_logomark.png | 20.5 | 1 |
 | images/logos/sino_horizontal.svg | 251 | 1 |
-| images/logos/sino_white.svg | 256.1 | 1 |
 | images/onboarding/facilitator_female_onboarding_icon.svg | 29.4 | 1 |
 | images/onboarding/facilitator_male_onboarding_icon.svg | 21.6 | 1 |
 | images/onboarding/frustrated.svg | 22.5 | 1 |
@@ -725,10 +722,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/checkmark.json | 23.6 | 1 |
 | lottie/gift_box.json | 674.5 | 1 |
-| lottie/relax/blue_dots.json | 14.7 | 10 |
+| lottie/relax/blue_dots.json | 14.7 | 11 |
 | lottie/relax/heart.json | 46.7 | 11 |
 | lottie/relax/looping_rings.json | 10.4 | 12 |
-| lottie/relax/soothing_waves.json | 7.6 | 12 |
+| lottie/relax/soothing_waves.json | 7.6 | 11 |
 | lottie/relax/square_flow.json | 5.9 | 11 |
 </details>
 
