@@ -1941,9 +1941,9 @@
               "action_id": "set_local",
               "args": [
                 "started_date_map",
-                "@items.map(item => item.started_ts)"
+                "@items.map(item => item.last_accessed_ts)"
               ],
-              "_raw": "data_changed | set_local : started_date_map : @items.map(item => item.started_ts)"
+              "_raw": "data_changed | set_local : started_date_map : @items.map(item => item.last_accessed_ts)"
             }
           ],
           "parameter_list": {
@@ -2146,9 +2146,9 @@
               "action_id": "set_local",
               "args": [
                 "started_date",
-                "@items[0]?.started_ts"
+                "@items[0]?.last_accessed_ts"
               ],
-              "_raw": "data_changed | set_local : started_date : @items[0]?.started_ts"
+              "_raw": "data_changed | set_local : started_date : @items[0]?.last_accessed_ts"
             }
           ],
           "parameter_list": {
