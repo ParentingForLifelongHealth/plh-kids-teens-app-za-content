@@ -71,7 +71,7 @@
 | pop_up | 65 |
 | reset_app | 4 |
 | reset_data | 3 |
-| set_data | 74 |
+| set_data | 76 |
 | set_field | 65 |
 | set_item | 51 |
 | set_local | 76 |
@@ -86,7 +86,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 62542 KB | 62.5 MB |
+| total | 62551 KB | 62.6 MB |
 | unused | 16034 KB | 16 MB |
 </details>
 
@@ -167,29 +167,25 @@ Assets that have references within sheets but do not appear in app-data
 
 | path | count |
 | --- | --- |
-| audio/relax/relax_10.mp3 | 2 |
+| audio/relax/relax_10.mp3 | 1 |
 | audio/relax/relax_11.mp3 | 1 |
-| audio/relax/relax_12.mp3 | 3 |
+| audio/relax/relax_12.mp3 | 1 |
 | audio/relax/relax_13.mp3 | 1 |
-| audio/relax/relax_14.mp3 | 2 |
-| audio/relax/relax_15.mp3 | 2 |
+| audio/relax/relax_14.mp3 | 1 |
+| audio/relax/relax_15.mp3 | 1 |
 | audio/relax/relax_16.mp3 | 1 |
 | audio/relax/relax_17.mp3 | 1 |
 | audio/relax/relax_18.mp3 | 1 |
-| audio/relax/relax_19.mp3 | 2 |
-| audio/relax/relax_20.mp3 | 2 |
+| audio/relax/relax_19.mp3 | 1 |
+| audio/relax/relax_20.mp3 | 1 |
 | audio/relax/relax_21.mp3 | 1 |
 | audio/relax/relax_22.mp3 | 1 |
 | audio/relax/relax_23.mp3 | 1 |
 | audio/relax/relax_24.mp3 | 1 |
 | audio/relax/relax_6.mp3 | 1 |
-| audio/relax/relax_7.mp3 | 2 |
-| audio/relax/relax_8.mp3 | 2 |
+| audio/relax/relax_7.mp3 | 1 |
+| audio/relax/relax_8.mp3 | 1 |
 | images/backgrounds/map_view_bg.jpg | 1 |
-| images/icons/diamond_active.png | 1 |
-| images/icons/heart_filled.png | 1 |
-| images/icons/heart_filled_active.png | 1 |
-| images/icons/heart_filled_blue.png | 14 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
 </details>
@@ -201,12 +197,12 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | path | size_kb | count |
 | --- | --- | --- |
-| audio/relax/relax_1.mp3 | 265.1 | 6 |
-| audio/relax/relax_2.mp3 | 404.4 | 6 |
-| audio/relax/relax_3.mp3 | 235.1 | 6 |
-| audio/relax/relax_4.mp3 | 514.5 | 3 |
-| audio/relax/relax_5.mp3 | 195.7 | 4 |
-| audio/relax/relax_9.mp3 | 576.6 | 4 |
+| audio/relax/relax_1.mp3 | 265.1 | 7 |
+| audio/relax/relax_2.mp3 | 404.4 | 8 |
+| audio/relax/relax_3.mp3 | 235.1 | 8 |
+| audio/relax/relax_4.mp3 | 514.5 | 6 |
+| audio/relax/relax_5.mp3 | 195.7 | 7 |
+| audio/relax/relax_9.mp3 | 576.6 | 2 |
 | audio/teen/testimonials/caregiver/caregiver_test_1on1_t.mp3 | 258.8 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_consequence_t.mp3 | 377.3 | 1 |
 | audio/teen/testimonials/caregiver/caregiver_test_crisis_t.mp3 | 250.3 | 1 |
@@ -420,6 +416,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/clock_blue.png | 4.5 | 5 |
 | images/icons/diamond-outline.svg | 0.6 | 2 |
 | images/icons/diamond.png | 1.8 | 1 |
+| images/icons/diamond_active.png | 1.7 | 1 |
 | images/icons/diamond_blue.png | 4.7 | 2 |
 | images/icons/document-lock-outline.svg | 0.7 | 1 |
 | images/icons/document-text-outline.svg | 0.5 | 1 |
@@ -434,7 +431,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/globe-outline.svg | 0.8 | 1 |
 | images/icons/heart-outline.png | 1.5 | 1 |
 | images/icons/heart.png | 1.3 | 2 |
+| images/icons/heart_filled.png | 1.4 | 1 |
 | images/icons/heart_filled.svg | 1.4 | 1 |
+| images/icons/heart_filled_active.png | 1.5 | 1 |
+| images/icons/heart_filled_blue.png | 4.9 | 14 |
 | images/icons/heart_filled_red.png | 0.8 | 3 |
 | images/icons/heart_filled_red.svg | 0.4 | 1 |
 | images/icons/home.svg | 0.4 | 1 |
@@ -447,7 +447,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/local_library.svg | 1.6 | 1 |
 | images/icons/local_library_active.svg | 1.6 | 1 |
 | images/icons/local_library_white.svg | 1.9 | 1 |
-| images/icons/lock-closed-outline.png | 0.9 | 1 |
+| images/icons/lock-closed-outline.png | 0.5 | 1 |
 | images/icons/lock-closed-outline.svg | 0.4 | 1 |
 | images/icons/lock-open-outline.svg | 0.4 | 3 |
 | images/icons/lock.svg | 0.5 | 1 |
@@ -726,10 +726,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | lottie/checkmark.json | 23.6 | 1 |
 | lottie/gift_box.json | 674.5 | 1 |
 | lottie/relax/blue_dots.json | 14.7 | 10 |
-| lottie/relax/heart.json | 46.7 | 12 |
-| lottie/relax/looping_rings.json | 10.4 | 11 |
-| lottie/relax/soothing_waves.json | 7.6 | 13 |
-| lottie/relax/square_flow.json | 5.9 | 10 |
+| lottie/relax/heart.json | 46.7 | 11 |
+| lottie/relax/looping_rings.json | 10.4 | 12 |
+| lottie/relax/soothing_waves.json | 7.6 | 12 |
+| lottie/relax/square_flow.json | 5.9 | 11 |
 </details>
 
 <details >
