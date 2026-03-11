@@ -63,7 +63,6 @@ config.app_config.APP_SIDEMENU_DEFAULTS.title = "SinovuyoApp";
 config.app_config.APP_HEADER_DEFAULTS.title = "SinovuyoApp";
 config.app_config.APP_HEADER_DEFAULTS.hidden = true;
 config.app_config.APP_FOOTER_DEFAULTS.template = "footer";
-config.app_config.APP_FOOTER_DEFAULTS.background = "primary";
 config.app_config.NOTIFICATION_DEFAULTS.title = "New message from SinovuyoApp";
 config.app_config.NOTIFICATION_DEFAULTS.text = "You have a new message from SinovuyoApp";
 config.app_config.APP_THEMES.available = ["plh_kids_teens_za"];
