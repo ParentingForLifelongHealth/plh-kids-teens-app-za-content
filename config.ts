@@ -34,6 +34,8 @@ config.android = {
 config.ios = {
   app_id:"international.idems.plh-kids-teens-za",
   app_name:"Sinovuyo",
+  logo_asset_path: "./app_data/assets/android/icon-foreground.png",
+  logo_background_color: "#FFFFFF",
   zoom_enabled: true
 };
 
