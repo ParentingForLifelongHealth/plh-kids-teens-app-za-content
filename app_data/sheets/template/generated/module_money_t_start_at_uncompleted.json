@@ -108,17 +108,78 @@
       }
     },
     {
+      "type": "data_items",
       "name": "find_first_uncompleted_article",
       "value": "@local.articles_data",
-      "_translations": {
-        "value": {}
-      },
       "parameter_list": {
         "filter": "!@item.completed",
         "limit": "1"
       },
       "exclude_from_translation": true,
-      "type": "set_variable",
+      "rows": [
+        {
+          "type": "template",
+          "name": "module_start_at_id",
+          "value": "module_start_at_id",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "completed | emit: completed"
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "uncompleted | emit: uncompleted"
+            }
+          ],
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "module_id",
+              "value": "money_t",
+              "_translations": {
+                "value": {}
+              },
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "find_first_uncompleted_article.module_start_at_id.module_id"
+            },
+            {
+              "name": "article_id",
+              "value": "@item.id",
+              "_translations": {
+                "value": {}
+              },
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "find_first_uncompleted_article.module_start_at_id.article_id",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@item.id": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "find_first_uncompleted_article.module_start_at_id"
+        }
+      ],
       "_nested_name": "find_first_uncompleted_article",
       "_dynamicFields": {
         "value": [
@@ -148,75 +209,6 @@
           "parameter_list.filter"
         ]
       }
-    },
-    {
-      "name": "module_start_at_id",
-      "value": "module_start_at_id",
-      "_translations": {
-        "value": {}
-      },
-      "action_list": [
-        {
-          "trigger": "completed",
-          "action_id": "emit",
-          "args": [
-            "completed"
-          ],
-          "_raw": "completed | emit: completed"
-        },
-        {
-          "trigger": "uncompleted",
-          "action_id": "emit",
-          "args": [
-            "uncompleted"
-          ],
-          "_raw": "uncompleted | emit: uncompleted"
-        }
-      ],
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "module_start_at_id"
-    },
-    {
-      "name": "module_id",
-      "value": "money_t",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "module_id"
-    },
-    {
-      "name": "article_id",
-      "value": "@item.id",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "article_id",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@item.id",
-            "matchedExpression": "@item.id",
-            "type": "item",
-            "fieldName": "id"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@item.id": [
-          "value"
-        ]
-      }
-    },
-    {
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "name": "set_variable_11",
-      "_nested_name": "set_variable_11"
     }
   ]
 }

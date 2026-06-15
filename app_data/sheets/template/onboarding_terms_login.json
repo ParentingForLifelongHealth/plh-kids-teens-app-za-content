@@ -199,7 +199,7 @@
               "_raw": "click | emit: force_reprocess"
             }
           ],
-          "condition": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
+          "condition": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || !@fields._user_mode",
           "_nested_name": "before_login.button_apple_sign_in",
           "_dynamicFields": {
             "value": [
@@ -212,22 +212,22 @@
             ],
             "condition": [
               {
-                "fullExpression": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
+                "fullExpression": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || !@fields._user_mode",
                 "matchedExpression": "@fields._platform",
                 "type": "fields",
                 "fieldName": "_platform"
               },
               {
-                "fullExpression": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
+                "fullExpression": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || !@fields._user_mode",
                 "matchedExpression": "@fields._operating_system",
                 "type": "fields",
                 "fieldName": "_operating_system"
               },
               {
-                "fullExpression": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || @fields._operating_system === \"mac\"",
-                "matchedExpression": "@fields._operating_system",
+                "fullExpression": "@fields._platform === \"ios\" || @fields._operating_system === \"ios\" || !@fields._user_mode",
+                "matchedExpression": "!@fields._user_mode",
                 "type": "fields",
-                "fieldName": "_operating_system"
+                "fieldName": "_user_mode"
               }
             ]
           },
@@ -239,7 +239,9 @@
               "condition"
             ],
             "@fields._operating_system": [
-              "condition",
+              "condition"
+            ],
+            "!@fields._user_mode": [
               "condition"
             ]
           }

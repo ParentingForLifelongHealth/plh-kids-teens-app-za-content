@@ -11,7 +11,7 @@
 | audio | 4 |
 | button | 87 |
 | combo_box | 10 |
-| data_items | 135 |
+| data_items | 161 |
 | debug_toggle | 1 |
 | display_grid | 4 |
 | display_group | 108 |
@@ -33,11 +33,11 @@
 | radio_button_grid | 11 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 2932 |
+| set_variable | 2854 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 5 |
-| template | 959 |
+| template | 985 |
 | text | 182 |
 | text_area | 2 |
 | text_box | 13 |
@@ -58,7 +58,7 @@
 | add_data | 2 |
 | app_update | 1 |
 | auth | 3 |
-| emit: completed | 709 |
+| emit: completed | 710 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
@@ -86,8 +86,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 62549 KB | 62.5 MB |
-| unused | 1687 KB | 1.7 MB |
+| total | 62551 KB | 62.6 MB |
+| unused | 1546 KB | 1.5 MB |
 </details>
 
 <details open>
@@ -144,7 +144,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/logos/plh_white.png | 12.8 |
 | images/logos/sino_mark.svg | 461.7 |
 | lottie/bulging_circles.txt | 0.2 |
-| lottie/cascading_stars.json | 140.5 |
 </details>
 
 <details open>
@@ -264,7 +263,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
