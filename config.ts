@@ -4,7 +4,7 @@ const config = generateDeploymentConfig("plh_kids_teens_za");
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.7.9",
+  content_tag_latest: "1.7.10",
 };
 
 config.google_drive.sheets_folders = [
@@ -46,6 +46,9 @@ config.firebase = {
 config.auth = {
   provider: 'firebase',
 }
+
+config.web.favicon_asset = "images/logos/favicon.svg";
+
 
 // Hacky fix to point extended deployment to translations within its own repo
 config.translations.translated_strings_path = "./app_data/translations_source/translated_strings";
