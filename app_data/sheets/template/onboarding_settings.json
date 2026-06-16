@@ -463,7 +463,7 @@
       "name": "page_finished",
       "value": "@data.onboarding_settings_pages",
       "parameter_list": {
-        "filter": "@item.row_index == @local.last_index && @item.completed"
+        "filter": "@item.row_index == @local.last_page_index && @item.completed"
       },
       "condition": "!@global.has_remote_assets",
       "rows": [
@@ -631,19 +631,19 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "@item.row_index == @local.last_index && @item.completed",
+              "fullExpression": "@item.row_index == @local.last_page_index && @item.completed",
               "matchedExpression": "@item.row_index",
               "type": "item",
               "fieldName": "row_index"
             },
             {
-              "fullExpression": "@item.row_index == @local.last_index && @item.completed",
-              "matchedExpression": "@local.last_index",
+              "fullExpression": "@item.row_index == @local.last_page_index && @item.completed",
+              "matchedExpression": "@local.last_page_index",
               "type": "local",
-              "fieldName": "last_index"
+              "fieldName": "last_page_index"
             },
             {
-              "fullExpression": "@item.row_index == @local.last_index && @item.completed",
+              "fullExpression": "@item.row_index == @local.last_page_index && @item.completed",
               "matchedExpression": "@item.completed",
               "type": "item",
               "fieldName": "completed"
@@ -666,7 +666,7 @@
         "@item.row_index": [
           "parameter_list.filter"
         ],
-        "@local.last_index": [
+        "@local.last_page_index": [
           "parameter_list.filter"
         ],
         "@item.completed": [
