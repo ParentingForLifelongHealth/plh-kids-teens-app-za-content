@@ -47,7 +47,7 @@ config.auth = {
   provider: 'firebase',
 }
 
-config.web.favicon_asset = "images/logos/favicon.svg";
+config.web.favicon_asset = "images/logos/favicon.png";
 
 
 // Hacky fix to point extended deployment to translations within its own repo
