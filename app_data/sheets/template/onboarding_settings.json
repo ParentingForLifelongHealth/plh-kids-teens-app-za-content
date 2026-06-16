@@ -13,184 +13,59 @@
       "_nested_name": "task_group"
     },
     {
-      "name": "page_count",
-      "type": "set_variable",
-      "_nested_name": "page_count"
-    },
-    {
-      "type": "data_items",
-      "name": "compute_page_count",
-      "value": "@data.onboarding_settings_pages",
+      "name": "asset_pack_id",
+      "value": "@global.asset_pack_id",
       "_translations": {
         "value": {}
       },
-      "action_list": [
-        {
-          "trigger": "data_changed",
-          "action_id": "set_local",
-          "args": [
-            "page_count",
-            "@items.length"
-          ],
-          "_raw": "data_changed | set_local: page_count:  @items.length"
-        }
-      ],
-      "_nested_name": "compute_page_count",
+      "type": "set_variable",
+      "_nested_name": "asset_pack_id",
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@data.onboarding_settings_pages",
+            "fullExpression": "@global.asset_pack_id",
+            "matchedExpression": "@global.asset_pack_id",
+            "type": "global",
+            "fieldName": "asset_pack_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.asset_pack_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "last_page_index",
+      "value": "@calc(Object.keys(@data.onboarding_settings_pages).length - 1)",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "last_page_index",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@calc(Object.keys(@data.onboarding_settings_pages).length - 1)",
             "matchedExpression": "@data.onboarding_settings_pages",
             "type": "data",
             "fieldName": "onboarding_settings_pages"
+          },
+          {
+            "fullExpression": "@calc(Object.keys(@data.onboarding_settings_pages).length - 1)",
+            "matchedExpression": "@calc(Object.keys(@data.onboarding_settings_pages).length - 1)",
+            "type": "calc",
+            "fieldName": "Object.keys(@data.onboarding_settings_pages).length - 1"
           }
         ]
       },
       "_dynamicDependencies": {
         "@data.onboarding_settings_pages": [
           "value"
-        ]
-      }
-    },
-    {
-      "name": "completed_count",
-      "type": "set_variable",
-      "_nested_name": "completed_count"
-    },
-    {
-      "type": "data_items",
-      "name": "compute_completed_count",
-      "value": "@data.onboarding_settings_pages",
-      "_translations": {
-        "value": {}
-      },
-      "action_list": [
-        {
-          "trigger": "data_changed",
-          "action_id": "set_local",
-          "args": [
-            "completed_count",
-            "@items.length"
-          ],
-          "_raw": "data_changed | set_local: completed_count:  @items.length"
-        }
-      ],
-      "parameter_list": {
-        "filter": "@item.completed"
-      },
-      "_nested_name": "compute_completed_count",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "@data.onboarding_settings_pages",
-            "matchedExpression": "@data.onboarding_settings_pages",
-            "type": "data",
-            "fieldName": "onboarding_settings_pages"
-          }
         ],
-        "parameter_list": {
-          "filter": [
-            {
-              "fullExpression": "@item.completed",
-              "matchedExpression": "@item.completed",
-              "type": "item",
-              "fieldName": "completed"
-            }
-          ]
-        }
-      },
-      "_dynamicDependencies": {
-        "@data.onboarding_settings_pages": [
+        "@calc(Object.keys(@data.onboarding_settings_pages).length - 1)": [
           "value"
-        ],
-        "@item.completed": [
-          "parameter_list.filter"
-        ]
-      }
-    },
-    {
-      "type": "text",
-      "name": "debug_completed_count",
-      "value": "Completed count: @local.completed_count",
-      "_translations": {
-        "value": {}
-      },
-      "condition": false,
-      "exclude_from_translation": true,
-      "_nested_name": "debug_completed_count",
-      "_dynamicFields": {
-        "value": [
-          {
-            "fullExpression": "Completed count: @local.completed_count",
-            "matchedExpression": "@local.completed_count",
-            "type": "local",
-            "fieldName": "completed_count"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.completed_count": [
-          "value"
-        ]
-      }
-    },
-    {
-      "type": "display_group",
-      "name": "dg_top",
-      "hidden": "@local.completed_count == @local.page_count",
-      "rows": [
-        {
-          "type": "task_progress_bar",
-          "parameter_list": {
-            "task_group_data": "@local.task_group"
-          },
-          "style_list": [
-            "flex: 1"
-          ],
-          "name": "task_progress_bar_1",
-          "_nested_name": "dg_top.task_progress_bar_1",
-          "_dynamicFields": {
-            "parameter_list": {
-              "task_group_data": [
-                {
-                  "fullExpression": "@local.task_group",
-                  "matchedExpression": "@local.task_group",
-                  "type": "local",
-                  "fieldName": "task_group"
-                }
-              ]
-            }
-          },
-          "_dynamicDependencies": {
-            "@local.task_group": [
-              "parameter_list.task_group_data"
-            ]
-          }
-        }
-      ],
-      "_nested_name": "dg_top",
-      "_dynamicFields": {
-        "hidden": [
-          {
-            "fullExpression": "@local.completed_count == @local.page_count",
-            "matchedExpression": "@local.completed_count",
-            "type": "local",
-            "fieldName": "completed_count"
-          },
-          {
-            "fullExpression": "@local.completed_count == @local.page_count",
-            "matchedExpression": "@local.page_count",
-            "type": "local",
-            "fieldName": "page_count"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@local.completed_count": [
-          "hidden"
-        ],
-        "@local.page_count": [
-          "hidden"
         ]
       }
     },
@@ -198,158 +73,356 @@
       "type": "data_items",
       "name": "loop_pages",
       "value": "@data.onboarding_settings_pages",
+      "parameter_list": {
+        "filter": "!@item.completed",
+        "limit": "1"
+      },
       "rows": [
         {
           "type": "display_group",
-          "name": "await_data_loop_evaluation",
-          "parameter_list": {
-            "style": "column"
-          },
-          "condition": "@local.completed_count !== undefined",
+          "name": "dg_top",
           "rows": [
             {
-              "type": "display_group",
-              "name": "condition",
+              "type": "task_progress_bar",
               "parameter_list": {
-                "style": "column"
+                "task_group_data": "@local.task_group"
               },
-              "condition": "@item._index == @local.completed_count",
-              "rows": [
-                {
-                  "type": "template",
-                  "name": "page",
-                  "value": "onboarding_settings_@item.id",
-                  "action_list": [
-                    {
-                      "trigger": "completed",
-                      "action_id": "set_data",
-                      "args": [],
-                      "_raw": "completed | set_data |\n_list_id: onboarding_settings_pages,\n_id: @item.id,\ncompleted: true",
-                      "params": {
-                        "_list_id": "onboarding_settings_pages",
-                        "_id": "@item.id",
-                        "completed": true
-                      }
-                    },
-                    {
-                      "trigger": "uncompleted",
-                      "action_id": "set_data",
-                      "args": [],
-                      "_raw": "uncompleted | set_data | \n_list_id: onboarding_settings_pages,\n_id: page_@local.completed_count,\ncompleted: false",
-                      "params": {
-                        "_list_id": "onboarding_settings_pages",
-                        "_id": "page_@local.completed_count",
-                        "completed": false
-                      }
-                    }
-                  ],
-                  "rows": [],
-                  "_nested_name": "loop_pages.await_data_loop_evaluation.condition.page",
-                  "_dynamicFields": {
-                    "value": [
-                      {
-                        "fullExpression": "onboarding_settings_@item.id",
-                        "matchedExpression": "@item.id",
-                        "type": "item",
-                        "fieldName": "id"
-                      }
-                    ],
-                    "action_list": {
-                      "0": {
-                        "_raw": [
-                          {
-                            "fullExpression": "completed | set_data |\n_list_id: onboarding_settings_pages,\n_id: @item.id,\ncompleted: true",
-                            "matchedExpression": "@item.id",
-                            "type": "item",
-                            "fieldName": "id"
-                          }
-                        ],
-                        "params": {
-                          "_id": [
-                            {
-                              "fullExpression": "@item.id",
-                              "matchedExpression": "@item.id",
-                              "type": "item",
-                              "fieldName": "id"
-                            }
-                          ]
-                        }
-                      },
-                      "1": {
-                        "_raw": [
-                          {
-                            "fullExpression": "uncompleted | set_data | \n_list_id: onboarding_settings_pages,\n_id: page_@local.completed_count,\ncompleted: false",
-                            "matchedExpression": "@local.completed_count",
-                            "type": "local",
-                            "fieldName": "completed_count"
-                          }
-                        ],
-                        "params": {
-                          "_id": [
-                            {
-                              "fullExpression": "page_@local.completed_count",
-                              "matchedExpression": "@local.completed_count",
-                              "type": "local",
-                              "fieldName": "completed_count"
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  },
-                  "_dynamicDependencies": {
-                    "@item.id": [
-                      "value",
-                      "action_list.0._raw",
-                      "action_list.0.params._id"
-                    ],
-                    "@local.completed_count": [
-                      "action_list.1._raw",
-                      "action_list.1.params._id"
-                    ]
-                  }
-                }
+              "style_list": [
+                "flex: 1",
+                "margin-bottom: var(--row-margin-top)"
               ],
-              "_nested_name": "loop_pages.await_data_loop_evaluation.condition",
+              "name": "task_progress_bar_1",
+              "_nested_name": "loop_pages.dg_top.task_progress_bar_1",
               "_dynamicFields": {
-                "condition": [
-                  {
-                    "fullExpression": "@item._index == @local.completed_count",
-                    "matchedExpression": "@item._index",
-                    "type": "item",
-                    "fieldName": "_index"
-                  },
-                  {
-                    "fullExpression": "@item._index == @local.completed_count",
-                    "matchedExpression": "@local.completed_count",
-                    "type": "local",
-                    "fieldName": "completed_count"
-                  }
-                ]
+                "parameter_list": {
+                  "task_group_data": [
+                    {
+                      "fullExpression": "@local.task_group",
+                      "matchedExpression": "@local.task_group",
+                      "type": "local",
+                      "fieldName": "task_group"
+                    }
+                  ]
+                }
               },
               "_dynamicDependencies": {
-                "@item._index": [
-                  "condition"
-                ],
-                "@local.completed_count": [
-                  "condition"
+                "@local.task_group": [
+                  "parameter_list.task_group_data"
                 ]
               }
             }
           ],
-          "_nested_name": "loop_pages.await_data_loop_evaluation",
+          "_nested_name": "loop_pages.dg_top"
+        },
+        {
+          "type": "template",
+          "name": "page_@item.row_index",
+          "value": "onboarding_settings_@item.id",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "completed | set_data |\n_list_id: onboarding_settings_pages,\n_index: @item.row_index,\ncompleted: true",
+              "params": {
+                "_list_id": "onboarding_settings_pages",
+                "_index": "@item.row_index",
+                "completed": true
+              }
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "uncompleted | set_data | \n_list_id: onboarding_settings_pages,\n_index: -1+@item.row_index,\ncompleted: false",
+              "params": {
+                "_list_id": "onboarding_settings_pages",
+                "_index": "-1+@item.row_index",
+                "completed": false
+              }
+            }
+          ],
+          "condition": "!(@item.row_index == @local.last_page_index && @global.has_remote_assets)",
+          "rows": [],
+          "_nested_name": "loop_pages.page_@item.row_index",
           "_dynamicFields": {
+            "name": [
+              {
+                "fullExpression": "page_@item.row_index",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              }
+            ],
+            "value": [
+              {
+                "fullExpression": "onboarding_settings_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_data |\n_list_id: onboarding_settings_pages,\n_index: @item.row_index,\ncompleted: true",
+                    "matchedExpression": "@item.row_index",
+                    "type": "item",
+                    "fieldName": "row_index"
+                  }
+                ],
+                "params": {
+                  "_index": [
+                    {
+                      "fullExpression": "@item.row_index",
+                      "matchedExpression": "@item.row_index",
+                      "type": "item",
+                      "fieldName": "row_index"
+                    }
+                  ]
+                }
+              },
+              "1": {
+                "_raw": [
+                  {
+                    "fullExpression": "uncompleted | set_data | \n_list_id: onboarding_settings_pages,\n_index: -1+@item.row_index,\ncompleted: false",
+                    "matchedExpression": "@item.row_index",
+                    "type": "item",
+                    "fieldName": "row_index"
+                  }
+                ],
+                "params": {
+                  "_index": [
+                    {
+                      "fullExpression": "-1+@item.row_index",
+                      "matchedExpression": "@item.row_index",
+                      "type": "item",
+                      "fieldName": "row_index"
+                    }
+                  ]
+                }
+              }
+            },
             "condition": [
               {
-                "fullExpression": "@local.completed_count !== undefined",
-                "matchedExpression": "@local.completed_count",
+                "fullExpression": "!(@item.row_index == @local.last_page_index && @global.has_remote_assets)",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              },
+              {
+                "fullExpression": "!(@item.row_index == @local.last_page_index && @global.has_remote_assets)",
+                "matchedExpression": "@local.last_page_index",
                 "type": "local",
-                "fieldName": "completed_count"
+                "fieldName": "last_page_index"
+              },
+              {
+                "fullExpression": "!(@item.row_index == @local.last_page_index && @global.has_remote_assets)",
+                "matchedExpression": "@global.has_remote_assets",
+                "type": "global",
+                "fieldName": "has_remote_assets"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "loop_pages.page_@item.row_index",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
               }
             ]
           },
           "_dynamicDependencies": {
-            "@local.completed_count": [
+            "@item.row_index": [
+              "name",
+              "action_list.0._raw",
+              "action_list.0.params._index",
+              "action_list.1._raw",
+              "action_list.1.params._index",
+              "condition",
+              "_nested_name"
+            ],
+            "@item.id": [
+              "value"
+            ],
+            "@local.last_page_index": [
+              "condition"
+            ],
+            "@global.has_remote_assets": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "template",
+          "name": "remote_assets_page_@item.row_index",
+          "value": "onboarding_settings_@item.id",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "completed | set_data |\n_list_id: onboarding_settings_pages,\n_index: @item.row_index,\ncompleted: true",
+              "params": {
+                "_list_id": "onboarding_settings_pages",
+                "_index": "@item.row_index",
+                "completed": true
+              }
+            },
+            {
+              "trigger": "completed",
+              "action_id": "asset_pack",
+              "args": [
+                "download",
+                "@local.asset_pack_id"
+              ],
+              "_raw": "completed | asset_pack: download: @local.asset_pack_id"
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "uncompleted | set_data | \n_list_id: onboarding_settings_pages,\n_index: -1+@item.row_index,\ncompleted: false",
+              "params": {
+                "_list_id": "onboarding_settings_pages",
+                "_index": "-1+@item.row_index",
+                "completed": false
+              }
+            }
+          ],
+          "condition": "@item.row_index == @local.last_page_index && @global.has_remote_assets",
+          "rows": [],
+          "_nested_name": "loop_pages.remote_assets_page_@item.row_index",
+          "_dynamicFields": {
+            "name": [
+              {
+                "fullExpression": "remote_assets_page_@item.row_index",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              }
+            ],
+            "value": [
+              {
+                "fullExpression": "onboarding_settings_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_data |\n_list_id: onboarding_settings_pages,\n_index: @item.row_index,\ncompleted: true",
+                    "matchedExpression": "@item.row_index",
+                    "type": "item",
+                    "fieldName": "row_index"
+                  }
+                ],
+                "params": {
+                  "_index": [
+                    {
+                      "fullExpression": "@item.row_index",
+                      "matchedExpression": "@item.row_index",
+                      "type": "item",
+                      "fieldName": "row_index"
+                    }
+                  ]
+                }
+              },
+              "1": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.asset_pack_id",
+                      "matchedExpression": "@local.asset_pack_id",
+                      "type": "local",
+                      "fieldName": "asset_pack_id"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "completed | asset_pack: download: @local.asset_pack_id",
+                    "matchedExpression": "@local.asset_pack_id",
+                    "type": "local",
+                    "fieldName": "asset_pack_id"
+                  }
+                ]
+              },
+              "2": {
+                "_raw": [
+                  {
+                    "fullExpression": "uncompleted | set_data | \n_list_id: onboarding_settings_pages,\n_index: -1+@item.row_index,\ncompleted: false",
+                    "matchedExpression": "@item.row_index",
+                    "type": "item",
+                    "fieldName": "row_index"
+                  }
+                ],
+                "params": {
+                  "_index": [
+                    {
+                      "fullExpression": "-1+@item.row_index",
+                      "matchedExpression": "@item.row_index",
+                      "type": "item",
+                      "fieldName": "row_index"
+                    }
+                  ]
+                }
+              }
+            },
+            "condition": [
+              {
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              },
+              {
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets",
+                "matchedExpression": "@local.last_page_index",
+                "type": "local",
+                "fieldName": "last_page_index"
+              },
+              {
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets",
+                "matchedExpression": "@global.has_remote_assets",
+                "type": "global",
+                "fieldName": "has_remote_assets"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "loop_pages.remote_assets_page_@item.row_index",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.row_index": [
+              "name",
+              "action_list.0._raw",
+              "action_list.0.params._index",
+              "action_list.2._raw",
+              "action_list.2.params._index",
+              "condition",
+              "_nested_name"
+            ],
+            "@item.id": [
+              "value"
+            ],
+            "@local.asset_pack_id": [
+              "action_list.1.args.1",
+              "action_list.1._raw"
+            ],
+            "@local.last_page_index": [
+              "condition"
+            ],
+            "@global.has_remote_assets": [
               "condition"
             ]
           }
@@ -364,21 +437,35 @@
             "type": "data",
             "fieldName": "onboarding_settings_pages"
           }
-        ]
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.completed",
+              "matchedExpression": "!@item.completed",
+              "type": "item",
+              "fieldName": "completed"
+            }
+          ]
+        }
       },
       "_dynamicDependencies": {
         "@data.onboarding_settings_pages": [
           "value"
+        ],
+        "!@item.completed": [
+          "parameter_list.filter"
         ]
       }
     },
     {
-      "type": "display_group",
+      "type": "data_items",
       "name": "page_finished",
+      "value": "@data.onboarding_settings_pages",
       "parameter_list": {
-        "style": "column"
+        "filter": "@item.row_index == @local.last_page_index && @item.completed"
       },
-      "hidden": "@local.completed_count != @local.page_count",
+      "condition": "!@global.has_remote_assets",
       "rows": [
         {
           "type": "lottie_animation",
@@ -533,27 +620,602 @@
       ],
       "_nested_name": "page_finished",
       "_dynamicFields": {
-        "hidden": [
+        "value": [
           {
-            "fullExpression": "@local.completed_count != @local.page_count",
-            "matchedExpression": "@local.completed_count",
-            "type": "local",
-            "fieldName": "completed_count"
-          },
+            "fullExpression": "@data.onboarding_settings_pages",
+            "matchedExpression": "@data.onboarding_settings_pages",
+            "type": "data",
+            "fieldName": "onboarding_settings_pages"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.row_index == @local.last_page_index && @item.completed",
+              "matchedExpression": "@item.row_index",
+              "type": "item",
+              "fieldName": "row_index"
+            },
+            {
+              "fullExpression": "@item.row_index == @local.last_page_index && @item.completed",
+              "matchedExpression": "@local.last_page_index",
+              "type": "local",
+              "fieldName": "last_page_index"
+            },
+            {
+              "fullExpression": "@item.row_index == @local.last_page_index && @item.completed",
+              "matchedExpression": "@item.completed",
+              "type": "item",
+              "fieldName": "completed"
+            }
+          ]
+        },
+        "condition": [
           {
-            "fullExpression": "@local.completed_count != @local.page_count",
-            "matchedExpression": "@local.page_count",
-            "type": "local",
-            "fieldName": "page_count"
+            "fullExpression": "!@global.has_remote_assets",
+            "matchedExpression": "!@global.has_remote_assets",
+            "type": "global",
+            "fieldName": "has_remote_assets"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@local.completed_count": [
-          "hidden"
+        "@data.onboarding_settings_pages": [
+          "value"
         ],
-        "@local.page_count": [
-          "hidden"
+        "@item.row_index": [
+          "parameter_list.filter"
+        ],
+        "@local.last_page_index": [
+          "parameter_list.filter"
+        ],
+        "@item.completed": [
+          "parameter_list.filter"
+        ],
+        "!@global.has_remote_assets": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "data_items",
+      "name": "loop_asset_packs",
+      "value": "_asset_packs",
+      "parameter_list": {
+        "filter": "@item.id == @local.asset_pack_id"
+      },
+      "condition": "@global.has_remote_assets",
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "text",
+          "name": "debug_download_status",
+          "value": "id: @item.id,\nname: @item.name,\ndownload_status: @item.download_status",
+          "_translations": {
+            "value": {}
+          },
+          "condition": false,
+          "exclude_from_translation": true,
+          "_nested_name": "loop_asset_packs.debug_download_status",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "id: @item.id,\nname: @item.name,\ndownload_status: @item.download_status",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              },
+              {
+                "fullExpression": "id: @item.id,\nname: @item.name,\ndownload_status: @item.download_status",
+                "matchedExpression": "@item.name",
+                "type": "item",
+                "fieldName": "name"
+              },
+              {
+                "fullExpression": "id: @item.id,\nname: @item.name,\ndownload_status: @item.download_status",
+                "matchedExpression": "@item.download_status",
+                "type": "item",
+                "fieldName": "download_status"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "value"
+            ],
+            "@item.name": [
+              "value"
+            ],
+            "@item.download_status": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "display_group",
+          "name": "page_downloading",
+          "parameter_list": {
+            "style": "column"
+          },
+          "condition": "@item.download_status == \"in_progress\"",
+          "rows": [
+            {
+              "type": "lottie_animation",
+              "name": "loading_lottie",
+              "value": "@global.onboarding_loading_lottie_asset",
+              "_translations": {
+                "value": {}
+              },
+              "condition": "!!@global.onboarding_loading_lottie_asset",
+              "_nested_name": "loop_asset_packs.page_downloading.loading_lottie",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_loading_lottie_asset",
+                    "matchedExpression": "@global.onboarding_loading_lottie_asset",
+                    "type": "global",
+                    "fieldName": "onboarding_loading_lottie_asset"
+                  }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!!@global.onboarding_loading_lottie_asset",
+                    "matchedExpression": "!@global.onboarding_loading_lottie_asset",
+                    "type": "global",
+                    "fieldName": "onboarding_loading_lottie_asset"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_loading_lottie_asset": [
+                  "value"
+                ],
+                "!@global.onboarding_loading_lottie_asset": [
+                  "condition"
+                ]
+              }
+            },
+            {
+              "type": "title",
+              "name": "loading_profile_title",
+              "value": "@global.onboarding_loading_title",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "variant": "header"
+              },
+              "_nested_name": "loop_asset_packs.page_downloading.loading_profile_title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_loading_title",
+                    "matchedExpression": "@global.onboarding_loading_title",
+                    "type": "global",
+                    "fieldName": "onboarding_loading_title"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_loading_title": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "loading_profile_text",
+              "value": "@global.onboarding_loading_text",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "_nested_name": "loop_asset_packs.page_downloading.loading_profile_text",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_loading_text",
+                    "matchedExpression": "@global.onboarding_loading_text",
+                    "type": "global",
+                    "fieldName": "onboarding_loading_text"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_loading_text": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "loop_asset_packs.page_downloading",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "@item.download_status == \"in_progress\"",
+                "matchedExpression": "@item.download_status",
+                "type": "item",
+                "fieldName": "download_status"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.download_status": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "display_group",
+          "name": "page_error",
+          "parameter_list": {
+            "style": "column"
+          },
+          "condition": "@item.download_status == \"error\"",
+          "rows": [
+            {
+              "type": "title",
+              "name": "error_profile_title",
+              "value": "@global.onboarding_error_title",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "variant": "header"
+              },
+              "_nested_name": "loop_asset_packs.page_error.error_profile_title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_error_title",
+                    "matchedExpression": "@global.onboarding_error_title",
+                    "type": "global",
+                    "fieldName": "onboarding_error_title"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_error_title": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "error_profile_text",
+              "value": "@global.onboarding_error_text",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "_nested_name": "loop_asset_packs.page_error.error_profile_text",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_error_text",
+                    "matchedExpression": "@global.onboarding_error_text",
+                    "type": "global",
+                    "fieldName": "onboarding_error_text"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_error_text": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "display_group",
+              "name": "dg_footer",
+              "parameter_list": {
+                "sticky": "bottom"
+              },
+              "style_list": [
+                "padding: 12px 24px"
+              ],
+              "rows": [
+                {
+                  "type": "button",
+                  "name": "button_retry",
+                  "value": "@global.onboarding_error_button_text",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "action_list": [
+                    {
+                      "trigger": "click",
+                      "action_id": "asset_pack",
+                      "args": [
+                        "download",
+                        "@local.asset_pack_id"
+                      ],
+                      "_raw": "click | asset_pack: download: @local.asset_pack_id"
+                    }
+                  ],
+                  "parameter_list": {
+                    "style": "navigation"
+                  },
+                  "_nested_name": "loop_asset_packs.page_error.dg_footer.button_retry",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@global.onboarding_error_button_text",
+                        "matchedExpression": "@global.onboarding_error_button_text",
+                        "type": "global",
+                        "fieldName": "onboarding_error_button_text"
+                      }
+                    ],
+                    "action_list": {
+                      "0": {
+                        "args": {
+                          "1": [
+                            {
+                              "fullExpression": "@local.asset_pack_id",
+                              "matchedExpression": "@local.asset_pack_id",
+                              "type": "local",
+                              "fieldName": "asset_pack_id"
+                            }
+                          ]
+                        },
+                        "_raw": [
+                          {
+                            "fullExpression": "click | asset_pack: download: @local.asset_pack_id",
+                            "matchedExpression": "@local.asset_pack_id",
+                            "type": "local",
+                            "fieldName": "asset_pack_id"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "_dynamicDependencies": {
+                    "@global.onboarding_error_button_text": [
+                      "value"
+                    ],
+                    "@local.asset_pack_id": [
+                      "action_list.0.args.1",
+                      "action_list.0._raw"
+                    ]
+                  }
+                }
+              ],
+              "_nested_name": "loop_asset_packs.page_error.dg_footer"
+            }
+          ],
+          "_nested_name": "loop_asset_packs.page_error",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "@item.download_status == \"error\"",
+                "matchedExpression": "@item.download_status",
+                "type": "item",
+                "fieldName": "download_status"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.download_status": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "display_group",
+          "name": "page_success",
+          "parameter_list": {
+            "style": "column"
+          },
+          "condition": "@item.download_status == \"completed\"",
+          "rows": [
+            {
+              "type": "lottie_animation",
+              "name": "lottie",
+              "value": "@global.onboarding_completed_lottie_asset",
+              "_translations": {
+                "value": {}
+              },
+              "condition": "!!@global.onboarding_completed_lottie_asset",
+              "_nested_name": "loop_asset_packs.page_success.lottie",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_completed_lottie_asset",
+                    "matchedExpression": "@global.onboarding_completed_lottie_asset",
+                    "type": "global",
+                    "fieldName": "onboarding_completed_lottie_asset"
+                  }
+                ],
+                "condition": [
+                  {
+                    "fullExpression": "!!@global.onboarding_completed_lottie_asset",
+                    "matchedExpression": "!@global.onboarding_completed_lottie_asset",
+                    "type": "global",
+                    "fieldName": "onboarding_completed_lottie_asset"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_completed_lottie_asset": [
+                  "value"
+                ],
+                "!@global.onboarding_completed_lottie_asset": [
+                  "condition"
+                ]
+              }
+            },
+            {
+              "type": "title",
+              "name": "finish_profile_title",
+              "value": "@global.onboarding_completed_title",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "variant": "header"
+              },
+              "_nested_name": "loop_asset_packs.page_success.finish_profile_title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_completed_title",
+                    "matchedExpression": "@global.onboarding_completed_title",
+                    "type": "global",
+                    "fieldName": "onboarding_completed_title"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_completed_title": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "finish_profile_text",
+              "value": "@global.onboarding_completed_text",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "_nested_name": "loop_asset_packs.page_success.finish_profile_text",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_completed_text",
+                    "matchedExpression": "@global.onboarding_completed_text",
+                    "type": "global",
+                    "fieldName": "onboarding_completed_text"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_completed_text": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "display_group",
+              "name": "dg_footer",
+              "parameter_list": {
+                "sticky": "bottom"
+              },
+              "style_list": [
+                "padding: 12px 24px"
+              ],
+              "rows": [
+                {
+                  "type": "button",
+                  "name": "button_completed_3",
+                  "value": "@global.continue",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "action_list": [
+                    {
+                      "trigger": "click",
+                      "action_id": "emit",
+                      "args": [
+                        "completed"
+                      ],
+                      "_raw": "click | emit: completed"
+                    },
+                    {
+                      "trigger": "click",
+                      "action_id": "set_field",
+                      "args": [
+                        "onboarding_settings_completed",
+                        true
+                      ],
+                      "_raw": "click | set_field: onboarding_settings_completed: true"
+                    }
+                  ],
+                  "parameter_list": {
+                    "style": "navigation"
+                  },
+                  "_nested_name": "loop_asset_packs.page_success.dg_footer.button_completed_3",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@global.continue",
+                        "matchedExpression": "@global.continue",
+                        "type": "global",
+                        "fieldName": "continue"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@global.continue": [
+                      "value"
+                    ]
+                  }
+                }
+              ],
+              "_nested_name": "loop_asset_packs.page_success.dg_footer"
+            }
+          ],
+          "_nested_name": "loop_asset_packs.page_success",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "@item.download_status == \"completed\"",
+                "matchedExpression": "@item.download_status",
+                "type": "item",
+                "fieldName": "download_status"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.download_status": [
+              "condition"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "loop_asset_packs",
+      "_dynamicFields": {
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.id == @local.asset_pack_id",
+              "matchedExpression": "@item.id",
+              "type": "item",
+              "fieldName": "id"
+            },
+            {
+              "fullExpression": "@item.id == @local.asset_pack_id",
+              "matchedExpression": "@local.asset_pack_id",
+              "type": "local",
+              "fieldName": "asset_pack_id"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "@global.has_remote_assets",
+            "matchedExpression": "@global.has_remote_assets",
+            "type": "global",
+            "fieldName": "has_remote_assets"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@item.id": [
+          "parameter_list.filter"
+        ],
+        "@local.asset_pack_id": [
+          "parameter_list.filter"
+        ],
+        "@global.has_remote_assets": [
+          "condition"
         ]
       }
     }

@@ -9,17 +9,17 @@
 | animated_slides | 1 |
 | apple_sign_in_button | 2 |
 | audio | 4 |
-| button | 87 |
+| button | 89 |
 | combo_box | 10 |
 | data_items | 161 |
 | debug_toggle | 1 |
 | display_grid | 4 |
-| display_group | 108 |
+| display_group | 110 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 26 |
 | items | 17 |
-| lottie_animation | 4 |
+| lottie_animation | 6 |
 | nested_properties | 162 |
 | number_selector | 1 |
 | plh_activity_check_in | 1 |
@@ -37,13 +37,13 @@
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 5 |
-| template | 985 |
-| text | 182 |
+| template | 986 |
+| text | 185 |
 | text_area | 2 |
 | text_box | 13 |
 | text_bubble | 9 |
 | tile_component | 1 |
-| title | 52 |
+| title | 55 |
 | toggle_bar | 5 |
 | update_action_list | 2 |
 | video | 4 |
@@ -57,8 +57,9 @@
 | --- | --- |
 | add_data | 2 |
 | app_update | 1 |
+| asset_pack | 2 |
 | auth | 3 |
-| emit: completed | 710 |
+| emit: completed | 711 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
@@ -71,10 +72,10 @@
 | pop_up | 65 |
 | reset_app | 4 |
 | reset_data | 3 |
-| set_data | 76 |
-| set_field | 65 |
+| set_data | 78 |
+| set_field | 66 |
 | set_item | 51 |
-| set_local | 76 |
+| set_local | 74 |
 | share | 2 |
 | task | 2 |
 | toast | 2 |
@@ -86,7 +87,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 62549 KB | 62.5 MB |
+| total | 62551 KB | 62.6 MB |
 | unused | 1546 KB | 1.5 MB |
 </details>
 
@@ -263,7 +264,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
