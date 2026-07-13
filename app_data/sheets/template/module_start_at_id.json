@@ -109,17 +109,106 @@
     },
     {
       "name": "article_id",
-      "value": "explore_1",
+      "value": "uncomplete",
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "article_id"
+    },
+    {
+      "name": "course_id",
+      "type": "set_variable",
+      "_nested_name": "course_id"
+    },
+    {
+      "type": "data_items",
+      "name": "find_last_completed",
+      "value": "@local.articles_data",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "article_id",
+            "@items[0].id"
+          ],
+          "_raw": "data_changed | set_local : article_id: @items[0].id"
+        },
+        {
+          "trigger": "data_changed",
+          "action_id": "set_field",
+          "args": [
+            "current_start_article_id",
+            "@items[0].id"
+          ],
+          "_raw": "data_changed | set_field : current_start_article_id: @items[0].id"
+        }
+      ],
+      "parameter_list": {
+        "filter": "!@item.completed && !@item.nested",
+        "limit": "1"
+      },
+      "condition": "@local.article_id == \"uncomplete\"",
+      "_nested_name": "find_last_completed",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.articles_data",
+            "matchedExpression": "@local.articles_data",
+            "type": "local",
+            "fieldName": "articles_data"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.completed && !@item.nested",
+              "matchedExpression": "!@item.completed",
+              "type": "item",
+              "fieldName": "completed"
+            },
+            {
+              "fullExpression": "!@item.completed && !@item.nested",
+              "matchedExpression": "!@item.nested",
+              "type": "item",
+              "fieldName": "nested"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "@local.article_id == \"uncomplete\"",
+            "matchedExpression": "@local.article_id",
+            "type": "local",
+            "fieldName": "article_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.articles_data": [
+          "value"
+        ],
+        "!@item.completed": [
+          "parameter_list.filter"
+        ],
+        "!@item.nested": [
+          "parameter_list.filter"
+        ],
+        "@local.article_id": [
+          "condition"
+        ]
+      }
     },
     {
       "type": "items",
       "name": "find_active_index",
       "value": "@data.@local.articles_data",
+      "condition": "@local.article_id !== \"uncomplete\"",
       "rows": [
         {
           "type": "template",
@@ -167,6 +256,30 @@
               },
               "_dynamicDependencies": {
                 "@local.module_id": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "name": "course_id",
+              "value": "@local.course_id",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "find_active_index.module.course_id",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@local.course_id",
+                    "matchedExpression": "@local.course_id",
+                    "type": "local",
+                    "fieldName": "course_id"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.course_id": [
                   "value"
                 ]
               }
@@ -233,18 +346,29 @@
             "type": "local",
             "fieldName": "articles_data"
           }
+        ],
+        "condition": [
+          {
+            "fullExpression": "@local.article_id !== \"uncomplete\"",
+            "matchedExpression": "@local.article_id",
+            "type": "local",
+            "fieldName": "article_id"
+          }
         ]
       },
       "_dynamicDependencies": {
         "@local.articles_data": [
           "value"
+        ],
+        "@local.article_id": [
+          "condition"
         ]
       }
     }
   ],
   "_source": {
-    "name": "kids_global",
-    "path": "templates/modules/module_navigation.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1MeuVFYp7ovMCABdgC5c1mExgDK8Xop13fzzBNR5EAPo"
+    "name": "kids_teens_global V2",
+    "path": "templates/module_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1w1ZF7Di7GOeceeskjOiPjlzSB2o9UDYIWivICI3oTVs"
   }
 }

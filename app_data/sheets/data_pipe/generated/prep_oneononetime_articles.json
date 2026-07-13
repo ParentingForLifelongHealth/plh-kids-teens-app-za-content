@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "foreign_key == \"oneononetime\""
+        "!nested"
       ],
-      "input_source": "sub_items",
+      "input_source": "oneononetime_articles",
       "output_target": "oneononetime_testing | local_only;"
     },
     {
@@ -54,6 +54,13 @@
       "operation": "append_columns",
       "args_list": [
         "completed: FALSE"
+      ],
+      "output_target": "oneononetime_article_tasks"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "version: 1"
       ],
       "output_target": "oneononetime_article_tasks"
     }

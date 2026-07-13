@@ -1,0 +1,473 @@
+{
+  "flow_type": "template",
+  "flow_name": "show_certificate",
+  "status": "released",
+  "rows": [
+    {
+      "name": "n_reprints",
+      "type": "set_variable",
+      "_nested_name": "n_reprints"
+    },
+    {
+      "name": "image_url",
+      "type": "set_variable",
+      "_nested_name": "image_url"
+    },
+    {
+      "type": "data_items",
+      "name": "get_image_url",
+      "value": "@data.certificate_data",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "image_url",
+            "@items[0]?.url"
+          ],
+          "_raw": "data_changed | set_local : image_url: @items[0]?.url"
+        }
+      ],
+      "parameter_list": {
+        "filter": "@item.id == @fields.cert_to_print",
+        "limit": "1"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "get_image_url",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.certificate_data",
+            "matchedExpression": "@data.certificate_data",
+            "type": "data",
+            "fieldName": "certificate_data"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.id == @fields.cert_to_print",
+              "matchedExpression": "@item.id",
+              "type": "item",
+              "fieldName": "id"
+            },
+            {
+              "fullExpression": "@item.id == @fields.cert_to_print",
+              "matchedExpression": "@fields.cert_to_print",
+              "type": "fields",
+              "fieldName": "cert_to_print"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.certificate_data": [
+          "value"
+        ],
+        "@item.id": [
+          "parameter_list.filter"
+        ],
+        "@fields.cert_to_print": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "data_items",
+      "name": "get_n_reprints",
+      "value": "@data.courses",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "n_reprints",
+            "@items[0]?.n_reprints"
+          ],
+          "_raw": "data_changed | set_local : n_reprints: @items[0]?.n_reprints"
+        }
+      ],
+      "parameter_list": {
+        "filter": "@item.id == @fields.cert_to_print",
+        "limit": "1"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "get_n_reprints",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.courses",
+            "matchedExpression": "@data.courses",
+            "type": "data",
+            "fieldName": "courses"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.id == @fields.cert_to_print",
+              "matchedExpression": "@item.id",
+              "type": "item",
+              "fieldName": "id"
+            },
+            {
+              "fullExpression": "@item.id == @fields.cert_to_print",
+              "matchedExpression": "@fields.cert_to_print",
+              "type": "fields",
+              "fieldName": "cert_to_print"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.courses": [
+          "value"
+        ],
+        "@item.id": [
+          "parameter_list.filter"
+        ],
+        "@fields.cert_to_print": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "title",
+      "value": "@global.certificate_congrats",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "name": "title_6",
+      "_nested_name": "title_6",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.certificate_congrats",
+            "matchedExpression": "@global.certificate_congrats",
+            "type": "global",
+            "fieldName": "certificate_congrats"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.certificate_congrats": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "value": "@local.image_url",
+      "_translations": {
+        "value": {}
+      },
+      "name": "image_7",
+      "_nested_name": "image_7",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.image_url",
+            "matchedExpression": "@local.image_url",
+            "type": "local",
+            "fieldName": "image_url"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.image_url": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "parameter_list": {
+        "wrap": "true"
+      },
+      "style_list": [
+        "justify-content: center",
+        "gap: 1em 2em"
+      ],
+      "rows": [
+        {
+          "type": "button",
+          "name": "download_button",
+          "value": "@global.download",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "save_to_device",
+              "args": [
+                "@local.image_url"
+              ],
+              "_raw": "click | save_to_device: @local.image_url | open: true, subfolder: certificates",
+              "params": {
+                "open": true,
+                "subfolder": "certificates"
+              }
+            }
+          ],
+          "parameter_list": {
+            "icon": "images/icons/download.svg",
+            "style": "navigation"
+          },
+          "exclude_from_translation": true,
+          "_nested_name": "display_group_8.download_button",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.download",
+                "matchedExpression": "@global.download",
+                "type": "global",
+                "fieldName": "download"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "args": {
+                  "0": [
+                    {
+                      "fullExpression": "@local.image_url",
+                      "matchedExpression": "@local.image_url",
+                      "type": "local",
+                      "fieldName": "image_url"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | save_to_device: @local.image_url | open: true, subfolder: certificates",
+                    "matchedExpression": "@local.image_url",
+                    "type": "local",
+                    "fieldName": "image_url"
+                  }
+                ]
+              }
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.download": [
+              "value"
+            ],
+            "@local.image_url": [
+              "action_list.0.args.0",
+              "action_list.0._raw"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "share_button",
+          "value": "@global.share",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "share",
+              "args": [
+                "file",
+                "@local.image_url"
+              ],
+              "_raw": "click | share: file: @local.image_url"
+            }
+          ],
+          "parameter_list": {
+            "icon": "images/icons/share.svg",
+            "style": "navigation"
+          },
+          "exclude_from_translation": true,
+          "_nested_name": "display_group_8.share_button",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.share",
+                "matchedExpression": "@global.share",
+                "type": "global",
+                "fieldName": "share"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.image_url",
+                      "matchedExpression": "@local.image_url",
+                      "type": "local",
+                      "fieldName": "image_url"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | share: file: @local.image_url",
+                    "matchedExpression": "@local.image_url",
+                    "type": "local",
+                    "fieldName": "image_url"
+                  }
+                ]
+              }
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.share": [
+              "value"
+            ],
+            "@local.image_url": [
+              "action_list.0.args.1",
+              "action_list.0._raw"
+            ]
+          }
+        }
+      ],
+      "name": "display_group_8",
+      "_nested_name": "display_group_8"
+    },
+    {
+      "type": "button",
+      "name": "button_update_name",
+      "value": "<u>@global.change_certificate_name</u>",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "update_certificate_name"
+          ],
+          "_raw": "click | pop_up: update_certificate_name"
+        }
+      ],
+      "parameter_list": {
+        "variant": "card",
+        "style": "no-background"
+      },
+      "condition": "(@local.n_reprints <@global.max_n_cert_reprints || !@local.n_reprints)",
+      "exclude_from_translation": true,
+      "_nested_name": "button_update_name",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "<u>@global.change_certificate_name</u>",
+            "matchedExpression": "@global.change_certificate_name",
+            "type": "global",
+            "fieldName": "change_certificate_name"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "(@local.n_reprints <@global.max_n_cert_reprints || !@local.n_reprints)",
+            "matchedExpression": "@local.n_reprints",
+            "type": "local",
+            "fieldName": "n_reprints"
+          },
+          {
+            "fullExpression": "(@local.n_reprints <@global.max_n_cert_reprints || !@local.n_reprints)",
+            "matchedExpression": "@global.max_n_cert_reprints",
+            "type": "global",
+            "fieldName": "max_n_cert_reprints"
+          },
+          {
+            "fullExpression": "(@local.n_reprints <@global.max_n_cert_reprints || !@local.n_reprints)",
+            "matchedExpression": "!@local.n_reprints",
+            "type": "local",
+            "fieldName": "n_reprints"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.change_certificate_name": [
+          "value"
+        ],
+        "@local.n_reprints": [
+          "condition"
+        ],
+        "@global.max_n_cert_reprints": [
+          "condition"
+        ],
+        "!@local.n_reprints": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button_update_name",
+      "value": "<u>@global.change_certificate_name</u>",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "no_more_reprints"
+          ],
+          "_raw": "click | pop_up: no_more_reprints"
+        }
+      ],
+      "parameter_list": {
+        "variant": "card",
+        "style": "no-background"
+      },
+      "condition": "(@local.n_reprints >=@global.max_n_cert_reprints)",
+      "exclude_from_translation": true,
+      "_nested_name": "button_update_name",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "<u>@global.change_certificate_name</u>",
+            "matchedExpression": "@global.change_certificate_name",
+            "type": "global",
+            "fieldName": "change_certificate_name"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "(@local.n_reprints >=@global.max_n_cert_reprints)",
+            "matchedExpression": "@local.n_reprints",
+            "type": "local",
+            "fieldName": "n_reprints"
+          },
+          {
+            "fullExpression": "(@local.n_reprints >=@global.max_n_cert_reprints)",
+            "matchedExpression": "@global.max_n_cert_reprints",
+            "type": "global",
+            "fieldName": "max_n_cert_reprints"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.change_certificate_name": [
+          "value"
+        ],
+        "@local.n_reprints": [
+          "condition"
+        ],
+        "@global.max_n_cert_reprints": [
+          "condition"
+        ]
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_global V2",
+    "path": "templates/certificates.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1KKfrEtHpXm0sMNY21dYKMmZBOny_Vnum-zr1zgdPcmM"
+  }
+}

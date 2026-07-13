@@ -1,0 +1,146 @@
+{
+  "flow_type": "generator",
+  "flow_name": "addonlinesafety_t_article_gen",
+  "status": "released",
+  "parameter_list": {
+    "input_data_list": "addonlinesafety_t_articles",
+    "output_flow_name": "article_addonlinesafety_t_@gen.id",
+    "output_flow_type": "template",
+    "output_flow_subtype": "generated"
+  },
+  "module_id": "addonlinesafety_t",
+  "__EMPTY_1": "addonlinesafety_t",
+  "rows": [
+    {
+      "type": "template",
+      "name": "article",
+      "value": "article",
+      "action_list": [
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed"
+        },
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "article_id",
+          "value": "@gen.id"
+        },
+        {
+          "name": "module_id",
+          "value": "addonlinesafety_t",
+          "exclude_from_translation": true
+        }
+      ]
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_za",
+    "path": "templates/ZA article template generators.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/19atVLOkas2qAi4VDkr8SPqgT1eIUWynk_V9WTHjqJOM"
+  },
+  "_output_flows": [
+    {
+      "flow_name": "article_addonlinesafety_t_intro1",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_intro2",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore3",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore5",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore6",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore7",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore8",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore9",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore10",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore11",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore12",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_explore13",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_practical_tips14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_practise15",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_practise16",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_home_activity17",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_check_out18",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "flow_type": "template",
+  "flow_name": "certificate_list_item",
+  "status": "released",
+  "rows": [
+    {
+      "name": "course_name",
+      "type": "set_variable",
+      "_nested_name": "course_name"
+    },
+    {
+      "name": "asset",
+      "type": "set_variable",
+      "_nested_name": "asset"
+    },
+    {
+      "name": "curr_cert",
+      "type": "set_variable",
+      "_nested_name": "curr_cert"
+    },
+    {
+      "name": "is_completed",
+      "type": "set_variable",
+      "_nested_name": "is_completed"
+    },
+    {
+      "type": "data_items",
+      "value": "@data.hp_check_in",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "is_completed",
+            "@items[0]?.unlocked_activity"
+          ],
+          "_raw": "data_changed | set_local : is_completed: @items[0]?.unlocked_activity"
+        }
+      ],
+      "parameter_list": {
+        "filter": "@item.id == @local.curr_cert",
+        "limit": "1"
+      },
+      "exclude_from_translation": true,
+      "name": "data_items_6",
+      "_nested_name": "data_items_6",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.hp_check_in",
+            "matchedExpression": "@data.hp_check_in",
+            "type": "data",
+            "fieldName": "hp_check_in"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.id == @local.curr_cert",
+              "matchedExpression": "@item.id",
+              "type": "item",
+              "fieldName": "id"
+            },
+            {
+              "fullExpression": "@item.id == @local.curr_cert",
+              "matchedExpression": "@local.curr_cert",
+              "type": "local",
+              "fieldName": "curr_cert"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.hp_check_in": [
+          "value"
+        ],
+        "@item.id": [
+          "parameter_list.filter"
+        ],
+        "@local.curr_cert": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "plh_module_list_item",
+      "value": "@local.course_name",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "cert_to_print",
+            "@local.curr_cert"
+          ],
+          "_raw": "click | set_field: cert_to_print: @local.curr_cert"
+        },
+        {
+          "trigger": "click",
+          "action_id": "pop_up",
+          "args": [
+            "show_certificate"
+          ],
+          "_raw": "click | pop_up: show_certificate | fullscreen: false, showCloseButton: true",
+          "params": {
+            "fullscreen": false,
+            "showCloseButton": true
+          }
+        }
+      ],
+      "parameter_list": {
+        "module_image_asset": "@local.asset",
+        "is_locked": "!@local.is_completed",
+        "locked_image_asset": "images/icons/locked.png"
+      },
+      "exclude_from_translation": true,
+      "name": "plh_module_list_item_7",
+      "_nested_name": "plh_module_list_item_7",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.course_name",
+            "matchedExpression": "@local.course_name",
+            "type": "local",
+            "fieldName": "course_name"
+          }
+        ],
+        "action_list": {
+          "0": {
+            "args": {
+              "1": [
+                {
+                  "fullExpression": "@local.curr_cert",
+                  "matchedExpression": "@local.curr_cert",
+                  "type": "local",
+                  "fieldName": "curr_cert"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: cert_to_print: @local.curr_cert",
+                "matchedExpression": "@local.curr_cert",
+                "type": "local",
+                "fieldName": "curr_cert"
+              }
+            ]
+          }
+        },
+        "parameter_list": {
+          "module_image_asset": [
+            {
+              "fullExpression": "@local.asset",
+              "matchedExpression": "@local.asset",
+              "type": "local",
+              "fieldName": "asset"
+            }
+          ],
+          "is_locked": [
+            {
+              "fullExpression": "!@local.is_completed",
+              "matchedExpression": "!@local.is_completed",
+              "type": "local",
+              "fieldName": "is_completed"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.course_name": [
+          "value"
+        ],
+        "@local.curr_cert": [
+          "action_list.0.args.1",
+          "action_list.0._raw"
+        ],
+        "@local.asset": [
+          "parameter_list.module_image_asset"
+        ],
+        "!@local.is_completed": [
+          "parameter_list.is_locked"
+        ]
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_global V2",
+    "path": "templates/certificates.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1KKfrEtHpXm0sMNY21dYKMmZBOny_Vnum-zr1zgdPcmM"
+  }
+}

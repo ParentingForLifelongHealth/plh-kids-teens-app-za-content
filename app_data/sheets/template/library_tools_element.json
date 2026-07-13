@@ -1,0 +1,459 @@
+{
+  "flow_type": "template",
+  "flow_name": "library_tools_element",
+  "status": "released",
+  "rows": [
+    {
+      "name": "library_id",
+      "value": "essential_tools",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "library_id"
+    },
+    {
+      "name": "library_id_concat",
+      "value": "library_section.@local.library_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "library_id_concat",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "library_section.@local.library_id",
+            "matchedExpression": "@local.library_id",
+            "type": "local",
+            "fieldName": "library_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.library_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "library_row",
+      "value": "@data.@local.library_id_concat",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "library_row",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.library_id_concat",
+            "matchedExpression": "@local.library_id_concat",
+            "type": "local",
+            "fieldName": "library_id_concat"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.library_id_concat": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "display_title",
+      "value": "@local.library_row.title",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "display_title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.library_row.title",
+            "matchedExpression": "@local.library_row.title",
+            "type": "local",
+            "fieldName": "library_row"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.library_row.title": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "article_prefix",
+      "value": "library_article_",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "article_prefix"
+    },
+    {
+      "name": "article_suffix",
+      "value": "_tips_1",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "article_suffix"
+    },
+    {
+      "name": "course_id",
+      "type": "set_variable",
+      "_nested_name": "course_id"
+    },
+    {
+      "name": "nav_image",
+      "value": "images/icons/expand_circle_right.png",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "nav_image"
+    },
+    {
+      "type": "items",
+      "name": "loop_modules",
+      "value": "@data.module_tasks",
+      "parameter_list": {
+        "filter": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+        "sort": "number"
+      },
+      "rows": [
+        {
+          "name": "tile_image",
+          "value": "@item.image_asset",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "loop_modules.tile_image",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@item.image_asset",
+                "matchedExpression": "@item.image_asset",
+                "type": "item",
+                "fieldName": "image_asset"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.image_asset": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "plh_module_list_item",
+          "name": "plh_module_list_item",
+          "value": "@item.title",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "nav_stack",
+              "args": [
+                "open"
+              ],
+              "_raw": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
+              "params": {
+                "template": "@local.article_prefix@item.id@local.article_suffix",
+                "header": false
+              }
+            }
+          ],
+          "parameter_list": {
+            "module_image_asset": "@local.tile_image",
+            "nav_image_asset": "@local.nav_image",
+            "locked_image_asset": "@local.nav_image",
+            "completed_image_asset": "@local.nav_image",
+            "completed": "FALSE",
+            "is_locked": "FALSE",
+            "highlighted": "FALSE"
+          },
+          "_nested_name": "loop_modules.plh_module_list_item",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@item.title",
+                "matchedExpression": "@item.title",
+                "type": "item",
+                "fieldName": "title"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
+                    "matchedExpression": "@local.article_prefix",
+                    "type": "local",
+                    "fieldName": "article_prefix"
+                  },
+                  {
+                    "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  },
+                  {
+                    "fullExpression": "click | nav_stack: open | template: @local.article_prefix@item.id@local.article_suffix, header: false",
+                    "matchedExpression": "@local.article_suffix",
+                    "type": "local",
+                    "fieldName": "article_suffix"
+                  }
+                ],
+                "params": {
+                  "template": [
+                    {
+                      "fullExpression": "@local.article_prefix@item.id@local.article_suffix",
+                      "matchedExpression": "@local.article_prefix",
+                      "type": "local",
+                      "fieldName": "article_prefix"
+                    },
+                    {
+                      "fullExpression": "@local.article_prefix@item.id@local.article_suffix",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    },
+                    {
+                      "fullExpression": "@local.article_prefix@item.id@local.article_suffix",
+                      "matchedExpression": "@local.article_suffix",
+                      "type": "local",
+                      "fieldName": "article_suffix"
+                    }
+                  ]
+                }
+              }
+            },
+            "parameter_list": {
+              "module_image_asset": [
+                {
+                  "fullExpression": "@local.tile_image",
+                  "matchedExpression": "@local.tile_image",
+                  "type": "local",
+                  "fieldName": "tile_image"
+                }
+              ],
+              "nav_image_asset": [
+                {
+                  "fullExpression": "@local.nav_image",
+                  "matchedExpression": "@local.nav_image",
+                  "type": "local",
+                  "fieldName": "nav_image"
+                }
+              ],
+              "locked_image_asset": [
+                {
+                  "fullExpression": "@local.nav_image",
+                  "matchedExpression": "@local.nav_image",
+                  "type": "local",
+                  "fieldName": "nav_image"
+                }
+              ],
+              "completed_image_asset": [
+                {
+                  "fullExpression": "@local.nav_image",
+                  "matchedExpression": "@local.nav_image",
+                  "type": "local",
+                  "fieldName": "nav_image"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@item.title": [
+              "value"
+            ],
+            "@local.article_prefix": [
+              "action_list.0._raw",
+              "action_list.0.params.template"
+            ],
+            "@item.id": [
+              "action_list.0._raw",
+              "action_list.0.params.template"
+            ],
+            "@local.article_suffix": [
+              "action_list.0._raw",
+              "action_list.0.params.template"
+            ],
+            "@local.tile_image": [
+              "parameter_list.module_image_asset"
+            ],
+            "@local.nav_image": [
+              "parameter_list.nav_image_asset",
+              "parameter_list.locked_image_asset",
+              "parameter_list.completed_image_asset"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "loop_modules",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.module_tasks",
+            "matchedExpression": "@data.module_tasks",
+            "type": "data",
+            "fieldName": "module_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@item.tag_course",
+              "type": "item",
+              "fieldName": "tag_course"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@local.course_id",
+              "type": "local",
+              "fieldName": "course_id"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "!@item.tag_list",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@item.tag_list.includes",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@fields.child_age_tag",
+              "type": "fields",
+              "fieldName": "child_age_tag"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "!@item.age_list",
+              "type": "item",
+              "fieldName": "age_list"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@item.age_list.includes",
+              "type": "item",
+              "fieldName": "age_list"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@fields.child_age",
+              "type": "fields",
+              "fieldName": "child_age"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "!@item.child_gender_list",
+              "type": "item",
+              "fieldName": "child_gender_list"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@item.child_gender_list.includes",
+              "type": "item",
+              "fieldName": "child_gender_list"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@fields.child_gender",
+              "type": "fields",
+              "fieldName": "child_gender"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "!@item.caregiver_relationship_list",
+              "type": "item",
+              "fieldName": "caregiver_relationship_list"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@item.caregiver_relationship_list.includes",
+              "type": "item",
+              "fieldName": "caregiver_relationship_list"
+            },
+            {
+              "fullExpression": "@item.tag_course == @local.course_id && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "matchedExpression": "@fields.user_relationship",
+              "type": "fields",
+              "fieldName": "user_relationship"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.module_tasks": [
+          "value"
+        ],
+        "@item.tag_course": [
+          "parameter_list.filter"
+        ],
+        "@local.course_id": [
+          "parameter_list.filter"
+        ],
+        "!@item.tag_list": [
+          "parameter_list.filter"
+        ],
+        "@item.tag_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age_tag": [
+          "parameter_list.filter"
+        ],
+        "!@item.age_list": [
+          "parameter_list.filter"
+        ],
+        "@item.age_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age": [
+          "parameter_list.filter"
+        ],
+        "!@item.child_gender_list": [
+          "parameter_list.filter"
+        ],
+        "@item.child_gender_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_gender": [
+          "parameter_list.filter"
+        ],
+        "!@item.caregiver_relationship_list": [
+          "parameter_list.filter"
+        ],
+        "@item.caregiver_relationship_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.user_relationship": [
+          "parameter_list.filter"
+        ]
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_global V2",
+    "path": "templates/PLH activity library.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/15l61UKBeIn5h0uP6cw9nMuWJiB3vK7JZwswsEVmCaUE"
+  }
+}

@@ -36,9 +36,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "foreign_key == \"grief_t\""
+        "!nested"
       ],
-      "input_source": "sub_items",
+      "input_source": "grief_t_articles",
       "output_target": "grief_t_testing | local_only;"
     },
     {
@@ -54,6 +54,13 @@
       "operation": "append_columns",
       "args_list": [
         "completed: FALSE"
+      ],
+      "output_target": "grief_t_article_tasks"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "version: 1"
       ],
       "output_target": "grief_t_article_tasks"
     }

@@ -1,0 +1,171 @@
+{
+  "flow_type": "template",
+  "flow_name": "confirm_exit",
+  "status": "released",
+  "rows": [
+    {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_2",
+      "_nested_name": "set_variable_2"
+    },
+    {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_3",
+      "_nested_name": "set_variable_3"
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "value": "@global.confirm_exit_title",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": false,
+      "_nested_name": "title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.confirm_exit_title",
+            "matchedExpression": "@global.confirm_exit_title",
+            "type": "global",
+            "fieldName": "confirm_exit_title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.confirm_exit_title": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "text_warning",
+      "value": "@global.confirm_exit_text",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": false,
+      "_nested_name": "text_warning",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.confirm_exit_text",
+            "matchedExpression": "@global.confirm_exit_text",
+            "type": "global",
+            "fieldName": "confirm_exit_text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.confirm_exit_text": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "buttons",
+      "rows": [
+        {
+          "type": "button",
+          "name": "button_no",
+          "value": "@global.confirm_exit_button_cancel",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "click | emit: uncompleted"
+            }
+          ],
+          "exclude_from_translation": false,
+          "parameter_list": {
+            "style": "card"
+          },
+          "style_list": [
+            "flex:1"
+          ],
+          "_nested_name": "buttons.button_no",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.confirm_exit_button_cancel",
+                "matchedExpression": "@global.confirm_exit_button_cancel",
+                "type": "global",
+                "fieldName": "confirm_exit_button_cancel"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.confirm_exit_button_cancel": [
+              "value"
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "name": "button_delete",
+          "value": "@global.confirm_exit_button_leave",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "click | emit: completed"
+            },
+            {
+              "trigger": "click",
+              "action_id": "nav",
+              "args": [
+                "back"
+              ],
+              "_raw": "click | nav: back"
+            }
+          ],
+          "exclude_from_translation": false,
+          "parameter_list": {
+            "style": "card"
+          },
+          "style_list": [
+            "flex:1"
+          ],
+          "_nested_name": "buttons.button_delete",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.confirm_exit_button_leave",
+                "matchedExpression": "@global.confirm_exit_button_leave",
+                "type": "global",
+                "fieldName": "confirm_exit_button_leave"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.confirm_exit_button_leave": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "buttons"
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_global V2",
+    "path": "templates/PLH settings.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/15vCtio89LY4bnbi5_aGvB4cJwI6lS47f5SWPGodi3Dc"
+  }
+}

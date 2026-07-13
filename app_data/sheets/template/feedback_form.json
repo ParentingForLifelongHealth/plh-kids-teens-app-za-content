@@ -1,0 +1,573 @@
+{
+  "flow_type": "template",
+  "flow_name": "feedback_form",
+  "status": "released",
+  "rows": [
+    {
+      "type": "template",
+      "name": "settings_header",
+      "value": "settings_header",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "rows": [
+        {
+          "name": "title",
+          "value": "@global.feedback_title",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "settings_header.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.feedback_title",
+                "matchedExpression": "@global.feedback_title",
+                "type": "global",
+                "fieldName": "feedback_title"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.feedback_title": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "settings_header"
+    },
+    {
+      "type": "text",
+      "value": "@global.feedback_intro_text",
+      "_translations": {
+        "value": {}
+      },
+      "name": "text_4",
+      "_nested_name": "text_4",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.feedback_intro_text",
+            "matchedExpression": "@global.feedback_intro_text",
+            "type": "global",
+            "fieldName": "feedback_intro_text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.feedback_intro_text": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "feedback_placeholder",
+      "value": "@global.feedback_placeholder",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "feedback_placeholder",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.feedback_placeholder",
+            "matchedExpression": "@global.feedback_placeholder",
+            "type": "global",
+            "fieldName": "feedback_placeholder"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.feedback_placeholder": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text_area",
+      "name": "text_feedback",
+      "parameter_list": {
+        "placeholder": "@local.feedback_placeholder"
+      },
+      "_nested_name": "text_feedback",
+      "_dynamicFields": {
+        "parameter_list": {
+          "placeholder": [
+            {
+              "fullExpression": "@local.feedback_placeholder",
+              "matchedExpression": "@local.feedback_placeholder",
+              "type": "local",
+              "fieldName": "feedback_placeholder"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.feedback_placeholder": [
+          "parameter_list.placeholder"
+        ]
+      }
+    },
+    {
+      "name": "text_feedback_valid",
+      "value": "@calc(!!@local.text_feedback)",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "text_feedback_valid",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@calc(!!@local.text_feedback)",
+            "matchedExpression": "!@local.text_feedback",
+            "type": "local",
+            "fieldName": "text_feedback"
+          },
+          {
+            "fullExpression": "@calc(!!@local.text_feedback)",
+            "matchedExpression": "@calc(!!@local.text_feedback)",
+            "type": "calc",
+            "fieldName": "!!@local.text_feedback"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.text_feedback": [
+          "value"
+        ],
+        "@calc(!!@local.text_feedback)": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": "@global.feedback_where_intro_text",
+      "_translations": {
+        "value": {}
+      },
+      "name": "text_8",
+      "_nested_name": "text_8",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.feedback_where_intro_text",
+            "matchedExpression": "@global.feedback_where_intro_text",
+            "type": "global",
+            "fieldName": "feedback_where_intro_text"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.feedback_where_intro_text": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "where_placeholder",
+      "value": "@global.where_placeholder",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "where_placeholder",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.where_placeholder",
+            "matchedExpression": "@global.where_placeholder",
+            "type": "global",
+            "fieldName": "where_placeholder"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.where_placeholder": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "combo_box",
+      "name": "where",
+      "parameter_list": {
+        "placeholder": "@local.where_placeholder",
+        "answer_list": "@data.where_options"
+      },
+      "_nested_name": "where",
+      "_dynamicFields": {
+        "parameter_list": {
+          "placeholder": [
+            {
+              "fullExpression": "@local.where_placeholder",
+              "matchedExpression": "@local.where_placeholder",
+              "type": "local",
+              "fieldName": "where_placeholder"
+            }
+          ],
+          "answer_list": [
+            {
+              "fullExpression": "@data.where_options",
+              "matchedExpression": "@data.where_options",
+              "type": "data",
+              "fieldName": "where_options"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.where_placeholder": [
+          "parameter_list.placeholder"
+        ],
+        "@data.where_options": [
+          "parameter_list.answer_list"
+        ]
+      }
+    },
+    {
+      "name": "location_placeholder",
+      "value": "@global.feedback_location_placeholder",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "location_placeholder",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.feedback_location_placeholder",
+            "matchedExpression": "@global.feedback_location_placeholder",
+            "type": "global",
+            "fieldName": "feedback_location_placeholder"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.feedback_location_placeholder": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "specify_location",
+      "type": "set_variable",
+      "_nested_name": "specify_location"
+    },
+    {
+      "type": "text_box",
+      "name": "specify_location",
+      "parameter_list": {
+        "placeholder": "@local.location_placeholder"
+      },
+      "condition": "@local.where == \"other\"",
+      "_nested_name": "specify_location",
+      "_dynamicFields": {
+        "parameter_list": {
+          "placeholder": [
+            {
+              "fullExpression": "@local.location_placeholder",
+              "matchedExpression": "@local.location_placeholder",
+              "type": "local",
+              "fieldName": "location_placeholder"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "@local.where == \"other\"",
+            "matchedExpression": "@local.where",
+            "type": "local",
+            "fieldName": "where"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.location_placeholder": [
+          "parameter_list.placeholder"
+        ],
+        "@local.where": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "where_valid",
+      "value": "@calc(!!@local.where)",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "where_valid",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@calc(!!@local.where)",
+            "matchedExpression": "!@local.where",
+            "type": "local",
+            "fieldName": "where"
+          },
+          {
+            "fullExpression": "@calc(!!@local.where)",
+            "matchedExpression": "@calc(!!@local.where)",
+            "type": "calc",
+            "fieldName": "!!@local.where"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.where": [
+          "value"
+        ],
+        "@calc(!!@local.where)": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "valid",
+      "value": "@local.text_feedback_valid",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "valid",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.text_feedback_valid",
+            "matchedExpression": "@local.text_feedback_valid",
+            "type": "local",
+            "fieldName": "text_feedback_valid"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.text_feedback_valid": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "toast_message",
+      "value": "@global.feedback_toast_message",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "toast_message",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.feedback_toast_message",
+            "matchedExpression": "@global.feedback_toast_message",
+            "type": "global",
+            "fieldName": "feedback_toast_message"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.feedback_toast_message": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "value": "@global.feedback_submit_button",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "add_data",
+          "args": [],
+          "_raw": "click | add_data | \n_list_id: feedback_data,\ntext: @local.text_feedback,\nwhere: @local.where,\nspecify_location: @local.specify_location,\ntimestamp: @calc(timestamp())",
+          "params": {
+            "_list_id": "feedback_data",
+            "text": "@local.text_feedback",
+            "where": "@local.where",
+            "specify_location": "@local.specify_location",
+            "timestamp": "@calc(timestamp())"
+          }
+        },
+        {
+          "trigger": "click",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "click | emit: completed"
+        },
+        {
+          "trigger": "click",
+          "action_id": "toast",
+          "args": [],
+          "_raw": "click | toast | message: @local.toast_message",
+          "params": {
+            "message": "@local.toast_message"
+          }
+        }
+      ],
+      "parameter_list": {
+        "disabled": "!@local.valid",
+        "style": "flexible"
+      },
+      "style_list": [
+        "margin-bottom: 24px",
+        "padding: 12px 24px"
+      ],
+      "name": "button_17",
+      "_nested_name": "button_17",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.feedback_submit_button",
+            "matchedExpression": "@global.feedback_submit_button",
+            "type": "global",
+            "fieldName": "feedback_submit_button"
+          }
+        ],
+        "action_list": {
+          "0": {
+            "_raw": [
+              {
+                "fullExpression": "click | add_data | \n_list_id: feedback_data,\ntext: @local.text_feedback,\nwhere: @local.where,\nspecify_location: @local.specify_location,\ntimestamp: @calc(timestamp())",
+                "matchedExpression": "@local.text_feedback",
+                "type": "local",
+                "fieldName": "text_feedback"
+              },
+              {
+                "fullExpression": "click | add_data | \n_list_id: feedback_data,\ntext: @local.text_feedback,\nwhere: @local.where,\nspecify_location: @local.specify_location,\ntimestamp: @calc(timestamp())",
+                "matchedExpression": "@local.where",
+                "type": "local",
+                "fieldName": "where"
+              },
+              {
+                "fullExpression": "click | add_data | \n_list_id: feedback_data,\ntext: @local.text_feedback,\nwhere: @local.where,\nspecify_location: @local.specify_location,\ntimestamp: @calc(timestamp())",
+                "matchedExpression": "@local.specify_location",
+                "type": "local",
+                "fieldName": "specify_location"
+              },
+              {
+                "fullExpression": "click | add_data | \n_list_id: feedback_data,\ntext: @local.text_feedback,\nwhere: @local.where,\nspecify_location: @local.specify_location,\ntimestamp: @calc(timestamp())",
+                "matchedExpression": "@calc(timestamp())",
+                "type": "calc",
+                "fieldName": "timestamp()"
+              }
+            ],
+            "params": {
+              "text": [
+                {
+                  "fullExpression": "@local.text_feedback",
+                  "matchedExpression": "@local.text_feedback",
+                  "type": "local",
+                  "fieldName": "text_feedback"
+                }
+              ],
+              "where": [
+                {
+                  "fullExpression": "@local.where",
+                  "matchedExpression": "@local.where",
+                  "type": "local",
+                  "fieldName": "where"
+                }
+              ],
+              "specify_location": [
+                {
+                  "fullExpression": "@local.specify_location",
+                  "matchedExpression": "@local.specify_location",
+                  "type": "local",
+                  "fieldName": "specify_location"
+                }
+              ],
+              "timestamp": [
+                {
+                  "fullExpression": "@calc(timestamp())",
+                  "matchedExpression": "@calc(timestamp())",
+                  "type": "calc",
+                  "fieldName": "timestamp()"
+                }
+              ]
+            }
+          },
+          "2": {
+            "_raw": [
+              {
+                "fullExpression": "click | toast | message: @local.toast_message",
+                "matchedExpression": "@local.toast_message",
+                "type": "local",
+                "fieldName": "toast_message"
+              }
+            ],
+            "params": {
+              "message": [
+                {
+                  "fullExpression": "@local.toast_message",
+                  "matchedExpression": "@local.toast_message",
+                  "type": "local",
+                  "fieldName": "toast_message"
+                }
+              ]
+            }
+          }
+        },
+        "parameter_list": {
+          "disabled": [
+            {
+              "fullExpression": "!@local.valid",
+              "matchedExpression": "!@local.valid",
+              "type": "local",
+              "fieldName": "valid"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@global.feedback_submit_button": [
+          "value"
+        ],
+        "@local.text_feedback": [
+          "action_list.0._raw",
+          "action_list.0.params.text"
+        ],
+        "@local.where": [
+          "action_list.0._raw",
+          "action_list.0.params.where"
+        ],
+        "@local.specify_location": [
+          "action_list.0._raw",
+          "action_list.0.params.specify_location"
+        ],
+        "@calc(timestamp())": [
+          "action_list.0._raw",
+          "action_list.0.params.timestamp"
+        ],
+        "@local.toast_message": [
+          "action_list.2._raw",
+          "action_list.2.params.message"
+        ],
+        "!@local.valid": [
+          "parameter_list.disabled"
+        ]
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_global V2",
+    "path": "templates/feedback_form.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1qz1xzld5k_5WmA9Z_jSJQrRLnZAOLRRXJ6DGTefwTgI"
+  }
+}

@@ -10,6 +10,10 @@
   },
   "rows": [
     {
+      "name": "articles",
+      "value": "_article_tasks"
+    },
+    {
       "type": "template",
       "name": "header",
       "value": "header",
@@ -21,6 +25,14 @@
         {
           "name": "icon_asset",
           "value": "@data.common_categories.relax.icon_asset"
+        },
+        {
+          "name": "show_progress",
+          "value": true
+        },
+        {
+          "name": "progress_data_list",
+          "value": "@gen.id@local.articles"
         }
       ]
     },
@@ -55,9 +67,9 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_global",
-    "path": "PLH articles template generators.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1Zq6UzQ4qUIsCt_tg1TKDndZjOHmidmW5h1dyTpnoPTE"
+    "name": "kids_teens_global V2",
+    "path": "templates/PLH articles template generators.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1ynKeAsmx46aHGzTbT1BaqRXDPi6cxbUOsovcu5c0rdU"
   },
   "_output_flows": [
     {
@@ -187,6 +199,11 @@
     },
     {
       "flow_name": "article_celebrate_t_relax_4",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "article_addonlinesafety_t_relax_4",
       "flow_subtype": "generated",
       "flow_type": "template"
     }

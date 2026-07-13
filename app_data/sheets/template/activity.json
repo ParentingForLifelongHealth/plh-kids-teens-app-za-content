@@ -722,47 +722,99 @@
     },
     {
       "name": "resources_title",
-      "value": "What you need",
+      "value": "@global.resources_title",
       "_translations": {
-        "value": {
-          "za_xh": true
-        }
+        "value": {}
       },
       "type": "set_variable",
-      "_nested_name": "resources_title"
+      "_nested_name": "resources_title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.resources_title",
+            "matchedExpression": "@global.resources_title",
+            "type": "global",
+            "fieldName": "resources_title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.resources_title": [
+          "value"
+        ]
+      }
     },
     {
       "name": "steps_title",
-      "value": "Steps",
+      "value": "@global.steps_title",
       "_translations": {
-        "value": {
-          "za_xh": true
-        }
+        "value": {}
       },
       "type": "set_variable",
-      "_nested_name": "steps_title"
+      "_nested_name": "steps_title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.steps_title",
+            "matchedExpression": "@global.steps_title",
+            "type": "global",
+            "fieldName": "steps_title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.steps_title": [
+          "value"
+        ]
+      }
     },
     {
       "name": "tips_title",
-      "value": "More tips",
+      "value": "@global.tips_title",
       "_translations": {
-        "value": {
-          "za_xh": true
-        }
+        "value": {}
       },
       "type": "set_variable",
-      "_nested_name": "tips_title"
+      "_nested_name": "tips_title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.tips_title",
+            "matchedExpression": "@global.tips_title",
+            "type": "global",
+            "fieldName": "tips_title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.tips_title": [
+          "value"
+        ]
+      }
     },
     {
       "name": "extension_title",
-      "value": "Try also",
+      "value": "@global.extension_title",
       "_translations": {
-        "value": {
-          "za_xh": true
-        }
+        "value": {}
       },
       "type": "set_variable",
-      "_nested_name": "extension_title"
+      "_nested_name": "extension_title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.extension_title",
+            "matchedExpression": "@global.extension_title",
+            "type": "global",
+            "fieldName": "extension_title"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.extension_title": [
+          "value"
+        ]
+      }
     },
     {
       "type": "accordion",
@@ -1115,8 +1167,8 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_global",
-    "path": "PLH activity library.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1ejf7JQSM2-kvclr1oZW6jH_a0K_aEZuGQCYOD7RcO8U"
+    "name": "kids_teens_global V2",
+    "path": "templates/PLH activity library.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/15l61UKBeIn5h0uP6cw9nMuWJiB3vK7JZwswsEVmCaUE"
   }
 }

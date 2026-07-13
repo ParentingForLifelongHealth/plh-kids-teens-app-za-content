@@ -2,13 +2,6 @@
   "flow_type": "template",
   "flow_name": "home_screen",
   "status": "released",
-  "parameter_list": {
-    "app_config": {
-      "LAYOUT": {
-        "page_padding": "24px 0"
-      }
-    }
-  },
   "rows": [
     {
       "name": "home_screen_logo",
@@ -72,18 +65,35 @@
       }
     },
     {
-      "name": "home_screen_logo_height",
+      "name": "home_screen_logo_width",
       "value": "48px",
       "_translations": {
         "value": {}
       },
-      "condition": "!@global.home_screen_logo_height",
       "type": "set_variable",
-      "_nested_name": "home_screen_logo_height",
+      "_nested_name": "home_screen_logo_width"
+    },
+    {
+      "name": "home_screen_logo_width",
+      "value": "@global.home_screen_logo_height",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!@global.home_screen_logo_height",
+      "type": "set_variable",
+      "_nested_name": "home_screen_logo_width",
       "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.home_screen_logo_height",
+            "matchedExpression": "@global.home_screen_logo_height",
+            "type": "global",
+            "fieldName": "home_screen_logo_height"
+          }
+        ],
         "condition": [
           {
-            "fullExpression": "!@global.home_screen_logo_height",
+            "fullExpression": "!!@global.home_screen_logo_height",
             "matchedExpression": "!@global.home_screen_logo_height",
             "type": "global",
             "fieldName": "home_screen_logo_height"
@@ -91,10 +101,22 @@
         ]
       },
       "_dynamicDependencies": {
+        "@global.home_screen_logo_height": [
+          "value"
+        ],
         "!@global.home_screen_logo_height": [
           "condition"
         ]
       }
+    },
+    {
+      "name": "home_screen_logo_height",
+      "value": "48px",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "home_screen_logo_height"
     },
     {
       "name": "home_screen_logo_height",
@@ -267,7 +289,6 @@
       "type": "display_group",
       "name": "dg_sticky_top",
       "parameter_list": {
-        "sticky": "top",
         "style": "column"
       },
       "exclude_from_translation": true,
@@ -280,8 +301,7 @@
           "name": "dg_row",
           "exclude_from_translation": true,
           "style_list": [
-            "justify-content: space-between",
-            "padding: 12px 24px"
+            "justify-content: space-between"
           ],
           "rows": [
             {
@@ -291,10 +311,6 @@
               "_translations": {
                 "value": {}
               },
-              "style_list": [
-                "margin-top: 24px",
-                "margin-left: -24px"
-              ],
               "_nested_name": "dg_sticky_top.dg_row.hello_name",
               "_dynamicFields": {
                 "value": [
@@ -331,9 +347,7 @@
               "exclude_from_translation": true,
               "style_list": [
                 "height: @local.home_screen_logo_height",
-                "margin-top: 8px",
-                "margin-bottom: -8px",
-                "margin-right: -34px"
+                "width: @local.home_screen_logo_width"
               ],
               "_nested_name": "dg_sticky_top.dg_row.image",
               "_dynamicFields": {
@@ -353,6 +367,14 @@
                       "type": "local",
                       "fieldName": "home_screen_logo_height"
                     }
+                  ],
+                  "1": [
+                    {
+                      "fullExpression": "width: @local.home_screen_logo_width",
+                      "matchedExpression": "@local.home_screen_logo_width",
+                      "type": "local",
+                      "fieldName": "home_screen_logo_width"
+                    }
                   ]
                 }
               },
@@ -362,6 +384,9 @@
                 ],
                 "@local.home_screen_logo_height": [
                   "style_list.0"
+                ],
+                "@local.home_screen_logo_width": [
+                  "style_list.1"
                 ]
               }
             }
@@ -386,7 +411,6 @@
           "condition": "!@local.has_been_clicked_previously",
           "exclude_from_translation": true,
           "style_list": [
-            "padding: 0px 24px 0px",
             "margin-top: -12px"
           ],
           "rows": [],
@@ -451,7 +475,6 @@
           "condition": "@local.has_been_clicked_previously",
           "exclude_from_translation": true,
           "style_list": [
-            "padding: 0px 24px 0px",
             "margin-top: -12px"
           ],
           "rows": [],
@@ -503,60 +526,20 @@
     },
     {
       "type": "template",
-      "name": "module_path",
-      "value": "module_path",
-      "condition": "!@fields.display_modules_as_list",
-      "exclude_from_translation": true,
-      "rows": [],
-      "_nested_name": "module_path",
-      "_dynamicFields": {
-        "condition": [
-          {
-            "fullExpression": "!@fields.display_modules_as_list",
-            "matchedExpression": "!@fields.display_modules_as_list",
-            "type": "fields",
-            "fieldName": "display_modules_as_list"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "!@fields.display_modules_as_list": [
-          "condition"
-        ]
-      }
-    },
-    {
-      "type": "template",
       "name": "module_list",
       "value": "module_list",
-      "condition": "@fields.display_modules_as_list",
       "exclude_from_translation": true,
       "style_list": [
-        "padding: 4px 24px 0px 24px",
+        "padding: 8px 0px 0px",
         "margin-top: -1em"
       ],
       "rows": [],
-      "_nested_name": "module_list",
-      "_dynamicFields": {
-        "condition": [
-          {
-            "fullExpression": "@fields.display_modules_as_list",
-            "matchedExpression": "@fields.display_modules_as_list",
-            "type": "fields",
-            "fieldName": "display_modules_as_list"
-          }
-        ]
-      },
-      "_dynamicDependencies": {
-        "@fields.display_modules_as_list": [
-          "condition"
-        ]
-      }
+      "_nested_name": "module_list"
     }
   ],
   "_source": {
-    "name": "kids_teens_za",
-    "path": "templates/ZA app_navigation.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1dpTYJMY2c8CWJ8yiGTR1vSX1LryPSpsxQSPbUjRi0fg"
+    "name": "kids_teens_global V2",
+    "path": "templates/app_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/12uVS4kd0g9A1cNLzpBt8avZ2biX4YGXgSciLMvBnsgs"
   }
 }

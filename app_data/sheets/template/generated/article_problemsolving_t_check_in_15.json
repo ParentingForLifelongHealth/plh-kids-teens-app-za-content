@@ -59,14 +59,27 @@
           "rows": [
             {
               "name": "title",
-              "value": "Check-in",
+              "value": "@global.check_in_title",
               "_translations": {
-                "value": {
-                  "za_xh": true
-                }
+                "value": {}
               },
               "type": "set_variable",
-              "_nested_name": "article.header.title"
+              "_nested_name": "article.header.title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.check_in_title",
+                    "matchedExpression": "@global.check_in_title",
+                    "type": "global",
+                    "fieldName": "check_in_title"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.check_in_title": [
+                  "value"
+                ]
+              }
             },
             {
               "name": "icon_asset",

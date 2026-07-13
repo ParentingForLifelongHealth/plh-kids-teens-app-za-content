@@ -93,17 +93,6 @@
                 "_id": "@local.module_id",
                 "started_ts": "@calc(now())"
               }
-            },
-            {
-              "trigger": "click",
-              "action_id": "set_data",
-              "args": [],
-              "_raw": "click | set_data | _list_id: module_tasks, _id: @local.module_id, last_accessed_ts: @calc(now())",
-              "params": {
-                "_list_id": "module_tasks",
-                "_id": "@local.module_id",
-                "last_accessed_ts": "@calc(now())"
-              }
             }
           ],
           "condition": "@item.row_index == 0",
@@ -192,40 +181,6 @@
                     }
                   ]
                 }
-              },
-              "3": {
-                "_raw": [
-                  {
-                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, last_accessed_ts: @calc(now())",
-                    "matchedExpression": "@local.module_id",
-                    "type": "local",
-                    "fieldName": "module_id"
-                  },
-                  {
-                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, last_accessed_ts: @calc(now())",
-                    "matchedExpression": "@calc(now())",
-                    "type": "calc",
-                    "fieldName": "now()"
-                  }
-                ],
-                "params": {
-                  "_id": [
-                    {
-                      "fullExpression": "@local.module_id",
-                      "matchedExpression": "@local.module_id",
-                      "type": "local",
-                      "fieldName": "module_id"
-                    }
-                  ],
-                  "last_accessed_ts": [
-                    {
-                      "fullExpression": "@calc(now())",
-                      "matchedExpression": "@calc(now())",
-                      "type": "calc",
-                      "fieldName": "now()"
-                    }
-                  ]
-                }
               }
             },
             "condition": [
@@ -251,15 +206,11 @@
             ],
             "@local.module_id": [
               "action_list.2._raw",
-              "action_list.2.params._id",
-              "action_list.3._raw",
-              "action_list.3.params._id"
+              "action_list.2.params._id"
             ],
             "@calc(now())": [
               "action_list.2._raw",
-              "action_list.2.params.started_ts",
-              "action_list.3._raw",
-              "action_list.3.params.last_accessed_ts"
+              "action_list.2.params.started_ts"
             ],
             "@item.row_index": [
               "condition"
@@ -293,17 +244,6 @@
               "params": {
                 "template": "@local.module_start_at_id",
                 "header": false
-              }
-            },
-            {
-              "trigger": "click",
-              "action_id": "set_data",
-              "args": [],
-              "_raw": "click | set_data | _list_id: module_tasks, _id: @local.module_id, last_accessed_ts: @calc(now())",
-              "params": {
-                "_list_id": "module_tasks",
-                "_id": "@local.module_id",
-                "last_accessed_ts": "@calc(now())"
               }
             }
           ],
@@ -359,40 +299,6 @@
                     }
                   ]
                 }
-              },
-              "2": {
-                "_raw": [
-                  {
-                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, last_accessed_ts: @calc(now())",
-                    "matchedExpression": "@local.module_id",
-                    "type": "local",
-                    "fieldName": "module_id"
-                  },
-                  {
-                    "fullExpression": "click | set_data | _list_id: module_tasks, _id: @local.module_id, last_accessed_ts: @calc(now())",
-                    "matchedExpression": "@calc(now())",
-                    "type": "calc",
-                    "fieldName": "now()"
-                  }
-                ],
-                "params": {
-                  "_id": [
-                    {
-                      "fullExpression": "@local.module_id",
-                      "matchedExpression": "@local.module_id",
-                      "type": "local",
-                      "fieldName": "module_id"
-                    }
-                  ],
-                  "last_accessed_ts": [
-                    {
-                      "fullExpression": "@calc(now())",
-                      "matchedExpression": "@calc(now())",
-                      "type": "calc",
-                      "fieldName": "now()"
-                    }
-                  ]
-                }
               }
             },
             "condition": [
@@ -415,14 +321,6 @@
             "@local.module_start_at_id": [
               "action_list.1._raw",
               "action_list.1.params.template"
-            ],
-            "@local.module_id": [
-              "action_list.2._raw",
-              "action_list.2.params._id"
-            ],
-            "@calc(now())": [
-              "action_list.2._raw",
-              "action_list.2.params.last_accessed_ts"
             ],
             "@item.row_index": [
               "condition"
@@ -462,8 +360,8 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_global",
-    "path": "PLH module_navigation.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/13WrrsCwjK_5S9t8VQTbgWbWpAVbRKByxpOXr95YnjY8"
+    "name": "kids_teens_global V2",
+    "path": "templates/PLH module_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1upg0i3Kz-ccJ44ZfbV49SWmehVpvHW3r9kBtc-bDRFI"
   }
 }
