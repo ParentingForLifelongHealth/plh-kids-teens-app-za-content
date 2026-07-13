@@ -10,6 +10,40 @@
   },
   "rows": [
     {
+      "name": "not_comp_count",
+      "value": 0
+    },
+    {
+      "name": "module_id",
+      "value": "@gen.id"
+    },
+    {
+      "type": "data_items",
+      "name": "count_modules",
+      "value": "@data.module_tasks",
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "not_comp_count",
+            "@items.length"
+          ],
+          "_raw": "data_changed | set_local: not_comp_count: @items.length"
+        }
+      ],
+      "parameter_list": [
+        "filter: (@item.id !== @local.module_id) && !@item.completed && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))"
+      ],
+      "exclude_from_translation": true
+    },
+    {
+      "type": "text",
+      "value": "not comp: @local.not_comp_count",
+      "condition": false,
+      "exclude_from_translation": true
+    },
+    {
       "type": "data_items",
       "name": "pick_random_locked_activity",
       "value": "@data.activity_tasks",
@@ -23,17 +57,8 @@
         {
           "type": "template",
           "name": "module_start_at_id",
-          "value": "module_start_at_id",
+          "value": "module_start_at_id_get_unlock",
           "action_list": [
-            {
-              "trigger": "completed",
-              "action_id": "set_item",
-              "args": [],
-              "_raw": "completed | set_item | locked: false",
-              "params": {
-                "locked": false
-              }
-            },
             {
               "trigger": "completed",
               "action_id": "set_data",
@@ -82,25 +107,22 @@
               "_raw": "uncompleted | nav_stack: close_top"
             }
           ],
-          "exclude_from_translation": true,
           "rows": [
+            {
+              "name": "activity_id",
+              "value": "@item.id"
+            },
             {
               "name": "module_id",
               "value": "@gen.id"
             },
             {
-              "name": "article_id",
-              "value": "@fields.current_start_article_id"
+              "name": "course_id",
+              "value": "@gen.tag_course"
             },
             {
-              "type": "nested_properties",
-              "name": "module",
-              "rows": [
-                {
-                  "name": "show_progress_bar",
-                  "value": false
-                }
-              ]
+              "name": "unlock_all",
+              "value": "@calc(@local.not_comp_count == 0)"
             }
           ]
         }
@@ -108,9 +130,9 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_global",
-    "path": "PLH module_navigation.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/13WrrsCwjK_5S9t8VQTbgWbWpAVbRKByxpOXr95YnjY8"
+    "name": "kids_teens_global V2",
+    "path": "templates/PLH module_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1upg0i3Kz-ccJ44ZfbV49SWmehVpvHW3r9kBtc-bDRFI"
   },
   "_output_flows": [
     {
@@ -240,6 +262,11 @@
     },
     {
       "flow_name": "stack_module_celebrate_t_start_at_id",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_module_addonlinesafety_t_start_at_id",
       "flow_subtype": "generated",
       "flow_type": "template"
     }

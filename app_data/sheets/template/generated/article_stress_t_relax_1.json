@@ -4,6 +4,15 @@
   "flow_type": "template",
   "rows": [
     {
+      "name": "articles",
+      "value": "_article_tasks",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "articles"
+    },
+    {
       "type": "template",
       "name": "header",
       "value": "header",
@@ -52,6 +61,36 @@
           },
           "_dynamicDependencies": {
             "@data.common_categories.relax.icon_asset": [
+              "value"
+            ]
+          }
+        },
+        {
+          "name": "show_progress",
+          "value": true,
+          "type": "set_variable",
+          "_nested_name": "header.show_progress"
+        },
+        {
+          "name": "progress_data_list",
+          "value": "stress_t@local.articles",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "header.progress_data_list",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "stress_t@local.articles",
+                "matchedExpression": "@local.articles",
+                "type": "local",
+                "fieldName": "articles"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.articles": [
               "value"
             ]
           }

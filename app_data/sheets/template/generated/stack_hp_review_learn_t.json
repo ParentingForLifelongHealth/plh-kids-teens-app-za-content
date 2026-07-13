@@ -4,8 +4,64 @@
   "flow_type": "template",
   "rows": [
     {
+      "name": "underscore",
+      "value": "_",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "underscore"
+    },
+    {
+      "name": "certificate_template",
+      "value": "learn_t@local.underscore@fields._app_language",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "certificate_template",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "learn_t@local.underscore@fields._app_language",
+            "matchedExpression": "@local.underscore",
+            "type": "local",
+            "fieldName": "underscore"
+          },
+          {
+            "fullExpression": "learn_t@local.underscore@fields._app_language",
+            "matchedExpression": "@fields._app_language",
+            "type": "fields",
+            "fieldName": "_app_language"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.underscore": [
+          "value"
+        ],
+        "@fields._app_language": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "certificate_data_list",
+      "value": "certificate_data",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "certificate_data_list"
+    },
+    {
+      "name": "result",
+      "type": "set_variable",
+      "_nested_name": "result"
+    },
+    {
       "type": "data_items",
-      "name": "check_if_already_unlocked_activity",
+      "name": "get_check_in",
       "value": "hp_check_in",
       "parameter_list": {
         "filter": "@item.id == \"learn_t\"",
@@ -15,9 +71,88 @@
       "rows": [
         {
           "type": "template",
-          "name": "if_no",
-          "value": "hp_review_with_activity",
+          "name": "header",
+          "value": "header",
           "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "completed | emit: completed"
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "uncompleted | emit: uncompleted"
+            }
+          ],
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "title",
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "get_check_in.header.title"
+            },
+            {
+              "name": "display_icon",
+              "value": false,
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "get_check_in.header.display_icon"
+            },
+            {
+              "name": "show_progress",
+              "value": false,
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "get_check_in.header.show_progress"
+            },
+            {
+              "name": "progress",
+              "value": 0,
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "get_check_in.header.progress"
+            }
+          ],
+          "_nested_name": "get_check_in.header"
+        },
+        {
+          "type": "template",
+          "name": "if_yes",
+          "value": "hp_review",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "plh_certificate",
+              "args": [
+                "generate"
+              ],
+              "_raw": "completed | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @fields.user_name,\nid: learn_t,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: @local.result",
+              "params": {
+                "url": "@global.certificator_url",
+                "name": "@fields.user_name",
+                "id": "learn_t",
+                "certificate_template": "@local.certificate_template",
+                "certificate_data_list": "@local.certificate_data_list",
+                "result_local_variable_name": "@local.result"
+              }
+            },
+            {
+              "trigger": "completed",
+              "action_id": "set_field",
+              "args": [
+                "cert_to_print",
+                "@item.id"
+              ],
+              "_raw": "completed | set_field: cert_to_print: @item.id"
+            },
             {
               "trigger": "completed",
               "action_id": "set_data",
@@ -41,12 +176,9 @@
               "trigger": "completed",
               "action_id": "pop_up",
               "args": [
-                "unlock_play"
+                "show_certificate"
               ],
-              "_raw": "completed | pop_up: unlock_play | variant: plh_completion",
-              "params": {
-                "variant": "plh_completion"
-              }
+              "_raw": "completed | pop_up: show_certificate"
             },
             {
               "trigger": "uncompleted",
@@ -58,92 +190,6 @@
             }
           ],
           "exclude_from_translation": true,
-          "condition": "!@item.unlocked_activity",
-          "rows": [
-            {
-              "type": "template",
-              "name": "hp_review",
-              "value": "hp_review",
-              "rows": [
-                {
-                  "name": "row_id",
-                  "value": "learn_t",
-                  "_translations": {
-                    "value": {}
-                  },
-                  "exclude_from_translation": true,
-                  "type": "set_variable",
-                  "_nested_name": "check_if_already_unlocked_activity.if_no.hp_review.row_id"
-                },
-                {
-                  "name": "completion_icon",
-                  "value": "@global.first_completion_icon",
-                  "_translations": {
-                    "value": {}
-                  },
-                  "type": "set_variable",
-                  "_nested_name": "check_if_already_unlocked_activity.if_no.hp_review.completion_icon",
-                  "_dynamicFields": {
-                    "value": [
-                      {
-                        "fullExpression": "@global.first_completion_icon",
-                        "matchedExpression": "@global.first_completion_icon",
-                        "type": "global",
-                        "fieldName": "first_completion_icon"
-                      }
-                    ]
-                  },
-                  "_dynamicDependencies": {
-                    "@global.first_completion_icon": [
-                      "value"
-                    ]
-                  }
-                }
-              ],
-              "_nested_name": "check_if_already_unlocked_activity.if_no.hp_review"
-            }
-          ],
-          "_nested_name": "check_if_already_unlocked_activity.if_no",
-          "_dynamicFields": {
-            "condition": [
-              {
-                "fullExpression": "!@item.unlocked_activity",
-                "matchedExpression": "!@item.unlocked_activity",
-                "type": "item",
-                "fieldName": "unlocked_activity"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "!@item.unlocked_activity": [
-              "condition"
-            ]
-          }
-        },
-        {
-          "type": "template",
-          "name": "if_yes",
-          "value": "hp_review",
-          "action_list": [
-            {
-              "trigger": "completed",
-              "action_id": "nav_stack",
-              "args": [
-                "close_top"
-              ],
-              "_raw": "completed | nav_stack: close_top"
-            },
-            {
-              "trigger": "uncompleted",
-              "action_id": "nav_stack",
-              "args": [
-                "close_top"
-              ],
-              "_raw": "uncompleted | nav_stack: close_top"
-            }
-          ],
-          "exclude_from_translation": true,
-          "condition": "@item.unlocked_activity",
           "rows": [
             {
               "name": "row_id",
@@ -153,52 +199,163 @@
               },
               "exclude_from_translation": true,
               "type": "set_variable",
-              "_nested_name": "check_if_already_unlocked_activity.if_yes.row_id"
+              "_nested_name": "get_check_in.if_yes.row_id"
             },
             {
               "name": "completion_icon",
-              "value": "@global.subsequent_completion_icon",
+              "value": "@global.first_completion_icon",
               "_translations": {
                 "value": {}
               },
               "type": "set_variable",
-              "_nested_name": "check_if_already_unlocked_activity.if_yes.completion_icon",
+              "_nested_name": "get_check_in.if_yes.completion_icon",
               "_dynamicFields": {
                 "value": [
                   {
-                    "fullExpression": "@global.subsequent_completion_icon",
-                    "matchedExpression": "@global.subsequent_completion_icon",
+                    "fullExpression": "@global.first_completion_icon",
+                    "matchedExpression": "@global.first_completion_icon",
                     "type": "global",
-                    "fieldName": "subsequent_completion_icon"
+                    "fieldName": "first_completion_icon"
                   }
                 ]
               },
               "_dynamicDependencies": {
-                "@global.subsequent_completion_icon": [
+                "@global.first_completion_icon": [
                   "value"
                 ]
               }
             }
           ],
-          "_nested_name": "check_if_already_unlocked_activity.if_yes",
+          "_nested_name": "get_check_in.if_yes",
           "_dynamicFields": {
-            "condition": [
-              {
-                "fullExpression": "@item.unlocked_activity",
-                "matchedExpression": "@item.unlocked_activity",
-                "type": "item",
-                "fieldName": "unlocked_activity"
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "completed | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @fields.user_name,\nid: learn_t,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: @local.result",
+                    "matchedExpression": "@global.certificator_url",
+                    "type": "global",
+                    "fieldName": "certificator_url"
+                  },
+                  {
+                    "fullExpression": "completed | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @fields.user_name,\nid: learn_t,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: @local.result",
+                    "matchedExpression": "@fields.user_name",
+                    "type": "fields",
+                    "fieldName": "user_name"
+                  },
+                  {
+                    "fullExpression": "completed | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @fields.user_name,\nid: learn_t,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: @local.result",
+                    "matchedExpression": "@local.certificate_template",
+                    "type": "local",
+                    "fieldName": "certificate_template"
+                  },
+                  {
+                    "fullExpression": "completed | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @fields.user_name,\nid: learn_t,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: @local.result",
+                    "matchedExpression": "@local.certificate_data_list",
+                    "type": "local",
+                    "fieldName": "certificate_data_list"
+                  },
+                  {
+                    "fullExpression": "completed | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @fields.user_name,\nid: learn_t,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: @local.result",
+                    "matchedExpression": "@local.result",
+                    "type": "local",
+                    "fieldName": "result"
+                  }
+                ],
+                "params": {
+                  "url": [
+                    {
+                      "fullExpression": "@global.certificator_url",
+                      "matchedExpression": "@global.certificator_url",
+                      "type": "global",
+                      "fieldName": "certificator_url"
+                    }
+                  ],
+                  "name": [
+                    {
+                      "fullExpression": "@fields.user_name",
+                      "matchedExpression": "@fields.user_name",
+                      "type": "fields",
+                      "fieldName": "user_name"
+                    }
+                  ],
+                  "certificate_template": [
+                    {
+                      "fullExpression": "@local.certificate_template",
+                      "matchedExpression": "@local.certificate_template",
+                      "type": "local",
+                      "fieldName": "certificate_template"
+                    }
+                  ],
+                  "certificate_data_list": [
+                    {
+                      "fullExpression": "@local.certificate_data_list",
+                      "matchedExpression": "@local.certificate_data_list",
+                      "type": "local",
+                      "fieldName": "certificate_data_list"
+                    }
+                  ],
+                  "result_local_variable_name": [
+                    {
+                      "fullExpression": "@local.result",
+                      "matchedExpression": "@local.result",
+                      "type": "local",
+                      "fieldName": "result"
+                    }
+                  ]
+                }
+              },
+              "1": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@item.id",
+                      "matchedExpression": "@item.id",
+                      "type": "item",
+                      "fieldName": "id"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_field: cert_to_print: @item.id",
+                    "matchedExpression": "@item.id",
+                    "type": "item",
+                    "fieldName": "id"
+                  }
+                ]
               }
-            ]
+            }
           },
           "_dynamicDependencies": {
-            "@item.unlocked_activity": [
-              "condition"
+            "@global.certificator_url": [
+              "action_list.0._raw",
+              "action_list.0.params.url"
+            ],
+            "@fields.user_name": [
+              "action_list.0._raw",
+              "action_list.0.params.name"
+            ],
+            "@local.certificate_template": [
+              "action_list.0._raw",
+              "action_list.0.params.certificate_template"
+            ],
+            "@local.certificate_data_list": [
+              "action_list.0._raw",
+              "action_list.0.params.certificate_data_list"
+            ],
+            "@local.result": [
+              "action_list.0._raw",
+              "action_list.0.params.result_local_variable_name"
+            ],
+            "@item.id": [
+              "action_list.1.args.1",
+              "action_list.1._raw"
             ]
           }
         }
       ],
-      "_nested_name": "check_if_already_unlocked_activity",
+      "_nested_name": "get_check_in",
       "_dynamicFields": {
         "parameter_list": {
           "filter": [

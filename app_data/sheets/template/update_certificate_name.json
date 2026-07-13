@@ -1,0 +1,645 @@
+{
+  "flow_type": "template",
+  "flow_name": "update_certificate_name",
+  "status": "released",
+  "rows": [
+    {
+      "name": "n_reprints",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "n_reprints"
+    },
+    {
+      "name": "lang",
+      "value": "@fields._app_language",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "lang",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields._app_language",
+            "matchedExpression": "@fields._app_language",
+            "type": "fields",
+            "fieldName": "_app_language"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields._app_language": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "underscore",
+      "value": "_",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "underscore"
+    },
+    {
+      "name": "deployment",
+      "value": "@global.deployment_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "deployment",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.deployment_id",
+            "matchedExpression": "@global.deployment_id",
+            "type": "global",
+            "fieldName": "deployment_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.deployment_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "certificate_template",
+      "value": "@local.deployment@local.underscore@fields.cert_to_print@local.underscore@local.lang",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "certificate_template",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.deployment@local.underscore@fields.cert_to_print@local.underscore@local.lang",
+            "matchedExpression": "@local.deployment",
+            "type": "local",
+            "fieldName": "deployment"
+          },
+          {
+            "fullExpression": "@local.deployment@local.underscore@fields.cert_to_print@local.underscore@local.lang",
+            "matchedExpression": "@local.underscore",
+            "type": "local",
+            "fieldName": "underscore"
+          },
+          {
+            "fullExpression": "@local.deployment@local.underscore@fields.cert_to_print@local.underscore@local.lang",
+            "matchedExpression": "@fields.cert_to_print",
+            "type": "fields",
+            "fieldName": "cert_to_print"
+          },
+          {
+            "fullExpression": "@local.deployment@local.underscore@fields.cert_to_print@local.underscore@local.lang",
+            "matchedExpression": "@local.underscore",
+            "type": "local",
+            "fieldName": "underscore"
+          },
+          {
+            "fullExpression": "@local.deployment@local.underscore@fields.cert_to_print@local.underscore@local.lang",
+            "matchedExpression": "@local.lang",
+            "type": "local",
+            "fieldName": "lang"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.deployment": [
+          "value"
+        ],
+        "@local.underscore": [
+          "value",
+          "value"
+        ],
+        "@fields.cert_to_print": [
+          "value"
+        ],
+        "@local.lang": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "certificate_data_list",
+      "value": "certificate_data",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "certificate_data_list"
+    },
+    {
+      "name": "result",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "result"
+    },
+    {
+      "type": "data_items",
+      "name": "get_n_reprints",
+      "value": "@data.courses",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "n_reprints",
+            "@items[0]?.n_reprints"
+          ],
+          "_raw": "data_changed | set_local : n_reprints: @items[0]?.n_reprints"
+        }
+      ],
+      "parameter_list": {
+        "filter": "@item.id == @fields.cert_to_print",
+        "limit": "1"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "get_n_reprints",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.courses",
+            "matchedExpression": "@data.courses",
+            "type": "data",
+            "fieldName": "courses"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.id == @fields.cert_to_print",
+              "matchedExpression": "@item.id",
+              "type": "item",
+              "fieldName": "id"
+            },
+            {
+              "fullExpression": "@item.id == @fields.cert_to_print",
+              "matchedExpression": "@fields.cert_to_print",
+              "type": "fields",
+              "fieldName": "cert_to_print"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.courses": [
+          "value"
+        ],
+        "@item.id": [
+          "parameter_list.filter"
+        ],
+        "@fields.cert_to_print": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "name": "n_reprints_or_zero",
+      "value": 0,
+      "condition": "!@local.n_reprints",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "n_reprints_or_zero",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!@local.n_reprints",
+            "matchedExpression": "!@local.n_reprints",
+            "type": "local",
+            "fieldName": "n_reprints"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@local.n_reprints": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "n_reprints_or_zero",
+      "value": "@local.n_reprints",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "!!@local.n_reprints",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "n_reprints_or_zero",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.n_reprints",
+            "matchedExpression": "@local.n_reprints",
+            "type": "local",
+            "fieldName": "n_reprints"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "!!@local.n_reprints",
+            "matchedExpression": "!@local.n_reprints",
+            "type": "local",
+            "fieldName": "n_reprints"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.n_reprints": [
+          "value"
+        ],
+        "!@local.n_reprints": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "title",
+      "name": "certificate_name_input_question",
+      "value": "@global.certificate_name_question",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "certificate_name_input_question",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.certificate_name_question",
+            "matchedExpression": "@global.certificate_name_question",
+            "type": "global",
+            "fieldName": "certificate_name_question"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.certificate_name_question": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text_box",
+      "name": "certificate_name_input",
+      "value": "@fields.certificate_name",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "certificate_name_input",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields.certificate_name",
+            "matchedExpression": "@fields.certificate_name",
+            "type": "fields",
+            "fieldName": "certificate_name"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.certificate_name": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "completed_enabled",
+      "value": "@calc(@local.certificate_name_input && @local.certificate_name_input.length > 0)",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "completed_enabled",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@calc(@local.certificate_name_input && @local.certificate_name_input.length > 0)",
+            "matchedExpression": "@local.certificate_name_input",
+            "type": "local",
+            "fieldName": "certificate_name_input"
+          },
+          {
+            "fullExpression": "@calc(@local.certificate_name_input && @local.certificate_name_input.length > 0)",
+            "matchedExpression": "@local.certificate_name_input.length",
+            "type": "local",
+            "fieldName": "certificate_name_input"
+          },
+          {
+            "fullExpression": "@calc(@local.certificate_name_input && @local.certificate_name_input.length > 0)",
+            "matchedExpression": "@calc(@local.certificate_name_input && @local.certificate_name_input.length > 0)",
+            "type": "calc",
+            "fieldName": "@local.certificate_name_input && @local.certificate_name_input.length > 0"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.certificate_name_input": [
+          "value"
+        ],
+        "@local.certificate_name_input.length": [
+          "value"
+        ],
+        "@calc(@local.certificate_name_input && @local.certificate_name_input.length > 0)": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": "n: @local.n_reprints_or_zero",
+      "_translations": {
+        "value": {}
+      },
+      "condition": false,
+      "exclude_from_translation": true,
+      "name": "text_15",
+      "_nested_name": "text_15",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "n: @local.n_reprints_or_zero",
+            "matchedExpression": "@local.n_reprints_or_zero",
+            "type": "local",
+            "fieldName": "n_reprints_or_zero"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.n_reprints_or_zero": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button_completed",
+      "value": "@global.continue",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "certificate_name",
+            "@local.certificate_name_input"
+          ],
+          "_raw": "click | set_field: certificate_name: @local.certificate_name_input"
+        },
+        {
+          "trigger": "click",
+          "action_id": "plh_certificate",
+          "args": [
+            "generate"
+          ],
+          "_raw": "click | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @local.certificate_name_input,\nid: @fields.cert_to_print,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: result",
+          "params": {
+            "url": "@global.certificator_url",
+            "name": "@local.certificate_name_input",
+            "id": "@fields.cert_to_print",
+            "certificate_template": "@local.certificate_template",
+            "certificate_data_list": "@local.certificate_data_list",
+            "result_local_variable_name": "result"
+          }
+        },
+        {
+          "trigger": "click",
+          "action_id": "set_data",
+          "args": [],
+          "_raw": "click | set_data | _list_id: courses, _id: @fields.cert_to_print, n_reprints: @local.n_reprints_or_zero +1",
+          "params": {
+            "_list_id": "courses",
+            "_id": "@fields.cert_to_print",
+            "n_reprints": "@local.n_reprints_or_zero +1"
+          }
+        },
+        {
+          "trigger": "click",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "click | emit: completed"
+        }
+      ],
+      "parameter_list": {
+        "style": "navigation",
+        "disabled": "!@local.completed_enabled"
+      },
+      "style_list": [
+        "flex: 1"
+      ],
+      "exclude_from_translation": true,
+      "_nested_name": "button_completed",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.continue",
+            "matchedExpression": "@global.continue",
+            "type": "global",
+            "fieldName": "continue"
+          }
+        ],
+        "action_list": {
+          "0": {
+            "args": {
+              "1": [
+                {
+                  "fullExpression": "@local.certificate_name_input",
+                  "matchedExpression": "@local.certificate_name_input",
+                  "type": "local",
+                  "fieldName": "certificate_name_input"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | set_field: certificate_name: @local.certificate_name_input",
+                "matchedExpression": "@local.certificate_name_input",
+                "type": "local",
+                "fieldName": "certificate_name_input"
+              }
+            ]
+          },
+          "1": {
+            "_raw": [
+              {
+                "fullExpression": "click | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @local.certificate_name_input,\nid: @fields.cert_to_print,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: result",
+                "matchedExpression": "@global.certificator_url",
+                "type": "global",
+                "fieldName": "certificator_url"
+              },
+              {
+                "fullExpression": "click | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @local.certificate_name_input,\nid: @fields.cert_to_print,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: result",
+                "matchedExpression": "@local.certificate_name_input",
+                "type": "local",
+                "fieldName": "certificate_name_input"
+              },
+              {
+                "fullExpression": "click | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @local.certificate_name_input,\nid: @fields.cert_to_print,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: result",
+                "matchedExpression": "@fields.cert_to_print",
+                "type": "fields",
+                "fieldName": "cert_to_print"
+              },
+              {
+                "fullExpression": "click | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @local.certificate_name_input,\nid: @fields.cert_to_print,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: result",
+                "matchedExpression": "@local.certificate_template",
+                "type": "local",
+                "fieldName": "certificate_template"
+              },
+              {
+                "fullExpression": "click | plh_certificate: generate |\nurl: @global.certificator_url,\nname: @local.certificate_name_input,\nid: @fields.cert_to_print,\ncertificate_template: @local.certificate_template,\ncertificate_data_list: @local.certificate_data_list,\nresult_local_variable_name: result",
+                "matchedExpression": "@local.certificate_data_list",
+                "type": "local",
+                "fieldName": "certificate_data_list"
+              }
+            ],
+            "params": {
+              "url": [
+                {
+                  "fullExpression": "@global.certificator_url",
+                  "matchedExpression": "@global.certificator_url",
+                  "type": "global",
+                  "fieldName": "certificator_url"
+                }
+              ],
+              "name": [
+                {
+                  "fullExpression": "@local.certificate_name_input",
+                  "matchedExpression": "@local.certificate_name_input",
+                  "type": "local",
+                  "fieldName": "certificate_name_input"
+                }
+              ],
+              "id": [
+                {
+                  "fullExpression": "@fields.cert_to_print",
+                  "matchedExpression": "@fields.cert_to_print",
+                  "type": "fields",
+                  "fieldName": "cert_to_print"
+                }
+              ],
+              "certificate_template": [
+                {
+                  "fullExpression": "@local.certificate_template",
+                  "matchedExpression": "@local.certificate_template",
+                  "type": "local",
+                  "fieldName": "certificate_template"
+                }
+              ],
+              "certificate_data_list": [
+                {
+                  "fullExpression": "@local.certificate_data_list",
+                  "matchedExpression": "@local.certificate_data_list",
+                  "type": "local",
+                  "fieldName": "certificate_data_list"
+                }
+              ]
+            }
+          },
+          "2": {
+            "_raw": [
+              {
+                "fullExpression": "click | set_data | _list_id: courses, _id: @fields.cert_to_print, n_reprints: @local.n_reprints_or_zero +1",
+                "matchedExpression": "@fields.cert_to_print",
+                "type": "fields",
+                "fieldName": "cert_to_print"
+              },
+              {
+                "fullExpression": "click | set_data | _list_id: courses, _id: @fields.cert_to_print, n_reprints: @local.n_reprints_or_zero +1",
+                "matchedExpression": "@local.n_reprints_or_zero",
+                "type": "local",
+                "fieldName": "n_reprints_or_zero"
+              }
+            ],
+            "params": {
+              "_id": [
+                {
+                  "fullExpression": "@fields.cert_to_print",
+                  "matchedExpression": "@fields.cert_to_print",
+                  "type": "fields",
+                  "fieldName": "cert_to_print"
+                }
+              ],
+              "n_reprints": [
+                {
+                  "fullExpression": "@local.n_reprints_or_zero +1",
+                  "matchedExpression": "@local.n_reprints_or_zero",
+                  "type": "local",
+                  "fieldName": "n_reprints_or_zero"
+                }
+              ]
+            }
+          }
+        },
+        "parameter_list": {
+          "disabled": [
+            {
+              "fullExpression": "!@local.completed_enabled",
+              "matchedExpression": "!@local.completed_enabled",
+              "type": "local",
+              "fieldName": "completed_enabled"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@global.continue": [
+          "value"
+        ],
+        "@local.certificate_name_input": [
+          "action_list.0.args.1",
+          "action_list.0._raw",
+          "action_list.1._raw",
+          "action_list.1.params.name"
+        ],
+        "@global.certificator_url": [
+          "action_list.1._raw",
+          "action_list.1.params.url"
+        ],
+        "@fields.cert_to_print": [
+          "action_list.1._raw",
+          "action_list.1.params.id",
+          "action_list.2._raw",
+          "action_list.2.params._id"
+        ],
+        "@local.certificate_template": [
+          "action_list.1._raw",
+          "action_list.1.params.certificate_template"
+        ],
+        "@local.certificate_data_list": [
+          "action_list.1._raw",
+          "action_list.1.params.certificate_data_list"
+        ],
+        "@local.n_reprints_or_zero": [
+          "action_list.2._raw",
+          "action_list.2.params.n_reprints"
+        ],
+        "!@local.completed_enabled": [
+          "parameter_list.disabled"
+        ]
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_global V2",
+    "path": "templates/certificates.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1KKfrEtHpXm0sMNY21dYKMmZBOny_Vnum-zr1zgdPcmM"
+  }
+}

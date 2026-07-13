@@ -1,0 +1,41 @@
+{
+  "flow_type": "template",
+  "flow_name": "no_more_reprints",
+  "status": "released",
+  "rows": [
+    {
+      "type": "title",
+      "value": "@global.certificate_max_reprints_reached",
+      "_translations": {
+        "value": {}
+      },
+      "style_list": [
+        "color: #FF0000",
+        "font-size: 14px"
+      ],
+      "exclude_from_translation": true,
+      "name": "title_2",
+      "_nested_name": "title_2",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.certificate_max_reprints_reached",
+            "matchedExpression": "@global.certificate_max_reprints_reached",
+            "type": "global",
+            "fieldName": "certificate_max_reprints_reached"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.certificate_max_reprints_reached": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_global V2",
+    "path": "templates/certificates.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1KKfrEtHpXm0sMNY21dYKMmZBOny_Vnum-zr1zgdPcmM"
+  }
+}

@@ -39,8 +39,16 @@
           "exclude_from_translation": true
         },
         {
+          "name": "course_id",
+          "value": "@gen.tag_course"
+        },
+        {
+          "name": "is_already_completed",
+          "value": true
+        },
+        {
           "name": "show_progress_bar",
-          "value": false,
+          "value": true,
           "exclude_from_translation": true
         },
         {
@@ -73,9 +81,9 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_global",
-    "path": "PLH module_navigation.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/13WrrsCwjK_5S9t8VQTbgWbWpAVbRKByxpOXr95YnjY8"
+    "name": "kids_teens_global V2",
+    "path": "templates/PLH module_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1upg0i3Kz-ccJ44ZfbV49SWmehVpvHW3r9kBtc-bDRFI"
   },
   "_output_flows": [
     {
@@ -205,6 +213,11 @@
     },
     {
       "flow_name": "stack_module_celebrate_t",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    {
+      "flow_name": "stack_module_addonlinesafety_t",
       "flow_subtype": "generated",
       "flow_type": "template"
     }

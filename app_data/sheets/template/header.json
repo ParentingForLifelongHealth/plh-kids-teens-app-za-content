@@ -4,14 +4,21 @@
   "status": "released",
   "rows": [
     {
-      "name": "close_icon_asset",
-      "value": "close",
-      "_translations": {
-        "value": {}
-      },
-      "exclude_from_translation": true,
+      "name": "show_progress",
+      "value": false,
       "type": "set_variable",
-      "_nested_name": "close_icon_asset"
+      "_nested_name": "show_progress"
+    },
+    {
+      "name": "progress",
+      "type": "set_variable",
+      "_nested_name": "progress"
+    },
+    {
+      "name": "display_icon",
+      "value": true,
+      "type": "set_variable",
+      "_nested_name": "display_icon"
     },
     {
       "type": "display_group",
@@ -28,65 +35,163 @@
       ],
       "rows": [
         {
-          "type": "image",
-          "name": "icon_asset",
-          "style_list": [
-            "width: 46px"
-          ],
-          "_nested_name": "dg_header.icon_asset"
-        },
-        {
-          "type": "title",
-          "name": "title",
-          "style_list": [
-            "flex: 1",
-            "margin-inline-start: 12px"
-          ],
-          "_nested_name": "dg_header.title"
-        },
-        {
-          "type": "round_button",
-          "name": "close_button",
-          "action_list": [
-            {
-              "trigger": "click",
-              "action_id": "nav_stack",
-              "args": [
-                "close_top"
-              ],
-              "_raw": "click | nav_stack: close_top"
-            }
-          ],
+          "type": "display_group",
           "parameter_list": {
-            "variant": "no-background",
-            "icon_src": "@local.close_icon_asset"
+            "style": "column"
           },
-          "_nested_name": "dg_header.close_button",
-          "_dynamicFields": {
-            "parameter_list": {
-              "icon_src": [
+          "rows": [
+            {
+              "type": "display_group",
+              "parameter_list": {
+                "style": "background_solid"
+              },
+              "rows": [
                 {
-                  "fullExpression": "@local.close_icon_asset",
-                  "matchedExpression": "@local.close_icon_asset",
-                  "type": "local",
-                  "fieldName": "close_icon_asset"
+                  "name": "close_icon_asset",
+                  "value": "close",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "dg_header.display_group_1.display_group_1.close_icon_asset"
+                },
+                {
+                  "type": "image",
+                  "name": "icon_asset",
+                  "condition": "!!@local.display_icon",
+                  "style_list": [
+                    "width: 46px"
+                  ],
+                  "_nested_name": "dg_header.display_group_1.display_group_1.icon_asset",
+                  "_dynamicFields": {
+                    "condition": [
+                      {
+                        "fullExpression": "!!@local.display_icon",
+                        "matchedExpression": "!@local.display_icon",
+                        "type": "local",
+                        "fieldName": "display_icon"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "!@local.display_icon": [
+                      "condition"
+                    ]
+                  }
+                },
+                {
+                  "type": "title",
+                  "name": "title",
+                  "style_list": [
+                    "flex: 1",
+                    "margin-inline-start: 12px"
+                  ],
+                  "_nested_name": "dg_header.display_group_1.display_group_1.title"
+                },
+                {
+                  "type": "round_button",
+                  "name": "close_button",
+                  "action_list": [
+                    {
+                      "trigger": "click",
+                      "action_id": "nav_stack",
+                      "args": [
+                        "close_top"
+                      ],
+                      "_raw": "click | nav_stack: close_top"
+                    }
+                  ],
+                  "parameter_list": {
+                    "variant": "no-background",
+                    "icon_src": "@local.close_icon_asset"
+                  },
+                  "_nested_name": "dg_header.display_group_1.display_group_1.close_button",
+                  "_dynamicFields": {
+                    "parameter_list": {
+                      "icon_src": [
+                        {
+                          "fullExpression": "@local.close_icon_asset",
+                          "matchedExpression": "@local.close_icon_asset",
+                          "type": "local",
+                          "fieldName": "close_icon_asset"
+                        }
+                      ]
+                    }
+                  },
+                  "_dynamicDependencies": {
+                    "@local.close_icon_asset": [
+                      "parameter_list.icon_src"
+                    ]
+                  }
                 }
-              ]
+              ],
+              "name": "display_group_1",
+              "_nested_name": "dg_header.display_group_1.display_group_1"
+            },
+            {
+              "type": "display_group",
+              "name": "dg_progress",
+              "parameter_list": {
+                "style": "background_solid"
+              },
+              "condition": "@local.show_progress",
+              "rows": [
+                {
+                  "type": "task_progress_bar",
+                  "name": "task_progress_bar",
+                  "parameter_list": {
+                    "progress_percent": "@local.progress"
+                  },
+                  "exclude_from_translation": true,
+                  "_nested_name": "dg_header.display_group_1.dg_progress.task_progress_bar",
+                  "_dynamicFields": {
+                    "parameter_list": {
+                      "progress_percent": [
+                        {
+                          "fullExpression": "@local.progress",
+                          "matchedExpression": "@local.progress",
+                          "type": "local",
+                          "fieldName": "progress"
+                        }
+                      ]
+                    }
+                  },
+                  "_dynamicDependencies": {
+                    "@local.progress": [
+                      "parameter_list.progress_percent"
+                    ]
+                  }
+                }
+              ],
+              "_nested_name": "dg_header.display_group_1.dg_progress",
+              "_dynamicFields": {
+                "condition": [
+                  {
+                    "fullExpression": "@local.show_progress",
+                    "matchedExpression": "@local.show_progress",
+                    "type": "local",
+                    "fieldName": "show_progress"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.show_progress": [
+                  "condition"
+                ]
+              }
             }
-          },
-          "_dynamicDependencies": {
-            "@local.close_icon_asset": [
-              "parameter_list.icon_src"
-            ]
-          }
+          ],
+          "name": "display_group_1",
+          "_nested_name": "dg_header.display_group_1"
         }
       ],
       "_nested_name": "dg_header"
     }
   ],
   "_source": {
-    "name": "kids_teens_global",
-    "path": "PLH app_navigation.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1jWVWtpRFixLG5K_m2vQIKnhqTMAIq6_F0pSdApBQ1jc"
+    "name": "kids_teens_global V2",
+    "path": "templates/app_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/12uVS4kd0g9A1cNLzpBt8avZ2biX4YGXgSciLMvBnsgs"
   }
 }
