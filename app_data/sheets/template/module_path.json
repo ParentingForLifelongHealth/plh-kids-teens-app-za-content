@@ -1,0 +1,692 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_path",
+  "status": "released",
+  "rows": [
+    {
+      "name": "background_image_asset",
+      "value": "images/backgrounds/map_view_bg.jpg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "background_image_asset"
+    },
+    {
+      "name": "current_module_id",
+      "type": "set_variable",
+      "_nested_name": "current_module_id"
+    },
+    {
+      "name": "completed_count",
+      "type": "set_variable",
+      "_nested_name": "completed_count"
+    },
+    {
+      "type": "data_items",
+      "name": "compute_completed_length",
+      "value": "@data.module_tasks",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "completed_count",
+            "@items.length"
+          ],
+          "_raw": "data_changed | set_local : completed_count : @items.length"
+        }
+      ],
+      "parameter_list": {
+        "filter": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
+      },
+      "_nested_name": "compute_completed_length",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.module_tasks",
+            "matchedExpression": "@data.module_tasks",
+            "type": "data",
+            "fieldName": "module_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@item.completed",
+              "type": "item",
+              "fieldName": "completed"
+            },
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.tag_list",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@item.tag_list.includes",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@fields.child_age_tag",
+              "type": "fields",
+              "fieldName": "child_age_tag"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.module_tasks": [
+          "value"
+        ],
+        "@item.completed": [
+          "parameter_list.filter"
+        ],
+        "!@item.tag_list": [
+          "parameter_list.filter"
+        ],
+        "@item.tag_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age_tag": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "data_items",
+      "name": "compute_current_module_id",
+      "value": "@data.module_tasks",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "current_module_id",
+            "@items[0]?.id"
+          ],
+          "_raw": "data_changed | set_local : current_module_id : @items[0]?.id"
+        }
+      ],
+      "parameter_list": {
+        "filter": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+        "sort": "number",
+        "limit": "1"
+      },
+      "_nested_name": "compute_current_module_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.module_tasks",
+            "matchedExpression": "@data.module_tasks",
+            "type": "data",
+            "fieldName": "module_tasks"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.completed",
+              "type": "item",
+              "fieldName": "completed"
+            },
+            {
+              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "!@item.tag_list",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@item.tag_list.includes",
+              "type": "item",
+              "fieldName": "tag_list"
+            },
+            {
+              "fullExpression": "!@item.completed && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
+              "matchedExpression": "@fields.child_age_tag",
+              "type": "fields",
+              "fieldName": "child_age_tag"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@data.module_tasks": [
+          "value"
+        ],
+        "!@item.completed": [
+          "parameter_list.filter"
+        ],
+        "!@item.tag_list": [
+          "parameter_list.filter"
+        ],
+        "@item.tag_list.includes": [
+          "parameter_list.filter"
+        ],
+        "@fields.child_age_tag": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "debug_current_module",
+      "value": "Current Module: @local.current_module_id",
+      "_translations": {
+        "value": {}
+      },
+      "condition": false,
+      "exclude_from_translation": true,
+      "_nested_name": "debug_current_module",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Current Module: @local.current_module_id",
+            "matchedExpression": "@local.current_module_id",
+            "type": "local",
+            "fieldName": "current_module_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.current_module_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "display_group",
+      "name": "dg_all_modules",
+      "parameter_list": {
+        "style": "column"
+      },
+      "condition": "@local.completed_count !== undefined",
+      "exclude_from_translation": true,
+      "style_list": [
+        "background-image: url(\"assets/app_data/assets/images/background_pattern_blue.svg\")",
+        "background-repeat: repeat",
+        "background-position: top center",
+        "background-size: 670px"
+      ],
+      "rows": [
+        {
+          "type": "progress_path",
+          "parameter_list": {
+            "variant": "curved",
+            "vertical_spacing": "10"
+          },
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "is_highlighted",
+              "value": false,
+              "type": "set_variable",
+              "_nested_name": "dg_all_modules.progress_path_1.is_highlighted"
+            },
+            {
+              "type": "data_items",
+              "name": "task_cards",
+              "value": "@data.module_tasks",
+              "parameter_list": {
+                "filter": "!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)",
+                "sort": "number"
+              },
+              "exclude_from_translation": true,
+              "rows": [
+                {
+                  "name": "completed_midnight",
+                  "value": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.completed_midnight",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
+                        "matchedExpression": "@item.completed_ts",
+                        "type": "item",
+                        "fieldName": "completed_ts"
+                      },
+                      {
+                        "fullExpression": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
+                        "matchedExpression": "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))",
+                        "type": "calc",
+                        "fieldName": "new Date(@item.completed_ts).setHours(0,0,0,0)"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@item.completed_ts": [
+                      "value"
+                    ],
+                    "@calc(new Date(@item.completed_ts).setHours(0,0,0,0))": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "days_since_completed",
+                  "value": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.days_since_completed",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
+                        "matchedExpression": "@local.completed_midnight",
+                        "type": "local",
+                        "fieldName": "completed_midnight"
+                      },
+                      {
+                        "fullExpression": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
+                        "matchedExpression": "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))",
+                        "type": "calc",
+                        "fieldName": "window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight))"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.completed_midnight": [
+                      "value"
+                    ],
+                    "@calc(window.date_fns.differenceInDays(now(),new Date(@local.completed_midnight)))": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "name": "is_highlighted",
+                  "value": "@local.days_since_completed >= +@fields.countdown_days",
+                  "_translations": {
+                    "value": {}
+                  },
+                  "exclude_from_translation": true,
+                  "type": "set_variable",
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.is_highlighted",
+                  "_dynamicFields": {
+                    "value": [
+                      {
+                        "fullExpression": "@local.days_since_completed >= +@fields.countdown_days",
+                        "matchedExpression": "@local.days_since_completed",
+                        "type": "local",
+                        "fieldName": "days_since_completed"
+                      },
+                      {
+                        "fullExpression": "@local.days_since_completed >= +@fields.countdown_days",
+                        "matchedExpression": "@fields.countdown_days",
+                        "type": "fields",
+                        "fieldName": "countdown_days"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@local.days_since_completed": [
+                      "value"
+                    ],
+                    "@fields.countdown_days": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "type": "plh_module_list_item",
+                  "name": "locked_@item.id",
+                  "action_list": [
+                    {
+                      "trigger": "click",
+                      "action_id": "go_to",
+                      "args": [
+                        "module_landing_@item.id"
+                      ],
+                      "_raw": "click | go_to: module_landing_@item.id"
+                    }
+                  ],
+                  "parameter_list": {
+                    "variant": "circle",
+                    "module_image_asset": "@item.image_asset",
+                    "locked_image_asset": "images/icons/locked.png",
+                    "is_locked": "TRUE",
+                    "highlighted": "@local.is_highlighted"
+                  },
+                  "condition": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                  "exclude_from_translation": true,
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.locked_@item.id",
+                  "_dynamicFields": {
+                    "name": [
+                      {
+                        "fullExpression": "locked_@item.id",
+                        "matchedExpression": "@item.id",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ],
+                    "action_list": {
+                      "0": {
+                        "args": {
+                          "0": [
+                            {
+                              "fullExpression": "module_landing_@item.id",
+                              "matchedExpression": "@item.id",
+                              "type": "item",
+                              "fieldName": "id"
+                            }
+                          ]
+                        },
+                        "_raw": [
+                          {
+                            "fullExpression": "click | go_to: module_landing_@item.id",
+                            "matchedExpression": "@item.id",
+                            "type": "item",
+                            "fieldName": "id"
+                          }
+                        ]
+                      }
+                    },
+                    "parameter_list": {
+                      "module_image_asset": [
+                        {
+                          "fullExpression": "@item.image_asset",
+                          "matchedExpression": "@item.image_asset",
+                          "type": "item",
+                          "fieldName": "image_asset"
+                        }
+                      ],
+                      "highlighted": [
+                        {
+                          "fullExpression": "@local.is_highlighted",
+                          "matchedExpression": "@local.is_highlighted",
+                          "type": "local",
+                          "fieldName": "is_highlighted"
+                        }
+                      ]
+                    },
+                    "condition": [
+                      {
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                        "matchedExpression": "@item.id",
+                        "type": "item",
+                        "fieldName": "id"
+                      },
+                      {
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                        "matchedExpression": "@local.current_module_id",
+                        "type": "local",
+                        "fieldName": "current_module_id"
+                      },
+                      {
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                        "matchedExpression": "@item.completed",
+                        "type": "item",
+                        "fieldName": "completed"
+                      },
+                      {
+                        "fullExpression": "!(@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\"))",
+                        "matchedExpression": "@item.tag_list.includes",
+                        "type": "item",
+                        "fieldName": "tag_list"
+                      }
+                    ],
+                    "_nested_name": [
+                      {
+                        "fullExpression": "dg_all_modules.progress_path_1.task_cards.locked_@item.id",
+                        "matchedExpression": "@item.id",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@item.id": [
+                      "name",
+                      "action_list.0.args.0",
+                      "action_list.0._raw",
+                      "condition",
+                      "_nested_name"
+                    ],
+                    "@item.image_asset": [
+                      "parameter_list.module_image_asset"
+                    ],
+                    "@local.is_highlighted": [
+                      "parameter_list.highlighted"
+                    ],
+                    "@local.current_module_id": [
+                      "condition"
+                    ],
+                    "@item.completed": [
+                      "condition"
+                    ],
+                    "@item.tag_list.includes": [
+                      "condition"
+                    ]
+                  }
+                },
+                {
+                  "type": "plh_module_list_item",
+                  "name": "unlocked_@item.id",
+                  "action_list": [
+                    {
+                      "trigger": "click",
+                      "action_id": "go_to",
+                      "args": [
+                        "module_landing_@item.id"
+                      ],
+                      "_raw": "click | go_to: module_landing_@item.id"
+                    }
+                  ],
+                  "parameter_list": {
+                    "variant": "circle",
+                    "module_image_asset": "@item.image_asset",
+                    "locked_image_asset": "images/icons/locked.png",
+                    "is_locked": "FALSE",
+                    "highlighted": "@local.is_highlighted"
+                  },
+                  "condition": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
+                  "exclude_from_translation": true,
+                  "_nested_name": "dg_all_modules.progress_path_1.task_cards.unlocked_@item.id",
+                  "_dynamicFields": {
+                    "name": [
+                      {
+                        "fullExpression": "unlocked_@item.id",
+                        "matchedExpression": "@item.id",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ],
+                    "action_list": {
+                      "0": {
+                        "args": {
+                          "0": [
+                            {
+                              "fullExpression": "module_landing_@item.id",
+                              "matchedExpression": "@item.id",
+                              "type": "item",
+                              "fieldName": "id"
+                            }
+                          ]
+                        },
+                        "_raw": [
+                          {
+                            "fullExpression": "click | go_to: module_landing_@item.id",
+                            "matchedExpression": "@item.id",
+                            "type": "item",
+                            "fieldName": "id"
+                          }
+                        ]
+                      }
+                    },
+                    "parameter_list": {
+                      "module_image_asset": [
+                        {
+                          "fullExpression": "@item.image_asset",
+                          "matchedExpression": "@item.image_asset",
+                          "type": "item",
+                          "fieldName": "image_asset"
+                        }
+                      ],
+                      "highlighted": [
+                        {
+                          "fullExpression": "@local.is_highlighted",
+                          "matchedExpression": "@local.is_highlighted",
+                          "type": "local",
+                          "fieldName": "is_highlighted"
+                        }
+                      ]
+                    },
+                    "condition": [
+                      {
+                        "fullExpression": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
+                        "matchedExpression": "@item.id",
+                        "type": "item",
+                        "fieldName": "id"
+                      },
+                      {
+                        "fullExpression": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
+                        "matchedExpression": "@local.current_module_id",
+                        "type": "local",
+                        "fieldName": "current_module_id"
+                      },
+                      {
+                        "fullExpression": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
+                        "matchedExpression": "@item.completed",
+                        "type": "item",
+                        "fieldName": "completed"
+                      },
+                      {
+                        "fullExpression": "@item.id == @local.current_module_id || @item.completed || @item.tag_list.includes(\"teen\")",
+                        "matchedExpression": "@item.tag_list.includes",
+                        "type": "item",
+                        "fieldName": "tag_list"
+                      }
+                    ],
+                    "_nested_name": [
+                      {
+                        "fullExpression": "dg_all_modules.progress_path_1.task_cards.unlocked_@item.id",
+                        "matchedExpression": "@item.id",
+                        "type": "item",
+                        "fieldName": "id"
+                      }
+                    ]
+                  },
+                  "_dynamicDependencies": {
+                    "@item.id": [
+                      "name",
+                      "action_list.0.args.0",
+                      "action_list.0._raw",
+                      "condition",
+                      "_nested_name"
+                    ],
+                    "@item.image_asset": [
+                      "parameter_list.module_image_asset"
+                    ],
+                    "@local.is_highlighted": [
+                      "parameter_list.highlighted"
+                    ],
+                    "@local.current_module_id": [
+                      "condition"
+                    ],
+                    "@item.completed": [
+                      "condition"
+                    ],
+                    "@item.tag_list.includes": [
+                      "condition"
+                    ]
+                  }
+                }
+              ],
+              "_nested_name": "dg_all_modules.progress_path_1.task_cards",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@data.module_tasks",
+                    "matchedExpression": "@data.module_tasks",
+                    "type": "data",
+                    "fieldName": "module_tasks"
+                  }
+                ],
+                "parameter_list": {
+                  "filter": [
+                    {
+                      "fullExpression": "!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)",
+                      "matchedExpression": "!@item.tag_list",
+                      "type": "item",
+                      "fieldName": "tag_list"
+                    },
+                    {
+                      "fullExpression": "!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)",
+                      "matchedExpression": "@item.tag_list.includes",
+                      "type": "item",
+                      "fieldName": "tag_list"
+                    },
+                    {
+                      "fullExpression": "!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)",
+                      "matchedExpression": "@fields.child_age_tag",
+                      "type": "fields",
+                      "fieldName": "child_age_tag"
+                    }
+                  ]
+                }
+              },
+              "_dynamicDependencies": {
+                "@data.module_tasks": [
+                  "value"
+                ],
+                "!@item.tag_list": [
+                  "parameter_list.filter"
+                ],
+                "@item.tag_list.includes": [
+                  "parameter_list.filter"
+                ],
+                "@fields.child_age_tag": [
+                  "parameter_list.filter"
+                ]
+              }
+            }
+          ],
+          "name": "progress_path_1",
+          "_nested_name": "dg_all_modules.progress_path_1"
+        }
+      ],
+      "_nested_name": "dg_all_modules",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@local.completed_count !== undefined",
+            "matchedExpression": "@local.completed_count",
+            "type": "local",
+            "fieldName": "completed_count"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.completed_count": [
+          "condition"
+        ]
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_global",
+    "path": "PLH module_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/13WrrsCwjK_5S9t8VQTbgWbWpAVbRKByxpOXr95YnjY8"
+  }
+}

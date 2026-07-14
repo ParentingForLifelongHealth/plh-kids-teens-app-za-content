@@ -586,18 +586,15 @@
                   "value": [
                     {
                       "name": "happy",
-                      "image": "@local.row_data.happy_image_asset",
-                      "text": "@local.row_data.happy_text"
+                      "image": "@local.row_data.happy_image_asset"
                     },
                     {
                       "name": "ok",
-                      "image": "@local.row_data.ok_image_asset",
-                      "text": "@local.row_data.ok_text"
+                      "image": "@local.row_data.ok_image_asset"
                     },
                     {
                       "name": "sad",
-                      "image": "@local.row_data.sad_image_asset",
-                      "text": "@local.row_data.sad_text"
+                      "image": "@local.row_data.sad_image_asset"
                     }
                   ],
                   "type": "set_variable",
@@ -612,14 +609,6 @@
                             "type": "local",
                             "fieldName": "row_data"
                           }
-                        ],
-                        "text": [
-                          {
-                            "fullExpression": "@local.row_data.happy_text",
-                            "matchedExpression": "@local.row_data.happy_text",
-                            "type": "local",
-                            "fieldName": "row_data"
-                          }
                         ]
                       },
                       "1": {
@@ -627,14 +616,6 @@
                           {
                             "fullExpression": "@local.row_data.ok_image_asset",
                             "matchedExpression": "@local.row_data.ok_image_asset",
-                            "type": "local",
-                            "fieldName": "row_data"
-                          }
-                        ],
-                        "text": [
-                          {
-                            "fullExpression": "@local.row_data.ok_text",
-                            "matchedExpression": "@local.row_data.ok_text",
                             "type": "local",
                             "fieldName": "row_data"
                           }
@@ -648,14 +629,6 @@
                             "type": "local",
                             "fieldName": "row_data"
                           }
-                        ],
-                        "text": [
-                          {
-                            "fullExpression": "@local.row_data.sad_text",
-                            "matchedExpression": "@local.row_data.sad_text",
-                            "type": "local",
-                            "fieldName": "row_data"
-                          }
                         ]
                       }
                     }
@@ -664,20 +637,11 @@
                     "@local.row_data.happy_image_asset": [
                       "value.0.image"
                     ],
-                    "@local.row_data.happy_text": [
-                      "value.0.text"
-                    ],
                     "@local.row_data.ok_image_asset": [
                       "value.1.image"
                     ],
-                    "@local.row_data.ok_text": [
-                      "value.1.text"
-                    ],
                     "@local.row_data.sad_image_asset": [
                       "value.2.image"
-                    ],
-                    "@local.row_data.sad_text": [
-                      "value.2.text"
                     ]
                   }
                 },
@@ -1275,8 +1239,8 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_global V2",
-    "path": "templates/hp_review_dependencies.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1dBv9uje5UWm3cXwHfRRBf29cqBoOC34ZYc1A3vGehSE"
+    "name": "kids_global",
+    "path": "templates/home_practice_review/hp_review.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1JhZT-dAVgOnGPCx_mFXQ6bRM9d1V8ZWm9784pIKFP94"
   }
 }
