@@ -80,7 +80,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))"
+        "filter": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
       },
       "exclude_from_translation": true,
       "_nested_name": "count_hp_check_in",
@@ -96,82 +96,28 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "!@item.unlocked_activity",
               "type": "item",
               "fieldName": "unlocked_activity"
             },
             {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "!@item.tag_list",
               "type": "item",
               "fieldName": "tag_list"
             },
             {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@item.tag_list.includes",
               "type": "item",
               "fieldName": "tag_list"
             },
             {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@fields.child_age_tag",
               "type": "fields",
               "fieldName": "child_age_tag"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "!@item.age_list",
-              "type": "item",
-              "fieldName": "age_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@item.age_list.includes",
-              "type": "item",
-              "fieldName": "age_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@fields.child_age",
-              "type": "fields",
-              "fieldName": "child_age"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "!@item.child_gender_list",
-              "type": "item",
-              "fieldName": "child_gender_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@item.child_gender_list.includes",
-              "type": "item",
-              "fieldName": "child_gender_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@fields.child_gender",
-              "type": "fields",
-              "fieldName": "child_gender"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "!@item.caregiver_relationship_list",
-              "type": "item",
-              "fieldName": "caregiver_relationship_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@item.caregiver_relationship_list.includes",
-              "type": "item",
-              "fieldName": "caregiver_relationship_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@fields.user_relationship",
-              "type": "fields",
-              "fieldName": "user_relationship"
             }
           ]
         }
@@ -190,33 +136,6 @@
           "parameter_list.filter"
         ],
         "@fields.child_age_tag": [
-          "parameter_list.filter"
-        ],
-        "!@item.age_list": [
-          "parameter_list.filter"
-        ],
-        "@item.age_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.child_age": [
-          "parameter_list.filter"
-        ],
-        "!@item.child_gender_list": [
-          "parameter_list.filter"
-        ],
-        "@item.child_gender_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.child_gender": [
-          "parameter_list.filter"
-        ],
-        "!@item.caregiver_relationship_list": [
-          "parameter_list.filter"
-        ],
-        "@item.caregiver_relationship_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.user_relationship": [
           "parameter_list.filter"
         ]
       }
@@ -246,7 +165,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))"
+        "filter": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))"
       },
       "exclude_from_translation": true,
       "_nested_name": "count_modules",
@@ -262,82 +181,28 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "!@item.unlocked_activity",
               "type": "item",
               "fieldName": "unlocked_activity"
             },
             {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "!@item.tag_list",
               "type": "item",
               "fieldName": "tag_list"
             },
             {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@item.tag_list.includes",
               "type": "item",
               "fieldName": "tag_list"
             },
             {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
+              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
               "matchedExpression": "@fields.child_age_tag",
               "type": "fields",
               "fieldName": "child_age_tag"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "!@item.age_list",
-              "type": "item",
-              "fieldName": "age_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@item.age_list.includes",
-              "type": "item",
-              "fieldName": "age_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@fields.child_age",
-              "type": "fields",
-              "fieldName": "child_age"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "!@item.child_gender_list",
-              "type": "item",
-              "fieldName": "child_gender_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@item.child_gender_list.includes",
-              "type": "item",
-              "fieldName": "child_gender_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@fields.child_gender",
-              "type": "fields",
-              "fieldName": "child_gender"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "!@item.caregiver_relationship_list",
-              "type": "item",
-              "fieldName": "caregiver_relationship_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@item.caregiver_relationship_list.includes",
-              "type": "item",
-              "fieldName": "caregiver_relationship_list"
-            },
-            {
-              "fullExpression": "!@item.unlocked_activity && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age)) && (!@item.child_gender_list || @item.child_gender_list.includes(@fields.child_gender)) && (!@item.caregiver_relationship_list || @item.caregiver_relationship_list.includes(@fields.user_relationship))",
-              "matchedExpression": "@fields.user_relationship",
-              "type": "fields",
-              "fieldName": "user_relationship"
             }
           ]
         }
@@ -356,33 +221,6 @@
           "parameter_list.filter"
         ],
         "@fields.child_age_tag": [
-          "parameter_list.filter"
-        ],
-        "!@item.age_list": [
-          "parameter_list.filter"
-        ],
-        "@item.age_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.child_age": [
-          "parameter_list.filter"
-        ],
-        "!@item.child_gender_list": [
-          "parameter_list.filter"
-        ],
-        "@item.child_gender_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.child_gender": [
-          "parameter_list.filter"
-        ],
-        "!@item.caregiver_relationship_list": [
-          "parameter_list.filter"
-        ],
-        "@item.caregiver_relationship_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.user_relationship": [
           "parameter_list.filter"
         ]
       }
@@ -607,7 +445,7 @@
                   "type": "data_items",
                   "value": "@data.activity_tasks",
                   "parameter_list": {
-                    "filter": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age))",
+                    "filter": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
                     "limit": "1"
                   },
                   "condition": "@local.finished_all_content",
@@ -690,46 +528,28 @@
                     "parameter_list": {
                       "filter": [
                         {
-                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age))",
+                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
                           "matchedExpression": "@item.locked",
                           "type": "item",
                           "fieldName": "locked"
                         },
                         {
-                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age))",
+                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
                           "matchedExpression": "!@item.tag_list",
                           "type": "item",
                           "fieldName": "tag_list"
                         },
                         {
-                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age))",
+                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
                           "matchedExpression": "@item.tag_list.includes",
                           "type": "item",
                           "fieldName": "tag_list"
                         },
                         {
-                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age))",
+                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag))",
                           "matchedExpression": "@fields.child_age_tag",
                           "type": "fields",
                           "fieldName": "child_age_tag"
-                        },
-                        {
-                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age))",
-                          "matchedExpression": "!@item.age_list",
-                          "type": "item",
-                          "fieldName": "age_list"
-                        },
-                        {
-                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age))",
-                          "matchedExpression": "@item.age_list.includes",
-                          "type": "item",
-                          "fieldName": "age_list"
-                        },
-                        {
-                          "fullExpression": "@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.age_list || @item.age_list.includes(@fields.child_age))",
-                          "matchedExpression": "@fields.child_age",
-                          "type": "fields",
-                          "fieldName": "child_age"
                         }
                       ]
                     },
@@ -756,15 +576,6 @@
                       "parameter_list.filter"
                     ],
                     "@fields.child_age_tag": [
-                      "parameter_list.filter"
-                    ],
-                    "!@item.age_list": [
-                      "parameter_list.filter"
-                    ],
-                    "@item.age_list.includes": [
-                      "parameter_list.filter"
-                    ],
-                    "@fields.child_age": [
                       "parameter_list.filter"
                     ],
                     "@local.finished_all_content": [
@@ -1119,7 +930,7 @@
           "name": "loop_activities",
           "value": "@data.activity_tasks",
           "parameter_list": {
-            "filter": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+            "filter": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
             "sort": "locked"
           },
           "exclude_from_translation": true,
@@ -1348,8 +1159,9 @@
                   "condition": "@item.locked",
                   "exclude_from_translation": true,
                   "style_list": [
-                    "height: 42px",
-                    "width: 42px"
+                    "height: 48px",
+                    "width: 48px",
+                    "padding: 0px 8px 12px 0px"
                   ],
                   "_nested_name": "display_grid.loop_activities.card_@item.id.image_locked_@item.id",
                   "_dynamicFields": {
@@ -1649,37 +1461,19 @@
             "parameter_list": {
               "filter": [
                 {
-                  "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-                  "matchedExpression": "!@item.tag_list",
-                  "type": "item",
-                  "fieldName": "tag_list"
-                },
-                {
-                  "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-                  "matchedExpression": "@item.tag_list.includes",
-                  "type": "item",
-                  "fieldName": "tag_list"
-                },
-                {
-                  "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-                  "matchedExpression": "@fields.child_age_tag",
-                  "type": "fields",
-                  "fieldName": "child_age_tag"
-                },
-                {
-                  "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+                  "fullExpression": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
                   "matchedExpression": "!@item.child_age_list",
                   "type": "item",
                   "fieldName": "child_age_list"
                 },
                 {
-                  "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+                  "fullExpression": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
                   "matchedExpression": "@item.child_age_list.includes",
                   "type": "item",
                   "fieldName": "child_age_list"
                 },
                 {
-                  "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+                  "fullExpression": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
                   "matchedExpression": "@fields.child_age",
                   "type": "fields",
                   "fieldName": "child_age"
@@ -1690,15 +1484,6 @@
           "_dynamicDependencies": {
             "@data.activity_tasks": [
               "value"
-            ],
-            "!@item.tag_list": [
-              "parameter_list.filter"
-            ],
-            "@item.tag_list.includes": [
-              "parameter_list.filter"
-            ],
-            "@fields.child_age_tag": [
-              "parameter_list.filter"
             ],
             "!@item.child_age_list": [
               "parameter_list.filter"
@@ -1737,7 +1522,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))"
+        "filter": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)"
       },
       "exclude_from_translation": true,
       "rows": [],
@@ -1754,37 +1539,19 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "!@item.tag_list",
-              "type": "item",
-              "fieldName": "tag_list"
-            },
-            {
-              "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "@item.tag_list.includes",
-              "type": "item",
-              "fieldName": "tag_list"
-            },
-            {
-              "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "@fields.child_age_tag",
-              "type": "fields",
-              "fieldName": "child_age_tag"
-            },
-            {
-              "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
               "matchedExpression": "!@item.child_age_list",
               "type": "item",
               "fieldName": "child_age_list"
             },
             {
-              "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
               "matchedExpression": "@item.child_age_list.includes",
               "type": "item",
               "fieldName": "child_age_list"
             },
             {
-              "fullExpression": "(!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "!@item.child_age_list || @item.child_age_list.includes(@fields.child_age)",
               "matchedExpression": "@fields.child_age",
               "type": "fields",
               "fieldName": "child_age"
@@ -1795,15 +1562,6 @@
       "_dynamicDependencies": {
         "@data.activity_tasks": [
           "value"
-        ],
-        "!@item.tag_list": [
-          "parameter_list.filter"
-        ],
-        "@item.tag_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.child_age_tag": [
-          "parameter_list.filter"
         ],
         "!@item.child_age_list": [
           "parameter_list.filter"
@@ -1865,7 +1623,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "!@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))"
+        "filter": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))"
       },
       "exclude_from_translation": true,
       "rows": [],
@@ -1882,43 +1640,25 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "!@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
               "matchedExpression": "!@item.locked",
               "type": "item",
               "fieldName": "locked"
             },
             {
-              "fullExpression": "!@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "!@item.tag_list",
-              "type": "item",
-              "fieldName": "tag_list"
-            },
-            {
-              "fullExpression": "!@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "@item.tag_list.includes",
-              "type": "item",
-              "fieldName": "tag_list"
-            },
-            {
-              "fullExpression": "!@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "@fields.child_age_tag",
-              "type": "fields",
-              "fieldName": "child_age_tag"
-            },
-            {
-              "fullExpression": "!@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
               "matchedExpression": "!@item.child_age_list",
               "type": "item",
               "fieldName": "child_age_list"
             },
             {
-              "fullExpression": "!@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
               "matchedExpression": "@item.child_age_list.includes",
               "type": "item",
               "fieldName": "child_age_list"
             },
             {
-              "fullExpression": "!@item.locked && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "!@item.locked && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
               "matchedExpression": "@fields.child_age",
               "type": "fields",
               "fieldName": "child_age"
@@ -1931,15 +1671,6 @@
           "value"
         ],
         "!@item.locked": [
-          "parameter_list.filter"
-        ],
-        "!@item.tag_list": [
-          "parameter_list.filter"
-        ],
-        "@item.tag_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.child_age_tag": [
           "parameter_list.filter"
         ],
         "!@item.child_age_list": [
@@ -2047,7 +1778,7 @@
         }
       ],
       "parameter_list": {
-        "filter": "@item.favourite && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))"
+        "filter": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))"
       },
       "exclude_from_translation": true,
       "rows": [],
@@ -2064,43 +1795,25 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "@item.favourite && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
               "matchedExpression": "@item.favourite",
               "type": "item",
               "fieldName": "favourite"
             },
             {
-              "fullExpression": "@item.favourite && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "!@item.tag_list",
-              "type": "item",
-              "fieldName": "tag_list"
-            },
-            {
-              "fullExpression": "@item.favourite && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "@item.tag_list.includes",
-              "type": "item",
-              "fieldName": "tag_list"
-            },
-            {
-              "fullExpression": "@item.favourite && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
-              "matchedExpression": "@fields.child_age_tag",
-              "type": "fields",
-              "fieldName": "child_age_tag"
-            },
-            {
-              "fullExpression": "@item.favourite && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
               "matchedExpression": "!@item.child_age_list",
               "type": "item",
               "fieldName": "child_age_list"
             },
             {
-              "fullExpression": "@item.favourite && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
               "matchedExpression": "@item.child_age_list.includes",
               "type": "item",
               "fieldName": "child_age_list"
             },
             {
-              "fullExpression": "@item.favourite && (!@item.tag_list || @item.tag_list.includes(@fields.child_age_tag)) && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
+              "fullExpression": "@item.favourite && (!@item.child_age_list || @item.child_age_list.includes(@fields.child_age))",
               "matchedExpression": "@fields.child_age",
               "type": "fields",
               "fieldName": "child_age"
@@ -2113,15 +1826,6 @@
           "value"
         ],
         "@item.favourite": [
-          "parameter_list.filter"
-        ],
-        "!@item.tag_list": [
-          "parameter_list.filter"
-        ],
-        "@item.tag_list.includes": [
-          "parameter_list.filter"
-        ],
-        "@fields.child_age_tag": [
           "parameter_list.filter"
         ],
         "!@item.child_age_list": [
@@ -2218,8 +1922,8 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_global V2",
-    "path": "templates/PLH activity library.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/15l61UKBeIn5h0uP6cw9nMuWJiB3vK7JZwswsEVmCaUE"
+    "name": "kids_teens_global",
+    "path": "PLH activity library.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1ejf7JQSM2-kvclr1oZW6jH_a0K_aEZuGQCYOD7RcO8U"
   }
 }

@@ -81,15 +81,6 @@
       "_nested_name": "privacy_icon"
     },
     {
-      "name": "feedback_icon",
-      "value": "images/icons/chatbubble-ellipses-outline.svg",
-      "_translations": {
-        "value": {}
-      },
-      "type": "set_variable",
-      "_nested_name": "feedback_icon"
-    },
-    {
       "type": "title",
       "name": "settings",
       "value": "@global.settings",
@@ -174,11 +165,15 @@
           "action_list": [
             {
               "trigger": "click",
-              "action_id": "go_to",
+              "action_id": "pop_up",
               "args": [
                 "settings_login"
               ],
-              "_raw": "click | go_to: settings_login"
+              "_raw": "click | pop_up: settings_login | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
             }
           ],
           "exclude_from_translation": true,
@@ -240,11 +235,15 @@
           "action_list": [
             {
               "trigger": "click",
-              "action_id": "go_to",
+              "action_id": "pop_up",
               "args": [
                 "settings_profile"
               ],
-              "_raw": "click | go_to: settings_profile"
+              "_raw": "click | pop_up: settings_profile | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
             }
           ],
           "exclude_from_translation": true,
@@ -306,14 +305,17 @@
           "action_list": [
             {
               "trigger": "click",
-              "action_id": "go_to",
+              "action_id": "pop_up",
               "args": [
                 "settings_language_select"
               ],
-              "_raw": "click | go_to: settings_language_select"
+              "_raw": "click | pop_up: settings_language_select | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
             }
           ],
-          "condition": "@global.has_onboarding_language_select",
           "exclude_from_translation": true,
           "_nested_name": "dg_account.button_language",
           "_dynamicFields": {
@@ -342,15 +344,7 @@
                   "fieldName": "next_icon_asset"
                 }
               ]
-            },
-            "condition": [
-              {
-                "fullExpression": "@global.has_onboarding_language_select",
-                "matchedExpression": "@global.has_onboarding_language_select",
-                "type": "global",
-                "fieldName": "has_onboarding_language_select"
-              }
-            ]
+            }
           },
           "_dynamicDependencies": {
             "@global.language": [
@@ -361,9 +355,6 @@
             ],
             "@local.next_icon_asset": [
               "parameter_list.icon_secondary_asset"
-            ],
-            "@global.has_onboarding_language_select": [
-              "condition"
             ]
           }
         },
@@ -384,11 +375,15 @@
           "action_list": [
             {
               "trigger": "click",
-              "action_id": "go_to",
+              "action_id": "pop_up",
               "args": [
                 "settings_user_id"
               ],
-              "_raw": "click | go_to: settings_user_id"
+              "_raw": "click | pop_up: settings_user_id | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
             }
           ],
           "condition": false,
@@ -491,11 +486,15 @@
           "action_list": [
             {
               "trigger": "click",
-              "action_id": "go_to",
+              "action_id": "pop_up",
               "args": [
                 "settings_about"
               ],
-              "_raw": "click | go_to: settings_about"
+              "_raw": "click | pop_up: settings_about | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
             }
           ],
           "exclude_from_translation": true,
@@ -557,11 +556,15 @@
           "action_list": [
             {
               "trigger": "click",
-              "action_id": "go_to",
+              "action_id": "pop_up",
               "args": [
                 "settings_terms"
               ],
-              "_raw": "click | go_to: settings_terms"
+              "_raw": "click | pop_up: settings_terms | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
             }
           ],
           "exclude_from_translation": true,
@@ -623,11 +626,15 @@
           "action_list": [
             {
               "trigger": "click",
-              "action_id": "go_to",
+              "action_id": "pop_up",
               "args": [
                 "settings_privacy_policy"
               ],
-              "_raw": "click | go_to: settings_privacy_policy"
+              "_raw": "click | pop_up: settings_privacy_policy | fullscreen: true, showCloseButton: false",
+              "params": {
+                "fullscreen": true,
+                "showCloseButton": false
+              }
             }
           ],
           "exclude_from_translation": true,
@@ -665,72 +672,6 @@
               "value"
             ],
             "@local.privacy_icon": [
-              "parameter_list.icon"
-            ],
-            "@local.next_icon_asset": [
-              "parameter_list.icon_secondary_asset"
-            ]
-          }
-        },
-        {
-          "type": "button",
-          "name": "button_feedback",
-          "value": "@global.feedback",
-          "_translations": {
-            "value": {}
-          },
-          "parameter_list": {
-            "variant": "card",
-            "icon": "@local.feedback_icon",
-            "icon_secondary_asset": "@local.next_icon_asset",
-            "style": "no-background",
-            "text_align": "left"
-          },
-          "action_list": [
-            {
-              "trigger": "click",
-              "action_id": "go_to",
-              "args": [
-                "feedback_form"
-              ],
-              "_raw": "click | go_to: feedback_form"
-            }
-          ],
-          "exclude_from_translation": true,
-          "_nested_name": "dg_general.button_feedback",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@global.feedback",
-                "matchedExpression": "@global.feedback",
-                "type": "global",
-                "fieldName": "feedback"
-              }
-            ],
-            "parameter_list": {
-              "icon": [
-                {
-                  "fullExpression": "@local.feedback_icon",
-                  "matchedExpression": "@local.feedback_icon",
-                  "type": "local",
-                  "fieldName": "feedback_icon"
-                }
-              ],
-              "icon_secondary_asset": [
-                {
-                  "fullExpression": "@local.next_icon_asset",
-                  "matchedExpression": "@local.next_icon_asset",
-                  "type": "local",
-                  "fieldName": "next_icon_asset"
-                }
-              ]
-            }
-          },
-          "_dynamicDependencies": {
-            "@global.feedback": [
-              "value"
-            ],
-            "@local.feedback_icon": [
               "parameter_list.icon"
             ],
             "@local.next_icon_asset": [
@@ -808,8 +749,8 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_global V2",
-    "path": "templates/PLH settings.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/15vCtio89LY4bnbi5_aGvB4cJwI6lS47f5SWPGodi3Dc"
+    "name": "kids_teens_global",
+    "path": "PLH settings.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1uBEmZtqR_EeWZCjDQ6i6fdL56Vh8IasbzpEGTVlmNvs"
   }
 }

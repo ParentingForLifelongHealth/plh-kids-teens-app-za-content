@@ -1,0 +1,436 @@
+{
+  "flow_type": "template",
+  "flow_name": "module_card",
+  "status": "released",
+  "rows": [
+    {
+      "name": "card_variant",
+      "value": "circle",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "card_variant"
+    },
+    {
+      "name": "module_id",
+      "value": "test",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "module_id"
+    },
+    {
+      "name": "join",
+      "value": "_",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "join"
+    },
+    {
+      "name": "articles",
+      "value": "_article_tasks",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "articles"
+    },
+    {
+      "name": "task_group_data",
+      "value": "@local.module_id@local.articles",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "task_group_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.module_id",
+            "type": "local",
+            "fieldName": "module_id"
+          },
+          {
+            "fullExpression": "@local.module_id@local.articles",
+            "matchedExpression": "@local.articles",
+            "type": "local",
+            "fieldName": "articles"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.module_id": [
+          "value"
+        ],
+        "@local.articles": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "completed",
+      "value": "_completed",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "completed"
+    },
+    {
+      "name": "ww_id",
+      "value": "modules.@local.module_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "ww_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "modules.@local.module_id",
+            "matchedExpression": "@local.module_id",
+            "type": "local",
+            "fieldName": "module_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.module_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "module_data",
+      "value": "@data.@local.ww_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "module_data",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.@local.ww_id",
+            "matchedExpression": "@local.ww_id",
+            "type": "local",
+            "fieldName": "ww_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.ww_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "card_title",
+      "value": "@local.module_data.title",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "card_title",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.module_data.title",
+            "matchedExpression": "@local.module_data.title",
+            "type": "local",
+            "fieldName": "module_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.module_data.title": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "card_image",
+      "value": "@local.module_data.image_asset",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "card_image",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.module_data.image_asset",
+            "matchedExpression": "@local.module_data.image_asset",
+            "type": "local",
+            "fieldName": "module_data"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.module_data.image_asset": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "click_template",
+      "value": "module_landing_@local.module_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "click_template",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "module_landing_@local.module_id",
+            "matchedExpression": "@local.module_id",
+            "type": "local",
+            "fieldName": "module_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.module_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "in_progress_icon",
+      "value": "images/icons/in_progress.svg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "in_progress_icon"
+    },
+    {
+      "name": "completed_icon",
+      "value": "images/icons/tick_white.svg",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "completed_icon"
+    },
+    {
+      "name": "progress_units_name",
+      "value": "sections",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "progress_units_name"
+    },
+    {
+      "name": "locked",
+      "value": false,
+      "type": "set_variable",
+      "_nested_name": "locked"
+    },
+    {
+      "name": "locked_image_asset",
+      "value": "images/icons/locked.png",
+      "_translations": {
+        "value": {}
+      },
+      "type": "set_variable",
+      "_nested_name": "locked_image_asset"
+    },
+    {
+      "type": "task_card",
+      "name": "task_card",
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "@local.click_template"
+          ],
+          "_raw": "click | go_to: @local.click_template"
+        }
+      ],
+      "parameter_list": {
+        "variant": "@local.card_variant",
+        "task_group_id": "@local.module_id",
+        "task_group_data": "@local.task_group_data",
+        "title": "@local.card_title",
+        "image": "@local.card_image",
+        "in_progress_icon": "@local.in_progress_icon",
+        "completed_icon": "@local.completed_icon",
+        "progress_units_name": "@local.progress_units_name",
+        "locked": "@local.locked",
+        "locked_image_asset": "@local.locked_image_asset"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "task_card",
+      "_dynamicFields": {
+        "action_list": {
+          "0": {
+            "args": {
+              "0": [
+                {
+                  "fullExpression": "@local.click_template",
+                  "matchedExpression": "@local.click_template",
+                  "type": "local",
+                  "fieldName": "click_template"
+                }
+              ]
+            },
+            "_raw": [
+              {
+                "fullExpression": "click | go_to: @local.click_template",
+                "matchedExpression": "@local.click_template",
+                "type": "local",
+                "fieldName": "click_template"
+              }
+            ]
+          }
+        },
+        "parameter_list": {
+          "variant": [
+            {
+              "fullExpression": "@local.card_variant",
+              "matchedExpression": "@local.card_variant",
+              "type": "local",
+              "fieldName": "card_variant"
+            }
+          ],
+          "task_group_id": [
+            {
+              "fullExpression": "@local.module_id",
+              "matchedExpression": "@local.module_id",
+              "type": "local",
+              "fieldName": "module_id"
+            }
+          ],
+          "task_group_data": [
+            {
+              "fullExpression": "@local.task_group_data",
+              "matchedExpression": "@local.task_group_data",
+              "type": "local",
+              "fieldName": "task_group_data"
+            }
+          ],
+          "title": [
+            {
+              "fullExpression": "@local.card_title",
+              "matchedExpression": "@local.card_title",
+              "type": "local",
+              "fieldName": "card_title"
+            }
+          ],
+          "image": [
+            {
+              "fullExpression": "@local.card_image",
+              "matchedExpression": "@local.card_image",
+              "type": "local",
+              "fieldName": "card_image"
+            }
+          ],
+          "in_progress_icon": [
+            {
+              "fullExpression": "@local.in_progress_icon",
+              "matchedExpression": "@local.in_progress_icon",
+              "type": "local",
+              "fieldName": "in_progress_icon"
+            }
+          ],
+          "completed_icon": [
+            {
+              "fullExpression": "@local.completed_icon",
+              "matchedExpression": "@local.completed_icon",
+              "type": "local",
+              "fieldName": "completed_icon"
+            }
+          ],
+          "progress_units_name": [
+            {
+              "fullExpression": "@local.progress_units_name",
+              "matchedExpression": "@local.progress_units_name",
+              "type": "local",
+              "fieldName": "progress_units_name"
+            }
+          ],
+          "locked": [
+            {
+              "fullExpression": "@local.locked",
+              "matchedExpression": "@local.locked",
+              "type": "local",
+              "fieldName": "locked"
+            }
+          ],
+          "locked_image_asset": [
+            {
+              "fullExpression": "@local.locked_image_asset",
+              "matchedExpression": "@local.locked_image_asset",
+              "type": "local",
+              "fieldName": "locked_image_asset"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.click_template": [
+          "action_list.0.args.0",
+          "action_list.0._raw"
+        ],
+        "@local.card_variant": [
+          "parameter_list.variant"
+        ],
+        "@local.module_id": [
+          "parameter_list.task_group_id"
+        ],
+        "@local.task_group_data": [
+          "parameter_list.task_group_data"
+        ],
+        "@local.card_title": [
+          "parameter_list.title"
+        ],
+        "@local.card_image": [
+          "parameter_list.image"
+        ],
+        "@local.in_progress_icon": [
+          "parameter_list.in_progress_icon"
+        ],
+        "@local.completed_icon": [
+          "parameter_list.completed_icon"
+        ],
+        "@local.progress_units_name": [
+          "parameter_list.progress_units_name"
+        ],
+        "@local.locked": [
+          "parameter_list.locked"
+        ],
+        "@local.locked_image_asset": [
+          "parameter_list.locked_image_asset"
+        ]
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_global",
+    "path": "templates/modules/module_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1MeuVFYp7ovMCABdgC5c1mExgDK8Xop13fzzBNR5EAPo"
+  }
+}

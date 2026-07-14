@@ -4,14 +4,8 @@
   "status": "released",
   "rows": [
     {
-      "name": "confirm_exit",
-      "value": false,
-      "type": "set_variable",
-      "_nested_name": "confirm_exit"
-    },
-    {
       "type": "display_group",
-      "name": "dg_header",
+      "name": "dg_row",
       "rows": [
         {
           "type": "round_button",
@@ -26,62 +20,11 @@
               "_raw": "click | emit: uncompleted"
             }
           ],
-          "condition": "!@local.confirm_exit",
           "parameter_list": {
             "icon_src": "chevron-back",
             "variant": "navigation"
           },
-          "_nested_name": "dg_header.back",
-          "_dynamicFields": {
-            "condition": [
-              {
-                "fullExpression": "!@local.confirm_exit",
-                "matchedExpression": "!@local.confirm_exit",
-                "type": "local",
-                "fieldName": "confirm_exit"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "!@local.confirm_exit": [
-              "condition"
-            ]
-          }
-        },
-        {
-          "type": "round_button",
-          "name": "back_confirm",
-          "action_list": [
-            {
-              "trigger": "click",
-              "action_id": "pop_up",
-              "args": [
-                "confirm_exit"
-              ],
-              "_raw": "click | pop_up: confirm_exit"
-            }
-          ],
-          "condition": "@local.confirm_exit",
-          "parameter_list": {
-            "icon_src": "chevron-back",
-            "variant": "navigation"
-          },
-          "_nested_name": "dg_header.back_confirm",
-          "_dynamicFields": {
-            "condition": [
-              {
-                "fullExpression": "@local.confirm_exit",
-                "matchedExpression": "@local.confirm_exit",
-                "type": "local",
-                "fieldName": "confirm_exit"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@local.confirm_exit": [
-              "condition"
-            ]
-          }
+          "_nested_name": "dg_row.back"
         },
         {
           "type": "title",
@@ -90,7 +33,7 @@
           "_translations": {
             "value": {}
           },
-          "_nested_name": "dg_header.title",
+          "_nested_name": "dg_row.title",
           "_dynamicFields": {
             "value": [
               {
@@ -108,12 +51,12 @@
           }
         }
       ],
-      "_nested_name": "dg_header"
+      "_nested_name": "dg_row"
     }
   ],
   "_source": {
-    "name": "kids_teens_global V2",
-    "path": "templates/PLH settings.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/15vCtio89LY4bnbi5_aGvB4cJwI6lS47f5SWPGodi3Dc"
+    "name": "kids_teens_global",
+    "path": "PLH settings.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1uBEmZtqR_EeWZCjDQ6i6fdL56Vh8IasbzpEGTVlmNvs"
   }
 }

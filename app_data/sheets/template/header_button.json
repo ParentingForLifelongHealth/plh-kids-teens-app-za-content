@@ -212,23 +212,13 @@
       "action_list": [
         {
           "trigger": "click",
-          "action_id": "set_field",
-          "args": [
-            "current_start_article_id",
-            "uncomplete"
-          ],
-          "_raw": "click | set_field: current_start_article_id: uncomplete"
-        },
-        {
-          "trigger": "click",
           "action_id": "nav_stack",
           "args": [
             "open"
           ],
-          "_raw": "click | nav_stack: open | template: @local.template, header: false",
+          "_raw": "click | nav_stack: open | template: @local.template",
           "params": {
-            "template": "@local.template",
-            "header": false
+            "template": "@local.template"
           }
         }
       ],
@@ -252,10 +242,10 @@
           }
         ],
         "action_list": {
-          "1": {
+          "0": {
             "_raw": [
               {
-                "fullExpression": "click | nav_stack: open | template: @local.template, header: false",
+                "fullExpression": "click | nav_stack: open | template: @local.template",
                 "matchedExpression": "@local.template",
                 "type": "local",
                 "fieldName": "template"
@@ -313,8 +303,8 @@
           "value"
         ],
         "@local.template": [
-          "action_list.1._raw",
-          "action_list.1.params.template"
+          "action_list.0._raw",
+          "action_list.0.params.template"
         ],
         "@local.subtitle": [
           "parameter_list.subtitle"
@@ -503,8 +493,8 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_global V2",
-    "path": "templates/module_list.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1SkxfFFUzSjkUaxGKvYxiec-mx0szbeR6TaqBwfbBJyQ"
+    "name": "kids_teens_za",
+    "path": "templates/ZA app_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1dpTYJMY2c8CWJ8yiGTR1vSX1LryPSpsxQSPbUjRi0fg"
   }
 }
