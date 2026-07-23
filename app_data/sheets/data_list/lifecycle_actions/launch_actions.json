@@ -165,7 +165,7 @@
       "id": "asset_pack_download_progress",
       "priority": 9,
       "condition_list": [
-        "@fields._asset_pack_download_in_progress"
+        "@fields.user_mode && @fields._asset_pack_download_in_progress"
       ],
       "action_list": [
         {

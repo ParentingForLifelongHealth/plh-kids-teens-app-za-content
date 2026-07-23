@@ -44,6 +44,39 @@
         "url": "https://docs.google.com/spreadsheets/d/1DqsZB86d4CXj3l5LbO7Z78IBiqAZ5PMAAQM4BRRcQxE"
       }
     },
+    "nf_definition_inactive": {
+      "flow_type": "data_list",
+      "flow_subtype": "campaign_rows",
+      "flow_name": "nf_definition_inactive",
+      "_source": {
+        "name": "kids_teens_za",
+        "path": "data/ZA notifications.xlsx",
+        "url": "https://docs.google.com/spreadsheets/d/18XWxoxPJ69TjWjlJT73ETuhBEQN7scxG8PhTiGOvcQ8"
+      },
+      "_metadata": {
+        "priority": {
+          "type": "number"
+        }
+      }
+    },
+    "nf_schedule_inactive": {
+      "flow_type": "data_list",
+      "flow_subtype": "campaign_schedule",
+      "flow_name": "nf_schedule_inactive",
+      "_source": {
+        "name": "kids_teens_za",
+        "path": "data/ZA notifications.xlsx",
+        "url": "https://docs.google.com/spreadsheets/d/18XWxoxPJ69TjWjlJT73ETuhBEQN7scxG8PhTiGOvcQ8"
+      },
+      "_metadata": {
+        "time": {
+          "type": "object"
+        },
+        "delay": {
+          "type": "object"
+        }
+      }
+    },
     "characters": {
       "flow_type": "data_list",
       "flow_name": "characters",
@@ -2208,6 +2241,11 @@
         },
         {
           "flow_name": "article_addonlinesafe_t_explore14",
+          "flow_subtype": "generated",
+          "flow_type": "template"
+        },
+        {
+          "flow_name": "article_addonlinesafe_t_explore15",
           "flow_subtype": "generated",
           "flow_type": "template"
         },
@@ -7604,6 +7642,11 @@
     },
     "article_addonlinesafe_t_explore14": {
       "flow_name": "article_addonlinesafe_t_explore14",
+      "flow_subtype": "generated",
+      "flow_type": "template"
+    },
+    "article_addonlinesafe_t_explore15": {
+      "flow_name": "article_addonlinesafe_t_explore15",
       "flow_subtype": "generated",
       "flow_type": "template"
     },

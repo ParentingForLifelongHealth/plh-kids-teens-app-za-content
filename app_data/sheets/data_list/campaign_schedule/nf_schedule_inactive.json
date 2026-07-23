@@ -1,0 +1,61 @@
+{
+  "flow_type": "data_list",
+  "flow_subtype": "campaign_schedule",
+  "flow_name": "nf_schedule_inactive",
+  "status": "released",
+  "rows": [
+    {
+      "id": "nf_inactive_day",
+      "time": {
+        "hour": 19,
+        "minute": 0
+      },
+      "delay": {
+        "days": 1
+      }
+    },
+    {
+      "id": "nf_inactive_2_days_evening",
+      "time": {
+        "hour": 19,
+        "minute": 0
+      },
+      "delay": {
+        "days": 2
+      }
+    },
+    {
+      "id": "nf_inactive_2_days_afternoon",
+      "time": {
+        "hour": 14,
+        "minute": 0
+      },
+      "delay": {
+        "days": 2
+      }
+    },
+    {
+      "id": "nf_inactive_week",
+      "time": {
+        "hour": 19,
+        "minute": 0
+      },
+      "delay": {
+        "days": 7
+      }
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_za",
+    "path": "data/ZA notifications.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/18XWxoxPJ69TjWjlJT73ETuhBEQN7scxG8PhTiGOvcQ8"
+  },
+  "_metadata": {
+    "time": {
+      "type": "object"
+    },
+    "delay": {
+      "type": "object"
+    }
+  }
+}
