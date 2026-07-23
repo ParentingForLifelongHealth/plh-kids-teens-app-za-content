@@ -34,11 +34,11 @@
 | radio_button_grid | 11 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 2849 |
+| set_variable | 2851 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 5 |
-| template | 993 |
+| template | 994 |
 | text | 187 |
 | text_area | 2 |
 | text_box | 13 |
@@ -60,13 +60,13 @@
 | app_update | 1 |
 | asset_pack | 2 |
 | auth | 3 |
-| emit: completed | 711 |
+| emit: completed | 712 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 720 |
+| emit: uncompleted | 721 |
 | feedback | 13 |
 | go_to | 20 |
 | nav_stack | 291 |
@@ -88,7 +88,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 62550 KB | 62.6 MB |
+| total | 62549 KB | 62.5 MB |
 | unused | 1547 KB | 1.5 MB |
 </details>
 
@@ -231,7 +231,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | audio/teen/topic_intros/instruct_intro_t.mp3 | 231 | 2 |
 | audio/teen/topic_intros/learn_intro_t.mp3 | 592.2 | 2 |
 | audio/teen/topic_intros/money_intro_t.mp3 | 348.8 | 2 |
-| audio/teen/topic_intros/onlinesafety_intro_t.mp3 | 318.9 | 4 |
+| audio/teen/topic_intros/onlinesafety_intro_t.mp3 | 318.9 | 2 |
 | audio/teen/topic_intros/praise_intro_t.mp3 | 532.2 | 2 |
 | audio/teen/topic_intros/rules_intro_t.mp3 | 292.9 | 2 |
 | audio/teen/topic_intros/safe_intro_t.mp3 | 642.2 | 2 |
@@ -266,7 +266,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 118.7 | 4 |
+| images/activities/circle_dance.svg | 117.2 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -728,6 +728,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_list |  | 10 |
 | data_list | activities | 2 |
 | data_list | app_config_language_list | 1 |
+| data_list | campaign_rows | 1 |
+| data_list | campaign_schedule | 1 |
 | data_list | check_in | 1 |
 | data_list | generated | 58 |
 | data_list | hp_review | 2 |
@@ -771,6 +773,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
 | template |  | 128 |
-| template | generated | 764 |
+| template | generated | 765 |
 | template | legal_terms | 4 |
 </details>

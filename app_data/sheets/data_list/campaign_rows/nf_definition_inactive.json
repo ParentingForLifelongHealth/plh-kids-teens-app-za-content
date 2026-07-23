@@ -1,0 +1,370 @@
+{
+  "flow_type": "data_list",
+  "flow_subtype": "campaign_rows",
+  "flow_name": "nf_definition_inactive",
+  "status": "released",
+  "rows": [
+    {
+      "id": "install_nudge_a",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "action_list": [
+        {
+          "trigger": "sent",
+          "action_id": "set_field",
+          "args": [
+            "install_nudge_sent",
+            true
+          ],
+          "_raw": "sent | set_field: install_nudge_sent : true"
+        }
+      ],
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.n_modules_completed == 0 && @fields.last_module_in_progress == \"NA\""
+          },
+          "_raw": "@fields.n_modules_completed == 0 && @fields.last_module_in_progress == \"NA\""
+        }
+      ],
+      "deactivation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.install_nudge_sent"
+          },
+          "_raw": "@fields.install_nudge_sent"
+        }
+      ],
+      "campaign_list": [
+        "nf_inactive_day"
+      ],
+      "title": "Let's get started!",
+      "_translations": {
+        "title": {},
+        "text": {}
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "Let's get started!"
+        },
+        "text": {
+          "eng": "What a pleasure to have you in @global.app_name! Tap to start your first session."
+        }
+      },
+      "text": "What a pleasure to have you in @global.app_name! Tap to start your first session."
+    },
+    {
+      "id": "install_nudge_b",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "action_list": [
+        {
+          "trigger": "sent",
+          "action_id": "set_field",
+          "args": [
+            "install_nudge_sent",
+            true
+          ],
+          "_raw": "sent | set_field: install_nudge_sent : true"
+        }
+      ],
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.n_modules_completed == 0 && @fields.last_module_in_progress == \"NA\""
+          },
+          "_raw": "@fields.n_modules_completed == 0 && @fields.last_module_in_progress == \"NA\""
+        }
+      ],
+      "deactivation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.install_nudge_sent"
+          },
+          "_raw": "@fields.install_nudge_sent"
+        }
+      ],
+      "campaign_list": [
+        "nf_inactive_day"
+      ],
+      "title": "Improve your family life",
+      "_translations": {
+        "title": {},
+        "text": {}
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "Improve your family life"
+        },
+        "text": {
+          "eng": "10 minutes today can make a difference. Tap here to discover more."
+        }
+      },
+      "text": "10 minutes today can make a difference. Tap here to discover more."
+    },
+    {
+      "id": "positive_reinforcement",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "action_list": [
+        {
+          "trigger": "sent",
+          "action_id": "set_field",
+          "args": [
+            "positive_reinforcement_sent",
+            true
+          ],
+          "_raw": "sent | set_field: positive_reinforcement_sent : true"
+        }
+      ],
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.n_modules_completed !== 0"
+          },
+          "_raw": "@fields.n_modules_completed !== 0"
+        }
+      ],
+      "deactivation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.positive_reinforcement_sent"
+          },
+          "_raw": "@fields.positive_reinforcement_sent"
+        }
+      ],
+      "campaign_list": [
+        "nf_inactive_day"
+      ],
+      "title": "Well done!",
+      "_translations": {
+        "title": {
+          "za_xh": true
+        },
+        "text": {}
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "Well done!"
+        },
+        "text": {
+          "eng": "You finished your first skill. Tap here to continue."
+        }
+      },
+      "text": "You finished your first skill. Tap here to continue."
+    },
+    {
+      "id": "resume_lesson_a",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "current_start_article_id",
+            "uncomplete"
+          ],
+          "_raw": "click | set_field: current_start_article_id: uncomplete"
+        },
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "home_screen"
+          ],
+          "_raw": "click | go_to : home_screen"
+        },
+        {
+          "trigger": "click",
+          "action_id": "nav_stack",
+          "args": [
+            "open"
+          ],
+          "_raw": "click | nav_stack: open | template: stack_module_@fields.last_module_in_progress@fields.start_at_id, header: false",
+          "params": {
+            "template": "stack_module_@fields.last_module_in_progress@fields.start_at_id",
+            "header": false
+          }
+        }
+      ],
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.last_module_in_progress != \"NA\""
+          },
+          "_raw": "@fields.last_module_in_progress != \"NA\""
+        }
+      ],
+      "campaign_list": [
+        "nf_inactive_2_days_afternoon",
+        "nf_inactive_week"
+      ],
+      "title": "Continue with something valuable",
+      "_translations": {
+        "title": {},
+        "text": {}
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "Continue with something valuable"
+        },
+        "text": {
+          "eng": "@fields.user_name, you started something very valuable. Tap here to continue."
+        }
+      },
+      "text": "@fields.user_name, you started something very valuable. Tap here to continue."
+    },
+    {
+      "id": "resume_lesson_b",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "current_start_article_id",
+            "uncomplete"
+          ],
+          "_raw": "click | set_field: current_start_article_id: uncomplete"
+        },
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "home_screen"
+          ],
+          "_raw": "click | go_to : home_screen"
+        },
+        {
+          "trigger": "click",
+          "action_id": "nav_stack",
+          "args": [
+            "open"
+          ],
+          "_raw": "click | nav_stack: open | template: stack_module_@fields.last_module_in_progress@fields.start_at_id, header: false",
+          "params": {
+            "template": "stack_module_@fields.last_module_in_progress@fields.start_at_id",
+            "header": false
+          }
+        }
+      ],
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.last_module_in_progress != \"NA\""
+          },
+          "_raw": "@fields.last_module_in_progress != \"NA\""
+        }
+      ],
+      "campaign_list": [
+        "nf_inactive_2_days_afternoon",
+        "nf_inactive_week"
+      ],
+      "title": "Pick up where you left off",
+      "_translations": {
+        "title": {},
+        "text": {}
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "Pick up where you left off"
+        },
+        "text": {
+          "eng": "@fields.user_name, you are very close to finishing. Tap to continue."
+        }
+      },
+      "text": "@fields.user_name, you are very close to finishing. Tap to continue."
+    },
+    {
+      "id": "win_back_a",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+          },
+          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+        }
+      ],
+      "campaign_list": [
+        "nf_inactive_2_days_evening",
+        "nf_inactive_week"
+      ],
+      "title": "Keep learning!",
+      "_translations": {
+        "title": {},
+        "text": {}
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "Keep learning!"
+        },
+        "text": {
+          "eng": "Discover a new way to support your family today."
+        }
+      },
+      "text": "Discover a new way to support your family today."
+    },
+    {
+      "id": "win_back_b",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+          },
+          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+        }
+      ],
+      "campaign_list": [
+        "nf_inactive_2_days_evening",
+        "nf_inactive_week"
+      ],
+      "title": "You're doing great!",
+      "_translations": {
+        "title": {},
+        "text": {}
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "You're doing great!"
+        },
+        "text": {
+          "eng": "Every small step strengthens your family. Tap to continue."
+        }
+      },
+      "text": "Every small step strengthens your family. Tap to continue."
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_za",
+    "path": "data/ZA notifications.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/18XWxoxPJ69TjWjlJT73ETuhBEQN7scxG8PhTiGOvcQ8"
+  },
+  "_metadata": {
+    "priority": {
+      "type": "number"
+    }
+  }
+}
