@@ -34,11 +34,11 @@
 | radio_button_grid | 11 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 2853 |
+| set_variable | 2851 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 5 |
-| template | 995 |
+| template | 994 |
 | text | 187 |
 | text_area | 2 |
 | text_box | 13 |
@@ -60,13 +60,13 @@
 | app_update | 1 |
 | asset_pack | 2 |
 | auth | 3 |
-| emit: completed | 713 |
+| emit: completed | 712 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 722 |
+| emit: uncompleted | 721 |
 | feedback | 13 |
 | go_to | 20 |
 | nav_stack | 291 |
@@ -88,7 +88,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 84832 KB | 84.8 MB |
+| total | 84834 KB | 84.8 MB |
 | unused | 1547 KB | 1.5 MB |
 </details>
 
@@ -175,7 +175,6 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_7.mp3 | 1 |
 | audio/relax/relax_8.mp3 | 1 |
 | images/backgrounds/map_view_bg.jpg | 1 |
-| images/icons/brain_filled_blue.png | 2 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
 </details>
@@ -267,7 +266,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 117.2 | 4 |
+| images/activities/circle_dance.svg | 118.7 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -400,7 +399,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/homescreen/stress_t.svg | 16.9 | 2 |
 | images/homescreen/svp_t.svg | 25.4 | 2 |
 | images/icons/balance_blue.png | 4.7 | 2 |
-| images/icons/brain_blue.png | 5.2 | 14 |
+| images/icons/brain_blue.png | 5.2 | 16 |
 | images/icons/celebration.svg | 70.4 | 1 |
 | images/icons/clock_blue.png | 4.5 | 12 |
 | images/icons/diamond-outline.svg | 0.6 | 2 |
@@ -735,7 +734,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 
 | type | subtype | total |
 | --- | --- | --- |
-| data_list |  | 10 |
+| data_list |  | 11 |
 | data_list | activities | 2 |
 | data_list | app_config_language_list | 1 |
 | data_list | campaign_rows | 1 |
@@ -783,6 +782,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
 | template |  | 128 |
-| template | generated | 766 |
+| template | generated | 765 |
 | template | legal_terms | 4 |
 </details>
