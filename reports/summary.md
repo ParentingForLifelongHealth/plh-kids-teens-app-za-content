@@ -9,12 +9,12 @@
 | animated_slides | 1 |
 | apple_sign_in_button | 2 |
 | audio | 4 |
-| button | 91 |
+| button | 95 |
 | combo_box | 10 |
-| data_items | 165 |
+| data_items | 168 |
 | debug_toggle | 1 |
 | display_grid | 4 |
-| display_group | 111 |
+| display_group | 112 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 26 |
@@ -34,17 +34,17 @@
 | radio_button_grid | 11 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 2851 |
+| set_variable | 2859 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 5 |
-| template | 994 |
-| text | 187 |
+| template | 998 |
+| text | 202 |
 | text_area | 2 |
 | text_box | 13 |
 | text_bubble | 9 |
 | tile_component | 1 |
-| title | 55 |
+| title | 56 |
 | toggle_bar | 5 |
 | update_action_list | 2 |
 | video | 4 |
@@ -60,13 +60,13 @@
 | app_update | 1 |
 | asset_pack | 2 |
 | auth | 3 |
-| emit: completed | 712 |
+| emit: completed | 714 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 13 |
 | emit: force_restart | 3 |
 | emit: server_sync | 6 |
 | emit: set_language | 2 |
-| emit: uncompleted | 721 |
+| emit: uncompleted | 723 |
 | feedback | 13 |
 | go_to | 20 |
 | nav_stack | 291 |
@@ -75,7 +75,7 @@
 | reset_data | 3 |
 | set_data | 80 |
 | set_field | 68 |
-| set_item | 52 |
+| set_item | 58 |
 | set_local | 79 |
 | share | 2 |
 | task | 2 |
@@ -88,7 +88,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 84834 KB | 84.8 MB |
+| total | 84832 KB | 84.8 MB |
 | unused | 1547 KB | 1.5 MB |
 </details>
 
@@ -266,7 +266,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/can_you_catch_it.svg | 183.7 | 2 |
 | images/activities/charades.svg | 38.9 | 2 |
 | images/activities/checkin_chat.svg | 42.5 | 2 |
-| images/activities/circle_dance.svg | 118.7 | 4 |
+| images/activities/circle_dance.svg | 117.2 | 4 |
 | images/activities/clean.svg | 39.9 | 2 |
 | images/activities/cook_traditional.svg | 40.7 | 2 |
 | images/activities/cooking_with_maths.svg | 190 | 2 |
@@ -284,7 +284,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/reflect_positive.svg | 38.2 | 2 |
 | images/activities/role_play.svg | 38.5 | 4 |
 | images/activities/rolling_ball_fun.svg | 90.6 | 2 |
-| images/activities/secret_handshake.svg | 56.1 | 2 |
+| images/activities/secret_handshake.svg | 56.1 | 4 |
 | images/activities/shadow_play.svg | 5.6 | 2 |
 | images/activities/short_term_goal.svg | 41.9 | 4 |
 | images/activities/song.svg | 2.7 | 8 |
@@ -294,7 +294,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/activities/tell_stories.svg | 40.9 | 2 |
 | images/activities/thinking_games.svg | 107.3 | 2 |
 | images/activities/traffic_lights.svg | 172.3 | 2 |
-| images/activities/two_truths.svg | 76.9 | 2 |
+| images/activities/two_truths.svg | 76.9 | 4 |
 | images/activities/unseen_guesses.svg | 70.8 | 2 |
 | images/activities/walk.svg | 101.3 | 2 |
 | images/activities/yes_no_maybe.svg | 58.2 | 2 |
@@ -411,10 +411,10 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/expand_circle_right.svg | 0.5 | 1 |
 | images/icons/expand_circle_right_blue.svg | 2.1 | 2 |
 | images/icons/eye_blue.png | 4.2 | 16 |
-| images/icons/faces/happy_face_new.svg | 1.4 | 53 |
-| images/icons/faces/ok_face_new.svg | 0.5 | 53 |
+| images/icons/faces/happy_face_new.svg | 1.4 | 54 |
+| images/icons/faces/ok_face_new.svg | 0.5 | 54 |
 | images/icons/faces/sad.svg | 0.6 | 1 |
-| images/icons/faces/sad_face_new.svg | 1.5 | 53 |
+| images/icons/faces/sad_face_new.svg | 1.5 | 54 |
 | images/icons/football_blue.png | 5.1 | 2 |
 | images/icons/globe-outline.svg | 0.8 | 1 |
 | images/icons/heart-outline.png | 1.5 | 1 |
@@ -781,7 +781,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 6 |
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
-| template |  | 128 |
-| template | generated | 765 |
+| template |  | 131 |
+| template | generated | 767 |
 | template | legal_terms | 4 |
 </details>
