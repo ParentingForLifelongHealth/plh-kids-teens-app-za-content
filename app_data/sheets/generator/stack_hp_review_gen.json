@@ -21,6 +21,51 @@
       "rows": [
         {
           "type": "template",
+          "name": "header",
+          "value": "header",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "completed | emit: completed"
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "emit",
+              "args": [
+                "uncompleted"
+              ],
+              "_raw": "uncompleted | emit: uncompleted"
+            }
+          ],
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "title",
+              "exclude_from_translation": true
+            },
+            {
+              "name": "display_icon",
+              "value": false,
+              "exclude_from_translation": true
+            },
+            {
+              "name": "show_progress",
+              "value": false,
+              "exclude_from_translation": true
+            },
+            {
+              "name": "progress",
+              "value": 0,
+              "exclude_from_translation": true
+            }
+          ]
+        },
+        {
+          "type": "template",
           "name": "if_no",
           "value": "hp_review_with_activity",
           "action_list": [

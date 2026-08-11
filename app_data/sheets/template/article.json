@@ -216,6 +216,18 @@
       }
     },
     {
+      "name": "show_progress",
+      "value": false,
+      "type": "set_variable",
+      "_nested_name": "show_progress"
+    },
+    {
+      "name": "progress",
+      "value": 0,
+      "type": "set_variable",
+      "_nested_name": "progress"
+    },
+    {
       "name": "category_id",
       "value": "@local.article_data.category_id",
       "_translations": {
@@ -440,6 +452,54 @@
           },
           "_dynamicDependencies": {
             "@local.category_data.icon_asset": [
+              "value"
+            ]
+          }
+        },
+        {
+          "name": "show_progress",
+          "value": "@local.show_progress",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "header.show_progress",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.show_progress",
+                "matchedExpression": "@local.show_progress",
+                "type": "local",
+                "fieldName": "show_progress"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.show_progress": [
+              "value"
+            ]
+          }
+        },
+        {
+          "name": "progress",
+          "value": "@local.progress",
+          "_translations": {
+            "value": {}
+          },
+          "type": "set_variable",
+          "_nested_name": "header.progress",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@local.progress",
+                "matchedExpression": "@local.progress",
+                "type": "local",
+                "fieldName": "progress"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@local.progress": [
               "value"
             ]
           }
