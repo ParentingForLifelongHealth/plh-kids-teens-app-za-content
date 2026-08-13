@@ -11,16 +11,16 @@
 | audio | 4 |
 | button | 97 |
 | combo_box | 10 |
-| data_items | 168 |
+| data_items | 169 |
 | debug_toggle | 1 |
 | display_grid | 4 |
-| display_group | 119 |
+| display_group | 122 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
-| image | 26 |
+| image | 29 |
 | items | 17 |
 | lottie_animation | 5 |
-| nested_properties | 168 |
+| nested_properties | 169 |
 | number_selector | 1 |
 | plh_activity_check_in | 1 |
 | plh_bottom_nav | 1 |
@@ -34,12 +34,12 @@
 | radio_button_grid | 11 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 2997 |
+| set_variable | 3004 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 6 |
 | template | 1024 |
-| text | 204 |
+| text | 210 |
 | text_area | 2 |
 | text_box | 13 |
 | text_bubble | 9 |
@@ -76,7 +76,7 @@
 | set_data | 80 |
 | set_field | 68 |
 | set_item | 58 |
-| set_local | 79 |
+| set_local | 80 |
 | share | 2 |
 | task | 2 |
 | toast | 2 |
@@ -88,8 +88,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 83348 KB | 83.3 MB |
-| unused | 3162 KB | 3.2 MB |
+| total | 83855 KB | 83.9 MB |
+| unused | 2655 KB | 2.7 MB |
 </details>
 
 <details open>
@@ -175,9 +175,7 @@ Assets that appear in app-data but do not have references within sheets
 | images/logos/partners/favicon.png | 149.9 |
 | images/logos/partners/plh_logomark.png | 20.5 |
 | images/logos/partners/plh_white.png | 12.8 |
-| images/logos/partners/sino_horizontal.svg | 251 |
 | images/logos/partners/sino_mark.svg | 461.7 |
-| images/logos/partners/sino_white.svg | 256.1 |
 | images/logos/plh_white.png | 12.8 |
 | lottie/bulging_circles.txt | 0.2 |
 </details>
@@ -236,8 +234,6 @@ Assets that have references within sheets but do not appear in app-data
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
 | images/logos/plh_logomark.png | 1 |
-| images/logos/sino_horizontal.svg | 1 |
-| images/logos/sino_white.svg | 1 |
 </details>
 
 <details >
@@ -524,6 +520,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/logos/partners/UNICEF.png | 68.8 | 1 |
 | images/logos/partners/Vodacom.png | 59.2 | 1 |
 | images/logos/partners/WHO.jpeg | 310.7 | 1 |
+| images/logos/partners/sino_horizontal.svg | 251 | 1 |
+| images/logos/partners/sino_white.svg | 256.1 | 1 |
 | images/onboarding/facilitator_female_onboarding_icon.svg | 29.4 | 1 |
 | images/onboarding/facilitator_male_onboarding_icon.svg | 21.6 | 1 |
 | images/onboarding/frustrated.svg | 22.5 | 1 |
