@@ -717,10 +717,61 @@
       "type": "display_group",
       "name": "page_error",
       "parameter_list": {
-        "style": "column"
+        "style": "column",
+        "sticky": "bottom"
       },
       "condition": "@local.download_status == \"error\"",
+      "style_list": [
+        "background: #ffffff",
+        "border-radius: 12px 12px 0 0",
+        "box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12)",
+        "padding: 16px 24px !important",
+        "margin-top: 12px",
+        "position: relative",
+        "z-index: 10",
+        "justify-items: center"
+      ],
       "rows": [
+        {
+          "type": "image",
+          "name": "error_profile_image",
+          "value": "@global.onboarding_error_image",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "!!@global.onboarding_error_image",
+          "style_list": [
+            "width: 48px",
+            "height: 48px"
+          ],
+          "_nested_name": "page_error.error_profile_image",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.onboarding_error_image",
+                "matchedExpression": "@global.onboarding_error_image",
+                "type": "global",
+                "fieldName": "onboarding_error_image"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@global.onboarding_error_image",
+                "matchedExpression": "!@global.onboarding_error_image",
+                "type": "global",
+                "fieldName": "onboarding_error_image"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.onboarding_error_image": [
+              "value"
+            ],
+            "!@global.onboarding_error_image": [
+              "condition"
+            ]
+          }
+        },
         {
           "type": "title",
           "name": "error_profile_title",
@@ -774,6 +825,81 @@
               "value"
             ]
           }
+        },
+        {
+          "type": "display_group",
+          "name": "what_to_do",
+          "parameter_list": {
+            "style": "column"
+          },
+          "style_list": [
+            "background: #F8F9FA",
+            "border-radius: 16px"
+          ],
+          "rows": [
+            {
+              "type": "text",
+              "name": "error_help_title",
+              "value": "@global.onboarding_no_connection_troubleshoot_title",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "style_list": [
+                "font-size: 12px",
+                "font-weight: 700",
+                "letter-spacing: 0.07em",
+                "text-transform: uppercase",
+                "color: var(--nk-muted)"
+              ],
+              "_nested_name": "page_error.what_to_do.error_help_title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_no_connection_troubleshoot_title",
+                    "matchedExpression": "@global.onboarding_no_connection_troubleshoot_title",
+                    "type": "global",
+                    "fieldName": "onboarding_no_connection_troubleshoot_title"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_no_connection_troubleshoot_title": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "error_help",
+              "value": "@global.onboarding_no_connection_troubleshoot",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "_nested_name": "page_error.what_to_do.error_help",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_no_connection_troubleshoot",
+                    "matchedExpression": "@global.onboarding_no_connection_troubleshoot",
+                    "type": "global",
+                    "fieldName": "onboarding_no_connection_troubleshoot"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_no_connection_troubleshoot": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "page_error.what_to_do"
         },
         {
           "type": "display_group",
@@ -874,14 +1000,65 @@
       "type": "display_group",
       "name": "page_waiting_for_connection",
       "parameter_list": {
-        "style": "column"
+        "style": "column",
+        "sticky": "bottom"
       },
       "condition": "@local.download_status == \"waiting_for_connection\"",
+      "style_list": [
+        "background: #ffffff",
+        "border-radius: 12px 12px 0 0",
+        "box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12)",
+        "padding: 16px 24px !important",
+        "margin-top: 12px",
+        "position: relative",
+        "z-index: 10",
+        "justify-items: center"
+      ],
       "rows": [
+        {
+          "type": "image",
+          "name": "error_profile_image",
+          "value": "@global.onboarding_no_connection_image",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "!!@global.onboarding_error_image",
+          "style_list": [
+            "width: 48px",
+            "height: 48px"
+          ],
+          "_nested_name": "page_waiting_for_connection.error_profile_image",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.onboarding_no_connection_image",
+                "matchedExpression": "@global.onboarding_no_connection_image",
+                "type": "global",
+                "fieldName": "onboarding_no_connection_image"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@global.onboarding_error_image",
+                "matchedExpression": "!@global.onboarding_error_image",
+                "type": "global",
+                "fieldName": "onboarding_error_image"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.onboarding_no_connection_image": [
+              "value"
+            ],
+            "!@global.onboarding_error_image": [
+              "condition"
+            ]
+          }
+        },
         {
           "type": "title",
           "name": "error_profile_title",
-          "value": "@global.onboarding_error_title",
+          "value": "@global.onboarding_no_connection_title",
           "_translations": {
             "value": {}
           },
@@ -892,15 +1069,15 @@
           "_dynamicFields": {
             "value": [
               {
-                "fullExpression": "@global.onboarding_error_title",
-                "matchedExpression": "@global.onboarding_error_title",
+                "fullExpression": "@global.onboarding_no_connection_title",
+                "matchedExpression": "@global.onboarding_no_connection_title",
                 "type": "global",
-                "fieldName": "onboarding_error_title"
+                "fieldName": "onboarding_no_connection_title"
               }
             ]
           },
           "_dynamicDependencies": {
-            "@global.onboarding_error_title": [
+            "@global.onboarding_no_connection_title": [
               "value"
             ]
           }
@@ -908,7 +1085,7 @@
         {
           "type": "text",
           "name": "error_profile_text",
-          "value": "@global.onboarding_error_text",
+          "value": "@global.onboarding_no_connection_text",
           "_translations": {
             "value": {}
           },
@@ -919,18 +1096,93 @@
           "_dynamicFields": {
             "value": [
               {
-                "fullExpression": "@global.onboarding_error_text",
-                "matchedExpression": "@global.onboarding_error_text",
+                "fullExpression": "@global.onboarding_no_connection_text",
+                "matchedExpression": "@global.onboarding_no_connection_text",
                 "type": "global",
-                "fieldName": "onboarding_error_text"
+                "fieldName": "onboarding_no_connection_text"
               }
             ]
           },
           "_dynamicDependencies": {
-            "@global.onboarding_error_text": [
+            "@global.onboarding_no_connection_text": [
               "value"
             ]
           }
+        },
+        {
+          "type": "display_group",
+          "name": "what_to_do",
+          "parameter_list": {
+            "style": "column"
+          },
+          "style_list": [
+            "background: #F8F9FA",
+            "border-radius: 16px"
+          ],
+          "rows": [
+            {
+              "type": "text",
+              "name": "error_help_title",
+              "value": "@global.onboarding_no_connection_troubleshoot_title",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "style_list": [
+                "font-size: 12px",
+                "font-weight: 700",
+                "letter-spacing: 0.07em",
+                "text-transform: uppercase",
+                "color: var(--nk-muted)"
+              ],
+              "_nested_name": "page_waiting_for_connection.what_to_do.error_help_title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_no_connection_troubleshoot_title",
+                    "matchedExpression": "@global.onboarding_no_connection_troubleshoot_title",
+                    "type": "global",
+                    "fieldName": "onboarding_no_connection_troubleshoot_title"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_no_connection_troubleshoot_title": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "error_help",
+              "value": "@global.onboarding_no_connection_troubleshoot",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "_nested_name": "page_waiting_for_connection.what_to_do.error_help",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_no_connection_troubleshoot",
+                    "matchedExpression": "@global.onboarding_no_connection_troubleshoot",
+                    "type": "global",
+                    "fieldName": "onboarding_no_connection_troubleshoot"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_no_connection_troubleshoot": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "page_waiting_for_connection.what_to_do"
         },
         {
           "type": "display_group",
@@ -945,7 +1197,7 @@
             {
               "type": "button",
               "name": "button_retry",
-              "value": "@global.onboarding_error_button_text",
+              "value": "@global.onboarding_no_connection_button_text",
               "_translations": {
                 "value": {}
               },
@@ -967,10 +1219,10 @@
               "_dynamicFields": {
                 "value": [
                   {
-                    "fullExpression": "@global.onboarding_error_button_text",
-                    "matchedExpression": "@global.onboarding_error_button_text",
+                    "fullExpression": "@global.onboarding_no_connection_button_text",
+                    "matchedExpression": "@global.onboarding_no_connection_button_text",
                     "type": "global",
-                    "fieldName": "onboarding_error_button_text"
+                    "fieldName": "onboarding_no_connection_button_text"
                   }
                 ],
                 "action_list": {
@@ -997,7 +1249,7 @@
                 }
               },
               "_dynamicDependencies": {
-                "@global.onboarding_error_button_text": [
+                "@global.onboarding_no_connection_button_text": [
                   "value"
                 ],
                 "@local.asset_pack_id": [
@@ -1031,10 +1283,61 @@
       "type": "display_group",
       "name": "page_cancelled",
       "parameter_list": {
-        "style": "column"
+        "style": "column",
+        "sticky": "bottom"
       },
       "condition": "@local.download_status == \"cancelled\"",
+      "style_list": [
+        "background: #ffffff",
+        "border-radius: 12px 12px 0 0",
+        "box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12)",
+        "padding: 16px 24px !important",
+        "margin-top: 12px",
+        "position: relative",
+        "z-index: 10",
+        "justify-items: center"
+      ],
       "rows": [
+        {
+          "type": "image",
+          "name": "error_profile_image",
+          "value": "@global.onboarding_error_image",
+          "_translations": {
+            "value": {}
+          },
+          "condition": "!!@global.onboarding_error_image",
+          "style_list": [
+            "width: 48px",
+            "height: 48px"
+          ],
+          "_nested_name": "page_cancelled.error_profile_image",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.onboarding_error_image",
+                "matchedExpression": "@global.onboarding_error_image",
+                "type": "global",
+                "fieldName": "onboarding_error_image"
+              }
+            ],
+            "condition": [
+              {
+                "fullExpression": "!!@global.onboarding_error_image",
+                "matchedExpression": "!@global.onboarding_error_image",
+                "type": "global",
+                "fieldName": "onboarding_error_image"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.onboarding_error_image": [
+              "value"
+            ],
+            "!@global.onboarding_error_image": [
+              "condition"
+            ]
+          }
+        },
         {
           "type": "title",
           "name": "error_profile_title",
@@ -1088,6 +1391,81 @@
               "value"
             ]
           }
+        },
+        {
+          "type": "display_group",
+          "name": "what_to_do",
+          "parameter_list": {
+            "style": "column"
+          },
+          "style_list": [
+            "background: #F8F9FA",
+            "border-radius: 16px"
+          ],
+          "rows": [
+            {
+              "type": "text",
+              "name": "error_help_title",
+              "value": "@global.onboarding_error_troubleshoot_title",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "style_list": [
+                "font-size: 12px",
+                "font-weight: 700",
+                "letter-spacing: 0.07em",
+                "text-transform: uppercase",
+                "color: var(--nk-muted)"
+              ],
+              "_nested_name": "page_cancelled.what_to_do.error_help_title",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_error_troubleshoot_title",
+                    "matchedExpression": "@global.onboarding_error_troubleshoot_title",
+                    "type": "global",
+                    "fieldName": "onboarding_error_troubleshoot_title"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_error_troubleshoot_title": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "type": "text",
+              "name": "error_help",
+              "value": "@global.onboarding_error_troubleshoot",
+              "_translations": {
+                "value": {}
+              },
+              "parameter_list": {
+                "text_align": "center"
+              },
+              "_nested_name": "page_cancelled.what_to_do.error_help",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.onboarding_error_troubleshoot",
+                    "matchedExpression": "@global.onboarding_error_troubleshoot",
+                    "type": "global",
+                    "fieldName": "onboarding_error_troubleshoot"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.onboarding_error_troubleshoot": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "page_cancelled.what_to_do"
         },
         {
           "type": "display_group",
