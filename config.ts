@@ -4,7 +4,7 @@ const config = generateDeploymentConfig("plh_kids_teens_za");
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.7.20",
+  content_tag_latest: "1.7.21",
 };
 
 config.google_drive.sheets_folders = [
@@ -59,6 +59,11 @@ config.auth = {
   provider: 'firebase',
 }
 
+config.remote_assets = {
+  provider: "firebase",
+  bucketName: "plh-kids-teens-za",
+  folderName: "remote_assets",
+}
 config.web.favicon_asset = "images/logos/favicon.png";
 
 
@@ -75,7 +80,7 @@ config.app_data.assets_filter_function = (fileEntry) =>
 config.api.db_name = "plh_kids_teens_za";
 config.app_data.output_path = "./app_data";
 
-config.app_config.APP_LANGUAGES.default = "gb_en";
+config.app_config.APP_LANGUAGES.default = "za_en";
 config.app_config.APP_SIDEMENU_DEFAULTS.title = "SinovuyoApp";
 config.app_config.APP_HEADER_DEFAULTS.title = "SinovuyoApp";
 config.app_config.APP_HEADER_DEFAULTS.hidden = true;

@@ -1,0 +1,402 @@
+{
+  "flow_type": "template",
+  "flow_name": "test_remote_assets",
+  "status": "released",
+  "rows": [
+    {
+      "name": "progress_text",
+      "value": "Downloading...",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "progress_text"
+    },
+    {
+      "name": "success_text",
+      "value": "✅ Success",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "success_text"
+    },
+    {
+      "name": "error_text",
+      "value": "❌ Failure",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "error_text"
+    },
+    {
+      "name": "asset_pack_id",
+      "value": "@global.asset_pack_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "asset_pack_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@global.asset_pack_id",
+            "matchedExpression": "@global.asset_pack_id",
+            "type": "global",
+            "fieldName": "asset_pack_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.asset_pack_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "debug_asset_pack_id",
+      "value": "Asset pack ID: @global.asset_pack_id",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "debug_asset_pack_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Asset pack ID: @global.asset_pack_id",
+            "matchedExpression": "@global.asset_pack_id",
+            "type": "global",
+            "fieldName": "asset_pack_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.asset_pack_id": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "default_text",
+      "value": "Download",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "default_text"
+    },
+    {
+      "type": "asset_pack_download_button",
+      "name": "download_status_tz_en",
+      "parameter_list": {
+        "asset_pack": "@local.asset_pack_id",
+        "default_text": "@local.default_text",
+        "progress_text": "@local.progress_text",
+        "progress_display": "count",
+        "success_text": "@local.success_text",
+        "error_text": "@local.error_text"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "download_status_tz_en",
+      "_dynamicFields": {
+        "parameter_list": {
+          "asset_pack": [
+            {
+              "fullExpression": "@local.asset_pack_id",
+              "matchedExpression": "@local.asset_pack_id",
+              "type": "local",
+              "fieldName": "asset_pack_id"
+            }
+          ],
+          "default_text": [
+            {
+              "fullExpression": "@local.default_text",
+              "matchedExpression": "@local.default_text",
+              "type": "local",
+              "fieldName": "default_text"
+            }
+          ],
+          "progress_text": [
+            {
+              "fullExpression": "@local.progress_text",
+              "matchedExpression": "@local.progress_text",
+              "type": "local",
+              "fieldName": "progress_text"
+            }
+          ],
+          "success_text": [
+            {
+              "fullExpression": "@local.success_text",
+              "matchedExpression": "@local.success_text",
+              "type": "local",
+              "fieldName": "success_text"
+            }
+          ],
+          "error_text": [
+            {
+              "fullExpression": "@local.error_text",
+              "matchedExpression": "@local.error_text",
+              "type": "local",
+              "fieldName": "error_text"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@local.asset_pack_id": [
+          "parameter_list.asset_pack"
+        ],
+        "@local.default_text": [
+          "parameter_list.default_text"
+        ],
+        "@local.progress_text": [
+          "parameter_list.progress_text"
+        ],
+        "@local.success_text": [
+          "parameter_list.success_text"
+        ],
+        "@local.error_text": [
+          "parameter_list.error_text"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "debug_status",
+      "value": "Download status is: @local.download_status",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "debug_status",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Download status is: @local.download_status",
+            "matchedExpression": "@local.download_status",
+            "type": "local",
+            "fieldName": "download_status"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.download_status": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "test_asset",
+      "value": "audio/relax/relax_1.mp3",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "test_asset"
+    },
+    {
+      "type": "audio",
+      "name": "audio",
+      "value": "@local.test_asset",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "audio",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.test_asset",
+            "matchedExpression": "@local.test_asset",
+            "type": "local",
+            "fieldName": "test_asset"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.test_asset": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "button",
+      "name": "button_3",
+      "value": "Reset remote assets (return to core asset pack before any downloads)",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "asset_pack",
+          "args": [
+            "reset"
+          ],
+          "_raw": "click | asset_pack: reset"
+        }
+      ],
+      "exclude_from_translation": true,
+      "_nested_name": "button_3"
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "language_select",
+      "value": "@fields._app_language",
+      "_translations": {
+        "value": {}
+      },
+      "parameter_list": {
+        "answer_list": "@data.language",
+        "item_width": "50px"
+      },
+      "action_list": [
+        {
+          "trigger": "changed",
+          "action_id": "emit",
+          "args": [
+            "set_language",
+            "this.value"
+          ],
+          "_raw": "changed | emit: set_language:@local.language_select"
+        }
+      ],
+      "exclude_from_translation": true,
+      "_nested_name": "language_select",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields._app_language",
+            "matchedExpression": "@fields._app_language",
+            "type": "fields",
+            "fieldName": "_app_language"
+          }
+        ],
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@data.language",
+              "matchedExpression": "@data.language",
+              "type": "data",
+              "fieldName": "language"
+            }
+          ]
+        },
+        "action_list": {
+          "0": {
+            "_raw": [
+              {
+                "fullExpression": "changed | emit: set_language:@local.language_select",
+                "matchedExpression": "@local.language_select",
+                "type": "local",
+                "fieldName": "language_select"
+              }
+            ]
+          }
+        }
+      },
+      "_dynamicDependencies": {
+        "@fields._app_language": [
+          "value"
+        ],
+        "@data.language": [
+          "parameter_list.answer_list"
+        ],
+        "@local.language_select": [
+          "action_list.0._raw"
+        ]
+      }
+    },
+    {
+      "type": "title",
+      "value": "Asset pack metadata",
+      "_translations": {
+        "value": {}
+      },
+      "name": "title_14",
+      "_nested_name": "title_14"
+    },
+    {
+      "type": "data_items",
+      "value": "_asset_packs",
+      "rows": [
+        {
+          "type": "text",
+          "value": "id: @item.id,\nname: @item.name,\ndownload_status: @item.download_status",
+          "_translations": {
+            "value": {}
+          },
+          "name": "text_1_@item.id",
+          "_nested_name": "data_items_15.text_1_@item.id",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "id: @item.id,\nname: @item.name,\ndownload_status: @item.download_status",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              },
+              {
+                "fullExpression": "id: @item.id,\nname: @item.name,\ndownload_status: @item.download_status",
+                "matchedExpression": "@item.name",
+                "type": "item",
+                "fieldName": "name"
+              },
+              {
+                "fullExpression": "id: @item.id,\nname: @item.name,\ndownload_status: @item.download_status",
+                "matchedExpression": "@item.download_status",
+                "type": "item",
+                "fieldName": "download_status"
+              }
+            ],
+            "name": [
+              {
+                "fullExpression": "text_1_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "data_items_15.text_1_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.id": [
+              "value",
+              "name",
+              "_nested_name"
+            ],
+            "@item.name": [
+              "value"
+            ],
+            "@item.download_status": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "name": "data_items_15",
+      "_nested_name": "data_items_15"
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_za",
+    "path": "templates/ZA onboarding templates.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1fL4hI6aGugjJ7fKHzp-LiDTLSBAgXNHiML2a2CNFdfE"
+  }
+}
