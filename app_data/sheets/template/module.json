@@ -950,14 +950,38 @@
                   "rows": [
                     {
                       "type": "nested_properties",
-                      "name": "article_sidekick",
+                      "name": "article",
                       "exclude_from_translation": true,
                       "rows": [
                         {
-                          "name": "last_article",
+                          "name": "show_progress",
                           "value": true,
                           "type": "set_variable",
-                          "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article_sidekick.last_article"
+                          "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article.show_progress"
+                        },
+                        {
+                          "name": "progress",
+                          "value": "@local.progress",
+                          "_translations": {
+                            "value": {}
+                          },
+                          "type": "set_variable",
+                          "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article.progress",
+                          "_dynamicFields": {
+                            "value": [
+                              {
+                                "fullExpression": "@local.progress",
+                                "matchedExpression": "@local.progress",
+                                "type": "local",
+                                "fieldName": "progress"
+                              }
+                            ]
+                          },
+                          "_dynamicDependencies": {
+                            "@local.progress": [
+                              "value"
+                            ]
+                          }
                         },
                         {
                           "type": "nested_properties",
@@ -972,7 +996,7 @@
                               },
                               "exclude_from_translation": true,
                               "type": "set_variable",
-                              "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article_sidekick.nav_buttons.next_icon_src",
+                              "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article.nav_buttons.next_icon_src",
                               "_dynamicFields": {
                                 "value": [
                                   {
@@ -990,10 +1014,10 @@
                               }
                             }
                           ],
-                          "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article_sidekick.nav_buttons"
+                          "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article.nav_buttons"
                         }
                       ],
-                      "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article_sidekick"
+                      "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last.article"
                     }
                   ],
                   "_nested_name": "enable_dynamic_data_actions.only_for_active_index.cond_multi_art.article_last",
