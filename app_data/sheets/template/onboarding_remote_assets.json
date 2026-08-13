@@ -51,6 +51,31 @@
       "_nested_name": "show_success_page"
     },
     {
+      "type": "text",
+      "name": "debug_asset_pack_id",
+      "value": "Asset pack ID: @global.asset_pack_id",
+      "_translations": {
+        "value": {}
+      },
+      "condition": false,
+      "_nested_name": "debug_asset_pack_id",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Asset pack ID: @global.asset_pack_id",
+            "matchedExpression": "@global.asset_pack_id",
+            "type": "global",
+            "fieldName": "asset_pack_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.asset_pack_id": [
+          "value"
+        ]
+      }
+    },
+    {
       "type": "display_group",
       "name": "page_downloading",
       "parameter_list": {
