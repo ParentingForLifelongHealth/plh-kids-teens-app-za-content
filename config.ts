@@ -22,6 +22,17 @@ config.google_drive.assets_folders = [
   {id: "1T93qsaSBbYa-lCF6ChPkfoX85PLugJCZ", name: "kids_teens_za"},
 ];
 
+//// Uncomment when Canto assets are ready
+// config.canto = {
+//   url: "https://parentingforlifelonghealth.canto.com",
+//   sourceFolders: [
+//     {
+//       id: "LVD9S", name: "South Africa Canto Assets"      
+//     }
+//   ],
+//     ...loadEncryptedConfig("canto.json"),
+//   },
+
 config.android = {
   app_id:'international.idems.plh_kids_teens_za',
   app_name:'Sinovuyo',
