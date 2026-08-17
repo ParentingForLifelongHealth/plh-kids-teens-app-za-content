@@ -89,7 +89,7 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 79297 KB | 79.3 MB |
+| total | 79350 KB | 79.3 MB |
 | unused | 1672 KB | 1.7 MB |
 </details>
 
@@ -174,8 +174,6 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_7.mp3 | 1 |
 | audio/relax/relax_8.mp3 | 1 |
 | images/backgrounds/map_view_bg.jpg | 1 |
-| images/hp_check_in/traditional_rondavel_closed.svg | 1 |
-| images/hp_check_in/traditional_rondavel_open.svg | 1 |
 | images/icons/person-circle-outline.svg | 1 |
 | images/icons/picture_book.svg | 28 |
 | images/icons/question_blue.png | 2 |
@@ -466,6 +464,8 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/homescreen_list_view/srh_t.svg | 40.9 | 2 |
 | images/homescreen_list_view/stress_t.svg | 15.5 | 2 |
 | images/homescreen_list_view/svp_t.svg | 20.3 | 3 |
+| images/hp_check_in/traditional_rondavel_closed.svg | 23.9 | 1 |
+| images/hp_check_in/traditional_rondavel_open.svg | 28.8 | 1 |
 | images/icons/balance_blue.png | 4.7 | 2 |
 | images/icons/brain_blue.png | 5.2 | 16 |
 | images/icons/celebration.svg | 70.4 | 1 |
