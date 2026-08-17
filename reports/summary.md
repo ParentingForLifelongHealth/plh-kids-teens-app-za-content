@@ -89,8 +89,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 79350 KB | 79.3 MB |
-| unused | 1672 KB | 1.7 MB |
+| total | 79322 KB | 79.3 MB |
+| unused | 1521 KB | 1.5 MB |
 </details>
 
 <details open>
@@ -109,43 +109,21 @@ Assets that appear in app-data but do not have references within sheets
 | images/backgrounds/homescreen_pattern.svg | 156.3 |
 | images/faces/happier.svg | 0.6 |
 | images/faces/saddest.svg | 2 |
-| images/flags/gb.svg | 0.5 |
 | images/icons/book_outline_blue.svg | 0.7 |
 | images/icons/book_outline_white.svg | 0.7 |
-| images/icons/cancel.svg | 1.7 |
 | images/icons/chatbubble-ellipses-outline.svg | 0.8 |
 | images/icons/document.svg | 7.3 |
 | images/icons/expand_circle_right.png | 0.9 |
-| images/icons/faces/angry.svg | 1.1 |
-| images/icons/faces/confused.svg | 1.8 |
-| images/icons/faces/happier.svg | 0.6 |
-| images/icons/faces/happiest.svg | 1.3 |
-| images/icons/faces/happy.svg | 0.6 |
-| images/icons/faces/neutral.svg | 0.5 |
-| images/icons/faces/sadder.svg | 1.1 |
-| images/icons/faces/saddest.svg | 2 |
-| images/icons/faces/scared.svg | 2.1 |
-| images/icons/faces/tired.svg | 2.4 |
 | images/icons/feather.svg | 3.5 |
 | images/icons/fire.png | 0.9 |
 | images/icons/heart-outline.svg | 0.4 |
 | images/icons/heart.svg | 0.6 |
 | images/icons/in_progress_white.svg | 1.1 |
 | images/icons/key.svg | 5.5 |
-| images/icons/parent_child.svg | 2 |
-| images/icons/pause_white.svg | 0.7 |
-| images/icons/play.svg | 0.5 |
-| images/icons/play_white.svg | 0.5 |
-| images/icons/star_outline_white.svg | 1 |
-| images/logos/IDEMS.png | 84.6 |
-| images/logos/PLH.png | 26.6 |
-| images/logos/favicon.png | 6.3 |
 | images/logos/partners/favicon.png | 149.9 |
 | images/logos/partners/plh_logomark.png | 20.5 |
 | images/logos/partners/plh_white.png | 12.8 |
 | images/logos/partners/sino_mark.svg | 461.7 |
-| images/logos/plh_white.png | 12.8 |
-| lottie/bulging_circles.txt | 0.2 |
 </details>
 
 <details open>
@@ -174,18 +152,33 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_7.mp3 | 1 |
 | audio/relax/relax_8.mp3 | 1 |
 | images/backgrounds/map_view_bg.jpg | 1 |
+| images/icons/faces/happy_face_new.svg | 54 |
+| images/icons/faces/ok_face_new.svg | 54 |
+| images/icons/faces/sad.svg | 1 |
+| images/icons/faces/sad_face_new.svg | 54 |
+| images/icons/magnifying_glass.svg | 28 |
+| images/icons/parent_child_heart.svg | 28 |
+| images/icons/pause.svg | 28 |
+| images/icons/pencil.svg | 28 |
 | images/icons/person-circle-outline.svg | 1 |
 | images/icons/picture_book.svg | 28 |
 | images/icons/question_blue.png | 2 |
+| images/icons/question_mark_blue.svg | 1 |
 | images/icons/repeat_blue.png | 2 |
 | images/icons/settings.svg | 1 |
 | images/icons/settings_active.svg | 1 |
 | images/icons/settings_white.svg | 1 |
 | images/icons/share.svg | 2 |
 | images/icons/single_speech_blue.png | 18 |
+| images/icons/smile_eyes_down.svg | 32 |
+| images/icons/smile_eyes_up.svg | 84 |
 | images/icons/speech_bubble_blue.png | 20 |
 | images/icons/star_filled_blue.png | 44 |
+| images/icons/star_outline_blue.svg | 29 |
 | images/icons/tablet_blue.png | 2 |
+| images/icons/thought_bubble.svg | 28 |
+| images/icons/tick.svg | 1 |
+| images/icons/tick_white.svg | 1 |
 | images/icons/trophy.png | 1 |
 | images/icons/trophy_active.png | 1 |
 | images/icons/trophy_blue.png | 18 |
@@ -244,6 +237,7 @@ Assets that have references within sheets but do not appear in app-data
 | images/yc_modules/self_care/self_care_yc_2.svg | 2 |
 | images/yc_modules/self_care/self_care_yc_3.svg | 2 |
 | images/yc_modules/self_care/self_care_yc_4.svg | 2 |
+| lottie/bulging_circles.json | 2 |
 | lottie/checkmark.json | 1 |
 | lottie/gift_box.json | 1 |
 </details>
@@ -479,10 +473,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/expand_circle_right.svg | 0.5 | 1 |
 | images/icons/expand_circle_right_blue.svg | 2.1 | 2 |
 | images/icons/eye_blue.png | 4.2 | 16 |
-| images/icons/faces/happy_face_new.svg | 1.4 | 54 |
-| images/icons/faces/ok_face_new.svg | 0.5 | 54 |
-| images/icons/faces/sad.svg | 0.6 | 1 |
-| images/icons/faces/sad_face_new.svg | 1.5 | 54 |
 | images/icons/football_blue.png | 5.1 | 2 |
 | images/icons/globe-outline.svg | 0.8 | 1 |
 | images/icons/heart-outline.png | 1.5 | 1 |
@@ -509,17 +499,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/icons/lock.svg | 0.5 | 1 |
 | images/icons/locked.png | 0.7 | 4 |
 | images/icons/log-in-outline.svg | 0.5 | 1 |
-| images/icons/magnifying_glass.svg | 0.9 | 28 |
-| images/icons/parent_child_heart.svg | 3 | 28 |
-| images/icons/pause.svg | 0.7 | 28 |
-| images/icons/pencil.svg | 1.1 | 28 |
-| images/icons/question_mark_blue.svg | 0.8 | 1 |
-| images/icons/smile_eyes_down.svg | 0.9 | 32 |
-| images/icons/smile_eyes_up.svg | 1 | 84 |
-| images/icons/star_outline_blue.svg | 1 | 29 |
-| images/icons/thought_bubble.svg | 2.1 | 28 |
-| images/icons/tick.svg | 0.3 | 1 |
-| images/icons/tick_white.svg | 0.3 | 1 |
 | images/logos/donors/Agency_fund.png | 43.7 | 1 |
 | images/logos/donors/ERC-EU.png | 209.7 | 1 |
 | images/logos/donors/GCRF.png | 38.7 | 1 |
@@ -719,7 +698,6 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/teen_modules/svp/svp_usebody_t_2.gif | 909.9 | 2 |
 | images/teen_modules/svp/svp_usebody_t_3.gif | 636.3 | 2 |
 | images/teen_modules/svp/svp_usevoice_t.svg | 35.5 | 2 |
-| lottie/bulging_circles.json | 11.8 | 2 |
 | lottie/relax/blue_dots.json | 14.7 | 10 |
 | lottie/relax/heart.json | 46.7 | 12 |
 | lottie/relax/looping_rings.json | 10.4 | 12 |
