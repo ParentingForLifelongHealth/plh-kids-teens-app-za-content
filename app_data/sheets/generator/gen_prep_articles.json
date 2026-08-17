@@ -42,9 +42,9 @@
     {
       "operation": "filter",
       "args_list": [
-        "foreign_key == \"@gen.id\""
+        "!nested"
       ],
-      "input_source": "sub_items",
+      "input_source": "{@gen.id}_articles",
       "output_target": "{@gen.id}_testing | local_only;"
     },
     {
@@ -62,12 +62,19 @@
         "completed: FALSE"
       ],
       "output_target": "{@gen.id}_article_tasks"
+    },
+    {
+      "operation": "append_columns",
+      "args_list": [
+        "version: 1"
+      ],
+      "output_target": "{@gen.id}_article_tasks"
     }
   ],
   "_source": {
     "name": "kids_teens_za",
-    "path": "templates/ZA module_data_pipes.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1bxViYG87zKAQbhdbIdAp63woMuI0pD2bOfowq5tSjEY"
+    "path": "data/ZA modules sidekick.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1pl75hk-zfJVDY22auU2Kf9l0dPe8KsGnXCSSQCU1LQU"
   },
   "_output_flows": [
     {
