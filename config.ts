@@ -4,7 +4,7 @@ const config = generateDeploymentConfig("plh_kids_teens_za");
 
 config.git = {
   content_repo: "https://github.com/ParentingForLifelongHealth/plh-kids-teens-app-za-content.git",
-  content_tag_latest: "1.7.27",
+  content_tag_latest: "1.7.28",
 };
 
 config.google_drive.sheets_folders = [
@@ -22,19 +22,78 @@ config.google_drive.assets_folders = [
   // {id: "1T93qsaSBbYa-lCF6ChPkfoX85PLugJCZ", name: "kids_teens_za"},
 ];
 
-// Uncomment when Canto assets are ready
+import type { ICantoRemoteAssetPackCondition } from "data-models";
+
+/**
+ * Matches assets for a given language + age category, treating either field
+ * being unset (null) as inclusive of that language/category. Excludes assets
+ * where both fields are null (fully generic assets like icons/logos).
+ */
+function languageAndAgeCondition(
+  language: string,
+  ageCategory: string
+): ICantoRemoteAssetPackCondition {
+  return {
+    type: "or",
+    conditions: [
+      {
+        // exact match: language AND age category both set as specified
+        type: "and",
+        conditions: [
+          { type: "custom_field", field: "Language", value: language },
+          { type: "custom_field", field: "Child Age Category", value: ageCategory },
+        ],
+      },
+      {
+        // language unset, age category matches (shared across languages)
+        type: "and",
+        conditions: [
+          { type: "field_empty", field: "Language" },
+          { type: "custom_field", field: "Child Age Category", value: ageCategory },
+        ],
+      },
+      {
+        // language matches, age category unset (shared across ages)
+        type: "and",
+        conditions: [
+          { type: "custom_field", field: "Language", value: language },
+          { type: "field_empty", field: "Child Age Category" },
+        ],
+      },
+    ],
+  };
+}
+
 config.canto = {
   url: "https://parentingforlifelonghealth.canto.com",
   sourceFolders: [
     {
-      id: "LVD9S", name: "South Africa Canto Assets"      
-    }
+      id: "LVD9S", name: "South Africa Canto Assets",
+      remote_assets: [
+        {
+          name: "assets_teen_za_xh",
+          condition: languageAndAgeCondition("isiXhosa", "Teen"),
+        },
+        {
+          name: "assets_teen_za_en",
+          condition: languageAndAgeCondition("English", "Teen"),
+        },
+        {
+          name: "assets_child_za_xh",
+          condition: languageAndAgeCondition("isiXhosa", "Child"),
+        },
+        {
+          name: "assets_child_za_en",
+          condition: languageAndAgeCondition("English", "Child"),
+        },
+      ],
+    },
   ],
   languageMappings: {
     English: "za_en",
   },
-    ...loadEncryptedConfig("canto.json"),
-  },
+  ...loadEncryptedConfig("canto.json"),
+},
 
 config.android = {
   app_id:'international.idems.plh_kids_teens_za',
