@@ -90,7 +90,7 @@
 | assets | KB | MB |
 | --- | --- | --- |
 | total | 1913 KB | 1.9 MB |
-| unused | 765 KB | 0.8 MB |
+| unused | 915 KB | 0.9 MB |
 </details>
 
 <details open>
@@ -105,6 +105,7 @@ Assets that appear in app-data but do not have references within sheets
 | android/icon.png | 215.3 |
 | android/splash.png | 195.7 |
 | images/backgrounds/homescreen_pattern.svg | 156.3 |
+| images/logos/partners/favicon.png | 149.9 |
 </details>
 
 <details open>
