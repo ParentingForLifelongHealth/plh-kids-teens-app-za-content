@@ -18,3 +18,17 @@ after which a PR can be created via the script
 ```
 yarn workflow repo publish
 ```
+
+## Uploading remote assets
+
+To bulk upload remote assets to Firebase, run 
+
+```
+gcloud auth login
+```
+```
+gcloud config set project plh-kids-teens-za
+```
+```
+gcloud storage cp -r .idems_app/deployments/plh_kids_teens_za/app_data/remote_assets gs://plh-kids-teens-za.firebasestorage.app
+```
