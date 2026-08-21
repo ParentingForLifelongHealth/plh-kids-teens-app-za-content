@@ -709,9 +709,9 @@
               "args": [
                 "ensure_downloaded"
               ],
-              "_raw": "click | asset_pack: ensure_downloaded | asset_pack: @global.asset_pack_id, await: false",
+              "_raw": "click | asset_pack: ensure_downloaded | asset_pack: assets_@local.child_age_tag@global.join@fields._app_language, await: false",
               "params": {
-                "asset_pack": "@global.asset_pack_id",
+                "asset_pack": "assets_@local.child_age_tag@global.join@fields._app_language",
                 "await": false
               }
             },
@@ -794,19 +794,43 @@
               "2": {
                 "_raw": [
                   {
-                    "fullExpression": "click | asset_pack: ensure_downloaded | asset_pack: @global.asset_pack_id, await: false",
-                    "matchedExpression": "@global.asset_pack_id",
+                    "fullExpression": "click | asset_pack: ensure_downloaded | asset_pack: assets_@local.child_age_tag@global.join@fields._app_language, await: false",
+                    "matchedExpression": "@local.child_age_tag",
+                    "type": "local",
+                    "fieldName": "child_age_tag"
+                  },
+                  {
+                    "fullExpression": "click | asset_pack: ensure_downloaded | asset_pack: assets_@local.child_age_tag@global.join@fields._app_language, await: false",
+                    "matchedExpression": "@global.join",
                     "type": "global",
-                    "fieldName": "asset_pack_id"
+                    "fieldName": "join"
+                  },
+                  {
+                    "fullExpression": "click | asset_pack: ensure_downloaded | asset_pack: assets_@local.child_age_tag@global.join@fields._app_language, await: false",
+                    "matchedExpression": "@fields._app_language",
+                    "type": "fields",
+                    "fieldName": "_app_language"
                   }
                 ],
                 "params": {
                   "asset_pack": [
                     {
-                      "fullExpression": "@global.asset_pack_id",
-                      "matchedExpression": "@global.asset_pack_id",
+                      "fullExpression": "assets_@local.child_age_tag@global.join@fields._app_language",
+                      "matchedExpression": "@local.child_age_tag",
+                      "type": "local",
+                      "fieldName": "child_age_tag"
+                    },
+                    {
+                      "fullExpression": "assets_@local.child_age_tag@global.join@fields._app_language",
+                      "matchedExpression": "@global.join",
                       "type": "global",
-                      "fieldName": "asset_pack_id"
+                      "fieldName": "join"
+                    },
+                    {
+                      "fullExpression": "assets_@local.child_age_tag@global.join@fields._app_language",
+                      "matchedExpression": "@fields._app_language",
+                      "type": "fields",
+                      "fieldName": "_app_language"
                     }
                   ]
                 }
@@ -829,13 +853,19 @@
             ],
             "@local.child_age_tag": [
               "action_list.0.args.1",
-              "action_list.0._raw"
+              "action_list.0._raw",
+              "action_list.2._raw",
+              "action_list.2.params.asset_pack"
             ],
             "@local.child_age_input": [
               "action_list.1.args.1",
               "action_list.1._raw"
             ],
-            "@global.asset_pack_id": [
+            "@global.join": [
+              "action_list.2._raw",
+              "action_list.2.params.asset_pack"
+            ],
+            "@fields._app_language": [
               "action_list.2._raw",
               "action_list.2.params.asset_pack"
             ],
