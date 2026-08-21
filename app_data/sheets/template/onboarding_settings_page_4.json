@@ -689,19 +689,19 @@
               "trigger": "click",
               "action_id": "set_field",
               "args": [
-                "child_age",
-                "@local.child_age_input"
+                "child_age_tag",
+                "@local.child_age_tag"
               ],
-              "_raw": "click | set_field: child_age: @local.child_age_input"
+              "_raw": "click | set_field: child_age_tag: @local.child_age_tag"
             },
             {
               "trigger": "click",
               "action_id": "set_field",
               "args": [
-                "child_age_tag",
-                "@local.child_age_tag"
+                "child_age",
+                "@local.child_age_input"
               ],
-              "_raw": "click | set_field: child_age_tag: @local.child_age_tag"
+              "_raw": "click | set_field: child_age: @local.child_age_input"
             },
             {
               "trigger": "click",
@@ -710,6 +710,14 @@
                 "completed"
               ],
               "_raw": "click | emit: completed"
+            },
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "force_reprocess"
+              ],
+              "_raw": "click | emit: force_reprocess"
             }
           ],
           "parameter_list": {
@@ -735,26 +743,6 @@
                 "args": {
                   "1": [
                     {
-                      "fullExpression": "@local.child_age_input",
-                      "matchedExpression": "@local.child_age_input",
-                      "type": "local",
-                      "fieldName": "child_age_input"
-                    }
-                  ]
-                },
-                "_raw": [
-                  {
-                    "fullExpression": "click | set_field: child_age: @local.child_age_input",
-                    "matchedExpression": "@local.child_age_input",
-                    "type": "local",
-                    "fieldName": "child_age_input"
-                  }
-                ]
-              },
-              "1": {
-                "args": {
-                  "1": [
-                    {
                       "fullExpression": "@local.child_age_tag",
                       "matchedExpression": "@local.child_age_tag",
                       "type": "local",
@@ -768,6 +756,26 @@
                     "matchedExpression": "@local.child_age_tag",
                     "type": "local",
                     "fieldName": "child_age_tag"
+                  }
+                ]
+              },
+              "1": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.child_age_input",
+                      "matchedExpression": "@local.child_age_input",
+                      "type": "local",
+                      "fieldName": "child_age_input"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | set_field: child_age: @local.child_age_input",
+                    "matchedExpression": "@local.child_age_input",
+                    "type": "local",
+                    "fieldName": "child_age_input"
                   }
                 ]
               }
@@ -787,11 +795,11 @@
             "@global.continue": [
               "value"
             ],
-            "@local.child_age_input": [
+            "@local.child_age_tag": [
               "action_list.0.args.1",
               "action_list.0._raw"
             ],
-            "@local.child_age_tag": [
+            "@local.child_age_input": [
               "action_list.1.args.1",
               "action_list.1._raw"
             ],

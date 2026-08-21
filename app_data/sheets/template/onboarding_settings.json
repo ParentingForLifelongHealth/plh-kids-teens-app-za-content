@@ -14,7 +14,7 @@
     },
     {
       "name": "asset_pack_id",
-      "value": "@global.asset_pack_id",
+      "value": "assets_@fields.child_age_tag@global.join@fields._app_language",
       "_translations": {
         "value": {}
       },
@@ -23,15 +23,58 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@global.asset_pack_id",
-            "matchedExpression": "@global.asset_pack_id",
+            "fullExpression": "assets_@fields.child_age_tag@global.join@fields._app_language",
+            "matchedExpression": "@fields.child_age_tag",
+            "type": "fields",
+            "fieldName": "child_age_tag"
+          },
+          {
+            "fullExpression": "assets_@fields.child_age_tag@global.join@fields._app_language",
+            "matchedExpression": "@global.join",
             "type": "global",
+            "fieldName": "join"
+          },
+          {
+            "fullExpression": "assets_@fields.child_age_tag@global.join@fields._app_language",
+            "matchedExpression": "@fields._app_language",
+            "type": "fields",
+            "fieldName": "_app_language"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.child_age_tag": [
+          "value"
+        ],
+        "@global.join": [
+          "value"
+        ],
+        "@fields._app_language": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "test",
+      "value": "@local.asset_pack_id",
+      "_translations": {
+        "value": {}
+      },
+      "condition": false,
+      "_nested_name": "test",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.asset_pack_id",
+            "matchedExpression": "@local.asset_pack_id",
+            "type": "local",
             "fieldName": "asset_pack_id"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@global.asset_pack_id": [
+        "@local.asset_pack_id": [
           "value"
         ]
       }
@@ -277,9 +320,9 @@
               "args": [
                 "ensure_downloaded"
               ],
-              "_raw": "completed | asset_pack: ensure_downloaded | asset_pack: @global.asset_pack_id, await: false",
+              "_raw": "completed | asset_pack: ensure_downloaded | asset_pack: assets_child@global.join@fields._app_language, await: false",
               "params": {
-                "asset_pack": "@global.asset_pack_id",
+                "asset_pack": "assets_child@global.join@fields._app_language",
                 "await": false
               }
             },
@@ -295,7 +338,7 @@
               }
             }
           ],
-          "condition": "@item.row_index == @local.last_page_index && @global.has_remote_assets",
+          "condition": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag !== \"teen\")",
           "rows": [],
           "_nested_name": "loop_pages.remote_assets_page_@item.row_index",
           "_dynamicFields": {
@@ -339,19 +382,31 @@
               "1": {
                 "_raw": [
                   {
-                    "fullExpression": "completed | asset_pack: ensure_downloaded | asset_pack: @global.asset_pack_id, await: false",
-                    "matchedExpression": "@global.asset_pack_id",
+                    "fullExpression": "completed | asset_pack: ensure_downloaded | asset_pack: assets_child@global.join@fields._app_language, await: false",
+                    "matchedExpression": "@global.join",
                     "type": "global",
-                    "fieldName": "asset_pack_id"
+                    "fieldName": "join"
+                  },
+                  {
+                    "fullExpression": "completed | asset_pack: ensure_downloaded | asset_pack: assets_child@global.join@fields._app_language, await: false",
+                    "matchedExpression": "@fields._app_language",
+                    "type": "fields",
+                    "fieldName": "_app_language"
                   }
                 ],
                 "params": {
                   "asset_pack": [
                     {
-                      "fullExpression": "@global.asset_pack_id",
-                      "matchedExpression": "@global.asset_pack_id",
+                      "fullExpression": "assets_child@global.join@fields._app_language",
+                      "matchedExpression": "@global.join",
                       "type": "global",
-                      "fieldName": "asset_pack_id"
+                      "fieldName": "join"
+                    },
+                    {
+                      "fullExpression": "assets_child@global.join@fields._app_language",
+                      "matchedExpression": "@fields._app_language",
+                      "type": "fields",
+                      "fieldName": "_app_language"
                     }
                   ]
                 }
@@ -379,22 +434,28 @@
             },
             "condition": [
               {
-                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets",
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag !== \"teen\")",
                 "matchedExpression": "@item.row_index",
                 "type": "item",
                 "fieldName": "row_index"
               },
               {
-                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets",
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag !== \"teen\")",
                 "matchedExpression": "@local.last_page_index",
                 "type": "local",
                 "fieldName": "last_page_index"
               },
               {
-                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets",
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag !== \"teen\")",
                 "matchedExpression": "@global.has_remote_assets",
                 "type": "global",
                 "fieldName": "has_remote_assets"
+              },
+              {
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag !== \"teen\")",
+                "matchedExpression": "@fields.child_age_tag",
+                "type": "fields",
+                "fieldName": "child_age_tag"
               }
             ],
             "_nested_name": [
@@ -419,7 +480,11 @@
             "@item.id": [
               "value"
             ],
-            "@global.asset_pack_id": [
+            "@global.join": [
+              "action_list.1._raw",
+              "action_list.1.params.asset_pack"
+            ],
+            "@fields._app_language": [
               "action_list.1._raw",
               "action_list.1.params.asset_pack"
             ],
@@ -427,6 +492,218 @@
               "condition"
             ],
             "@global.has_remote_assets": [
+              "condition"
+            ],
+            "@fields.child_age_tag": [
+              "condition"
+            ]
+          }
+        },
+        {
+          "type": "template",
+          "name": "remote_assets_page_@item.row_index",
+          "value": "onboarding_settings_@item.id",
+          "action_list": [
+            {
+              "trigger": "completed",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "completed | set_data |\n_list_id: onboarding_settings_pages,\n_index: @item.row_index,\ncompleted: true",
+              "params": {
+                "_list_id": "onboarding_settings_pages",
+                "_index": "@item.row_index",
+                "completed": true
+              }
+            },
+            {
+              "trigger": "completed",
+              "action_id": "emit",
+              "args": [
+                "force_reprocess"
+              ],
+              "_raw": "completed | emit: force_reprocess"
+            },
+            {
+              "trigger": "completed",
+              "action_id": "asset_pack",
+              "args": [
+                "ensure_downloaded"
+              ],
+              "_raw": "completed | asset_pack: ensure_downloaded | asset_pack: assets_teen@global.join@fields._app_language, await: false",
+              "params": {
+                "asset_pack": "assets_teen@global.join@fields._app_language",
+                "await": false
+              }
+            },
+            {
+              "trigger": "uncompleted",
+              "action_id": "set_data",
+              "args": [],
+              "_raw": "uncompleted | set_data | \n_list_id: onboarding_settings_pages,\n_index: -1+@item.row_index,\ncompleted: false",
+              "params": {
+                "_list_id": "onboarding_settings_pages",
+                "_index": "-1+@item.row_index",
+                "completed": false
+              }
+            }
+          ],
+          "condition": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag == \"teen\")",
+          "rows": [],
+          "_nested_name": "loop_pages.remote_assets_page_@item.row_index",
+          "_dynamicFields": {
+            "name": [
+              {
+                "fullExpression": "remote_assets_page_@item.row_index",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              }
+            ],
+            "value": [
+              {
+                "fullExpression": "onboarding_settings_@item.id",
+                "matchedExpression": "@item.id",
+                "type": "item",
+                "fieldName": "id"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "_raw": [
+                  {
+                    "fullExpression": "completed | set_data |\n_list_id: onboarding_settings_pages,\n_index: @item.row_index,\ncompleted: true",
+                    "matchedExpression": "@item.row_index",
+                    "type": "item",
+                    "fieldName": "row_index"
+                  }
+                ],
+                "params": {
+                  "_index": [
+                    {
+                      "fullExpression": "@item.row_index",
+                      "matchedExpression": "@item.row_index",
+                      "type": "item",
+                      "fieldName": "row_index"
+                    }
+                  ]
+                }
+              },
+              "2": {
+                "_raw": [
+                  {
+                    "fullExpression": "completed | asset_pack: ensure_downloaded | asset_pack: assets_teen@global.join@fields._app_language, await: false",
+                    "matchedExpression": "@global.join",
+                    "type": "global",
+                    "fieldName": "join"
+                  },
+                  {
+                    "fullExpression": "completed | asset_pack: ensure_downloaded | asset_pack: assets_teen@global.join@fields._app_language, await: false",
+                    "matchedExpression": "@fields._app_language",
+                    "type": "fields",
+                    "fieldName": "_app_language"
+                  }
+                ],
+                "params": {
+                  "asset_pack": [
+                    {
+                      "fullExpression": "assets_teen@global.join@fields._app_language",
+                      "matchedExpression": "@global.join",
+                      "type": "global",
+                      "fieldName": "join"
+                    },
+                    {
+                      "fullExpression": "assets_teen@global.join@fields._app_language",
+                      "matchedExpression": "@fields._app_language",
+                      "type": "fields",
+                      "fieldName": "_app_language"
+                    }
+                  ]
+                }
+              },
+              "3": {
+                "_raw": [
+                  {
+                    "fullExpression": "uncompleted | set_data | \n_list_id: onboarding_settings_pages,\n_index: -1+@item.row_index,\ncompleted: false",
+                    "matchedExpression": "@item.row_index",
+                    "type": "item",
+                    "fieldName": "row_index"
+                  }
+                ],
+                "params": {
+                  "_index": [
+                    {
+                      "fullExpression": "-1+@item.row_index",
+                      "matchedExpression": "@item.row_index",
+                      "type": "item",
+                      "fieldName": "row_index"
+                    }
+                  ]
+                }
+              }
+            },
+            "condition": [
+              {
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag == \"teen\")",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              },
+              {
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag == \"teen\")",
+                "matchedExpression": "@local.last_page_index",
+                "type": "local",
+                "fieldName": "last_page_index"
+              },
+              {
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag == \"teen\")",
+                "matchedExpression": "@global.has_remote_assets",
+                "type": "global",
+                "fieldName": "has_remote_assets"
+              },
+              {
+                "fullExpression": "@item.row_index == @local.last_page_index && @global.has_remote_assets && (@fields.child_age_tag == \"teen\")",
+                "matchedExpression": "@fields.child_age_tag",
+                "type": "fields",
+                "fieldName": "child_age_tag"
+              }
+            ],
+            "_nested_name": [
+              {
+                "fullExpression": "loop_pages.remote_assets_page_@item.row_index",
+                "matchedExpression": "@item.row_index",
+                "type": "item",
+                "fieldName": "row_index"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@item.row_index": [
+              "name",
+              "action_list.0._raw",
+              "action_list.0.params._index",
+              "action_list.3._raw",
+              "action_list.3.params._index",
+              "condition",
+              "_nested_name"
+            ],
+            "@item.id": [
+              "value"
+            ],
+            "@global.join": [
+              "action_list.2._raw",
+              "action_list.2.params.asset_pack"
+            ],
+            "@fields._app_language": [
+              "action_list.2._raw",
+              "action_list.2.params.asset_pack"
+            ],
+            "@local.last_page_index": [
+              "condition"
+            ],
+            "@global.has_remote_assets": [
+              "condition"
+            ],
+            "@fields.child_age_tag": [
               "condition"
             ]
           }
@@ -778,8 +1055,8 @@
     }
   ],
   "_source": {
-    "name": "library PLH onboarding",
-    "path": "PLH onboarding.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1LUIu_aqkzYjyUq0ecQEmWJa62CEvQ4E2L4Fkz_94ydw"
+    "name": "kids_teens_za",
+    "path": "templates/ZA onboarding templates.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1fL4hI6aGugjJ7fKHzp-LiDTLSBAgXNHiML2a2CNFdfE"
   }
 }
