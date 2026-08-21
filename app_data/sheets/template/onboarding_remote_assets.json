@@ -5,7 +5,7 @@
   "rows": [
     {
       "name": "asset_pack_id",
-      "value": "assets_@fields.child_age_tag@global.join@fields._app_language",
+      "value": "@global.asset_pack_id",
       "_translations": {
         "value": {}
       },
@@ -14,33 +14,15 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "assets_@fields.child_age_tag@global.join@fields._app_language",
-            "matchedExpression": "@fields.child_age_tag",
-            "type": "fields",
-            "fieldName": "child_age_tag"
-          },
-          {
-            "fullExpression": "assets_@fields.child_age_tag@global.join@fields._app_language",
-            "matchedExpression": "@global.join",
+            "fullExpression": "@global.asset_pack_id",
+            "matchedExpression": "@global.asset_pack_id",
             "type": "global",
-            "fieldName": "join"
-          },
-          {
-            "fullExpression": "assets_@fields.child_age_tag@global.join@fields._app_language",
-            "matchedExpression": "@fields._app_language",
-            "type": "fields",
-            "fieldName": "_app_language"
+            "fieldName": "asset_pack_id"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@fields.child_age_tag": [
-          "value"
-        ],
-        "@global.join": [
-          "value"
-        ],
-        "@fields._app_language": [
+        "@global.asset_pack_id": [
           "value"
         ]
       }
@@ -1782,8 +1764,8 @@
     }
   ],
   "_source": {
-    "name": "kids_teens_za",
-    "path": "templates/ZA onboarding templates.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1fL4hI6aGugjJ7fKHzp-LiDTLSBAgXNHiML2a2CNFdfE"
+    "name": "library PLH onboarding",
+    "path": "PLH onboarding.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1LUIu_aqkzYjyUq0ecQEmWJa62CEvQ4E2L4Fkz_94ydw"
   }
 }
