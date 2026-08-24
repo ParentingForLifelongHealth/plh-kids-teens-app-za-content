@@ -1,5 +1,5 @@
 {
-  "flow_name": "stack_hp_review_addonlinesafety_t",
+  "flow_name": "stack_hp_review_addonlinesafe_t",
   "flow_subtype": "generated",
   "flow_type": "template",
   "rows": [
@@ -8,7 +8,7 @@
       "name": "check_if_already_unlocked_activity",
       "value": "hp_check_in",
       "parameter_list": {
-        "filter": "@item.id == \"addonlinesafety_t\"",
+        "filter": "@item.id == \"addonlinesafe_t\"",
         "limit": "1"
       },
       "exclude_from_translation": true,
@@ -76,10 +76,10 @@
               "trigger": "completed",
               "action_id": "set_data",
               "args": [],
-              "_raw": "completed | set_data | _list_id: hp_check_in, _id: addonlinesafety_t, unlocked_activity: TRUE",
+              "_raw": "completed | set_data | _list_id: hp_check_in, _id: addonlinesafe_t, unlocked_activity: TRUE",
               "params": {
                 "_list_id": "hp_check_in",
-                "_id": "addonlinesafety_t",
+                "_id": "addonlinesafe_t",
                 "unlocked_activity": true
               }
             },
@@ -121,7 +121,7 @@
               "rows": [
                 {
                   "name": "row_id",
-                  "value": "addonlinesafety_t",
+                  "value": "addonlinesafe_t",
                   "_translations": {
                     "value": {}
                   },
@@ -201,7 +201,7 @@
           "rows": [
             {
               "name": "row_id",
-              "value": "addonlinesafety_t",
+              "value": "addonlinesafe_t",
               "_translations": {
                 "value": {}
               },
@@ -257,7 +257,7 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "@item.id == \"addonlinesafety_t\"",
+              "fullExpression": "@item.id == \"addonlinesafe_t\"",
               "matchedExpression": "@item.id",
               "type": "item",
               "fieldName": "id"
