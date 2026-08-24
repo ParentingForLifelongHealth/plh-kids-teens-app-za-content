@@ -73,12 +73,27 @@
             {
               "type": "lottie_animation",
               "name": "lottie",
-              "value": "lottie/gift_box.json",
+              "value": "@global.unlock_play_lottie",
               "_translations": {
                 "value": {}
               },
               "exclude_from_translation": true,
-              "_nested_name": "dg_bg.dg_column.lottie"
+              "_nested_name": "dg_bg.dg_column.lottie",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@global.unlock_play_lottie",
+                    "matchedExpression": "@global.unlock_play_lottie",
+                    "type": "global",
+                    "fieldName": "unlock_play_lottie"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@global.unlock_play_lottie": [
+                  "value"
+                ]
+              }
             },
             {
               "type": "title",

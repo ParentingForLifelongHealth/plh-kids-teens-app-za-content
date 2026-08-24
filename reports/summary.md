@@ -535,8 +535,8 @@ Assets that have references within sheets but do not appear in app-data
 | images/yc_modules/self_care/self_care_yc_2.svg | 2 |
 | images/yc_modules/self_care/self_care_yc_3.svg | 2 |
 | images/yc_modules/self_care/self_care_yc_4.svg | 2 |
-| lottie/checkmark.json | 1 |
 | lottie/gift_box.json | 1 |
+| lottie/lottie/checkmark.json | 2 |
 | lottie/relax/blue_dots.json | 10 |
 | lottie/relax/heart.json | 12 |
 | lottie/relax/looping_rings.json | 12 |
