@@ -81,6 +81,44 @@
         },
         {
           "type": "button",
+          "name": "button_notifications",
+          "value": "Notifications",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "go_to",
+              "args": [
+                "/notifications"
+              ],
+              "_raw": "click | go_to:/notifications"
+            }
+          ],
+          "_nested_name": "dg_dev.button_notifications"
+        },
+        {
+          "type": "button",
+          "name": "button_campaigns",
+          "value": "Campaigns",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "go_to",
+              "args": [
+                "/campaigns"
+              ],
+              "_raw": "click | go_to:/campaigns"
+            }
+          ],
+          "_nested_name": "dg_dev.button_campaigns"
+        },
+        {
+          "type": "button",
           "name": "button_reset",
           "value": "Reset app",
           "_translations": {
