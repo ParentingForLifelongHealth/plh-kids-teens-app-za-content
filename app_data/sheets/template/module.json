@@ -311,7 +311,7 @@
       "name": "enable_dynamic_data_actions",
       "value": "@local.articles_data_list_name",
       "parameter_list": {
-        "filter": "!@item.nested"
+        "filter": "!@item.nested  && (@item.version == @global.module_version)"
       },
       "exclude_from_translation": true,
       "rows": [
@@ -1204,10 +1204,22 @@
         "parameter_list": {
           "filter": [
             {
-              "fullExpression": "!@item.nested",
+              "fullExpression": "!@item.nested  && (@item.version == @global.module_version)",
               "matchedExpression": "!@item.nested",
               "type": "item",
               "fieldName": "nested"
+            },
+            {
+              "fullExpression": "!@item.nested  && (@item.version == @global.module_version)",
+              "matchedExpression": "@item.version",
+              "type": "item",
+              "fieldName": "version"
+            },
+            {
+              "fullExpression": "!@item.nested  && (@item.version == @global.module_version)",
+              "matchedExpression": "@global.module_version",
+              "type": "global",
+              "fieldName": "module_version"
             }
           ]
         }
@@ -1217,6 +1229,12 @@
           "value"
         ],
         "!@item.nested": [
+          "parameter_list.filter"
+        ],
+        "@item.version": [
+          "parameter_list.filter"
+        ],
+        "@global.module_version": [
           "parameter_list.filter"
         ]
       }
