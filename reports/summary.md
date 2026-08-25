@@ -10,15 +10,15 @@
 | apple_sign_in_button | 2 |
 | asset_pack_download_button | 1 |
 | audio | 5 |
-| button | 98 |
+| button | 104 |
 | combo_box | 10 |
-| data_items | 170 |
+| data_items | 171 |
 | debug_toggle | 1 |
 | display_grid | 4 |
-| display_group | 122 |
+| display_group | 132 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
-| image | 29 |
+| image | 32 |
 | items | 17 |
 | lottie_animation | 5 |
 | nested_properties | 169 |
@@ -30,22 +30,22 @@
 | plh_lesson_cta | 2 |
 | plh_module_details_header | 1 |
 | plh_module_list_item | 3 |
-| plh_progress_bar | 5 |
+| plh_progress_bar | 6 |
 | progress_path | 1 |
-| radio_button_grid | 12 |
+| radio_button_grid | 13 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 3010 |
+| set_variable | 3025 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 6 |
-| template | 1024 |
-| text | 214 |
+| template | 1026 |
+| text | 224 |
 | text_area | 2 |
 | text_box | 13 |
 | text_bubble | 9 |
 | tile_component | 1 |
-| title | 59 |
+| title | 62 |
 | toggle_bar | 5 |
 | update_action_list | 2 |
 | video | 4 |
@@ -59,25 +59,25 @@
 | --- | --- |
 | add_data | 2 |
 | app_update | 1 |
-| asset_pack | 5 |
+| asset_pack | 9 |
 | auth | 3 |
-| emit: completed | 740 |
+| emit: completed | 741 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 14 |
-| emit: force_restart | 3 |
+| emit: force_restart | 4 |
 | emit: server_sync | 6 |
-| emit: set_language | 3 |
-| emit: uncompleted | 749 |
+| emit: set_language | 4 |
+| emit: uncompleted | 750 |
 | feedback | 13 |
-| go_to | 20 |
+| go_to | 22 |
 | nav_stack | 291 |
 | pop_up | 67 |
 | reset_app | 4 |
 | reset_data | 3 |
 | set_data | 80 |
-| set_field | 68 |
+| set_field | 69 |
 | set_item | 58 |
-| set_local | 80 |
+| set_local | 83 |
 | share | 2 |
 | task | 2 |
 | toast | 2 |
@@ -541,7 +541,8 @@ Assets that have references within sheets but do not appear in app-data
 | lottie/relax/looping_rings.json | 12 |
 | lottie/relax/soothing_waves.json | 12 |
 | lottie/relax/square_flow.json | 11 |
-| lottie/ux/checkmark.json | 2 |
+| lottie/ux/checkmark.json | 1 |
+| lottie/ux/gift_box.json | 1 |
 </details>
 
 <details >
@@ -681,7 +682,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 6 |
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
-| template |  | 132 |
+| template |  | 134 |
 | template | generated | 767 |
 | template | legal_terms | 4 |
 </details>
