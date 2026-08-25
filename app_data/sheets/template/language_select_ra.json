@@ -1,6 +1,6 @@
 {
   "flow_type": "template",
-  "flow_name": "settings_language_select_ra",
+  "flow_name": "language_select_ra",
   "status": "released",
   "rows": [
     {
@@ -46,50 +46,6 @@
           "value"
         ]
       }
-    },
-    {
-      "type": "template",
-      "name": "settings_header",
-      "value": "settings_header",
-      "action_list": [
-        {
-          "trigger": "uncompleted",
-          "action_id": "emit",
-          "args": [
-            "uncompleted"
-          ],
-          "_raw": "uncompleted | emit: uncompleted"
-        }
-      ],
-      "exclude_from_translation": true,
-      "rows": [
-        {
-          "name": "title",
-          "value": "@global.language",
-          "_translations": {
-            "value": {}
-          },
-          "exclude_from_translation": true,
-          "type": "set_variable",
-          "_nested_name": "settings_header.title",
-          "_dynamicFields": {
-            "value": [
-              {
-                "fullExpression": "@global.language",
-                "matchedExpression": "@global.language",
-                "type": "global",
-                "fieldName": "language"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@global.language": [
-              "value"
-            ]
-          }
-        }
-      ],
-      "_nested_name": "settings_header"
     },
     {
       "name": "language_select_options",
@@ -238,8 +194,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_9",
-      "_nested_name": "set_variable_9"
+      "name": "set_variable_7",
+      "_nested_name": "set_variable_7"
     },
     {
       "name": "completed_count",
@@ -300,8 +256,8 @@
         "filter": "@item.id.includes(@local.language_select)"
       },
       "exclude_from_translation": true,
-      "name": "data_items_13",
-      "_nested_name": "data_items_13",
+      "name": "data_items_11",
+      "_nested_name": "data_items_11",
       "_dynamicFields": {
         "parameter_list": {
           "filter": [
@@ -379,6 +335,7 @@
       "_translations": {
         "value": {}
       },
+      "condition": false,
       "exclude_from_translation": true,
       "_nested_name": "debug_dl_status",
       "_dynamicFields": {
@@ -425,8 +382,8 @@
     {
       "exclude_from_translation": true,
       "type": "set_variable",
-      "name": "set_variable_17",
-      "_nested_name": "set_variable_17"
+      "name": "set_variable_15",
+      "_nested_name": "set_variable_15"
     },
     {
       "type": "display_group",

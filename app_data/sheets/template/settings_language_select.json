@@ -67,6 +67,7 @@
           "_raw": "completed | emit: completed"
         }
       ],
+      "condition": "!@global.has_remote_assets",
       "rows": [
         {
           "name": "show_title",
@@ -99,7 +100,63 @@
           }
         }
       ],
-      "_nested_name": "language_select"
+      "_nested_name": "language_select",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "!@global.has_remote_assets",
+            "matchedExpression": "!@global.has_remote_assets",
+            "type": "global",
+            "fieldName": "has_remote_assets"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "!@global.has_remote_assets": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "template",
+      "name": "language_select_ra",
+      "value": "language_select_ra",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted"
+        },
+        {
+          "trigger": "completed",
+          "action_id": "emit",
+          "args": [
+            "completed"
+          ],
+          "_raw": "completed | emit: completed"
+        }
+      ],
+      "condition": "@global.has_remote_assets",
+      "rows": [],
+      "_nested_name": "language_select_ra",
+      "_dynamicFields": {
+        "condition": [
+          {
+            "fullExpression": "@global.has_remote_assets",
+            "matchedExpression": "@global.has_remote_assets",
+            "type": "global",
+            "fieldName": "has_remote_assets"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@global.has_remote_assets": [
+          "condition"
+        ]
+      }
     }
   ],
   "_source": {
