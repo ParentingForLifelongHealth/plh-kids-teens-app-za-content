@@ -1,0 +1,685 @@
+{
+  "flow_type": "template",
+  "flow_name": "settings_language_select_ra",
+  "status": "released",
+  "rows": [
+    {
+      "name": "join",
+      "value": "_",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "join"
+    },
+    {
+      "name": "asset_pack_prefix",
+      "value": "assets_@fields.child_age_tag@global.join",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "asset_pack_prefix",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "assets_@fields.child_age_tag@global.join",
+            "matchedExpression": "@fields.child_age_tag",
+            "type": "fields",
+            "fieldName": "child_age_tag"
+          },
+          {
+            "fullExpression": "assets_@fields.child_age_tag@global.join",
+            "matchedExpression": "@global.join",
+            "type": "global",
+            "fieldName": "join"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@fields.child_age_tag": [
+          "value"
+        ],
+        "@global.join": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "template",
+      "name": "settings_header",
+      "value": "settings_header",
+      "action_list": [
+        {
+          "trigger": "uncompleted",
+          "action_id": "emit",
+          "args": [
+            "uncompleted"
+          ],
+          "_raw": "uncompleted | emit: uncompleted"
+        }
+      ],
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "name": "title",
+          "value": "@global.language",
+          "_translations": {
+            "value": {}
+          },
+          "exclude_from_translation": true,
+          "type": "set_variable",
+          "_nested_name": "settings_header.title",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.language",
+                "matchedExpression": "@global.language",
+                "type": "global",
+                "fieldName": "language"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "@global.language": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "settings_header"
+    },
+    {
+      "name": "language_select_options",
+      "value": "@data.language",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "language_select_options",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.language",
+            "matchedExpression": "@data.language",
+            "type": "data",
+            "fieldName": "language"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.language": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "language_select_options",
+      "value": "@data.language_reversed",
+      "_translations": {
+        "value": {}
+      },
+      "condition": "@fields._app_language_direction == \"rtl\"",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "language_select_options",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@data.language_reversed",
+            "matchedExpression": "@data.language_reversed",
+            "type": "data",
+            "fieldName": "language_reversed"
+          }
+        ],
+        "condition": [
+          {
+            "fullExpression": "@fields._app_language_direction == \"rtl\"",
+            "matchedExpression": "@fields._app_language_direction",
+            "type": "fields",
+            "fieldName": "_app_language_direction"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@data.language_reversed": [
+          "value"
+        ],
+        "@fields._app_language_direction": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "type": "radio_button_grid",
+      "name": "language_select",
+      "value": "@fields._app_language",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "changed",
+          "action_id": "asset_pack",
+          "args": [
+            "ensure_downloaded"
+          ],
+          "_raw": "changed | asset_pack: ensure_downloaded | asset_pack: @local.asset_pack_prefix{this.value}, await: false",
+          "params": {
+            "asset_pack": "@local.asset_pack_prefix{this.value}",
+            "await": false
+          }
+        }
+      ],
+      "parameter_list": {
+        "answer_list": "@local.language_select_options",
+        "item_width": "50px"
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "language_select",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@fields._app_language",
+            "matchedExpression": "@fields._app_language",
+            "type": "fields",
+            "fieldName": "_app_language"
+          }
+        ],
+        "action_list": {
+          "0": {
+            "_raw": [
+              {
+                "fullExpression": "changed | asset_pack: ensure_downloaded | asset_pack: @local.asset_pack_prefix{this.value}, await: false",
+                "matchedExpression": "@local.asset_pack_prefix",
+                "type": "local",
+                "fieldName": "asset_pack_prefix"
+              }
+            ],
+            "params": {
+              "asset_pack": [
+                {
+                  "fullExpression": "@local.asset_pack_prefix{this.value}",
+                  "matchedExpression": "@local.asset_pack_prefix",
+                  "type": "local",
+                  "fieldName": "asset_pack_prefix"
+                }
+              ]
+            }
+          }
+        },
+        "parameter_list": {
+          "answer_list": [
+            {
+              "fullExpression": "@local.language_select_options",
+              "matchedExpression": "@local.language_select_options",
+              "type": "local",
+              "fieldName": "language_select_options"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@fields._app_language": [
+          "value"
+        ],
+        "@local.asset_pack_prefix": [
+          "action_list.0._raw",
+          "action_list.0.params.asset_pack"
+        ],
+        "@local.language_select_options": [
+          "parameter_list.answer_list"
+        ]
+      }
+    },
+    {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_9",
+      "_nested_name": "set_variable_9"
+    },
+    {
+      "name": "completed_count",
+      "value": 0,
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "completed_count"
+    },
+    {
+      "name": "total_count",
+      "value": 0,
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "total_count"
+    },
+    {
+      "name": "download_status",
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "download_status"
+    },
+    {
+      "type": "data_items",
+      "value": "_asset_packs",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "total_count",
+            "@items[0].assets_total_count"
+          ],
+          "_raw": "data_changed | set_local: total_count: @items[0].assets_total_count"
+        },
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "completed_count",
+            "@items[0].assets_downloaded_count"
+          ],
+          "_raw": "data_changed | set_local: completed_count: @items[0].assets_downloaded_count"
+        },
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "download_status",
+            "@items[0].download_status"
+          ],
+          "_raw": "data_changed | set_local: download_status: @items[0].download_status"
+        }
+      ],
+      "parameter_list": {
+        "filter": "@item.id.includes(@local.language_select)"
+      },
+      "exclude_from_translation": true,
+      "name": "data_items_13",
+      "_nested_name": "data_items_13",
+      "_dynamicFields": {
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "@item.id.includes(@local.language_select)",
+              "matchedExpression": "@item.id.includes",
+              "type": "item",
+              "fieldName": "id"
+            },
+            {
+              "fullExpression": "@item.id.includes(@local.language_select)",
+              "matchedExpression": "@local.language_select",
+              "type": "local",
+              "fieldName": "language_select"
+            }
+          ]
+        }
+      },
+      "_dynamicDependencies": {
+        "@item.id.includes": [
+          "parameter_list.filter"
+        ],
+        "@local.language_select": [
+          "parameter_list.filter"
+        ]
+      }
+    },
+    {
+      "type": "plh_progress_bar",
+      "name": "bar",
+      "value": "@calc((@local.completed_count / @local.total_count) * 100)",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "bar",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
+            "matchedExpression": "@local.completed_count",
+            "type": "local",
+            "fieldName": "completed_count"
+          },
+          {
+            "fullExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
+            "matchedExpression": "@local.total_count",
+            "type": "local",
+            "fieldName": "total_count"
+          },
+          {
+            "fullExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
+            "matchedExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
+            "type": "calc",
+            "fieldName": "(@local.completed_count / @local.total_count) * 100"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.completed_count": [
+          "value"
+        ],
+        "@local.total_count": [
+          "value"
+        ],
+        "@calc((@local.completed_count / @local.total_count) * 100)": [
+          "value"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "name": "debug_dl_status",
+      "value": "Download status: @local.download_status",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "_nested_name": "debug_dl_status",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "Download status: @local.download_status",
+            "matchedExpression": "@local.download_status",
+            "type": "local",
+            "fieldName": "download_status"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.download_status": [
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "completed_enabled",
+      "value": "@local.download_status == \"completed\"",
+      "_translations": {
+        "value": {}
+      },
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "_nested_name": "completed_enabled",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.download_status == \"completed\"",
+            "matchedExpression": "@local.download_status",
+            "type": "local",
+            "fieldName": "download_status"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.download_status": [
+          "value"
+        ]
+      }
+    },
+    {
+      "exclude_from_translation": true,
+      "type": "set_variable",
+      "name": "set_variable_17",
+      "_nested_name": "set_variable_17"
+    },
+    {
+      "type": "display_group",
+      "name": "dg_footer",
+      "parameter_list": {
+        "sticky": "bottom"
+      },
+      "style_list": [
+        "padding: 12px 24px"
+      ],
+      "exclude_from_translation": true,
+      "rows": [
+        {
+          "type": "button",
+          "name": "button_completed",
+          "value": "@global.save",
+          "_translations": {
+            "value": {}
+          },
+          "action_list": [
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "set_language",
+                "@local.language_select"
+              ],
+              "_raw": "click | emit: set_language: @local.language_select"
+            },
+            {
+              "trigger": "click",
+              "action_id": "set_field",
+              "args": [
+                "language_selected",
+                true
+              ],
+              "_raw": "click | set_field: language_selected: TRUE"
+            },
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "completed"
+              ],
+              "_raw": "click | emit: completed"
+            },
+            {
+              "trigger": "click",
+              "action_id": "emit",
+              "args": [
+                "force_restart"
+              ],
+              "_raw": "click | emit: force_restart"
+            }
+          ],
+          "condition": "!@local.download_status || @local.download_status == \"in_progress\" || @local.download_status == \"completed\"",
+          "parameter_list": {
+            "style": "navigation",
+            "disabled": "!@local.completed_enabled"
+          },
+          "style_list": [
+            "flex: 1"
+          ],
+          "exclude_from_translation": true,
+          "_nested_name": "dg_footer.button_completed",
+          "_dynamicFields": {
+            "value": [
+              {
+                "fullExpression": "@global.save",
+                "matchedExpression": "@global.save",
+                "type": "global",
+                "fieldName": "save"
+              }
+            ],
+            "action_list": {
+              "0": {
+                "args": {
+                  "1": [
+                    {
+                      "fullExpression": "@local.language_select",
+                      "matchedExpression": "@local.language_select",
+                      "type": "local",
+                      "fieldName": "language_select"
+                    }
+                  ]
+                },
+                "_raw": [
+                  {
+                    "fullExpression": "click | emit: set_language: @local.language_select",
+                    "matchedExpression": "@local.language_select",
+                    "type": "local",
+                    "fieldName": "language_select"
+                  }
+                ]
+              }
+            },
+            "condition": [
+              {
+                "fullExpression": "!@local.download_status || @local.download_status == \"in_progress\" || @local.download_status == \"completed\"",
+                "matchedExpression": "!@local.download_status",
+                "type": "local",
+                "fieldName": "download_status"
+              },
+              {
+                "fullExpression": "!@local.download_status || @local.download_status == \"in_progress\" || @local.download_status == \"completed\"",
+                "matchedExpression": "@local.download_status",
+                "type": "local",
+                "fieldName": "download_status"
+              },
+              {
+                "fullExpression": "!@local.download_status || @local.download_status == \"in_progress\" || @local.download_status == \"completed\"",
+                "matchedExpression": "@local.download_status",
+                "type": "local",
+                "fieldName": "download_status"
+              }
+            ],
+            "parameter_list": {
+              "disabled": [
+                {
+                  "fullExpression": "!@local.completed_enabled",
+                  "matchedExpression": "!@local.completed_enabled",
+                  "type": "local",
+                  "fieldName": "completed_enabled"
+                }
+              ]
+            }
+          },
+          "_dynamicDependencies": {
+            "@global.save": [
+              "value"
+            ],
+            "@local.language_select": [
+              "action_list.0.args.1",
+              "action_list.0._raw"
+            ],
+            "!@local.download_status": [
+              "condition"
+            ],
+            "@local.download_status": [
+              "condition",
+              "condition"
+            ],
+            "!@local.completed_enabled": [
+              "parameter_list.disabled"
+            ]
+          }
+        },
+        {
+          "type": "template",
+          "name": "troubleshoot_remote_assets",
+          "value": "troubleshoot_remote_assets",
+          "condition": "!(!@local.download_status || @local.download_status == \"in_progress\" || @local.download_status == \"completed\")",
+          "exclude_from_translation": true,
+          "rows": [
+            {
+              "name": "download_status",
+              "value": "@local.download_status",
+              "_translations": {
+                "value": {}
+              },
+              "exclude_from_translation": true,
+              "type": "set_variable",
+              "_nested_name": "dg_footer.troubleshoot_remote_assets.download_status",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@local.download_status",
+                    "matchedExpression": "@local.download_status",
+                    "type": "local",
+                    "fieldName": "download_status"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.download_status": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "name": "asset_pack_id",
+              "value": "@local.asset_pack_prefix@local.language_select",
+              "_translations": {
+                "value": {}
+              },
+              "type": "set_variable",
+              "_nested_name": "dg_footer.troubleshoot_remote_assets.asset_pack_id",
+              "_dynamicFields": {
+                "value": [
+                  {
+                    "fullExpression": "@local.asset_pack_prefix@local.language_select",
+                    "matchedExpression": "@local.asset_pack_prefix",
+                    "type": "local",
+                    "fieldName": "asset_pack_prefix"
+                  },
+                  {
+                    "fullExpression": "@local.asset_pack_prefix@local.language_select",
+                    "matchedExpression": "@local.language_select",
+                    "type": "local",
+                    "fieldName": "language_select"
+                  }
+                ]
+              },
+              "_dynamicDependencies": {
+                "@local.asset_pack_prefix": [
+                  "value"
+                ],
+                "@local.language_select": [
+                  "value"
+                ]
+              }
+            }
+          ],
+          "_nested_name": "dg_footer.troubleshoot_remote_assets",
+          "_dynamicFields": {
+            "condition": [
+              {
+                "fullExpression": "!(!@local.download_status || @local.download_status == \"in_progress\" || @local.download_status == \"completed\")",
+                "matchedExpression": "!@local.download_status",
+                "type": "local",
+                "fieldName": "download_status"
+              },
+              {
+                "fullExpression": "!(!@local.download_status || @local.download_status == \"in_progress\" || @local.download_status == \"completed\")",
+                "matchedExpression": "@local.download_status",
+                "type": "local",
+                "fieldName": "download_status"
+              },
+              {
+                "fullExpression": "!(!@local.download_status || @local.download_status == \"in_progress\" || @local.download_status == \"completed\")",
+                "matchedExpression": "@local.download_status",
+                "type": "local",
+                "fieldName": "download_status"
+              }
+            ]
+          },
+          "_dynamicDependencies": {
+            "!@local.download_status": [
+              "condition"
+            ],
+            "@local.download_status": [
+              "condition",
+              "condition"
+            ]
+          }
+        }
+      ],
+      "_nested_name": "dg_footer"
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_global",
+    "path": "PLH settings.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1uBEmZtqR_EeWZCjDQ6i6fdL56Vh8IasbzpEGTVlmNvs"
+  }
+}
