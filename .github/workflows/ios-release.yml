@@ -11,6 +11,14 @@ on:
         options:
           - appetize
           - testflight
+      allow_provisioning_changes:
+        description: "Allow Fastlane to create or update provisioning profiles"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 jobs:
   call_get_vars:
@@ -22,6 +30,7 @@ jobs:
     uses: IDEMSInternational/open-app-builder-actions/.github/workflows/ios-release.yml@main
     with:
       target: ${{ github.event.inputs.target }} # "appetize" or "testflight"
+      allow_provisioning_changes: ${{ github.event.inputs.allow_provisioning_changes == 'true' }}
       CONTENT_BRANCH: ""
       APP_CODE_BRANCH: ${{ vars.APP_CODE_BRANCH }}
       LFS_USED: ${{ needs.call_get_vars.outputs.LFS_USED == 'true' }}
