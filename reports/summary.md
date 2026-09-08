@@ -30,12 +30,12 @@
 | plh_lesson_cta | 2 |
 | plh_module_details_header | 1 |
 | plh_module_list_item | 3 |
-| plh_progress_bar | 6 |
+| plh_progress_bar | 5 |
 | progress_path | 1 |
 | radio_button_grid | 13 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 3023 |
+| set_variable | 3020 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 6 |
@@ -77,7 +77,7 @@
 | set_data | 80 |
 | set_field | 69 |
 | set_item | 58 |
-| set_local | 83 |
+| set_local | 81 |
 | share | 2 |
 | task | 2 |
 | toast | 2 |

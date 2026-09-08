@@ -183,24 +183,11 @@
       }
     },
     {
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "name": "set_variable_7",
-      "_nested_name": "set_variable_7"
-    },
-    {
-      "name": "completed_count",
+      "name": "download_progress_percent",
       "value": 0,
       "exclude_from_translation": true,
       "type": "set_variable",
-      "_nested_name": "completed_count"
-    },
-    {
-      "name": "total_count",
-      "value": 0,
-      "exclude_from_translation": true,
-      "type": "set_variable",
-      "_nested_name": "total_count"
+      "_nested_name": "download_progress_percent"
     },
     {
       "name": "download_status",
@@ -219,36 +206,27 @@
           "trigger": "data_changed",
           "action_id": "set_local",
           "args": [
-            "total_count",
-            "@items[0].assets_total_count"
-          ],
-          "_raw": "data_changed | set_local: total_count: @items[0].assets_total_count"
-        },
-        {
-          "trigger": "data_changed",
-          "action_id": "set_local",
-          "args": [
-            "completed_count",
-            "@items[0].assets_downloaded_count"
-          ],
-          "_raw": "data_changed | set_local: completed_count: @items[0].assets_downloaded_count"
-        },
-        {
-          "trigger": "data_changed",
-          "action_id": "set_local",
-          "args": [
             "download_status",
             "@items[0].download_status"
           ],
           "_raw": "data_changed | set_local: download_status: @items[0].download_status"
+        },
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "download_progress_percent",
+            "@items[0].download_progress_percent"
+          ],
+          "_raw": "data_changed | set_local: download_progress_percent: @items[0].download_progress_percent"
         }
       ],
       "parameter_list": {
         "filter": "@item.id.includes(@local.language_select)"
       },
       "exclude_from_translation": true,
-      "name": "data_items_11",
-      "_nested_name": "data_items_11",
+      "name": "data_items_9",
+      "_nested_name": "data_items_9",
       "_dynamicFields": {
         "parameter_list": {
           "filter": [
@@ -279,7 +257,7 @@
     {
       "type": "plh_progress_bar",
       "name": "bar",
-      "value": "@calc((@local.completed_count / @local.total_count) * 100)",
+      "value": "@local.download_progress_percent",
       "_translations": {
         "value": {}
       },
@@ -288,33 +266,15 @@
       "_dynamicFields": {
         "value": [
           {
-            "fullExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
-            "matchedExpression": "@local.completed_count",
+            "fullExpression": "@local.download_progress_percent",
+            "matchedExpression": "@local.download_progress_percent",
             "type": "local",
-            "fieldName": "completed_count"
-          },
-          {
-            "fullExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
-            "matchedExpression": "@local.total_count",
-            "type": "local",
-            "fieldName": "total_count"
-          },
-          {
-            "fullExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
-            "matchedExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
-            "type": "calc",
-            "fieldName": "(@local.completed_count / @local.total_count) * 100"
+            "fieldName": "download_progress_percent"
           }
         ]
       },
       "_dynamicDependencies": {
-        "@local.completed_count": [
-          "value"
-        ],
-        "@local.total_count": [
-          "value"
-        ],
-        "@calc((@local.completed_count / @local.total_count) * 100)": [
+        "@local.download_progress_percent": [
           "value"
         ]
       }
