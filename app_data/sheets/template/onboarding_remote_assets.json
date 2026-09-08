@@ -28,16 +28,10 @@
       }
     },
     {
-      "name": "completed_count",
+      "name": "download_progress_percent",
       "value": 0,
       "type": "set_variable",
-      "_nested_name": "completed_count"
-    },
-    {
-      "name": "total_count",
-      "value": 0,
-      "type": "set_variable",
-      "_nested_name": "total_count"
+      "_nested_name": "download_progress_percent"
     },
     {
       "name": "download_status",
@@ -412,73 +406,21 @@
         {
           "type": "plh_progress_bar",
           "name": "bar_4",
-          "value": 0,
-          "parameter_list": {
-            "color": "@data.onboarding_progress_bars.id_4.colour"
-          },
-          "condition": "@local.total_count == 0",
-          "_nested_name": "page_downloading.bar_4",
-          "_dynamicFields": {
-            "parameter_list": {
-              "color": [
-                {
-                  "fullExpression": "@data.onboarding_progress_bars.id_4.colour",
-                  "matchedExpression": "@data.onboarding_progress_bars.id_4.colour",
-                  "type": "data",
-                  "fieldName": "onboarding_progress_bars"
-                }
-              ]
-            },
-            "condition": [
-              {
-                "fullExpression": "@local.total_count == 0",
-                "matchedExpression": "@local.total_count",
-                "type": "local",
-                "fieldName": "total_count"
-              }
-            ]
-          },
-          "_dynamicDependencies": {
-            "@data.onboarding_progress_bars.id_4.colour": [
-              "parameter_list.color"
-            ],
-            "@local.total_count": [
-              "condition"
-            ]
-          }
-        },
-        {
-          "type": "plh_progress_bar",
-          "name": "bar_4",
-          "value": "@calc((@local.completed_count / @local.total_count) * 100)",
+          "value": "@local.download_progress_percent",
           "_translations": {
             "value": {}
           },
           "parameter_list": {
             "color": "@data.onboarding_progress_bars.id_4.colour"
           },
-          "condition": "@local.total_count !== 0",
-          "exclude_from_translation": true,
           "_nested_name": "page_downloading.bar_4",
           "_dynamicFields": {
             "value": [
               {
-                "fullExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
-                "matchedExpression": "@local.completed_count",
+                "fullExpression": "@local.download_progress_percent",
+                "matchedExpression": "@local.download_progress_percent",
                 "type": "local",
-                "fieldName": "completed_count"
-              },
-              {
-                "fullExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
-                "matchedExpression": "@local.total_count",
-                "type": "local",
-                "fieldName": "total_count"
-              },
-              {
-                "fullExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
-                "matchedExpression": "@calc((@local.completed_count / @local.total_count) * 100)",
-                "type": "calc",
-                "fieldName": "(@local.completed_count / @local.total_count) * 100"
+                "fieldName": "download_progress_percent"
               }
             ],
             "parameter_list": {
@@ -490,25 +432,10 @@
                   "fieldName": "onboarding_progress_bars"
                 }
               ]
-            },
-            "condition": [
-              {
-                "fullExpression": "@local.total_count !== 0",
-                "matchedExpression": "@local.total_count",
-                "type": "local",
-                "fieldName": "total_count"
-              }
-            ]
+            }
           },
           "_dynamicDependencies": {
-            "@local.completed_count": [
-              "value"
-            ],
-            "@local.total_count": [
-              "value",
-              "condition"
-            ],
-            "@calc((@local.completed_count / @local.total_count) * 100)": [
+            "@local.download_progress_percent": [
               "value"
             ],
             "@data.onboarding_progress_bars.id_4.colour": [
@@ -527,36 +454,27 @@
               "trigger": "data_changed",
               "action_id": "set_local",
               "args": [
-                "total_count",
-                "@items[0].assets_total_count"
-              ],
-              "_raw": "data_changed | set_local: total_count: @items[0].assets_total_count"
-            },
-            {
-              "trigger": "data_changed",
-              "action_id": "set_local",
-              "args": [
-                "completed_count",
-                "@items[0].assets_downloaded_count"
-              ],
-              "_raw": "data_changed | set_local: completed_count: @items[0].assets_downloaded_count"
-            },
-            {
-              "trigger": "data_changed",
-              "action_id": "set_local",
-              "args": [
                 "download_status",
                 "@items[0].download_status"
               ],
               "_raw": "data_changed | set_local: download_status: @items[0].download_status"
+            },
+            {
+              "trigger": "data_changed",
+              "action_id": "set_local",
+              "args": [
+                "download_progress_percent",
+                "@items[0].download_progress_percent"
+              ],
+              "_raw": "data_changed | set_local: download_progress_percent: @items[0].download_progress_percent"
             }
           ],
           "parameter_list": {
             "filter": "@item.id == @local.asset_pack_id"
           },
           "condition": "@local.bar_3 == 100",
-          "name": "data_items_11",
-          "_nested_name": "page_downloading.data_items_11",
+          "name": "data_items_10",
+          "_nested_name": "page_downloading.data_items_10",
           "_dynamicFields": {
             "parameter_list": {
               "filter": [
