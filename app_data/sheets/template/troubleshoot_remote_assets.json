@@ -9,6 +9,7 @@
       "_translations": {
         "value": {}
       },
+      "exclude_from_translation": true,
       "type": "set_variable",
       "_nested_name": "download_status"
     },
@@ -235,10 +236,13 @@
                   "trigger": "click",
                   "action_id": "asset_pack",
                   "args": [
-                    "download",
-                    "@local.asset_pack_id"
+                    "ensure_downloaded"
                   ],
-                  "_raw": "click | asset_pack: download: @local.asset_pack_id"
+                  "_raw": "click | asset_pack: ensure_downloaded | asset_pack: @local.asset_pack_id, await: false",
+                  "params": {
+                    "asset_pack": "@local.asset_pack_id",
+                    "await": false
+                  }
                 }
               ],
               "parameter_list": {
@@ -256,8 +260,16 @@
                 ],
                 "action_list": {
                   "0": {
-                    "args": {
-                      "1": [
+                    "_raw": [
+                      {
+                        "fullExpression": "click | asset_pack: ensure_downloaded | asset_pack: @local.asset_pack_id, await: false",
+                        "matchedExpression": "@local.asset_pack_id",
+                        "type": "local",
+                        "fieldName": "asset_pack_id"
+                      }
+                    ],
+                    "params": {
+                      "asset_pack": [
                         {
                           "fullExpression": "@local.asset_pack_id",
                           "matchedExpression": "@local.asset_pack_id",
@@ -265,15 +277,7 @@
                           "fieldName": "asset_pack_id"
                         }
                       ]
-                    },
-                    "_raw": [
-                      {
-                        "fullExpression": "click | asset_pack: download: @local.asset_pack_id",
-                        "matchedExpression": "@local.asset_pack_id",
-                        "type": "local",
-                        "fieldName": "asset_pack_id"
-                      }
-                    ]
+                    }
                   }
                 }
               },
@@ -282,8 +286,8 @@
                   "value"
                 ],
                 "@local.asset_pack_id": [
-                  "action_list.0.args.1",
-                  "action_list.0._raw"
+                  "action_list.0._raw",
+                  "action_list.0.params.asset_pack"
                 ]
               }
             }
@@ -518,10 +522,13 @@
                   "trigger": "click",
                   "action_id": "asset_pack",
                   "args": [
-                    "download",
-                    "@local.asset_pack_id"
+                    "ensure_downloaded"
                   ],
-                  "_raw": "click | asset_pack: download: @local.asset_pack_id"
+                  "_raw": "click | asset_pack: ensure_downloaded | asset_pack: @local.asset_pack_id, await: false",
+                  "params": {
+                    "asset_pack": "@local.asset_pack_id",
+                    "await": false
+                  }
                 }
               ],
               "parameter_list": {
@@ -539,8 +546,16 @@
                 ],
                 "action_list": {
                   "0": {
-                    "args": {
-                      "1": [
+                    "_raw": [
+                      {
+                        "fullExpression": "click | asset_pack: ensure_downloaded | asset_pack: @local.asset_pack_id, await: false",
+                        "matchedExpression": "@local.asset_pack_id",
+                        "type": "local",
+                        "fieldName": "asset_pack_id"
+                      }
+                    ],
+                    "params": {
+                      "asset_pack": [
                         {
                           "fullExpression": "@local.asset_pack_id",
                           "matchedExpression": "@local.asset_pack_id",
@@ -548,15 +563,7 @@
                           "fieldName": "asset_pack_id"
                         }
                       ]
-                    },
-                    "_raw": [
-                      {
-                        "fullExpression": "click | asset_pack: download: @local.asset_pack_id",
-                        "matchedExpression": "@local.asset_pack_id",
-                        "type": "local",
-                        "fieldName": "asset_pack_id"
-                      }
-                    ]
+                    }
                   }
                 }
               },
@@ -565,8 +572,8 @@
                   "value"
                 ],
                 "@local.asset_pack_id": [
-                  "action_list.0.args.1",
-                  "action_list.0._raw"
+                  "action_list.0._raw",
+                  "action_list.0.params.asset_pack"
                 ]
               }
             }
@@ -801,10 +808,13 @@
                   "trigger": "click",
                   "action_id": "asset_pack",
                   "args": [
-                    "download",
-                    "@local.asset_pack_id"
+                    "ensure_downloaded"
                   ],
-                  "_raw": "click | asset_pack: download: @local.asset_pack_id"
+                  "_raw": "click | asset_pack: ensure_downloaded | asset_pack: @local.asset_pack_id, await: false",
+                  "params": {
+                    "asset_pack": "@local.asset_pack_id",
+                    "await": false
+                  }
                 }
               ],
               "parameter_list": {
@@ -822,8 +832,16 @@
                 ],
                 "action_list": {
                   "0": {
-                    "args": {
-                      "1": [
+                    "_raw": [
+                      {
+                        "fullExpression": "click | asset_pack: ensure_downloaded | asset_pack: @local.asset_pack_id, await: false",
+                        "matchedExpression": "@local.asset_pack_id",
+                        "type": "local",
+                        "fieldName": "asset_pack_id"
+                      }
+                    ],
+                    "params": {
+                      "asset_pack": [
                         {
                           "fullExpression": "@local.asset_pack_id",
                           "matchedExpression": "@local.asset_pack_id",
@@ -831,15 +849,7 @@
                           "fieldName": "asset_pack_id"
                         }
                       ]
-                    },
-                    "_raw": [
-                      {
-                        "fullExpression": "click | asset_pack: download: @local.asset_pack_id",
-                        "matchedExpression": "@local.asset_pack_id",
-                        "type": "local",
-                        "fieldName": "asset_pack_id"
-                      }
-                    ]
+                    }
                   }
                 }
               },
@@ -848,8 +858,8 @@
                   "value"
                 ],
                 "@local.asset_pack_id": [
-                  "action_list.0.args.1",
-                  "action_list.0._raw"
+                  "action_list.0._raw",
+                  "action_list.0.params.asset_pack"
                 ]
               }
             }
