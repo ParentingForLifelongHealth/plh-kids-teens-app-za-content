@@ -15,7 +15,7 @@
 | data_items | 171 |
 | debug_toggle | 1 |
 | display_grid | 4 |
-| display_group | 132 |
+| display_group | 131 |
 | drawer | 1 |
 | google_sign_in_button | 2 |
 | image | 32 |
