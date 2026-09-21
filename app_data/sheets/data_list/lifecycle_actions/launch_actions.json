@@ -145,6 +145,9 @@
       "lifecycle_event": "app_start",
       "id": "asset_pack_download",
       "priority": 8,
+      "condition_list": [
+        "@global.has_remote_assets"
+      ],
       "action_list": [
         {
           "trigger": "click",
