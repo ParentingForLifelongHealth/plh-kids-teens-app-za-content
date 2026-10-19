@@ -35,7 +35,7 @@
 | radio_button_grid | 13 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 3020 |
+| set_variable | 3032 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 6 |
@@ -43,7 +43,7 @@
 | text | 226 |
 | text_area | 2 |
 | text_box | 13 |
-| text_bubble | 9 |
+| text_bubble | 10 |
 | tile_component | 1 |
 | title | 62 |
 | toggle_bar | 5 |
@@ -89,8 +89,8 @@
 
 | assets | KB | MB |
 | --- | --- | --- |
-| total | 64507 KB | 64.5 MB |
-| unused | 1982 KB | 2 MB |
+| total | 64528 KB | 64.5 MB |
+| unused | 1962 KB | 2 MB |
 </details>
 
 <details open>
@@ -154,7 +154,6 @@ Assets that appear in app-data but do not have references within sheets
 | images/icons/document.svg | 7.3 |
 | images/icons/feather.svg | 3.5 |
 | images/icons/fire.png | 0.9 |
-| images/logos/partners/plh_logomark.png | 20.5 |
 | images/logos/partners/plh_white.png | 12.8 |
 | images/logos/partners/sino_mark.svg | 461.7 |
 | lottie/ux/bulging_circles.json | 11.8 |
@@ -186,11 +185,9 @@ Assets that have references within sheets but do not appear in app-data
 | audio/relax/relax_6.mp3 | 1 |
 | audio/relax/relax_7.mp3 | 1 |
 | audio/relax/relax_8.mp3 | 1 |
-| images/backgrounds/map_view_bg.jpg | 1 |
 | images/icons/share.svg | 2 |
 | images/logos/app_logo.png | 1 |
-| images/logos/plh_logomark.png | 1 |
-| lottie/gift_box.json | 1 |
+| lottie/app/gift_box.json | 1 |
 </details>
 
 <details >
@@ -501,6 +498,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | images/logos/partners/UNICEF.png | 68.8 | 1 |
 | images/logos/partners/Vodacom.png | 59.2 | 1 |
 | images/logos/partners/WHO.jpeg | 310.7 | 1 |
+| images/logos/partners/plh_logomark.png | 20.5 | 1 |
 | images/logos/partners/sino_horizontal.svg | 251 | 1 |
 | images/logos/partners/sino_white.svg | 256.1 | 1 |
 | images/onboarding/facilitator_female_onboarding_icon.svg | 29.4 | 1 |
@@ -792,7 +790,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 6 |
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
-| template |  | 134 |
+| template |  | 135 |
 | template | generated | 767 |
 | template | legal_terms | 4 |
 </details>
