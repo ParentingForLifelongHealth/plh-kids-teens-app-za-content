@@ -12,7 +12,7 @@
 | audio | 5 |
 | button | 104 |
 | combo_box | 10 |
-| data_items | 171 |
+| data_items | 148 |
 | debug_toggle | 1 |
 | display_grid | 4 |
 | display_group | 131 |
@@ -35,12 +35,12 @@
 | radio_button_grid | 13 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 3032 |
+| set_variable | 2851 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 6 |
-| template | 1026 |
-| text | 226 |
+| template | 999 |
+| text | 227 |
 | text_area | 2 |
 | text_box | 13 |
 | text_bubble | 10 |
@@ -61,13 +61,13 @@
 | app_update | 1 |
 | asset_pack | 9 |
 | auth | 3 |
-| emit: completed | 742 |
+| emit: completed | 715 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 14 |
 | emit: force_restart | 4 |
 | emit: server_sync | 6 |
 | emit: set_language | 4 |
-| emit: uncompleted | 750 |
+| emit: uncompleted | 723 |
 | feedback | 13 |
 | go_to | 22 |
 | nav_stack | 291 |
@@ -75,9 +75,9 @@
 | reset_app | 4 |
 | reset_data | 3 |
 | set_data | 80 |
-| set_field | 69 |
+| set_field | 75 |
 | set_item | 58 |
-| set_local | 81 |
+| set_local | 85 |
 | share | 2 |
 | task | 2 |
 | toast | 2 |
@@ -786,11 +786,11 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | data_list | relax | 1 |
 | data_pipe |  | 4 |
 | data_pipe | generated | 54 |
-| generator |  | 42 |
-| global |  | 6 |
+| generator |  | 41 |
+| global |  | 7 |
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
 | template |  | 135 |
-| template | generated | 767 |
+| template | generated | 740 |
 | template | legal_terms | 4 |
 </details>

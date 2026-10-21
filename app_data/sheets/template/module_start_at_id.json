@@ -109,7 +109,7 @@
     },
     {
       "name": "article_id",
-      "value": "explore_1",
+      "value": "uncomplete",
       "_translations": {
         "value": {}
       },
@@ -117,9 +117,93 @@
       "_nested_name": "article_id"
     },
     {
+      "type": "data_items",
+      "name": "find_first_uncompleted",
+      "value": "@local.articles_data",
+      "_translations": {
+        "value": {}
+      },
+      "action_list": [
+        {
+          "trigger": "data_changed",
+          "action_id": "set_local",
+          "args": [
+            "article_id",
+            "@items[0]?.id"
+          ],
+          "_raw": "data_changed | set_local: article_id: @items[0]?.id"
+        },
+        {
+          "trigger": "data_changed",
+          "action_id": "set_field",
+          "args": [
+            "current_start_article_id",
+            "@items[0]?.id"
+          ],
+          "_raw": "data_changed | set_field: current_start_article_id: @items[0]?.id"
+        }
+      ],
+      "parameter_list": {
+        "filter": "!@item.completed && !@item.nested",
+        "limit": "1"
+      },
+      "condition": "@local.article_id == \"uncomplete\"",
+      "exclude_from_translation": true,
+      "_nested_name": "find_first_uncompleted",
+      "_dynamicFields": {
+        "value": [
+          {
+            "fullExpression": "@local.articles_data",
+            "matchedExpression": "@local.articles_data",
+            "type": "local",
+            "fieldName": "articles_data"
+          }
+        ],
+        "parameter_list": {
+          "filter": [
+            {
+              "fullExpression": "!@item.completed && !@item.nested",
+              "matchedExpression": "!@item.completed",
+              "type": "item",
+              "fieldName": "completed"
+            },
+            {
+              "fullExpression": "!@item.completed && !@item.nested",
+              "matchedExpression": "!@item.nested",
+              "type": "item",
+              "fieldName": "nested"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "fullExpression": "@local.article_id == \"uncomplete\"",
+            "matchedExpression": "@local.article_id",
+            "type": "local",
+            "fieldName": "article_id"
+          }
+        ]
+      },
+      "_dynamicDependencies": {
+        "@local.articles_data": [
+          "value"
+        ],
+        "!@item.completed": [
+          "parameter_list.filter"
+        ],
+        "!@item.nested": [
+          "parameter_list.filter"
+        ],
+        "@local.article_id": [
+          "condition"
+        ]
+      }
+    },
+    {
       "type": "items",
       "name": "find_active_index",
       "value": "@data.@local.articles_data",
+      "condition": "@local.article_id != \"uncomplete\"",
       "rows": [
         {
           "type": "template",
@@ -233,18 +317,29 @@
             "type": "local",
             "fieldName": "articles_data"
           }
+        ],
+        "condition": [
+          {
+            "fullExpression": "@local.article_id != \"uncomplete\"",
+            "matchedExpression": "@local.article_id",
+            "type": "local",
+            "fieldName": "article_id"
+          }
         ]
       },
       "_dynamicDependencies": {
         "@local.articles_data": [
           "value"
+        ],
+        "@local.article_id": [
+          "condition"
         ]
       }
     }
   ],
   "_source": {
-    "name": "kids_global",
-    "path": "templates/modules/module_navigation.xlsx",
-    "url": "https://docs.google.com/spreadsheets/d/1MeuVFYp7ovMCABdgC5c1mExgDK8Xop13fzzBNR5EAPo"
+    "name": "kids_teens_za",
+    "path": "templates/ZA app_navigation.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/1dpTYJMY2c8CWJ8yiGTR1vSX1LryPSpsxQSPbUjRi0fg"
   }
 }
