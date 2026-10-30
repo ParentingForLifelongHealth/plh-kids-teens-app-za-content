@@ -1,0 +1,50 @@
+{
+  "flow_type": "data_list",
+  "flow_subtype": "lifecycle_actions",
+  "flow_name": "nf_launch_actions",
+  "status": "released",
+  "rows": [
+    {
+      "id": "pick_resume_lesson_first",
+      "lifecycle_event": "app_start",
+      "priority": 0,
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "nf_resume_lesson_first",
+            "@calc(pick_random([\"a\",\"b\"]))"
+          ],
+          "_raw": "set_field: nf_resume_lesson_first: @calc(pick_random([\"a\",\"b\"]))"
+        }
+      ]
+    },
+    {
+      "id": "pick_resume_lesson_first",
+      "lifecycle_event": "app_start",
+      "priority": 0.1,
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "nf_win_back_first",
+            "@calc(pick_random([\"a\",\"b\"]))"
+          ],
+          "_raw": "set_field: nf_win_back_first: @calc(pick_random([\"a\",\"b\"]))"
+        }
+      ]
+    }
+  ],
+  "_source": {
+    "name": "kids_teens_za",
+    "path": "data/ZA notifications.xlsx",
+    "url": "https://docs.google.com/spreadsheets/d/18XWxoxPJ69TjWjlJT73ETuhBEQN7scxG8PhTiGOvcQ8"
+  },
+  "_metadata": {
+    "priority": {
+      "type": "number"
+    }
+  }
+}
