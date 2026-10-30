@@ -212,9 +212,9 @@
         {
           "condition_type": "calc",
           "condition_args": {
-            "calc": "@fields.last_module_in_progress != \"NA\""
+            "calc": "@fields.last_module_in_progress != \"NA\" && @fields.nf_resume_lesson_first == \"a\""
           },
-          "_raw": "@fields.last_module_in_progress != \"NA\""
+          "_raw": "@fields.last_module_in_progress != \"NA\" && @fields.nf_resume_lesson_first == \"a\""
         }
       ],
       "campaign_list": [
@@ -279,9 +279,9 @@
         {
           "condition_type": "calc",
           "condition_args": {
-            "calc": "@fields.last_module_in_progress != \"NA\""
+            "calc": "@fields.last_module_in_progress != \"NA\" && @fields.nf_resume_lesson_first == \"b\""
           },
-          "_raw": "@fields.last_module_in_progress != \"NA\""
+          "_raw": "@fields.last_module_in_progress != \"NA\" && @fields.nf_resume_lesson_first == \"b\""
         }
       ],
       "campaign_list": [
@@ -346,9 +346,9 @@
         {
           "condition_type": "calc",
           "condition_args": {
-            "calc": "@fields.last_module_in_progress != \"NA\""
+            "calc": "@fields.last_module_in_progress != \"NA\" && @fields.nf_resume_lesson_first == \"b\""
           },
-          "_raw": "@fields.last_module_in_progress != \"NA\""
+          "_raw": "@fields.last_module_in_progress != \"NA\" && @fields.nf_resume_lesson_first == \"b\""
         }
       ],
       "campaign_list": [
@@ -413,9 +413,9 @@
         {
           "condition_type": "calc",
           "condition_args": {
-            "calc": "@fields.last_module_in_progress != \"NA\""
+            "calc": "@fields.last_module_in_progress != \"NA\" && @fields.nf_resume_lesson_first == \"a\""
           },
-          "_raw": "@fields.last_module_in_progress != \"NA\""
+          "_raw": "@fields.last_module_in_progress != \"NA\" && @fields.nf_resume_lesson_first == \"a\""
         }
       ],
       "campaign_list": [
@@ -449,9 +449,9 @@
         {
           "condition_type": "calc",
           "condition_args": {
-            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all && @fields.nf_win_back_first == \"a\""
           },
-          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all && @fields.nf_win_back_first == \"a\""
         }
       ],
       "campaign_list": [
@@ -485,9 +485,9 @@
         {
           "condition_type": "calc",
           "condition_args": {
-            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all && @fields.nf_win_back_first == \"b\""
           },
-          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all && @fields.nf_win_back_first == \"b\""
         }
       ],
       "campaign_list": [
@@ -521,9 +521,9 @@
         {
           "condition_type": "calc",
           "condition_args": {
-            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all && @fields.nf_win_back_first == \"b\""
           },
-          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all && @fields.nf_win_back_first == \"b\""
         }
       ],
       "campaign_list": [
@@ -557,9 +557,9 @@
         {
           "condition_type": "calc",
           "condition_args": {
-            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all && @fields.nf_win_back_first == \"a\""
           },
-          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all && @fields.nf_win_back_first == \"a\""
         }
       ],
       "campaign_list": [
