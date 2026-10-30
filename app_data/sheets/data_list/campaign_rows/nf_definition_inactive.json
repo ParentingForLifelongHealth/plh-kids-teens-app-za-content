@@ -136,9 +136,9 @@
         {
           "condition_type": "calc",
           "condition_args": {
-            "calc": "@fields.n_modules_completed !== 0"
+            "calc": "@fields.n_modules_completed > 0"
           },
-          "_raw": "@fields.n_modules_completed !== 0"
+          "_raw": "@fields.n_modules_completed > 0"
         }
       ],
       "deactivation_condition_list": [
@@ -173,7 +173,7 @@
       "text": "You finished your first lesson. Keep it up and build on this!"
     },
     {
-      "id": "resume_lesson_a",
+      "id": "resume_lesson_a_afternoon",
       "workshop": "independent",
       "message_type": "inactive",
       "action_list": [
@@ -200,9 +200,9 @@
           "args": [
             "open"
           ],
-          "_raw": "click | nav_stack: open | template: stack_module_@fields.last_module_in_progress@fields.start_at_id, header: false",
+          "_raw": "click | nav_stack: open | template: stack_module_@fields.last_module_in_progress@global.start_at_id, header: false",
           "params": {
-            "template": "stack_module_@fields.last_module_in_progress@fields.start_at_id",
+            "template": "stack_module_@fields.last_module_in_progress@global.start_at_id",
             "header": false
           }
         }
@@ -218,7 +218,140 @@
         }
       ],
       "campaign_list": [
-        "nf_inactive_2_days_afternoon",
+        "nf_inactive_2_days_afternoon"
+      ],
+      "title": "You started something great",
+      "_translations": {
+        "title": {
+          "za_xh": true
+        },
+        "text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "You started something great"
+        },
+        "text": {
+          "eng": "You've taken the first step. Tap to keep going!"
+        }
+      },
+      "text": "You've taken the first step. Tap to keep going!"
+    },
+    {
+      "id": "resume_lesson_b_afternoon",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "current_start_article_id",
+            "uncomplete"
+          ],
+          "_raw": "click | set_field: current_start_article_id: uncomplete"
+        },
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "home_screen"
+          ],
+          "_raw": "click | go_to : home_screen"
+        },
+        {
+          "trigger": "click",
+          "action_id": "nav_stack",
+          "args": [
+            "open"
+          ],
+          "_raw": "click | nav_stack: open | template: stack_module_@fields.last_module_in_progress@global.start_at_id, header: false",
+          "params": {
+            "template": "stack_module_@fields.last_module_in_progress@global.start_at_id",
+            "header": false
+          }
+        }
+      ],
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.last_module_in_progress != \"NA\""
+          },
+          "_raw": "@fields.last_module_in_progress != \"NA\""
+        }
+      ],
+      "campaign_list": [
+        "nf_inactive_2_days_afternoon"
+      ],
+      "title": "Pick up where you left off",
+      "_translations": {
+        "title": {
+          "za_xh": true
+        },
+        "text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "Pick up where you left off"
+        },
+        "text": {
+          "eng": "A few more minutes and you'll be done. Tap to continue!"
+        }
+      },
+      "text": "A few more minutes and you'll be done. Tap to continue!"
+    },
+    {
+      "id": "resume_lesson_a_week",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "action_list": [
+        {
+          "trigger": "click",
+          "action_id": "set_field",
+          "args": [
+            "current_start_article_id",
+            "uncomplete"
+          ],
+          "_raw": "click | set_field: current_start_article_id: uncomplete"
+        },
+        {
+          "trigger": "click",
+          "action_id": "go_to",
+          "args": [
+            "home_screen"
+          ],
+          "_raw": "click | go_to : home_screen"
+        },
+        {
+          "trigger": "click",
+          "action_id": "nav_stack",
+          "args": [
+            "open"
+          ],
+          "_raw": "click | nav_stack: open | template: stack_module_@fields.last_module_in_progress@global.start_at_id, header: false",
+          "params": {
+            "template": "stack_module_@fields.last_module_in_progress@global.start_at_id",
+            "header": false
+          }
+        }
+      ],
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.last_module_in_progress != \"NA\""
+          },
+          "_raw": "@fields.last_module_in_progress != \"NA\""
+        }
+      ],
+      "campaign_list": [
         "nf_inactive_week"
       ],
       "title": "You started something great",
@@ -241,7 +374,7 @@
       "text": "You've taken the first step. Tap to keep going!"
     },
     {
-      "id": "resume_lesson_b",
+      "id": "resume_lesson_b_week",
       "workshop": "independent",
       "message_type": "inactive",
       "action_list": [
@@ -268,9 +401,9 @@
           "args": [
             "open"
           ],
-          "_raw": "click | nav_stack: open | template: stack_module_@fields.last_module_in_progress@fields.start_at_id, header: false",
+          "_raw": "click | nav_stack: open | template: stack_module_@fields.last_module_in_progress@global.start_at_id, header: false",
           "params": {
-            "template": "stack_module_@fields.last_module_in_progress@fields.start_at_id",
+            "template": "stack_module_@fields.last_module_in_progress@global.start_at_id",
             "header": false
           }
         }
@@ -286,7 +419,6 @@
         }
       ],
       "campaign_list": [
-        "nf_inactive_2_days_afternoon",
         "nf_inactive_week"
       ],
       "title": "Pick up where you left off",
@@ -309,7 +441,7 @@
       "text": "A few more minutes and you'll be done. Tap to continue!"
     },
     {
-      "id": "win_back_a",
+      "id": "win_back_a_evening",
       "workshop": "independent",
       "message_type": "inactive",
       "priority": 1,
@@ -323,7 +455,78 @@
         }
       ],
       "campaign_list": [
-        "nf_inactive_2_days_evening",
+        "nf_inactive_2_days_evening"
+      ],
+      "title": "Keep the momentum going!",
+      "_translations": {
+        "title": {
+          "za_xh": true
+        },
+        "text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "Keep the momentum going!"
+        },
+        "text": {
+          "eng": "Discover a new way to strengthen your family. Tap to keep learning."
+        }
+      },
+      "text": "Discover a new way to strengthen your family. Tap to keep learning."
+    },
+    {
+      "id": "win_back_b_evening",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+          },
+          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+        }
+      ],
+      "campaign_list": [
+        "nf_inactive_2_days_evening"
+      ],
+      "title": "You're doing great!",
+      "_translations": {
+        "title": {
+          "za_xh": true
+        },
+        "text": {
+          "za_xh": true
+        }
+      },
+      "_translatedFields": {
+        "title": {
+          "eng": "You're doing great!"
+        },
+        "text": {
+          "eng": "Every small step makes a difference for your family. Tap to continue."
+        }
+      },
+      "text": "Every small step makes a difference for your family. Tap to continue."
+    },
+    {
+      "id": "win_back_a_week",
+      "workshop": "independent",
+      "message_type": "inactive",
+      "priority": 1,
+      "activation_condition_list": [
+        {
+          "condition_type": "calc",
+          "condition_args": {
+            "calc": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+          },
+          "_raw": "@fields.last_module_in_progress == \"NA\" && !@fields.completed_all"
+        }
+      ],
+      "campaign_list": [
         "nf_inactive_week"
       ],
       "title": "Keep the momentum going!",
@@ -346,7 +549,7 @@
       "text": "Discover a new way to strengthen your family. Tap to keep learning."
     },
     {
-      "id": "win_back_b",
+      "id": "win_back_b_week",
       "workshop": "independent",
       "message_type": "inactive",
       "priority": 1,
@@ -360,7 +563,6 @@
         }
       ],
       "campaign_list": [
-        "nf_inactive_2_days_evening",
         "nf_inactive_week"
       ],
       "title": "You're doing great!",
