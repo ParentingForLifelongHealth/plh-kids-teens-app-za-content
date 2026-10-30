@@ -12,7 +12,7 @@
 | audio | 5 |
 | button | 104 |
 | combo_box | 10 |
-| data_items | 148 |
+| data_items | 175 |
 | debug_toggle | 1 |
 | display_grid | 4 |
 | display_group | 131 |
@@ -21,7 +21,7 @@
 | image | 32 |
 | items | 17 |
 | lottie_animation | 5 |
-| nested_properties | 169 |
+| nested_properties | 144 |
 | number_selector | 1 |
 | plh_activity_check_in | 1 |
 | plh_bottom_nav | 1 |
@@ -35,12 +35,12 @@
 | radio_button_grid | 13 |
 | round_button | 11 |
 | set_field | 4 |
-| set_variable | 2851 |
+| set_variable | 2941 |
 | simple_checkbox | 1 |
 | task_card | 7 |
 | task_progress_bar | 6 |
-| template | 999 |
-| text | 227 |
+| template | 1001 |
+| text | 254 |
 | text_area | 2 |
 | text_box | 13 |
 | text_bubble | 10 |
@@ -61,23 +61,23 @@
 | app_update | 1 |
 | asset_pack | 9 |
 | auth | 3 |
-| emit: completed | 715 |
+| emit: completed | 717 |
 | emit: force_reload | 4 |
 | emit: force_reprocess | 14 |
 | emit: force_restart | 4 |
 | emit: server_sync | 6 |
 | emit: set_language | 4 |
-| emit: uncompleted | 723 |
+| emit: uncompleted | 725 |
 | feedback | 13 |
 | go_to | 22 |
 | nav_stack | 291 |
 | pop_up | 67 |
 | reset_app | 4 |
 | reset_data | 3 |
-| set_data | 80 |
-| set_field | 75 |
-| set_item | 58 |
-| set_local | 85 |
+| set_data | 82 |
+| set_field | 76 |
+| set_item | 31 |
+| set_local | 139 |
 | share | 2 |
 | task | 2 |
 | toast | 2 |
@@ -790,7 +790,7 @@ Assets that are used within sheets and also can be found in the synced asset dat
 | global |  | 7 |
 | global | legal_terms | 1 |
 | global | onboarding | 2 |
-| template |  | 135 |
+| template |  | 136 |
 | template | generated | 740 |
 | template | legal_terms | 4 |
 </details>
